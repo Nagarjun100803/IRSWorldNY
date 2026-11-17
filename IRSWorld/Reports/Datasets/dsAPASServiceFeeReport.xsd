@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAPASServiceFeeReport" targetNamespace="http://tempuri.org/dsAPASServiceFeeReport.xsd" xmlns:mstns="http://tempuri.org/dsAPASServiceFeeReport.xsd" xmlns="http://tempuri.org/dsAPASServiceFeeReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAPASServiceFeeReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsAPASServiceFeeReport" msprop:Generator_DataSetName="dsAPASServiceFeeReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtServiceFee" msprop:Generator_UserTableName="dtServiceFee" msprop:Generator_RowDeletedName="dtServiceFeeRowDeleted" msprop:Generator_RowChangedName="dtServiceFeeRowChanged" msprop:Generator_RowClassName="dtServiceFeeRow" msprop:Generator_RowChangingName="dtServiceFeeRowChanging" msprop:Generator_RowEvArgName="dtServiceFeeRowChangeEvent" msprop:Generator_RowEvHandlerName="dtServiceFeeRowChangeEventHandler" msprop:Generator_TableClassName="dtServiceFeeDataTable" msprop:Generator_TableVarName="tabledtServiceFee" msprop:Generator_RowDeletingName="dtServiceFeeRowDeleting" msprop:Generator_TablePropName="dtServiceFee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pay_Branch_Code" msprop:Generator_UserColumnName="Pay_Branch_Code" msprop:Generator_ColumnVarNameInTable="columnPay_Branch_Code" msprop:Generator_ColumnPropNameInRow="Pay_Branch_Code" msprop:Generator_ColumnPropNameInTable="Pay_Branch_CodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MotherBranchCode" msprop:Generator_UserColumnName="MotherBranchCode" msprop:Generator_ColumnPropNameInRow="MotherBranchCode" msprop:Generator_ColumnVarNameInTable="columnMotherBranchCode" msprop:Generator_ColumnPropNameInTable="MotherBranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MotherBranchName" msprop:Generator_UserColumnName="MotherBranchName" msprop:Generator_ColumnPropNameInRow="MotherBranchName" msprop:Generator_ColumnVarNameInTable="columnMotherBranchName" msprop:Generator_ColumnPropNameInTable="MotherBranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FeeAmount" msprop:Generator_UserColumnName="FeeAmount" msprop:Generator_ColumnPropNameInRow="FeeAmount" msprop:Generator_ColumnVarNameInTable="columnFeeAmount" msprop:Generator_ColumnPropNameInTable="FeeAmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FromDt" msprop:Generator_UserColumnName="FromDt" msprop:Generator_ColumnPropNameInRow="FromDt" msprop:Generator_ColumnVarNameInTable="columnFromDt" msprop:Generator_ColumnPropNameInTable="FromDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ToDt" msprop:Generator_UserColumnName="ToDt" msprop:Generator_ColumnPropNameInRow="ToDt" msprop:Generator_ColumnVarNameInTable="columnToDt" msprop:Generator_ColumnPropNameInTable="ToDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DatePaid" msprop:Generator_UserColumnName="DatePaid" msprop:Generator_ColumnPropNameInRow="DatePaid" msprop:Generator_ColumnVarNameInTable="columnDatePaid" msprop:Generator_ColumnPropNameInTable="DatePaidColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MinNum" msprop:Generator_UserColumnName="MinNum" msprop:Generator_ColumnPropNameInRow="MinNum" msprop:Generator_ColumnVarNameInTable="columnMinNum" msprop:Generator_ColumnPropNameInTable="MinNumColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="MaxNum" msprop:Generator_UserColumnName="MaxNum" msprop:Generator_ColumnPropNameInRow="MaxNum" msprop:Generator_ColumnVarNameInTable="columnMaxNum" msprop:Generator_ColumnPropNameInTable="MaxNumColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BranchPrinted" msprop:Generator_UserColumnName="BranchPrinted" msprop:Generator_ColumnPropNameInRow="BranchPrinted" msprop:Generator_ColumnVarNameInTable="columnBranchPrinted" msprop:Generator_ColumnPropNameInTable="BranchPrintedColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

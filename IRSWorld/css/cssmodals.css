@@ -1,0 +1,24 @@
+.outer_div 
+{ 
+	filter:alpha(opacity=75);
+	-moz-opacity:.75;
+	opacity:.75; 
+	background-color: dimgray; 
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	width: 100%; 
+	height: 100%;
+}
+
+.inner_div 
+{ 
+	position: absolute;
+	background-color: azure; 
+	border: #f9f9f9;	
+	font-size: 8pt; 
+	font-family:Arial;
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5px, OffY=3px, Color='dimgray', Positive='true');
+	-moz-box-shadow: dimgray 5px 5px; 
+	-webkit-box-shadow: dimgray 5px 5px;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="rptPNB_Charges_Setup" targetNamespace="http://tempuri.org/rptPNB_Charges_Setup.xsd" xmlns:mstns="http://tempuri.org/rptPNB_Charges_Setup.xsd" xmlns="http://tempuri.org/rptPNB_Charges_Setup.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="rptPNB_Charges_Setup" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="rptPNB_Charges_Setup" msprop:Generator_DataSetName="rptPNB_Charges_Setup">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtChargesSetup" msprop:Generator_UserTableName="dtChargesSetup" msprop:Generator_RowDeletedName="dtChargesSetupRowDeleted" msprop:Generator_TableClassName="dtChargesSetupDataTable" msprop:Generator_RowChangedName="dtChargesSetupRowChanged" msprop:Generator_RowClassName="dtChargesSetupRow" msprop:Generator_RowChangingName="dtChargesSetupRowChanging" msprop:Generator_RowEvArgName="dtChargesSetupRowChangeEvent" msprop:Generator_RowEvHandlerName="dtChargesSetupRowChangeEventHandler" msprop:Generator_TablePropName="dtChargesSetup" msprop:Generator_TableVarName="tabledtChargesSetup" msprop:Generator_RowDeletingName="dtChargesSetupRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchGroup" msprop:Generator_UserColumnName="BranchGroup" msprop:Generator_ColumnPropNameInRow="BranchGroup" msprop:Generator_ColumnVarNameInTable="columnBranchGroup" msprop:Generator_ColumnPropNameInTable="BranchGroupColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_UserColumnName="ProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Implementationtype" msprop:Generator_UserColumnName="Implementationtype" msprop:Generator_ColumnPropNameInRow="Implementationtype" msprop:Generator_ColumnVarNameInTable="columnImplementationtype" msprop:Generator_ColumnPropNameInTable="ImplementationtypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeType" msprop:Generator_UserColumnName="ChargeType" msprop:Generator_ColumnPropNameInRow="ChargeType" msprop:Generator_ColumnVarNameInTable="columnChargeType" msprop:Generator_ColumnPropNameInTable="ChargeTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Paymode" msprop:Generator_UserColumnName="Paymode" msprop:Generator_ColumnPropNameInRow="Paymode" msprop:Generator_ColumnVarNameInTable="columnPaymode" msprop:Generator_ColumnPropNameInTable="PaymodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ComputationLevel" msprop:Generator_UserColumnName="ComputationLevel" msprop:Generator_ColumnPropNameInRow="ComputationLevel" msprop:Generator_ColumnVarNameInTable="columnComputationLevel" msprop:Generator_ColumnPropNameInTable="ComputationLevelColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultStatus" msprop:Generator_UserColumnName="DefaultStatus" msprop:Generator_ColumnPropNameInRow="DefaultStatus" msprop:Generator_ColumnVarNameInTable="columnDefaultStatus" msprop:Generator_ColumnPropNameInTable="DefaultStatusColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ClearingDays" msprop:Generator_UserColumnName="ClearingDays" msprop:Generator_ColumnPropNameInRow="ClearingDays" msprop:Generator_ColumnVarNameInTable="columnClearingDays" msprop:Generator_ColumnPropNameInTable="ClearingDaysColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeName" msprop:Generator_UserColumnName="ChargeName" msprop:Generator_ColumnPropNameInRow="ChargeName" msprop:Generator_ColumnVarNameInTable="columnChargeName" msprop:Generator_ColumnPropNameInTable="ChargeNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ComputationType" msprop:Generator_UserColumnName="ComputationType" msprop:Generator_ColumnPropNameInRow="ComputationType" msprop:Generator_ColumnVarNameInTable="columnComputationType" msprop:Generator_ColumnPropNameInTable="ComputationTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeValue" msprop:Generator_UserColumnName="ChargeValue" msprop:Generator_ColumnPropNameInRow="ChargeValue" msprop:Generator_ColumnVarNameInTable="columnChargeValue" msprop:Generator_ColumnPropNameInTable="ChargeValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MinimumAmount" msprop:Generator_UserColumnName="MinimumAmount" msprop:Generator_ColumnPropNameInRow="MinimumAmount" msprop:Generator_ColumnVarNameInTable="columnMinimumAmount" msprop:Generator_ColumnPropNameInTable="MinimumAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Denominator" msprop:Generator_UserColumnName="Denominator" msprop:Generator_ColumnPropNameInRow="Denominator" msprop:Generator_ColumnVarNameInTable="columnDenominator" msprop:Generator_ColumnPropNameInTable="DenominatorColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeToBenef" msprop:Generator_UserColumnName="ChargeToBenef" msprop:Generator_ColumnPropNameInRow="ChargeToBenef" msprop:Generator_ColumnVarNameInTable="columnChargeToBenef" msprop:Generator_ColumnPropNameInTable="ChargeToBenefColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeLocally" msprop:Generator_UserColumnName="ChargeLocally" msprop:Generator_ColumnPropNameInRow="ChargeLocally" msprop:Generator_ColumnVarNameInTable="columnChargeLocally" msprop:Generator_ColumnPropNameInTable="ChargeLocallyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountFrom" msprop:Generator_UserColumnName="AmountFrom" msprop:Generator_ColumnPropNameInRow="AmountFrom" msprop:Generator_ColumnVarNameInTable="columnAmountFrom" msprop:Generator_ColumnPropNameInTable="AmountFromColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountTo" msprop:Generator_UserColumnName="AmountTo" msprop:Generator_ColumnPropNameInRow="AmountTo" msprop:Generator_ColumnVarNameInTable="columnAmountTo" msprop:Generator_ColumnPropNameInTable="AmountToColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeAmount" msprop:Generator_UserColumnName="ChargeAmount" msprop:Generator_ColumnPropNameInRow="ChargeAmount" msprop:Generator_ColumnVarNameInTable="columnChargeAmount" msprop:Generator_ColumnPropNameInTable="ChargeAmountColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

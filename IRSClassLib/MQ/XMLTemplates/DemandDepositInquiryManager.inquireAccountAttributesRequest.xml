@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Service="DemandDepositInquiryManagerService" Operation="inquireAccountAttributes( SessionContext, String)" targetNamespace="http://savings.deposit.app.fcr.iflex.com">
+	<SessionContext ExternalBatchNumber="" ServiceCode="" BankCode="8" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</SessionContext>
+	<AccountId/>
+</input>

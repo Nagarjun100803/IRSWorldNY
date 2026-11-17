@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsArsBatchUploadSummary" targetNamespace="http://tempuri.org/dsArsBatchUploadSummary.xsd" xmlns:mstns="http://tempuri.org/dsArsBatchUploadSummary.xsd" xmlns="http://tempuri.org/dsArsBatchUploadSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsArsBatchUploadSummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsArsBatchUploadSummary" msprop:Generator_DataSetName="dsArsBatchUploadSummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ARSBATCHUPLOADSUMMARY" msprop:Generator_UserTableName="ARSBATCHUPLOADSUMMARY" msprop:Generator_RowDeletedName="ARSBATCHUPLOADSUMMARYRowDeleted" msprop:Generator_RowChangedName="ARSBATCHUPLOADSUMMARYRowChanged" msprop:Generator_RowClassName="ARSBATCHUPLOADSUMMARYRow" msprop:Generator_RowChangingName="ARSBATCHUPLOADSUMMARYRowChanging" msprop:Generator_RowEvArgName="ARSBATCHUPLOADSUMMARYRowChangeEvent" msprop:Generator_RowEvHandlerName="ARSBATCHUPLOADSUMMARYRowChangeEventHandler" msprop:Generator_TableClassName="ARSBATCHUPLOADSUMMARYDataTable" msprop:Generator_TableVarName="tableARSBATCHUPLOADSUMMARY" msprop:Generator_RowDeletingName="ARSBATCHUPLOADSUMMARYRowDeleting" msprop:Generator_TablePropName="ARSBATCHUPLOADSUMMARY">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductCode" msprop:Generator_UserColumnName="ProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AGENTREFNO" msprop:Generator_UserColumnName="AGENTREFNO" msprop:Generator_ColumnPropNameInRow="AGENTREFNO" msprop:Generator_ColumnVarNameInTable="columnAGENTREFNO" msprop:Generator_ColumnPropNameInTable="AGENTREFNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANXREFERENCENO" msprop:Generator_UserColumnName="TRANXREFERENCENO" msprop:Generator_ColumnPropNameInRow="TRANXREFERENCENO" msprop:Generator_ColumnVarNameInTable="columnTRANXREFERENCENO" msprop:Generator_ColumnPropNameInTable="TRANXREFERENCENOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANXDATE" msprop:Generator_UserColumnName="TRANXDATE" msprop:Generator_ColumnPropNameInRow="TRANXDATE" msprop:Generator_ColumnVarNameInTable="columnTRANXDATE" msprop:Generator_ColumnPropNameInTable="TRANXDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER" msprop:Generator_UserColumnName="REMITTER" msprop:Generator_ColumnPropNameInRow="REMITTER" msprop:Generator_ColumnVarNameInTable="columnREMITTER" msprop:Generator_ColumnPropNameInTable="REMITTERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CCY" msprop:Generator_UserColumnName="CCY" msprop:Generator_ColumnPropNameInRow="CCY" msprop:Generator_ColumnVarNameInTable="columnCCY" msprop:Generator_ColumnPropNameInTable="CCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GROSS" msprop:Generator_UserColumnName="GROSS" msprop:Generator_ColumnPropNameInRow="GROSS" msprop:Generator_ColumnVarNameInTable="columnGROSS" msprop:Generator_ColumnPropNameInTable="GROSSColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PHPEQUIVALENT" msprop:Generator_UserColumnName="PHPEQUIVALENT" msprop:Generator_ColumnPropNameInRow="PHPEQUIVALENT" msprop:Generator_ColumnVarNameInTable="columnPHPEQUIVALENT" msprop:Generator_ColumnPropNameInTable="PHPEQUIVALENTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="BENEFICIARY" msprop:Generator_UserColumnName="BENEFICIARY" msprop:Generator_ColumnPropNameInRow="BENEFICIARY" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARY" msprop:Generator_ColumnPropNameInTable="BENEFICIARYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHCODE" msprop:Generator_UserColumnName="BRANCHCODE" msprop:Generator_ColumnPropNameInRow="BRANCHCODE" msprop:Generator_ColumnVarNameInTable="columnBRANCHCODE" msprop:Generator_ColumnPropNameInTable="BRANCHCODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYEEBANKNAME" msprop:Generator_UserColumnName="PAYEEBANKNAME" msprop:Generator_ColumnPropNameInRow="PAYEEBANKNAME" msprop:Generator_ColumnVarNameInTable="columnPAYEEBANKNAME" msprop:Generator_ColumnPropNameInTable="PAYEEBANKNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCOUNTNO" msprop:Generator_UserColumnName="ACCOUNTNO" msprop:Generator_ColumnPropNameInRow="ACCOUNTNO" msprop:Generator_ColumnVarNameInTable="columnACCOUNTNO" msprop:Generator_ColumnPropNameInTable="ACCOUNTNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSTATUS" msprop:Generator_UserColumnName="TRANSTATUS" msprop:Generator_ColumnPropNameInRow="TRANSTATUS" msprop:Generator_ColumnVarNameInTable="columnTRANSTATUS" msprop:Generator_ColumnPropNameInTable="TRANSTATUSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="COMMENTS" msprop:Generator_UserColumnName="COMMENTS" msprop:Generator_ColumnPropNameInRow="COMMENTS" msprop:Generator_ColumnVarNameInTable="columnCOMMENTS" msprop:Generator_ColumnPropNameInTable="COMMENTSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATEFROM" msprop:Generator_UserColumnName="DATEFROM" msprop:Generator_ColumnPropNameInRow="DATEFROM" msprop:Generator_ColumnVarNameInTable="columnDATEFROM" msprop:Generator_ColumnPropNameInTable="DATEFROMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATETO" msprop:Generator_UserColumnName="DATETO" msprop:Generator_ColumnPropNameInRow="DATETO" msprop:Generator_ColumnVarNameInTable="columnDATETO" msprop:Generator_ColumnPropNameInTable="DATETOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AGENTNAME" msprop:Generator_UserColumnName="AGENTNAME" msprop:Generator_ColumnPropNameInRow="AGENTNAME" msprop:Generator_ColumnVarNameInTable="columnAGENTNAME" msprop:Generator_ColumnPropNameInTable="AGENTNAMEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

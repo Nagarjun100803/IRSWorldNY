@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_SARProfileForMonthEnded20K" targetNamespace="http://tempuri.org/ds_SARProfileForMonthEnded20K.xsd" xmlns:mstns="http://tempuri.org/ds_SARProfileForMonthEnded20K.xsd" xmlns="http://tempuri.org/ds_SARProfileForMonthEnded20K.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_SARProfileForMonthEnded20K" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_SARProfileForMonthEnded20K" msprop:Generator_DataSetName="ds_SARProfileForMonthEnded20K">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TablePropName="DataTable1" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MONTH" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YEAR" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="MinAmount" msprop:Generator_UserColumnName="MinAmount" msprop:Generator_ColumnPropNameInRow="MinAmount" msprop:Generator_ColumnVarNameInTable="columnMinAmount" msprop:Generator_ColumnPropNameInTable="MinAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxAmount" msprop:Generator_UserColumnName="MaxAmount" msprop:Generator_ColumnPropNameInRow="MaxAmount" msprop:Generator_ColumnVarNameInTable="columnMaxAmount" msprop:Generator_ColumnPropNameInTable="MaxAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER_x0020_ID" msprop:Generator_UserColumnName="REMITTER ID" msprop:Generator_ColumnPropNameInRow="REMITTER_ID" msprop:Generator_ColumnVarNameInTable="columnREMITTER_ID" msprop:Generator_ColumnPropNameInTable="REMITTER_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATESENT" msprop:Generator_UserColumnName="DATESENT" msprop:Generator_ColumnPropNameInRow="DATESENT" msprop:Generator_ColumnVarNameInTable="columnDATESENT" msprop:Generator_ColumnPropNameInTable="DATESENTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER" msprop:Generator_UserColumnName="REMITTER" msprop:Generator_ColumnPropNameInRow="REMITTER" msprop:Generator_ColumnVarNameInTable="columnREMITTER" msprop:Generator_ColumnPropNameInTable="REMITTERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEFICIARY" msprop:Generator_UserColumnName="BENEFICIARY" msprop:Generator_ColumnPropNameInRow="BENEFICIARY" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARY" msprop:Generator_ColumnPropNameInTable="BENEFICIARYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AMOUNT" msprop:Generator_UserColumnName="AMOUNT" msprop:Generator_ColumnPropNameInRow="AMOUNT" msprop:Generator_ColumnVarNameInTable="columnAMOUNT" msprop:Generator_ColumnPropNameInTable="AMOUNTColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TRANXSTATUS" msprop:Generator_UserColumnName="TRANXSTATUS" msprop:Generator_ColumnPropNameInRow="TRANXSTATUS" msprop:Generator_ColumnVarNameInTable="columnTRANXSTATUS" msprop:Generator_ColumnPropNameInTable="TRANXSTATUSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYMODE" msprop:Generator_UserColumnName="PAYMODE" msprop:Generator_ColumnPropNameInRow="PAYMODE" msprop:Generator_ColumnVarNameInTable="columnPAYMODE" msprop:Generator_ColumnPropNameInTable="PAYMODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH" msprop:Generator_UserColumnName="BRANCH" msprop:Generator_ColumnPropNameInRow="BRANCH" msprop:Generator_ColumnVarNameInTable="columnBRANCH" msprop:Generator_ColumnPropNameInTable="BRANCHColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

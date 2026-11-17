@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFrequencyDistributionofRembySize_" targetNamespace="http://tempuri.org/dsFrequencyDistributionofRembySize .xsd" xmlns:mstns="http://tempuri.org/dsFrequencyDistributionofRembySize .xsd" xmlns="http://tempuri.org/dsFrequencyDistributionofRembySize .xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFrequencyDistributionofRembySize_" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsFrequencyDistributionofRembySize_" msprop:Generator_DataSetName="dsFrequencyDistributionofRembySize_">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FrequencyDistributionofRemittancebySize_x0020_" msprop:Generator_UserTableName="FrequencyDistributionofRemittancebySize " msprop:Generator_RowDeletedName="FrequencyDistributionofRemittancebySize_RowDeleted" msprop:Generator_RowChangedName="FrequencyDistributionofRemittancebySize_RowChanged" msprop:Generator_RowClassName="FrequencyDistributionofRemittancebySize_Row" msprop:Generator_RowChangingName="FrequencyDistributionofRemittancebySize_RowChanging" msprop:Generator_RowEvArgName="FrequencyDistributionofRemittancebySize_RowChangeEvent" msprop:Generator_RowEvHandlerName="FrequencyDistributionofRemittancebySize_RowChangeEventHandler" msprop:Generator_TableClassName="FrequencyDistributionofRemittancebySize_DataTable" msprop:Generator_TableVarName="tableFrequencyDistributionofRemittancebySize_" msprop:Generator_RowDeletingName="FrequencyDistributionofRemittancebySize_RowDeleting" msprop:Generator_TablePropName="FrequencyDistributionofRemittancebySize_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Range" msprop:Generator_UserColumnName="Range" msprop:Generator_ColumnVarNameInTable="columnRange" msprop:Generator_ColumnPropNameInRow="Range" msprop:Generator_ColumnPropNameInTable="RangeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumberofItems" msprop:Generator_UserColumnName="NumberofItems" msprop:Generator_ColumnVarNameInTable="columnNumberofItems" msprop:Generator_ColumnPropNameInRow="NumberofItems" msprop:Generator_ColumnPropNameInTable="NumberofItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Percent" msprop:Generator_UserColumnName="Percent" msprop:Generator_ColumnVarNameInTable="columnPercent" msprop:Generator_ColumnPropNameInRow="Percent" msprop:Generator_ColumnPropNameInTable="PercentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CumulativePercent" msprop:Generator_UserColumnName="CumulativePercent" msprop:Generator_ColumnVarNameInTable="columnCumulativePercent" msprop:Generator_ColumnPropNameInRow="CumulativePercent" msprop:Generator_ColumnPropNameInTable="CumulativePercentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AveragePerItem" msprop:Generator_UserColumnName="AveragePerItem" msprop:Generator_ColumnVarNameInTable="columnAveragePerItem" msprop:Generator_ColumnPropNameInRow="AveragePerItem" msprop:Generator_ColumnPropNameInTable="AveragePerItemColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

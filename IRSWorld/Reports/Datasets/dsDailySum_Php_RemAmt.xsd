@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDailySum_Php_RemAmt" targetNamespace="http://tempuri.org/dsDailySum_Php_RemAmt.xsd" xmlns:mstns="http://tempuri.org/dsDailySum_Php_RemAmt.xsd" xmlns="http://tempuri.org/dsDailySum_Php_RemAmt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDailySum_Php_RemAmt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDailySum_Php_RemAmt" msprop:Generator_DataSetName="dsDailySum_Php_RemAmt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDaily_php_remamt" msprop:Generator_UserTableName="dtDaily_php_remamt" msprop:Generator_RowDeletedName="dtDaily_php_remamtRowDeleted" msprop:Generator_TableClassName="dtDaily_php_remamtDataTable" msprop:Generator_RowChangedName="dtDaily_php_remamtRowChanged" msprop:Generator_RowClassName="dtDaily_php_remamtRow" msprop:Generator_RowChangingName="dtDaily_php_remamtRowChanging" msprop:Generator_RowEvArgName="dtDaily_php_remamtRowChangeEvent" msprop:Generator_RowEvHandlerName="dtDaily_php_remamtRowChangeEventHandler" msprop:Generator_TablePropName="dtDaily_php_remamt" msprop:Generator_TableVarName="tabledtDaily_php_remamt" msprop:Generator_RowDeletingName="dtDaily_php_remamtRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="state" msprop:Generator_UserColumnName="state" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_ColumnPropNameInTable="stateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocationCode" msprop:Generator_UserColumnName="LocationCode" msprop:Generator_ColumnPropNameInRow="LocationCode" msprop:Generator_ColumnVarNameInTable="columnLocationCode" msprop:Generator_ColumnPropNameInTable="LocationCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BPO" msprop:Generator_UserColumnName="BPO" msprop:Generator_ColumnPropNameInRow="BPO" msprop:Generator_ColumnVarNameInTable="columnBPO" msprop:Generator_ColumnPropNameInTable="BPOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Online" msprop:Generator_UserColumnName="Online" msprop:Generator_ColumnPropNameInRow="Online" msprop:Generator_ColumnVarNameInTable="columnOnline" msprop:Generator_ColumnPropNameInTable="OnlineColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="APAS" msprop:Generator_UserColumnName="APAS" msprop:Generator_ColumnPropNameInRow="APAS" msprop:Generator_ColumnVarNameInTable="columnAPAS" msprop:Generator_ColumnPropNameInTable="APASColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0033_D" msprop:Generator_UserColumnName="3D" msprop:Generator_ColumnPropNameInRow="_3D" msprop:Generator_ColumnVarNameInTable="column3D" msprop:Generator_ColumnPropNameInTable="_3DColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DTB" msprop:Generator_UserColumnName="DTB" msprop:Generator_ColumnPropNameInRow="DTB" msprop:Generator_ColumnVarNameInTable="columnDTB" msprop:Generator_ColumnPropNameInTable="DTBColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BPOP" msprop:Generator_UserColumnName="BPOP" msprop:Generator_ColumnPropNameInRow="BPOP" msprop:Generator_ColumnVarNameInTable="columnBPOP" msprop:Generator_ColumnPropNameInTable="BPOPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OnlineP" msprop:Generator_UserColumnName="OnlineP" msprop:Generator_ColumnPropNameInRow="OnlineP" msprop:Generator_ColumnVarNameInTable="columnOnlineP" msprop:Generator_ColumnPropNameInTable="OnlinePColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="APASP" msprop:Generator_UserColumnName="APASP" msprop:Generator_ColumnPropNameInRow="APASP" msprop:Generator_ColumnVarNameInTable="columnAPASP" msprop:Generator_ColumnPropNameInTable="APASPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0033_DP" msprop:Generator_UserColumnName="3DP" msprop:Generator_ColumnPropNameInRow="_3DP" msprop:Generator_ColumnVarNameInTable="column3DP" msprop:Generator_ColumnPropNameInTable="_3DPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DTBP" msprop:Generator_UserColumnName="DTBP" msprop:Generator_ColumnPropNameInRow="DTBP" msprop:Generator_ColumnVarNameInTable="columnDTBP" msprop:Generator_ColumnPropNameInTable="DTBPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="fee" msprop:Generator_UserColumnName="fee" msprop:Generator_ColumnPropNameInRow="fee" msprop:Generator_ColumnVarNameInTable="columnfee" msprop:Generator_ColumnPropNameInTable="feeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

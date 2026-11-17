@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InterBank_Timed_Out" targetNamespace="http://tempuri.org/InterBank_Timed_Out.xsd" xmlns:mstns="http://tempuri.org/InterBank_Timed_Out.xsd" xmlns="http://tempuri.org/InterBank_Timed_Out.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InterBank_Timed_Out" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="InterBank_Timed_Out" msprop:Generator_UserDSName="InterBank_Timed_Out">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_InterBank_Timed_Out" msprop:Generator_TableClassName="dt_InterBank_Timed_OutDataTable" msprop:Generator_TableVarName="tabledt_InterBank_Timed_Out" msprop:Generator_TablePropName="dt_InterBank_Timed_Out" msprop:Generator_RowDeletingName="dt_InterBank_Timed_OutRowDeleting" msprop:Generator_RowChangingName="dt_InterBank_Timed_OutRowChanging" msprop:Generator_RowEvHandlerName="dt_InterBank_Timed_OutRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_InterBank_Timed_OutRowDeleted" msprop:Generator_UserTableName="dt_InterBank_Timed_Out" msprop:Generator_RowChangedName="dt_InterBank_Timed_OutRowChanged" msprop:Generator_RowEvArgName="dt_InterBank_Timed_OutRowChangeEvent" msprop:Generator_RowClassName="dt_InterBank_Timed_OutRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" msprop:Generator_UserColumnName="RemitterName" type="xs:string" minOccurs="0" />
+              <xs:element name="BeneficiaryName" msprop:Generator_ColumnVarNameInTable="columnBeneficiaryName" msprop:Generator_ColumnPropNameInRow="BeneficiaryName" msprop:Generator_ColumnPropNameInTable="BeneficiaryNameColumn" msprop:Generator_UserColumnName="BeneficiaryName" type="xs:string" minOccurs="0" />
+              <xs:element name="AcctNoOfBeneficiary" msprop:Generator_ColumnVarNameInTable="columnAcctNoOfBeneficiary" msprop:Generator_ColumnPropNameInRow="AcctNoOfBeneficiary" msprop:Generator_ColumnPropNameInTable="AcctNoOfBeneficiaryColumn" msprop:Generator_UserColumnName="AcctNoOfBeneficiary" type="xs:string" minOccurs="0" />
+              <xs:element name="DateManila" msprop:Generator_ColumnVarNameInTable="columnDateManila" msprop:Generator_ColumnPropNameInRow="DateManila" msprop:Generator_ColumnPropNameInTable="DateManilaColumn" msprop:Generator_UserColumnName="DateManila" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateOverseas" msprop:Generator_ColumnVarNameInTable="columnDateOverseas" msprop:Generator_ColumnPropNameInRow="DateOverseas" msprop:Generator_ColumnPropNameInTable="DateOverseasColumn" msprop:Generator_UserColumnName="DateOverseas" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IRSWTranxRefNo" msprop:Generator_ColumnVarNameInTable="columnIRSWTranxRefNo" msprop:Generator_ColumnPropNameInRow="IRSWTranxRefNo" msprop:Generator_ColumnPropNameInTable="IRSWTranxRefNoColumn" msprop:Generator_UserColumnName="IRSWTranxRefNo" type="xs:string" minOccurs="0" />
+              <xs:element name="E2ETranxRefNo" msprop:Generator_ColumnVarNameInTable="columnE2ETranxRefNo" msprop:Generator_ColumnPropNameInRow="E2ETranxRefNo" msprop:Generator_ColumnPropNameInTable="E2ETranxRefNoColumn" msprop:Generator_UserColumnName="E2ETranxRefNo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

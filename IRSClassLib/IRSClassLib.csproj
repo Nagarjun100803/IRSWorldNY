@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IRSClassLib</RootNamespace>
+    <AssemblyName>IRSClassLib</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConnObjDecrypt, Version=1.0.4297.28738, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IRSWorldPhoneticsConversion\bin\Release\ConnObjDecrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Excel\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FuzzyLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IRSWorld\FuzzyLogic\FuzzyLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="HDMFcdv, Version=1.0.0.0, Culture=neutral, PublicKeyToken=baebb99dac889e84, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HDMFcdv.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityGuardAdminServiceV11API, Version=12.0.0.573, Culture=neutral, PublicKeyToken=57ffde27732d460f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\IdentityGuardAdminServiceV11API.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityGuardAdminServiceV11API.XmlSerializers, Version=12.0.0.573, Culture=neutral, PublicKeyToken=57ffde27732d460f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\IdentityGuardAdminServiceV11API.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityGuardAuthServiceV11API, Version=12.0.0.573, Culture=neutral, PublicKeyToken=417392a14a60dbbb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\IdentityGuardAuthServiceV11API.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityGuardAuthServiceV11API.XmlSerializers, Version=12.0.0.573, Culture=neutral, PublicKeyToken=417392a14a60dbbb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\IdentityGuardAuthServiceV11API.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityGuardCommonFailoverAPI, Version=12.0.0.573, Culture=neutral, PublicKeyToken=0e752c134d351a93, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\IdentityGuardCommonFailoverAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Enets\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PercentageMatching, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IRSFileLoader_NY UAT\PercentageLoader\bin\Release\PercentageMatching.dll</HintPath>
+    </Reference>
+    <Reference Include="PublicDomain, Version=0.2.47.0, Culture=neutral, PublicKeyToken=fd3f43b5776a962b, processorArchitecture=MSIL" />
+    <Reference Include="SecureBlackbox, Version=6.0.0.137, Culture=neutral, PublicKeyToken=5a62fa96d0ac431a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Enets\SecureBlackbox.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.PGP, Version=6.0.0.137, Culture=neutral, PublicKeyToken=5a62fa96d0ac431a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Enets\SecureBlackbox.PGP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="umapi, Version=1.1.1.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Enets\umapi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACHWorks.cs" />
+    <Compile Include="BeamNGoAPI.cs" />
+    <Compile Include="BillsPaymentApi.cs" />
+    <Compile Include="csExcel.cs" />
+    <Compile Include="csGiftAway.cs" />
+    <Compile Include="csPagIbigAPI.cs" />
+    <Compile Include="csParamountInsurance.cs" />
+    <Compile Include="csPromotions.cs" />
+    <Compile Include="csRemittance.cs" />
+    <Compile Include="csRemittanceWS.cs" />
+    <Compile Include="E2EInstapay.cs" />
+    <Compile Include="Entrust.cs" />
+    <Compile Include="IBATCH_Class\ARSTransaction.cs" />
+    <Compile Include="IBATCH_Class\ARSValidation.cs" />
+    <Compile Include="IBATCH_Class\Converter.cs" />
+    <Compile Include="IBATCH_Class\ExcelLoader.cs" />
+    <Compile Include="IBATCH_Class\FileReader.cs" />
+    <Compile Include="IBATCH_Class\FileWriter.cs" />
+    <Compile Include="IBATCH_Class\GACEExtracter.cs" />
+    <Compile Include="irsAccountTransactionStatus.cs" />
+    <Compile Include="irsAdhocReports.cs" />
+    <Compile Include="irsAgentCS.cs" />
+    <Compile Include="irsARSW.cs" />
+    <Compile Include="irsBatchEntries.cs" />
+    <Compile Include="irsAccountInquiry.cs" />
+    <Compile Include="irsBatchFileUpload.cs" />
+    <Compile Include="irsCalculator_nWs.cs" />
+    <Compile Include="irsCIFPhonetics.cs" />
+    <Compile Include="irsCIFProfiler.cs" />
+    <Compile Include="irsClientAccounts_nWs.cs" />
+    <Compile Include="irsClientAddress_nWs.cs" />
+    <Compile Include="irsClientBeneficiaries_nWs.cs" />
+    <Compile Include="irsClientClassifications_nWs.cs" />
+    <Compile Include="irsClientContacts_nWs.cs" />
+    <Compile Include="irsClientMaster_nWs.cs" />
+    <Compile Include="irsClientMerchant_nWs.cs" />
+    <Compile Include="irsClientNotes.cs" />
+    <Compile Include="irsClientRemitters_nWs.cs" />
+    <Compile Include="irsClientVan.cs" />
+    <Compile Include="irsDeclaration.cs" />
+    <Compile Include="irsEPSCOTransactions.cs" />
+    <Compile Include="irsExcelFileUpload.cs" />
+    <Compile Include="irsEXCOAlRajhiResponse.cs" />
+    <Compile Include="irsEXCOApproval.cs" />
+    <Compile Include="irsEXCORemittance.cs" />
+    <Compile Include="irsEXCO_ANB_Approval.cs" />
+    <Compile Include="irsFaultlog.cs" />
+    <Compile Include="irsFaultlogComment.cs" />
+    <Compile Include="irsFedAchWatchlist.cs" />
+    <Compile Include="irsFileDownloader.cs" />
+    <Compile Include="irsFileExtracter.cs" />
+    <Compile Include="irsFileExtractMonitor.cs" />
+    <Compile Include="irsGenericStatusInquiry.cs" />
+    <Compile Include="irsGenkinaketome.cs" />
+    <Compile Include="irsGRSApproval.cs" />
+    <Compile Include="irsHoldChecks.cs" />
+    <Compile Include="irsIBFTKey.cs" />
+    <Compile Include="irsInsertRemittance.cs" />
+    <Compile Include="irsInsertRemittanceWs.cs" />
+    <Compile Include="irsInstapay.cs" />
+    <Compile Include="irsInternetRemAcct.cs" />
+    <Compile Include="irsInternetRemIds.cs" />
+    <Compile Include="irsInternetRemitterApproval.cs" />
+    <Compile Include="irsInternetRemitterARS.cs" />
+    <Compile Include="irsIOD.cs" />
+    <Compile Include="irsMICCS.cs" />
+    <Compile Include="irsOBPSTransactions_nWs.cs" />
+    <Compile Include="irsOldAPAS.cs" />
+    <Compile Include="irsPOLINK.cs" />
+    <Compile Include="irsPromotions.cs" />
+    <Compile Include="irsQueryBuilder.cs" />
+    <Compile Include="irsRefinitiv.cs" />
+    <Compile Include="irsRemForVerification.cs" />
+    <Compile Include="irsReminders.cs" />
+    <Compile Include="irsRemoteOverride.cs" />
+    <Compile Include="irsReportProfiler.cs" />
+    <Compile Include="irsCreateGefu.cs" />
+    <Compile Include="irsGRSBuyingRate.cs" />
+    <Compile Include="irsGRSDataEntry.cs" />
+    <Compile Include="csAuditLog.cs" />
+    <Compile Include="csControl.cs" />
+    <Compile Include="csPasswordGen.cs" />
+    <Compile Include="FileSpiltter.cs" />
+    <Compile Include="IBATCH_Class\defaultFileHeader.cs" />
+    <Compile Include="IBATCH_Class\IHeaderRecord.cs" />
+    <Compile Include="IBATCH_Class\mt103_decoder.cs" />
+    <Compile Include="IBATCH_Class\pyrl_decryptor.cs" />
+    <Compile Include="IBATCH_Class\swift_decoder.cs" />
+    <Compile Include="IBATCH_Class\swift_header.cs" />
+    <Compile Include="IBATCH_Class\swift_record.cs" />
+    <Compile Include="irs3DClass.cs" />
+    <Compile Include="irsAgentJob.cs" />
+    <Compile Include="irsAPASApprovalWindow.cs" />
+    <Compile Include="irsAPASReports.cs" />
+    <Compile Include="irsARSRemittance.cs" />
+    <Compile Include="irsBatchMaint.cs" />
+    <Compile Include="irsBatchRemittance.cs" />
+    <Compile Include="irsBatchUpload.cs" />
+    <Compile Include="irsBookingRates.cs" />
+    <Compile Include="irsBranchOperation.cs" />
+    <Compile Include="irsClientEnrollment.cs" />
+    <Compile Include="irsClientOtherBanks.cs" />
+    <Compile Include="irsClientOtherIds.cs" />
+    <Compile Include="irsDisclaimer.cs" />
+    <Compile Include="irsEndOfTransfer.cs" />
+    <Compile Include="irsAPASTransactionStatus.cs" />
+    <Compile Include="csFileIo.cs" />
+    <Compile Include="csMailer.cs" />
+    <Compile Include="irsAPAS.cs" />
+    <Compile Include="irsCIFGEFU.cs" />
+    <Compile Include="irsDenomination.cs" />
+    <Compile Include="csFtp.cs" />
+    <Compile Include="DIMessageParser.cs" />
+    <Compile Include="irsBranchPaymentGateway.cs" />
+    <Compile Include="irsBranchPaymentSagePay.cs" />
+    <Compile Include="irsFCRSettings.cs" />
+    <Compile Include="irsGEFUMaintenance.cs" />
+    <Compile Include="irsGenericCIF.cs" />
+    <Compile Include="irsGFC.cs" />
+    <Compile Include="irsGiftsWebSettings.cs" />
+    <Compile Include="irsGRSAccountingEntries.cs" />
+    <Compile Include="irsGRSCorrBank.cs" />
+    <Compile Include="irsGRSGEFU.cs" />
+    <Compile Include="irsHitViewer.cs" />
+    <Compile Include="irsIBatchMaint.cs" />
+    <Compile Include="irsIflexAccounts.cs" />
+    <Compile Include="irsInternetPage.cs" />
+    <Compile Include="irsInternetRemCards.cs" />
+    <Compile Include="irsInternetRemProducts.cs" />
+    <Compile Include="irsMachineSetup.cs" />
+    <Compile Include="irsMethapone.cs" />
+    <Compile Include="irsMT103.cs" />
+    <Compile Include="irsOTC.cs" />
+    <Compile Include="irsOtherChannelsDefaults.cs" />
+    <Compile Include="irsOtherChannelsProcess.cs" />
+    <Compile Include="irsOverrideLog.cs" />
+    <Compile Include="irsPCHCExtract.cs" />
+    <Compile Include="irsProductSetup.cs" />
+    <Compile Include="irsPUNLAMaint.cs" />
+    <Compile Include="irsRemittanceBackend.cs" />
+    <Compile Include="irsAccountingEntries.cs" />
+    <Compile Include="irsAccounts.cs" />
+    <Compile Include="irsARM.cs" />
+    <Compile Include="irsBranchDefaults.cs" />
+    <Compile Include="irsBranchLookup.cs" />
+    <Compile Include="irsAuditLogger.cs" />
+    <Compile Include="irsBranch.cs" />
+    <Compile Include="irsBranchDefinition.cs" />
+    <Compile Include="irsBranchSetup.cs" />
+    <Compile Include="irsCalculator.cs" />
+    <Compile Include="irsCashMgmtEntries.cs" />
+    <Compile Include="irsCharges.cs" />
+    <Compile Include="irsClientAccounts.cs" />
+    <Compile Include="irsClientAddress.cs" />
+    <Compile Include="irsClientBeneficiaries.cs" />
+    <Compile Include="irsClientCards.cs" />
+    <Compile Include="irsClientClassifications.cs" />
+    <Compile Include="irsClientContacts.cs" />
+    <Compile Include="irsClientData.cs" />
+    <Compile Include="irsClientIds.cs" />
+    <Compile Include="irsClientInformation.cs" />
+    <Compile Include="irsClientMaster.cs" />
+    <Compile Include="irsClientMerchant.cs" />
+    <Compile Include="irsClientMerchants.cs" />
+    <Compile Include="irsClientOccupations.cs" />
+    <Compile Include="irsClientRemitters.cs" />
+    <Compile Include="irsClientSpouse.cs" />
+    <Compile Include="irsComplianceViewer.cs" />
+    <Compile Include="irsConfiguration.cs" />
+    <Compile Include="irsCurrencyGroup.cs" />
+    <Compile Include="irsCurrencyRates.cs" />
+    <Compile Include="irsDataKeep.cs" />
+    <Compile Include="irsDynaValidation.cs" />
+    <Compile Include="irsException.cs" />
+    <Compile Include="irsFileLoader.cs" />
+    <Compile Include="irsForexUpload.cs" />
+    <Compile Include="irsHolidays.cs" />
+    <Compile Include="irsInternetRem.cs" />
+    <Compile Include="irsInternetRemitter.cs" />
+    <Compile Include="irsInternetTransaction.cs" />
+    <Compile Include="irsIRIS.cs" />
+    <Compile Include="irsLookUp.cs" />
+    <Compile Include="irsMenu.cs" />
+    <Compile Include="irsMessageGroup.cs" />
+    <Compile Include="irsMessenger.cs" />
+    <Compile Include="irsMiscellaneous.cs" />
+    <Compile Include="irsModuleProfile.cs" />
+    <Compile Include="irsModules.cs" />
+    <Compile Include="irsOBPSTransaction.cs" />
+    <Compile Include="irsOBPSTransactions.cs" />
+    <Compile Include="irsPasswordArchive.cs" />
+    <Compile Include="irsPaymentGateway.cs" />
+    <Compile Include="irsReceipts.cs" />
+    <Compile Include="irsRemTeller.cs" />
+    <Compile Include="irsReportSetup.cs" />
+    <Compile Include="irsSqlCommons.cs" />
+    <Compile Include="irsSqlCommonsWs.cs" />
+    <Compile Include="irsSubBranch.cs" />
+    <Compile Include="irsTBGMaintenance.cs" />
+    <Compile Include="irsTDD.cs" />
+    <Compile Include="irsTellerCashManagement.cs" />
+    <Compile Include="irsThreadManager.cs" />
+    <Compile Include="irsTranxFileMaintenance.cs" />
+    <Compile Include="irsUploadedTransactions.cs" />
+    <Compile Include="irsUploadFile.cs" />
+    <Compile Include="irsUsers.cs" />
+    <Compile Include="irsUserUnlock.cs" />
+    <Compile Include="irsValid_IDs.cs" />
+    <Compile Include="irsVANTerritory.cs" />
+    <Compile Include="irsViewOtherChannels.cs" />
+    <Compile Include="irsViewUploadDetails.cs" />
+    <Compile Include="irsVIP.cs" />
+    <Compile Include="irsVirtualPOLoader.cs" />
+    <Compile Include="irsWebRemitAddBenef.cs" />
+    <Compile Include="irsWebRemittance.cs" />
+    <Compile Include="irsWebRemittanceExtractor.cs" />
+    <Compile Include="irsZipCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Rijndael.cs" />
+    <Compile Include="splitter_struct.cs" />
+    <Compile Include="splitter_ui_code.cs" />
+    <Compile Include="sqlHelper.cs" />
+    <Compile Include="sqlHelperCommandKeep.cs" />
+    <Compile Include="sqlHelperWs.cs" />
+    <Compile Include="SSSPRN_API.cs" />
+    <Compile Include="timezones.cs" />
+    <Compile Include="TriDes.cs" />
+    <Compile Include="Web References\FCWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GFC_SI_WSDL\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GFC_SI_WSDL_PROXY\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\OBPS_BayadCenter\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PNBABCAccountValidation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebACHWorks\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSCorebanking\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsIBFT\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsSMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TZData\PublicDomain.dll" />
+    <None Include="Web References\FCWS\FC_Service.wsdl" />
+    <None Include="Web References\FCWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GFC_SI_WSDL\GFC_WS.wsdl" />
+    <None Include="Web References\GFC_SI_WSDL\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GFC_SI_WSDL_PROXY\GFC_WS.wsdl" />
+    <None Include="Web References\GFC_SI_WSDL_PROXY\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\OBPS_BayadCenter\OBPS_BayadCenter.disco" />
+    <None Include="Web References\wsIBFT\wsIBFT.disco" />
+    <None Include="Web References\PNBABCAccountValidation\ws_PNBABCAccountValidationExt.disco" />
+    <None Include="Web References\FCWS\FC_Service.disco" />
+    <None Include="Web References\GFC_SI_WSDL\GFC_WS.disco" />
+    <None Include="Web References\GFC_SI_WSDL_PROXY\GFC_WS.disco" />
+    <None Include="Web References\wsSMS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsSMS\wsSMS.disco" />
+    <Content Include="WebServiceXML\ACHWorks.xml" />
+    <None Include="Web References\localhost\wsSqlCommons.disco" />
+    <None Include="Web References\wsSMS\wsSMS.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Inetpub\wwwroot\IRSWorld\IRSClassLib\WebServiceXML\ACHWorks.xml">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebACHWorks\</RelPath>
+      <UpdateFromURL>C:\Inetpub\wwwroot\IRSWorld\IRSClassLib\WebServiceXML\ACHWorks.xml</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_ACHWorks_Iverservice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.103.10/wsSMSSetup/wsSMS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsSMS\</RelPath>
+      <UpdateFromURL>http://172.16.103.10/wsSMSSetup/wsSMS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_wsSMS_wsSMS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.20.117/FC_API_Webservice_Setup/FC_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FCWS\</RelPath>
+      <UpdateFromURL>http://192.168.20.117/FC_API_Webservice_Setup/FC_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_FCWS_FC_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSCorebanking\</RelPath>
+      <UpdateFromURL>http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_WSCorebanking_IRSFlexcubeTeller</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/OBPSBayadCenterAPI/OBPS_BayadCenter.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OBPS_BayadCenter\</RelPath>
+      <UpdateFromURL>http://localhost/OBPSBayadCenterAPI/OBPS_BayadCenter.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_OBPS_BayadCenter_OBPS_BayadCenter</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/ws_%2520PNBABCAccountValidationExt/ws_PNBABCAccountValidationExt.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PNBABCAccountValidation\</RelPath>
+      <UpdateFromURL>http://localhost/ws_%2520PNBABCAccountValidationExt/ws_PNBABCAccountValidationExt.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_PNBABCAccountValidation_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2453/wsSqlCommons.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost\</RelPath>
+      <UpdateFromURL>http://localhost:2453/wsSqlCommons.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_localhost_wsSqlCommons</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58401/wsIBFT.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsIBFT\</RelPath>
+      <UpdateFromURL>http://localhost:58401/wsIBFT.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_wsIBFT_wsIBFT</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GFC_SI_WSDL\</RelPath>
+      <UpdateFromURL>https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_GFC_SI_WSDL_GFC_WebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://pnbatm16.pnbcorpsit.ph/GFC_WS_Proxy/GFC_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GFC_SI_WSDL_PROXY\</RelPath>
+      <UpdateFromURL>http://pnbatm16.pnbcorpsit.ph/GFC_WS_Proxy/GFC_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IRSClassLib_GFC_SI_WSDL_PROXY_GFC_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\OBPS_BayadCenter\OBPS_BayadCenter.wsdl" />
+    <None Include="Web References\OBPS_BayadCenter\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PNBABCAccountValidation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PNBABCAccountValidation\ws_PNBABCAccountValidationExt.wsdl" />
+    <None Include="Web References\WebACHWorks\Iverservice.wsdl" />
+    <None Include="Web References\WebACHWorks\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost\wsSqlCommons.wsdl" />
+    <None Include="Web References\WebACHWorks\ResultVer1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSCorebanking\IRSFlexcubeTeller.wsdl" />
+    <None Include="Web References\WSCorebanking\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsIBFT\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsIBFT\wsIBFT.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\E2EAPIConnector\E2EAPIConnector.csproj">
+      <Project>{5f71523e-bb2b-46cb-bc98-cfd3e3aae83d}</Project>
+      <Name>E2EAPIConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IRSW_HK_ExceptionReport_Bene" targetNamespace="http://tempuri.org/IRSW_HK_ExceptionReport_Bene.xsd" xmlns:mstns="http://tempuri.org/IRSW_HK_ExceptionReport_Bene.xsd" xmlns="http://tempuri.org/IRSW_HK_ExceptionReport_Bene.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IRSW_HK_ExceptionReport_Bene" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="IRSW_HK_ExceptionReport_Bene" msprop:Generator_DataSetName="IRSW_HK_ExceptionReport_Bene">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IRSW_HK_ExceptionReport_Bene" msprop:Generator_UserTableName="IRSW_HK_ExceptionReport_Bene" msprop:Generator_RowDeletedName="IRSW_HK_ExceptionReport_BeneRowDeleted" msprop:Generator_RowChangedName="IRSW_HK_ExceptionReport_BeneRowChanged" msprop:Generator_RowClassName="IRSW_HK_ExceptionReport_BeneRow" msprop:Generator_RowChangingName="IRSW_HK_ExceptionReport_BeneRowChanging" msprop:Generator_RowEvArgName="IRSW_HK_ExceptionReport_BeneRowChangeEvent" msprop:Generator_RowEvHandlerName="IRSW_HK_ExceptionReport_BeneRowChangeEventHandler" msprop:Generator_TableClassName="IRSW_HK_ExceptionReport_BeneDataTable" msprop:Generator_TableVarName="tableIRSW_HK_ExceptionReport_Bene" msprop:Generator_RowDeletingName="IRSW_HK_ExceptionReport_BeneRowDeleting" msprop:Generator_TablePropName="_IRSW_HK_ExceptionReport_Bene">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_UserColumnName="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterID" msprop:Generator_UserColumnName="RemitterID" msprop:Generator_ColumnVarNameInTable="columnRemitterID" msprop:Generator_ColumnPropNameInRow="RemitterID" msprop:Generator_ColumnPropNameInTable="RemitterIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BeneficiaryID" msprop:Generator_UserColumnName="BeneficiaryID" msprop:Generator_ColumnVarNameInTable="columnBeneficiaryID" msprop:Generator_ColumnPropNameInRow="BeneficiaryID" msprop:Generator_ColumnPropNameInTable="BeneficiaryIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BeneficiaryName" msprop:Generator_UserColumnName="BeneficiaryName" msprop:Generator_ColumnVarNameInTable="columnBeneficiaryName" msprop:Generator_ColumnPropNameInRow="BeneficiaryName" msprop:Generator_ColumnPropNameInTable="BeneficiaryNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NO._x002F_Street" msprop:Generator_UserColumnName="NO./Street" msprop:Generator_ColumnVarNameInTable="_columnNO__Street" msprop:Generator_ColumnPropNameInRow="_NO__Street" msprop:Generator_ColumnPropNameInTable="_NO__StreetColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RoomNo._x002F_Bldg" msprop:Generator_UserColumnName="RoomNo./Bldg" msprop:Generator_ColumnVarNameInTable="_columnRoomNo__Bldg" msprop:Generator_ColumnPropNameInRow="_RoomNo__Bldg" msprop:Generator_ColumnPropNameInTable="_RoomNo__BldgColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TelephoneNo" msprop:Generator_UserColumnName="TelephoneNo" msprop:Generator_ColumnVarNameInTable="columnTelephoneNo" msprop:Generator_ColumnPropNameInRow="TelephoneNo" msprop:Generator_ColumnPropNameInTable="TelephoneNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MobileNo" msprop:Generator_UserColumnName="MobileNo" msprop:Generator_ColumnVarNameInTable="columnMobileNo" msprop:Generator_ColumnPropNameInRow="MobileNo" msprop:Generator_ColumnPropNameInTable="MobileNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Relationship" msprop:Generator_UserColumnName="Relationship" msprop:Generator_ColumnVarNameInTable="columnRelationship" msprop:Generator_ColumnPropNameInRow="Relationship" msprop:Generator_ColumnPropNameInTable="RelationshipColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateCreated" msprop:Generator_UserColumnName="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PurposeOfTransaction" msprop:Generator_UserColumnName="PurposeOfTransaction" msprop:Generator_ColumnPropNameInRow="PurposeOfTransaction" msprop:Generator_ColumnVarNameInTable="columnPurposeOfTransaction" msprop:Generator_ColumnPropNameInTable="PurposeOfTransactionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

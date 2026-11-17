@@ -1,0 +1,27 @@
+.bharosaPageBody input[type=text] {width: 150px;}
+.bharosaPageBody input[type=radio], .bharosaPageBody input[type=checkbox] {}
+
+.bharosaPageBody .changePasswordInput input[type=text] {width: 150px;margin-right: 100px;}
+.bharosaPageBody .changePasswordInput input[type=radio], .bharosaPageBody .changePasswordInput input[type=checkbox] { margin-right: 238px; }
+
+.bharosaPageBody .signOn input {margin-right: 100px;}
+.bharosaPageBody .signOn select {margin-right: 100px;}
+.bharosaPageBody .signOn input[type=text] {width: 150px;}
+.bharosaPageBody .signOn .authenticator {margin-top:20px;}
+.bharosaPageBody .signOn a:link,.signOn a:visited {color:#25547c}
+.bharosaPageBody .signOn a:active,.signOn a:hover {color:#4986ff}
+
+.bharosaPageBody .signOn .loginButton {
+  width: 75px;
+  margin:10px 0px 0px 0px;
+  float:left;
+}
+
+.registerAuthenticatorImage .demoAuthenticatorDivider{
+  background-image: url('../images/device_arrow_right.gif');
+  background-position: right;
+}
+
+.sectionImage{
+  float:left;
+}

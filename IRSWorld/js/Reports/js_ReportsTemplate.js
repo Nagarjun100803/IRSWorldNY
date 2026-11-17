@@ -1,0 +1,1455 @@
+//Author: Jeffrey M. Buizon
+//Date Created:
+// Description: Conmsolidated js scripts for reports
+var dbgrid;
+var datatable;
+var dbgrid1;
+var datatable1;
+var datatable_popup;
+var divmask;
+var pg_no = 1;
+var rowchanged = false;
+var repdataset  = null;
+var optrep_values;
+var optparam_values = new Array(2);
+optparam_values[0] = 'STRING~STRING';
+optparam_values[1] = 'NUMBER~NUMBER';
+optparam_values[2] = 'DATE~DATE';
+    /**MISCELLANEOUS*/
+var ie = document.all;
+var nn6 = document.getElementById &&! document.all;
+var isdrag = false;
+var x, y;
+var dobj;
+
+
+function auto_printIE()
+{
+
+}
+
+function movemouse( e ) {
+  if( isdrag ) {
+    dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+    dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+    return false;
+  }
+}
+
+function selectmouse( e ) {
+try
+{
+  var fobj       = nn6 ? e.target : event.srcElement;
+  var topelement = nn6 ? "HTML" : "BODY";
+
+  while (fobj.tagName != topelement && fobj.className != "dragme") {
+    fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+  }
+
+  if (fobj.className=="dragme") {
+    isdrag = true;
+    dobj = document.getElementById("divcpopup");
+    tx = parseInt(dobj.style.left+0);
+    ty = parseInt(dobj.style.top+0);
+    x = nn6 ? e.clientX : event.clientX;
+    y = nn6 ? e.clientY : event.clientY;
+    document.onmousemove=movemouse;
+    return false;
+  }
+ }
+ catch (e) {}
+}
+
+function styledPopupClose() {
+  document.getElementById("divcpopup").style.display = "none";
+}
+
+document.onmousedown=selectmouse;
+document.onmouseup=new Function("isdrag=false");
+
+function check_date(objid)
+{
+   // Regular expression used to check if date is in correct format
+   var pattern;
+   //var pattern = new RegExp([0-3][0-9]-(0|1)[0-9]-(19|20)[0-9]{2});
+   //if (document.getElementById(objid).value.match(pattern))
+   var txtbox = document.getElementById(objid);
+   var length = txtbox.value.toString().length ;
+   var img  = "";
+   if (txtbox.value.toString().length == 10)
+   {
+      var txtbox = document.getElementById(objid);
+      var date_array = document.getElementById(objid).value.split('-');
+      var day = date_array[1];
+
+      // Attention! Javascript consider months in the range 0 - 11
+      var month = date_array[0] - 1;
+      var year = date_array[2];
+
+      // This instruction will create a date object
+      source_date = new Date(year,month,day);
+        
+      if(year != source_date.getFullYear())
+      {
+         //alert('Year is not valid!');
+         error_msg(img,'Year is not valid!',objid,'pnlParameters',2);
+         //return false;
+         txtbox.focus();
+         txtbox.select();
+         return false;
+      }
+
+      if(month != source_date.getMonth())
+      {  
+         error_msg(img,'Month is not valid!',objid,'pnlParameters',2);
+         txtbox.focus();
+         txtbox.select();
+         return false;
+      }
+
+      if(day != source_date.getDate())
+      {  
+         error_msg(img,'Day is not valid!',objid,'pnlParameters',2);
+         txtbox.focus();
+         txtbox.select();
+         return false;
+         //return false;
+      }
+   }
+   else
+   {  
+      error_msg(img,'Date format is not valid!',objid,'pnlParameters',2);
+      txtbox.focus();      
+      return false;
+   }
+
+   return true; 
+}
+
+    function check_number(objid)
+    {
+        var num1 = document.getElementById(objid);
+        
+        if ( isNaN(num1.value)  )
+        {
+            error_msg(img,'Please input a valid number!',objid,'pnlParameters',2);
+            num1.focus();
+            num1.select();
+            return false;
+        }
+        if (num1.value.toString().indexOf(' ') > -1)
+        {
+            error_msg(img,'Please input a valid number!',objid,'pnlParameters',1);
+            num1.focus();
+            num1.select();
+            return false;
+        }
+        return true;
+        
+    }
+
+    
+    function get_repsubgroupid()
+    {
+        var dd = document.getElementById("ddlRepMain");
+        if (dd.selectedIndex > 0)
+        {
+            return dd[dd.selectedIndex].value;
+        }
+        else
+        {
+            return dd.value;
+        }     
+    }
+    function init_state()
+    {       
+        load_ddl_branch();
+    }   
+    function load_ddl_branch()
+    {
+        var isadmin     =   document.getElementById("txtisadmin").value;
+        var branchcode  =   document.getElementById("txtbranchcode").value;
+        if (isadmin == "true")
+        Report_Holder.load_rep_group("",load_ddl_branch_callback);
+        else
+        Report_Holder.load_rep_group(branchcode,load_ddl_branch_callback);
+    }
+    function  load_ddl_branch_callback(result)
+    {
+        if (result != null && result != "undefined")
+        {
+            var branchcode  =   document.getElementById("txtbranchcode").value;
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddBranchCode", null, "BranchCode", "BranchName",result.value.Tables[1]);
+            
+            this.commons.to_set_dropdownlist_index("ddBranchCode",branchcode);
+            this.commons = null;
+            rep_grp_callback(result.value.Tables[0]);
+        }
+    }
+    function rep_grp_callback(result)
+    {
+        if (result != null && result != "undefined")
+        {
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddlRepMain", null , "SubGroupID", "TextDisplay",result);
+            this.commons = null;
+        }
+    }
+    function ddl_groupchange()
+    {
+        var subgroupid  = document.getElementById("ddlRepMain").value;        
+        var branchcode = get_selectedbranch();
+        Report_Holder.load_rep_group_per_branch(subgroupid,branchcode, onchange_callback);
+    }
+    function get_selectedbranch()
+    {
+        var branchcode  = document.getElementById("ddBranchCode")
+        selbranch = (branchcode.selectedIndex > 0) ? branchcode[branchcode.selectedIndex].value : branchcode.value;
+        return selbranch;
+    }
+    function onchange_callback(result)
+    {
+       if (result != null && result != "undefined")
+        {
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddlRepName", result.value, "PARAMS", "TextDisplay");
+            this.commons = null;
+            
+        }
+    }
+    function hide_param_panel()
+    {
+        document.getElementById("divExplore").style.display = "none";
+        document.getElementById("pnlParameters").style.display = "none";
+    }
+    function show_param_panel()
+    {
+        document.getElementById("divExplore").style.display = "block";
+        document.getElementById("pnlParameters").style.display = "block";
+    }
+    function get_report_values()
+    {
+        var paramval;
+        var ddlReport = document.getElementById("ddlRepName");
+        
+            if (ddlReport.selectedIndex > 0)
+            {
+                paramval = ddlReport[ddlReport.selectedIndex].value;
+            }
+            else
+            {
+                paramval = ddlReport.value;
+            }            
+        
+        return paramval;
+    }
+    function create_report_params()
+    {
+        var paramval;
+        paramval = get_report_values();
+        if (paramval.length <= 0)  return;
+        var sHTML;
+        hide_param_panel();       
+        var arrstr = paramval.split("^");
+        var pnlholder = document.getElementById("pnlParameters");                
+        var pnlExplore = document.getElementById("divExplore");  
+        try 
+        {             
+            if (paramval.length > 0 && (arrstr[1] != null  || arrstr[1] != "undefined" ))
+            { 
+                /* 0 sequence id
+                 * 1 parameter name
+                 * 2 parameter type
+                 * 3 parameter display         
+                 */
+                 var dispname = arrstr[3].split("$");                      
+                 var disptype = arrstr[2].split("$");             
+                 var dispparam = arrstr[1].split("$");                    
+                 
+                 strHTML = "<table >";         
+                 for (i = 0; i < dispname.length ;  i++ )
+                 {
+                    if (dispname[i].length > 0)
+                    strHTML +=  "<tr><td class='cell_caption' nowrap>" +  dispname[i] + "</td> " + getRepDataType(disptype[i] ,  dispparam[i] ) ;
+                 }                       
+                 strHTML +=  "</table>";
+                 pnlholder.innerHTML = strHTML;;
+                 showPanel('divExplore');
+                 show_param_panel();  
+             }
+             else
+             {                 
+                 pnlholder.innerHTML = "";
+                 showPanel('divExplore');
+                 show_param_panel();  
+             }
+          }
+          catch(e) {hidePanel('divExplore');
+                 hide_param_panel();  }
+       
+         
+    }
+     function page_setup(url)
+    {
+    
+        if (top == self)
+        {
+            window.open('../BranchSetupMain.aspx?load=' + url  , '_top');
+        }
+        else if (top.isAuthenticated())
+        {
+            this.init_state();
+        }
+        else
+        {
+            spawn_errpage("This module requires login!");
+        }      
+    }
+    function load_reportpage()
+    {
+    
+        
+        if (!validate_entries()) return;
+        var urlparam1 = get_report_values();  
+        var urlparam2 =   getParameterValues();          
+        var exporttype = document.getElementById("ddlExport").value
+        var autoprint = document.getElementById("chkautoprint").checked
+        close_explore();     
+        call_reportpage();
+    }
+     function call_reportpage()
+    {            
+            var urlparam1 =   get_report_values();  
+            var urlparam2 =   getParameterValues();   
+            var autoprint =   document.getElementById("chkautoprint").checked;
+            
+            url =  "Report_Viewer.aspx?mergeparam=" + urlparam1 + "&paramvalues=" + getParameterValues() + "&exporttype=" + getExportType() + "&autoprint=" + autoprint;
+            
+            reset_objects();     
+            var objwin = window.open(url,"mywindow","");
+     
+    }
+    function load_reportpage_callback()
+    {
+        
+        
+        if (res.value != "")
+        {
+         alert(res.value);
+        }
+        else
+        {            
+            var urlparam1 = get_report_values();  
+            var urlparam2 =   getParameterValues();     
+            reset_objects();     
+            url =  "Report_Viewer.aspx?mergeparam=" + urlparam1 + "&paramvalues=" + getParameterValues() + "&exporttype=" + getExportType();
+            var objwin = window.open(url,"mywindow","");
+        }       
+    }
+    function reset_objects()
+    {
+        document.getElementById("ddlRepMain").selectedIndex = 0
+        document.getElementById("ddlRepName").selectedIndex = 0
+        document.getElementById("ddlExport").selectedIndex = 0
+        
+    }
+    function getExportType()
+    {
+        return document.getElementById("ddlExport").value;
+    }
+    function validate_entries()
+    {
+        var pass = true;
+        var frm = document.forms[0].elements;
+        for (i =0;i< frm.length;i++)
+        {
+            if (frm[i].type == 'text')
+            {
+                var elem = frm[i];
+                if (elem.dtype == 'date')
+                {
+                    pass = check_date(elem.id);
+                }
+                if(elem.dtype == 'number')
+                {
+                    pass = check_number(elem.id);
+                }
+                if (pass == false)
+                    return pass;
+            }
+        }
+        return pass;
+    }
+    function getRepDataType(datatype ,param_name)
+    {
+        var s ="<input width='182px' type='text' id='" + param_name + "' size='10'>";
+        if (datatype.toLowerCase().indexOf("date") > -1 )
+        {   
+            s ="<td class='cell_description' width='100px' nowrap><input  dtype='date' type='text' id='T" + param_name + "' size='10'></td><td nowrap>MM-DD-YYYY</td></tr>";
+            return s;
+        }
+        else if (datatype.toLowerCase().indexOf("money") > -1 || datatype.toLowerCase().indexOf("int")  > -1 || datatype.toLowerCase().indexOf("decimal") > -1  || datatype.toLowerCase().indexOf("bit") > -1 )
+        {   
+            s ="<td colspan='2' class='cell_description' width='100px' nowrap><input  dtype='number' type='text' id='T" + param_name + "' size='50'></td></tr>";
+            return s;
+        }    
+        else
+        {
+            s ="<td colspan='2' class='cell_description' width='100px' nowrap><input  dtype='string' type='text' id='T" + param_name + "' size='50'></td></tr>";
+            return s;
+        }
+        
+    }
+    function getParameterValues()
+    {   
+        var frm = document.forms[0];
+        var fid = "";
+        var params = "";
+        for (i = 0 ; i < frm.length; i++ )
+        {   
+            if (frm[i].type == 'text' )
+            {
+                try
+                {
+                    fid = frm[i].id;
+                    if(fid.substring(0,2) == 'T@')
+                    {   
+                        params += fid + ";" + frm[i].value + "^";
+                    }
+                }
+                catch(e)
+                {
+                    alert(e);
+                }
+            }
+        }
+        
+        return params;
+    }
+    
+    
+    //for Report Maintenance
+    function load_branch_dd()
+    {
+        var txtbranchcode = document.getElementById('txtbranchcode').value;
+        ReportsLookup.load_branch(txtbranchcode,rep_branch_callback);
+    }
+    function rep_branch_callback(result)
+    {
+        if (result != null && result != "undefined")
+        {
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddBranchCode", result.value, "BranchCode", "BranchName");            
+            var txtbranchcode = document.getElementById('txtbranchcode').value;
+            this.commons.to_set_dropdownlist_index('ddBranchCode', txtbranchcode)
+            this.commons = null;
+        }
+    }
+    
+    function init_reports_maintenance()
+    {
+        this.create_and_load_grid();
+    }
+    function create_and_load_grid()
+    {
+        ReportsLookup.load_rep_group(rep_callback);       
+    }
+    function rep_callback(result)
+    {
+        if (result != null && result != "undefined")
+       {
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddlRepMain", result.value, "SubGroupID", "TextDisplay");
+            this.commons = null;                 
+            var mgroupid = get_maingroupid();            
+            ReportsLookup.load_rep_per_branch(mgroupid,load_report_grid)
+        
+       }
+    }
+    function get_maingroupid()
+    {
+        var ddlgrp = document.getElementById("ddlRepMain")
+        var maingroupid = (ddlgrp > 0) ?  ddlgrp[ddlgrp.selectedIndex].value : ddlgrp.value;                
+        
+        if (maingroupid == "null" || maingroupid.indexOf("null") > 0 )
+        {
+            maingroupid = "";
+        }
+        return maingroupid;
+    }
+    function load_report_grid(res)    
+    {
+        if (res != null && res != "undefined")
+        {
+            repdataset = res.value;
+            dbgrid = create_grid();
+            datatable = res.value.Tables[0];
+            dbgrid.filter.enabled = false;            
+            dbgrid.bind(datatable, 'tdIRSReports', 'tbl_Reports');            
+            display_group()  ;          
+        }
+    }
+    function load_roles(dt)
+    {
+       var tempstr = "";
+       for (i = 0;    i < dt.Rows.length; i++)
+       {
+            tempstr = tempstr + dt.Rows[i].FLDVALUE + "~" + dt.Rows[i].FLDDESCRIPTION + "^";
+       }
+       optrep_values = tempstr.split("^");
+         
+    }    
+    function display_group()
+    {
+        var repgroup = document.getElementById("ddlRepMain").value;
+        dbgrid.clearFilter();            
+        dbgrid.filter.enabled = true;
+        var filter = new datagrid_filter();
+        filter.datafield = 'SubGroupID';
+        filter.operator = '==';
+        filter.value = "'" + repgroup + "'";
+        dbgrid.addFilter(filter);
+        dbgrid.refresh(datatable);
+    }
+   
+    function create_grid()
+    {
+        gv = new datagrid();
+         {
+            var col = new datagrid_column(); //0
+            col.align = 'left';
+            col.header = 'SEQ ID';
+            col.datafield = 'SEQ_ID';
+            col.styles.cell += 'width:0%;display:none';            
+            col.styles.header += 'display:none';            
+            col.styles.datafield += 'display:none';
+		    
+            gv.addColumn(col);
+        }
+        {
+            var col = new datagrid_column(); // 1
+            col.header = 'Main Group ID';
+            col.datafield = 'MainGroupID'; //used in alias SQL
+            col.styles.cell += 'width:0%;display:none';            
+            col.styles.header += 'display:none';            
+            col.styles.datafield += 'display:none';
+            
+            gv.addColumn(col);
+        }
+        {
+           var col = new datagrid_column(); // 2
+            col.header = 'Sub Group ID';
+            col.datafield = 'SubGroupID'; //used in alias SQL
+            col.align = 'left';
+            col.editable = false;            
+            col.styles.cell += 'width:10%:overflow:hidden;';
+            gv.addColumn(col);
+        }
+        {
+            var col = new datagrid_column(); // 3
+            col.header = 'Sub Group Desc';
+            col.datafield = 'SubGroupDesc';
+            col.align = 'left';
+            col.editable = true;           
+            col.styles.cell += 'width:0%;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';
+            gv.addColumn(col);
+        }
+         {
+            var col = new datagrid_column(); // 4
+            col.header = 'Text Display';
+            col.datafield = 'TextDisplay';
+            col.align = 'left';
+            col.editable = true;
+            col.styles.cell += 'width:20%:overflow:hidden;';
+            gv.addColumn(col);
+        }
+         {
+            var col = new datagrid_column(); // 5
+            col.header = 'ParameterNames';
+            col.datafield = 'ParameterNames';
+            col.align = 'left';
+            col.editable = false;            
+            col.styles.cell += 'width:0%;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';            
+            
+            
+            
+            gv.addColumn(col);
+        }
+       {
+            var col = new datagrid_column(); // 6
+            col.header = 'Parametertypes';
+            col.datafield = 'Parametertypes';
+            col.align = 'left';
+            col.editable = false;            
+            col.styles.cell += 'width:0%;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';
+            
+            gv.addColumn(col);
+        }
+        {
+            var col = new datagrid_column(); // 7
+            col.header = 'ParameterDisplay';
+            col.datafield = 'ParameterDisplay';
+            col.align = 'left';
+            col.editable = false;           
+            col.styles.cell += 'width:0%;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';
+            
+            gv.addColumn(col);
+        }
+         {
+            var col = new datagrid_column(); // 8
+            col.header = 'sp_Name';
+            col.datafield = 'sp_Name';
+            col.align = 'left';
+            col.editable = true;
+            col.styles.cell += 'width:20%:overflow:hidden;';
+            gv.addColumn(col);
+        }
+        {
+            var col = new datagrid_column(); // 9
+            col.header = 'Report Path';
+            col.datafield = 'SHOWP';
+            col.align = 'left';
+            col.editable = true;
+            col.styles.cell += 'width:auto';
+            col.value = '>>'
+            col.type = 'button';
+            col.onclick = "show_explore";
+            gv.addColumn(col);
+        }
+        
+         {
+            var col = new datagrid_column(); // 10
+            col.header = 'Parameters';
+            col.datafield = 'SHOWP';
+            col.align = 'left';
+            col.editable = true;
+            col.styles.cell += 'width:auto';
+            col.value = '>>'
+            col.type = 'button';
+            col.onclick = "param_clicked";
+            
+            gv.addColumn(col);
+        }
+        {
+            var col = new datagrid_column(); //11
+            col.header = 'Role';
+            col.datafield = 'Role';
+            col.align = 'left';
+            col.editable = false;
+            col.styles.cell += 'width:0%;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';
+            
+            gv.addColumn(col);
+        }
+         {
+            var col = new datagrid_column(); // 12
+            col.header = 'Role';
+            col.datafield = 'SHOWR';
+            col.align = 'left';
+            col.editable = true;
+            col.value = '>>'
+            col.type = 'button';
+            col.onclick = "role_clicked";
+            col.styles.cell += 'width:auto';
+            gv.addColumn(col);
+        }
+        // for footer
+            gv.footer.add_button.none = false;        
+            gv.footer.add_button.beforepost = 'check_for_dup_nulls';                
+            gv.footer.add_button.onclick = 'footer_btn_clicked';
+            gv.footer.add_button.style += 'background-color: lavender;'; 
+            gv.footer.edit_button.none = false;            
+            gv.footer.edit_button.beforepost = 'check_for_dup_nulls';
+            
+            gv.footer.edit_button.onclick = 'footer_btn_clicked';
+            gv.footer.edit_button.style += 'background-color: lavender;';             
+            gv.footer.save_button.none = false;
+            gv.footer.save_button.onclick = 'grid_btn_save';  
+            
+            gv.footer.save_button.style += 'background-color: lavender;';  
+            gv.footer.cancel_button.none = false;
+            gv.footer.cancel_button.onclick = 'cancel_btn_clicked';
+            gv.footer.cancel_button.style += 'background-color: lavender;'; 
+            //gv.row.onclick = "cell_clicked";
+            gv.row.normal_style = 'background-color: #f7ffff;';          
+            return gv;
+     }
+     function cancel_btn_clicked(args)
+     {
+        document.getElementById("ddlRepMain").disabled = false;
+     }
+     function check_for_dup_nulls(args)
+     {
+        var textdisplay = dbgrid.getValueAt(args.datarow,4);
+        var spname      = dbgrid.getValueAt(args.datarow,8);
+        var reportpath  = dbgrid.getValueAt(args.datarow,3);
+        var parameters  = dbgrid.getValueAt(args.datarow,7);
+        var role  = dbgrid.getValueAt(args.datarow,11);
+        
+        if (textdisplay.length == 0 && trim(textdisplay) == "")
+        {
+            alert("Please supply text to display");
+            var obj = dbgrid.getElementsAt(args.datarow, 4).item(0);
+            obj.focus();
+            dbgrid.curract = '';
+            return false;
+        }
+        if (spname.length == 0 && trim(spname) == "")
+        {
+            alert("Please supply SP name");
+            var obj = dbgrid.getElementsAt(args.datarow, 8).item(0);
+            obj.focus();
+            dbgrid.curract = '';
+            return false;
+        }
+        if (reportpath.length == 0 && trim(reportpath) == "")
+        {
+            alert("Please select report path");
+            var obj = dbgrid.getElementsAt(args.datarow, 9).item(0);
+            obj.focus();
+            dbgrid.curract = '';
+            return false;
+        }
+        if (role.length == 0 && trim(role) == "")
+        {
+            alert("Please add role(s) for report");
+            var obj = dbgrid.getElementsAt(args.datarow, 12).item(0);
+            obj.focus();
+            dbgrid.curract = '';
+            return false;
+        }
+        
+        if (args.value  == 'Add')
+        {
+            if (validate_reportentry(textdisplay))
+            {
+                dbgrid.curract = '';
+                return false;
+            }
+        }
+     }
+     function validate_reportentry(reportname)
+     {
+        var res = ReportsLookup.check_reportentry(reportname)
+        if (res)
+        {
+            alert("Report already Exist");
+            return true;
+        }
+        return false;
+     }
+     
+      function footer_btn_clicked(args)
+        {
+            document.getElementById("ddlRepMain").disabled = true;
+            if (args.value == 'Edit')
+            {
+                set_read_only(document.getElementById('tdIRSReports'), false);                
+                return;
+            }
+            
+            if (args.value == 'Delete')
+            {
+                if (!dbgrid.hasDataRows()) prod_set_empty(args);
+            }
+            
+            if (args.value == 'Add')
+            {
+                if (trim(document.getElementById("ddlRepMain").value.toString()) == "null" || document.getElementById("ddlRepMain").value.toString().indexOf("null") > -1)
+                {
+                    alert("Please select report group");
+                    gv.footer.cancel_button.click();
+                    return;
+                }
+                dbgrid.row.onclick_enabled = false;                
+                add_report_item(args);
+                set_read_only(document.getElementById('tdIRSReports'), false);                
+                dbgrid.enableFooterBtns("Add");
+                return;
+            }            
+        }
+          
+     function create_custom_grid(rowopt)
+    {
+        gv = new datagrid();
+            if (rowopt == 1)
+            {
+              {
+                var col = new datagrid_column(); //0
+                col.align = 'left';  
+                col.header = 'Name';          
+                col.datafield = 'paramname';  
+                col.styles.cell += 'width:auto';          
+                col.editable = false;
+                gv.addColumn(col);
+              }
+              {
+                var col = new datagrid_column(); //0
+                col.align = 'left';  
+                col.header = 'Data Type';                    
+                col.datafield = 'paramtype';   
+                col.align = 'center';                               
+                col.editable = false;
+                
+                gv.addColumn(col);
+              }
+              {
+                var col = new datagrid_column(); //0
+                col.align = 'left';    
+                col.header = 'Text Display';                            
+                col.datafield = 'paramdisplay';                                          
+                col.styles.cell += 'width:auto';
+                gv.addColumn(col);
+              }
+          }
+          else
+          {
+             {
+                var col = new datagrid_column(); //0
+                col.align = 'left';    
+                col.header = 'Role';                            
+                col.datafield = 'role';   
+                col.align = 'center';  
+                load_roles(repdataset.Tables[1]);                
+                col.styles.cell += 'width:auto;';       
+                if (optrep_values.length > 0)
+                {
+                   col.type = 'select';
+                   col.options = optrep_values;	
+                }    		    
+                
+                gv.addColumn(col);
+              }
+          }
+         // for footer
+         
+         if (rowopt != 1)
+         {
+          gv.footer.add_button.none = false;            
+          gv.footer.add_button.style += 'background-color: lavender;'; 
+          gv.footer.delete_button.none = false;            
+          gv.footer.delete_button.style += 'background-color: lavender;';          
+         }
+          
+          gv.footer.edit_button.none = false;            
+          
+          gv.footer.edit_button.style += 'background-color: lavender;';  
+          gv.footer.save_button.none = false;
+          gv.footer.save_button.onclick = 'grid_btn_save1';  
+          gv.footer.save_button.style += 'background-color: lavender;';  
+          gv.footer.cancel_button.none = false;
+          gv.footer.cancel_button.style += 'background-color: lavender;'; 
+          gv.row.normal_style = 'background-color: #f7ffff;';          
+          return gv;
+    }
+     
+    function load_custom_grid(dt,rowopt,args)    
+    {
+    
+        //var actualrow   =  (( (this.pg_no )  * 12 ) +  args.gridrow )    
+    
+        if (dt != null)
+        {        
+            if (rowopt == "1")    
+            {
+                if (confirm("Replace Parameter Values ?"))
+                {
+                    ReportsLookup.load_sp_parameter( dbgrid.getValueAt(args.datarow,8) ,load_sp_parameter_callback);                    
+                    return;
+                }                
+            }           
+        dbgrid1 = create_custom_grid(rowopt); 
+        datatable_popup = dt;           
+        dbgrid1.filter.enabled = false;            
+        dbgrid1.bind(dt, 'tdCReports', 'tbl_cReports');
+        showPanel('divcpopup');                      
+        }
+    }
+    function load_sp_parameter_callback(res)
+    {
+        
+        showPanel('divcpopup');
+        if (res.value != null)
+        {
+            
+            var DTValues  = res.value;
+            dbgrid1 = create_custom_grid(1);                         
+            var rowvalues = build_parameters(DTValues);
+            var dt = load_table(rowvalues);                        
+            datatable_popup = dt;           
+            dbgrid1.filter.enabled = false;            
+            dbgrid1.bind(dt, 'tdCReports', 'tbl_cReports');
+            set_param_values();
+        }
+        else 
+        {
+            alert("Invalid SP Name");
+        }
+    }
+    function build_parameters(dt)
+    {
+        var pname = "";
+        var ptype = "";
+        var pdisp = "";
+        
+        pname = pname + dt.Rows[dt.Rows.length - 1].ParameterNames; 
+        ptype = ptype + dt.Rows[dt.Rows.length - 1].ParameterTypes;
+        pdisp = pdisp + dt.Rows[dt.Rows.length - 1].ParameterDisplay;
+        
+        return pname + '~' + ptype + '~' + pdisp;
+    }
+     function show_explore(args)
+     {
+        var dom = document.getElementById("divExplore")
+        var xy = calcpos(document.getElementById("ddlRepMain"));
+            dom.style.left = "50%"  ;
+            dom.style.top = "10%";       
+            dom.style.display = 'block'; 
+            setText("tdreppath", " Path: " + dbgrid.getValueAt(args.gridrow, 3));
+            showPanel('divExplore');
+        
+     }
+     function close_explore()
+     {
+        var dtree = document.getElementById("divExplore")
+        dtree.display ="none";
+         hidePanel('divExplore');
+     }
+      function fselect()
+        {
+            var sn = d3.aNodes[d3.selectedNode];
+            var npath = '/' + sn._p.name + '/' + sn.name;
+            
+            dbgrid.setColumn(3, npath);
+            
+            close_explore();
+        }     
+     function param_clicked(args)
+    {
+        datatable_popup = null;        
+        var rowvalues = dbgrid.getValueAt(args.datarow, 5) + "~" + dbgrid.getValueAt(args.datarow, 6) + '~' + dbgrid.getValueAt(args.datarow, 7) ;        
+        var dt = load_table(rowvalues);
+        var dom = document.getElementById("divcpopup");
+        var popup_type = document.getElementById("popup_type");
+        datatable_popup = dt;
+        popup_type.value = "param";
+        var xy = calcpos(document.getElementById("ddlRepMain"));
+            dom.style.left = "50%"  ;
+            dom.style.top = "10%";       
+            dom.style.display = 'block'; 
+            show_popup(dt,1,args);
+            
+    }
+     function role_clicked(args)
+    {
+        datatable_popup = null;
+        
+        var rowvalues = dbgrid.getValueAt(args.datarow, 11) + "~"        
+        var dt = load_roletable(rowvalues);
+        var dom = document.getElementById("divcpopup");
+        var popup_type = document.getElementById("popup_type");
+        datatable_popup = dt;
+        popup_type.value = "role";
+        var xy = calcpos(document.getElementById("ddlRepMain"));
+            dom.style.left = "50%"  ;
+            dom.style.top = "10%";       
+            dom.style.display = 'block'; 
+            show_popup(dt,2);
+            showPanel('divcpopup');
+    }
+
+    function add_report_item(args)
+    {
+         try
+         {
+            dbgrid.setColumn(2,document.getElementById("ddlRepMain").value );       
+         }
+         catch(e)
+         {
+            //alert("PLEASE SET REPORT SUB GROUP")
+         }
+                
+    }
+    function validate_entry(args)
+    {
+        if (args.value == 'Save') 
+        {
+            return true
+        }
+        
+        return false;
+    }
+    function grid_btn_save(args)
+    {
+        if (!confirm("Continue with Save?")) return;
+    
+        if (!validate_entry(args)) return;
+        
+        var gridid =    dbgrid.id;
+        var cbopgselected = document.getElementById(dbgrid.id + '_pg_select')
+        if (cbopgselected.selectedtIndex == 0 )
+            this.pg_no   = 1
+        else 
+            this.pg_no = parseInt(cbopgselected[cbopgselected.selectedIndex].text);
+        if (args.value == dbgrid.footer.save_button.value)
+        {            
+            ReportsLookup.applyEdits(args.additions, args.deletes,args.edits, updates_saved);            
+        }
+    }   
+   function grid_btn_save1(args)
+   {
+        if (args.value == dbgrid.footer.save_button.value) 
+        {
+            if (args.edits.length > 0)
+            {
+                edit_to_datatable_popup(args);
+            }
+            if (args.additions.length > 0)
+            {
+                add_to_datatable_popup(args);
+            }
+            if (args.deletes.length > 0)
+            {
+                //delete_to_datatable_popup(args);
+            }
+            var popuptype = get_popuptype();
+            if (popuptype == "param")
+            {
+                set_param_values();
+            }
+            else
+            {
+                set_role_values();
+            }
+        }
+   }
+   function edit_to_datatable_popup(args)
+   {
+     var newarr = args.edits.split("~");
+        for (i = 1 ;i < newarr.length ; i++)
+        {
+            var rval = newarr[i].split("|");
+            var popuptype = get_popuptype();
+            var sname = "";
+            var stype = "";
+            var sdisp = "";
+            var srole = "";
+                if (popuptype == "param")
+                {
+                    datatable_popup = new Table();
+                    sname = rval[1].split("^");
+                    row = new Row()
+                    row.paramname = sname[1];
+                    stype = rval[2].split("^");
+                    row.paramtype = stype[1];
+                    sdisp = rval[3].split("^");
+                    row.paramdisplay = sdisp[1];
+                    datatable_popup.addRow(row);
+                }
+                else
+                {
+                    datatable_popup = new Table();
+                    srole= rval[1].split("^");
+                    row = new cRow()
+                    row.role = srole[1];
+                    datatable_popup.addRow(row);
+                }
+       }
+       
+         
+  
+   }
+   function add_to_datatable_popup(args)
+   {
+        var newarr = args.additions.split("~");
+        for (i = 1 ;i < newarr.length ; i++)
+        {
+            var rval = newarr[i].split("|");
+            var popuptype = get_popuptype();
+            var s = null;
+                if (popuptype == "param")
+                {
+                    s = rval[1].split("^");
+                    row = new Row()
+                    row.paramname = s[1];
+                    s = rval[2].split("^");
+                    row.paramtype = s[1];
+                    s = rval[3].split("^");
+                    row.paramdisplay = s[1];
+                    datatable_popup.addRow(row);
+                }
+                else
+                {
+                    s = rval[1].split("^");
+                    row = new cRow()
+                    row.role = s[1];
+                    datatable_popup.addRow(row);
+                }
+       }
+   }
+   function updates_saved(rs)
+   {   
+        if (rs.error != null)
+        {
+            alert(rs.error);
+            return;
+        }
+        else
+        {
+             dbgrid.clearChanges();
+             datatable = rs.value
+             dbgrid.clearFilter();            
+             dbgrid.filter.enabled = false;   
+             dbgrid.refresh(datatable);
+             display_group();             
+             dbgrid.pg_position(this.pg_no);
+             alert("Successfully saved record.")
+        }
+    } 
+
+    function show_popup(table,rowopt,args)
+    {
+        load_custom_grid(table,rowopt,args);
+    }
+    // for DataTable Creation
+    function Row()
+	{
+		this.paramname = '';
+		this.paramtype = '';
+		this.paramdisplay = '';
+	}
+    function cRow()
+	{
+		this.role = '';		
+	}
+
+	function Table()
+	{
+
+		this.Rows = new Array();
+	}
+
+	Table.prototype.addRow = function(row)
+	{
+		this.Rows.push(row);
+	}
+	
+	function load_roletable(param)
+	{
+		var dt = new Table();
+		var ss = param.split('~');
+        var ss1 = ss[0].split(';');
+        for ( i = 0; i < ss1.length; i++)
+		{
+			if (ss1[i].length > 0)
+			{
+			    var row = new cRow();
+			    row.role = ss1[i];
+			    dt.addRow(row);
+			}
+		}
+		
+		return dt;
+	}
+	
+function load_table(param)
+{
+	var dt = new Table();
+	var ss = param.split('~');
+    var ss1 = ss[0].split('$');
+    var ss2 = ss[1].split('$');
+    var ss3 = ss[2].split('$');
+	for (i = 0; i < ss1.length; i++)
+	{
+		if (ss1[i].length > 0)
+		{
+		    var row = new Row();
+		    row.paramname = ss1[i];
+		    row.paramtype = ss2[i];
+		    row.paramdisplay = ss3[i];
+		    dt.addRow(row);
+		}
+	}
+
+	return dt;
+}
+
+
+function get_popuptype()
+{
+   var dom = document.getElementById("divcpopup")
+    dom.style.display = 'none';
+    var popup_type  = document.getElementById("popup_type").value
+    hidePanel('divcpopup');    
+    if (popup_type == "param")
+    {
+        return "param";
+    }
+    else
+    {
+        return "role";
+    }
+}
+function close_popup()
+{ 
+   var dom = document.getElementById("divcpopup")
+    dom.style.display = 'none';    
+    hidePanel('divcpopup');
+}
+function set_param_values()
+{
+    var paramname = "";
+    var paramtype = "";
+    var paramdisplay = "";
+    for (i = 0; i < datatable_popup.Rows.length ; i++)
+    {
+        if (datatable_popup.Rows[i] != null) 
+        {
+            paramname += datatable_popup.Rows[i].paramname + "$";
+            paramtype += datatable_popup.Rows[i].paramtype + "$";
+            paramdisplay += datatable_popup.Rows[i].paramdisplay + "$";
+        }
+    }
+    dbgrid.setColumn(5, paramname);
+    dbgrid.setColumn(6, paramtype);
+    dbgrid.setColumn(7, paramdisplay);
+}
+function set_role_values()
+{
+    var role = "";
+    for (i = 0; i < datatable_popup.Rows.length ; i++)
+    {
+        if (datatable_popup.Rows[i] != null)
+        role +=  datatable_popup.Rows[i].role + ";";        
+    }
+    dbgrid.setColumn(11, role);
+}
+
+function showPanel(divName)
+{
+    var div = document.getElementById(divName);
+    
+    divmask = new maskpanel();
+    divmask.show();
+    showDiv(divName, true);
+    
+    div.style.top = (((document.documentElement.clientHeight/2) + document.documentElement.scrollTop) - (div.offsetHeight/2)) + 'px';
+    div.style.left = (((document.documentElement.clientWidth/2) + document.documentElement.scrollLeft) - (div.offsetWidth/2)) + 'px';
+}
+
+function hidePanel(divName)
+{
+    showDiv(divName, false);
+    divmask.hide();
+}
+
+
+function showDiv(element, isVisible)
+{
+    if (isVisible == true)
+    {
+        document.getElementById(element).style.display = 'block';
+    }
+    else
+    {
+        document.getElementById(element).style.display = 'none';
+    }
+}
+// **************************************************************************************** //
+// *** Panel
+// **************************************************************************************** //
+var maskpanel = function()
+{
+    this.divobj;
+    
+    this.show = function()  
+    {
+        if(!document.getElementById("xdivmasking"))
+        {
+            var divEle = document.createElement('div');
+            divEle.setAttribute("id", "xdivmasking");
+            document.body.appendChild(divEle);
+            
+            var divSty = document.getElementById("xdivmasking").style;
+            divSty.position = "absolute"; 
+            divSty.top = "0px";
+            divSty.left = "0px";
+            divSty.zIndex = "46";
+            divSty.opacity = ".50";
+            divSty.backgroundColor="#000";
+            divSty.filter = "alpha(opacity=50)";
+ 
+            var divFram = document.createElement('iframe');
+            divFram.setAttribute("id", "xmaskframe");
+            document.body.appendChild(divFram);
+            divSty = document.getElementById("xmaskframe").style;
+            divSty.position = "absolute"; 
+            divSty.top = "0px"; 
+            divSty.left = "0px";
+            divSty.zIndex = "45";
+            divSty.border = "none";
+            divSty.filter = "alpha(opacity=0)";
+      }
+ 
+      this.divobj = document.getElementById("xdivmasking");
+      this.waitifrm = document.getElementById("xmaskframe");
+        
+      var dsh = document.documentElement.scrollHeight;
+      var dch = document.documentElement.clientHeight;
+      var dsw = document.documentElement.scrollWidth;
+      var dcw = document.documentElement.clientWidth;
+      var bdh = (dsh>dch)?dsh:dch;
+      var bdw = (dsw>dcw)?dsw:dcw;
+ 
+      this.waitifrm.style.height = this.divobj.style.height = bdh + 'px';
+      this.waitifrm.style.width = this.divobj.style.width = bdw + 'px';
+      this.waitifrm.style.display = this.divobj.style.display = "block";
+   }
+   
+   this.hide = function()
+   {
+      this.waitifrm.style.display = this.divobj.style.display = "none";
+   }
+}
+
+function setDrag()
+{
+    isdrag=false
+}
+
+/**** FOR REPORT VIEWER ****/
+function btnHExport_onclick() 
+{
+    var urlparam1 = document.getElementById("txtmerge").value;
+    var urlparam2 =  document.getElementById("txtparam").value;
+    IRSWorld.Reports.Pages.Report_Viewer.ExportReport(urlparam1,urlparam2,HExport_callback)
+}
+function HExport_callback(res)
+{
+    if (res.value.toString().indexOf("ERROR") < 0 )
+    {
+        
+        var objwin = window.open(replace_location() + "/EXPORTDIR/" + res.value ,"mywindow","");
+    }
+}
+function replace_location()
+{
+    var l = window.location.toString();
+    return l.substring(0, l.length - 'Report_Viewer.aspx'.length )
+    
+}
+function handle_print()
+{
+  
+    setText("tdErrorMessage",document.getElementById("hfErrorMessage").value);
+    
+}
+function report_preview_callback(res)
+{
+    if (res.value == true)
+    {
+        document.getElementById("divloading").style.display ="none";
+        document.getElementById("divreportgen").style.display ="block";    
+        
+    }
+    else 
+    {
+        check_report();
+    }
+}
+function check_report(pass)
+{
+    pass = IRSWorld.Reports.Pages.Report_Viewer.check_session();
+    if (!pass)
+    {
+        window.setTimeOut("check_report(" + pass + ")","1000");
+    }
+    else
+    {
+        document.getElementById("divloading").style.display ="none";
+        document.getElementById("divreportgen").style.display ="block";    
+    }
+}
+ function load_page_and_print()
+{
+  this.handle_print();
+}
+function check_call()
+{
+    var dom = document.getElementById("txtclasscall")
+    if (dom.value == "FROMMODULE")
+        return false;
+    else 
+        return true;
+}
+function load_page_and_print_callback(res)
+{
+    var holder = document.getElementById("divreportgen")
+    if (res.value != "")
+    {
+        holder.innerHTML = res.value
+        printSpecial();
+    }
+}
+function check_print_to_printer()
+{
+    var txtbprinter = document.getElementById("txtprinttoprinter").value;
+    
+    if (txtbprinter.length > 0)
+    {
+        if (txtbprinter.indexOf("true") > -1)
+        {   
+            return true;
+        }
+    }
+    return false;
+    
+}
+function PrintWindow()
+{ 
+    //if (navigator.appName == "Microsoft Internet Explorer") 
+    //{ 
+    //     var PrintCommand = '< OBJECT ID="PrintCommandObject" WIDTH=0 HEIGHT=0 ';
+    //            PrintCommand += 'CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';
+    //            document.body.insertAdjacentHTML('beforeEnd', PrintCommand); 
+    //            PrintCommandObject.ExecWB(6, -1); PrintCommandObject.outerHTML = ""; } 
+    //else { window.print();} 
+}  
+function printSpecial() 
+{
+    if (document.getElementById != null) {
+    var html = '\n\n'; 
+    if (document.getElementsByTagName != null) { 
+    var headTags = document.getElementsByTagName("head"); 
+    if (headTags.length > 0) 
+    html += headTags[0].innerHTML;
+    } 
+    html += '\n< /HEAD>\n<BODY>\n';
+    var printReadyElem = document.getElementById("divreportgen"); 
+    if (printReadyElem != null) { 
+    html += printReadyElem.innerHTML; } 
+    else { 
+        alert("Could not find the printReady section in the HTML"); return; } 
+        html += '\n</BODY>\n</HTML>'; 
+    var printWin = window.open("","printSpecial"); 
+    printWin.document.open(); 
+    printWin.document.write(html); 
+    printWin.document.close(); 
+    if (check_print_to_printer()) printWin.print(); 
+    }
+    else { 
+    alert("Sorry, the print ready feature is only available in modern browsers."); 
+    } 
+ }
+ 
+ /**** end of REPORT VIEWER *****/

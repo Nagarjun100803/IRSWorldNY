@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVolumeofRemittancesCCA" targetNamespace="http://tempuri.org/dsVolumeofRemittancesCCA.xsd" xmlns:mstns="http://tempuri.org/dsVolumeofRemittancesCCA.xsd" xmlns="http://tempuri.org/dsVolumeofRemittancesCCA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsVolumeofRemittancesCCA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsVolumeofRemittancesCCA" msprop:Generator_DataSetName="dsVolumeofRemittancesCCA">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsVolumeofRemittancesCCA" msprop:Generator_UserTableName="dsVolumeofRemittancesCCA" msprop:Generator_RowDeletedName="dsVolumeofRemittancesCCARowDeleted" msprop:Generator_RowChangedName="dsVolumeofRemittancesCCARowChanged" msprop:Generator_RowClassName="dsVolumeofRemittancesCCARow" msprop:Generator_RowChangingName="dsVolumeofRemittancesCCARowChanging" msprop:Generator_RowEvArgName="dsVolumeofRemittancesCCARowChangeEvent" msprop:Generator_RowEvHandlerName="dsVolumeofRemittancesCCARowChangeEventHandler" msprop:Generator_TableClassName="dsVolumeofRemittancesCCADataTable" msprop:Generator_TableVarName="tabledsVolumeofRemittancesCCA" msprop:Generator_RowDeletingName="dsVolumeofRemittancesCCARowDeleting" msprop:Generator_TablePropName="_dsVolumeofRemittancesCCA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Remit_Method" msprop:Generator_UserColumnName="Remit_Method" msprop:Generator_ColumnVarNameInTable="columnRemit_Method" msprop:Generator_ColumnPropNameInRow="Remit_Method" msprop:Generator_ColumnPropNameInTable="Remit_MethodColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Volume" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Branch_Cash" msprop:Generator_UserColumnName="Branch_Cash" msprop:Generator_ColumnVarNameInTable="columnBranch_Cash" msprop:Generator_ColumnPropNameInRow="Branch_Cash" msprop:Generator_ColumnPropNameInTable="Branch_CashColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Volume_Cash" msprop:Generator_UserColumnName="Volume_Cash" msprop:Generator_ColumnVarNameInTable="columnVolume_Cash" msprop:Generator_ColumnPropNameInRow="Volume_Cash" msprop:Generator_ColumnPropNameInTable="Volume_CashColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Branch_Check" msprop:Generator_UserColumnName="Branch_Check" msprop:Generator_ColumnVarNameInTable="columnBranch_Check" msprop:Generator_ColumnPropNameInRow="Branch_Check" msprop:Generator_ColumnPropNameInTable="Branch_CheckColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Volume_Check" msprop:Generator_UserColumnName="Volume_Check" msprop:Generator_ColumnPropNameInRow="Volume_Check" msprop:Generator_ColumnVarNameInTable="columnVolume_Check" msprop:Generator_ColumnPropNameInTable="Volume_CheckColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Branch_ATM" msprop:Generator_UserColumnName="Branch_ATM" msprop:Generator_ColumnPropNameInRow="Branch_ATM" msprop:Generator_ColumnVarNameInTable="columnBranch_ATM" msprop:Generator_ColumnPropNameInTable="Branch_ATMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Volume_ATM" msprop:Generator_UserColumnName="Volume_ATM" msprop:Generator_ColumnPropNameInRow="Volume_ATM" msprop:Generator_ColumnVarNameInTable="columnVolume_ATM" msprop:Generator_ColumnPropNameInTable="Volume_ATMColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Start_Date" msprop:Generator_UserColumnName="Start_Date" msprop:Generator_ColumnPropNameInRow="Start_Date" msprop:Generator_ColumnVarNameInTable="columnStart_Date" msprop:Generator_ColumnPropNameInTable="Start_DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="End_Date" msprop:Generator_UserColumnName="End_Date" msprop:Generator_ColumnPropNameInRow="End_Date" msprop:Generator_ColumnVarNameInTable="columnEnd_Date" msprop:Generator_ColumnPropNameInTable="End_DateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

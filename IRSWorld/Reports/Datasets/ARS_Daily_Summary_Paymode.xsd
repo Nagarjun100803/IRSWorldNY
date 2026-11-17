@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ARS_Daily_Summary_Paymode" targetNamespace="http://tempuri.org/ARS_Daily_Summary_Paymode.xsd" xmlns:mstns="http://tempuri.org/ARS_Daily_Summary_Paymode.xsd" xmlns="http://tempuri.org/ARS_Daily_Summary_Paymode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ARS_Daily_Summary_Paymode" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ARS_Daily_Summary_Paymode" msprop:Generator_DataSetName="ARS_Daily_Summary_Paymode">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DS_ARS_DAILY_SUMMARY_PAYMODE" msprop:Generator_UserTableName="DS_ARS_DAILY_SUMMARY_PAYMODE" msprop:Generator_RowDeletedName="DS_ARS_DAILY_SUMMARY_PAYMODERowDeleted" msprop:Generator_TableClassName="DS_ARS_DAILY_SUMMARY_PAYMODEDataTable" msprop:Generator_RowChangedName="DS_ARS_DAILY_SUMMARY_PAYMODERowChanged" msprop:Generator_RowClassName="DS_ARS_DAILY_SUMMARY_PAYMODERow" msprop:Generator_RowChangingName="DS_ARS_DAILY_SUMMARY_PAYMODERowChanging" msprop:Generator_RowEvArgName="DS_ARS_DAILY_SUMMARY_PAYMODERowChangeEvent" msprop:Generator_RowEvHandlerName="DS_ARS_DAILY_SUMMARY_PAYMODERowChangeEventHandler" msprop:Generator_TablePropName="DS_ARS_DAILY_SUMMARY_PAYMODE" msprop:Generator_TableVarName="tableDS_ARS_DAILY_SUMMARY_PAYMODE" msprop:Generator_RowDeletingName="DS_ARS_DAILY_SUMMARY_PAYMODERowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Product_x0020_Code" msprop:Generator_UserColumnName="Product Code" msprop:Generator_ColumnPropNameInRow="Product_Code" msprop:Generator_ColumnVarNameInTable="columnProduct_Code" msprop:Generator_ColumnPropNameInTable="Product_CodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Agent_x0020_Ref_x0020_No" msprop:Generator_UserColumnName="Agent Ref No" msprop:Generator_ColumnPropNameInRow="Agent_Ref_No" msprop:Generator_ColumnVarNameInTable="columnAgent_Ref_No" msprop:Generator_ColumnPropNameInTable="Agent_Ref_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Tran_x0020_Ref_x0020_No" msprop:Generator_UserColumnName="Tran Ref No" msprop:Generator_ColumnPropNameInRow="Tran_Ref_No" msprop:Generator_ColumnVarNameInTable="columnTran_Ref_No" msprop:Generator_ColumnPropNameInTable="Tran_Ref_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Tran_x0020_Date" msprop:Generator_UserColumnName="Tran Date" msprop:Generator_ColumnPropNameInRow="Tran_Date" msprop:Generator_ColumnVarNameInTable="columnTran_Date" msprop:Generator_ColumnPropNameInTable="Tran_DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter" msprop:Generator_UserColumnName="Remitter" msprop:Generator_ColumnPropNameInRow="Remitter" msprop:Generator_ColumnVarNameInTable="columnRemitter" msprop:Generator_ColumnPropNameInTable="RemitterColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CCY" msprop:Generator_UserColumnName="CCY" msprop:Generator_ColumnPropNameInRow="CCY" msprop:Generator_ColumnVarNameInTable="columnCCY" msprop:Generator_ColumnPropNameInTable="CCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gross" msprop:Generator_UserColumnName="Gross" msprop:Generator_ColumnPropNameInRow="Gross" msprop:Generator_ColumnVarNameInTable="columnGross" msprop:Generator_ColumnPropNameInTable="GrossColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Charge" msprop:Generator_UserColumnName="Charge" msprop:Generator_ColumnPropNameInRow="Charge" msprop:Generator_ColumnVarNameInTable="columnCharge" msprop:Generator_ColumnPropNameInTable="ChargeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Net_x0020_Amount" msprop:Generator_UserColumnName="Net Amount" msprop:Generator_ColumnPropNameInRow="Net_Amount" msprop:Generator_ColumnVarNameInTable="columnNet_Amount" msprop:Generator_ColumnPropNameInTable="Net_AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" msprop:Generator_ColumnPropNameInTable="RateColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Equivalent_x0020_PHP" msprop:Generator_UserColumnName="Equivalent PHP" msprop:Generator_ColumnPropNameInRow="Equivalent_PHP" msprop:Generator_ColumnVarNameInTable="columnEquivalent_PHP" msprop:Generator_ColumnPropNameInTable="Equivalent_PHPColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Beneficiary" msprop:Generator_UserColumnName="Beneficiary" msprop:Generator_ColumnPropNameInRow="Beneficiary" msprop:Generator_ColumnVarNameInTable="columnBeneficiary" msprop:Generator_ColumnPropNameInTable="BeneficiaryColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Account_x0020_No" msprop:Generator_UserColumnName="Account No" msprop:Generator_ColumnPropNameInRow="Account_No" msprop:Generator_ColumnVarNameInTable="columnAccount_No" msprop:Generator_ColumnPropNameInTable="Account_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Agent_x0020_Name" msprop:Generator_UserColumnName="Agent Name" msprop:Generator_ColumnPropNameInRow="Agent_Name" msprop:Generator_ColumnVarNameInTable="columnAgent_Name" msprop:Generator_ColumnPropNameInTable="Agent_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateFrom" msprop:Generator_UserColumnName="DateFrom" msprop:Generator_ColumnPropNameInRow="DateFrom" msprop:Generator_ColumnVarNameInTable="columnDateFrom" msprop:Generator_ColumnPropNameInTable="DateFromColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateTo" msprop:Generator_UserColumnName="DateTo" msprop:Generator_ColumnPropNameInRow="DateTo" msprop:Generator_ColumnVarNameInTable="columnDateTo" msprop:Generator_ColumnPropNameInTable="DateToColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Equivalent" msprop:Generator_UserColumnName="Equivalent" msprop:Generator_ColumnPropNameInRow="Equivalent" msprop:Generator_ColumnVarNameInTable="columnEquivalent" msprop:Generator_ColumnPropNameInTable="EquivalentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Paymode" msprop:Generator_UserColumnName="Paymode" msprop:Generator_ColumnPropNameInRow="Paymode" msprop:Generator_ColumnVarNameInTable="columnPaymode" msprop:Generator_ColumnPropNameInTable="PaymodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_UserColumnName="Remarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

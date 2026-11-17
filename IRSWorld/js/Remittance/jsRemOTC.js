@@ -1,0 +1,7386 @@
+var iremit = new iremit();
+
+window.onresize = function()
+{
+    var viewportheight = 0;
+
+    if (typeof window.innerWidth != 'undefined')
+    {
+        viewportheight = window.innerHeight;
+    }
+    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientHeight != 'undefined')
+    {
+        viewportheight = document.documentElement.clientHeight;
+    }
+    else
+    {
+        viewportheight = document.getElementsByTagName('body')[0].clientHeight;
+    }
+
+    if (document.getElementById('div_otc_transaction_details') != null)
+    {
+        if (viewportheight < 500)
+        {
+            document.getElementById('div_otc_transaction_details').style.height   = viewportheight - 200 + "px";
+            document.getElementById('div_otc_transaction_details').style.overflow = 'auto';
+        }
+        else
+        {
+            document.getElementById('div_otc_transaction_details').style.height   = viewportheight - 300 + "px";
+            document.getElementById('div_otc_transaction_details').style.overflow = 'auto';
+        }
+    }
+}
+
+function execute_gfmc_nosearch(param)
+{
+    if (iremit != null)
+    {
+        iremit.gfmc_nosearch(param);
+    }
+}
+
+function execute_swipe_card(param)
+{
+    if (iremit != null)
+    {
+        iremit.swipe_usb_activated(param);
+    }
+}
+
+function execute_ajx_command(param)
+{
+    if (iremit != null)
+    {
+        iremit.exec_modal_lookup(param);
+    }
+}
+
+function execute_ajaxgridview_command(param)
+{
+    if (iremit != null)
+    {
+        iremit.run_grid_command(param);
+    }
+}
+
+function side_bar_link(modal_keycode, modal_return_value)
+{
+    if (iremit != null)
+    {
+        iremit.side_bar_link_execute(modal_keycode, modal_return_value);
+    }
+}
+
+function push_ach_payments_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.ach_payment_commit_result(param);
+    }
+}
+
+function push_ach_payment_result()
+{
+    if (iremit != null)
+    {
+        iremit.chk_ach_pay_result();
+    }
+}
+
+function click_calendar(objid,objt)
+{
+    popUpCalendar(objt, document.getElementById(objid), 'mm-dd-yyyy');
+}
+
+
+function push_override_hit_list_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.hit_list_override_response(param);
+    }
+}
+
+function push_denomination_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.denomination_commit_response(param);
+    }    
+}
+
+function otc_receipt_closeure()
+{
+    if (iremit != null)
+    {
+        iremit.email_receipt();
+    }    
+}
+
+function otc_daily_log_closure()
+{
+    if (iremit != null)
+    {
+        iremit.call_remit_cls();
+    }
+}
+
+function push_card_payment_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.card_payment_response(param);
+    }
+}
+
+function push_debit_account_payment_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.debit_account_payment_response(param);
+    }
+}
+
+function gfc_commit_response()
+{
+    if (iremit != null)
+    {
+        iremit.gfc_commit_response();
+    }
+}
+
+function gfc_response()
+{
+    if (iremit != null)
+    {
+        iremit.gfc_exec_response();
+    }
+}
+
+function push_commit_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.commit_response(param);
+    }
+}
+
+function push_remit_limit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.remit_limit_response(param);
+    }
+}
+
+function push_online_credit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.online_credit_response(param);
+    }
+}
+
+function push_credit_casa_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.credit_casa_response(param);
+    }
+}
+
+function push_exception_screen_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.exception_screen_result(param);    
+    }
+}
+
+function push_rem_proxy_screen_result()
+{
+    if (iremit != null)
+    {
+        iremit.rem_proxy_screen_result();
+    }
+}
+
+function push_rem_proxy_commit_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.remitter_proxy_commit_result(param);
+    }
+}
+
+function push_check_payments_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.check_payment_commit_result(param);
+    }
+}
+
+function transaction_reload_commit(param)
+{
+    if (iremit != null)
+    {
+        iremit.reload_commit_response(param);
+    }
+}
+
+function push_check_payment_result()
+{
+    if (iremit != null)
+    {
+        iremit.check_payment_result();
+    }
+}
+
+function push_bulk_payment_order_result()
+{
+    if (iremit != null)
+    {
+        iremit.bulk_payment_screen_response();
+    }    
+}
+
+function push_apas_batch_result()
+{
+    if (iremit != null)
+    {
+        iremit.apas_batch_screen_response();
+    }
+}
+
+function push_pay_any_where_result()
+{
+    if (iremit != null)
+    {
+        iremit.pay_anywhere_screen_result();
+    }    
+}
+
+function push_apas_online_result()
+{
+    if (iremit != null)
+    {
+        iremit.apas_online_screen_result();
+    }
+}
+
+function push_account_screen_result()
+{
+    if (iremit != null)
+    {
+        iremit.choose_account_screen_result();
+    }
+}
+
+function push_open_account_result()
+{
+    if (iremit != null)
+    {
+        iremit.account_open_screen_result();
+    }
+}
+
+function push_door_to_door_result()
+{
+    if (iremit != null)
+    {
+        iremit.door_to_door_screen_response();
+    }
+}
+
+function push_waive_charges_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.compute_waived_result(param);
+    }
+}
+
+function push_override_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.compute_override(param);
+    }
+}
+
+function push_commit_door_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.commit_door_response(param);
+    }
+}
+
+function push_open_accounts_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.open_accounts_commit_response(param);
+    }    
+}
+
+function push_door_to_door_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.door_to_door_commit_response(param);
+    }
+}
+
+function push_apas_batch_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.apas_batch_commit_response(param);
+    }
+}
+
+function push_apas_online_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.apas_online_commit_response(param);
+    }
+}
+
+function push_paw_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.pay_anywhere_commit_response(param);
+    }
+}
+
+function push_bpo_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.bulk_payment_commit_response(param);
+    }
+}
+
+function push_ord_data_entry_result(param)
+{
+    if (iremit != null)
+    {
+        iremit.ord_data_entry_result(param);
+    }
+}
+
+function push_ord_data_entry_commit_response(param)
+{
+    if (iremit != null)
+    {
+        iremit.ord_data_entry_commit_response(param);
+    }
+}
+
+function execute_search_client(param)
+{
+    if (iremit != null)
+    {
+        iremit.open_remitter_result(param);
+    }
+}
+
+function new_client()
+{
+    if (iremit != null)
+    {
+        iremit.new_client();
+    }
+}
+
+function cifclose()
+{
+    if (iremit != null)
+    {
+        if (self.returnValue != null && self.returnValue != "0")
+        {
+            iremit.close_client(self.returnValue);
+        }
+    }
+}
+
+function unload_customer_page()
+{
+    if (iremit != null)
+    {
+        iremit.unload_customer_page_response();
+    }
+}
+
+function remitter_id_closer()
+{
+    if (iremit != null)
+    {
+        iremit.remitter_id_closer_response();
+    }
+}
+
+function remote_override_result(result)
+{
+    if (iremit != null)
+    {
+        iremit.remote_override_response(result);
+    }
+}
+
+function push_card_payment_result(param)
+{
+    if (iremit != null)
+    {
+        // DO NOTHING
+    }
+}
+
+function push_ibft_src()
+{
+    if (iremit != null)
+    {
+        iremit.ibft_account_screen();
+    }
+}
+
+/* INSTAPAY ALYSSA SEPTEMBER 2019 */
+function push_instapay_src() {
+    if (iremit != null) {
+        iremit.instapay_account_screen();
+    }
+}
+/* INSTAPAY ALYSSA SEPTEMBER 2019 */
+
+function iremit()
+{
+    this.check_type_flag       = 0;
+    this.got_debit_credit_card = 0;    
+
+    this.got_limit = 0;
+    this.cash_management      = null;    
+    this.command_param        = null;
+    this.parameter_container  = null;
+    this.global_filipino_card = null;
+    this.hit_stream_lining    = null;
+    this.client_exp_ids       = null;
+
+    this.client_tag       = 0;
+    this.reset_tran       = 0;
+    this.reset_product    = 0;
+    this.rates_is_ready   = 0;    
+    this.allowed_cash_mgt = 0;
+    
+    this.account_currency         = 1;
+    this.net_to_bene_currency     = 1;
+    this.account_type             = 0;
+    this.product_charge_id        = 0;
+    this.product_code             = 0;
+    this.implementation_code      = 0;
+    this.payment_type             = 0;
+    this.remitting_currency       = 0;
+    this.remitted_amount          = 0;
+    this.charge_type              = 0;
+    this.compute_direction        = 0;
+    this.receipt_mode             = 0;
+    this.purpose                  = 0;
+    this.transaction_source       = 0;
+    this.source_of_funds          = 0;
+    this.charge_locally           = 0;
+    this.benef_acct_sequence      = 0;
+    this.transaction_status       = 0;
+    this.gross_rem_amount         = 0;
+    this.net_rem_amount           = 0;
+    this.net_to_bene_amount       = 0;
+    this.total_local_charge       = 0;
+    this.local_currency           = 0;
+    this.forex_target_to_account  = 0;
+    this.forex_target_to_source   = 0;
+    this.forex_target_to_usd      = 0;
+    this.forex_target_to_php      = 0;
+    this.forex_target_to_eur      = 0;
+    this.forex_source_to_target   = 0;
+    this.forex_source_to_usd      = 0;
+    this.forex_source_to_php      = 0;
+    this.total_backend_charges    = 0;
+    this.the_mode                 = 0;
+    this.transaction_sequence_id  = 0;
+    this.new_transaction_sequence_id  = 0;
+    this.otc_allowed_user         = 0;
+    this.on_behalf                = 0;
+    this.exceptions               = 0;
+    this.allow_card               = 0;
+    this.for_approval_tag         = 0;
+    this.remittance_amount_limit  = 0;
+    this.remittance_teller_limit  = 0;
+    this.remittance_superv_limit  = 0;
+    this.remittance_aggregate_tag = 0;
+    this.cash_aggregation_enabled = false;
+    this.cash_aggregation_amtlimit = 0;
+    this.incomplete_address       = 0;
+    this.swipe_ready              = 0
+    this.otc_tag_activated        = 0;
+    this.transaction_detail_branch_seq = 0;
+    
+
+    this.remitter_address_seq_id    = null;
+    this.remitter_contact_seq_id    = null;
+    this.beneficiary_address_seq_id = null;
+    this.beneficiary_contact_seq_id = null;
+
+    this.exception_screen         = null;
+    this.branch_code              = null;
+    this.remitter_id              = null;
+    this.beneficiary_id           = null;
+    this.grd_source               = null;
+    this.grd_search               = null;
+    this.grd_search_keyword       = null;
+    this.system_message           = null;
+    this.commons                  = null;
+    this.iModal                   = null;
+    this.override                 = null;
+    this.commit_now               = null;
+    this.waiver_screen            = null;
+    this.apas_batch               = null;
+    this.apas_online              = null;
+    this.pay_anywhere             = null;
+    this.open_accounts            = null;
+    this.choose_account           = null;
+    this.door_to_door             = null;
+    this.bulk_payment             = null;
+    this.rem_proxy                = null;
+    this.transaction_reference_no = null;
+    this.transaction_date         = null;
+    this.cheque_payments          = null;
+    this.debit_account_payments   = null;
+    this.card_payments            = null;
+    this.payment_error_msg        = null;
+    this.rem_details_error_msg    = null;
+    this.rem_proxy_msg            = null;
+    this.credit_casa              = null;    
+    this.aggregate                = null;
+    this.credit_online_message    = null;    
+    this.ord_data_entry           = null;
+    this.msg_prompt_control       = null;
+    this.global_modal_keycode      = null;
+    this.global_modal_return_value = null;
+    this.ach_payments              = null;
+    this.overseas_date_time        = null;
+    this.need_special_message      = false;
+    this.revert_status             = false;
+    this.charge_type_code          = '';
+    this.rem_currencycode          = null; //Added by Troy 20120628
+    this.dailyrecordkeepinglog     = null; //Added by Troy 20120806
+    this.debitcreditscreen         = null; //Added by Troy 20120810
+    this.txn_seqid                 = null; //Added by Troy 20120810
+    this.remittercifid             = null; //Added by Troy 20120903
+    
+    this.promo_status              = null;  //Added by Floven 20130228
+    this.promo_activated           = false; //Added by Floven 20130228
+    this.promo_ignored             = false; //Added by Floven 20130228
+    
+    this.ibft_scr = null; // Added by Boyet 03242014
+    this.gmfc_card_no = null; // Added by Boyet 05052015
+    
+    this.pending_ro_status = 0; //Added by Boyet 06082015
+    this.client_was_hit = 0; //Added by Boyet 07072015
+    this.charge_default_status = 0;//Added by Boyet 07302015
+    
+    //Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017
+    this.Remitter_AccountType = null;
+    this.Remitter_AccountNo =   null;
+    this.Remitter_RoutingNo =   null;
+    this.Remitter_BankName =   null;
+    this.ACH_Branch_Setup =   false;
+    this.IsRemitter_ACH =   false;
+    this.submitted_docs = false; //BOYET AND RANDY JAN 26 2017
+
+    this.instapay_src = null; //INSTAPAY ALYSSA SEPTEMBER 2019
+    this.otchit = null; // CJ Pendingovr session
+
+    this.set_computed_amount_to_control = function(beneficiary_amount, transaction_charge, peso_equivalent, amount_to_be_paid)
+    {
+        var com_method = new common_method();
+
+        setText("lbl_beneficiary_amount", com_method.to_currency(beneficiary_amount));
+        setText("lbl_transaction_charge", com_method.to_currency(transaction_charge));
+        setText("lbl_peso_equivalent",    com_method.to_currency(peso_equivalent));
+        setText("lbl_amount_to_be_paid",  com_method.to_currency(amount_to_be_paid));
+
+        if (parseInt(document.getElementById("txt_remit_amount").value) > 0)
+        {
+            document.getElementById("txt_remit_amount").value = com_method.to_currency(document.getElementById("txt_remit_amount").value);
+        }
+
+        if (parseFloat(iremit.remitted_amount) > 0)
+        {
+            if (isNaN(parseInt(beneficiary_amount)) == false)
+            {
+                if (parseInt(this.rates_is_ready) > 0)
+                {
+                    if (parseInt(this.product_charge_id) > 0)
+                    {
+                        iremit.disable_remittance_button(false); return;
+                    }
+                }
+            }
+        }
+
+        iremit.disable_remittance_button(true);
+    }
+    
+    this.open_msg_prompt = function(msg)
+    {
+        this.msg_prompt_control = new screen_msg_demo();
+        this.msg_prompt_control.open_screen();
+        this.msg_prompt_control.change_msg(msg);
+    }
+    
+    this.close_msg_prompt = function()
+    {
+        if (this.msg_prompt_control != null)
+        {
+            this.msg_prompt_control.close_screen();
+        }
+
+        this.msg_prompt_control = null;
+    }    
+
+    this.run_grid_command = function(param)
+    {
+        this.the_mode = parseInt(this.the_mode);
+        
+        if (this.the_mode == 1)
+        {
+            this.choose_account.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 2)
+        {
+            this.open_accounts.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 3)
+        {
+            this.apas_online.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 4)
+        {
+            this.pay_anywhere.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 5)
+        {
+            this.apas_batch.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 6)
+        {
+            this.cheque_payments.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 7)
+        {
+            this.door_to_door.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 8)
+        {
+            this.bulk_payment.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 9)
+        {
+            this.rem_proxy.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 10)
+        {
+            this.card_payments.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 11)
+        {
+            this.hit_stream_lining.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 12)
+        {
+            this.client_exp_ids.do_ajaxgridview(param);
+        }
+    }
+
+    this.disable_remittance_button = function(boolseye)
+    {
+        document.getElementById("btn_sendmoney").disabled = boolseye;
+        document.getElementById("btn_override").disabled  = boolseye;
+        document.getElementById("btn_waiver").disabled    = boolseye;
+        document.getElementById("btn_breakdown").disabled = boolseye;
+
+        if (this.remitter_id != null && this.remitter_id.length > 0)
+        {        
+            document.getElementById("btn_rem_aggregation").disabled = false;
+        }
+        else
+        {
+            document.getElementById("btn_rem_aggregation").disabled = true;
+        }
+
+        if (this.product_charge_id != null && parseInt(this.product_charge_id) > 0)
+        {        
+            document.getElementById("btn_breakdown").disabled = false;
+        }
+
+        if (this.product_charge_id != null && parseInt(this.product_charge_id) > 0)
+        {
+            document.getElementById("txt_remit_amount").focus();
+        }
+        else
+        {
+            document.getElementById("txt_swipe_container").focus();
+        }
+
+        if (this.product_charge_id != null && parseInt(this.product_charge_id) > 0)
+        {
+            if (parseInt(this.remitted_amount) < 1)
+            {
+                document.getElementById("btn_sendmoney").disabled = true;
+            }
+        }
+    }
+
+    this.gfc_exec_response = function () {
+        // CJ GFC FIX Change product
+        var bname = IRSWorld.TranClass.RemTranGFMCCommons.get_branch_name();
+        setText("lbl_account_number", this.global_filipino_card.CKAcct);
+        if (bname != null) {
+            setText("lbl_branch_name", bname.value.toString()); 
+        }
+        // CJ GFC FIX Change product
+        this.benef_acct_sequence = 0;
+        this.account_currency = parseInt(this.global_filipino_card.CurrCode);
+        this.net_to_bene_currency = parseInt(this.global_filipino_card.CurrCode);
+    }
+    
+    this.gfc_commit_response = function()
+    {
+        if (this.global_filipino_card._Details != null && this.global_filipino_card._Details.length > 0)
+        {
+            if (this.global_filipino_card._Details[0] != null && parseInt(this.global_filipino_card._Details[0]) == 0)
+            {
+                this.get_gfc_seq_to_remittance();
+            }
+            else if (this.global_filipino_card._Details[1] != null)
+            {
+                alert(this.global_filipino_card._Details[1]);
+            }
+        }
+    }
+    
+    this.rates_is_ok = function()
+    {
+        setText("lbl_otc_caption", "SYSTEM IS CHECKING CURRENCY RATES..."); 
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); setText("lbl_otc_caption", "SERVER NOT RESPONDING. CHECKING AVAILABILITY OF CURRENCY RATES FAILED."); alert("Server not responding. Checking availability of currency rates failed.");
+        }
+
+        this.open_msg_prompt("Checking currency rate ..."); IRSWorld.Remittance.RemOTC.rates_is_ok(this.rates_is_ok_callback);
+    }    
+    
+    this.rates_is_ok_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.rates_is_ready = 0;
+
+        if (result != null)
+        {
+            if (result.value == true)
+            {
+                iremit.rates_is_ready = 1; 
+            }
+        }
+
+        iremit.load_sidebar();
+    }
+    
+    this.get_transacting_branch = function()
+    {
+        this.disable_remittance_button(true);
+        
+        //Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017
+        this.Check_ACH_Branch_Extract_Setup();
+        
+        setText("lbl_beneficiary_amount", "0.00");
+        setText("lbl_transaction_charge", "0.00");
+        setText("lbl_peso_equivalent",    "0.00");
+        setText("lbl_amount_to_be_paid",  "0.00");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking user credentials failed or user session has expired."); return;
+        }
+        
+        this.open_msg_prompt("Checking user credentials ..."); IRSWorld.Remittance.RemOTC.get_user_branchcode(this.get_transacting_branch_callback);
+    }        
+
+    this.get_transacting_branch_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null && result.value != null && result.value != "")
+        {
+            var branch_result = result.value.split("~");
+            
+            setText("lbl_transaction_date", branch_result[1]);
+            
+            iremit.branch_code      = branch_result[0];
+            iremit.transaction_date = branch_result[1];
+            iremit.rates_is_ok();
+        }
+        else
+        {
+            spawn_errpage("SESSION EXPIRED");
+        }
+    }
+    
+    this.get_sidebar_list = function()
+    {
+        var sidebar;
+
+        if (this.remitter_id == null)
+        {
+            /* ADDED BY DDC 20140606 */
+            if (iremit.branch_code != null && iremit.branch_code == '502')
+            {
+                sidebar = new Array
+                (
+                    new Array(1, 0, 'Search Client', 'javascript:iremit.clear_session_pendingovr();'), // CJ Fix on Refresh for pending override
+                    new Array(5,0,'Search Hi-Grade Client', 'javascript:side_bar_link("CLIENT_UNIQUE");'),
+                    new Array(4,0,'Enroll / Modify Client', 'javascript:new_client();')
+                );
+            }
+            else
+            {
+                sidebar = new Array
+                (
+                    new Array(1, 0, 'Search Client', 'javascript:iremit.clear_session_pendingovr();'), // CJ Fix on Refresh for Pending override
+                    new Array(4,0,'Enroll / Modify Client', 'javascript:new_client();')
+                );
+            }
+        }
+        else
+        {
+            if (this.product_code == null || this.product_code < 1)
+            {
+                sidebar = new Array
+                (
+                    new Array(1,0,'Send Money using Branch Product',   'javascript:side_bar_link("PRODSET","PRODUCT");'),
+                    new Array(2,0,'Send Money using Beneficiary Setup','javascript:side_bar_link("PRODBENEF");'),
+                    new Array(3,0,'Cancel Transaction',                'javascript:side_bar_link("CANCELTRANSACTION");')
+                );
+            }
+            else
+            {
+                if (this.on_behalf != null && parseInt(this.on_behalf) == 1)
+                {
+                    sidebar = new Array
+                    (
+                        new Array(10,0,  'Payment Type',          'javascript:side_bar_link("PRODSET", "PAYMENT");'),
+                        new Array(11,0,  'Remitting Currency',    'javascript:side_bar_link("PRODSET", "RCURRENCY");'),
+                        new Array(12,0,  'Charge Type',           'javascript:side_bar_link("PRODSET", "CHARGETYPE");'),
+                        new Array(13,0,  'Receipt Mode',          'javascript:side_bar_link("LOOKUP", "ReceiptMode");'),
+                        new Array(14,0,  'Purpose',               'javascript:side_bar_link("LOOKUP", "TranxPurpose");'),
+                        new Array(15,0,  'Transaction Source',    'javascript:side_bar_link("LOOKUP", "TranxSource");'),
+                        new Array(16,0,  'Source of Fund',        'javascript:side_bar_link("LOOKUP", "SourceOfFunds");'),
+                        new Array(99,0,  'Change Representative', 'javascript:side_bar_link("CHANGEREPRESENTATIVE");'),
+                        new Array(100,0, 'Change Product',        'javascript:side_bar_link("CHANGEPRODUCT");'),
+                        new Array(101,0, 'Change Client',         'javascript:side_bar_link("CHANGECLIENT");'),
+                        new Array(102,0, 'Update Other Infos.',   'javascript:side_bar_link("OPENTXNOTHERS");'),
+                        new Array(103,0, 'Update Client Record',  'javascript:side_bar_link("CIFUPDATERECORD");'),
+                        new Array(104,0, 'Update Client ID',      'javascript:side_bar_link("CIFUPDATEID");'),
+                        new Array(105,0, 'Cancel Transaction',    'javascript:side_bar_link("CANCELTRANSACTION");')
+                    );
+                }
+                else
+                {
+                    sidebar = new Array
+                    (
+                        new Array(10,0,  'Payment Type',         'javascript:side_bar_link("PRODSET", "PAYMENT");'),
+                        new Array(11,0,  'Remitting Currency',   'javascript:side_bar_link("PRODSET", "RCURRENCY");'),
+                        new Array(12,0,  'Charge Type',          'javascript:side_bar_link("PRODSET", "CHARGETYPE");'),
+                        new Array(13,0,  'Receipt Mode',         'javascript:side_bar_link("LOOKUP", "ReceiptMode");'),
+                        new Array(14,0,  'Purpose',              'javascript:side_bar_link("LOOKUP", "TranxPurpose");'),
+                        new Array(15,0,  'Transaction Source',   'javascript:side_bar_link("LOOKUP", "TranxSource");'),
+                        new Array(16,0,  'Source of Fund',       'javascript:side_bar_link("LOOKUP", "SourceOfFunds");'),
+                        new Array(100,0, 'Change Product',       'javascript:side_bar_link("CHANGEPRODUCT");'),
+                        new Array(101,0, 'Change Client',        'javascript:side_bar_link("CHANGECLIENT");'),
+                        new Array(102,0, 'Update Other Infos.',  'javascript:side_bar_link("OPENTXNOTHERS");'),
+                        new Array(103,0, 'Update Client ID',      'javascript:side_bar_link("CIFUPDATEID");'),
+                        new Array(104,0, 'Inquire Account',      'javascript:side_bar_link("INQACCOUNT");'),
+                        new Array(105,0, 'Update Client Record', 'javascript:side_bar_link("CIFUPDATERECORD");'),
+                        new Array(106,0, 'Cancel Transaction',   'javascript:side_bar_link("CANCELTRANSACTION");')                        
+                    );
+                }
+                if (this.branch_code == '1170')
+                {
+                    sidebar = new Array
+                    (
+                        new Array(10,0,  'Payment Type',         'javascript:side_bar_link("PRODSET", "PAYMENT");'),
+                        new Array(11,0,  'Remitting Currency',   'javascript:side_bar_link("PRODSET", "RCURRENCY");'),
+                        new Array(12,0,  'Charge Type',          'javascript:side_bar_link("PRODSET", "CHARGETYPE");'),
+                        new Array(13,0,  'Receipt Mode',         'javascript:side_bar_link("LOOKUP", "ReceiptMode");'),
+                        new Array(14,0,  'Purpose',              'javascript:side_bar_link("LOOKUP", "TranxPurpose");'),
+                        new Array(15,0,  'Transaction Source',   'javascript:side_bar_link("LOOKUP", "TranxSource");'),
+                        new Array(16,0,  'Source of Fund',       'javascript:side_bar_link("LOOKUP", "SourceOfFunds");'),
+                        new Array(98,0,  'ORD Other Infos.',     'javascript:side_bar_link("OPENTXNORDOTHERS");'),
+                        new Array(99,0,  'ORD Batch Infos.',     'javascript:side_bar_link("OPENTXNORDBATCHSUMMARY");'),
+                        new Array(100,0, 'Change Product',       'javascript:side_bar_link("CHANGEPRODUCT");'),
+                        new Array(101,0, 'Change Client',        'javascript:side_bar_link("CHANGECLIENT");'),
+                        new Array(102,0, 'Update Other Infos.',  'javascript:side_bar_link("OPENTXNOTHERS");'),
+                        new Array(103,0, 'Update Client Record', 'javascript:side_bar_link("CIFUPDATERECORD");'),
+                        new Array(104,0, 'Update Client ID',      'javascript:side_bar_link("CIFUPDATEID");'),
+                        new Array(105,0, 'Cancel Transaction',   'javascript:side_bar_link("CANCELTRANSACTION");')
+                    );
+                }
+            }
+        }
+
+        setText("lbl_transaction_date", iremit.transaction_date); return sidebar;
+    }
+
+    this.load_sidebar = function()
+    {
+        if (document.getElementById("txt_swipe_container") != null)
+        {
+            document.getElementById("txt_swipe_container").focus();
+        }
+
+        if (parseInt(this.reset_tran) > 0 || parseInt(this.rates_is_ready) > 0)
+        {
+            this.set_otc_preferred_tag(); return;
+        }
+        else
+        {
+            if (parseInt(this.rates_is_ready) == 0)
+            {
+                document.getElementById("btn_otc_remitter_search").disabled    = true;
+                document.getElementById("btn_otc_beneficiary_search").disabled = true;
+
+                alert("Incomplete currency rates. Please check!"); setText("lbl_otc_caption","CURRENCY RATES NOT PROPERLY DEFINED.");  return;
+            }
+        }
+
+        setText("lbl_otc_caption", "REMITTANCE INFORMATION");
+    }
+    
+    this.gfmc_nosearch = function(cardno)
+    {
+        this.gmfc_card_no = null;
+    
+        if (this.iModal != null)
+        {
+            this.iModal.close_modal_window();
+            this.iModal = null;
+        }
+
+        if (cardno != null && cardno != '')
+        {
+            this.gmfc_card_no = cardno;
+            this.open_msg_prompt("Checking GFMC information ..."); IRSWorld.Remittance.RemOTC.get_loyalty_info(cardno, this.gfmc_nosearch_callback); return;
+        }
+
+        alert("Please enter valid GFMC number");
+    }
+    
+    this.gfmc_nosearch_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        if (result != null && result.value != null)
+        {
+            var ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                iremit.open_gfmc_nosearch_benef_result(ds); return;
+            }
+        }
+
+        alert('No record found!');
+    }
+    
+    this.open_gfmc_nosearch_benef_result = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null)
+        {
+            if (result.Tables[0].Rows.length > 1)
+            {
+                this.open_gfmc_multiple_remitter();
+            }
+            else if (result.Tables[0].Rows.length = 1)
+            {
+                var remitter_cifid = result.Tables[0].Rows[0].REM_CIFID;
+                var beneficiary_cifid = result.Tables[0].Rows[0].BENEF_CIFID;
+                var gfmc_account_seq = result.Tables[0].Rows[0].GFMCACCTSEQID;
+                
+                this.open_gfmc_multiple_remben(remitter_cifid, beneficiary_cifid, gfmc_account_seq);
+            }
+            else
+            {
+                alert("Remitter has no enrolled beneficiary.");
+            }
+        }
+    }
+    
+    this.open_gfmc_multiple_remitter = function()    
+    {
+        if (this.gmfc_card_no == null || this.gmfc_card_no == '')
+        {
+            this.gmfc_card_no = '';
+        }
+
+        this.grd_search_keyword = "GFC_REMITTER_SEARCH";
+        this.grd_source  = "otc_gfmc_mul_remitter~" + this.gmfc_card_no;
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, iremit.grd_source, 0 , null);
+    }
+    
+    this.open_gfmc_multiple_remben = function(remitter_cifid, beneficiary_cifid, gfmc_account_seq)
+    {
+        if (remitter_cifid == null || remitter_cifid == '')
+        {
+            remitter_cifid = '';
+        }
+
+        if (beneficiary_cifid == null || beneficiary_cifid == '')
+        {
+            beneficiary_cifid = '';
+        }
+
+        if (gfmc_account_seq == null || gfmc_account_seq == '')
+        {
+            gfmc_account_seq = '0';
+        }
+
+        iremit.grd_search_keyword = "BENEFICIARY_SEARCH";
+        iremit.grd_source  = "otc_gfc_benefsearch~" + remitter_cifid + '~' + beneficiary_cifid + '~' + gfmc_account_seq;
+        iremit.grd_search  = new grid_selector();
+        iremit.grd_search.open_selection_grid(null, iremit.grd_source, 0 , null);
+    }
+
+    this.swipe_usb_activated = function(cardno)
+    {
+        if (this.product_charge_id == 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Checking remitter information failed."); return;
+            }
+            
+            var swipe_content_len = document.getElementById("txt_swipe_container").value; document.getElementById("txt_swipe_container").value = "";
+
+            if (cardno != null && cardno != "")
+            {
+                swipe_content_len = cardno;
+            }
+
+            if (swipe_content_len != null && swipe_content_len.length > 0)
+            {
+                swipe_content_len = swipe_content_len.replace(";","");
+                swipe_content_len = swipe_content_len.replace("?","");
+                swipe_content_len = swipe_content_len.split("=");
+
+                if (swipe_content_len != null)
+                {
+                    if (parseInt(swipe_content_len.length) >= 1)
+                    {
+                        this.open_msg_prompt("Checking Loyalty information ...");
+                        IRSWorld.Remittance.RemOTC.get_loyalty_info(swipe_content_len[0], this.swipe_usb_activated_callback); return;
+                    }
+                }
+            }
+        }
+        else
+        {
+            alert("Current transaction detected. Please cancel transaction if you want to change remitter.");
+        }
+    }
+
+    this.swipe_usb_gfc_remitter_card_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (iremit.swipe_ready != null && parseInt(iremit.swipe_ready) > 0 && iremit.remitter_id != null && iremit.remitter_id != "")
+        {
+            alert("Current transaction detected. Please cancel transaction if you want to change remitter."); return;
+        }
+        
+        if (result != null)
+        {
+            var ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                var remitter_id = ds.Tables[0].Rows[0].CIFID;
+                
+                if (remitter_id != null)
+                {
+                    var param = "~~~" + remitter_id + "~~~False"; 
+                    iremit.open_remitter_result(param); 
+                    //iremit.swipe_ready = 1; 
+                    return;
+                }
+            }
+            else
+            {
+                alert("Make sure that Loyalty card number is registered to remitters other ids.");
+            }
+        }
+
+        this.swipe_ready = 0; // RESET SWIPE TO 0 IF REMITTER ID IS NOT FOUND.
+    }
+
+    this.swipe_usb_activated_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (iremit.swipe_ready != null && parseInt(iremit.swipe_ready) > 0 && iremit.remitter_id != null && iremit.remitter_id != "")
+        {
+            alert("Current transaction detected. Please cancel transaction if you want to change remitter."); return;
+        }
+
+        if (result != null)
+        {
+            var ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                var remitter_id = ds.Tables[0].Rows[0].CIFID;
+                
+                if (remitter_id != null)
+                {
+                    var param = "~~~" + remitter_id + "~~~False"; //"~"; 
+                    iremit.open_remitter_result(param); 
+                    //iremit.swipe_ready = 1; 
+                    return;
+                }
+            }
+            else
+            {
+                alert("Make sure that Loyalty card number is registered to remitters other ids.");
+            }
+        }
+
+        this.swipe_ready = 0; // RESET SWIPE TO 0 IF REMITTER ID IS NOT FOUND.
+    }
+
+    this.load_unload_sidebar = function()
+    {
+        var div  = document.getElementById("div_transaction_menu");
+        var cset = div.style.display;
+                
+        div.style.display = (cset == "block") ? "none" : "block";
+        
+        setText("anchor_off", (cset == "block") ? String.fromCharCode(187) : String.fromCharCode(171));
+        document.getElementById('td_remittance').style.width = (cset == "block") ? "0%" : "220px";
+    }
+
+    this.parse_code = function()
+    {
+        this.product_code        = parseInt(this.product_code); 
+        this.implementation_code = parseInt(this.implementation_code);
+        this.payment_type        = parseInt(this.payment_type);
+        this.remitting_currency  = parseInt(this.remitting_currency); 
+        this.charge_type         = parseInt(this.charge_type);
+    }
+
+    this.side_bar_link_execute = function(modal_keycode, modal_return_value)
+    {
+        this.global_modal_keycode      = modal_keycode;
+        this.global_modal_return_value = modal_return_value;
+        this.check_current_irsw_session();
+    }
+    
+    this.check_current_irsw_session = function(key_code)
+    {
+        if (key_code != null)
+        {
+            var content_type = typeof key_code;
+
+            if (content_type.toString().toUpperCase() == "OBJECT")
+            {
+                var e = window.event || key_code;
+
+                var keynum      = e.charCode || e.keyCode || e.which;
+                var src_element = e.target   || e.srcElement;
+
+                this.global_modal_keycode      = null;
+                this.global_modal_return_value = null;
+                
+                if (src_element.id.toString().toUpperCase() == "TXT_SWIPE_CONTAINER")
+                {
+                    if (keynum == 13)
+                    {
+                        this.swipe_usb_activated(""); return;
+                    }
+                }
+                else if (src_element.id.toString().toUpperCase() == "TXT_REMIT_AMOUNT")
+                {
+                    if (keynum == 13)
+                    {
+                        this.global_modal_keycode      = "COMPUTE_NOW";
+                        this.global_modal_return_value = keynum;
+
+                        if (e.preventDefault)  e.preventDefault();
+                        if (e.stopPropagation) e.stopPropagation();
+                    }
+                }
+            }
+            else
+            {
+                this.global_modal_keycode = key_code;
+            }
+        }
+
+        if (this.global_modal_keycode != null && this.global_modal_keycode.length > 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                alert("Server not responding. Checking user session failed."); return;
+            }
+
+            IRSWorld.Remittance.RemOTC.current_irsworld_session_expired(this.check_current_irsw_session_callback);
+        }
+    }
+    
+    this.check_current_irsw_session_callback = function(result)
+    {
+        if (iremit.global_modal_keycode == null)
+        {
+            return;
+        }
+
+        if (result != null && result.value != null)
+        {
+
+            if (result.value == false)
+            {
+                iremit.promo_activated = false;
+                
+                switch(iremit.global_modal_keycode.toUpperCase())
+                {
+                    case "CLIENT"                 : iremit.open_search_client();break;
+                    case "LOOKUP"                 : iremit.modal_lookup(iremit.global_modal_return_value);break;
+                    case "PRODSET"                : iremit.modal_product_setup(iremit.global_modal_return_value);break;
+                    case "PRODBENEF"              : iremit.modal_beneficiary_prod_setup("PRODUCT");break;
+                    case "CHANGEPRODUCT"          : iremit.replace_product();break;
+                    case "CHANGECLIENT"           : iremit.replace_client();break;
+                    case "CANCELTRANSACTION"      : iremit.cancel_transaction();break;
+                    case "RETURNTXN"              : iremit.load_sidebar();break;
+                    case "CHANGEREPRESENTATIVE"   : iremit.open_remitter_proxy_screen();break;
+                    case "OPENTXNOTHERS"          : iremit.open_remittance_extra_details();break;
+                    case "OPENTXNORDOTHERS"       : iremit.open_ord_screen();break;
+                    case "INQACCOUNT"             : iremit.open_acct_inquiry_screen();break;
+                    case "OPENTXNORDBATCHSUMMARY" : iremit.open_ord_batch_summary(); break;
+                    case "COMMIT_REMITTANCE"      : iremit.get_overseas_datetime(); break;                     
+                    case "OPEN_WAIVED"            : iremit.compute_waived(); break;
+                    case "OPEN_OVERRIDE"          : iremit.open_override(); break;
+                    case "OPEN_BREAKDOWN"         : iremit.modal_compute_breakdown(); break;
+                    case "OPEN_AGGREGATES"        : iremit.rem_aggregates(); break;
+                    case "OPEN_BENEFICIARY"       : iremit.open_beneficiary_last_result();break;
+                    case "COMPUTE_NOW"            : iremit.check_amt(iremit.global_modal_return_value); break;
+                    case "CIFUPDATERECORD"        : iremit.open_customer_info_page(); break;
+                    case "CIFUPDATEID"            : iremit.open_remitter_id_exp(function(){}); break;
+                    case "CLIENT_UNIQUE"          : iremit.search_hi_grade(); break;
+                }
+                
+                return;
+            }
+        }
+
+        alert("Session expired."); spawn_errpage("SESSION EXPIRED");
+    }
+    
+    this.get_overseas_datetime = function()    
+    {
+        this.revert_status = false;
+        this.disable_remittance_button(true); 
+        this.open_msg_prompt("Checking overseas local date ...");
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. loading overseas date failed.");
+        }
+
+        /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+        if (parseInt(this.product_code) == 258) {
+            this.disable_remittance_button(true);
+            var instapay_max_amount = IRSWorld.Remittance.RemOTC.get_instapay_setup();
+            var instapaybank = getText("lbl_branch_name");
+            var arr_instapaybank = instapaybank.split("-");
+            var instapay_bankvalidation = IRSWorld.Remittance.RemOTC.Instapay_BankValidation(arr_instapaybank[0].toString());
+
+            if (instapay_bankvalidation.value == "OK") {
+                if ((parseFloat(instapay_max_amount.value).toFixed(2)) != null || (parseFloat(instapay_max_amount.value).toFixed(2)) != "") {
+                    if (parseFloat((parseFloat(this.net_to_bene_amount).toFixed(2))) > parseFloat(parseFloat(instapay_max_amount.value).toFixed(2))) {
+                        alert("Amount entered (" + thousands_separators(parseFloat(this.net_to_bene_amount)) + ") is not valid!\n Maximum amount for Instapay is (" + thousands_separators(instapay_max_amount.value) + ") pesos only."); return iremit.close_msg_prompt();
+                    }
+                    else { IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback); }
+                }
+                else { IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback); }
+            }
+            else {
+                alert(instapay_bankvalidation.toString());
+                this.close_msg_prompt();
+                return;
+            }
+        }
+        // CJ RFC: 25631 - SSS Pension Exception
+        else if (parseInt(this.product_code) == 10 || parseInt(this.product_code) == 11) { //Rapid Remit at Credit to Account 
+
+            //lbl_account_number
+            var rapidremitAccNo = document.getElementById('lbl_account_number').value;
+            var res = IRSWorld.TranClass.RemTranGFMCCommons.RapidRemitDetails_(iremit.remittercifid, iremit.get_account_number_txt(), 0);
+            /* RFC-26582 - Pending Override (GFC WS is down) */
+            if (res.value != null || res.value != '' || res.value != 'null') {
+                if (res.value == '04') {
+                    alert("Error Message: Remittance is not allowed for this account");
+                    iremit.close_msg_prompt();
+                }
+                else {
+                    IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+                }
+            }
+            else {
+                IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+            }
+            /* RFC-26582 - Pending Override (GFC WS is down) */
+        }
+        /* 3D THRESHOLD START */
+        else if (parseInt(this.product_code) == 8 || parseInt(this.product_code) == 9) {
+            //var threshold_flag = IRSWorld.Remittance.RemOTC.get_threshold_3d_flag();
+
+            if (this.net_to_bene_currency != null || this.net_to_bene_currency != "") {
+                if (this.net_to_bene_currency == "2") //USD
+                {
+                    var threshold_amount = IRSWorld.Remittance.RemOTC.get_threshold_3d(this.net_to_bene_currency);
+
+                    if ((parseFloat(threshold_amount.value).toFixed(2)) != null || (parseFloat(threshold_amount.value).toFixed(2)) != "") {
+                        if ((parseFloat(parseFloat(this.net_to_bene_amount).toFixed(2))) <= parseFloat(parseFloat(threshold_amount.value).toFixed(2))) {
+                            var threshold_min = IRSWorld.Remittance.RemOTC.get_threshold_3d_min(this.net_to_bene_currency);
+
+                            if ((parseFloat(parseFloat(this.net_to_bene_amount).toFixed(2))) >= parseFloat(parseFloat(threshold_min.value).toFixed(2))) {
+                                var threshold_inc = IRSWorld.Remittance.RemOTC.get_threshold_3d_inc(this.net_to_bene_currency);
+                                var amount = (parseFloat(parseFloat(this.net_to_bene_amount).toFixed(2))) / parseFloat(parseFloat(threshold_inc.value).toFixed(2));
+                                var result = (amount - Math.floor(amount)) !== 0;
+
+                                if (result) {
+                                    alert(" Amount entered (" + thousands_separators(parseFloat(this.net_to_bene_amount)) + ") is not incremental to (" + thousands_separators(threshold_inc.value) + ").");
+                                    this.close_msg_prompt();
+                                    return;
+                                }
+                                else {
+                                    /* Passed the min threshold */
+                                    IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+                                }
+                            }
+                            else {
+                                alert(" Amount entered (" + thousands_separators(parseFloat(this.net_to_bene_amount)) + ") did not meet the minimum threshold amount. The minimum amount for Door-to-Door transaction is (" + thousands_separators(threshold_min.value) + ").");
+                                this.close_msg_prompt();
+                                return
+                            }
+                        }
+                        else {
+                            alert(" Amount entered (" + thousands_separators(parseFloat(this.net_to_bene_amount)) + ") exceeds the maximum threshold amount. The maximum amount for Door-to-Door transaction is (" + thousands_separators(threshold_amount.value) + ") only.");
+                            this.close_msg_prompt();
+                            return;
+                        }
+                    }
+                }
+                else if (this.net_to_bene_currency == "1") { //PESO
+                    var threshold_amount = IRSWorld.Remittance.RemOTC.get_threshold_3d(this.net_to_bene_currency);
+
+                    if ((parseFloat(threshold_amount.value).toFixed(2)) != null || (parseFloat(threshold_amount.value).toFixed(2)) != "") {
+                        if ((parseFloat(parseFloat(this.net_to_bene_amount).toFixed(2))) > parseFloat(parseFloat(threshold_amount.value).toFixed(2))) {
+                            alert(" Amount entered (" + thousands_separators(parseFloat(this.net_to_bene_amount)) + ") exceeds the threshold amount!\n Maximum amount for Door-to-Door transaction is (" + thousands_separators(threshold_amount.value) + ") only.");
+                            this.close_msg_prompt();
+                            return;
+                        }
+                        else {
+                            IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+                        }
+                    }
+                    else {
+                        /* Add log that Setup for threshold_amount is null */
+                        IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+                    }
+                }
+                else /* Continue if not USD or PHP */ {
+                    IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+                }
+            }
+        }
+            /* 3D THRESHOLD END */
+            //====================================================
+            /* RFC-17214 : GRS Other bank code  06/09/2022*/
+            //Validate if BankCode is more than 3 digit valid code
+        else if (parseInt(this.product_code) == 12 || parseInt(this.product_code) == 13) {
+            var bank_code_value = getText("lbl_branch_name");
+            var arr_bankcode = bank_code_value.split("-");
+            if (arr_bankcode != null && arr_bankcode != "null" && arr_bankcode != "undefined" && arr_bankcode[0].toString().trim().length != 3) {
+                alert("Invalid other bank code : " + arr_bankcode[0].toString().trim() + ". \nKindly update Other Bank details in Beneficiary account information.");
+                this.close_msg_prompt();
+                return;
+            }
+            else {
+                IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+            }
+            //====================================================
+        }
+        else {
+            IRSWorld.Remittance.RemOTC.get_overseas_datetime(this.get_overseas_datetime_callback);
+        }
+
+    }
+
+    function thousands_separators(num) {
+        var num_parts = num.toString().split(".");
+        num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return num_parts.join(".");
+    }
+
+    this.get_overseas_datetime_callback = function(result)
+    {        
+        var response = result.value;
+
+        if (response != null && response != "" && response != undefined)
+        {
+            iremit.overseas_date_time = response;
+        }
+
+        iremit.close_msg_prompt();
+        iremit.get_ho_datetime();
+    }
+    
+    this.get_ho_datetime = function()    
+    {
+        this.revert_status = false;
+        this.disable_remittance_button(true); 
+        this.open_msg_prompt("Checking manila's date ...");
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. loading overseas date failed.");
+        }
+
+        IRSWorld.Remittance.RemOTC.get_ho_datetime(this.get_ho_datetime_callback);
+    }
+    
+    this.get_ho_datetime_callback = function(result)
+    {        
+        var response = result.value;
+
+        if (response != null && response != "" && response != undefined)
+        {
+            iremit.ho_date_time = response;
+        }
+
+        iremit.close_msg_prompt();
+        iremit.chk_is_rcc_declaration();
+    }
+    
+    this.chk_is_rcc_declaration = function()
+    {
+        /* RFS 14327-004 PNB OTC AGGREGATION REQUIREMENTS */
+
+        this.open_msg_prompt("Please wait ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. loading overseas date failed.");
+        }
+
+        IRSWorld.Remittance.RemOTC.chk_rcc_rem_declare(this.gross_rem_amount, this.remitter_id, this.chk_is_rcc_declaration_callback);
+    }
+    
+    this.chk_is_rcc_declaration_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result.value != null && result.value != '')
+        {
+            var okrcc = confirm(result.value);
+
+            if (okrcc == false)
+            {
+                iremit.reset_screen();
+            }
+        }
+
+        iremit.chk_is_rcc_trans();
+    }
+
+    this.chk_is_rcc_trans = function()
+    {
+        /* DDC 10/14/2014 RFS 14051-002 */
+
+        this.open_msg_prompt("Please wait ...");
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. loading overseas date failed.");
+        }
+            
+        IRSWorld.Remittance.RemOTC.chk_is_rcc_trans(this.gross_rem_amount, this.remitter_id, this.chk_is_rcc_trans_callback);
+    }
+    
+    this.chk_is_rcc_trans_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null)
+        {
+            if (result.value != '')
+            {
+                var ok_rcc = confirm(result.value);
+
+                if (ok_rcc == true)
+                {
+                    iremit.open_remitter_id_exp(function(){iremit.rcc_id_commit()}); return;
+                }
+                
+                return;
+            }
+            
+            iremit.check_remitter_phone_enrollment(iremit.remittercifid);
+        }
+    }
+    
+    this.rcc_id_commit = function()
+    {
+        var rcc_ids = this.client_exp_ids;
+          
+        if (rcc_ids.found_new != null || rcc_ids.found_new == true)
+        {
+            iremit.check_remitter_phone_enrollment(iremit.remittercifid); return;
+        }
+          
+        var rcc_resub = confirm("Please present a valid ID for verification. Proceed?");
+          
+        if (rcc_resub == true)
+        {
+            iremit.open_remitter_id_exp(function(){iremit.rcc_id_commit()}); return;
+        }
+    }
+
+    this.open_ord_batch_summary = function()
+    {
+        new otc_show_batch_summary().open_batch_summary_screen();
+    }
+
+    this.replace_product = function(special_handling)
+    {
+        var i_replace = false;
+
+        if (special_handling != null)
+        {
+            if (parseInt(special_handling) == 1)
+            { 
+                i_replace = true;
+            }
+        }
+        else
+        {
+            i_replace = confirm("Do you want to replace product and discard current transaction?");
+        }
+        
+        if (i_replace == true)
+        {
+            this.account_currency              = 1;
+            this.net_to_bene_currency          = 1;
+            this.reset_product                 = 1;
+            this.account_type                  = 0;
+            this.reset_tran                    = 0;
+            this.rates_is_ready                = 0;        
+            this.product_charge_id             = 0;
+            this.product_code                  = 0;
+            this.implementation_code           = 0;
+            this.benef_acct_sequence           = 0;
+            this.transaction_detail_branch_seq = 0;
+            this.swipe_ready                   = 0;
+            this.got_debit_credit_card         = 0;
+            this.check_type_flag               = 0;
+            this.pending_ro_status             = 0;
+            this.transaction_status            = 0;
+
+            this.client_exp_ids           = null;
+            this.hit_stream_lining        = null;
+            this.cash_management          = null;
+            this.iModal                   = null;
+            this.grd_source               = null;
+            this.grd_search               = null;
+            this.grd_search_keyword       = null;            
+            this.commons                  = null;            
+            this.override                 = null;
+            this.commit_now               = null;
+            this.waiver_screen            = null;
+            this.apas_batch               = null;
+            this.apas_online              = null;
+            this.pay_anywhere             = null;
+            this.open_accounts            = null;
+            this.choose_account           = null;
+            this.door_to_door             = null;
+            this.bulk_payment             = null;
+            this.transaction_reference_no = null;
+            this.cheque_payments          = null;
+            this.payment_error_msg        = null;
+            this.rem_details_error_msg    = null;            
+            this.credit_casa              = null;
+            this.credit_online_message    = null;
+            this.ord_data_entry           = null;
+            this.global_filipino_card     = null;
+            this.ach_payments             = null;
+            this.system_message           = null;     
+            this.ibft_scr = null; //Added by Boyet 03242014       
+            this.need_special_message     = false;
+            this.revert_status            = false;
+            this.charge_type_code = '';
+            this.instapay_src = null; //INSTAPAY ALYSSA SEPTEMBER 2019
+
+            setText("lbl_branch_name",         "");
+            setText("lbl_product_type",        "");
+            setText("lbl_implementation_type", "");
+            setText("lbl_account_currency",    "");
+            setText("lbl_account_number",      "");
+            setText("lbl_beneficiary_amount",  "0.00");
+            setText("lbl_transaction_charge",  "0.00");
+            setText("lbl_peso_equivalent",     "0.00");
+            setText("lbl_amount_to_be_paid",   "0.00");
+            
+            document.getElementById("txt_remit_amount").value = "";        
+            document.getElementById("txt_messages").value     = "";        
+            document.getElementById("txt_account_no").value     = "";
+
+            /* added clearing session - original code was to call get_transacting_branch method*/
+            this.open_msg_prompt("Please wait ...");
+
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("System not responding"); return;
+            }
+            
+            IRSWorld.Remittance.RemOTC.clear_otc_session(0, this.replace_product_callback);
+            /* added clearing session  */
+        }
+    }
+    
+    this.replace_product_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.get_transacting_branch();
+    }
+    // CJ Fix on Remote Override - Search Remitter
+    this.clear_session_pendingovr = function () {
+        if (this.remitter_id != null || document.getElementById("lbl_remitter_id").innerHTML != '') {
+            var i_replace = confirm("Do you want to replace client and discard current transaction?");
+
+            if (i_replace == true) {
+                this.open_msg_prompt("Please wait ...");
+
+                AjaxPro.timeoutPeriod = 1000 * 1000;
+                AjaxPro.onTimeout = function () {
+                    this.close_msg_prompt(); alert("System not responding"); return;
+                }
+
+                IRSWorld.Remittance.RemOTC.clear_otc_session(1, this.clear_session_pendingovr_callback);
+            }
+        }
+        else {
+            IRSWorld.Remittance.RemOTC.clear_otc_session(1, this.clear_session_pendingovr_callback);
+        }
+
+    }
+
+    this.clear_session_pendingovr_callback = function (result) {
+        iremit.close_msg_prompt();
+        iremit.reset_screen();
+        iremit.check_current_irsw_session('CLIENT');
+    }
+    // CJ End
+    this.replace_client = function()
+    {
+        var i_replace = confirm("Do you want to replace client and discard current transaction?");
+
+        if (i_replace == true)
+        {
+            this.open_msg_prompt("Please wait ...");
+
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("System not responding"); return;
+            }
+            
+            IRSWorld.Remittance.RemOTC.clear_otc_session(1, this.reset_otc_session_callback);
+        }
+    }
+
+    this.cancel_transaction = function()
+    {
+        var ianswer = confirm("Do you want to cancel this transaction?");
+
+        if (ianswer == true)
+        {
+            this.open_msg_prompt("Please wait ...");
+             
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("System not responding"); return;
+            }
+
+            IRSWorld.Remittance.RemOTC.clear_otc_session(1, this.reset_otc_session_callback);
+        }
+    }
+
+    this.reset_otc_session_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.reset_screen();
+    }
+
+    this.reset_screen = function()
+    {
+        this.net_to_bene_currency          = 1;
+        this.account_currency              = 1;
+        this.reset_tran                    = 1;
+        this.allowed_cash_mgt              = 0;
+        this.benef_acct_sequence           = 0;        
+        this.account_type                  = 0;
+        this.reset_product                 = 0;
+        this.product_charge_id             = 0;
+        this.product_code                  = 0;
+        this.implementation_code           = 0;
+        this.payment_type                  = 0;
+        this.remitting_currency            = 0;
+        this.remitted_amount               = 0;
+        this.charge_type                   = 0;
+        this.compute_direction             = 0;
+        this.receipt_mode                  = 0;
+        this.purpose                       = 0;
+        this.transaction_source            = 0;
+        this.source_of_funds               = 0;
+        this.charge_locally                = 0;
+        this.transaction_status            = 0;
+        this.gross_rem_amount              = 0;
+        this.net_rem_amount                = 0;        
+        this.net_to_bene_amount            = 0;
+        this.total_local_charge            = 0;
+        this.local_currency                = 0;
+        this.forex_target_to_account       = 0;
+        this.forex_target_to_source        = 0;
+        this.forex_target_to_usd           = 0;
+        this.forex_target_to_php           = 0;
+        this.forex_target_to_eur           = 0;
+        this.forex_source_to_target        = 0;
+        this.forex_source_to_usd           = 0;
+        this.forex_source_to_php           = 0;
+        this.total_backend_charges         = 0;
+        this.the_mode                      = 0;
+        this.transaction_sequence_id       = 0;
+        this.new_transaction_sequence_id   = 0;
+        this.on_behalf                     = 0;
+        this.exceptions                    = 0;
+        this.allow_card                    = 0;
+        this.for_approval_tag              = 0;
+        this.remittance_amount_limit       = 0;
+        this.remittance_teller_limit       = 0;
+        this.remittance_superv_limit       = 0;
+        this.remittance_aggregate_tag      = 0;
+        this.transaction_detail_branch_seq = 0;
+        this.swipe_ready                   = 0;
+        this.otc_tag_activated             = 0;
+        this.got_debit_credit_card         = 0;
+        this.check_type_flag               = 0;
+             
+        this.remitter_address_seq_id    = null;
+        this.remitter_contact_seq_id    = null;
+        this.beneficiary_address_seq_id = null;
+        this.beneficiary_contact_seq_id = null;
+        
+        this.client_exp_ids           = null;
+        this.hit_stream_lining        = null;
+        this.cash_management          = null;
+        this.command_param            = null;
+        this.parameter_container      = null;
+        this.exception_screen         = null;
+        this.remitter_id              = null;
+        this.beneficiary_id           = null;
+        this.grd_source               = null;
+        this.grd_search               = null;
+        this.grd_search_keyword       = null;
+        this.system_message           = null;
+        this.commons                  = null;
+        this.iModal                   = null;
+        this.override                 = null;
+        this.commit_now               = null;
+        this.waiver_screen            = null;
+        this.apas_batch               = null;
+        this.apas_online              = null;
+        this.pay_anywhere             = null;
+        this.open_accounts            = null;
+        this.choose_account           = null;
+        this.door_to_door             = null;
+        this.bulk_payment             = null;
+        this.rem_proxy                = null;
+        this.transaction_reference_no = null;
+        this.cheque_payments          = null;
+        this.debit_account_payments   = null;
+        this.card_payments            = null;
+        this.payment_error_msg        = null;
+        this.rem_details_error_msg    = null;
+        this.rem_proxy_msg            = null;
+        this.credit_casa              = null;
+        this.aggregate                = null;
+        this.credit_online_message    = null;        
+        this.ord_data_entry           = null;
+        this.global_filipino_card     = null;
+        this.ach_payments             = null;
+        this.ibft_scr = null; //Added by Boyet 03242014
+        this.need_special_message     = false;
+        this.revert_status            = false;
+        this.charge_type_code         = '';
+        
+        this.cash_aggregation_enabled = false;
+        this.cash_aggregation_amtlimit = 0;
+        this.pending_ro_status = 0;
+        this.client_was_hit = 0;
+        this.charge_default_status = 0;
+        
+        //Added for SG RFS 20160721
+        this.remciftype = 0;
+        this.benciftype = 0;
+        
+        //Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017
+        this.Remitter_AccountType = null;
+        this.Remitter_AccountNo =   null;
+        this.Remitter_RoutingNo =   null;
+        this.Remitter_BankName =   null;
+        this.IsRemitter_ACH = false;
+        this.ACH_Branch_Setup = false;
+        this.submitted_docs = false; //BOYET AND RANDY JAN 26 2017
+        
+        this.load_sidebar();
+
+        setText("lbl_branch_name",         "");
+        setText("lbl_payment_type",        "");
+        setText("lbl_remitting_currency",  "");
+        setText("lbl_charge_type",         "");
+        setText("lbl_product_type",        "");
+        setText("lbl_implementation_type", "");
+        setText("lbl_remitter_name",       "");
+        setText("lbl_remitter_address",    "");
+        setText("lbl_beneficiary_name",    "");
+        setText("lbl_beneficiary_address", "");
+        setText("lbl_receipt_mode",        "");
+        setText("lbl_purpose",             "");
+        setText("lbl_transaction_source",  "");
+        setText("lbl_source_of_fund",      "");
+        setText("lbl_receipt_mode",        "");
+        setText("lbl_purpose",             "");
+        setText("lbl_transaction_source",  "");
+        setText("lbl_source_of_fund",      "");
+        setText("lbl_transaction_status",  "");
+        setText("lbl_account_currency",    "");
+        setText("lbl_remitter_id",         "");
+        setText("lbl_beneficiary_id",      "");
+        setText("lbl_account_number",      "");
+        setText("lbl_beneficiary_amount",  "0.00");
+        setText("lbl_transaction_charge",  "0.00");
+        setText("lbl_peso_equivalent",     "0.00");
+        setText("lbl_amount_to_be_paid",   "0.00");
+        setText("lbl_rem_tel",     "");
+        setText("lbl_rem_mobile",  "");
+        setText("lbl_ben_tel",     "");
+        setText("lbl_ben_mobile",  "");
+
+        document.getElementById("txt_remit_amount").value = "";        
+        document.getElementById("txt_messages").value     = "";
+        document.getElementById("txt_account_no").value   = "";
+        document.getElementById("txt_swipe_container").focus();
+        
+        //Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017
+        document.getElementById("ddRemAccountType").value = "";
+        document.getElementById("txtRemAccountNo").value = "";
+        document.getElementById("txtRemRoutingNo").value = "";
+        document.getElementById("txtRemBankName").value = "";
+
+        this.disable_remittance_button(true);
+        this.rates_is_ready = 0; //MAKE THIS LINE ALWAYS AT THE BOTTOM. DO NOT REMOVE
+    }    
+
+    this.set_client_info_rate_ok_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.rates_is_ready     = 0;
+        iremit.incomplete_address = 0;
+
+        if (result != null)
+        {
+            if (result.value == true)
+            {
+                iremit.rates_is_ready = 1;
+            }
+        }
+
+        if (iremit.rates_is_ready == 0)
+        {
+            alert("Incomplete currency rate. Please check."); iremit.reset_screen(); return;
+        }
+        var param       = iremit.parameter_container;
+        var param_value = param.split("~");
+        var common_met  = new common_method();
+
+        if (String(common_met.to_trim_all(param_value[3])).trim() == "")
+        {
+            iremit.grd_search_keyword = "INCOMPLETE_ADDRESS"; iremit.incomplete_address = 1; //REMITTER ADDRESS IS INCOMPLETE
+        }
+
+        if (String(common_met.to_trim_all(param_value[5])).trim() == "")
+        {
+            iremit.grd_search_keyword = "INCOMPLETE_ADDRESS"; iremit.incomplete_address = 2; //BENEFICIARY ADDRESS IS INCOMPLETE
+        }
+        
+        if (parseInt(iremit.incomplete_address) > 0)
+        {
+            if (parseInt(iremit.incomplete_address) == 1)
+            {                    
+                alert("Remitter address not found or not tagged as preferred mailing/default address. Check customer information."); iremit.reset_screen(); return;
+            }
+            else
+            {
+                if (param_value[6] != null)
+                {
+                    if (parseInt(param_value[6]) == 8 || parseInt(param_value[6]) == 9)
+                    {
+                        if (param_value[7] != null && parseInt(param_value[7]) == 3)
+                        {
+                            alert("Beneficiary address not found or not tag as preferred mailing/default address. Check customer information."); iremit.reset_screen(); return;
+                        }
+                    }
+                }
+            }
+        }
+
+        setText("lbl_remitter_id",        param_value[0]);
+        setText("lbl_beneficiary_id",     param_value[1]);
+        setText("lbl_remitter_name",      param_value[2]);
+        setText("lbl_remitter_address",   param_value[3]);
+        setText("lbl_beneficiary_name",   param_value[4]);
+        setText("lbl_beneficiary_address",param_value[5]);
+        setText("lbl_account_number", "");
+        setText("lbl_branch_name",    "");
+
+        iremit.swipe_ready    = 1; // IF REMITTER & BENEFICIARY INFORMATION IS DISPLAYED MARK SWIPE CARD AS INACTIVE UNTIL TRANSACTION IS COMITTED OR CANCELLED.
+        iremit.remitter_id    = null;
+        iremit.beneficiary_id = null;
+
+        iremit.account_currency              = 1;
+        iremit.net_to_bene_currency          = 1;        
+        iremit.charge_type                   = 0;
+        iremit.benef_acct_sequence           = 0;
+        iremit.transaction_detail_branch_seq = 0;
+        iremit.account_type                  = 0;        
+
+        if (param_value[0] != null && param_value[0] != "")
+        {
+            iremit.remitter_id = param_value[0];
+        }
+
+        if (param_value[1] != null && param_value[1] != "")
+        {
+            iremit.beneficiary_id = param_value[1];
+        }
+
+        if (param_value[8] != null && param_value[8] != "" && parseInt(param_value[8]) > 0)
+        {
+            iremit.benef_acct_sequence = parseInt(param_value[8]);
+        }
+        
+        if (param_value[9] != null && param_value[9] != "" && parseInt(param_value[9]) > 0)
+        {
+            iremit.charge_type = parseInt(param_value[9]);
+        }
+        
+        if (param_value[10] != null && param_value[10] != "" && parseInt(param_value[10]) > 0)
+        {
+            iremit.account_currency     = parseInt(param_value[10]);
+            iremit.net_to_bene_currency = parseInt(param_value[10]);
+        }
+        
+        if (param_value[11] != null && param_value[11] != "" && parseFloat(param_value[11]) > 0)
+        {
+            setText("lbl_account_number", param_value[11]);
+        }
+        if (param_value[12] != null && param_value[12] != "" && parseInt(param_value[12]) > 0)
+        {
+            iremit.transaction_detail_branch_seq = parseInt(param_value[12]);
+        }
+        
+        if (param_value[13] != null && param_value[13] != "" && parseInt(param_value[13]) > 0)
+        {
+            iremit.account_type = parseInt(param_value[13]);
+        }
+
+        iremit.product_code        = parseInt(param_value[6]);
+        iremit.implementation_code = parseInt(param_value[7]);
+
+        iremit.close_msg_prompt();
+        iremit.load_contact_info(iremit.remitter_id, iremit.beneficiary_id);
+    }
+
+    this.set_client_info = function(param)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); setText("lbl_otc_caption", "SERVER NOT RESPONDING. CHECKING AVAILABILITY OF CURRENCY RATES FAILED."); alert("Server not responding. Checking availability of currency rates failed."); return;
+        }
+
+        this.parameter_container = param;
+        this.open_msg_prompt("Checking currency rate ...");
+
+        IRSWorld.Remittance.RemOTC.rates_is_ok(this.set_client_info_rate_ok_callback);
+    }
+
+    this.exec_modal_lookup = function(param)
+    {
+        var command_param = param.split("$");
+
+        if (command_param != null)
+        {
+            if (command_param[0].toUpperCase() == "AJX_SELECTED")
+            {
+                var param_value = command_param[1].split("~");
+                
+                switch(this.grd_search_keyword.toUpperCase())
+                {
+                    case "GFC_REMITTER_SEARCH"       : this.grd_search.process_ajax(param); this.open_gfmc_multiple_remben(param_value[0],param_value[1],param_value[2]); break;
+                    case "REMITTER_SEARCH"           : this.grd_search.process_ajax(param); this.chk_location_states(param_value); break;
+                    case "BENEFICIARY_SEARCH"        : this.grd_search.process_ajax(param); this.set_beneficiary_sequence_tbl_code(param_value); this.check_remitter_ids_required(1, param_value[0], param_value[1], command_param[1]); break;
+                    case "PRODUCT"                   : this.product_code        = parseInt(param_value[0]); this.implementation_code = parseInt(param_value[1]); this.transaction_status = parseInt(param_value[2]); setText("lbl_transaction_status", param_value[3]); this.set_product_setup_code(); this.load_sidebar(); break;
+                    case "PAYMENT"                   : this.payment_type        = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "RCURRENCY"                 : this.remitting_currency  = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "CHARGETYPE"                : this.charge_type         = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "RECEIPTMODE"               : this.receipt_mode        = parseInt(param_value[0]); setText("lbl_receipt_mode",       param_value[1]); break;
+                    case "TRANXPURPOSE"              : this.purpose             = parseInt(param_value[0]); setText("lbl_purpose",            param_value[1]); break;
+                    case "TRANXSOURCE"               : this.transaction_source  = parseInt(param_value[0]); setText("lbl_transaction_source", param_value[1]); break;
+                    case "SOURCEOFFUNDS"             : this.source_of_funds     = parseInt(param_value[0]); setText("lbl_source_of_fund",     param_value[1]); break;
+                    case "GRS_CORRBANK"              : this.ord_data_entry.lookup_corrbank(command_param[1]); break;
+                    case "SERVICE_AREA_DOOR_TO_DOOR" : this.commit_beneficiary_location(parseInt(param_value[0])); break;
+                    case "CLIENT_UNIQUE"             : this.grd_search.process_ajax(param); this.hi_grade_response(param_value); break;
+                    case "CLIENT_UNIQUE_RESULT"      : this.grd_search.process_ajax(param); this.set_beneficiary_sequence_tbl_code(param_value); this.check_remitter_ids_required(1, param_value[0], param_value[1], command_param[1]); break;                    
+                }
+            }
+        }
+
+        this.parse_code();
+        
+        if (this.grd_search_keyword.toUpperCase() == "CLIENT_UNIQUE" && command_param[0].toUpperCase() == "AJX_SELECTED")
+        {
+            return;
+        }
+        
+        if (this.grd_search_keyword.toUpperCase() == "CLIENT_UNIQUE_RESULT" && command_param[0].toUpperCase() == "AJX_SELECTED")
+        {
+            return;
+        }        
+
+        if (this.grd_search_keyword.toUpperCase() == "GRS_CORRBANK")
+        {
+            iremit.ord_data_entry.grd_ordsearch.process_ajax(param);
+        }
+        else if (this.grd_search_keyword.toUpperCase() == "SERVICE_AREA_DOOR_TO_DOOR_REMAP")
+        {
+            this.grd_search_keyword = "SERVICE_AREA_DOOR_TO_DOOR"; return;
+        }
+        else if (this.grd_search_keyword.toUpperCase() != "BENEFICIARY_SEARCH")
+        {
+            this.grd_search.process_ajax(param);
+        }
+        else
+        {
+            if (command_param[0].toUpperCase() != "AJX_SELECTED")
+            {
+                this.grd_search.process_ajax(param);
+            }
+        }
+    }
+    
+    this.modal_lookup = function(keycode)
+    {
+        this.grd_search_keyword = keycode;
+        this.grd_source = "sp_otc_rem_lookup_modal~" + keycode + "~" + this.branch_code;
+        this.grd_search = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+    }
+    
+    this.check_product_setup_ok = function()
+    {
+        var keyword = this.grd_search_keyword.toUpperCase();
+
+        this.system_message = null;
+
+        if (keyword == "PAYMENT")
+        {
+            if (this.product_code == null || parseInt(this.product_code) < 1)
+            {
+                return this.chk_product_setups();
+            }
+        }
+        else if (keyword == "RCURRENCY")
+        {
+            if (this.payment_type == null || parseInt(this.payment_type) < 1)
+            {
+                return this.chk_product_setups();
+            }
+        }
+        else if (keyword == "CHARGETYPE")
+        {
+            if (this.remitting_currency == null || parseInt(this.remitting_currency) < 1)
+            {
+                return this.chk_product_setups();
+            }
+        }
+        return true;
+    }
+    
+    this.modal_product_setup = function(keycode)
+    {
+        this.grd_search_keyword = keycode;
+
+        if (this.check_product_setup_ok() == false)
+        {
+            alert(this.system_message); return;
+        }
+
+        this.grd_source  = "sp_otc_rem_product_setup~" + keycode + "~" + this.branch_code + "~" + this.product_code + "~" + this.implementation_code + "~" + this.payment_type + "~" + this.remitting_currency + "~" + this.charge_type + "~0~0~0~0~0~" + this.charge_type_code;
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+    }
+    
+    this.modal_beneficiary_prod_setup = function(keycode)
+    {
+        this.grd_search_keyword = keycode;
+        this.grd_source  = "sp_otc_rem_beneficiary_prodsetup~" + this.beneficiary_id + "~" + this.branch_code;
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+    }    
+
+    this.open_override = function()
+    {
+        this.override = new override_calculator();
+        this.override.open_override_form("REMITTANCE_CALCULATOR_CLASS");
+    }
+
+    this.modal_compute_breakdown = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Calculator data retreival failed."); return;
+        }
+
+        this.open_msg_prompt("Loading computation breakdown ..."); IRSWorld.Remittance.RemOTC.get_breakdown(this.modal_compute_breakdown_callback);
+    }
+    
+    this.modal_compute_breakdown_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null || result.value != null)
+        {
+            var breakdown = new compute_breakdown(); breakdown.open_breakdown(result.value);
+        }
+    }
+
+    this.set_compute_mode = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Computation mode failed to initialize."); return;
+        }
+
+        this.open_msg_prompt("Loading computation mode ..."); 
+        IRSWorld.Remittance.RemOTC.get_compute_mode_source(this.branch_code, parseInt(this.product_code), parseInt(this.implementation_code), parseInt(this.payment_type), parseInt(this.remitting_currency), parseInt(this.charge_type), this.set_compute_mode_callback);
+    }
+
+    this.set_compute_mode_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result.value != null)
+        {            
+            iremit.commons = new common_method(); 
+            iremit.commons.to_load_dropdownlist("ddl_compute_mode", result.value, "ComputationLevel", "ComputationLevelDesc");
+            iremit.commons = null;
+            
+            if (parseInt(iremit.compute_direction) > 0)
+            {
+                iremit.commons = new common_method(); 
+                iremit.commons.to_set_dropdownlist_index("ddl_compute_mode", iremit.compute_direction.toString()); 
+                iremit.commons = null;
+            }
+        }
+        
+        iremit.set_product_charges_id();
+    }
+    
+    this.set_product_setup_desc = function()    
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to display product setup."); return;
+        }
+
+        this.open_msg_prompt("Loading transaction data description ...");
+
+        IRSWorld.Remittance.RemOTC.get_product_setup_description(parseInt(this.product_code), 
+                                                                 parseInt(this.implementation_code),
+                                                                 parseInt(this.payment_type),
+                                                                 parseInt(this.remitting_currency),
+                                                                 parseInt(this.charge_type), 
+                                                                 parseInt(this.compute_direction), 
+                                                                 parseInt(this.receipt_mode), 
+                                                                 parseInt(this.purpose), 
+                                                                 parseInt(this.transaction_source), 
+                                                                 parseInt(this.source_of_funds), 
+                                                                 this.set_product_setup_desc_callback);
+    }
+    
+    this.set_product_setup_desc_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        var ds = result.value;
+        
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                setText("lbl_payment_type",        ds.Tables[0].Rows[0].paymode_desc);
+                setText("lbl_remitting_currency",  ds.Tables[0].Rows[0].currency_desc);
+                setText("lbl_charge_type",         ds.Tables[0].Rows[0].charge_type_desc);
+                setText("lbl_product_type",        ds.Tables[0].Rows[0].product_desc);
+                setText("lbl_implementation_type", ds.Tables[0].Rows[0].implementation_desc);
+                setText("lbl_receipt_mode",        ds.Tables[0].Rows[0].receipt_mode);
+                setText("lbl_purpose",             ds.Tables[0].Rows[0].purpose);
+                setText("lbl_transaction_source",  ds.Tables[0].Rows[0].transaction_source);
+                setText("lbl_source_of_fund",      ds.Tables[0].Rows[0].source_of_fund);
+                setText("lbl_transaction_status",  ds.Tables[0].Rows[0].transaction_status_desc);
+                iremit.rem_currencycode = ds.Tables[0].Rows[0].currency_code; //Added by Troy 20120628
+            }
+        }
+        
+        if (parseInt(iremit.allow_card) > 0 && parseInt(iremit.payment_type) == 4)
+        {
+            iremit.got_debit_credit_card = 0;
+            iremit.remitter_got_debit_credit_card(); return;
+        }
+    }
+
+    this.set_product_setup_code = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Product setup unable to initialize."); return;
+        }
+
+        this.product_charge_id = 0;
+        this.open_msg_prompt("Checking charge setup ..."); 
+        
+        IRSWorld.Remittance.RemOTC.get_product_setup_code(this.branch_code, parseInt(this.product_code), parseInt(this.implementation_code), parseInt(this.payment_type), parseInt(this.remitting_currency), parseInt(this.charge_type), this.set_product_setup_code_callback);
+    }
+    
+    this.set_product_setup_code_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        var ds = result.value;
+
+        var payment_type       = parseInt(iremit.payment_type);
+        var remitting_currency = parseInt(iremit.remitting_currency);
+        var charge_type        = parseInt(iremit.charge_type);
+
+        if (ds != null)
+        {
+            iremit.product_charge_id  = 0;
+            iremit.rates_is_ready     = 0;
+
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                iremit.payment_type       = parseInt(ds.Tables[0].Rows[0].PayMode);
+                iremit.remitting_currency = parseInt(ds.Tables[0].Rows[0].Currency);
+                iremit.charge_type        = parseInt(ds.Tables[0].Rows[0].ChargeType);
+            }
+
+            if (iremit.payment_type == null || iremit.payment_type < 1)
+            {
+                iremit.payment_type = parseInt(payment_type);
+            }
+            if (iremit.remitting_currency == null || iremit.remitting_currency < 1)
+            {
+                iremit.remitting_currency = parseInt(remitting_currency);
+            }
+            if (iremit.charge_type == null || iremit.charge_type < 1)
+            {
+                iremit.charge_type = parseInt(charge_type);
+            }
+        }
+
+        if (iremit.client_was_hit == null)
+        {
+            iremit.pending_ro_status = 0;
+        }        
+        else if (parseInt(iremit.client_was_hit) == 0)
+        {
+            iremit.pending_ro_status = 0;
+        }
+
+        iremit.set_compute_mode();
+    }
+
+    this.set_account_currency_desc = function()
+    {    
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to get account currency description."); return;
+        }
+        
+        this.open_msg_prompt("Loading currency description ..."); IRSWorld.Remittance.RemOTC.get_lookup_data("currency", parseInt(this.account_currency), this.set_account_currency_desc_callback);
+    }
+    
+    this.set_account_currency_desc_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        var ds = result.value;
+
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                setText("lbl_account_currency", ds.Tables[0].Rows[0].field_code + " - " + ds.Tables[0].Rows[0].field_description);
+            }
+        }
+        if (parseInt(iremit.reset_tran) > 0)
+        {
+            setText("lbl_account_currency", "");
+        }
+        
+        if(iremit.promo_activated == true) iremit.cont_OTCCommitTransaction(); 
+    }
+
+    this.set_product_charges_id = function()
+    {
+        document.getElementById("txt_remit_amount").value = "0.00";
+
+        if (isNaN(parseInt(document.getElementById("ddl_compute_mode").value)) == false)
+        {
+            this.compute_direction = parseInt(document.getElementById("ddl_compute_mode").value);
+        }
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to get charge setup."); return;
+        }        
+        
+        this.open_msg_prompt("Loading transaction charges ..."); 
+        IRSWorld.Remittance.RemOTC.get_charge_id(this.branch_code, parseInt(this.product_code), parseInt(this.implementation_code), parseInt(this.payment_type), parseInt(this.remitting_currency), parseInt(this.charge_type), parseInt(this.compute_direction), this.set_product_charges_id_callback);
+        
+    }
+    
+    this.set_product_charges_id_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        var ds = result.value; setText("lbl_transaction_status", "");
+
+        iremit.product_charge_id  = 0;
+        iremit.transaction_status = 0;
+        iremit.rates_is_ready     = 0;
+
+        if (iremit.client_was_hit != null && parseInt(iremit.client_was_hit) == 0)
+        {
+            iremit.pending_ro_status = 0;
+        }
+        else if (iremit.client_was_hit == null)
+        {
+            iremit.pending_ro_status = 0;
+        }
+        else if (parseInt(iremit.client_was_hit) == 0)
+        {
+            iremit.pending_ro_status = 0;
+        }
+
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                iremit.product_charge_id  = ds.Tables[0].Rows[0].ProductChargeID;
+                iremit.transaction_status = ds.Tables[0].Rows[0].DefaultStatus;
+                iremit.charge_default_status = ds.Tables[0].Rows[0].DefaultStatus;
+
+                setText("lbl_transaction_status", ds.Tables[0].Rows[0].DefaultStatusDesc);
+            }
+            else
+            {
+                iremit.transaction_status = 0;
+            }
+        }
+
+        iremit.check_otc_user();
+    }
+   
+    this.check_otc_user = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking otc user access rights failed."); return;
+        }
+        
+        this.open_msg_prompt("Checking otc user access rights ..."); 
+        IRSWorld.Remittance.RemOTC.otc_user(parseInt(iremit.product_charge_id), this.check_otc_user_callback);
+    }
+    
+    this.check_otc_user_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.otc_allowed_user = 0;
+
+        if (iremit.product_charge_id > 0)
+        {
+            if (result != null && result.value != null)
+            {
+                if (parseInt(result.value) > 0)
+                {
+                    iremit.otc_allowed_user = 1;
+                }
+            }
+        }
+
+        iremit.load_otc_caption();
+    }
+   
+    this.post_charge_setup_msg = function()
+    {
+        if (parseInt(this.allow_card) < 1 && parseInt(this.payment_type) == 4)
+        {
+            alert("Debit/Credit card payment is not allowed or available in this branch."); return;
+        }
+
+        this.execute_charge_setup_msg();
+    }
+
+    this.post_charge_setup_msg_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        if (result != null || result.value != null)
+        {
+            if (result.value == 0)
+            {
+                iremit.disable_remittance_button(true); alert("Please check product combination. Setup not found.");
+            }
+        }
+
+        iremit.load_branch_name();
+    }
+    
+    this.execute_charge_setup_msg = function()
+    {
+        if (parseInt(this.product_code) > 0 && parseInt(this.implementation_code) > 0 && parseInt(this.payment_type) > 0 && parseInt(this.remitting_currency) > 0 && parseInt(this.charge_type) > 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Checking charge setup failed."); return;
+            }
+
+            this.open_msg_prompt("Checking charge setup ..."); IRSWorld.Remittance.RemOTC.get_charge_count(this.branch_code, parseInt(this.product_code), parseInt(this.implementation_code), parseInt(this.payment_type), parseInt(this.remitting_currency), parseInt(this.charge_type), this.post_charge_setup_msg_callback);
+        }
+    }
+
+    this.remitter_got_debit_credit_card = function()
+    {
+        this.open_msg_prompt("Checking remitters debit/credit cif card setup ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to check remitters debit/credit card cif setup."); return;
+        }
+
+        IRSWorld.TranClass.rem_card_screen.has_cards(this.remitter_id, this.remitter_got_debit_credit_card_callback);
+    }
+
+    this.remitter_got_debit_credit_card_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null)
+        {
+            if (result.value != null && result.value == false)
+            {
+                alert("Unable to process remittance. Remitters debit/credit card setup not found."); return;
+            }
+        }
+
+        iremit.got_debit_credit_card = 1;
+    }
+
+    this.check_amt = function(keycode)
+    {
+        var keynum = keycode;
+
+        if (keynum == 13)
+        {
+            if (this.chk_product_setups() == false)
+            {
+                alert(this.system_message); return;
+            }
+
+            var amount_rem = new common_method().to_remove_comma(document.getElementById("txt_remit_amount").value);
+
+            if (new common_method().is_decimal(amount_rem) == false)
+            {
+                alert("Amount entered (" + amount_rem + ") is not valid!\n Click ok to correct amount." ); document.getElementById("txt_remit_amount").focus(); iremit.compute_now(0); return;
+            }
+            else
+            {
+                this.compute_now(parseFloat(amount_rem));
+            }
+        }
+    }
+
+    this.compute_waived = function(remitted_amount)
+    {
+        if (this.chk_product_setups() == false)
+        {
+            alert(this.system_message); return;
+        }
+        
+        var amount_rem = new common_method().to_remove_comma(document.getElementById("txt_remit_amount").value);
+
+        if (new common_method().is_decimal(amount_rem) == false)
+        {
+            alert("Amount entered (" + amount_rem + ") is not valid!\n Click ok to correct amount." ); amount_rem = 0;
+        }
+        else
+        {
+            this.disable_remittance_button(false);
+            this.waiver_screen = new otc_waive_charges();
+            this.waiver_screen.open_waiver_screen(parseInt(this.product_charge_id), parseInt(this.account_currency), parseFloat(amount_rem), "REMITTANCE_CALCULATOR_CLASS");
+        }
+    }
+    
+    this.compute_waived_callback = function(result)
+    {
+        var calc = result.value;
+        
+        if (calc != null)
+        {
+            var array_calc = calc.split("~");
+                        
+            iremit.set_computed_amount_to_control(array_calc[0], array_calc[1], array_calc[2], array_calc[5]);
+            
+            /* ADDED VALIDATION BOYET  JUNE 05 2012 */        
+            if (array_calc[3] != null && array_calc[3] != '' && parseInt(array_calc[3]) > 0)
+            {
+                iremit.net_to_bene_currency    = array_calc[3];
+                iremit.account_currency        = array_calc[3];
+            }            
+            /* END */
+
+            iremit.local_currency          = array_calc[4];
+            iremit.gross_rem_amount        = array_calc[5];
+            iremit.net_rem_amount          = array_calc[6];
+            iremit.net_to_bene_amount      = array_calc[7];
+            iremit.total_local_charge      = array_calc[8];
+            iremit.forex_target_to_account = array_calc[9];
+            iremit.forex_target_to_source  = array_calc[10];
+            iremit.forex_target_to_usd     = array_calc[11];
+            iremit.forex_target_to_php     = array_calc[12];
+            iremit.forex_target_to_eur     = array_calc[13];
+            iremit.forex_source_to_target  = array_calc[14];
+            iremit.forex_source_to_usd     = array_calc[15];
+            iremit.forex_source_to_php     = array_calc[16];
+        }
+    }
+    
+    this.compute_waived_result = function(param)
+    {
+        iremit.set_computed_amount_to_control(param.beneficiary_amount, param.transaction_charge, param.peso_equivalent, param.gross_rem_amount);
+        
+        /* BOYET JUNE 5 2012 */
+        
+        if (param.net_to_bene_currency != null && param.net_to_bene_currency != '' && parseInt(param.net_to_bene_currency) > 0)
+        {        
+            iremit.net_to_bene_currency    = param.net_to_bene_currency;
+            iremit.account_currency        = param.net_to_bene_currency;
+        }
+        
+        /* END */
+                
+        iremit.local_currency          = param.local_currency;
+        iremit.gross_rem_amount        = param.gross_rem_amount;
+        iremit.net_rem_amount          = param.net_rem_amount;
+        iremit.net_to_bene_amount      = param.net_to_bene_amount;
+        iremit.total_local_charge      = param.total_local_charge;
+        iremit.forex_target_to_account = param.forex_target_to_account;
+        iremit.forex_target_to_source  = param.forex_target_to_source;
+        iremit.forex_target_to_usd     = param.forex_target_to_usd;
+        iremit.forex_target_to_php     = param.forex_target_to_php;
+        iremit.forex_target_to_eur     = param.forex_target_to_eur;
+        iremit.forex_source_to_target  = param.forex_source_to_target;
+        iremit.forex_source_to_usd     = param.forex_source_to_usd;
+        iremit.forex_source_to_php     = param.forex_source_to_php;
+        iremit.total_backend_charges   = param.total_backend_charges;
+        
+        /* PENDING ROV */        
+        if (param.pending_override_status != null && parseInt(param.pending_override_status) > 0)
+        {
+            iremit.pending_ro_status = parseInt(param.pending_override_status);
+            iremit.transaction_status = parseInt(param.pending_override_status);
+        }
+        /* PENDING ROV */
+    }
+
+    this.compute_now = function(remitted_amount)
+    {
+        this.disable_remittance_button(true);
+
+        if (this.client_was_hit != null && parseInt(this.client_was_hit) == 0)
+        {
+            this.pending_ro_status = 0;
+            this.transaction_status = this.charge_default_status;
+        }
+        else if (this.client_was_hit == null)
+        {
+            this.pending_ro_status = 0;
+            this.transaction_status = this.charge_default_status;
+        }
+        else if (parseInt(this.client_was_hit) == 0)
+        {
+            this.pending_ro_status = 0;
+            this.transaction_status = this.charge_default_status;
+        }
+
+        if (remitted_amount == 0)
+        {
+            document.getElementById("txt_remit_amount").value = "0.00";
+        }
+
+        if (parseInt(this.product_charge_id) > 0)
+        {
+            if (parseInt(this.rates_is_ready) < 1)
+            {
+                alert("Exchange rate not found."); remitted_amount = 0;
+            }
+        }
+
+        if (parseInt(remitted_amount) > 0)
+        {
+            this.open_msg_prompt("Please wait ...");
+        }
+        else
+        {
+            this.open_msg_prompt("Loading ...");
+        }
+
+        this.remitted_amount = remitted_amount;
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Calculator unable to compute charges. Initialization failed."); return;
+        }        
+        
+        IRSWorld.Remittance.RemOTC.compute_remittance(this.product_charge_id, this.account_currency, this.charge_locally, remitted_amount, iremit.compute_now_callback);
+                
+    }
+    
+    this.compute_now_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        var calc = result.value;
+        
+        if (calc != null)
+        {
+            var array_calc = calc.split("~");
+
+            iremit.set_computed_amount_to_control(array_calc[0], array_calc[1], array_calc[2], array_calc[5]);
+        
+            /* ADDED VALIDATION BOYET  JUNE 05 2012 */
+        
+            if (array_calc[3] != null && array_calc[3] != '' && parseInt(array_calc[3]) > 0)
+            {
+                iremit.net_to_bene_currency    = array_calc[3];
+                iremit.account_currency        = array_calc[3];
+            }
+            
+            /* END */
+
+            iremit.local_currency          = array_calc[4];
+            iremit.gross_rem_amount        = array_calc[5];
+            iremit.net_rem_amount          = array_calc[6];
+            iremit.net_to_bene_amount      = array_calc[7];
+            iremit.total_local_charge      = array_calc[8];
+            iremit.forex_target_to_account = array_calc[9];
+            iremit.forex_target_to_source  = array_calc[10];
+            iremit.forex_target_to_usd     = array_calc[11];
+            iremit.forex_target_to_php     = array_calc[12];
+            iremit.forex_target_to_eur     = array_calc[13];
+            iremit.forex_source_to_target  = array_calc[14];
+            iremit.forex_source_to_usd     = array_calc[15];
+            iremit.forex_source_to_php     = array_calc[16];
+            iremit.total_backend_charges   = array_calc[17];
+        }
+        else
+        {
+            alert("Server not responding. \n" + result.error.Message);
+        }
+    }
+
+    this.compute_override = function(param)
+    {
+        if (param != null)
+        {
+            this.override = param;
+            this.override.close_modal_window();
+        }
+
+        if (this.chk_product_setups() == false)
+        {
+            alert(this.system_message); return;
+        }
+
+        var amount_rem = new common_method().to_remove_comma(document.getElementById("txt_remit_amount").value);
+
+        if (new common_method().is_decimal(amount_rem) == false)
+        {
+            alert("Amount entered (" + amount_rem + ") is not valid!\n Click ok to correct amount." ); amount_rem = 0;
+        }
+        else
+        {
+            this.disable_remittance_button(false);
+            
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Calculator compute override failed."); return;
+            }
+            
+            this.open_msg_prompt("Please wait ..."); IRSWorld.Remittance.RemOTC.compute_override(parseInt(this.product_charge_id), parseInt(this.account_currency), parseFloat(amount_rem), this.compute_override_callback);
+                        
+        }
+    }
+    
+    this.compute_override_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        var calc = result.value;
+        
+        if (calc != null)
+        {
+            var array_calc = calc.split("~");
+
+            iremit.set_computed_amount_to_control(array_calc[0], array_calc[1], array_calc[2], array_calc[5]);
+
+            /* ADDED VALIDATION BOYET  JUNE 05 2012 */
+        
+            if (array_calc[3] != null && array_calc[3] != '' && parseInt(array_calc[3]) > 0)
+            {
+                iremit.net_to_bene_currency    = array_calc[3];
+                iremit.account_currency        = array_calc[3];
+            }
+            
+            /* END */
+
+            iremit.local_currency          = array_calc[4];
+            iremit.gross_rem_amount        = array_calc[5];
+            iremit.net_rem_amount          = array_calc[6];
+            iremit.net_to_bene_amount      = array_calc[7];
+            iremit.total_local_charge      = array_calc[8];
+            iremit.forex_target_to_account = array_calc[9];
+            iremit.forex_target_to_source  = array_calc[10];
+            iremit.forex_target_to_usd     = array_calc[11];
+            iremit.forex_target_to_php     = array_calc[12];
+            iremit.forex_target_to_eur     = array_calc[13];
+            iremit.forex_source_to_target  = array_calc[14];
+            iremit.forex_source_to_usd     = array_calc[15];
+            iremit.forex_source_to_php     = array_calc[16];
+            iremit.total_backend_charges   = array_calc[17];
+            
+            /* PENDING ROV */
+            if (iremit.override != null && iremit.override.pending_override_status != null && iremit.override.pending_override_status != "")
+            {
+                iremit.pending_ro_status = parseInt(iremit.override.pending_override_status);
+                iremit.transaction_status = parseInt(iremit.override.pending_override_status);
+            }
+            /* PENDING ROV */
+        }
+    }
+
+    this.chk_product_setups = function()
+    {
+        this.system_message = null;
+
+        if (this.remitter_id         == null) {this.system_message = "Please search remitter.";    return false;}
+        if (this.beneficiary_id      == null) {this.system_message = "Please search beneficiary."; return false;}
+        if (this.product_code        == null || parseInt(this.product_code)        < 1) {this.system_message  = "Please select product.";          return false;}
+        if (this.implementation_code == null || parseInt(this.implementation_code) < 1) {this.system_message  = "Implementation type not set.";    return false;}        
+        if (this.payment_type        == null || parseInt(this.payment_type)        < 1) {this.system_message  = "Please select payment type.";     return false;}
+        if (this.remitting_currency  == null || parseInt(this.remitting_currency)  < 1) {this.system_message  = "Please select currency.";         return false;}
+        if (this.charge_type         == null || parseInt(this.charge_type)         < 1) {this.system_message  = "Please select charge type.";      return false;}
+        if (this.compute_direction   == null || parseInt(this.compute_direction)   < 1) {this.system_message  = "Please select computation type."; return false;}
+        if (this.product_charge_id   == null || parseInt(this.product_charge_id)   < 1) {this.system_message  = "Product combination not found.";  return false;}
+        if (this.compute_direction.toString().toUpperCase() == "NULL") {this.system_message = "Please select computation type."; return false;}
+
+        if (parseInt(this.allow_card) > 0 && parseInt(this.payment_type) == 4)
+        {
+            if (parseInt(this.got_debit_credit_card) < 1)
+            {
+                this.system_message = "Unable to process remittance. Remitters debit/credit card setup not found"; return false;
+            }
+        }
+
+        return true;
+    }
+
+    this.commit_default_product_implem = function()
+    {
+        if (this.net_to_bene_currency == null) {this.net_to_bene_currency  = 1;}
+        if (this.account_currency     == null) {this.account_currency      = 1;}
+        if (this.product_code         == null) {this.product_code          = 0;}
+        if (this.implementation_code  == null) {this.implementation_code   = 0;}
+        if (this.benef_acct_sequence  == null) {this.benef_acct_sequence   = 0;}
+        if (this.source_of_funds      == null) {this.source_of_funds       = 0;}
+        if (this.account_type         == null) {this.account_type          = 0;}
+        if (this.charge_type          == null) {this.charge_type           = 0;}
+
+        if (this.transaction_detail_branch_seq == null || this.transaction_detail_branch_seq == '')
+        {
+            this.transaction_detail_branch_seq = 0;
+        }
+
+        this.close_msg_prompt();
+        this.open_msg_prompt("Please wait while the system is updating remitter and beneficiary transaction ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Beneficiary product and implementation commit failed."); return;
+        }
+
+        IRSWorld.TranClass.remit_benef_product.commit_beneficiary_product_setup(this.remitter_id, this.beneficiary_id, parseInt(this.product_code), parseInt(this.implementation_code), parseInt(this.benef_acct_sequence), parseInt(this.source_of_funds), parseInt(this.net_to_bene_currency), parseInt(this.account_type), parseInt(this.transaction_detail_branch_seq), parseInt(this.charge_type), this.commit_default_product_implem_callback);
+    }
+    
+    this.commit_default_product_implem_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.open_cash_management();
+    }
+    
+    this.open_card_payment_screen = function() //Added by Troy 20120808
+    {
+        if (this.payment_type != null)
+        {
+            switch (parseInt(this.payment_type))
+            {
+                case   4: this.card_payment(); break;
+                case  16: this.card_payment(); break; //Added by Troy 20120719
+                case  17: this.card_payment(); break; //Added by Troy 20120719
+                default: this.commit_remittance_main_repository();
+            }
+        }
+    }
+    
+    this.is_debit_success = function(issuccess, icrd) //Added by Troy 20120809
+    {
+        this.debitcreditscreen = icrd;
+        if (issuccess == true)
+        {
+            this.commit_remittance_main_repository();
+        }
+        else
+        {
+            alert("Debit from client card was unsuccessful. Please try again.");
+            return 0;
+        }
+    }
+
+    this.open_payment_mode_screen = function()
+    {
+        if (this.payment_type != null)
+        {
+            switch (parseInt(this.payment_type))
+            {
+                case  2: this.check_payment(); break;
+                case  6: this.debit_account_payment(); break;
+                case 12: this.ach_payment(); break;
+                default: this.rem_proxy_commit();
+            }
+        }
+    }
+
+    this.open_remittance_extra_details = function()
+    {
+        this.need_special_message = false;
+
+        if (this.product_code != null && this.implementation_code != null)
+        {
+            if (parseInt(this.product_code) == 10)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 11)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 22)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    this.open_global_filipino_card(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 14)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 16)
+            {
+                if (parseInt(this.implementation_code) == 10)
+                {
+                    this.choose_account_screen(5,0); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 12)
+            {
+                if (parseInt(this.implementation_code) == 4)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 12)
+            {
+                if (parseInt(this.implementation_code) == 5)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 13)
+            {
+                if (parseInt(this.implementation_code) == 5)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 16)
+            {
+                if (parseInt(this.implementation_code) == 10)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 15)
+            {
+                if (parseInt(this.implementation_code) == 7)
+                {
+                    this.account_open_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 15)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.account_open_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 27)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.apas_online_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 255)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.apas_online_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 24)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.pay_anywhere_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 7)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.apas_batch_screen(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 8)
+            {
+                if (parseInt(this.implementation_code) == 3)
+                {
+                    this.check_serviceable_area_other_details(); return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 9)
+            {
+                if (parseInt(this.implementation_code) == 3)
+                {
+                    this.check_serviceable_area_other_details(); return;
+                }
+            }
+            
+            //Added by Troy 20120911
+            if (parseInt(this.product_code) == 2)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 3)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 4)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 5)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 6)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 18)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            /* ADDED BY BOYET 03242014 */
+            if (parseInt(this.product_code) == 23)
+            {
+                if (parseInt(this.implementation_code) == 17)
+                {
+                    this.open_ibft_scr(); return;
+                }
+            }
+            /* END BOYET 03242014 */
+
+            /* INSTAPAY ALYSSA SEPTEMBER 2019 */
+            if (parseInt(this.product_code) == 258) {
+                if (parseInt(this.implementation_code) == 29) {
+                    this.open_instapay_scr(); return;
+                }
+            }
+            /* INSTAPAY ALYSSA SEPTEMBER 2019 */
+        }
+
+        alert("Not required or product combination not found.");
+    }
+
+    this.open_remitter_result = function(param)
+    {
+        var array_names = param.split("~");
+
+        if (this.iModal != null)
+        {
+            this.iModal.close_modal_window();
+            this.iModal = null;
+        }
+
+        this.grd_search_keyword = "REMITTER_SEARCH";
+        this.grd_source  = "sp_otc_search_client~1~0~0~" + array_names[0] + "~" + array_names[1] + "~" + array_names[2] + "~" + array_names[3] + "~" + this.branch_code + "~" + array_names[4] + "~" + array_names[5] + "~" + array_names[6];
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);        
+    }
+    
+    this.open_beneficiary_last_result = function()
+    {
+        this.open_beneficiary_result(this.remitter_id);
+    }
+    
+    this.check_remitter_phone_enrollment = function(remitterid) //Added by Troy 20120808
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. checking remitter enrollment failed.");
+        }
+        
+        this.open_msg_prompt("Please wait while the system is retrieving customer information ...");
+        IRSWorld.Remittance.RemOTC.check_remitter_phone_enrollment(remitterid, this.check_remitter_phone_enrollment_callback);
+    }
+    
+    this.check_remitter_phone_enrollment_callback = function(result)
+    {
+        var response = result.value;
+
+        iremit.close_msg_prompt();
+        if (response != null && response != "" && response != undefined)
+        {
+            if (response == "true")
+            {
+                iremit.check_remitter_ids_required(2); 
+            }
+            else
+            {
+                alert("Remitter enrollment thru phone is not yet complete. Please check remitter enrollment.");
+            }
+        }
+        else
+        {
+            iremit.check_remitter_ids_required(2); 
+        }
+    }
+    
+    this.open_beneficiary_result = function(param)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking remitters beneficiary information failed."); return;
+        }
+        
+        this.open_msg_prompt("Checking remitter and beneficiary information ..."); IRSWorld.Remittance.RemOTC.remitter_has_benef(param, this.open_beneficiary_result_callback);
+    }
+
+    this.open_beneficiary_result_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null)
+        {
+            if (result.value != "")
+            {
+                iremit.grd_search_keyword = "BENEFICIARY_SEARCH";
+                iremit.grd_source  = "sp_otc_search_client~2~" + result.value + "~0~0~0~0~0~~~~false";
+                iremit.grd_search  = new grid_selector();
+                iremit.grd_search.open_selection_grid(null, iremit.grd_source, 0 , null);     
+            }
+            else
+            {
+                alert("Remitter has no enrolled beneficiary.");
+            }
+        }
+    }
+
+    this.open_search_client = function()
+    {
+        this.grd_search_keyword = "CLIENTSEARCH";
+        this.iModal = new client_search();
+        this.iModal.open_search();
+    }
+    
+    this.remittance_extra_information_ready = function()
+    {
+        var alert_message = "Please complete remittance details";
+    
+        if (this.product_code != null)
+        {
+            if (parseInt(this.product_code) == 22)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    if (this.global_filipino_card == null)
+                    {
+                        if (this.check_bene_account() == false)
+                        {
+                            alert(alert_message); this.open_remittance_extra_details(); return false;
+                        }
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.choose_account == null || this.choose_account.account_seqid == null || parseInt(this.choose_account.account_seqid) < 1 || this.benef_acct_sequence == null || parseInt(this.benef_acct_sequence) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 11)
+                {
+                    if (this.choose_account == null)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 12)
+            {
+                if (parseInt(this.implementation_code) == 4)
+                {
+                    if (this.choose_account == null || this.choose_account.account_seqid == null || parseInt(this.choose_account.account_seqid) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 13)
+            {
+                if (parseInt(this.implementation_code) == 5)
+                {
+                    if (this.choose_account == null || this.choose_account.account_seqid == null || parseInt(this.choose_account.account_seqid) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 10)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    if (this.choose_account == null || this.choose_account.account_seqid == null || parseInt(this.choose_account.account_seqid) < 1 || this.benef_acct_sequence == null || parseInt(this.benef_acct_sequence) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 16)
+            {
+                if (parseInt(this.implementation_code) == 10)
+                {
+                    if (this.choose_account == null || this.choose_account.account_seqid == null || parseInt(this.choose_account.account_seqid) < 1 || this.benef_acct_sequence == null || parseInt(this.benef_acct_sequence) < 1 || parseInt(this.benef_acct_sequence) == 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }            
+
+            if (parseInt(this.product_code) == 15)
+            {
+                if (parseInt(this.implementation_code) == 7)
+                {
+                    if (this.open_accounts != null)
+                    {
+                        if (this.open_accounts.branch_seq_id != null && parseInt(this.open_accounts.branch_seq_id) > 0)
+                        {
+                            if (this.open_accounts.account_type != null && parseInt(this.open_accounts.account_type) > 0)
+                            {
+                                if (this.open_accounts.currency_code != null && parseInt(this.open_accounts.currency_code) > 0)
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                    
+                    alert(alert_message); this.open_remittance_extra_details(); return false;
+                }
+            }
+            
+            //Added by Troy 20120911
+            if (parseInt(this.product_code) == 2)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 3)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 4)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 1)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }            
+            
+            if (parseInt(this.product_code) == 5)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 6)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            if (parseInt(this.product_code) == 18)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.bulk_payment == null || this.bulk_payment.br_seq_id == null || parseInt(this.bulk_payment.br_seq_id) < 1 || this.bulk_payment.currency == null || parseInt(this.bulk_payment.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 27)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.apas_online == null || this.apas_online.currency == null || parseInt(this.apas_online.currency) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 24)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.pay_anywhere == null || this.pay_anywhere.currency == null || parseInt(this.pay_anywhere.currency) < 1 || this.pay_anywhere.br_seq_id == null || parseInt(this.pay_anywhere.br_seq_id) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+
+            if (parseInt(this.product_code) == 7)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.apas_batch == null || this.apas_batch.currency == null || parseInt(this.apas_batch.currency) < 1 || this.apas_batch.br_seq_id == null || parseInt(this.apas_batch.br_seq_id) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            
+            /* ADDED BY BOYET MARCH 24 2014 */
+            if (parseInt(this.product_code) == 23)
+            {
+                if (parseInt(this.implementation_code) == 17)
+                {
+                    if (this.ibft_scr == null || this.ibft_scr.account_currency == null || parseInt(this.ibft_scr.account_currency) < 1 || this.ibft_scr.ibft_bank == null || parseInt(this.ibft_scr.ibft_bank) < 1)
+                    {
+                        alert(alert_message); this.open_remittance_extra_details(); return false;
+                    }
+                }
+            }
+            /* END BOYET MARCH 24 2014 */
+        }
+
+        return true;
+    }
+
+    this.commit_remittance = function()
+    {
+        var amount_rem = new common_method().to_remove_comma(document.getElementById("txt_remit_amount").value);
+ 
+        if (amount_rem != null && amount_rem == "")
+        {
+            alert("Amount entered is empty!\n Click ok to correct amount." ); 
+            document.getElementById("txt_remit_amount").focus(); 
+            iremit.compute_now(0); 
+            return;
+        }
+
+        if (new common_method().is_decimal(amount_rem) == false)
+        {
+            alert("Amount entered (" + amount_rem + ") is not valid!\n Click ok to correct amount." ); 
+            document.getElementById("txt_remit_amount").focus(); 
+            iremit.compute_now(0); 
+            return;
+        }
+        else
+        {
+            if (parseFloat(amount_rem) != parseFloat(this.remitted_amount))
+            {
+                alert("Please press enter to compute charges."); 
+                document.getElementById("txt_remit_amount").focus(); 
+                return;
+            }
+        }
+                
+        if (parseInt(this.remitted_amount) < 1)
+        {
+            alert("Amount entered (" + amount_rem + ") is not valid!\n Click ok to correct amount." ); 
+            document.getElementById("txt_remit_amount").focus(); 
+            iremit.compute_now(0); 
+            return;
+        }
+        
+        if (this.check_bene_account() == false)
+        {
+            if (parseInt(this.product_code) == 22 && parseInt(this.implementation_code) == 2)
+            {
+                this.open_global_filipino_card(); return;
+            }
+            else
+            {
+                alert("Beneficiary account information not found."); return;
+            }
+        }
+
+        /* RFC 992 - PESONET */
+        if (this.bankname_is_not_blank() == false) {
+            alert("Bank Name is required. Please update product details or enroll a new product."); return;
+        }
+        
+        if (this.branch_code == '1170')
+        {
+            if (this.ord_data_entry == null)
+            {
+                alert("Please fill-up ORD other information."); return;
+            }
+        }
+    
+        if (this.chk_product_setups() == false)
+        {
+            alert(this.system_message); return;
+        }
+
+        if (this.remittance_extra_information_ready() == true)
+        {
+            this.check_extra_trans_handling();
+        }
+    }
+
+    this.commit_transaction_details = function(transaction_id)
+    {
+        this.transaction_sequence_id = transaction_id; 
+        done_saving_details = false;
+
+        if (this.product_code != null)
+        {
+            if (parseInt(this.product_code) > 0)
+            {
+                if (parseInt(this.product_code) == 15)
+                {
+                    if (parseInt(this.implementation_code) == 7)
+                    {
+                        if (this.open_accounts != null)
+                        {
+                            this.open_accounts.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                if (parseInt(this.product_code) == 15)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.open_accounts != null)
+                        {
+                            this.open_accounts.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 8 || parseInt(this.product_code) == 9 || parseInt(this.product_code) == 16)
+                {
+                    if (parseInt(this.implementation_code) == 3)
+                    {
+                        if (this.door_to_door != null)
+                        {
+                            this.door_to_door.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 27)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.apas_online != null)
+                        {
+                            this.apas_online.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 24)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.pay_anywhere != null)
+                        {
+                            this.pay_anywhere.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 7)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.apas_batch != null)
+                        {
+                            this.apas_batch.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                    //Added by Troy 20120911
+                else if (parseInt(this.product_code) == 2)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 3)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 4)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 5)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 6)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                else if (parseInt(this.product_code) == 18)
+                {
+                    if (parseInt(this.implementation_code) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+                    //ALYSSA INSTAPAY SEPT 2019
+                else if (parseInt(this.product_code) == 258) {
+                    if (parseInt(this.implementation_code) == 29) {
+                        if (this.instapay != null) {
+                            this.instapay.commit_transaction(parseInt(transaction_id)); done_saving_details = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (done_saving_details == false)
+        {
+            this.open_payment_mode_screen();
+        }
+    }
+
+    this.commit_dup_transaction = function(param)
+    {
+        /* ADDED BY BOYET TO INFORM USER OF DUPLICATE TRANSACTION JUL 8 2013*/
+        
+        if (param != null && param != '')
+        {                  
+            if (param.toUpperCase().indexOf("DUPLICATE TRANSACTION FOUND!") >= 0)
+            {
+                if (confirm(param + "\n\n" + "Do you want to continue saving this transaction?") == true)
+                {
+                    this.commit_now.commit_dup_record();
+                }
+            }
+            else
+            {
+                alert(param);
+            }
+        }
+    }
+
+    this.commit_response = function(param)
+    {
+        if (param.commit_status == false)
+        {
+            this.commit_dup_transaction(param.msg_string);
+        }
+        else
+        {
+            this.txn_seqid = param.SEQ_ID;
+            this.transaction_reference_no = param.ReferenceNo;
+            
+            if (this.payment_type != null)
+            {
+                if (parseInt(this.payment_type) == 4 || parseInt(this.payment_type) == 16 || parseInt(this.payment_type) == 17)
+                {
+                    iremit.debitcreditscreen.txn_seqid = this.txn_seqid;
+                    iremit.debitcreditscreen.commit_transaction();
+                }
+            }
+            
+            this.commit_transaction_details(param.SEQ_ID);
+        }
+    }
+
+    this.commit_door_response = function(param)
+    {
+        if (param.commit_status == false)
+        {
+            this.rem_details_error_msg = param.msg_string;
+        }
+
+        this.open_payment_mode_screen();
+    }
+
+    this.open_accounts_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }
+    
+    this.open_global_filipino_card = function()
+    {
+        if (this.global_filipino_card == null)
+        {
+            this.global_filipino_card = new GFMC_Maintenance();
+            this.global_filipino_card.isOTC = true;
+        }
+
+        this.global_filipino_card.open_gfc_form(this.beneficiary_id + "~" + this.remitter_id, '', 'iremit.global_filipino_card', false);
+    }
+    
+    /* ADDED BY BOYET 03242014*/
+    this.open_ibft_scr = function()
+    {
+        if (this.ibft_scr == null)
+        {
+            this.ibft_scr = new ibft_scr();
+        }
+
+        this.ibft_scr.beneficiary_id = this.beneficiary_id;
+        this.ibft_scr.remitter_id = this.remitter_id;
+        this.ibft_scr.open_ibft();
+    }
+
+    this.ibft_account_screen = function()
+    {
+        if (this.ibft_scr != null)
+        {
+            setText("lbl_account_number", this.ibft_scr.account_no);
+
+            this.benef_acct_sequence  = this.ibft_scr.account_seq_id;
+            this.account_currency     = this.ibft_scr.account_currency;
+            this.net_to_bene_currency = this.ibft_scr.account_currency;
+            this.transaction_detail_branch_seq = this.ibft_scr.ibft_bank;
+
+            this.set_product_charges_id();
+        }
+    }
+    
+    /* END BOYET 03242014*/
+
+    /* INSTAPAY ALYSSA SEPTEMBER 2019 */
+    this.open_instapay_scr = function () {
+        if (this.instapay_scr == null) {
+            this.instapay_scr = new instapay_scr();
+        }
+
+        this.instapay_scr.beneficiary_id = this.beneficiary_id;
+        this.instapay_scr.remitter_id = this.remitter_id;
+        this.instapay_scr.open_instapay();
+    }
+
+    this.instapay_account_screen = function () {
+        if (this.instapay_scr != null) {
+            setText("lbl_account_number", this.instapay_scr.account_no);
+
+            this.benef_acct_sequence = this.instapay_scr.account_seq_id;
+            this.account_currency = this.instapay_scr.account_currency;
+            this.net_to_bene_currency = this.instapay_scr.account_currency;
+            this.transaction_detail_branch_seq = this.instapay_scr.instapay_bank;
+
+            this.set_product_charges_id();
+        }
+    }
+
+    /* INSTAPAY ALYSSA SEPTEMBER 2019*/
+
+    this.choose_account_screen = function(branch_type, pchc_member)
+    {
+        if (this.choose_account == null)
+        {
+            this.choose_account = new rem_modal_accounts();
+        }
+
+        this.the_mode = 1;
+        //CJ Reset Override Logs Session
+        var reset = IRSWorld.Remittance.RemOTC.clear_otc_session(1);
+        // CJ END
+        this.choose_account.product_code = parseInt(this.product_code);
+        this.choose_account.implem_code  = parseInt(this.implementation_code);
+        this.choose_account.remitter_id  = this.remitter_id;
+        this.choose_account.account_form(this.beneficiary_id, branch_type.toString(), 'iremit.choose_account', this.benef_acct_sequence.toString());
+    }
+
+    this.choose_account_screen_result = function()
+    {
+        this.account_currency     = this.choose_account.currency_code;
+        this.net_to_bene_currency = this.choose_account.currency_code;
+        this.benef_acct_sequence  = this.choose_account.account_seqid;
+
+        setText("lbl_account_number", this.choose_account.account_number); this.set_product_charges_id();
+    }
+
+    this.account_open_screen = function()
+    {
+        if (this.open_accounts == null)
+        {
+            this.open_accounts = new rem_modal_open_accounts();
+        }
+        
+        this.the_mode = 2;
+        this.open_accounts.open_account_form(2, 'iremit.open_accounts');
+    }    
+
+    this.account_open_screen_result = function()
+    {
+        this.benef_acct_sequence = 0;
+        this.account_currency              = parseInt(this.open_accounts.currency_code);
+        this.net_to_bene_currency          = parseInt(this.open_accounts.currency_code);
+        this.account_type                  = parseInt(this.open_accounts.account_type);
+        this.transaction_detail_branch_seq = parseInt(this.open_accounts.branch_seq_id);
+        this.set_product_charges_id();
+    }
+    
+    this.apas_online_screen = function()
+    {
+        if (this.apas_online == null)
+        {
+            this.apas_online = new rem_modal_popups();
+        }        
+
+        this.the_mode = 3;
+        this.apas_online.open_apas_online();
+    }
+    
+    this.apas_online_screen_result = function()
+    {
+        this.account_currency     = this.apas_online.currency;
+        this.net_to_bene_currency = this.apas_online.currency;
+        this.set_product_charges_id();
+    }    
+    
+    this.apas_online_commit_response = function(param)
+    {
+        var s = param.split('~'); this.rem_details_error_msg = null;
+
+        if (s != null)
+        {            
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+        
+        this.open_payment_mode_screen();
+    }
+    
+    this.pay_anywhere_screen = function()
+    {
+        if (this.pay_anywhere == null)
+        {
+            this.pay_anywhere = new rem_modal_popups();
+        }
+        
+        this.the_mode = 4;
+        this.pay_anywhere.open_paw();
+    }
+    
+    this.pay_anywhere_screen_result = function()
+    {
+        this.account_currency              = this.pay_anywhere.currency;
+        this.net_to_bene_currency          = this.pay_anywhere.currency;
+        this.transaction_detail_branch_seq = this.pay_anywhere.br_seq_id;
+        this.set_product_charges_id();
+    }
+    
+    this.pay_anywhere_commit_response = function(param)
+    {
+        var s = param.split('~'); this.rem_details_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+        
+        this.open_payment_mode_screen();
+    }
+    
+    this.door_to_door_screen = function()
+    {
+        if (this.door_to_door == null)
+        {
+            this.door_to_door = new rem_modal_popups();
+        }
+        
+        this.the_mode = 7;
+        this.door_to_door.open_door_to_door(this.beneficiary_id);
+    }
+    
+    this.door_to_door_screen_response = function()
+    {
+        this.account_currency     = this.door_to_door.currency;
+        this.net_to_bene_currency = this.door_to_door.currency;
+        this.set_product_charges_id();
+    }
+    
+    this.door_to_door_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+            else
+            {
+                this.commit_now = new rem_otc_door_commit();
+                this.commit_now.transaction_id = parseInt(this.transaction_sequence_id);
+                this.commit_now.commit_record();
+                
+                return;            
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }        
+    
+    this.apas_batch_screen = function()
+    {
+        if (this.apas_batch == null)
+        {
+            this.apas_batch = new rem_modal_popups();
+        }
+
+        this.the_mode = 5;
+        this.apas_batch.open_apas_batch();
+    }
+
+    this.apas_batch_screen_response = function()
+    {
+        this.account_currency              = this.apas_batch.currency;
+        this.net_to_bene_currency          = this.apas_batch.currency;
+        this.transaction_detail_branch_seq = this.apas_batch.br_seq_id;
+        this.set_product_charges_id();
+    }
+
+    this.apas_batch_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }
+    
+    this.bulk_payment_screen = function()
+    {
+        if (this.bulk_payment == null)
+        {
+            this.bulk_payment = new rem_modal_popups();
+        }
+
+        this.the_mode = 8;
+        this.bulk_payment.beneficiary_id      = iremit.beneficiary_id;
+        this.bulk_payment.product_code        = iremit.product_code;
+        this.bulk_payment.implementation_code = iremit.implementation_code;
+        this.bulk_payment.br_seq_id           = iremit.transaction_detail_branch_seq;
+        this.bulk_payment.temp_br_seq_id      = iremit.transaction_detail_branch_seq;
+        this.bulk_payment.account_number      = getText("lbl_account_number");
+        
+        this.bulk_payment.open_bpo_implem();
+    }
+    
+    this.bulk_payment_screen_response = function()
+    {
+        this.account_currency              = this.bulk_payment.currency;
+        this.net_to_bene_currency          = this.bulk_payment.currency;
+        this.transaction_detail_branch_seq = this.bulk_payment.br_seq_id;
+        
+        if (parseInt(this.product_code) == 2 || parseInt(this.product_code) == 5 || parseInt(this.product_code) == 6)
+        {
+            if (parseInt(this.implementation_code) == 1)
+            {
+                if (this.bulk_payment.account_sequence_id != null && parseFloat(this.bulk_payment.account_sequence_id) > 0)
+                {
+                    this.benef_acct_sequence = this.bulk_payment.account_sequence_id; setText("lbl_account_number", this.bulk_payment.account_number);
+                }
+            }
+        }
+
+        this.set_product_charges_id();
+    }
+
+    this.bulk_payment_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }
+    
+    this.open_remitter_proxy_screen = function()
+    {
+        if (this.rem_proxy == null)
+        {
+            this.rem_proxy = new remitter_proxy();
+        }
+
+        this.the_mode = 9;
+        this.rem_proxy.remitter_id = this.remitter_id;
+        this.rem_proxy.open_remitter_proxy();
+    }
+    
+    this.rem_proxy_screen_result = function()
+    {
+        iremit.set_product_setup_code();
+        iremit.load_sidebar();
+    }
+    
+    this.rem_proxy_commit = function()
+    {
+        if (this.rem_proxy != null)
+        {
+            this.rem_proxy.commit_remitters_proxy(this.transaction_sequence_id);
+        }
+        else
+        {
+            this.process_online_transaction();
+        }
+    }
+    
+    this.remitter_proxy_commit_result = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_proxy_msg = s[1];
+            }
+        }
+
+        this.process_online_transaction();
+    }
+
+    this.load_settings = function()
+    {
+        if (this.exceptions != null && parseInt(this.exceptions) > 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Checking remitter exceptions failed."); return;
+            }
+            
+            this.open_msg_prompt("Checking exceptions ..."); 
+            IRSWorld.TranClass.RemTranExtra.remitter_exceptions(this.remitter_id, this.check_exceptions_callback);
+        }
+        else
+        {
+            this.end_of_settings();
+        }
+    }
+
+    this.check_exceptions_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null && result.value != null && parseInt(result.value) > 0)
+        {
+            iremit.open_exception_screen();
+        }
+        else
+        {
+            iremit.end_of_settings();
+        }
+    }
+
+    this.end_of_settings = function()
+    {
+        if (iremit.on_behalf != null)
+        {
+            if (parseInt(iremit.on_behalf) > 0)
+            {
+                var ihit = confirm("Is the remitter transacting on behalf of somebody else?");
+
+                if (ihit == true)
+                {
+                    iremit.open_remitter_proxy_screen(); return;
+                }
+
+                iremit.on_behalf = 0;
+            }
+        }
+
+        iremit.set_product_setup_code();
+        iremit.load_sidebar();
+    }
+
+    this.open_exception_screen = function()
+    {
+        this.exception_screen = new rem_exceptions();
+        this.exception_screen.remitter_id = this.remitter_id;
+        this.exception_screen.open_remitter_exceptions();
+    }
+    
+    this.exception_screen_result = function(param)
+    {
+        if (param != null)
+        {
+            if (parseInt(param) == 0)
+            {
+                iremit.reset_screen(); return;
+            }
+        }
+
+        iremit.end_of_settings();
+    }
+
+    this.rem_aggregates = function()
+    {
+        this.the_mode = 0;
+
+        if (this.aggregate == null)
+        {
+            this.aggregate = new rem_aggregates();
+        }
+
+        this.aggregate.open_remitter_aggregates(this.remitter_id,this.remitting_currency);
+    }
+    
+    this.load_branch_setup = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading branch setup failed."); return;
+        }
+        
+        this.open_msg_prompt("Loading branch setup ..."); 
+        IRSWorld.TranClass.RemTranExtra.branch_setups(this.load_branch_setup_callback);
+    }
+    
+    this.load_branch_setup_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        var ds = null;
+
+        if (result != null && result.value != null)
+        {
+            ds = result.value;
+            
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                iremit.remittance_amount_limit  = ds.Tables[0].Rows[0].RemittanceAmtLimit;
+                iremit.remittance_teller_limit  = ds.Tables[0].Rows[0].TellerLimit;
+                iremit.remittance_superv_limit  = ds.Tables[0].Rows[0].SupervisorLimit;
+                iremit.remittance_aggregate_tag = ds.Tables[0].Rows[0].AggregateAmtLimit;
+                
+                iremit.cash_aggregation_enabled = (ds.Tables[0].Rows[0].CashAggregationLimit == null) ? false : ds.Tables[0].Rows[0].CashAggregationLimit;
+                iremit.cash_aggregation_amtlimit = (ds.Tables[0].Rows[0].CashAggregationAmtLimit == null) ? 0 : ds.Tables[0].Rows[0].CashAggregationAmtLimit;
+            }
+
+            if (isNaN(iremit.remittance_amount_limit)  == true){iremit.remittance_amount_limit  = 0;}
+            if (isNaN(iremit.remittance_teller_limit)  == true){iremit.remittance_teller_limit  = 0;}
+            if (isNaN(iremit.remittance_superv_limit)  == true){iremit.remittance_superv_limit  = 0;}
+            if (isNaN(iremit.remittance_aggregate_tag) == true){iremit.remittance_aggregate_tag = 0;}
+            if (isNaN(iremit.cash_aggregation_amtlimit)  == true){iremit.CashAggregationAmtLimit  = 0.00;}
+        }
+
+        iremit.load_remitter_and_beneficiary_setup();
+    }
+    
+    this.load_branch_defaults = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading branch defaults failed."); return;
+        }
+
+        this.open_msg_prompt("Loading branch default ..."); IRSWorld.Remittance.RemOTC.get_branch_defaults(this.load_branch_defaults_callback);
+    }
+
+    this.load_branch_defaults_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.reset_tran = 0;
+
+        var ds; 
+
+        if (result != null && result.value != null)
+        {
+            ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                if (iremit.product_code == 0 && iremit.implementation_code == 0)
+                {
+                    iremit.product_code        = parseInt(ds.Tables[0].Rows[0].ProductCode);
+                    iremit.implementation_code = parseInt(ds.Tables[0].Rows[0].ImplementationType);
+                }
+
+                if (iremit.charge_type != null && iremit.charge_type == 0)
+                {
+                    iremit.charge_type = parseInt(ds.Tables[0].Rows[0].ChargeType);
+                }
+
+                if (iremit.payment_type != null && iremit.payment_type == 0)
+                {
+                    iremit.payment_type = parseInt(ds.Tables[0].Rows[0].PayMode);
+                }
+                
+                if (iremit.remitting_currency != null && iremit.remitting_currency == 0)
+                {
+                    iremit.remitting_currency = parseInt(ds.Tables[0].Rows[0].RemittingCurrency);
+                }
+                
+                if (iremit.compute_direction != null && iremit.compute_direction == 0)
+                {
+                    iremit.compute_direction  = parseInt(ds.Tables[0].Rows[0].Computation);
+                }
+                
+                if (iremit.receipt_mode != null && iremit.receipt_mode == 0)
+                {
+                    iremit.receipt_mode = parseInt(ds.Tables[0].Rows[0].ReceiptMode);
+                }
+                
+                if (iremit.purpose != null && iremit.purpose == 0)
+                {
+                    iremit.purpose = parseInt(ds.Tables[0].Rows[0].TranxPurpose);
+                }
+                
+                if (iremit.transaction_source != null && iremit.transaction_source == 0)
+                {
+                    iremit.transaction_source = parseInt(ds.Tables[0].Rows[0].TranxSource);
+                }           
+                
+                if (iremit.source_of_funds != null && iremit.source_of_funds == 0)
+                {
+                    iremit.source_of_funds = parseInt(ds.Tables[0].Rows[0].SourceOfFunds);
+                }
+                
+                if (iremit.on_behalf != null && iremit.on_behalf == 0)
+                {            
+                    iremit.on_behalf = parseInt(ds.Tables[0].Rows[0].OnBehalf);
+                }
+                
+                if (iremit.exceptions != null && iremit.exceptions == 0)
+                {            
+                    iremit.exceptions = parseInt(ds.Tables[0].Rows[0].Exceptions);
+                }
+                
+                if (iremit.allow_card != null && iremit.allow_card == 0)
+                {
+                    iremit.allow_card = parseInt(ds.Tables[0].Rows[0].CardTransaction);
+                }
+
+                if (iremit.for_approval_tag != null && iremit.for_approval_tag == 0)
+                {
+                    iremit.for_approval_tag = parseInt(ds.Tables[0].Rows[0].ForApprovalTag); 
+                }
+
+                if (ds.Tables[0].Rows[0].CashManagement != null && parseInt(ds.Tables[0].Rows[0].CashManagement) > 0)
+                {
+                    iremit.allowed_cash_mgt = parseInt(ds.Tables[0].Rows[0].CashManagement);
+                }
+                
+                if (ds.Tables[0].Rows[0].PromoStatus != null && parseInt(ds.Tables[0].Rows[0].PromoStatus) > 0)
+                {
+                    iremit.promo_status = parseInt(ds.Tables[0].Rows[0].PromoStatus); //Added by Floven 20130228
+                }
+            }
+
+            if (isNaN(iremit.payment_type)       == true){iremit.payment_type        = 0;}
+            if (isNaN(iremit.remitting_currency) == true){iremit.remitting_currency  = 0;}
+            if (isNaN(iremit.charge_type)        == true){iremit.charge_type         = 0;}
+            if (isNaN(iremit.compute_direction)  == true){iremit.compute_direction   = 0;}
+            if (isNaN(iremit.receipt_mode)       == true){iremit.receipt_mode        = 0;}
+            if (isNaN(iremit.purpose)            == true){iremit.purpose             = 0;}
+            if (isNaN(iremit.transaction_source) == true){iremit.transaction_source  = 0;}
+            if (isNaN(iremit.source_of_funds)    == true){iremit.source_of_funds     = 0;}
+            if (isNaN(iremit.on_behalf)          == true){iremit.on_behalf           = 0;}
+            if (isNaN(iremit.exceptions)         == true){iremit.exceptions          = 0;}
+            if (isNaN(iremit.allow_card)         == true){iremit.allow_card          = 0;}
+            if (isNaN(iremit.for_approval_tag)   == true){iremit.for_approval_tag    = 0;}
+            
+            iremit.load_branch_setup();
+        }
+    }
+
+    this.load_remitter_and_beneficiary_setup = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading remitter and beneficiary setup failed."); return;
+        }    
+
+        this.open_msg_prompt("Loading remitter and beneficiary setup ..."); 
+        IRSWorld.Remittance.RemOTC.get_remitter_benef_trans_setup(this.remitter_id, this.beneficiary_id, parseInt(this.product_code), parseInt(this.implementation_code), this.load_remitter_and_beneficiary_setup_callback);
+    }
+
+    this.load_remitter_and_beneficiary_setup_callback = function(result)
+    {
+        var i = 0;
+        var j = 0;
+
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null)
+        {
+            var ds = result.value;
+
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                if (iremit.product_needs_bene_account() == false)
+                {
+                    for(j = 0; j < ds.Tables[0].Rows.length; j++)
+                    {
+                        if (parseInt(ds.Tables[0].Rows[j].destination_currency) == iremit.account_currency)
+                        {
+                            i = j;
+                        }
+                    }
+                }
+                else
+                {
+                    for(j = 0; j < ds.Tables[0].Rows.length; j++)
+                    {
+                        if (parseInt(ds.Tables[0].Rows[j].account_currency) == iremit.account_currency)
+                        {
+                            i = j;
+                        }
+                    }                    
+                }
+                
+                if (parseInt(ds.Tables[0].Rows[i].destination_currency) > 0)
+                {
+                    iremit.net_to_bene_currency = parseInt(ds.Tables[0].Rows[i].destination_currency);
+                    iremit.account_currency     = parseInt(ds.Tables[0].Rows[i].destination_currency);
+                }
+                else
+                {
+                    iremit.net_to_bene_currency = parseInt(ds.Tables[0].Rows[i].account_currency);
+                    iremit.account_currency     = parseInt(ds.Tables[0].Rows[i].account_currency);
+                }                
+                
+
+                if (parseInt(ds.Tables[0].Rows[i].charge_type) > 0)
+                {
+                    iremit.charge_type = ds.Tables[0].Rows[i].charge_type;
+                }
+
+                //if (ds.Tables[0].Rows[i].destination_branch_seq != null && ds.Tables[0].Rows[i].destination_branch_seq != 0)
+                //{
+                //    iremit.transaction_detail_branch_seq = parseInt(ds.Tables[0].Rows[i].destination_branch_seq);
+                //}
+
+                //======================================================================================
+                /* RFC-26582 - Pending Override */
+                if (ds.Tables[0].Rows[i].destination_branch_seq != null && ds.Tables[0].Rows[i].destination_branch_seq != 0)
+                {
+                    iremit.transaction_detail_branch_seq = parseInt(ds.Tables[0].Rows[i].destination_branch_seq);
+                }
+                else if (ds.Tables[0].Rows[i].destination_branch_seq == 0) {
+                    iremit.transaction_detail_branch_seq = 0;
+                }
+                else {
+                    iremit.transaction_detail_branch_seq = 0;
+                }
+                //======================================================================================
+                /* RFC-26582 - Pending Override */
+
+                if (ds.Tables[0].Rows[i].account_type != null && ds.Tables[0].Rows[i].account_type != 0)
+                {
+                    iremit.account_type = parseInt(ds.Tables[0].Rows[i].account_type);
+                }
+            }
+        }
+
+        if (iremit.transaction_detail_branch_seq == null || iremit.transaction_detail_branch_seq == '')
+        {
+            iremit.transaction_detail_branch_seq = 0;
+        }
+
+        if (iremit.account_type == null)
+        {
+            iremit.account_type = 0;
+        }
+        
+        iremit.load_transaction_last_setup();
+    }
+    
+    this.load_transaction_last_setup = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading remitter last transaction setup failed."); return;
+        }
+
+        this.open_msg_prompt("Loading last transaction setup ..."); 
+        IRSWorld.Remittance.RemOTC.load_transaction_last_setup(this.remitter_id, this.beneficiary_id, this.load_transaction_last_setup_callback);
+    }
+    
+    this.load_transaction_last_setup_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null && result.value != null)
+        {
+            var ds = result.value;
+            
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                if (ds.Tables[0].Rows[0].transactionsource != null && ds.Tables[0].Rows[0].transactionsource != 0)
+                {
+                    iremit.transaction_source = ds.Tables[0].Rows[0].transactionsource;
+                }
+                if (ds.Tables[0].Rows[0].transactionpurpose != null && ds.Tables[0].Rows[0].transactionpurpose != 0)
+                {
+                    iremit.purpose = ds.Tables[0].Rows[0].transactionpurpose;
+                }
+                if (ds.Tables[0].Rows[0].receiptmode != null && ds.Tables[0].Rows[0].receiptmode != 0)
+                {
+                    iremit.receipt_mode = ds.Tables[0].Rows[0].receiptmode;
+                }
+                if (ds.Tables[0].Rows[0].sourceoffunds != null && ds.Tables[0].Rows[0].sourceoffunds != 0)
+                {
+                    iremit.source_of_funds = ds.Tables[0].Rows[0].sourceoffunds;
+                }
+                if (ds.Tables[0].Rows[0].chargetype != null && ds.Tables[0].Rows[0].chargetype != 0)
+                {
+                    iremit.charge_type = ds.Tables[0].Rows[0].chargetype;
+                }
+            }
+        }
+
+        iremit.load_settings();
+    }
+    
+    this.load_branch_name = function()
+    {
+        this.open_msg_prompt("Loading transaction bank name ...");
+        
+        if (parseInt(this.benef_acct_sequence) > 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Loading account bank name failed."); return;
+            }
+        
+            IRSWorld.Remittance.RemOTC.get_account_bank_name(parseInt(this.benef_acct_sequence), this.load_branch_name_callback);
+        }
+        else
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Loading bpo bank name failed."); return;
+            }
+        
+            IRSWorld.Remittance.RemOTC.get_bpo_bank_name(parseInt(this.transaction_detail_branch_seq), this.load_branch_name_callback);
+        }
+    }
+
+    this.load_branch_name_callback = function (result) {
+        iremit.close_msg_prompt();
+        // CJ Fix on GFC Product Change Charge Type
+        setText("lbl_branch_name", "");
+        if (parseInt(iremit.product_code) != 22) {
+            if (result != null && result.value != null) {
+                var ds = result.value;
+
+                if (ds.Tables[0].Rows.length > 0) {
+                    setText("lbl_branch_name", ds.Tables[0].Rows[0].branch_name); iremit.transaction_detail_branch_seq = ds.Tables[0].Rows[0].branch_seq_id;
+                }
+            }
+        }
+        else {
+            var bname = IRSWorld.TranClass.RemTranGFMCCommons.get_branch_name();
+            if (bname != null) {
+                setText("lbl_branch_name", bname.value.toString());
+            }
+        }
+
+        // CJ END
+        //if (parseInt(iremit.product_code) == 27 || parseInt(iremit.product_code) == 8 || parseInt(iremit.product_code) == 9 || parseInt(iremit.product_code) == 1 || parseInt(iremit.product_code) == 17 || parseInt(iremit.product_code) == 4 || parseInt(iremit.product_code) == 18 || parseInt(iremit.product_code) == 3 || parseInt(iremit.product_code) == 24 || parseInt(iremit.product_code) == 15) {
+        //    setText("lbl_account_number", ""); // CJ Fix on Account Number Reset
+        //}
+        iremit.load_currency_description();
+    }
+
+    this.load_currency_description = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to get account currency description."); return;
+        }
+
+        this.open_msg_prompt("Loading currency description ..."); IRSWorld.Remittance.RemOTC.get_lookup_data("currency", parseInt(this.account_currency), this.load_currency_description_callback);
+    }
+    
+    this.load_currency_description_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        var ds = result.value;
+
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                setText("lbl_account_currency", ds.Tables[0].Rows[0].field_code + " - " + ds.Tables[0].Rows[0].field_description);
+            }
+        }
+
+        if (parseInt(iremit.reset_tran) > 0)
+        {
+            setText("lbl_account_currency", "");
+        }
+    
+        iremit.build_and_compute();
+    }
+
+    this.load_otc_caption = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading otc rate failed."); return;
+        }
+
+        this.open_msg_prompt("Loading currency rate ..."); 
+        IRSWorld.Remittance.RemOTC.get_otc_rate_caption(this.remitting_currency, this.account_currency, this.load_otc_caption_callback );            
+    }
+    
+    this.load_otc_caption_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.rates_is_ready = 0;
+
+        if (result != null)
+        {
+            if (result.value != null && result.value.toString().length > 0)
+            {
+                setText("lbl_otc_caption", result.value); iremit.rates_is_ready = 1;
+            }
+        }
+        
+        if (parseInt(iremit.rates_is_ready) > 0)
+        {
+            if (parseInt(iremit.product_charge_id) == 0)
+            {
+                setText("lbl_otc_caption", "REMITTANCE INFORMATION - PLEASE CHECK PRODUCT COMBINATION. SETUP NOT FOUND"); iremit.post_charge_setup_msg(); return;
+            }
+        }
+        else
+        {
+            if (parseInt(iremit.product_charge_id) > 0)
+            {
+                setText("lbl_otc_caption", "REMITTANCE INFORMATION - EXCHANGE RATE NOT FOUND.");
+            }
+            else
+            {
+                setText("lbl_otc_caption", "REMITTANCE INFORMATION");
+            }
+        }
+
+        iremit.set_computation_direction(parseInt(iremit.compute_direction));
+    }
+
+    this.set_computation_direction = function(i)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Setting computation direction to session failed."); return;
+        }
+        
+        this.open_msg_prompt("Setting transaction computation type ..."); 
+        IRSWorld.TranClass.RemTranExtra.set_to_session_computation_direction(i, iremit.set_computation_direction_callback);
+    }
+
+    this.set_computation_direction_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.load_branch_name();
+    }
+
+    this.check_serviceable_area = function()
+    {
+        var ok_checking = false;
+
+        if (parseInt(this.product_code) == 8)
+        {
+            if (parseInt(this.implementation_code) == 3)
+            {
+                ok_checking = true;
+            }
+        }
+
+        if (parseInt(this.product_code) == 9)
+        {
+            if (parseInt(this.implementation_code) == 3)
+            {
+                ok_checking = true;
+            }
+        }
+        
+        if (ok_checking == false)
+        {
+            this.check_obps_account(); return;
+        }
+        
+        this.open_msg_prompt("Checking beneficiary zipcode if valid for door to door transaction ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking beneficiary zip code failed."); return;
+        }
+
+        IRSWorld.Remittance.RemOTC.location_is_serviceable(this.beneficiary_id, this.check_serviceable_area_before_commit_callback);
+    }
+
+    this.check_serviceable_area_before_commit_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null)
+        {
+            if (result.value == false)
+            {
+                var iconfirm = confirm("Either beneficiary zip code not defined in cif address or non-serviceable area (OSA) for door to door transaction. \n\Would you like to update beneficaiary zip code and continue processing transaction?");
+
+                if (iconfirm == true)
+                {
+                    iremit.open_door_to_door_serviceable_area(); return;
+                }
+                else
+                {
+                    alert("Please advice customer that they may opt to \npick-up remittance from any PNB branch or payout partners.\n\nRecommend to transact using advice and pay."); 
+                    iremit.replace_product(1); return;
+                }
+            }
+            else
+            {
+                if (iremit.door_is_ready() == false)
+                {
+                    return;
+                }
+
+                iremit.check_obps_account();
+            }
+        }
+    }
+    
+    this.check_serviceable_area_other_details = function()
+    {
+        this.open_msg_prompt("Checking beneficiary zip code if valid for door to door transaction ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking beneficiary zip code failed."); return;
+        }
+
+        IRSWorld.Remittance.RemOTC.location_is_serviceable(this.beneficiary_id, this.check_serviceable_area_other_details_callback);
+    }
+
+    this.check_serviceable_area_other_details_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null)
+        {
+            if (result.value == false)
+            {
+                var iconfirm = confirm("Either beneficiary zip code not defined in cif address or not valid for door to door transaction. \n\Would you like to update beneficiary zip code and continue processing transaction?");
+
+                if (iconfirm == true)
+                {
+                    iremit.open_door_to_door_serviceable_area(); return;
+                }
+            }
+            else
+            {
+                iremit.door_to_door_screen();
+            }
+        }
+    }
+
+    this.build_and_compute = function()
+    {
+        this.build_remittance_object();
+        this.set_product_setup_desc();
+        
+        //*** Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017 ***//
+        this.Check_ACH_Branch_Extract_Setup();
+        this.Check_IsRemitter_ACH();
+        this.Enable_RemAccount_Details();
+    }
+
+    this.commit_message_screen = function()
+    {
+        if (this.promo_status == 1 && this.promo_ignored != true) this.addToPromoCounter(this.transaction_reference_no); //Added by Floven 20130228
+        
+        var msg    = "Transaction committed successfully with reference number: " + this.transaction_reference_no;
+        var icount = 0;
+
+        if (this.rem_details_error_msg != null || this.payment_error_msg != null || this.rem_proxy_msg != null)
+        {
+            msg += "\n\nBut failed to update the following items below: \n\n     ";
+        }
+        
+        if (this.rem_details_error_msg != null)
+        {
+            icount++;
+
+            msg += icount;
+            msg += ".) ";
+            msg += "Error encountered updating other remittance information: " + this.rem_details_error_msg;
+            msg += "\n     ";
+        }
+        
+        if (this.payment_error_msg != null)
+        {
+            icount++;
+            
+            msg += icount;
+            msg += ".) ";
+            msg += "Error encountered updating payment method: " + this.payment_error_msg;
+            msg += "\n     ";
+        }
+        
+        if (this.rem_proxy_msg != null)
+        {
+            icount++;
+
+            msg += icount;
+            msg += ".) ";
+            msg += "Error encountered updating remitter authorized representative: " + this.rem_proxy_msg;
+            msg += "\n     ";            
+        }
+        
+        if (this.credit_online_message != null)
+        {
+            msg += "\n\n" + this.credit_online_message;
+        }
+
+        alert(msg);
+
+        this.disable_remittance_button(true);        
+        this.modify_transaction_status();
+        this.Save_RemAccount_Details(this.transaction_reference_no);
+    }
+  
+    this.addToPromoCounter = function(refno)
+    {
+        var charge_type = iremit.charge_type;
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding."); return;
+        }
+
+        IRSWorld.Remittance.RemOTC.addToPromoCounter(refno, charge_type);    
+    }
+    
+  
+    this.modify_transaction_status = function()
+    {
+        this.close_msg_prompt();
+        
+        if (this.pending_ro_status == null)
+        {
+            this.pending_ro_status = 0;
+        }
+    
+        if (this.payment_error_msg != null && this.payment_error_msg != "")
+        {
+            if (parseInt(this.product_code) == 10 || parseInt(this.product_code) == 24 || parseInt(this.product_code) == 27 || parseInt(this.implementation_code) == 2)
+            {
+                this.commit_default_product_implem(); return;
+            }
+
+            this.run_transaction_status_update(this.transaction_status); return; /* UPDATE STATUS IF PAYMENT METHOD FAILED. EVENTHOUGH TRANSACTION STATUS IS FOR OVERRIDE */
+        }
+
+        if (this.revert_status == true && parseInt(this.pending_ro_status) == 0)
+        {
+            this.run_transaction_status_update(this.transaction_status);
+        }
+        else
+        {
+            this.commit_default_product_implem();
+        }
+    }
+    
+    this.run_transaction_status_update = function(transaction_status)
+    {
+        var data_row = new Array();
+
+        data_row[data_row.length] = "Transtatus~" + transaction_status;
+        data_row = data_row.join("|");
+
+        this.open_msg_prompt("Please wait while the system is updating transaction status ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to modify otc transaction status."); return;
+        }
+
+        IRSWorld.TranClass.RemTranSaving.update_otc_transaction_status(data_row, this.transaction_sequence_id, this.modify_transaction_status_callback);    
+    }
+
+    this.modify_transaction_status_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        iremit.commit_default_product_implem();
+    }
+
+    this.debit_account_payment = function()
+    {
+        this.debit_account_payments = new rem_modal_debit_account_payments();
+        this.debit_account_payments.debit_account_form(this.remitter_id, this.remitted_amount, "iremit.debit_account_payments");
+    }
+    
+    this.debit_account_payment_response = function(param)
+    {
+        var s = param.split('~'); this.payment_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.payment_error_msg  = s[1];
+                this.transaction_status = 15;
+            }
+        }
+
+        this.rem_proxy_commit();
+    }
+    
+    this.card_payment = function()
+    {
+        this.the_mode = 10;
+        this.card_payments = new rem_modal_card_payments();
+        this.card_payments.otc_card_payment  = true;
+        
+        if (this.gross_rem_amount != null && parseInt(this.gross_rem_amount) > 0) //Edited by Troy 20120809
+        {
+            this.card_payments.card_form(this.remitter_id, this.gross_rem_amount, "iremit.card_payments", this.remitting_currency.toString(), this.rem_currencycode.toString(), iremit); //edited by boyet 20120720
+        }
+        else
+        {
+            alert("Gross remittance amount not found.");
+        }
+    }
+    
+    this.card_payment_response = function(param)
+    {
+        var s = param.split('~'); this.payment_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.payment_error_msg  = s[1];
+                this.transaction_status = 15;
+            }
+        }
+    }
+
+    this.ach_payment = function()
+    {
+        this.ach_payments = new ach_payment();
+        this.ach_payments.create_clearing_popup();
+        this.ach_payments.transaction_id = this.transaction_sequence_id;
+    }
+    
+    this.chk_ach_pay_result = function()
+    {
+        this.chk_ach_post_dated();
+    }
+    
+    this.chk_ach_post_dated = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. ACH clearing date validation failed."); return;
+        }
+        
+        this.open_msg_prompt("Checking ACH clearing date ..."); IRSWorld.Remittance.RemOTC.check_is_post_dated(this.ach_payments.clearing_date, this.chk_ach_post_dated_callback);
+    }
+    
+    this.chk_ach_post_dated_callback = function(result)
+    {
+        iremit.payment_error_msg = null;
+        iremit.revert_status     = false;
+        iremit.close_msg_prompt();       
+
+        if (result != null && result.value != null)
+        {
+            if (result.value == true)
+            {
+                iremit.transaction_status = 14;
+                iremit.revert_status = true;
+            }
+        }
+
+        iremit.ach_payments.commit_transaction();    
+    }
+    
+    this.ach_payment_commit_result = function(param)
+    {
+        this.payment_error_msg = null;
+
+        if (param != null)
+        {
+            if (param == false)
+            {
+                this.payment_error_msg = "Error encountered saving ach payment";
+            }
+        }
+    
+        this.rem_proxy_commit();
+    }    
+
+    this.check_payment = function()
+    {
+        this.the_mode = 6;
+
+        this.cheque_payments = new rem_modal_check_payments();
+        this.cheque_payments.transaction_id = this.transaction_sequence_id;
+        this.cheque_payments.open_check_payment_form("iremit.cheque_payments");
+    }
+
+    this.check_payment_result = function()
+    {
+       this.check_is_post_dated();
+    }
+    
+    this.check_is_post_dated = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Unable to validate cheque date."); return;
+        }
+        
+        this.open_msg_prompt("Validating cheque date ..."); IRSWorld.Remittance.RemOTC.check_is_post_dated(this.cheque_payments.clearing_date, this.check_is_post_dated_callback);
+    }
+    
+    this.check_is_post_dated_callback = function(result)
+    {
+        iremit.payment_error_msg = null;
+        iremit.revert_status     = false;
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null)
+        {
+            if (result.value == true)
+            {
+                iremit.transaction_status = 14;
+                iremit.revert_status = true;
+            }
+        }
+
+        iremit.cheque_payments.commit_transaction();
+    }
+
+    this.check_payment_commit_result = function(param)
+    {
+        this.payment_error_msg = null;
+
+        if (param != null)
+        {
+            if (param == false)
+            {
+                this.payment_error_msg = "Error encountered saving cheque payment.";
+            }
+        }
+
+        this.rem_proxy_commit();
+    }
+
+    this.build_remittance_object = function()
+    {
+        if (this.product_code != null && this.implementation_code != null)
+        {        
+            if (parseInt(this.product_code) == 22)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    if (this.global_filipino_card == null)
+                    {                
+                        this.global_filipino_card = new GFMC_Maintenance();
+                        this.global_filipino_card.isOTC = true;
+                    }
+
+                    return;
+                }
+            }
+                    
+            if (parseInt(this.product_code) == 10)
+            {
+                if (parseInt(this.implementation_code) == 2)
+                {
+                    if (this.choose_account == null)
+                    {
+			            this.choose_account = new rem_modal_accounts();
+		            }
+
+                    this.choose_account.currency_code = this.account_currency;
+                    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+		            return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.choose_account == null)
+                    {
+			            this.choose_account = new rem_modal_accounts();
+		            }
+
+                    this.choose_account.currency_code = this.account_currency;
+                    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 11)
+            {
+                if (parseInt(this.implementation_code) == 11)
+                {
+                    if (this.choose_account == null)
+                    {
+                        this.choose_account = new rem_modal_accounts();
+                    }
+
+                    this.choose_account.currency_code = this.account_currency;
+                    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+                    return;
+                }
+            }
+            if (parseInt(this.product_code) == 12)
+            {
+                if (parseInt(this.implementation_code) == 4)
+                {
+                    if (this.choose_account == null)
+                    {
+                        this.choose_account = new rem_modal_accounts();
+                    }
+
+                    this.choose_account.account_curtag = this.account_currency;
+                    this.choose_account.currency_code  = this.account_currency;
+                    this.choose_account.account_seqid  = this.benef_acct_sequence.toString();
+           		    
+                    return;                
+                }
+            }
+
+            if (parseInt(this.product_code) == 13)
+            {
+                if (parseInt(this.implementation_code) == 5)
+                {
+                    if (this.choose_account == null)
+                    {
+                        this.choose_account = new rem_modal_accounts();
+                    }
+
+                    this.choose_account.account_curtag = this.account_currency;
+                    this.choose_account.currency_code  = this.account_currency;
+                    this.choose_account.account_seqid  = this.benef_acct_sequence.toString();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 16)
+            {
+                if (parseInt(this.implementation_code) == 10)
+                {
+                    if (this.choose_account == null)
+                    {
+                        this.choose_account = new rem_modal_accounts();
+                    }
+
+                    this.choose_account.currency_code = this.account_currency;
+                    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 15)
+            {
+                if (parseInt(this.implementation_code) == 7)
+                {
+                    if (this.open_accounts == null)
+                    {
+                        this.open_accounts = new rem_modal_open_accounts();
+                    }
+                    
+                    if (this.account_currency == null || this.account_currency == '')
+                    {
+                        this.account_currency = 0;
+                    }
+
+                    if (this.account_type == null || this.account_type == '')
+                    {
+                        this.account_type = 0;
+                    }
+
+                    if (this.transaction_detail_branch_seq == null || this.transaction_detail_branch_seq == '')
+                    {
+                        this.transaction_detail_branch_seq = 0;
+                    }
+
+                    this.open_accounts.currency_code = parseInt(this.account_currency);
+                    this.open_accounts.account_type  = parseInt(this.account_type);
+                    this.open_accounts.branch_seq_id = parseInt(this.transaction_detail_branch_seq);
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 27)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.apas_online == null)
+                    {
+                        this.apas_online = new rem_modal_popups();
+                    }
+
+                    this.apas_online.pop_mode = 2;
+                    this.apas_online.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 255)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.apas_online == null)
+                    {
+                        this.apas_online = new rem_modal_popups();
+                    }
+
+                    this.apas_online.pop_mode = 2;
+                    this.apas_online.currency = this.account_currency;
+			        
+                    return;
+                }
+            }
+
+            if (parseInt(this.product_code) == 24)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.pay_anywhere == null)
+                    {
+                        this.pay_anywhere = new rem_modal_popups();
+                    }
+
+                    this.pay_anywhere.pop_mode  = 3;
+                    this.pay_anywhere.currency  = this.account_currency;
+                    this.pay_anywhere.br_seq_id = this.transaction_detail_branch_seq;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 7)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    if (this.apas_batch == null)
+                    {
+                        this.apas_batch = new rem_modal_popups();
+                    }
+
+                    this.apas_batch.pop_mode    = 1;
+                    this.apas_batch.currency    = this.account_currency;
+                    this.apas_batch.br_seq_id   = this.transaction_detail_branch_seq;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 8)
+            {
+                if (parseInt(this.implementation_code) == 3)
+                {
+                    if (this.door_to_door == null)
+                    {
+                        this.door_to_door = new rem_modal_popups();
+                    }
+
+                    this.door_to_door.pop_mode = 0;
+                    this.door_to_door.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 9)
+            {
+                if (parseInt(this.implementation_code) == 3)
+                {
+                    if (this.door_to_door == null)
+                    {
+                        this.door_to_door = new rem_modal_popups();
+                    }
+
+                    this.door_to_door.pop_mode = 0;
+                    this.door_to_door.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            //Added by Troy 20120911
+            if (parseInt(this.product_code) == 2)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 3)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {                    
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 4)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 1)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 5)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 6)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 18)
+            {
+                if (parseInt(this.implementation_code) == 1)
+                {
+                    this.need_special_message = true;
+                    
+                    if (this.bulk_payment == null)
+                    {                    
+                        this.bulk_payment = new rem_modal_popups();
+                    }
+
+                    this.bulk_payment.pop_mode = 0;
+
+                    this.bulk_payment.pop_mode  = 0;
+                    this.bulk_payment.br_seq_id = this.transaction_detail_branch_seq;
+                    this.bulk_payment.currency  = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.product_code) == 23)
+            {
+                if (parseInt(this.implementation_code) == 17)
+                {
+                    if (this.ibft_scr == null)
+                    {
+                        this.ibft_scr = new ibft_scr();
+                    }
+
+                    this.ibft_scr.beneficiary_id = this.beneficiary_id;
+                    this.ibft_scr.remitter_id = this.remitter_id;
+
+                    return;
+                }
+            }
+
+            /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+            if (parseInt(this.product_code) == 258) {
+                iremit.remitter_id = this.remitter_id;
+                iremit.beneficiary_id = this.beneficiary_id;
+                var instapay_validation_return = IRSWorld.Remittance.RemOTC.Instapay_validation(iremit.remittercifid, iremit.beneficiary_id);
+
+                /* NOTE: ADD REMITTER VALIDATION */
+                if (instapay_validation_return.value != 'OK') {
+                    alert(instapay_validation_return.value.toString());
+                    this.close_msg_prompt();
+                    //this.reset_screen();
+                }
+                else { return }
+            }
+            /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+        }
+    }
+
+    this.product_needs_bene_account = function()
+    {
+        if (parseInt(this.product_code) == 10){if (parseInt(this.implementation_code) == 2) {return true;}}
+        if (parseInt(this.product_code) == 22){if (parseInt(this.implementation_code) == 2) {return true;}}
+        if (parseInt(this.product_code) == 11){if (parseInt(this.implementation_code) == 11){return true;}}
+        if (parseInt(this.product_code) == 11){if (parseInt(this.implementation_code) == 1) {return true;}}
+        if (parseInt(this.product_code) == 14){if (parseInt(this.implementation_code) == 2) {return true;}}
+        if (parseInt(this.product_code) == 16){if (parseInt(this.implementation_code) == 10){return true;}}
+        if (parseInt(this.product_code) == 13){if (parseInt(this.implementation_code) == 5) {return true;}}
+        if (parseInt(this.product_code) == 12){if (parseInt(this.implementation_code) == 4) {return true;}}
+        if (parseInt(this.product_code) == 12){if (parseInt(this.implementation_code) == 5) {return true;}}
+	    if (parseInt(this.product_code) == 2){if (parseInt(this.implementation_code) == 1) {return true;}} //Added by Troy 20120829
+        if (parseInt(this.product_code) == 5){if (parseInt(this.implementation_code) == 1) {return true;}} //Added by Troy 20120829
+        if (parseInt(this.product_code) == 6){if (parseInt(this.implementation_code) == 1) {return true;}} //Added by Troy 20120829
+        if (parseInt(this.product_code) == 23){if (parseInt(this.implementation_code) == 17) {return true;}} //Added by boyet 20140410
+        if (parseInt(this.product_code) == 258) { if (parseInt(this.implementation_code) == 29) { return true; } } //Instapay Alyssa 2019
+        return false;
+    }
+
+    this.check_bene_account = function()
+    {
+        if (this.product_needs_bene_account() == true)
+        {
+            if (isNaN(parseInt(getText("lbl_account_number"))) == true)
+            {
+                return false;
+            }
+        }        
+        
+        return true;
+    }
+
+    /* RFC 992 - PESONET */
+    this.bankname_is_not_blank = function () {
+        var bank_name = getText("lbl_branch_name");
+        if (this.product_needs_bene_account() == true) {
+            if (bank_name == null || bank_name == "" || bank_name.length == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    this.email_receipt = function()
+    {
+        if(confirm("Do you want to send receipt thru email?"))
+        {
+            this.open_msg_prompt("Please wait ..."); 
+            
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Sending otc receipt failed."); return;
+            }            
+            
+            IRSWorld.Remittance.RemOTC.send_otc_receipt(this.transaction_sequence_id, this.transaction_reference_no, this.remitter_id, this.email_receipt_callback);
+        }
+        else
+        {
+            this.reset_screen();
+        }
+    }
+
+    this.email_receipt_callback = function(result)
+    {
+        var got_error = false;        
+        
+        iremit.close_msg_prompt();
+        document.js_closer = null;
+
+        if (result != null)
+        {
+            if (result.value == '')
+            {
+                alert("Transaction receipt sent thru email.");
+            }
+            else
+            {
+                alert(result.value);
+            }
+        }
+        
+        if (result != null && result.value != '' && result.value != 'Failed to send O.R thru email.')
+        {
+            got_error = true;
+        }
+
+        if (got_error == false)
+        {
+            iremit.reset_screen(); return;
+        }
+
+        if (got_error == true)
+        {
+            if(confirm("Do you want to retry sending receipt thru email? \n\n Click OK to retry or CANCEL to clear screen and proceed with your next transaction.") == false)
+            {
+                iremit.reset_screen(); return;
+            }
+            
+            iremit.open_msg_prompt("Resending receipt thru email please wait ..."); 
+            
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                iremit.close_msg_prompt(); alert("Server not responding. Sending otc receipt failed."); iremit.reset_screen(); return;
+            }
+
+            IRSWorld.Remittance.RemOTC.send_otc_receipt(iremit.transaction_sequence_id, iremit.transaction_reference_no, iremit.remitter_id, iremit.email_receipt_callback);
+        }
+    }
+    
+    this.print_receipt = function()
+    {
+        this.close_msg_prompt();
+    
+        var iconfirm = confirm("Do you want to print receipt?");
+
+        if (iconfirm == true)
+        {
+            document.js_closer = "otc_receipt_closeure"; show_frame_dialog('../Reports/Pages/Report_viewer.aspx?trantype=OTC&tranvalue='+ this.transaction_sequence_id, null , '100%', '100%', '0',null, null, true);
+        }
+        else
+        {
+            this.email_receipt();
+        }
+    }        
+    
+    this.daily_record_keeping_log_report = function()
+    {
+        if (iremit.dailyrecordkeepinglog == true) //Edited by Troy 20120806
+        {
+            var iconfirm = confirm("Would you like to print daily keeping log?");
+
+            if (iconfirm == true)
+            {
+                document.js_closer = "otc_daily_log_closure"; show_frame_dialog('../Reports/Pages/Report_viewer.aspx?trantype=OTCDAILY&tranvalue='+ this.transaction_sequence_id, null , '100%', '100%', '0',null, null, true); return;
+            }            
+        }
+        
+        this.call_remit_cls();
+    }
+
+    this.process_gfc_insert_aggregate = function()
+    {
+        /*EDITED BY DDC APRIL 2016 */
+        if (parseInt(this.implementation_code) == 2 || parseInt(this.product_code) == 10 || parseInt(this.product_code) == 22)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+
+            AjaxPro.onTimeout = function()
+            {
+                iremit.close_msg_prompt(); alert("Server not responding. process_gfc_insert_aggregate."); iremit.reset_screen(); return;
+            }
+
+            IRSWorld.TranClass.RemTranExtra.gfc_insert_otc_gfc_aggregate(this.transaction_sequence_id, this.process_gfc_insert_aggregate_callback); return;
+        }
+
+        this.commit_message_screen(); return;
+    }
+
+    this.process_gfc_insert_aggregate_callback = function(result)
+    {
+        iremit.commit_message_screen(); return;
+    }    
+
+    this.process_online_transaction = function()
+    {
+        if (this.pending_ro_status == null)
+        {
+            this.pending_ro_status = 0;
+        }
+
+        if (parseInt(this.implementation_code) == 2 || parseInt(this.product_code) == 10 || parseInt(this.product_code) == 24 || parseInt(this.product_code) == 27)
+        {
+            if (parseInt(this.for_approval_tag) == 0 && parseInt(this.transaction_status) == 1 && parseInt(this.pending_ro_status) == 0)
+            {
+                if (parseInt(this.payment_type) != 6)
+                {
+                    new credit_casa().open_online_credit(this.transaction_sequence_id); return;
+                }
+            }
+
+            this.process_gfc_insert_aggregate(); return;
+        }
+
+        this.commit_message_screen();
+        
+        /*
+        COMMENTED TEMPORARILY DDC APRIL 22 2016 AND MOVE THE MESSAGE
+        if (this.branch_code == '1170')
+        {
+            this.ord_data_entry_commit(this.transaction_sequence_id);
+        }
+        else
+        {
+            this.commit_message_screen();
+        }
+        */
+    }
+    
+    this.online_credit_response = function(param)
+    {
+        var i = param.split('~');
+
+        if (i != null)
+        {
+            this.credit_online_message = "FLEXCUBE STATUS\n";
+
+            if (i[1] != null)
+            {
+                this.credit_online_message += "     MESSAGE: " + i[1] + "\n";
+            }
+
+            if (i[3] != null)
+            {
+                this.credit_online_message += "     STATUS : " + i[3];
+            }
+        }
+
+        this.commit_message_screen();
+    }
+
+    this.check_commit_entries = function()
+    {
+        if (iremit.source_of_funds    == null){iremit.source_of_funds    = 0;}
+        if (iremit.purpose            == null){iremit.purpose            = 0;}
+        if (iremit.receipt_mode       == null){iremit.receipt_mode       = 0;}
+        if (iremit.transaction_source == null){iremit.transaction_source = 0;}
+
+        if (parseInt(iremit.source_of_funds) == 0)
+        {
+            alert("Source of fund is required."); return;
+        }
+        
+        if (parseInt(iremit.purpose) == 0)
+        {
+            alert("Purpose is required."); return;
+        }
+        
+        if (parseInt(iremit.receipt_mode) == 0)
+        {
+            alert("Receipt mode is required."); return;
+        }
+        
+        if (parseInt(iremit.transaction_source) == 0)
+        {
+            alert("Transaction source is required."); return;
+        }
+
+        this.check_serviceable_area();
+
+    }
+
+    this.check_obps_account = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking obps account failed."); return;
+        }
+
+        if ((parseInt(this.product_code) == 10 || parseInt(this.product_code) == 22) && parseInt(this.implementation_code) == 2)
+        {
+            this.open_msg_prompt("Checking account status. (for biller's account)"); 
+            IRSWorld.Remittance.RemOTC.got_merchant_account(getText("lbl_account_number"), this.check_obps_account_callback);
+        }
+        else
+        {
+            this.check_transaction_limit();
+        }
+    }
+
+    this.check_obps_account_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null)
+        {
+            if (result.value != null && result.value == false)
+            {
+                iremit.check_account_status();
+            }
+            else
+            {
+                iremit.reset_screen(); alert("Cannot transact using biller's account.");
+            }
+        }
+    }
+    /* added by neil feb 2012*/
+    this.check_account_status = function()
+    {
+        if ((parseInt(this.product_code) == 10 || parseInt(this.product_code) == 22) && parseInt(this.implementation_code) == 2)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Checking account status failed."); return;
+            }
+            
+            this.open_msg_prompt("Checking accounts status. (dormant account/closed/invalid)");
+
+            /* RFS BLOCK TIME DEPOSIT */
+            var TD = IRSWorld.Remittance.RemOTC.isAccountTD(getText("lbl_account_number")).value;
+            if (TD != null && TD.length > 0) {
+                alert(TD);
+                iremit.close_msg_prompt();
+                return;
+            }
+
+            /* E2EAPICHANGE 20220209 updated code */
+            //IRSWorld.Remittance.RemOTC.get_account_status(getText("lbl_account_number"), this.beneficiary_id, this.check_account_status_callback);
+            IRSWorld.Remittance.RemOTC.get_acct_stat_pnb_allied(getText("lbl_account_number"), this.beneficiary_id, this.check_account_status_callback);
+        }
+        else
+        {
+            this.check_transaction_limit();
+        }
+    }
+
+    this.check_account_status_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        var col2 = getText("lbl_account_currency").split("-");
+        var acctcurr = col2[0];
+        var fcacctcurr = "";
+
+        if (result != null)
+        {
+            if (result.value != null)
+            {
+                col = result.value.split("|");
+
+                if (col[0] == 'Exception:') { alert(col[1]); return; }
+                if (col[0].toLowerCase() == 'true') { alert(col[2]); return; }
+
+                /* FOR CBIP */
+                fcacctcurr = col[3];
+                if (iremit.for_approval_tag != null && iremit.for_approval_tag != "1") {
+                    if (fcacctcurr.trim() != acctcurr.trim()) { alert('Account currency setup is not equal to Systematics currency.' + " IRSW:" + acctcurr + " Systematics: " + fcacctcurr); return; }
+                }
+            }
+        }
+
+        iremit.check_transaction_limit();            
+    }
+    
+    /* E2EAPICHANGE 20220209 Removed check_dormant_account */
+    
+    this.check_transaction_limit = function()
+    {
+        this.open_msg_prompt("Checking remittance amount limit");
+    
+        var limits = new remittance_amt_limits();        
+
+        limits.iremit_object = iremit;
+        limits.remitter_id                  = this.remitter_id;
+        limits.beneficiary_id               = this.beneficiary_id;
+        limits.beneficiary_account_currency = this.net_to_bene_currency;
+        limits.beneficiary_account_number   = this.get_account_number_txt();
+        limits.remitting_currency           = this.remitting_currency;
+        limits.remittance_aggregate_tag     = this.remittance_aggregate_tag;
+        limits.remittance_amount_limit      = this.remittance_amount_limit;
+        limits.remittance_teller_limit      = this.remittance_teller_limit;
+        limits.remittance_supervisor_limit  = this.remittance_superv_limit;
+        
+        limits.payment_type                 = this.payment_type;
+        
+        limits.cash_aggregation_enabled     = this.cash_aggregation_enabled;
+        limits.cash_aggregation_limit       = this.cash_aggregation_amtlimit;
+        
+        limits.check_amount_limit(this.gross_rem_amount, this.net_to_bene_amount, iremit);
+    }
+
+    this.remit_limit_response = function(param)
+    {
+        this.close_msg_prompt();
+        this.got_limit = 0;
+        
+        if (parseInt(this.gross_rem_amount) < 1 || parseInt(this.net_rem_amount) < 1 || parseInt(this.net_to_bene_amount) < 1)
+        {
+            alert("Please check current transaction. Negative remittance amount is not valid."); return;
+        }
+
+        if (this.product_charge_id == null || parseInt(this.product_charge_id) < 1)
+        {
+            alert("Please check product setup."); return;
+        }
+        
+        //Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017
+        if(this.IsRemitter_ACH == true && this.ACH_Branch_Setup == true)
+        {
+            if (this.Remitter_AccountType == null || this.Remitter_AccountType == "") { alert("Please input Remitter Account Type required for ACH payment transactions."); return; }
+            if (this.Remitter_AccountNo == null || this.Remitter_AccountNo == "") {alert("Please input Remitter Account Number required for ACH payment transaction."); return;}
+            if (this.Remitter_RoutingNo == null || this.Remitter_RoutingNo == "") {alert("Please input Remitter Routing Number required for ACH payment transaction."); return;}
+            if (this.Remitter_BankName == null || this.Remitter_BankName == "") {alert("Please input Remitter Bank Name required for ACH payment transaction."); return;}
+        }
+        
+        try
+        {
+             /* FOR PENDING OVERRIDE */
+            if (param != null && param instanceof Array)
+            {
+                if (param.length == 2)
+                {
+                    this.pending_ro_status = parseInt(param[1]);
+                    this.transaction_status = parseInt(param[1]);
+                }
+
+                if (param.length > 0)
+                {
+                    param = parseInt(param[0]);
+                }
+            }
+             /* FOR PENDING OVERRIDE */
+        }
+        catch(error)
+        {
+        }
+        
+        if (this.pending_ro_status == null)
+        {
+            this.pending_ro_status = 0;
+        }
+
+        if (parseInt(param) == 1 || parseInt(param) == 100 || parseInt(param) == 101)
+        {
+            var i_saved = confirm('Do you want to commit this transaction? \n\n Click cancel to abort or modify transaction entries.');
+
+            if (i_saved == false)
+            {
+                this.disable_remittance_button(false); return;
+            }
+
+            if (i_saved == true)
+            {
+                    if (parseInt(this.pending_ro_status) > 0)
+                    {
+                        this.transaction_status = parseInt(this.pending_ro_status);
+                    }
+
+                    if (parseInt(this.for_approval_tag) > 0 && parseInt(this.pending_ro_status) == 0)
+                    {
+                        this.transaction_status = 15;
+                    }
+
+                    if (this.product_needs_bene_account() == false)
+                    {
+                        this.benef_acct_sequence = 0;
+                    }
+
+                    if (this.promo_status == 1) 
+                    {
+                        this.promoVerification(this.remitter_id);
+                    }
+                    else if (parseInt(this.product_code) == 22 && parseInt(this.implementation_code) == 2)
+                    {
+                        if (this.global_filipino_card == null)
+                        {
+                            this.global_filipino_card = new GFMC_Maintenance();
+                            this.global_filipino_card.isOTC = true;
+                        }
+
+                        this.global_filipino_card.CKAcct = getText("lbl_account_number");
+                        this.global_filipino_card.OTCCommitTransaction();
+                    }
+                    else
+                    {
+                        iremit.open_card_payment_screen();
+                    }
+            }
+        }
+        else if (parseInt(param) == 2)
+        {
+            alert("Account reached GFC transaction limit.");
+        }
+    }
+
+    this.promoVerification = function(rem_cifid)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding."); return;
+        }
+
+        this.open_msg_prompt("Please wait ...");
+        this.promo_ignored = false;
+        this.promo_activated = false;
+
+        IRSWorld.Remittance.RemOTC.promoVerification(rem_cifid, iremit.charge_type, this.promo_verification_callback);
+
+        /* Edited by Boyet Transferred 3plus1 promo original code to call back to avoid system hang */
+    }
+    
+    this.promo_verification_callback = function(result)
+    {            
+        var isPromoActivated = false;
+        
+        iremit.close_msg_prompt();
+    
+        if (result != null && result.value != null)
+        {
+            if(isPromoActivated == "true" || isPromoActivated == true)
+            {
+                alert("Loyalty Point's PROMO has been activated. \nThis transaction will avail the promo.");
+                
+                iremit.promo_activated = true;
+                iremit.compute_waived();
+                return;
+            }
+
+            iremit.cont_OTCCommitTransaction(); return;
+        }
+        
+        iremit.cont_OTCCommitTransaction();
+    }
+    
+    this.cont_OTCCommitTransaction = function()
+    {
+        this.promo_activated = false;
+        
+        if (parseInt(this.product_code) == 22 && parseInt(this.implementation_code) == 2)
+        {
+                if (this.global_filipino_card == null)
+                {
+                    this.global_filipino_card = new GFMC_Maintenance();
+                    this.global_filipino_card.isOTC = true;
+                }
+                this.global_filipino_card.CKAcct = getText("lbl_account_number");
+                this.global_filipino_card.OTCCommitTransaction();
+        }
+        else
+        {
+                iremit.open_card_payment_screen();
+        }
+    }
+    
+
+    this.commit_remittance_main_repository = function()
+    {
+        this.commit_now = new rem_otc_commit();
+
+        if (parseInt(this.pending_ro_status) > 0)
+        {
+            this.transaction_status = parseInt(this.pending_ro_status);
+        }
+
+        this.commit_now.RemitMethod           = 4;                
+        this.commit_now.SpecialMessage        = document.getElementById("txt_messages").value;
+        this.commit_now.Transtatus            = this.transaction_status;
+        this.commit_now.ProductChargesID      = this.product_charge_id;
+        this.commit_now.RemitterCIFID         = this.remitter_id;
+        this.commit_now.BeneficiaryCIFID      = this.beneficiary_id;
+        this.commit_now.AccountSEQID          = this.benef_acct_sequence;
+        this.commit_now.RemittingCurrency     = this.remitting_currency;
+        this.commit_now.SourceofFunds         = this.source_of_funds;
+        this.commit_now.TransactionPurpose    = this.purpose;
+        this.commit_now.ReceiptMode           = this.receipt_mode;
+        this.commit_now.ChargeLocally         = this.charge_locally;
+        this.commit_now.TransactionSource     = this.transaction_source;            
+        this.commit_now.GrossRemAmount        = this.gross_rem_amount;
+        this.commit_now.NetRemAmount          = this.net_rem_amount;
+        this.commit_now.NettoBeneCurrency     = this.net_to_bene_currency;
+        this.commit_now.NettoBeneAmount       = Number(parseFloat(this.net_to_bene_amount.replace(",", "")).toFixed(2)); //Edited by Troy 06/13/2011. Net to beneficiary should only have 2 decimal places.
+        this.commit_now.TotalLocalCharge      = this.total_local_charge;
+        this.commit_now.LocalCurrency         = this.local_currency;
+        this.commit_now.ForexTargetToAccount  = this.forex_target_to_account;
+        this.commit_now.ForexTargetToSource   = this.forex_target_to_source;
+        this.commit_now.ForexTargetToUSD      = this.forex_target_to_usd;
+        this.commit_now.ForexTargetToPHP      = this.forex_target_to_php;
+        this.commit_now.ForexTargetToEUR      = this.forex_target_to_eur;
+        this.commit_now.ForexSourceToTarget   = this.forex_source_to_target;
+        this.commit_now.ForexSourceToUSD      = this.forex_source_to_usd;
+        this.commit_now.ForexSourceToPHP      = this.forex_source_to_php;
+        this.commit_now.DatePostedOverseas    = this.overseas_date_time;
+        this.commit_now.DatePostedLocal       = this.ho_date_time;
+        this.commit_now.total_backend_charges = this.total_backend_charges;
+
+        this.commit_now.remitter_address_seq_id    = this.remitter_address_seq_id;
+        this.commit_now.remitter_contact_seq_id    = this.remitter_contact_seq_id;
+        this.commit_now.beneficiary_address_seq_id = this.beneficiary_address_seq_id;
+        this.commit_now.beneficiary_contact_seq_id = this.beneficiary_contact_seq_id;
+        this.commit_now.beneficiary_contact_seq_id = this.beneficiary_contact_seq_id;
+        this.commit_now.account_no                 = document.getElementById("txt_account_no").value;
+        
+        this.commit_now.commit_record();
+    }    
+
+    this.door_is_ready = function()
+    {
+        var hit_counter = 1;
+
+        if (iremit.door_to_door != null)
+        {
+            if (this.door_to_door.currency != null && parseInt(this.door_to_door.currency) > 0)
+            {
+                hit_counter = 0;
+            }
+        }
+
+        if (hit_counter > 0)
+        {
+            alert("Please complete remittance details."); iremit.open_remittance_extra_details(); return false;
+        }
+
+        return true;
+    }
+
+    this.new_client = function()
+    {
+        show_frame_dialog('../Internet/InternetRemitter.aspx?isRemit=otc', 'cifclose', '100%', '100%', '0');
+    }
+
+    this.link_client_info_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null)
+        {
+            var ds = result.value;
+
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                setText("lbl_remitter_id",         iremit.remitter_id);
+                setText("lbl_beneficiary_id",      iremit.beneficiary_id);
+                setText("lbl_remitter_name",       ds.Tables[0].Rows[0].rem_fullname);
+                setText("lbl_remitter_address",    ds.Tables[0].Rows[0].rem_address);
+                setText("lbl_beneficiary_name",    ds.Tables[0].Rows[0].ben_fullname);
+                setText("lbl_beneficiary_address", ds.Tables[0].Rows[0].ben_address);
+                
+
+                //if (ds.Tables[0].Rows[0].bene_acct_no != null && ds.Tables[0].Rows[0].bene_acct_no != "") {
+                //    setText("lbl_account_number", ds.Tables[0].Rows[0].bene_acct_no);
+                //}
+
+                //======================================================================================
+                /* RFC-26582 - Pending Override  */
+                if (ds.Tables[0].Rows[0].bene_acct_no != null && ds.Tables[0].Rows[0].bene_acct_no != "") {
+                    setText("lbl_account_number", ds.Tables[0].Rows[0].bene_acct_no);
+                }
+                else if (ds.Tables[0].Rows[0].bene_acct_no == 0) {
+                    setText("lbl_account_number", "");
+                }
+                else { setText("lbl_account_number", "") }
+                /* RFC-26582 - Pending Override  */
+                //======================================================================================
+
+
+                if (ds.Tables[0].Rows[0].beneficiary_address_seq_id != null && parseInt(ds.Tables[0].Rows[0].beneficiary_address_seq_id) > 0)
+                {
+                    iremit.beneficiary_address_seq_id = ds.Tables[0].Rows[0].beneficiary_address_seq_id;
+                }
+
+                if (ds.Tables[0].Rows[0].remitter_address_seq_id  != null && parseInt(ds.Tables[0].Rows[0].remitter_address_seq_id ) > 0)
+                {
+                    iremit.remitter_address_seq_id = ds.Tables[0].Rows[0].remitter_address_seq_id ;
+                }
+                
+                if (ds.Tables[0].Rows[0].beneficiary_contact_seq_id  != null && parseInt(ds.Tables[0].Rows[0].beneficiary_contact_seq_id ) > 0)
+                {
+                    iremit.beneficiary_contact_seq_id = ds.Tables[0].Rows[0].beneficiary_contact_seq_id;
+                }
+                
+                if (ds.Tables[0].Rows[0].remitter_contact_seq_id  != null && parseInt(ds.Tables[0].Rows[0].remitter_contact_seq_id ) > 0)
+                {
+                    iremit.remitter_contact_seq_id = ds.Tables[0].Rows[0].remitter_contact_seq_id;
+                }
+                
+                if (ds.Tables[0].Rows[0].bene_acct_curr != null && parseInt(ds.Tables[0].Rows[0].bene_acct_curr) > 0)
+                {
+                    iremit.account_currency     = ds.Tables[0].Rows[0].bene_acct_curr;
+                    iremit.net_to_bene_currency = ds.Tables[0].Rows[0].bene_acct_curr;
+                }
+                
+                if (ds.Tables[0].Rows[0].charge_type != null && parseInt(ds.Tables[0].Rows[0].charge_type) > 0)
+                {
+                    iremit.charge_type = ds.Tables[0].Rows[0].charge_type;
+                }
+
+
+
+                /* 1. RFC-8800 IRSNY CIF PENDING OVERRIDE UPDATE */
+                var isRefinitivEnabled = IRSWorld.TranClass.Refinitiv.isRefinitivEnabled();
+                if (isRefinitivEnabled.value == "1") {
+                    iremit.chk_cif_for_pending_ovr_approval_refinitiv(iremit.remitter_id, iremit.beneficiary_id);
+                }
+                else {
+                    iremit.chk_cif_for_pending_ovr_approval(iremit.remitter_id, iremit.beneficiary_id);
+                }
+                /* 1. RFC-8800 IRSNY CIF PENDING OVERRIDE UPDATE */
+
+                /*
+                COMMENTED FOR RFC-8800 BELOW CODE TRANSFERRED TO CHK_CIF_FOR_PENDING_OVR_APPROVAL_CALLBACK
+                iremit.load_branch_defaults();
+                iremit.load_sidebar();
+                */
+            }
+        }
+    }
+
+    /* 2. RFC-8800 IRSWNY CIF PENDING OVERRIDE UPDATE */
+    this.chk_cif_for_pending_ovr_approval = function (remitter_cifid, beneficiary_cifid)
+    {
+        this.open_msg_prompt("Checking remitter and beneficiary if with pending override ...");
+        IRSWorld.Remittance.RemOTC.check_cif_enrollment_pending_ovr(remitter_cifid, beneficiary_cifid, this.chk_cif_for_pending_ovr_approval_callback);
+    }
+
+    /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API */
+    this.chk_cif_for_pending_ovr_approval_refinitiv = function (remitter_cifid, beneficiary_cifid) {
+        this.open_msg_prompt("Checking remitter and beneficiary if with pending override ...");
+        IRSWorld.Remittance.RemOTC.check_cif_enrollment_pending_ovr_refinitiv(remitter_cifid, beneficiary_cifid, this.chk_cif_for_pending_ovr_approval_refinitiv_callback);
+    }
+
+    this.chk_cif_for_pending_ovr_approval_callback = function(result)
+    {
+        var hit_list = null;
+
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null)
+        {
+            hit_list = result.value.split("~");
+        }
+
+        if (hit_list != null && hit_list.length > 0)
+        {
+            var msg = "CIF enrollment with pending override.";
+            alert(msg);
+            iremit.reset_screen(); return; /* CLEAR SCREEN. END PROCESSING AND EXIT CALLBACK */
+        }
+
+        iremit.load_branch_defaults();
+        iremit.load_sidebar();
+    }
+
+    this.chk_cif_for_pending_ovr_approval_refinitiv_callback = function (result) {
+        var hit_list = null;
+
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null) {
+            hit_list = result.value.split("~");
+        }
+
+        if (hit_list != null && hit_list.length > 0) {
+            var msg = "CIF enrollment with pending override.";
+            alert(msg);
+            iremit.reset_screen(); return; /* CLEAR SCREEN. END PROCESSING AND EXIT CALLBACK */
+        }
+        iremit.load_branch_defaults();
+        iremit.load_sidebar();
+    }
+    /* 2. RFC-8800 IRSWNY CIF PENDING OVERRIDE UPDATE */
+
+    /* CBIP BOYET SEPT 27 2017 */
+    this.reload_product_from_cif_update = function () {
+        var returned_param = null;
+        var param = null;
+
+        if (self.returnValue != null && self.returnValue != "0") {
+            param = self.returnValue;
+        }
+
+        if (param != null && param != '') {
+            returned_param = param.split('|');
+        }
+
+        if (returned_param != null) {
+            if (returned_param.length == 5) {
+                iremit.remitter_id = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+                iremit.product_code = returned_param[2];
+                iremit.implementation_code = returned_param[3];
+                iremit.benef_acct_sequence = returned_param[4];
+            }
+            else if (returned_param.length == 1) {
+                iremit.remitter_id = returned_param[0];
+            }
+            else if (returned_param.length == 2) {
+                iremit.remitter_id = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+            }
+            else if (returned_param.length == 3) {
+                iremit.remitter_id = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+                iremit.product_code = returned_param[2];
+            }
+            else if (returned_param.length == 4) {
+                iremit.remitter_id = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+                iremit.product_code = returned_param[2];
+                iremit.implementation_code = returned_param[3];
+            }
+        }
+    }
+    /* CBIP BOYET SEPT 27 2017 */
+
+    this.close_client = function(param)
+    {
+        var returned_param = null;                 
+        
+        if (param != null && param != '')
+        {
+            returned_param = param.split('|');
+        }
+        
+        if (returned_param  != null)
+        {
+            if (returned_param.length == 5)
+            {
+                iremit.remitter_id          = returned_param[0];
+                iremit.beneficiary_id       = returned_param[1];
+                iremit.product_code         = returned_param[2];
+                iremit.implementation_code  = returned_param[3];
+                iremit.benef_acct_sequence  = returned_param[4];
+            }
+            else if (returned_param.length == 1)
+            {
+                iremit.remitter_id = returned_param[0];
+            }
+            else if (returned_param.length == 2)
+            {
+                iremit.remitter_id    = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+            }
+            else if (returned_param.length == 3)
+            {
+                iremit.remitter_id    = returned_param[0];
+                iremit.beneficiary_id = returned_param[1];
+                iremit.product_code   = returned_param[2];
+            }            
+            else if (returned_param.length == 4)
+            {
+                iremit.remitter_id          = returned_param[0];
+                iremit.beneficiary_id       = returned_param[1];
+                iremit.product_code         = returned_param[2];
+                iremit.implementation_code  = returned_param[3];
+            }
+            
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                iremit.close_msg_prompt();  alert("Server not responding. Client record retreival failed."); return;
+            }
+
+            iremit.open_msg_prompt("Loading client information ..."); IRSWorld.Remittance.RemOTC.get_client_record(this.remitter_id, this.beneficiary_id, this.link_client_info_callback);
+        }
+    }
+    
+    this.open_ord_screen = function()
+    {
+        if (this.ord_data_entry == null)
+        {
+            this.ord_data_entry = new rem_modal_ord_data_entry();
+        }
+        
+        this.ord_data_entry.ode_form ('iremit.ord_data_entry', this.remitter_id,this.branch_code);
+    }
+    
+    this.ord_data_entry_result = function(param)
+    {
+        this.charge_type_code = param;
+    }
+    
+    this.ord_data_entry_commit = function(transaction_id)
+    {
+        this.ord_data_entry.transaction_id = transaction_id;
+        this.ord_data_entry.commit_transaction(this.gross_rem_amount);
+    }
+    
+    this.ord_data_entry_commit_response = function(param)
+    {
+        var s = param.split('~'); this.payment_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.payment_error_msg = "Error encountered updating ord data entry information: " + s[1];
+            }
+        }
+
+        this.commit_message_screen();
+    }
+    
+    this.open_acct_inquiry_screen = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking valid PNB account failed."); return;
+        }
+        
+        this.open_msg_prompt("Checking account status ..."); IRSWorld.Remittance.RemOTC.pnb_account_ok(getText("lbl_account_number"), this.open_acct_inquiry_screen_callback);
+    }
+    
+    this.open_acct_inquiry_screen_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value == true)
+        {
+            new account_screen_status().get_acccount_status(getText("lbl_account_number"));
+        }
+        else
+        {
+            alert("Not a PNB account.");
+        }
+    }
+    
+    this.get_gfc_seq_to_remittance = function()
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. GFC CK account sequence retreival failed."); return;
+        }
+        
+        this.open_msg_prompt("Loading gfc ck account ..."); IRSWorld.Remittance.RemOTC.get_gfc_account_seq_id(this.get_account_number_txt(), this.beneficiary_id, this.get_gfc_seq_to_remittance_callback);
+    }
+    
+    this.get_gfc_seq_to_remittance_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null && parseInt(result.value) > 0)
+        {
+            iremit.benef_acct_sequence = parseInt(result.value);
+        }
+
+        iremit.commit_remittance_main_repository();
+    }
+    
+    this.get_account_number_txt = function()
+    {
+        var account = getText("lbl_account_number");
+
+        if (account != null && account.length > 0)
+        {
+            return account;
+        }
+
+        return '';
+    }
+
+    this.open_door_to_door_serviceable_area = function()
+    {
+        this.grd_search_keyword = "SERVICE_AREA_DOOR_TO_DOOR";
+        this.grd_source         = "sp_otc_rem_product_setup~SERVICE_AREA_DOOR_TO_DOOR~~0~0~0~0~0~0~0~0~0~0~";
+        this.grd_search         = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+    }
+    
+    this.commit_beneficiary_location = function(param)
+    {
+        var iconfirm = confirm("Press ok to confirm selected beneficiary zip code/location or cancel to modify.");
+
+        if (iconfirm == true)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+
+            AjaxPro.onTimeout = function()
+            {
+                this.close_msg_prompt(); alert("Server not responding. Commit beneficiary zipcode failed."); return;
+            }
+
+            this.open_msg_prompt("Updating beneficiary zip code ..."); IRSWorld.TranClass.commit_beneficiary_zipcode.commit_zipcode(this.beneficiary_address_seq_id, param, this.commit_beneficiary_location_callback);
+        }
+        else
+        {
+            this.grd_search_keyword = "SERVICE_AREA_DOOR_TO_DOOR_REMAP";
+        }
+    }
+
+    this.commit_beneficiary_location_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        if (result != null && result.value != null && result.value == true)
+        {
+            alert("Beneficiary zip code committed succesfully.");
+        }
+        else
+        {
+            alert("Beneficiary zip code update failed.");
+        }
+    }
+
+    this.open_customer_info_page = function()
+    {
+        show_frame_dialog('../Internet/InternetRemitter.aspx?remitter_id=' + this.remitter_id + '&beneficiary_id=' + this.beneficiary_id + '&isRemit=otc', 'unload_customer_page', '100%', '100%', '0');
+    }
+
+    this.unload_customer_page_response = function(return_code)
+    {
+        if (return_code != null)
+        {
+            this.command_param = null;
+        }
+
+        ///* CBIP BOYET SEPT 27 2017*/
+        //this.reload_product_from_cif_update();
+        ///* CBIP BOYET SEPT 27 2017*/
+        //this.check_id_place_issued();
+        // CJ Fix on Hit list when CIF is closed 
+        this.otchit = 1;
+        //var cl = IRSWorld.Remittance.RemOTC.clear_otc_session(1);
+        iremit.get_hit_list_all(this.remitter_id, this.beneficiary_id);
+        // CJ End
+    }
+    
+    this.remitter_id_closer_response = function()
+    {
+        iremit.set_client_info(iremit.command_param);
+    }
+    
+    /* NEW DDC */
+    this.check_id_place_issued = function()
+    {
+        IRSWorld.Remittance.RemOTC.check_id_place_issued(this.remitter_id, this.check_id_place_issued_callback);
+    }
+    
+    this.check_id_place_issued_callback = function(result)
+    {
+        if (result != null && result.value != null && result.value != '')
+        {
+            alert(result.value);
+            iremit.close_msg_prompt();
+            iremit.remitter_id_closer_response();
+            return;
+        }
+
+        if (parseInt(iremit.check_type_flag) == 1)
+        {
+            IRSWorld.Remittance.RemOTC.check_remitter_ids_required(iremit.remitter_id, iremit.check_remitter_ids_required_callback);
+        }
+        else if (parseInt(iremit.check_type_flag) == 2)
+        {
+            IRSWorld.Remittance.RemOTC.check_remitter_ids_required(iremit.remitter_id, iremit.check_remitter_ids_commit_callback);
+        }
+    }
+    /* END NEW DDC */
+
+    this.check_remitter_ids_required = function(check_type, remitter_id, beneficiary_id,command_param)
+    {
+        this.check_type_flag = check_type;
+
+        if (parseInt(check_type) == 1)
+        {
+            this.remitter_id    = remitter_id;
+            this.beneficiary_id = beneficiary_id;
+            this.command_param  = command_param;
+            this.check_client_pending_ovr(); //ADDED BY DDC APRIL 28 2016
+            //this.get_hit_list_all(remitter_id, beneficiary_id); //COMMENTED BY DDC 04282016
+        }
+        else
+        {
+            this.check_remitter_ids_switch_board();
+        }
+    }
+
+    this.check_remitter_ids_switch_board = function()
+    {
+        this.open_msg_prompt("Checking remitter identification card ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking remitter identification card failed."); return;
+        }
+        
+        this.check_id_place_issued();
+    }
+
+    this.check_remitter_ids_commit_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        var product_type_display = getText("lbl_product_type")
+        
+        if (result != null && result.value != null)
+        {
+            var s = result.value.split("~");
+
+            if (s.length > 0)
+            {
+                if (parseInt(s[0]) == 0)
+                {
+                    alert(s[1]); iremit.open_remitter_id_exp(function(){iremit.disable_remittance_button(false)}); return; //comment by boyet for rfs 13108006 iremit.disable_remittance_button(false); return;
+                }
+            }
+        }
+        
+        
+        
+        if (product_type_display == 'INSTAPAY') { //INSTAPAY ALYSSA SEPTEMBER 2019
+            
+            /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+            /* NOTE: ADD REMITTER VALIDATION */
+             var instapay_validation_return = IRSWorld.Remittance.RemOTC.Instapay_validation(iremit.remittercifid, iremit.beneficiary_id);
+            if (instapay_validation_return.value != 'OK') {
+                alert(instapay_validation_return.value.toString());
+                this.close_msg_prompt();
+                //this.reset_screen();
+            }  /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+            else {
+                var iconfirm = confirm("REMINDER:\n\nFor timed-out transactions, verification will be completed up to two banking days.\n\nDoes client agree?");
+                if (iconfirm == true) {
+                    iremit.Set_RemAccount_Details();
+                    iremit.commit_remittance();
+                }
+                else {
+                    iremit.open_beneficiary_last_result();
+                }
+            }
+        }
+        else {
+            iremit.Set_RemAccount_Details();
+            iremit.commit_remittance();
+        } //INSTAPAY ALYSSA SEPTEMBER 2019
+
+        //iremit.Set_RemAccount_Details();
+        //iremit.commit_remittance();
+    }
+
+    this.check_remitter_ids_required_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+    
+        if (result != null && result.value != null)
+        {
+            var s = result.value.split("~");
+            
+            if (s.length > 0)
+            {
+                if (parseInt(s[0]) == 0)
+                {
+                    var iconfirm = confirm(s[1] + "\n\n Press ok to update remitter id and continue processing or cancel to discard transaction.");
+
+                    if (iconfirm == true)
+                    {
+                        iremit.open_remitter_id_exp(); return; //comment by boyet for rfs 13108006 show_frame_dialog('../Internet/InternetRemitter.aspx?remitter_id=' + iremit.remitter_id + '&beneficiary_id=' + iremit.beneficiary_id + '&isRemit=otc', 'remitter_id_closer', '100%', '100%', '0'); return;
+                    }
+                }
+            }
+
+            iremit.remitter_id_closer_response();
+        }
+    }
+    
+    this.get_hit_list_all = function(remitter_id, beneficiary_id)
+    {
+        this.open_msg_prompt("Checking customer information in Refinitiv");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Checking customer information hit list failed."); return;
+        }
+
+        this.remitter_id    = remitter_id;
+        this.beneficiary_id = beneficiary_id;
+        /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API  */
+        var isRefinitivEnabled = IRSWorld.TranClass.Refinitiv.isRefinitivEnabled();
+        if (isRefinitivEnabled.value == "1") {
+            IRSWorld.Remittance.RemOTC.got_client_hit_list_all_refinitiv(remitter_id, beneficiary_id, this.get_hit_list_all_refinitiv_callback);
+        } /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API  */
+        else {
+            IRSWorld.Remittance.RemOTC.got_client_hit_list_all(remitter_id, beneficiary_id, this.get_hit_list_all_callback);
+        } 
+    }
+
+    /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API  */
+    this.get_hit_list_all_refinitiv_callback = function (result) {
+        iremit.close_msg_prompt();
+        if (result != null && result.value != null && result.value == true) {
+            var refinitiv_is_down_OTC = IRSWorld.TranClass.Refinitiv.get_refinitiv_is_down_OTC();
+            if (refinitiv_is_down_OTC.value == "Refinitiv is down.") {
+                iremit.the_mode = 11;
+                iremit.hit_stream_lining = new generic_override();
+                iremit.hit_stream_lining.remitter_id = iremit.remitter_id;
+                iremit.hit_stream_lining.beneficiary_id = iremit.beneficiary_id;
+                iremit.hit_stream_lining.open_client_hit_list_all_refinitivisdown();
+            }
+            else {
+                iremit.the_mode = 11;
+                iremit.hit_stream_lining = new generic_override();
+                iremit.hit_stream_lining.remitter_id = iremit.remitter_id;
+                iremit.hit_stream_lining.beneficiary_id = iremit.beneficiary_id;
+                iremit.hit_stream_lining.open_client_hit_list_all();
+            }
+        }
+        else {
+            iremit.check_remitter_ids_switch_board();
+        }
+    }
+    /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API  */
+    
+    this.get_hit_list_all_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        if (result != null && result.value != null && result.value == true)
+        {
+            iremit.the_mode = 11;
+
+            iremit.hit_stream_lining = new generic_override();
+            iremit.hit_stream_lining.remitter_id    = iremit.remitter_id;
+            iremit.hit_stream_lining.beneficiary_id = iremit.beneficiary_id;                                                               
+            iremit.hit_stream_lining.open_client_hit_list_all();
+        }
+        else
+        {            
+            iremit.check_remitter_ids_switch_board();
+        }
+    }
+
+    /*NEW DDC 04-19-2016*/
+    this.check_client_pending_ovr = function()
+    {
+        this.open_msg_prompt("Checking customer information in Refinitiv ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("check_client_pending_ovr. failed"); return;
+        }
+        var isRefinitivEnabled = IRSWorld.TranClass.Refinitiv.isRefinitivEnabled();
+        if (isRefinitivEnabled.value == "1") {
+            IRSWorld.Remittance.RemOTC.check_cif_enrollment_pending_ovr_refinitiv(iremit.remitter_id, iremit.beneficiary_id, this.check_client_pending_ovr_refinitiv_callback);
+        }
+        else { IRSWorld.Remittance.RemOTC.check_cif_enrollment_pending_ovr(iremit.remitter_id, iremit.beneficiary_id, this.check_client_pending_ovr_callback); }
+
+        //IRSWorld.Remittance.RemOTC.check_cif_enrollment_pending_ovr(iremit.remitter_id, iremit.beneficiary_id, this.check_client_pending_ovr_callback);
+    }
+
+    /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API */
+    this.check_client_pending_ovr_refinitiv_callback = function (result) {
+        iremit.close_msg_prompt();
+
+        var hit_list = null;
+
+        if (result != null && result.value != null) {
+            hit_list = result.value.split("~");
+            var msg = "CIF enrollment with pending override.";
+            alert(msg);
+            iremit.reset_screen();
+        }
+        else {
+            iremit.get_hit_list_all(iremit.remitter_id, iremit.beneficiary_id);
+        }
+    }
+    /* RFC-37590 - IRSW NY Interface with Refinitiv WorldCheck via API */
+    
+    /* 3. RFC IRSNY RFC-8800 */
+    this.check_client_pending_ovr_callback = function (result)
+    {
+        iremit.close_msg_prompt();
+
+        var hit_list = null;
+
+        if (result != null && result.value != null)
+        {
+            hit_list = result.value.split("~");
+        }
+
+        if (hit_list != null && hit_list.length > 0)
+        {
+            var msg = "CIF enrollment with pending override.";
+
+            alert(msg);
+            iremit.reset_screen(); /* CLEAR SCREEN. PROCESSING END */
+        }
+        else
+        {
+            iremit.get_hit_list_all(iremit.remitter_id, iremit.beneficiary_id);
+        }
+    }
+    /* 3. RFC IRSNY RFC-8800 */
+
+    this.check_client_pending_ovr_callback_original_code = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        var hit_list = null;
+
+        if (result != null && result.value != null)
+        {
+            hit_list = result.value.split("~");
+        }
+
+        if (hit_list != null && hit_list.length > 0)
+        {
+            var msg = "CIF was hit during enrollment. Pending override." + "\n\n" + hit_list[1] + "\n\n" + "Transaction will be queued for overriding." +  "\n\n" + "Do you want to continue?";
+            var con = confirm(msg);
+            
+            if (con == true)
+            {
+                alert("Transaction will be queued for override. (Pending Override)");
+
+                iremit.client_was_hit = 1;
+                iremit.pending_ro_status = parseInt(hit_list[0]);
+                iremit.transaction_status = parseInt(hit_list[0]);
+                iremit.check_remitter_ids_switch_board();
+            }
+            else
+            {
+                iremit.reset_screen();
+            }
+        }
+        else
+        {
+            iremit.get_hit_list_all(iremit.remitter_id, iremit.beneficiary_id);
+        }
+    }
+
+    /*NEW DDC 04-19-2016*/
+
+    /* ADDED BY BOYET */
+    this.chk_location_states = function(param)
+    {
+        if (param != null)
+        {
+            if (parseInt(param.length) == 3)
+            {
+                this.remitter_id             = param[0];
+                this.remittercifid           = param[0];
+                this.remitter_address_seq_id = parseInt(param[1]);
+                this.remitter_contact_seq_id = parseInt(param[2]);
+                this.load_rem_states();
+            }
+        }
+    }
+
+    this.load_rem_states = function()
+    {
+        var rem_loc = new rem_states();
+
+        rem_loc.remitter_address_seq_id = iremit.remitter_address_seq_id;
+        rem_loc.method_to_call = function(){ iremit.open_beneficiary_result(iremit.remitter_id);};
+        rem_loc.chk_rem_states();
+    }
+
+    /* ADDED BY BOYET */
+
+    this.set_remitter_sequence_tbl_code = function(param)
+    {
+        if (param != null)
+        {
+            if (parseInt(param.length) == 3)
+            {
+                this.remitter_id             = param[0];
+                this.remitter_address_seq_id = parseInt(param[1]);
+                this.remitter_contact_seq_id = parseInt(param[2]);
+            }
+        }
+    }
+
+    this.set_beneficiary_sequence_tbl_code = function(param)
+    {
+        if (param != null)
+        {
+            if (parseInt(param.length) == 16)
+            {
+                this.beneficiary_address_seq_id = parseInt(param[14]);
+                this.beneficiary_contact_seq_id = parseInt(param[15]);
+            }
+        }
+    }
+    
+    this.set_otc_preferred_tag = function()
+    {
+        this.close_msg_prompt();
+
+        if (this.remitter_id != null && this.beneficiary_id != null && this.remitter_address_seq_id != null && this.beneficiary_address_seq_id != null)
+        {
+            if (this.remitter_id != '' && this.beneficiary_id != '' && parseInt(this.remitter_address_seq_id) > 0 && parseInt(this.beneficiary_address_seq_id) > 0)
+            {
+                AjaxPro.timeoutPeriod = 1000 * 1000;
+
+                AjaxPro.onTimeout = function()
+                {
+                    this.close_msg_prompt(); alert("Server not responding. Updating client information failed."); return;
+                }
+
+                if (parseInt(this.otc_tag_activated) == 0)
+                {
+                    this.open_msg_prompt("Updating client information ..."); IRSWorld.Remittance.RemOTC.set_otc_preferred_tag(this.remitter_id, this.beneficiary_id, this.set_zero(this.remitter_address_seq_id), this.set_zero(this.remitter_contact_seq_id), this.set_zero(this.beneficiary_address_seq_id), this.set_zero(this.beneficiary_contact_seq_id), this.set_otc_preferred_tag_callback); return;
+                }
+            }
+        }
+
+        var side_array  = this.get_sidebar_list();
+        var side_winder = new js_sidebar('sidemenu', side_array);
+
+        setText("lbl_otc_caption", "REMITTANCE INFORMATION"); document.getElementById("div_transaction_menu").innerHTML = side_winder.toString();
+    }
+    
+    this.set_otc_preferred_tag_callback = function(result)
+    {
+        iremit.otc_tag_activated = 1;
+        iremit.close_msg_prompt();
+
+        var side_array  = iremit.get_sidebar_list();
+        var side_winder = new js_sidebar('sidemenu', side_array);
+
+        setText("lbl_otc_caption", "REMITTANCE INFORMATION"); document.getElementById("div_transaction_menu").innerHTML = side_winder.toString();
+    }
+    
+    this.set_zero = function(param)
+    {
+        if (param == null || param == undefined || param == '')
+        {
+            return 0;
+        }
+
+        if (parseInt(param) > 0)
+        {
+            return parseInt(param);
+        }
+    }
+
+    this.open_cash_management = function()
+    {
+        this.close_msg_prompt();
+    
+        if (parseInt(this.allowed_cash_mgt) > 0)
+        {
+            this.cash_management = new rem_modal_denomination();
+            this.cash_management.open_denomination_form(this.transaction_sequence_id, 'iremit.cash_management');
+        }
+        else
+        {
+            this.daily_record_keeping_log_report();
+        }
+    }
+    
+    this.denomination_commit_response = function(param)
+    {
+        var r = param.split("~");
+        
+        if (r != null)
+        {
+            if (parseInt(r[0]) == 0)
+            {
+                alert(r[1]);
+            }
+        }
+        
+        this.daily_record_keeping_log_report();
+    }
+    
+    this.remote_override_response = function(param)
+    {
+        if (param != null)
+        {
+            if (param.length == 4)
+            {
+                if (param[0] != null && parseInt(param[0]) == 2)
+                {
+                    if (param[1] != null && parseInt(param[1]) == 1 && this.waiver_screen != null)
+                    {
+                        document.getElementById("txt_otc_rem_waived_user_id").value       = param[2];
+                        document.getElementById("txt_otc_rem_waived_user_password").value = param[3];
+                        
+                        this.waiver_screen.check_user_rights();
+                    }
+                    else if (param[1] != null && parseInt(param[1]) == 2 && this.override != null)
+                    {
+                        document.getElementById("txt_username").value = param[2];
+                        document.getElementById("txt_password").value = param[3];
+                                            
+                        this.override.override_execute();                        
+                    }
+                }
+                else if (param[0] != null && parseInt(param[0]) == 3)
+                {
+                    if (param[1] != null && parseInt(param[1]) == 1 && this.waiver_screen != null)
+                    {
+                        this.waiver_screen.close_modal_window();
+                    }
+                    else if (param[1] != null && parseInt(param[1]) == 2 && this.override != null)
+                    {
+                        this.override.close_modal_window();
+                    }
+                }
+            }
+        }
+    }
+    
+    this.hit_list_override_response = function(param)
+    {
+        if (param == false)
+        {
+            this.reset_screen();
+        }
+        else if (param == true)
+        {
+            iremit.check_remitter_ids_switch_board();
+        }
+        else
+        {
+            /* PENDING ROV */
+            iremit.client_was_hit = 1;
+            iremit.pending_ro_status = parseInt(param.pending_override_status);
+            iremit.transaction_status = parseInt(param.pending_override_status);
+            iremit.check_remitter_ids_switch_board();
+            /* PENDING ROV */
+        }
+    }
+
+    this.check_extra_trans_handling_callback = function(response)
+    {
+        iremit.close_msg_prompt();
+
+        if (response != null && response.value != null)
+        {
+            if (response.value != '')
+            {
+                alert(response.value);
+            }
+            else
+            {
+                iremit.check_commit_entries();
+            }
+        }
+    }
+
+    this.check_extra_trans_handling = function()
+    {
+        this.open_msg_prompt("please wait while the system is validating your transaction ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Transaction validation failed."); return;
+        }
+
+        /* IBFT HANDLING - */
+        if (parseInt(this.product_code) == 23)
+        {
+            if (parseInt(this.implementation_code) == 17)
+            {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(this.benef_acct_sequence, this.net_to_bene_currency, this.transaction_detail_branch_seq, this.check_extra_trans_handling_callback);
+            }
+        }
+        /* OPEN ACCOUNT ASSISTANCE - OPEN ACCOUNT */
+        else if (parseInt(this.product_code) == 15)
+        {
+            if (parseInt(this.implementation_code) == 7)
+            {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(0, this.net_to_bene_currency, this.transaction_detail_branch_seq , this.check_extra_trans_handling_callback);
+            }
+        }
+        /* ADDITIONAL PNBIG PLACEMENT - ADDITIONAL TIME DEPOSIT - BPO*/    
+        else if (parseInt(this.product_code) == 2 || parseInt(this.product_code) == 5 || parseInt(this.product_code) == 6)
+        {
+            if (parseInt(this.implementation_code) == 1)
+            {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(this.benef_acct_sequence, this.net_to_bene_currency, this.transaction_detail_branch_seq, this.check_extra_trans_handling_callback);
+            }        
+        }
+        /* WEALTH MULTIPLIER PNBIG PLACEMENT - TIME DEPOSIT*/
+        else if (parseInt(this.product_code) == 1 || parseInt(this.product_code) == 3 || parseInt(this.product_code) == 4)
+        {
+            if (parseInt(this.implementation_code) == 1)
+            {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(0, 0, this.transaction_detail_branch_seq , this.check_extra_trans_handling_callback);
+            }
+        }
+        /* INSTAPAY HANDLING - ALYSSA SEPTEMEB 2019 */
+        else if (parseInt(this.product_code) == 258) {
+            if (parseInt(this.implementation_code) == 29) {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(this.benef_acct_sequence, this.net_to_bene_currency, this.transaction_detail_branch_seq, this.check_extra_trans_handling_callback);
+            }
+        }
+        else
+        {        
+            if (this.product_needs_bene_account() == true && this.benef_acct_sequence != null && this.benef_acct_sequence != '' && parseInt(this.benef_acct_sequence) > 0)
+            {
+                IRSWorld.Remittance.RemOTC.check_br_and_acct(this.benef_acct_sequence, this.net_to_bene_currency, 0 , this.check_extra_trans_handling_callback);
+            }
+            else
+            {
+                this.close_msg_prompt();
+                this.check_commit_entries();
+            }
+        }
+    }
+    
+    this.load_contact_info = function()
+    {
+        this.open_msg_prompt("Loading contact information ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt(); alert("Server not responding. Loading contact information failed."); return;
+        }
+        
+        IRSWorld.Remittance.RemOTC.load_contact_info(this.remitter_id, this.beneficiary_id, this.load_contact_info_callback);
+    }
+    
+    this.load_contact_info_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+        
+        var ds = null;
+
+        setText("lbl_rem_tel",     "");
+        setText("lbl_rem_mobile",  "");
+        setText("lbl_ben_tel",     "");
+        setText("lbl_ben_mobile",  "");
+        
+        iremit.beneficiary_contact_seq_id = 0;
+
+        if (result != null && result.value != null)
+        {
+            ds = result.value;
+
+            iremit.beneficiary_contact_seq_id = parseInt(ds.Tables[0].Rows[0].beneficiary_contact_id);
+            iremit.remitter_contact_seq_id = parseInt(ds.Tables[0].Rows[0].remitter_contact_id);
+
+            setText("lbl_rem_tel",     ds.Tables[0].Rows[0].remitter_landline);
+            setText("lbl_rem_mobile",  ds.Tables[0].Rows[0].remitter_mobile);
+            setText("lbl_ben_tel",     ds.Tables[0].Rows[0].benef_landline);
+            setText("lbl_ben_mobile",  ds.Tables[0].Rows[0].benef_mobile);
+        }
+
+        // CJ Fix on Override reset 
+        if (iremit.otchit == null) {
+            iremit.load_branch_defaults();
+            iremit.grd_search_keyword = "CLIENT_LOADED";
+        }
+        else {
+            iremit.otchit = null;
+            /* CBIP BOYET SEPT 27 2017*/
+            iremit.reload_product_from_cif_update();
+            /* CBIP BOYET SEPT 27 2017*/
+            if (iremit.remitter_id != null && iremit.remitter_id != "" && iremit.beneficiary_id != iremit && iremit.beneficiary_id != "") {
+                IRSWorld.Remittance.RemOTC.get_client_record(iremit.remitter_id, iremit.beneficiary_id, iremit.link_client_info_callback);
+            }
+        }
+        // CJ End
+    }
+
+    this.open_remitter_id_exp = function(method_to_be_called)
+    {
+        this.the_mode = 12;
+
+        this.client_exp_ids = new expired_ids_scr();
+        this.client_exp_ids.client_id = this.remitter_id;
+        this.client_exp_ids.teller_datetime = this.transaction_date;
+        
+        if (method_to_be_called == null)
+        {
+            this.client_exp_ids.method_to_call = this.remitter_id_closer_response;
+        }
+        else
+        {
+            this.client_exp_ids.method_to_call = method_to_be_called;
+        }
+        
+        
+        this.client_exp_ids.open_expired_ids();
+    }
+    
+    this.call_remit_cls = function()
+    {
+        this.open_msg_prompt("Please wait ...");
+
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.close_msg_prompt();  alert("Server not responding. Unable to complete transaction."); return;
+        }
+    
+        if (this.transaction_sequence_id != null && this.transaction_sequence_id != '')
+        {    
+            IRSWorld.Remittance.RemOTC.set_remit_cls(parseInt(this.transaction_sequence_id), this.call_remit_cls_callback);
+        }
+        else
+        {
+            this.print_receipt();
+        }
+    }
+
+    this.call_remit_cls_callback = function(result)
+    {
+        iremit.close_msg_prompt();
+
+        //Instapay
+        var ds;
+        if (result != null && result.value != null) {
+            var ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0) {
+                var message = ds.Tables[0].Rows[0].Message;
+                alert(message);
+            }
+        }
+        //Instapay
+
+        iremit.print_receipt();
+    }
+
+    this.instapay_message_confirmation = function (result) {
+
+        var ds;
+
+        if (result != null && result.value != null) {
+            var ds = result.value;
+
+            if (ds != null && ds.Tables[0].Rows.length > 0) {
+                var message = parseInt(ds.Tables[0].Rows[0].Message);
+                alert(message);
+                return;
+            }
+        }
+    }
+    
+    this.search_hi_grade = function()
+    {
+        this.grd_search_keyword = "CLIENT_UNIQUE";
+        this.grd_search = new abuk_unique_id_search();
+        this.grd_search.open_hi_grade();
+    }
+    
+    this.hi_grade_response = function(param)
+    {        
+        this.remitter_id    = param[1];
+        this.remittercifid  = param[1];
+        this.remitter_address_seq_id = parseInt(param[2]);
+        this.remitter_contact_seq_id = parseInt(param[3]);
+
+        if (this.grd_search != null)
+        {
+            this.grd_search_keyword = "CLIENT_UNIQUE_RESULT";
+            this.grd_search.close_hi_grade();
+            this.grd_search.load_hi_grade_benef(param);
+        }
+    }
+
+//*** Added code by Randy : TEL and TLN ACH Extract Remitter Account, Routing and Bank Name details 1/26/2017 ***//
+    this.Enable_RemAccount_Details = function()
+    {
+        document.getElementById("ddRemAccountType").value = "";
+        document.getElementById("txtRemAccountNo").value = "";
+        document.getElementById("txtRemRoutingNo").value = "";
+        document.getElementById("txtRemBankName").value = "";
+            
+        if(this.IsRemitter_ACH == true && this.ACH_Branch_Setup == true)
+        {
+            document.getElementById("divRemAccountDetails").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("divRemAccountDetails").style.display = "none";
+        }
+    }
+    
+    this.Check_ACH_Branch_Extract_Setup = function()
+    {
+        this.ACH_Branch_Setup = IRSWorld.Remittance.RemOTC.Check_ACH_Extract_Setup().value;
+    }
+       
+    this.Check_IsRemitter_ACH = function()
+    {
+        this.IsRemitter_ACH = IRSWorld.Remittance.RemOTC.Check_IsRemitter_ACH(this.payment_type).value;
+    }
+    
+    this.Set_RemAccount_Details = function()
+    {
+        this.Remitter_AccountType = document.getElementById("ddRemAccountType").value;
+        this.Remitter_AccountNo = document.getElementById("txtRemAccountNo").value;
+        this.Remitter_RoutingNo = document.getElementById("txtRemRoutingNo").value;
+        this.Remitter_BankName = document.getElementById("txtRemBankName").value;
+    }
+    
+    this.Save_RemAccount_Details = function(refno)
+    {
+        if(this.IsRemitter_ACH == true && this.ACH_Branch_Setup == true)
+        {
+            IRSWorld.Remittance.RemOTC.Save_RemAccount_Details(refno, this.Remitter_AccountType, this.Remitter_AccountNo, this.Remitter_RoutingNo, this.Remitter_BankName);
+        }
+    }
+    //************//
+
+    /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+    this.instapay_validation = function () {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        AjaxPro.onTimeout = function () {
+            alert("Server not responding. loading overseas date failed.");
+        }
+        IRSWorld.Remittance.RemOTC.Instapay_validation(iremit.remittercifid, iremit.beneficiary_id ,this.instapay_validation_callback);
+    }
+
+    this.instapay_validation_callback = function (result) {
+        if (result.value != 'OK') {
+            return result.value;
+        }
+        return "OK";
+    }
+    /* RFC-33569 - Instapay ISO20022 enhancement for IRSW and SG Mobile */
+}

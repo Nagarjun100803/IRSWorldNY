@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRT008_CC3ARegister" targetNamespace="http://tempuri.org/dsGRT008_CC3ARegister.xsd" xmlns:mstns="http://tempuri.org/dsGRT008_CC3ARegister.xsd" xmlns="http://tempuri.org/dsGRT008_CC3ARegister.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRT008_CC3ARegister" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRT008_CC3ARegister" msprop:Generator_DataSetName="dsGRT008_CC3ARegister">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRT008_CC3ARegister" msprop:Generator_UserTableName="dtGRT008_CC3ARegister" msprop:Generator_RowDeletedName="dtGRT008_CC3ARegisterRowDeleted" msprop:Generator_RowChangedName="dtGRT008_CC3ARegisterRowChanged" msprop:Generator_RowClassName="dtGRT008_CC3ARegisterRow" msprop:Generator_RowChangingName="dtGRT008_CC3ARegisterRowChanging" msprop:Generator_RowEvArgName="dtGRT008_CC3ARegisterRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT008_CC3ARegisterRowChangeEventHandler" msprop:Generator_TableClassName="dtGRT008_CC3ARegisterDataTable" msprop:Generator_TableVarName="tabledtGRT008_CC3ARegister" msprop:Generator_RowDeletingName="dtGRT008_CC3ARegisterRowDeleting" msprop:Generator_TablePropName="dtGRT008_CC3ARegister">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FILEIND" msprop:Generator_UserColumnName="FILEIND" msprop:Generator_ColumnPropNameInRow="FILEIND" msprop:Generator_ColumnVarNameInTable="columnFILEIND" msprop:Generator_ColumnPropNameInTable="FILEINDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CHKNUMFROM" msprop:Generator_UserColumnName="CHKNUMFROM" msprop:Generator_ColumnPropNameInRow="CHKNUMFROM" msprop:Generator_ColumnVarNameInTable="columnCHKNUMFROM" msprop:Generator_ColumnPropNameInTable="CHKNUMFROMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CHKNUMTO" msprop:Generator_UserColumnName="CHKNUMTO" msprop:Generator_ColumnPropNameInRow="CHKNUMTO" msprop:Generator_ColumnVarNameInTable="columnCHKNUMTO" msprop:Generator_ColumnPropNameInTable="CHKNUMTOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_x0020_OF_x0020_CHECK" msprop:Generator_UserColumnName="DATE OF CHECK" msprop:Generator_ColumnPropNameInRow="DATE_OF_CHECK" msprop:Generator_ColumnVarNameInTable="columnDATE_OF_CHECK" msprop:Generator_ColumnPropNameInTable="DATE_OF_CHECKColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REFERENCENO" msprop:Generator_UserColumnName="REFERENCENO" msprop:Generator_ColumnPropNameInRow="REFERENCENO" msprop:Generator_ColumnVarNameInTable="columnREFERENCENO" msprop:Generator_ColumnPropNameInTable="REFERENCENOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CC_x0020_NO" msprop:Generator_UserColumnName="CC NO" msprop:Generator_ColumnPropNameInRow="CC_NO" msprop:Generator_ColumnVarNameInTable="columnCC_NO" msprop:Generator_ColumnPropNameInTable="CC_NOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYEE_x0020_BANK_x0020_NAME" msprop:Generator_UserColumnName="PAYEE BANK NAME" msprop:Generator_ColumnPropNameInRow="PAYEE_BANK_NAME" msprop:Generator_ColumnVarNameInTable="columnPAYEE_BANK_NAME" msprop:Generator_ColumnPropNameInTable="PAYEE_BANK_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYEE_x0020_NAME" msprop:Generator_UserColumnName="PAYEE NAME" msprop:Generator_ColumnPropNameInRow="PAYEE_NAME" msprop:Generator_ColumnVarNameInTable="columnPAYEE_NAME" msprop:Generator_ColumnPropNameInTable="PAYEE_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AMOUNT_x0020_OF_x0020_CHECK" msprop:Generator_UserColumnName="AMOUNT OF CHECK" msprop:Generator_ColumnPropNameInRow="AMOUNT_OF_CHECK" msprop:Generator_ColumnVarNameInTable="columnAMOUNT_OF_CHECK" msprop:Generator_ColumnPropNameInTable="AMOUNT_OF_CHECKColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_x0020_CHECKS_x0020_CREDITED_x0020_TODAY" msprop:Generator_UserColumnName="TOTAL CHECKS CREDITED TODAY" msprop:Generator_ColumnVarNameInTable="columnTOTAL_CHECKS_CREDITED_TODAY" msprop:Generator_ColumnPropNameInRow="TOTAL_CHECKS_CREDITED_TODAY" msprop:Generator_ColumnPropNameInTable="TOTAL_CHECKS_CREDITED_TODAYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="CHECKS_x0020_CREDITED_x0020_TODAY__x0020_OS_x0020_YESTERDAY" msprop:Generator_UserColumnName="CHECKS CREDITED TODAY_ OS YESTERDAY" msprop:Generator_ColumnVarNameInTable="columnCHECKS_CREDITED_TODAY__OS_YESTERDAY" msprop:Generator_ColumnPropNameInRow="CHECKS_CREDITED_TODAY__OS_YESTERDAY" msprop:Generator_ColumnPropNameInTable="CHECKS_CREDITED_TODAY__OS_YESTERDAYColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

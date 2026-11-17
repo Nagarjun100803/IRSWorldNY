@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="itemsvolumeandfee" targetNamespace="http://tempuri.org/itemsvolumeandfee.xsd" xmlns:mstns="http://tempuri.org/itemsvolumeandfee.xsd" xmlns="http://tempuri.org/itemsvolumeandfee.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IRSWorldConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="IRSWorldConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IRSWorld.Properties.Settings.GlobalReference.Default.IRSWorldConnectionString1" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="itemsvolumeandfee" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="itemsvolumeandfee" msprop:Generator_DataSetName="itemsvolumeandfee">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sp_ItemsVolumeAndFee" msprop:Generator_UserTableName="sp_ItemsVolumeAndFee" msprop:Generator_RowDeletedName="sp_ItemsVolumeAndFeeRowDeleted" msprop:Generator_TableClassName="sp_ItemsVolumeAndFeeDataTable" msprop:Generator_RowChangedName="sp_ItemsVolumeAndFeeRowChanged" msprop:Generator_RowClassName="sp_ItemsVolumeAndFeeRow" msprop:Generator_RowChangingName="sp_ItemsVolumeAndFeeRowChanging" msprop:Generator_RowEvArgName="sp_ItemsVolumeAndFeeRowChangeEvent" msprop:Generator_RowEvHandlerName="sp_ItemsVolumeAndFeeRowChangeEventHandler" msprop:Generator_TablePropName="sp_ItemsVolumeAndFee" msprop:Generator_TableVarName="tablesp_ItemsVolumeAndFee" msprop:Generator_RowDeletingName="sp_ItemsVolumeAndFeeRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInTable="RegionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Branch" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="207" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Items" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Volume" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fee" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Fee" msprop:Generator_ColumnPropNameInRow="Fee" msprop:Generator_ColumnVarNameInTable="columnFee" msprop:Generator_ColumnPropNameInTable="FeeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dfrom" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Dfrom" msprop:Generator_ColumnPropNameInRow="Dfrom" msprop:Generator_ColumnVarNameInTable="columnDfrom" msprop:Generator_ColumnPropNameInTable="DfromColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dto" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Dto" msprop:Generator_ColumnPropNameInRow="Dto" msprop:Generator_ColumnVarNameInTable="columnDto" msprop:Generator_ColumnPropNameInTable="DtoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

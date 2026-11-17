@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_Treasury_Transaction_Report" targetNamespace="http://tempuri.org/ds_Treasury_Transaction_Report.xsd" xmlns:mstns="http://tempuri.org/ds_Treasury_Transaction_Report.xsd" xmlns="http://tempuri.org/ds_Treasury_Transaction_Report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_Treasury_Transaction_Report" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_Treasury_Transaction_Report" msprop:Generator_DataSetName="ds_Treasury_Transaction_Report">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_Treasury_Transaction_Report" msprop:Generator_UserTableName="dt_Treasury_Transaction_Report" msprop:Generator_RowDeletedName="dt_Treasury_Transaction_ReportRowDeleted" msprop:Generator_TableClassName="dt_Treasury_Transaction_ReportDataTable" msprop:Generator_RowChangedName="dt_Treasury_Transaction_ReportRowChanged" msprop:Generator_RowClassName="dt_Treasury_Transaction_ReportRow" msprop:Generator_RowChangingName="dt_Treasury_Transaction_ReportRowChanging" msprop:Generator_RowEvArgName="dt_Treasury_Transaction_ReportRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_Treasury_Transaction_ReportRowChangeEventHandler" msprop:Generator_TablePropName="dt_Treasury_Transaction_Report" msprop:Generator_TableVarName="tabledt_Treasury_Transaction_Report" msprop:Generator_RowDeletingName="dt_Treasury_Transaction_ReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REFERENCENO" msprop:Generator_UserColumnName="REFERENCENO" msprop:Generator_ColumnPropNameInRow="REFERENCENO" msprop:Generator_ColumnVarNameInTable="columnREFERENCENO" msprop:Generator_ColumnPropNameInTable="REFERENCENOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTERNAME" msprop:Generator_UserColumnName="REMITTERNAME" msprop:Generator_ColumnPropNameInRow="REMITTERNAME" msprop:Generator_ColumnVarNameInTable="columnREMITTERNAME" msprop:Generator_ColumnPropNameInTable="REMITTERNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANXSTATUS" msprop:Generator_UserColumnName="TRANXSTATUS" msprop:Generator_ColumnPropNameInRow="TRANXSTATUS" msprop:Generator_ColumnVarNameInTable="columnTRANXSTATUS" msprop:Generator_ColumnPropNameInTable="TRANXSTATUSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GROSSAMOUNT" msprop:Generator_UserColumnName="GROSSAMOUNT" msprop:Generator_ColumnPropNameInRow="GROSSAMOUNT" msprop:Generator_ColumnVarNameInTable="columnGROSSAMOUNT" msprop:Generator_ColumnPropNameInTable="GROSSAMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NETAMOUNT" msprop:Generator_UserColumnName="NETAMOUNT" msprop:Generator_ColumnPropNameInRow="NETAMOUNT" msprop:Generator_ColumnVarNameInTable="columnNETAMOUNT" msprop:Generator_ColumnPropNameInTable="NETAMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALCOMMISION" msprop:Generator_UserColumnName="TOTALCOMMISION" msprop:Generator_ColumnPropNameInRow="TOTALCOMMISION" msprop:Generator_ColumnVarNameInTable="columnTOTALCOMMISION" msprop:Generator_ColumnPropNameInTable="TOTALCOMMISIONColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NETTOBENCURRENCY" msprop:Generator_UserColumnName="NETTOBENCURRENCY" msprop:Generator_ColumnPropNameInRow="NETTOBENCURRENCY" msprop:Generator_ColumnVarNameInTable="columnNETTOBENCURRENCY" msprop:Generator_ColumnPropNameInTable="NETTOBENCURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NETTOBENAMOUNT" msprop:Generator_UserColumnName="NETTOBENAMOUNT" msprop:Generator_ColumnPropNameInRow="NETTOBENAMOUNT" msprop:Generator_ColumnVarNameInTable="columnNETTOBENAMOUNT" msprop:Generator_ColumnPropNameInTable="NETTOBENAMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ACCOUNTNO" msprop:Generator_UserColumnName="ACCOUNTNO" msprop:Generator_ColumnPropNameInRow="ACCOUNTNO" msprop:Generator_ColumnVarNameInTable="columnACCOUNTNO" msprop:Generator_ColumnPropNameInTable="ACCOUNTNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ROUTINGNO" msprop:Generator_UserColumnName="ROUTINGNO" msprop:Generator_ColumnPropNameInRow="ROUTINGNO" msprop:Generator_ColumnVarNameInTable="columnROUTINGNO" msprop:Generator_ColumnPropNameInTable="ROUTINGNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BANKNAME" msprop:Generator_UserColumnName="BANKNAME" msprop:Generator_ColumnPropNameInRow="BANKNAME" msprop:Generator_ColumnVarNameInTable="columnBANKNAME" msprop:Generator_ColumnPropNameInTable="BANKNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH" msprop:Generator_UserColumnName="BRANCH" msprop:Generator_ColumnPropNameInRow="BRANCH" msprop:Generator_ColumnVarNameInTable="columnBRANCH" msprop:Generator_ColumnPropNameInTable="BRANCHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATEFROM" msprop:Generator_UserColumnName="DATEFROM" msprop:Generator_ColumnPropNameInRow="DATEFROM" msprop:Generator_ColumnVarNameInTable="columnDATEFROM" msprop:Generator_ColumnPropNameInTable="DATEFROMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATETO" msprop:Generator_UserColumnName="DATETO" msprop:Generator_ColumnPropNameInRow="DATETO" msprop:Generator_ColumnVarNameInTable="columnDATETO" msprop:Generator_ColumnPropNameInTable="DATETOColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRT005" targetNamespace="http://tempuri.org/dsGRT005.xsd" xmlns:mstns="http://tempuri.org/dsGRT005.xsd" xmlns="http://tempuri.org/dsGRT005.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRT005" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRT005" msprop:Generator_DataSetName="dsGRT005">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRT005_CC" msprop:Generator_UserTableName="dtGRT005_CC" msprop:Generator_RowDeletedName="dtGRT005_CCRowDeleted" msprop:Generator_TableClassName="dtGRT005_CCDataTable" msprop:Generator_RowChangedName="dtGRT005_CCRowChanged" msprop:Generator_RowClassName="dtGRT005_CCRow" msprop:Generator_RowChangingName="dtGRT005_CCRowChanging" msprop:Generator_RowEvArgName="dtGRT005_CCRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT005_CCRowChangeEventHandler" msprop:Generator_TablePropName="dtGRT005_CC" msprop:Generator_TableVarName="tabledtGRT005_CC" msprop:Generator_RowDeletingName="dtGRT005_CCRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record_Id" msprop:Generator_UserColumnName="Record_Id" msprop:Generator_ColumnPropNameInRow="Record_Id" msprop:Generator_ColumnVarNameInTable="columnRecord_Id" msprop:Generator_ColumnPropNameInTable="Record_IdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtGRT005_CA" msprop:Generator_UserTableName="dtGRT005_CA" msprop:Generator_RowDeletedName="dtGRT005_CARowDeleted" msprop:Generator_TableClassName="dtGRT005_CADataTable" msprop:Generator_RowChangedName="dtGRT005_CARowChanged" msprop:Generator_RowClassName="dtGRT005_CARow" msprop:Generator_RowChangingName="dtGRT005_CARowChanging" msprop:Generator_RowEvArgName="dtGRT005_CARowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT005_CARowChangeEventHandler" msprop:Generator_TablePropName="dtGRT005_CA" msprop:Generator_TableVarName="tabledtGRT005_CA" msprop:Generator_RowDeletingName="dtGRT005_CARowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record_Id" msprop:Generator_UserColumnName="Record_Id" msprop:Generator_ColumnPropNameInRow="Record_Id" msprop:Generator_ColumnVarNameInTable="columnRecord_Id" msprop:Generator_ColumnPropNameInTable="Record_IdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtGRT005_DD" msprop:Generator_UserTableName="dtGRT005_DD" msprop:Generator_RowDeletedName="dtGRT005_DDRowDeleted" msprop:Generator_TableClassName="dtGRT005_DDDataTable" msprop:Generator_RowChangedName="dtGRT005_DDRowChanged" msprop:Generator_RowClassName="dtGRT005_DDRow" msprop:Generator_RowChangingName="dtGRT005_DDRowChanging" msprop:Generator_RowEvArgName="dtGRT005_DDRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT005_DDRowChangeEventHandler" msprop:Generator_TablePropName="dtGRT005_DD" msprop:Generator_TableVarName="tabledtGRT005_DD" msprop:Generator_RowDeletingName="dtGRT005_DDRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record_Id" msprop:Generator_UserColumnName="Record_Id" msprop:Generator_ColumnPropNameInRow="Record_Id" msprop:Generator_ColumnVarNameInTable="columnRecord_Id" msprop:Generator_ColumnPropNameInTable="Record_IdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtGRT005_Dummy" msprop:Generator_UserTableName="dtGRT005_Dummy" msprop:Generator_RowDeletedName="dtGRT005_DummyRowDeleted" msprop:Generator_TableClassName="dtGRT005_DummyDataTable" msprop:Generator_RowChangedName="dtGRT005_DummyRowChanged" msprop:Generator_RowClassName="dtGRT005_DummyRow" msprop:Generator_RowChangingName="dtGRT005_DummyRowChanging" msprop:Generator_RowEvArgName="dtGRT005_DummyRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT005_DummyRowChangeEventHandler" msprop:Generator_TablePropName="dtGRT005_Dummy" msprop:Generator_TableVarName="tabledtGRT005_Dummy" msprop:Generator_RowDeletingName="dtGRT005_DummyRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record_Id" msprop:Generator_UserColumnName="Record_Id" msprop:Generator_ColumnPropNameInRow="Record_Id" msprop:Generator_ColumnVarNameInTable="columnRecord_Id" msprop:Generator_ColumnPropNameInTable="Record_IdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsSummaryOfTranxProcessedGREM" targetNamespace="http://tempuri.org/dsSummaryOfTranxProcessedGREM.xsd" xmlns:mstns="http://tempuri.org/dsSummaryOfTranxProcessedGREM.xsd" xmlns="http://tempuri.org/dsSummaryOfTranxProcessedGREM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsSummaryOfTranxProcessedGREM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsSummaryOfTranxProcessedGREM" msprop:Generator_DataSetName="dsSummaryOfTranxProcessedGREM">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtSummaryOfTranxProcessed_GREM" msprop:Generator_UserTableName="dtSummaryOfTranxProcessed_GREM" msprop:Generator_RowDeletedName="dtSummaryOfTranxProcessed_GREMRowDeleted" msprop:Generator_RowChangedName="dtSummaryOfTranxProcessed_GREMRowChanged" msprop:Generator_RowClassName="dtSummaryOfTranxProcessed_GREMRow" msprop:Generator_RowChangingName="dtSummaryOfTranxProcessed_GREMRowChanging" msprop:Generator_RowEvArgName="dtSummaryOfTranxProcessed_GREMRowChangeEvent" msprop:Generator_RowEvHandlerName="dtSummaryOfTranxProcessed_GREMRowChangeEventHandler" msprop:Generator_TableClassName="dtSummaryOfTranxProcessed_GREMDataTable" msprop:Generator_TableVarName="tabledtSummaryOfTranxProcessed_GREM" msprop:Generator_RowDeletingName="dtSummaryOfTranxProcessed_GREMRowDeleting" msprop:Generator_TablePropName="dtSummaryOfTranxProcessed_GREM">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATEFROM" msprop:Generator_UserColumnName="DATEFROM" msprop:Generator_ColumnVarNameInTable="columnDATEFROM" msprop:Generator_ColumnPropNameInRow="DATEFROM" msprop:Generator_ColumnPropNameInTable="DATEFROMColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATETO" msprop:Generator_UserColumnName="DATETO" msprop:Generator_ColumnVarNameInTable="columnDATETO" msprop:Generator_ColumnPropNameInRow="DATETO" msprop:Generator_ColumnPropNameInTable="DATETOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMBANK_COMPANY_PAYROLL" msprop:Generator_UserColumnName="REMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnVarNameInTable="columnREMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnPropNameInRow="REMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnPropNameInTable="REMBANK_COMPANY_PAYROLLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMOFITEMS" msprop:Generator_UserColumnName="NUMOFITEMS" msprop:Generator_ColumnVarNameInTable="columnNUMOFITEMS" msprop:Generator_ColumnPropNameInRow="NUMOFITEMS" msprop:Generator_ColumnPropNameInTable="NUMOFITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PHP_x0020_EQUIV" msprop:Generator_UserColumnName="PHP EQUIV" msprop:Generator_ColumnVarNameInTable="columnPHP_EQUIV" msprop:Generator_ColumnPropNameInRow="PHP_EQUIV" msprop:Generator_ColumnPropNameInTable="PHP_EQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USD_x0020_AMOUNT" msprop:Generator_UserColumnName="USD AMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSD_AMOUNT" msprop:Generator_ColumnPropNameInRow="USD_AMOUNT" msprop:Generator_ColumnPropNameInTable="USD_AMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="COMMISSION" msprop:Generator_UserColumnName="COMMISSION" msprop:Generator_ColumnVarNameInTable="columnCOMMISSION" msprop:Generator_ColumnPropNameInRow="COMMISSION" msprop:Generator_ColumnPropNameInTable="COMMISSIONColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SERVICEFEE" msprop:Generator_UserColumnName="SERVICEFEE" msprop:Generator_ColumnVarNameInTable="columnSERVICEFEE" msprop:Generator_ColumnPropNameInRow="SERVICEFEE" msprop:Generator_ColumnPropNameInTable="SERVICEFEEColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="OPE" msprop:Generator_UserColumnName="OPE" msprop:Generator_ColumnVarNameInTable="columnOPE" msprop:Generator_ColumnPropNameInRow="OPE" msprop:Generator_ColumnPropNameInTable="OPEColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

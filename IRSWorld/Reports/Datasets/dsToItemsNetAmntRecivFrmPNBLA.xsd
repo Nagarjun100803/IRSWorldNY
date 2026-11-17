@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsToItemsNetAmntRecivFrmPNBLA" targetNamespace="http://tempuri.org/dsToItemsNetAmntRecivFrmPNBLA.xsd" xmlns:mstns="http://tempuri.org/dsToItemsNetAmntRecivFrmPNBLA.xsd" xmlns="http://tempuri.org/dsToItemsNetAmntRecivFrmPNBLA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsToItemsNetAmntRecivFrmPNBLA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsToItemsNetAmntRecivFrmPNBLA" msprop:Generator_DataSetName="dsToItemsNetAmntRecivFrmPNBLA">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsToItemsNetAmntRecivFrmPNBLA" msprop:Generator_UserTableName="dsToItemsNetAmntRecivFrmPNBLA" msprop:Generator_RowDeletedName="dsToItemsNetAmntRecivFrmPNBLARowDeleted" msprop:Generator_TableClassName="dsToItemsNetAmntRecivFrmPNBLADataTable" msprop:Generator_RowChangedName="dsToItemsNetAmntRecivFrmPNBLARowChanged" msprop:Generator_RowClassName="dsToItemsNetAmntRecivFrmPNBLARow" msprop:Generator_RowChangingName="dsToItemsNetAmntRecivFrmPNBLARowChanging" msprop:Generator_RowEvArgName="dsToItemsNetAmntRecivFrmPNBLARowChangeEvent" msprop:Generator_RowEvHandlerName="dsToItemsNetAmntRecivFrmPNBLARowChangeEventHandler" msprop:Generator_TablePropName="_dsToItemsNetAmntRecivFrmPNBLA" msprop:Generator_TableVarName="tabledsToItemsNetAmntRecivFrmPNBLA" msprop:Generator_RowDeletingName="dsToItemsNetAmntRecivFrmPNBLARowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Item" msprop:Generator_UserColumnName="Item" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInTable="ItemColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Net_Amount" msprop:Generator_UserColumnName="Net_Amount" msprop:Generator_ColumnPropNameInRow="Net_Amount" msprop:Generator_ColumnVarNameInTable="columnNet_Amount" msprop:Generator_ColumnPropNameInTable="Net_AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fees" msprop:Generator_UserColumnName="Fees" msprop:Generator_ColumnPropNameInRow="Fees" msprop:Generator_ColumnVarNameInTable="columnFees" msprop:Generator_ColumnPropNameInTable="FeesColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

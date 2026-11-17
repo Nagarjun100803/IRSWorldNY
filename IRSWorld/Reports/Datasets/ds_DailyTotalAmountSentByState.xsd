@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DailyTotalAmountSentByState" targetNamespace="http://tempuri.org/ds_DailyTotalAmountSentByState.xsd" xmlns:mstns="http://tempuri.org/ds_DailyTotalAmountSentByState.xsd" xmlns="http://tempuri.org/ds_DailyTotalAmountSentByState.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DailyTotalAmountSentByState" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DailyTotalAmountSentByState" msprop:Generator_DataSetName="ds_DailyTotalAmountSentByState">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDailyTotalSent" msprop:Generator_UserTableName="dtDailyTotalSent" msprop:Generator_RowDeletedName="dtDailyTotalSentRowDeleted" msprop:Generator_RowChangedName="dtDailyTotalSentRowChanged" msprop:Generator_RowClassName="dtDailyTotalSentRow" msprop:Generator_RowChangingName="dtDailyTotalSentRowChanging" msprop:Generator_RowEvArgName="dtDailyTotalSentRowChangeEvent" msprop:Generator_RowEvHandlerName="dtDailyTotalSentRowChangeEventHandler" msprop:Generator_TableClassName="dtDailyTotalSentDataTable" msprop:Generator_TableVarName="tabledtDailyTotalSent" msprop:Generator_RowDeletingName="dtDailyTotalSentRowDeleting" msprop:Generator_TablePropName="dtDailyTotalSent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Consolidated" msprop:Generator_UserColumnName="Consolidated" msprop:Generator_ColumnPropNameInRow="Consolidated" msprop:Generator_ColumnVarNameInTable="columnConsolidated" msprop:Generator_ColumnPropNameInTable="ConsolidatedColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="California" msprop:Generator_UserColumnName="California" msprop:Generator_ColumnPropNameInRow="California" msprop:Generator_ColumnVarNameInTable="columnCalifornia" msprop:Generator_ColumnPropNameInTable="CaliforniaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Texas" msprop:Generator_UserColumnName="Texas" msprop:Generator_ColumnPropNameInRow="Texas" msprop:Generator_ColumnVarNameInTable="columnTexas" msprop:Generator_ColumnPropNameInTable="TexasColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Illinois" msprop:Generator_UserColumnName="Illinois" msprop:Generator_ColumnPropNameInRow="Illinois" msprop:Generator_ColumnVarNameInTable="columnIllinois" msprop:Generator_ColumnPropNameInTable="IllinoisColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Florida" msprop:Generator_UserColumnName="Florida" msprop:Generator_ColumnPropNameInRow="Florida" msprop:Generator_ColumnVarNameInTable="columnFlorida" msprop:Generator_ColumnPropNameInTable="FloridaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Maryland" msprop:Generator_UserColumnName="Maryland" msprop:Generator_ColumnPropNameInRow="Maryland" msprop:Generator_ColumnVarNameInTable="columnMaryland" msprop:Generator_ColumnPropNameInTable="MarylandColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Virginia" msprop:Generator_UserColumnName="Virginia" msprop:Generator_ColumnPropNameInRow="Virginia" msprop:Generator_ColumnVarNameInTable="columnVirginia" msprop:Generator_ColumnPropNameInTable="VirginiaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="New_x0020_Jersey" msprop:Generator_UserColumnName="New Jersey" msprop:Generator_ColumnPropNameInRow="New_Jersey" msprop:Generator_ColumnVarNameInTable="columnNew_Jersey" msprop:Generator_ColumnPropNameInTable="New_JerseyColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Arizona" msprop:Generator_UserColumnName="Arizona" msprop:Generator_ColumnPropNameInRow="Arizona" msprop:Generator_ColumnVarNameInTable="columnArizona" msprop:Generator_ColumnPropNameInTable="ArizonaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Nevada" msprop:Generator_UserColumnName="Nevada" msprop:Generator_ColumnPropNameInRow="Nevada" msprop:Generator_ColumnVarNameInTable="columnNevada" msprop:Generator_ColumnPropNameInTable="NevadaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Hawaii" msprop:Generator_UserColumnName="Hawaii" msprop:Generator_ColumnPropNameInRow="Hawaii" msprop:Generator_ColumnVarNameInTable="columnHawaii" msprop:Generator_ColumnPropNameInTable="HawaiiColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Washington" msprop:Generator_UserColumnName="Washington" msprop:Generator_ColumnPropNameInRow="Washington" msprop:Generator_ColumnVarNameInTable="columnWashington" msprop:Generator_ColumnPropNameInTable="WashingtonColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="T_x0024__x0024_" msprop:Generator_UserColumnName="T$$" msprop:Generator_ColumnPropNameInRow="_T__" msprop:Generator_ColumnVarNameInTable="_columnT__" msprop:Generator_ColumnPropNameInTable="_T__Column" type="xs:double" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Item_x0020_Count" msprop:Generator_UserColumnName="Item Count" msprop:Generator_ColumnVarNameInTable="columnItem_Count" msprop:Generator_ColumnPropNameInRow="Item_Count" msprop:Generator_ColumnPropNameInTable="Item_CountColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

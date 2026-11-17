@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPNBSaipanBranchRemittance" targetNamespace="http://tempuri.org/dsPNBSaipanBranchRemittance.xsd" xmlns:mstns="http://tempuri.org/dsPNBSaipanBranchRemittance.xsd" xmlns="http://tempuri.org/dsPNBSaipanBranchRemittance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPNBSaipanBranchRemittance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsPNBSaipanBranchRemittance" msprop:Generator_DataSetName="dsPNBSaipanBranchRemittance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPNBSaipanBranchRemittance" msprop:Generator_UserTableName="dtPNBSaipanBranchRemittance" msprop:Generator_RowDeletedName="dtPNBSaipanBranchRemittanceRowDeleted" msprop:Generator_RowChangedName="dtPNBSaipanBranchRemittanceRowChanged" msprop:Generator_RowClassName="dtPNBSaipanBranchRemittanceRow" msprop:Generator_RowChangingName="dtPNBSaipanBranchRemittanceRowChanging" msprop:Generator_RowEvArgName="dtPNBSaipanBranchRemittanceRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPNBSaipanBranchRemittanceRowChangeEventHandler" msprop:Generator_TableClassName="dtPNBSaipanBranchRemittanceDataTable" msprop:Generator_TableVarName="tabledtPNBSaipanBranchRemittance" msprop:Generator_RowDeletingName="dtPNBSaipanBranchRemittanceRowDeleting" msprop:Generator_TablePropName="dtPNBSaipanBranchRemittance">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reference_x0020_No" msprop:Generator_UserColumnName="Reference No" msprop:Generator_ColumnPropNameInRow="Reference_No" msprop:Generator_ColumnVarNameInTable="columnReference_No" msprop:Generator_ColumnPropNameInTable="Reference_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter" msprop:Generator_UserColumnName="Remitter" msprop:Generator_ColumnPropNameInRow="Remitter" msprop:Generator_ColumnVarNameInTable="columnRemitter" msprop:Generator_ColumnPropNameInTable="RemitterColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateSent" msprop:Generator_UserColumnName="DateSent" msprop:Generator_ColumnPropNameInRow="DateSent" msprop:Generator_ColumnVarNameInTable="columnDateSent" msprop:Generator_ColumnPropNameInTable="DateSentColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AmountInUS" msprop:Generator_UserColumnName="AmountInUS" msprop:Generator_ColumnPropNameInRow="AmountInUS" msprop:Generator_ColumnVarNameInTable="columnAmountInUS" msprop:Generator_ColumnPropNameInTable="AmountInUSColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DateImpl" msprop:Generator_UserColumnName="DateImpl" msprop:Generator_ColumnPropNameInRow="DateImpl" msprop:Generator_ColumnVarNameInTable="columnDateImpl" msprop:Generator_ColumnPropNameInTable="DateImplColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,882 @@
+var ajax_timeout = (60 * 3) * 1000;
+
+var client_mac;
+var client_ip;
+var client_name;
+var client_arm;
+var client_tz;
+var gfmcNo = "";
+var gfmcCode = "";
+var oaam_down = true;
+var max_userid_length = 16;
+var max_card_data_length = 40;
+var is_redirect = false;
+//var SIM = new ActiveXObject("PWSIMCom.PWSIMCom");
+
+function check_id_length(txtuid)
+{
+    var uid = getText(txtuid);
+    var err = false;
+    if (uid != null && uid.length > 0)
+    {
+        if (uid.charAt(0) == ';' && uid.length > (max_card_data_length))
+        {
+            err = true;
+        }
+        else if (uid.charAt(0) != ';' && uid.length > (max_userid_length))
+        {
+            err = true;
+        }
+        
+        if (err)
+        {
+            alert('Unexpected input length.');
+            txtuid.select();
+            txtuid.focus();
+        }
+    }    
+}
+
+function getMacAddress()
+{
+    try
+    {
+        var locator = new ActiveXObject ("WbemScripting.SWbemLocator");
+        var service = locator.ConnectServer(".");
+        var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapter");
+        var e = new Enumerator (properties);
+        var p = e.item();
+        
+        client_mac = p.MACAddress;
+        
+        var rs = IRSWorld.Admin.Login.setMacAddress(client_mac);
+        if (rs.error != null)
+        {
+            alert (rs.error.Message);
+            return;
+        }
+        
+        client_arm = rs.value;
+    }
+    catch (e)
+    {}
+} 
+
+function use_ipconfig()
+{
+    var netobj = get_client_properties();
+    if (netobj != null)
+    {
+        client_mac = netobj.MacAddress;
+        var rs = IRSWorld.Admin.Login.setMacAddress(client_mac);
+        if (rs.error != null)
+        {
+            alert (rs.error.Message);
+            return;
+        }
+        
+        client_arm = rs.value;
+        
+        if (client_ip == null || client_ip.length == 0) client_ip = netobj.IPAddress;
+        if (client_name == null || client_name.length == 0) client_name = netobj.HostName;
+    }
+}       
+
+function getClientParams(rs)
+{
+    if (rs.error != null)
+    {
+        show_message("E", rs.error.Message, true);
+    }
+    try
+    {
+        if (rs.error == null)
+        {
+            client_ip = rs.value[0];
+            client_name = rs.value[1];
+            client_arm = (rs.value[2] == "1");
+            client_mac = rs.value[3];
+            oaam_down = (rs.value[4].toLowerCase() == "true");
+        }
+        
+        if (client_mac == null) 
+        {
+            getMacAddress();
+            if (client_mac == null || client_mac.length == 0)
+            {
+                use_ipconfig();
+            }
+        }
+        
+        if (client_arm) 
+        {
+            document.getElementById("tdmarky").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("tdmarky").style.display = "none";
+        }
+        return;
+    }
+    catch (e)
+    {}
+}
+       
+function isSetupCallback(rs)
+{
+    if (rs.error != null)
+    {
+        show_message('E', 'detect_setup: ' + rs.error.Message, false);
+        return;
+    }
+    
+    if (rs.value[0])
+    {
+        window.open('../Main/IRSMain.aspx?load=../Admin/UserAdmin.aspx', '_parent');
+        return;
+    }
+    
+    oaam_down = rs.value[1];
+    
+    if (!is_redirect) IRSWorld.Admin.Login.getClientProperties(getClientParams);
+}
+
+function fix_height()
+{
+    if (top.document.getElementById('divCenter'))
+    {
+        var div = document.getElementById('divContent');
+        var tbl = document.getElementById('tdContent');
+        
+        tbl.style.height = top.document.getElementById('divCenter').offsetHeight + 'px';
+        div.style.height = top.document.getElementById('divCenter').offsetHeight + 'px';
+        
+        var xdv = document.getElementById('xdiv');
+        if (xdv)
+        {
+            xdv.style.height = div.style.height;
+            xdv.style.width = top.document.getElementById('divCenter').offsetWidth + 'px';
+        }
+        
+        var xfm = document.getElementById('xframe');
+        if (xfm)
+        {
+            xfm.style.height = xdv.style.height;
+            xfm.style.width = xdv.style.width;
+        }
+    }
+}
+
+function detectPopupBlocker()
+{
+    var myPopup = window.open("../Controls/Poptest.htm", "",    "directories=no,height=150,width=150,menubar=no,left=100,resizable=no,scrollbars=no,status=no,titlebar=no,top=0,location=no");
+
+    if(!myPopup || myPopup.closed || typeof myPopup.closed=='undefined')
+        {
+        return true;
+        }
+    else {
+            //Use to test for Google Chrome Pop-Up
+            if (myPopup.screenX == 0) {
+                myPopup.close();
+		        return true;
+            } else {
+                myPopup.close();   
+		        return false;
+
+            }
+    }
+}
+
+function ie_version()
+{  
+    var ua = window.navigator.userAgent;
+	var trident = ua.indexOf('Trident/');
+	var msie = ua.indexOf('MSIE ');
+	var version = "";
+	var ret = "";
+	
+	if (trident > 0)
+	{
+		//IE 8 and above
+		version = parseInt(ua.substring(trident + 8, ua.indexOf('.', trident)), 10);
+		switch (version)
+		{
+			case 7: //IE11
+				ret = true;
+				break;
+			case 6: //IE10
+				ret = true;
+				break;
+			case 5: //IE9
+				ret = true;
+				break;
+			default: //IE8 and below
+				ret = false;
+				break;
+		}
+	}
+	else
+	{
+		if (msie > 0)
+		{
+		    version = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+		    switch (version)
+		    {
+			    case 8: //IE8
+				    ret = false;
+				    break;
+			    default: //IE8 and below
+				    ret = true;
+				    break;
+		    }
+		}
+		else
+		{
+			ret = true;
+		}
+	}
+	return ret;
+}
+
+function detect_iever()
+{
+    var popup = detectPopupBlocker();
+    
+    var ie_ver = ie_version();
+    
+    if (ie_ver)
+    {
+        if (popup)
+        {
+            alert("A popup blocker was detected.\n\n To turn off Pop-up blocker:\n 1. Go to Tools > Options > Content.\n 2. Uncheck (Block pop-up windows).");
+            //spawn_errpage("");
+            return;
+        }
+    }
+    else
+    {
+        alert("Your browser is not compatible. Please use IE 9 and above browser to continue.");
+        spawn_errpage("");
+        return;
+    }
+}
+       
+function detect_setup()
+{
+    AjaxPro.timeoutPeriod = ajax_timeout; 
+    
+    var qs = getQueryString(window, 'redirect');
+    is_redirect = (qs != null);
+    if (is_redirect)
+    {
+        client_mac = getQueryString(window, 'client_mac');
+        client_ip = getQueryString(window, 'client_ip');
+        client_name = getQueryString(window, 'client_name');
+        client_arm = (getQueryString(window, 'client_arm') == '1');
+        client_tz = getQueryString(window, 'client_tz');
+    }
+    else
+    {
+        detect_iever();
+    }
+
+    getIRSWorldVersion();
+    getGFMCCode(false);
+    window.onunload = close_session;
+    if (top != self)
+    {
+        fix_height();
+        detect_keyup(true);
+                
+        if (is_redirect)
+        {
+            //alert('MAC=' + client_mac + ' IP=' + client_ip + ' tz=' + client_tz);
+            var rs = IRSWorld.Admin.Login.detect_setup(client_tz);
+            isSetupCallback(rs);
+            document.getElementById('txtUserId').value = qs;
+            document.getElementById('btnEnter').onclick();
+        }
+        else
+        {
+            client_tz = (new Date().getTimezoneOffset() / 60) * -1;
+            IRSWorld.Admin.Login.detect_setup(client_tz, isSetupCallback);
+        
+            document.getElementById('divlogin').style.visibility='';
+            document.getElementById('txtUserId').focus();
+        }
+    }
+    else
+    {
+        var murl = '../Main/IRSMain.aspx?load=../Admin/Login.aspx';
+        if (is_redirect)
+        {
+            murl += "&redirect=" + qs;
+            if (client_mac == null) client_mac = '';
+            murl += '&client_mac=' + client_mac;
+            if (client_ip == null) client_ip = '';
+            murl += '&client_ip=' + client_ip;
+            if (client_name == null) client_name = '';
+            murl += '&client_name=' + client_name;
+            if (client_arm == null) client_arm = '0';
+            murl += '&client_arm=' + client_arm;
+            if (client_tz == null) client_tz = '';
+            murl += '&client_tz=' + client_tz;
+        }
+        window.open(murl, '_top');
+    }
+}
+
+function spawn_main()
+{
+    var murl = '../Main/IRSMain.aspx';
+    var lurl = window.location.search;
+    if (lurl != null && lurl.indexOf('Login.aspx') == -1)
+    {
+        murl += lurl;
+    }
+    top.window.name = "PNBIRSWorld";
+    top.window.open(murl, '_self', 'status=no,toolbar=no');
+}
+
+function spawn_arm()
+{
+    armwindow = window.open('../Main/ARMMain.aspx', '_blank', 'status=no,toolbar=no,location=no,menubar=no,directories=no,resizeable=no,scrollbars=no,fullscreen=yes,modal=yes');
+    armwindow.focus();
+}
+
+function detect_keyup(enable)
+{
+    if (document.getElementById('divlogin').style.display == 'block')
+    {
+        document.onkeyup = (enable) ? login_click : null;
+    }
+    else
+    {
+        document.onkeyup = null;
+    }
+}
+
+function xshow_message(ind, msg, show)
+{
+    if (is_redirect) document.getElementById('divlogin').style.visibility = '';
+    show_message(ind, msg, show);
+}
+
+function submit_userid(userid)
+{
+    if (userid == undefined || userid.length == 0)
+    {
+        xshow_message('E', 'User id cannot be empty.', true);
+        return;
+    }
+    
+    var xuserid = escape(userid);
+    
+    IRSWorld.Admin.Login.setSessionOnLogin();
+    
+    var gfmcno = like_gfmc(userid);
+    
+    if (gfmcno != null) 
+    {
+        if (validate_gfmc(gfmcno) == true)
+        {
+            var rs = IRSWorld.Admin.Login.is_valid_kiosk(client_mac);
+            if (rs.error != null)
+            {
+                xshow_message('E', rs.error.Message, true);
+                return;
+            }
+
+            if (rs.value == true) spawn_arm();
+            else
+            {
+                xshow_message('E', 'The terminal is not a valid ARM Machine', true);
+                document.getElementById('txtUserId').select();
+            }
+        }
+        else
+        {
+            xshow_message('E', 'The GFMC card you entered is not valid and/or ARM machine is not available. Please go to the nearest PNB branch.', false);
+            document.getElementById('txtUserId').select();
+        }
+    }
+    else
+    {
+        detect_keyup(false);
+        
+        if (userid.length > max_userid_length)
+        {
+            xshow_message('E', 'User id is invalid.', true);
+            return;
+        } 
+        
+        var rs = IRSWorld.Admin.Login.useridExist(xuserid);
+        if (rs.error == null && rs.value[0] == false && is_redirect == false)
+        {
+            try
+            {
+                if (rs.value[1] != null && rs.value[1].length > 0)
+                {
+                    window.location = rs.value[1];
+                    return;
+                }
+            }
+            catch (e)
+            {}
+        }
+        
+        if (rs.error != null)
+        {
+            //xshow_message('E', rs.error.Message, false);
+            spawn_errpage(rs.error.Message);
+            return;
+        }
+        
+        if (rs.value[0] == false)
+        {
+            spawn_errpage("User ID does not exists");
+            //xshow_message('E', 'Userid ' + userid + ' does not exist', true);
+            return;
+        }
+        
+        if (oaam_down)
+        {
+            //show_frame_dialog('Password.aspx?function=login&userid=' + xuserid, 'login_close', '100%', '100%', 0);
+            /* RFC-31394 - Privacy Violation: HTTP GET*/
+            IRSWorld.Admin.Login.store_uid(xuserid);
+            show_frame_dialog('Password.aspx?function=login', 'login_close', '100%', '100%', 0);
+            /* RFC-31394 - Privacy Violation: HTTP GET*/
+        }
+        else
+        {
+            rs = IRSWorld.Admin.Login.handleLogin(xuserid.toUpperCase());
+            if (rs.error == null)
+            {
+                show_frame_dialog('LoginJumpPage.aspx', 'login_close', '100%', '100%', 0);
+            }
+            else
+            {
+                show_frame_dialog('Password.aspx?function=login&userid=' + xuserid, 'login_close', '100%', '100%', 0);
+            }
+        }            
+    }
+}
+    
+//    if (userid > max_userid_length)
+//    {
+//        show_message('E', 'User id is invalid.', true);
+//        return;
+//    }
+//    
+//    var xuserid = escape(userid);
+//    
+//    IRSWorld.Admin.Login.setSessionOnLogin();
+//    
+//    var gfmcno = like_gfmc(userid);
+//    
+//    var rs = IRSWorld.Admin.Login.is_valid_kiosk(client_mac);
+//    if (rs.error != null)
+//    {
+//        show_message('E', rs.error.Message, true);
+//        return;
+//    }
+//    
+//    if (rs.value == true)
+//    {
+//        if (gfmcno != null)
+//        {
+//            if (validate_gfmc(gfmcno) == true)
+//            {
+//                spawn_arm();
+//            }
+//            else
+//            {
+//                show_message('E', 'The GFMC card you entered is not valid and/or ARM machine is not available. Please go to the nearest PNB branch.', false);
+//                document.getElementById('txtUserId').select();
+//            }
+//        }
+//        else
+//        {
+//            show_message('E', 'The GFMC card you entered is not valid and/or ARM machine is not available. Please go to the nearest PNB branch.', false);
+//            document.getElementById('txtUserId').select();
+//        }
+//    }
+//    else
+//    {
+//        detect_keyup(false);
+//        if (oaam_down)
+//        {
+//            show_frame_dialog('Password.aspx?function=login&userid=' + xuserid, 'login_close', '100%', '100%', 0);
+//        }
+//        else
+//        {
+//            rs = IRSWorld.Admin.Login.handleLogin(xuserid.toUpperCase());
+//            if (rs.error == null)
+//            {
+//                show_frame_dialog('LoginJumpPage.aspx', 'login_close', '100%', '100%', 0);
+//            }
+//            else
+//            {
+//                show_frame_dialog('Password.aspx?function=login&userid=' + xuserid, 'login_close', '100%', '100%', 0);
+//            }
+//        }
+//    }
+//}
+
+function like_gfmc(userid)
+{
+    _gfmcNo = get_card(userid);
+    if (_gfmcNo.length == 16 && parseInt(_gfmcNo))
+    {
+        if (_gfmfCodeIsValid(_gfmcNo) == true)
+        {
+            return _gfmcNo;
+        }
+        else
+        {
+            if (_gfmfCodeIsValidOnline(_gfmcNo) == true)
+            {
+                return _gfmcNo;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+    else
+    {
+        return null;
+    }
+}
+
+function _gfmfCodeIsValid(cardno)
+{
+    var prodCode = cardno.substr(6, 3);
+    var arrGFMC = gfmcCode.split(",");
+    var returnValue = false;
+    
+    for (var i = 0; i <= (arrGFMC.length - 1); i++)
+    {
+        if (prodCode == arrGFMC[i])
+        {
+            returnValue = true;
+            break;
+        }
+    }
+    return returnValue;
+}
+
+function _gfmfCodeIsValidOnline(cardno)
+{
+    var prodCode = cardno.substr(6, 3);
+    var gfmcProdCode = IRSWorld.Admin.Login.getGFMCCode(true).value;
+    var arrGFMC = gfmcCode.split(",");
+    var returnValue = false;
+    
+    for (var i = 0; i <= (arrGFMC.length - 1); i++)
+    {
+        if (prodCode == arrGFMC[i])
+        {
+            returnValue = true;
+            break;
+        }
+    }
+    return returnValue;
+}
+
+function validate_gfmc(gfmcno)
+{
+    if (IRSWorld.Admin.Login.is_valid_gfmc(gfmcno).value == true)
+    {
+        document.getElementById('txtUserId').value = "";
+        document.getElementById('txtUserId').focus();     
+        return true;
+    }
+    else
+    {
+        document.getElementById('txtUserId').value = "";
+        document.getElementById('txtUserId').focus();
+        return false;
+    }
+}
+
+function get_card(cardno)
+{
+    var trimvalue = '';
+    var returnvalue = '';
+    
+    if (cardno.substring(0) == 'E')
+    {
+        alert('Invalid GFMC card supplied. Please check your card and try again.');
+        return;
+    }
+    else
+    {
+        // card swipe contains prefix char ;
+        var i = (cardno.substring(0) == ';' | cardno.substring(0) == '%') ? 1 : 0;
+        //for (var i = 0; i <= (cardno.length - 1); i++)
+        for (; i <= (cardno.length - 1); i++)
+        {
+            trimvalue = cardno.substr(i, 1);
+            if (!isNaN(trimvalue))
+            {
+                returnvalue += trimvalue;
+            }
+        }
+    }
+    
+    return returnvalue.substr(0, 16);
+}
+
+function setFocus()
+{
+    if (document.getElementById('divlogin').style.display == 'block')
+    {
+        document.getElementById('txtUserId').focus();
+    }
+}
+
+function getIRSWorldVersion()
+{
+    document.getElementById("spnVersion").innerHTML = IRSWorld.Admin.Login.getIRSWorldVersion().value;
+}
+
+function getGFMCCode(isOnline)
+{
+    gfmcCode = IRSWorld.Admin.Login.getGFMCCode(isOnline).value;
+}
+
+function forgot_password(rs)
+{
+    if (rs.error != null)
+    {
+        spawn_errpage(rs.Error.Message);
+        return;
+    }
+    
+    var emails = rs.value.split(';');
+    if (emails.length > 0)
+    {
+        if (emails[0] != null && emails[0].length > 0)
+        {
+            var userid = getText(document.getElementById('txtUserId'));
+            if (userid != null && userid.length >0)
+            {        
+                IRSWorld.Admin.Login.mailPassword(userid, emails[0], password_emailed);
+                return;
+            }
+            else
+            {
+                spawn_errpage('Unable to determine the userid');
+                return;
+            }
+        }
+    }
+
+    spawn_errpage('No registered email address.');
+    
+    /*
+    var emails = new Array();
+    if (rs.value.length > 0)
+    {
+        var ss = rs.value.split(';');
+        for(var i=0; i<ss.length; i++)
+        {
+            if (ss[i].length > 0)
+            {
+                emails[i] = ss[i] + '~' + ss[i];
+            }
+        }
+    }
+    if (emails != null && emails.length > 0)
+    {
+        set_ddl_options(document.getElementById('ddlEmail'), emails);
+        document.getElementById('ddlEmail').selectedIndex = 1;
+    }   
+    document.getElementById('divlogin').style.display = 'none';
+    document.getElementById('divForgot').style.display = '';
+    detect_keyup(false);
+    */
+}
+
+function password_emailed(rs)
+{
+    if (rs.error != null)
+    {
+        spawn_errpage("Email Password: " + rs.error.Message);
+        return;
+    }
+    
+    spawn_errpage(rs.value);
+}
+
+function email_password()
+{
+    alert('Not supported.');
+/*
+    var userid = getText(document.getElementById('txtUserId'));
+    if (userid != null && userid.length >0)
+    {
+        if (document.getElementById('ckEmail').checked)
+        {
+            var emailad = getText(document.getElementById('txtEmail'));
+            if (emailad != null && emailad.length > 0)
+            {
+                IRSWorld.Admin.Login.mailPassword(userid, emailad, password_emailed);
+            }
+            else
+            {
+                alert('Please provide an Email address.');
+            }
+        }
+        else
+        {
+            var ddl = document.getElementById('ddlEmail');
+            if (ddl.options.length > 0)
+            {
+                var emailad = document.getElementById('ddlEmail').options[ddl.selectedIndex].text;
+                if (emailad != null && emailad.length > 0 && emailad != 'Select')
+                {
+                    IRSWorld.Admin.Login.mailPassword(userid, emailad, password_emailed);
+                }
+                else
+                {
+                    alert('Please select an Email address from the list.');
+                }
+            }
+            else
+            {
+                alert('Please provide an Email address');
+            }
+        }
+    }
+    else
+    {
+        spawn_errpage('Unable to determine the userid');
+    }
+    */
+}
+
+function login_close()
+{
+    var msg = '';
+    var msgid = 'E';
+        
+    if (is_redirect) document.getElementById('divlogin').style.visibility = '';
+    
+    var retval = self.returnValue;
+    if (retval == undefined) 
+    {
+        msg_id = 'I';
+        msg = "Password verification cancelled.";
+    }
+    else
+    {
+        try
+        {
+            if (retval[0] == false)
+            {
+                /*
+                if (retval[4] == 1 | retval[4] == 3) // new or expired
+                {
+                    var reason = (retval[4] == 1) ? "New Password" : "Password Expired";
+                    show_frame_dialog('Password.aspx?function=new&userid=' + retval[2] + '&reason=' + reason, 'login_close', '100%', '100%', 0); 
+                }
+                else if (retval[4] == 5 & retval[1].indexOf("Forgot") > -1)
+                */
+                if (retval[4] == 5 & retval[1].indexOf("Forgot") > -1)
+                {
+                    msg = '';
+                    //setText(document.getElementById('txtUserId'), retval[2]);
+                    IRSWorld.Admin.Login.getUserEmailAddress(retval[2], forgot_password);
+                }
+                else
+                {
+                    if (retval[1].indexOf("OAAM:") > -1 && retval[4] == -1)
+                    {
+                        msg = retval[1] + ' Please click enter again.';
+                        oaam_down = true;
+                    }
+                    else
+                    {
+                        msg = 'Access Denied. ' + retval[1];
+                        if (retval[1].indexOf("exceeded allowed tries.") > -1)
+                        {
+                            spawn_errpage(msg);
+                            return;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (retval[1].indexOf('Active') > -1)
+                {
+                    spawn_main();
+                }
+                else if (retval[4] == 1 | retval[4] == 3) // new or expired
+                {
+                    var reason = (retval[4] == 1) ? "New Password" : "Password Expired";
+                    show_frame_dialog('Password.aspx?function=new&userid=' + retval[2] + '&reason=' + reason, 'login_close', '100%', '100%', 0); 
+                }
+                else
+                {
+                    // should not be here, if function is change password 
+                    // there must be a mistake in the code-behind
+                    msg = 'Invalid function ' + retval[1];
+                }
+            }
+        }
+        catch (e)
+        {
+            msg = "Return value is not in expected format";
+        }                    
+    }
+    if (msg.length > 0)
+    {
+        show_message(msgid, msg, false);
+        document.getElementById('txtUserId').focus();
+        document.getElementById('txtUserId').select();
+    }
+
+    detect_keyup(true);
+}
+
+function login_click(e)
+{
+    var src;
+    if (!e) var e = window.event;
+    if (!e.target) 
+        src = window.event.srcElement;
+    else 
+        src = e.target;
+    
+    if (src.tagName == "INPUT" & src.type == 'text')
+    {
+        if (e.keyCode == 13) // Enter key
+        {
+            document.getElementById('btnEnter').onclick();
+        }
+        else if (e.keyCode == 27) // Escape Key
+        {
+            e.returnValue = false;
+            document.getElementById('btnCancel').onclick();
+        }
+        
+        check_id_length(src);
+    }
+}
+
+function close_session(evt)
+{
+    if (is_closing(evt))
+    {
+        try
+        {
+            IRSWorld.Admin.Login.close_session();
+        }
+        catch (e) {}
+    }
+}

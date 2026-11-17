@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DailyItemsAndAmountReceivedByBranch" targetNamespace="http://tempuri.org/ds_DailyItemsAndAmountReceivedByBranch.xsd" xmlns:mstns="http://tempuri.org/ds_DailyItemsAndAmountReceivedByBranch.xsd" xmlns="http://tempuri.org/ds_DailyItemsAndAmountReceivedByBranch.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DailyItemsAndAmountReceivedByBranch" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DailyItemsAndAmountReceivedByBranch" msprop:Generator_DataSetName="ds_DailyItemsAndAmountReceivedByBranch">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_DailyItemsAndAmountReceivedByBranch" msprop:Generator_UserTableName="dt_DailyItemsAndAmountReceivedByBranch" msprop:Generator_RowDeletedName="dt_DailyItemsAndAmountReceivedByBranchRowDeleted" msprop:Generator_RowChangedName="dt_DailyItemsAndAmountReceivedByBranchRowChanged" msprop:Generator_RowClassName="dt_DailyItemsAndAmountReceivedByBranchRow" msprop:Generator_RowChangingName="dt_DailyItemsAndAmountReceivedByBranchRowChanging" msprop:Generator_RowEvArgName="dt_DailyItemsAndAmountReceivedByBranchRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_DailyItemsAndAmountReceivedByBranchRowChangeEventHandler" msprop:Generator_TableClassName="dt_DailyItemsAndAmountReceivedByBranchDataTable" msprop:Generator_TableVarName="tabledt_DailyItemsAndAmountReceivedByBranch" msprop:Generator_RowDeletingName="dt_DailyItemsAndAmountReceivedByBranchRowDeleting" msprop:Generator_TablePropName="dt_DailyItemsAndAmountReceivedByBranch">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Items" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

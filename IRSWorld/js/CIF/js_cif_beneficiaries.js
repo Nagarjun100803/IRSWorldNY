@@ -1,0 +1,805 @@
+function cif_beneficiaries()
+{
+    this.commons            = null;
+    this.generic            = null;
+    this.SEQ_ID             = null;
+    this.CIFID              = null;
+    this.RemitterCIFID      = null;
+    this.Relationship       = null;
+    this.NotificationMode   = null;
+    this.ProductCode        = null;
+    this.ImplementationCode = null;
+    this.AccountSeqId       = null;
+    this.CIFClass           = null;
+    this.BENEACCTSEQID      = null;
+    this.ADD_ACCOUNT        = null;
+    this.ACC_SEQID          = null;
+    
+    this.GFCCurr            = null;
+    var icls = this;
+
+    this.isRefinitivResolved = false; /* RFC-36314 - IRSW (EU) Interface with Refinitiv WorldCheck via API  */
+    this.LocalOverride_txtCIFHitlistOVRU = null; /* RFC-36314 - IRSW (EU) Interface with Refinitiv WorldCheck via API  */
+    
+    this.load_grid_viewer = function()
+    {
+        this.grid = new grid_viewer();
+        this.session_end         = true;
+        this.grid.sql_source     = "sp_cif_grid_beneficiaries~" + this.RemitterCIFID;
+        this.grid.div_container  = document.getElementById("CIFBENEGRID");
+        this.grid.datarow_column = 0;
+        this.grid.open_grid_view();
+        this.grid = null;
+    }
+    
+    this.process_grid_viewer = function(parameter)
+    {
+        this.grid = new grid_viewer();        
+        this.grid.sql_source     = "sp_cif_grid_beneficiaries~" + this.RemitterCIFID;
+        this.grid.div_container  = document.getElementById("CIFBENEGRID");
+        this.grid.datarow_column = 0;
+        this.grid.process_ajax(parameter);
+        this.grid = null;
+    }
+  
+    this.load_record = function()
+    {
+        this.commons = new common_method();  
+        this.commons.to_clear_screen("tblUpdateBene"); 
+        this.commons.to_read_only("tblUpdateBene", false);
+        this.commons = null;      
+        
+        this.pull_server_data();
+        
+        this.load_dropdown_bene_accountno(document.getElementById("txtHiddenSeqId").value);
+        this.set_dropdown_bene_accountno(document.getElementById("txtHiddenSeqId").value);
+        
+        this.set_dropdown_target_curr(document.getElementById("txtHiddenSeqId").value);
+        //cif_main.show_bankname();
+    }
+    
+    this.load_record2 = function()
+    {
+        this.commons = new common_method();  
+        this.commons.to_clear_screen("tblUpdateBene"); 
+        this.commons.to_read_only("tblUpdateBene", false);
+        this.commons = null;      
+        
+        var seqid = IRSWorld.CIF.cifmain.get_seq_id().value;
+        this.pull_server_data();
+        
+        this.load_dropdown_bene_accountno(seqid);
+        this.set_dropdown_bene_accountno(seqid);
+        this.set_dropdown_target_curr(seqid);
+        
+    }
+    
+    this.set_implementation_type = function()
+    {
+        var implementation_type = 0;
+        implementation_type = this.get_imp_type(document.getElementById("ddBeneProductCode").value);        
+        this.set_dropdown_bene_imptype(implementation_type);
+    }
+    
+    this.get_imp_type = function(prod_code)
+    {
+        var implementation_type = 0;
+        prod_code = String(prod_code);
+        
+        switch(prod_code)
+        {
+            case '1':  implementation_type = 1; break;    case '2': implementation_type  = 1;  break;
+            case '3':  implementation_type = 1; break;    case '4': implementation_type  = 1;  break;    
+            case '5':  implementation_type = 1; break;    case '6': implementation_type  = 1;  break;
+            case '7':  implementation_type = 1; break;    case '8': implementation_type  = 3;  break;
+            case '9':  implementation_type = 3; break;    case '10': implementation_type = 2;  break;
+            case '11': implementation_type = 1; break;    case '12': implementation_type = 4;  break;
+            case '13': implementation_type = 5; break;    case '14': implementation_type = 2;  break;
+            case '15': implementation_type = 7; break;    case '16': implementation_type = 10; break;
+            case '17': implementation_type = 1; break;    case '18': implementation_type = 1;  break;
+            case '22': implementation_type = 2; break;    case '23': implementation_type = 4;  break;
+            case '24': implementation_type = 1; break;    case '26': implementation_type = 12; break;
+            case '27': implementation_type = 1; break;    case '256':implementation_type = 4;  break;
+            case '257':implementation_type = 4; break;
+            default: break;
+        }
+        return implementation_type;
+    }
+    
+    this.set_dropdown_bene_imptype = function(implementation_type)
+    {
+        this.commons = new common_method();
+        this.commons.to_set_dropdownlist_index("ddBeneImpCode", implementation_type);
+        this.commons = null; 
+    }
+    
+    this.set_dropdown_bene_accountno = function(bene_seqid)
+    {
+        var bene_account_seqid = IRSWorld.CIF.cifmain.get_bene_accountno(bene_seqid);
+        this.BENEACCTSEQID     = Number(bene_account_seqid.value); 
+        
+        if (Number(bene_account_seqid.value) != 0)
+        {
+            this.commons = new common_method();
+            this.commons.to_set_dropdownlist_index("ddBeneAccountNo", Number(bene_account_seqid.value));
+            this.commons = null;    
+        }
+    }
+    
+    this.load_dropdown_bene_accountno = function(bene_seqid)
+    {   
+        var ben_cifid = IRSWorld.CIF.cifmain.get_bene_cifid(bene_seqid);
+        IRSWorld.CIF.cifmain.getdropdown_source_bene_accountno(ben_cifid.value, this.load_dropdown_bene_accountno_callback);
+    }
+    
+    this.load_dropdown_bene_accountno_callback = function(result)
+    {
+        document.getElementById("ddBeneAccountNo").options.length = 0;
+        
+        if (result != null && result != "undefined")
+        {
+            if(result.value != null)
+            {
+                if((result.value).Tables[0].Rows.length > 0)
+                {
+                    this.commons = new common_method();
+                    this.commons.to_load_dropdownlist("ddBeneAccountNo", result.value, "AccountNoValue", "AccountNoDesc");
+                    this.commons = null;
+                }
+            }                        
+        }
+    }
+    
+    this.set_target_curr = function()
+    {
+        var curr = IRSWorld.CIF.cifmain.get_bene_accountcurr(document.getElementById("ddBeneAccountNo").value).value;
+            
+        if(curr != null)
+        {
+            this.BENEACCTSEQID = document.getElementById("ddBeneAccountNo").value;
+            this.commons = new common_method();
+            this.commons.to_set_dropdownlist_index("ddTargetCurr", curr);
+            this.commons = null;
+            
+            document.getElementById("ddTargetCurr").disabled = true;
+            this.ADD_ACCOUNT = false;
+        }
+        else
+        {
+            this.commons = new common_method();
+            this.commons.to_set_dropdownlist_index("ddTargetCurr", 0);
+            this.commons = null;
+            
+            document.getElementById("ddTargetCurr").disabled = false;
+            this.ADD_ACCOUNT = false;
+        }        
+    }
+    
+    this.set_dropdown_target_curr = function(bene_seqid)
+    {   
+        var bacctno = document.getElementById("ddBeneAccountNo").value;
+        
+        if(this.BENEACCTSEQID != 0 && this.BENEACCTSEQID != null)
+        {
+            var curr = IRSWorld.CIF.cifmain.get_bene_accountcurr(this.BENEACCTSEQID).value;
+            
+            this.commons = new common_method();
+            this.commons.to_set_dropdownlist_index("ddTargetCurr", curr);
+            this.commons = null;
+            
+            document.getElementById("ddTargetCurr").disabled = true;
+            if(bacctno == '' || bacctno == 'null')
+            {
+                document.getElementById("ddTargetCurr").disabled = false;
+            }
+            
+            this.ADD_ACCOUNT = false;
+        }
+        else
+        {
+            this.ADD_ACCOUNT = true;
+        }
+    }
+    
+    this.disable_fields = function()
+    {
+        this.commons = new common_method();     
+        this.commons.to_read_only("tblUpdateBene", true);
+        this.commons = null;
+        
+        document.getElementById("lblBeneFNameOrBN").innerHTML   = '';
+        document.getElementById("ddBeneRelationship").value     = '';
+        document.getElementById("ddBeneProductCode").value      = '';
+        document.getElementById("ddBeneImpCode").value          = '';
+        document.getElementById("ddBeneNotificationMode").value = '';
+        document.getElementById("ddBeneAccountNo").value        = '';
+        document.getElementById("ddTargetCurr").value           = '';
+    }
+    
+    this.enable_fields = function()
+    {
+        this.commons = new common_method();     
+        this.commons.to_read_only("tblUpdateBene", false);
+        this.commons = null;
+    }
+    
+    this.set_name_module = function(module_name)
+    {
+        IRSWorld.CIF.cifmain.set_module_name(module_name);
+    }
+    
+    this.set_record = function()
+    {
+        this.CIFID           = document.getElementById("txtHiddenBeneCIFID").value; 
+        this.RemitterCIFID   = document.getElementById("txtHiddenCIFID").value; 
+        
+        return this.push_data_to_server();        
+    }    
+    
+    this.push_data_to_server = function()
+    {
+        var ds = IRSWorld.CIF.cifmain.get_branchdef_values(document.getElementById("txtHiddenUserLocation").value).value;
+        
+        if(ds.Tables[0].Rows.length > 0)
+        {
+            this.Relationship        = ds.Tables[0].Rows[0].Relationship;
+	        this.NotificationMode    = ds.Tables[0].Rows[0].NotificationMode;
+	        this.ProductCode         = ds.Tables[0].Rows[0].ProductCode;
+        }
+        
+        this.ImplementationCode = this.get_imp_type(this.ProductCode);
+        
+        var data_row = new Array();
+        
+        data_row[data_row.length]  = "CIFID~"               + this.CIFID;
+        data_row[data_row.length]  = "RemitterCIFID~"       + this.RemitterCIFID;
+        data_row[data_row.length]  = "Relationship~"        + this.Relationship;
+        data_row[data_row.length]  = "NotificationMode~"    + this.NotificationMode;;
+        data_row[data_row.length]  = "ProductCode~"         + this.ProductCode;
+        data_row[data_row.length]  = "ImplementationCode~"  + this.ImplementationCode;
+        data_row[data_row.length]  = "Deleted~false";
+        
+        return data_row.join("|");        
+    }    
+    
+    this.pull_server_data = function()
+    {   
+        if (this.SEQ_ID == null)
+        {
+            this.SEQ_ID = IRSWorld.CIF.cifmain.get_seq_id().value;
+        }
+        if (this.SEQ_ID == null || this.SEQ_ID == '' || this.SEQ_ID == 'undefined')
+        {
+            return;
+        }
+        
+        this.get_profile(this.SEQ_ID);
+        IRSWorld.CIF.cifmain.GET_BENEFICIARIES_RECORD(this.SEQ_ID,this.pull_server_data_callback);
+    }   
+     
+    this.pull_server_data_callback = function(result)
+    {
+        if (result != null && result.value != null)
+        {
+            var ds = result.value;
+                        
+            if (ds.Tables[0].Rows.length > 0)
+            {   
+                icls.SEQ_ID             = ds.Tables[0].Rows[0].SEQ_ID;
+                icls.CIFID              = ds.Tables[0].Rows[0].CIFID;
+                icls.RemitterCIFID      = ds.Tables[0].Rows[0].RemitterCIFID;
+                icls.Relationship       = ds.Tables[0].Rows[0].Relationship;
+                icls.NotificationMode   = ds.Tables[0].Rows[0].NotificationMode;
+                icls.ProductCode        = ds.Tables[0].Rows[0].ProductCode;
+                icls.ImplementationCode = ds.Tables[0].Rows[0].ImplementationCode;
+                icls.AccountSeqId       = ds.Tables[0].Rows[0].AccountSeqId;                
+                                
+                document.getElementById("txtHiddenSeqId").value     = icls.SEQ_ID;
+                document.getElementById("txtHiddenBeneCIFID").value = icls.CIFID;
+                document.getElementById("txtHiddenCIFID").value     = icls.RemitterCIFID;
+                
+                this.commons = new common_method();
+                this.commons.to_set_dropdownlist_index("ddBeneRelationship",     icls.Relationship);
+                this.commons.to_set_dropdownlist_index("ddBeneNotificationMode", icls.NotificationMode);
+                this.commons.to_set_dropdownlist_index("ddBeneProductCode",      icls.ProductCode);
+                this.commons.to_set_dropdownlist_index("ddBeneImpCode",          icls.ImplementationCode);
+                
+                cif_main.show_hide_beneaccountno(icls.ProductCode);
+                this.commons = null; 
+            }
+        }    
+    }
+        
+    this.get_profile = function(seq_id)
+    {
+        IRSWorld.CIF.cifmain.get_beneficiaries_profile(seq_id, this.get_profile_callback);
+    }
+    
+    this.get_profile_callback = function(result)
+    {
+        if (result != null && result.value != null)
+        {          
+            var ds = result.value;                         
+            if (ds.Tables[0].Rows.length > 0)
+            {   
+                document.getElementById("lblBeneFNameOrBN").innerHTML = 
+                    ds.Tables[0].Rows[0].FirstName  + " " + 
+                    ds.Tables[0].Rows[0].MiddleName + " " + 
+                    ds.Tables[0].Rows[0].LastName;
+                
+                this.generic = new generic_method();
+                this.generic.to_clear_null("lblBeneFNameOrBN");
+            }
+        }        
+    }
+    
+    this.insert_record = function()
+    {
+       IRSWorld.CIF.cifmain.set_module_name("CIF_BENEFICIARIES");
+       document.getElementById("txtHiddenSeqId").value = '';
+       IRSWorld.CIF.cifmain.insert_record(this.insert_record_callback);
+    }
+    
+    this.insert_record_callback = function(result)
+    {
+        if (result.error != null && result.error != "undefined")
+        {        
+            alert("UNABLE TO INSERT RECORD. " + result.error); return;
+        }        
+
+        if (result != null && result.value != "undefined")
+        {
+            if (result.value == false)
+            {                
+                var msg = IRSWorld.CIF.cifmain.read_message();
+                   
+                if (msg != null && msg.value != "undefined")
+                {
+                    alert(msg.value); return;
+                }
+            }
+        }        
+    }
+    
+    this.is_add_account = function()
+    {
+        var pcode     = document.getElementById("ddBeneProductCode").value;
+        var ddaccno   = document.getElementById("ddBeneAccountNo").value;
+        var ddtarcurr = document.getElementById("ddTargetCurr").value;
+        var is_acct_reqd = false;
+        var bene_account_seqid = IRSWorld.CIF.cifmain.get_bene_accountno(document.getElementById("txtHiddenSeqId").value).value;
+        
+        if(bene_account_seqid != '' && bene_account_seqid != null && bene_account_seqid != 'null')
+        {
+            if(document.getElementById("ddTargetCurr").disabled == true)
+            {
+                return true;
+            }            
+            else /* update target curr */
+            {
+                //if (ddaccno != 'null')
+                //{
+                    var ac_plist = '';    
+                    ac_plist += "SEQ_ID~" + bene_account_seqid + '|';
+	                ac_plist += "CIFID~" + document.getElementById("txtHiddenBeneCIFID").value + '|';
+	                ac_plist += "AccountCurrency~" +  document.getElementById("ddTargetCurr").value+ '|';    	        
+	                ac_plist = ac_plist.substring(0, ac_plist.length-1);    	        
+	                this.ACC_SEQID = IRSWorld.CIF.cifmain.update_account_curr(ac_plist).value;
+                //}
+                
+                return true;
+            }
+        }
+        
+//        if(pcode == '10' || pcode == '11' || pcode == '14' || pcode == '22')
+//        {
+//            is_acct_reqd = true;
+//        }
+        is_acct_reqd = IRSWorld.CIF.cifmain.check_product_if_req_account(pcode).value
+        
+        if(is_acct_reqd == true && (ddaccno == 'null' || ddaccno == ''))
+        {
+            alert("Account number required."); return;
+        }
+                
+        if(ddaccno == 'null' || ddaccno == 0 || ddaccno == '0')
+        {
+            if(ddtarcurr == 'null' || ddtarcurr == 0 || ddtarcurr == '0')
+            {
+                alert("Target currency required."); return;
+            }
+            
+            var plist     = '';
+            
+	        plist += "CIFID~" + document.getElementById("txtHiddenBeneCIFID").value + '|';
+	        plist += "AccountCurrency~" +  document.getElementById("ddTargetCurr").value+ '|';
+	        
+	        plist = plist.substring(0, plist.length-1);
+	        
+	        var ret_val = IRSWorld.CIF.cifmain.add_account_curr(plist).value;
+	        
+	        if(Number(ret_val) != "NaN")
+	        {
+	            this.ACC_SEQID = Number(ret_val);
+	            return true;
+	        } 
+	        else
+	        {   
+	            alert(ret_val);
+	            return false;
+	        } 
+        }
+        return true;
+    }
+    
+    this.update_record = function()
+    {
+        if(cif_main.check_mandatory_fields() == false) return;
+        
+        if (this.validate_input() == true)
+        {
+            if(this.is_add_account())
+            {
+                if(confirm("Update this record?"))
+                {
+                    if((document.getElementById("txtHiddenSeqId").value).length > 0)
+                    {
+                        var update_flag = IRSWorld.CIF.cifmain.update_record(document.getElementById("txtHiddenSeqId").value);        
+                        if (update_flag.value == false)
+                        {
+                            var msg = IRSWorld.CIF.cifmain.read_message();
+                           
+                            if (msg != null && msg.value != "undefined")
+                            {
+                                alert(msg.value); return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        this.insert_record();    
+                    }                                        
+                    
+                    var commit_flag =  IRSWorld.CIF.cifmain.commit_record(this.update_bene_record());        
+                    if (commit_flag.value == false)
+                    {
+                        var msg = IRSWorld.CIF.cifmain.read_message();
+                           
+                        if (msg != null && msg.value != "undefined")
+                        {
+                            alert(msg.value); return;
+                        }                
+                    }
+                    document.getElementById("txtHiddenSeqId").value = IRSWorld.CIF.cifmain.get_seq_id().value;
+                    alert("RECORD COMMITTED SUCCESSFULLY");                                        
+                    
+                    this.load_grid_viewer(); 
+                }
+            }              
+        }            
+    }
+        
+    this.update_bene_record = function()
+    {
+        var data_row = new Array();
+        var bene_accno = document.getElementById("ddBeneAccountNo").value
+        
+        
+        data_row[data_row.length]  = "CIFID~"              + document.getElementById("txtHiddenBeneCIFID").value;
+        data_row[data_row.length]  = "RemitterCIFID~"      + document.getElementById("txtHiddenCIFID").value;
+        data_row[data_row.length]  = "Relationship~"       + document.getElementById("ddBeneRelationship").value;
+        data_row[data_row.length]  = "NotificationMode~"   + document.getElementById("ddBeneNotificationMode").value;
+        data_row[data_row.length]  = "ProductCode~"        + document.getElementById("ddBeneProductCode").value;
+        data_row[data_row.length]  = "ImplementationCode~" + document.getElementById("ddBeneImpCode").value;
+        data_row[data_row.length]  = "Deleted~false";
+        
+        if(this.ACC_SEQID != null && (bene_accno == '' || bene_accno == 'null'))
+        {
+             data_row[data_row.length]  = "AccountSeqId~" + this.ACC_SEQID;
+        }
+        else data_row[data_row.length]  = "AccountSeqId~" + bene_accno;
+        
+        return data_row.join("|"); 
+    }
+    
+    this.update_record_callback = function(result)
+    {
+        if (result.error != null && result.error != "undefined" && result.error != '')
+        {
+            alert("UNABLE TO UPDATE RECORD. " + result.error); return; 
+        }
+        
+        if (result != null && result.value != "undefined")
+        {        
+            if (result.value == false)
+            {                
+                var msg = IRSWorld.CIF.cifmain.read_message();
+                   
+                if (msg != null && msg.value != "undefined" && msg.value != '')
+                {
+                    alert(msg.value); return;
+                }
+            }
+        }
+    }    
+    
+    this.delete_record = function()
+    {
+        IRSWorld.CIF.cifmain.delete_record(this.SEQ_ID, this.delete_record_callback);
+        cif_main.set_deleted(); 
+        this.clear_fields();
+        
+        this.commons = new common_method();  
+        this.commons.to_read_only("tblUpdateBene", false);
+        this.commons = null;  
+    }    
+    
+    this.delete_record_callback = function(result)
+    {
+        if (result.error != "undefined" && result.error != null)
+        {
+            alert("UNABLE TO DELETE RECORD. " + result.error); return;
+        }
+    
+        if (result != null && result.value != "undefined")
+        {
+            if (result.value == false)
+            {
+                alert(IRSWorld.CIF.cifmain.read_message()); return false;
+            }
+            return true;
+        }     
+    }    
+        
+    this.commit_record = function()
+    {
+        IRSWorld.CIF.cifmain.commit_record(this.set_record(), this.commit_record_callback ); this.SEQ_ID = null;
+        this.disable_fields();
+        this.load_record2();
+    }
+    
+    this.commit_record_callback = function(result)
+    {                        
+	    icls.load_record();
+        
+        if (typeof(icls.load_grid_viewer) != 'undefined')
+        {
+            icls.load_grid_viewer();
+        }      
+    
+        if (result.error != null && result.error != "undefined" && result.error != '')
+        {            
+            alert("UNABLE TO COMMIT RECORD. " + result.error); return;
+        }
+                                
+        if (result != null && result.value != "undefined")
+        {                                
+            if (result.value == false)
+            {     
+                var msg = IRSWorld.CIF.cifmain.read_message();
+                   
+                if (msg != null && msg.value != "undefined" && msg != '')
+                {
+                    alert(msg.value); return;
+                }                
+            }
+            if(document.getElementById("txtHiddenParameter").value != 'addbene' && document.getElementById("txtHiddenParameter").value != 'linkrembene')
+            {
+                alert("RECORD COMMITTED SUCCESSFULLY");
+            }   
+            alert("Please update now beneficiary record.");         
+         }
+    }
+    
+    this.rollback_record = function()
+    {
+        IRSWorld.CIF.cifmain.rollback_record(this.rollback_record_callback);
+    }
+    
+    this.rollback_record_callback = function(result)
+    {
+        var msg = IRSWorld.CIF.cifmain.read_message();
+        
+        if (msg != null && msg.value != "undefined" && msg.value.length > 0)
+        {
+           alert(msg.value);
+        }
+    }
+    
+    this.clear_fields = function()
+    {
+        document.getElementById("lblBeneFNameOrBN").innerHTML   = '';
+        document.getElementById("ddBeneRelationship").value     = '';
+        document.getElementById("ddBeneProductCode").value      = '';
+        document.getElementById("ddBeneImpCode").value          = '';
+        document.getElementById("ddBeneNotificationMode").value = '';
+        document.getElementById("ddBeneAccountNo").value        = '';
+        document.getElementById("ddTargetCurr").value           = '';
+    }
+    
+    this.validate_input = function()
+    {        
+        //if(this.BENEACCTSEQID != 0 && this.BENEACCTSEQID != null) return true;
+        
+        this.generic     = new generic_method();        
+        this.error_input = '';
+        var foc_elem     = '';
+        var prod_code    = document.getElementById("ddBeneProductCode").value;
+        var tar_curr     = document.getElementById("ddTargetCurr").value;
+        var bene_acct    = document.getElementById("ddBeneAccountNo").value;
+        var is_acct_reqd = false;
+        
+        var is_acct_reqd = IRSWorld.CIF.cifmain.check_product_if_req_account(prod_code).value;
+        
+        if(prod_code == 'null' || prod_code == '')
+        {
+            this.error_input += "Product Code required.\n"; 
+            if (foc_elem.length == 0) foc_elem = 'ddBeneProductCode';    
+        }
+        if(is_acct_reqd == true && (bene_acct == 'null' || bene_acct == ''))
+        {
+            this.error_input += "Account number required.\n"; 
+            if (foc_elem.length == 0) foc_elem = 'ddBeneAccountNo';    
+        }
+        if(tar_curr == 'null' || tar_curr == '')
+        {
+            this.error_input += "Target currency required.\n"; 
+            if (foc_elem.length == 0) foc_elem = 'ddTargetCurr';    
+        }
+        else
+        {
+            var valCurr = this.validate_currency_per_product();
+            if (valCurr != '')
+            {
+                this.error_input += valCurr + ".\n"; 
+                if (foc_elem.length == 0) foc_elem = 'ddTargetCurr';
+            }
+        }
+                
+        if (is_acct_reqd == true)
+        {
+            var validation_msg = IRSWorld.CIF.cifmain.validate_product_acct(prod_code, bene_acct, tar_curr, document.getElementById("txtHiddenBeneCIFID").value, document.getElementById("txtHiddenCIFID").value).value; 
+            if (validation_msg != '')
+            {
+                this.error_input += validation_msg + ".\n"; 
+            }
+        }
+        
+        if (parseFloat(document.getElementById("txtAge").value) < 18)
+        {
+            this.error_input += "Client who are below 18 yrs old are not allowed.\n"; 
+        }
+                
+        if (foc_elem.length > 0)
+        {
+            if (document.getElementById(foc_elem).disabled != true && document.getElementById(foc_elem).currentStyle.visibility == 'visible')
+            {
+                document.getElementById(foc_elem).focus();
+            }
+        }
+        if (this.error_input != '')
+        {
+            alert(this.error_input);
+            return false;
+        }
+                
+        return true;
+    }
+    
+    this.validate_currency_per_product = function()
+    {
+        var prod = document.getElementById('ddBeneProductCode').value;
+        var curr = document.getElementById('ddTargetCurr').value;
+        
+        if(prod == '13' & curr != '1') //NON-PDDTS/EPCS - PHP ONLY
+        {
+            return 'Target currency for Non-PDDTS/EPCS product should be PHP only';
+        }
+        else if(prod == '12' & curr != '2') //PDDTS - USD ONLY
+        {
+            return 'Target currency for PDDTS product should be USD only';
+        }
+        else if(prod == '257' & curr == '1') //OTHER BANK ICBC SHOULD NOT HAVE PHP VALUE
+        {
+            return 'Target currency for Other Bank - ICBC product should not have PHP';            
+        }
+        else if(prod == '256' & curr == '1')
+        {
+            return 'Target currency for Other Bank - BOC product should not have PHP';
+        }
+        else if ((prod == '8' | prod == '9') && curr == '5') // DOOR TO DOOR SHOULD NOT HAVE EUR VALUE
+        {
+            return 'Target currency for Door to Door product should not have EUR';
+        }
+        else if (prod == '16' & curr != '1') // DOOR TO BANK - PHP ONLY
+        {
+            return 'Target currency for Door to Bank product should be PHP only';
+        }
+        else if (prod == '24' & curr != '2') // PAW - USD ONLY
+        {
+            return 'Target currency for PAW product should be USD only';
+        }
+        
+        return '';
+    }    
+    
+    /*Added by Hajz for GFC Enrollment in CIF Main*/
+    this.gfc_callback = function(res)
+    {
+        this.CIFID              = res[4].toString();
+        this.AccountSeqId       = Number(res[5].toString());
+        this.GFCCurr            = res[2];        
+        
+        IRSWorld.CIF.cifmain.getdropdown_source_bene_accountno(this.CIFID, this.load_dropdown_bene_accountno_callback_gfc)        
+    }
+    
+    this.load_dropdown_bene_accountno_callback_gfc = function(result)
+    {
+        document.getElementById("ddBeneAccountNo").options.length = 0;
+        
+        if (result != null && result != "undefined")
+        {
+            if(result.value != null)
+            {
+                if((result.value).Tables[0].Rows.length > 0)
+                {
+                    this.commons = new common_method();
+                    this.commons.to_load_dropdownlist("ddBeneAccountNo", result.value, "AccountNoValue", "AccountNoDesc");
+                    this.commons.to_set_dropdownlist_index("ddBeneAccountNo", icls.AccountSeqId);        
+                    this.commons.to_set_dropdownlist_index("ddTargetCurr", icls.GFCCurr);
+                    this.commons.to_set_dropdownlist_index("ddBeneProductCode", 22)
+                    this.commons.to_set_dropdownlist_index("ddBeneImpCode", 2)
+                    this.commons = null;
+                    
+                    document.getElementById("ddTargetCurr").disabled = true;
+                    cif_main.check_session();
+                    icls.update_record_GFC();
+                }
+            }                        
+        }
+    }
+    
+    this.update_record_GFC = function()
+    {
+        if(cif_main.check_mandatory_fields() == false) return;
+        
+        if (this.validate_input() == true)
+        {
+            if(this.is_add_account())
+            {
+                if((document.getElementById("txtHiddenSeqId").value).length > 0)
+                {
+                    var update_flag = IRSWorld.CIF.cifmain.update_record(document.getElementById("txtHiddenSeqId").value);        
+                    if (update_flag.value == false)
+                    {
+                        var msg = IRSWorld.CIF.cifmain.read_message();
+                       
+                        if (msg != null && msg.value != "undefined")
+                        {
+                            alert(msg.value); return;
+                        }
+                    }
+                }
+                else
+                {
+                    this.insert_record();    
+                }                                        
+                
+                var commit_flag =  IRSWorld.CIF.cifmain.commit_record(this.update_bene_record());        
+                if (commit_flag.value == false)
+                {
+                    var msg = IRSWorld.CIF.cifmain.read_message();
+                       
+                    if (msg != null && msg.value != "undefined")
+                    {
+                        alert(msg.value); return;
+                    }                
+                }
+                document.getElementById("txtHiddenSeqId").value = IRSWorld.CIF.cifmain.get_seq_id().value;
+                alert("RECORD COMMITTED SUCCESSFULLY");                                        
+                
+                this.load_grid_viewer(); 
+            }              
+        }            
+    }
+}

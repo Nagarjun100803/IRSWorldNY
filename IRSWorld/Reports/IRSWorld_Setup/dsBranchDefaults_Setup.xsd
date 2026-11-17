@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBranchDefaults_Setup" targetNamespace="http://tempuri.org/dsBranchDefaults_Setup.xsd" xmlns:mstns="http://tempuri.org/dsBranchDefaults_Setup.xsd" xmlns="http://tempuri.org/dsBranchDefaults_Setup.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBranchDefaults_Setup" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsBranchDefaults_Setup" msprop:Generator_DataSetName="dsBranchDefaults_Setup">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDefaults" msprop:Generator_UserTableName="dtDefaults" msprop:Generator_RowDeletedName="dtDefaultsRowDeleted" msprop:Generator_TableClassName="dtDefaultsDataTable" msprop:Generator_RowChangedName="dtDefaultsRowChanged" msprop:Generator_RowClassName="dtDefaultsRow" msprop:Generator_RowChangingName="dtDefaultsRowChanging" msprop:Generator_RowEvArgName="dtDefaultsRowChangeEvent" msprop:Generator_RowEvHandlerName="dtDefaultsRowChangeEventHandler" msprop:Generator_TablePropName="dtDefaults" msprop:Generator_TableVarName="tabledtDefaults" msprop:Generator_RowDeletingName="dtDefaultsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchDefCode" msprop:Generator_UserColumnName="BranchDefCode" msprop:Generator_ColumnPropNameInRow="BranchDefCode" msprop:Generator_ColumnVarNameInTable="columnBranchDefCode" msprop:Generator_ColumnPropNameInTable="BranchDefCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchDefValue" msprop:Generator_UserColumnName="BranchDefValue" msprop:Generator_ColumnPropNameInRow="BranchDefValue" msprop:Generator_ColumnVarNameInTable="columnBranchDefValue" msprop:Generator_ColumnPropNameInTable="BranchDefValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVolAndItemsByImpModePerOrigin" targetNamespace="http://tempuri.org/dsVolAndItemsByImpModePerOrigin.xsd" xmlns:mstns="http://tempuri.org/dsVolAndItemsByImpModePerOrigin.xsd" xmlns="http://tempuri.org/dsVolAndItemsByImpModePerOrigin.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsVolAndItemsByImpModePerOrigin" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsVolAndItemsByImpModePerOrigin" msprop:Generator_DataSetName="dsVolAndItemsByImpModePerOrigin">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsVolAndItemsByImpModePerOrigin" msprop:Generator_UserTableName="dsVolAndItemsByImpModePerOrigin" msprop:Generator_RowDeletedName="dsVolAndItemsByImpModePerOriginRowDeleted" msprop:Generator_TableClassName="dsVolAndItemsByImpModePerOriginDataTable" msprop:Generator_RowChangedName="dsVolAndItemsByImpModePerOriginRowChanged" msprop:Generator_RowClassName="dsVolAndItemsByImpModePerOriginRow" msprop:Generator_RowChangingName="dsVolAndItemsByImpModePerOriginRowChanging" msprop:Generator_RowEvArgName="dsVolAndItemsByImpModePerOriginRowChangeEvent" msprop:Generator_RowEvHandlerName="dsVolAndItemsByImpModePerOriginRowChangeEventHandler" msprop:Generator_TablePropName="_dsVolAndItemsByImpModePerOrigin" msprop:Generator_TableVarName="tabledsVolAndItemsByImpModePerOrigin" msprop:Generator_RowDeletingName="dsVolAndItemsByImpModePerOriginRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORIGIN" msprop:Generator_UserColumnName="ORIGIN" msprop:Generator_ColumnPropNameInRow="ORIGIN" msprop:Generator_ColumnVarNameInTable="columnORIGIN" msprop:Generator_ColumnPropNameInTable="ORIGINColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDIT_x0020_TO_x0020_ACCOUNT" msprop:Generator_UserColumnName="CREDIT TO ACCOUNT" msprop:Generator_ColumnPropNameInRow="CREDIT_TO_ACCOUNT" msprop:Generator_ColumnVarNameInTable="columnCREDIT_TO_ACCOUNT" msprop:Generator_ColumnPropNameInTable="CREDIT_TO_ACCOUNTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GFMC" msprop:Generator_UserColumnName="GFMC" msprop:Generator_ColumnPropNameInRow="GFMC" msprop:Generator_ColumnVarNameInTable="columnGFMC" msprop:Generator_ColumnPropNameInTable="GFMCColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHES" msprop:Generator_UserColumnName="BRANCHES" msprop:Generator_ColumnPropNameInRow="BRANCHES" msprop:Generator_ColumnVarNameInTable="columnBRANCHES" msprop:Generator_ColumnPropNameInTable="BRANCHESColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AGENTS" msprop:Generator_UserColumnName="AGENTS" msprop:Generator_ColumnPropNameInRow="AGENTS" msprop:Generator_ColumnVarNameInTable="columnAGENTS" msprop:Generator_ColumnPropNameInTable="AGENTSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BANK-TO-BANK" msprop:Generator_UserColumnName="BANK-TO-BANK" msprop:Generator_ColumnPropNameInRow="_BANK_TO_BANK" msprop:Generator_ColumnVarNameInTable="_columnBANK_TO_BANK" msprop:Generator_ColumnPropNameInTable="_BANK_TO_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOR-TO-DOOR" msprop:Generator_UserColumnName="DOOR-TO-DOOR" msprop:Generator_ColumnPropNameInRow="_DOOR_TO_DOOR" msprop:Generator_ColumnVarNameInTable="_columnDOOR_TO_DOOR" msprop:Generator_ColumnPropNameInTable="_DOOR_TO_DOORColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTALS" msprop:Generator_UserColumnName="TOTALS" msprop:Generator_ColumnPropNameInRow="TOTALS" msprop:Generator_ColumnVarNameInTable="columnTOTALS" msprop:Generator_ColumnPropNameInTable="TOTALSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

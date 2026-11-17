@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Service="ServiceChargeManagerService" Operation="reverseServiceCharge( SessionContext, int, TransactionStatus)" targetNamespace="http://charge.app.fcr.iflex.com">
+	<Context ExternalBatchNumber="" ServiceCode="" BankCode="" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</Context>
+	<TransactionMnemonic>5004</TransactionMnemonic>
+	<Status ReplyText="" IsServiceChargeApplied="" ExternalReferenceNo="" SpReturnValue="" IsOverriden="" ErrorCode="" Memo="" ReplyCode="">
+		<ExtendedReply>
+			<MessagesArray>
+				<Messages Message="" Code=""/>
+			</MessagesArray>
+		</ExtendedReply>
+	</Status>
+</input>

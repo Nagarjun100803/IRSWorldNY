@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DailyMiddleEastTieUpsReport" targetNamespace="http://tempuri.org/ds_DailyMiddleEastTieUpsReport.xsd" xmlns:mstns="http://tempuri.org/ds_DailyMiddleEastTieUpsReport.xsd" xmlns="http://tempuri.org/ds_DailyMiddleEastTieUpsReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DailyMiddleEastTieUpsReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DailyMiddleEastTieUpsReport" msprop:Generator_DataSetName="ds_DailyMiddleEastTieUpsReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_MiddleEastTieUpsReport" msprop:Generator_UserTableName="dt_MiddleEastTieUpsReport" msprop:Generator_RowDeletedName="dt_MiddleEastTieUpsReportRowDeleted" msprop:Generator_TableClassName="dt_MiddleEastTieUpsReportDataTable" msprop:Generator_RowChangedName="dt_MiddleEastTieUpsReportRowChanged" msprop:Generator_RowClassName="dt_MiddleEastTieUpsReportRow" msprop:Generator_RowChangingName="dt_MiddleEastTieUpsReportRowChanging" msprop:Generator_RowEvArgName="dt_MiddleEastTieUpsReportRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_MiddleEastTieUpsReportRowChangeEventHandler" msprop:Generator_TablePropName="dt_MiddleEastTieUpsReport" msprop:Generator_TableVarName="tabledt_MiddleEastTieUpsReport" msprop:Generator_RowDeletingName="dt_MiddleEastTieUpsReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ANBFilename" msprop:Generator_UserColumnName="ANBFilename" msprop:Generator_ColumnPropNameInRow="ANBFilename" msprop:Generator_ColumnVarNameInTable="columnANBFilename" msprop:Generator_ColumnPropNameInTable="ANBFilenameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ANBRefNo" msprop:Generator_UserColumnName="ANBRefNo" msprop:Generator_ColumnPropNameInRow="ANBRefNo" msprop:Generator_ColumnVarNameInTable="columnANBRefNo" msprop:Generator_ColumnPropNameInTable="ANBRefNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Beneficiary" msprop:Generator_UserColumnName="Beneficiary" msprop:Generator_ColumnPropNameInRow="Beneficiary" msprop:Generator_ColumnVarNameInTable="columnBeneficiary" msprop:Generator_ColumnPropNameInTable="BeneficiaryColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IRSWRefNo" msprop:Generator_UserColumnName="IRSWRefNo" msprop:Generator_ColumnPropNameInRow="IRSWRefNo" msprop:Generator_ColumnVarNameInTable="columnIRSWRefNo" msprop:Generator_ColumnPropNameInTable="IRSWRefNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PHPAmt" msprop:Generator_UserColumnName="PHPAmt" msprop:Generator_ColumnPropNameInRow="PHPAmt" msprop:Generator_ColumnVarNameInTable="columnPHPAmt" msprop:Generator_ColumnPropNameInTable="PHPAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USDtoPHP" msprop:Generator_UserColumnName="USDtoPHP" msprop:Generator_ColumnPropNameInRow="USDtoPHP" msprop:Generator_ColumnVarNameInTable="columnUSDtoPHP" msprop:Generator_ColumnPropNameInTable="USDtoPHPColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USDAmt" msprop:Generator_UserColumnName="USDAmt" msprop:Generator_ColumnPropNameInRow="USDAmt" msprop:Generator_ColumnVarNameInTable="columnUSDAmt" msprop:Generator_ColumnPropNameInTable="USDAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SPHPAmt" msprop:Generator_UserColumnName="SPHPAmt" msprop:Generator_ColumnPropNameInRow="SPHPAmt" msprop:Generator_ColumnVarNameInTable="columnSPHPAmt" msprop:Generator_ColumnPropNameInTable="SPHPAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SUSDAmt" msprop:Generator_UserColumnName="SUSDAmt" msprop:Generator_ColumnPropNameInRow="SUSDAmt" msprop:Generator_ColumnVarNameInTable="columnSUSDAmt" msprop:Generator_ColumnPropNameInTable="SUSDAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Tranxdate" msprop:Generator_UserColumnName="Tranxdate" msprop:Generator_ColumnPropNameInRow="Tranxdate" msprop:Generator_ColumnVarNameInTable="columnTranxdate" msprop:Generator_ColumnPropNameInTable="TranxdateColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,91 @@
+body
+{
+	margin:0;
+	padding:100px 0 50px 0;
+}
+
+div#header
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100px;
+	background:#FFFFFF;
+}
+
+div#footer
+{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:60px;
+	background:#191970;
+}
+
+@media screen
+{
+	body>div#header
+	{
+		position:fixed;
+	}
+	body>div#footer
+	{
+		position:fixed;
+	}
+}
+
+* html body
+{
+	overflow:hidden;
+} 
+
+* html div#content
+{
+	height:100%;
+	overflow:auto;
+}
+
+.btnFooter
+{
+	width:200px;
+	height:50px;
+	font-size:20px;
+	font-family:Arial;
+	color:#FFFFFF;
+}
+
+.txtSmall
+{
+	font-family: Arial;
+	font-size:15px;
+	color:Black;
+}
+
+.txtLarge
+{
+	font-family: Arial;
+	font-size:40px;
+	color:Blue;
+}
+
+div.transbox
+{
+	width:80%;
+	height:100%;
+	margin:30px 50px;
+	background-color:#ffffff;
+	border:1px solid black;
+	/* for IE */
+	filter:alpha(opacity=60);
+	/* CSS3 standard */
+	opacity:0.6;
+}
+
+div.transbox p
+{
+	margin:30px 40px;
+	font-weight:bold;
+	color:#000000;
+}

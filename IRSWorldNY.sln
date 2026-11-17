@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2EAPIConnector", "E2EAPIConnector\E2EAPIConnector.csproj", "{5F71523E-BB2B-46CB-BC98-CFD3E3AAE83D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSClassLib", "IRSClassLib\IRSClassLib.csproj", "{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSWorld", "IRSWorld\IRSWorld.csproj", "{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IRSWorldSetup", "IRSWorldSetup\IRSWorldSetup.vdproj", "{2B55323D-4EF7-44C3-85CD-55AD02B40D38}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB421E95-4BBA-4AFA-98A3-CDB2926819D5} = {FB421E95-4BBA-4AFA-98A3-CDB2926819D5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F71523E-BB2B-46CB-BC98-CFD3E3AAE83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F71523E-BB2B-46CB-BC98-CFD3E3AAE83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F71523E-BB2B-46CB-BC98-CFD3E3AAE83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F71523E-BB2B-46CB-BC98-CFD3E3AAE83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8DB2C9-4C2E-4A5D-80D9-D9B112103CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B55323D-4EF7-44C3-85CD-55AD02B40D38}.Debug|Any CPU.ActiveCfg = Debug
+		{2B55323D-4EF7-44C3-85CD-55AD02B40D38}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+EndGlobal

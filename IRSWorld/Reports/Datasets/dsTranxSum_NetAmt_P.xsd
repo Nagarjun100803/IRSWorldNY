@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTranxSum_NetAmt_P" targetNamespace="http://tempuri.org/dsTranxSum_NetAmt_P.xsd" xmlns:mstns="http://tempuri.org/dsTranxSum_NetAmt_P.xsd" xmlns="http://tempuri.org/dsTranxSum_NetAmt_P.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTranxSum_NetAmt_P" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTranxSum_NetAmt_P" msprop:Generator_DataSetName="dsTranxSum_NetAmt_P">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTranxSum_NetAmt_P" msprop:Generator_UserTableName="dtTranxSum_NetAmt_P" msprop:Generator_RowDeletedName="dtTranxSum_NetAmt_PRowDeleted" msprop:Generator_TableClassName="dtTranxSum_NetAmt_PDataTable" msprop:Generator_RowChangedName="dtTranxSum_NetAmt_PRowChanged" msprop:Generator_RowClassName="dtTranxSum_NetAmt_PRow" msprop:Generator_RowChangingName="dtTranxSum_NetAmt_PRowChanging" msprop:Generator_RowEvArgName="dtTranxSum_NetAmt_PRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTranxSum_NetAmt_PRowChangeEventHandler" msprop:Generator_TablePropName="dtTranxSum_NetAmt_P" msprop:Generator_TableVarName="tabledtTranxSum_NetAmt_P" msprop:Generator_RowDeletingName="dtTranxSum_NetAmt_PRowDeleting">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

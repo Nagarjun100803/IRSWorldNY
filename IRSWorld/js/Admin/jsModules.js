@@ -1,0 +1,369 @@
+        var dbgrid;
+        var root_path;
+        var d3;
+        var popup;
+        
+        var save_pos = 0;
+        var save_row = -1;
+        var save_data_row = -1;
+        
+        var taropts = new Array(5);
+        taropts[0] = 'center~Center';
+        taropts[1] = '_popup~Popup';
+        taropts[2] = '_top~Top';
+        taropts[3] = '_parent~Parent';
+        taropts[4] = '_self~Self';
+        
+        function updates_saved(rs)
+        {   
+            if (rs.error != null)
+            {
+                alert(rs.error.Message);
+                return;
+            }
+
+            //=======================================================================
+            //RFC-33165 : Phase 2_IRSW Maker-Checker for Parameter Admin Function
+            var param_approver = IRSWorld.Admin.Modules.ParamApproverFlag().value;
+            if (param_approver == true) {
+                alert("RECORD SUBMITTED FOR APPROVAL.");
+            }
+            //=======================================================================
+                        
+            IRSWorld.Admin.Modules.getIrsModules(gotIrsModules);
+        }
+        
+        function dbgrid_onpost(args)
+        {
+            save_pos = dbgrid.curr_page;
+            save_row = dbgrid.row.selected;
+            save_data_row = dbgrid.row.selected_data_row;
+            
+            IRSWorld.Admin.Modules.applyPost(args.additions, args.deletes, args.edits, updates_saved);
+        }
+               
+        function grid_btn_click(args)
+        {
+            save_pos = dbgrid.curr_page;
+            save_row = dbgrid.row.selected;
+            save_data_row = dbgrid.row.selected_data_row;
+            IRSWorld.Admin.Modules.saveUpdates(args.additions, args.deletes, args.edits, updates_saved);
+        }
+        
+        var save_row = -1;
+        
+        function grid_btn_browse(args)
+        {
+            var div = document.getElementById('divExplore');
+            if (save_row == args.gridrow)
+            {
+                if (div.style.display == 'block') div.style.display = 'none';
+                save_row = -1;
+                return;
+            }
+            save_row = args.gridrow;
+            var btn = document.getElementById(args.control);
+
+            var xy = calcpos(btn);
+            var diff = (args.gridrow > 3) ? xy.top - 224 : xy.top + btn.offsetHeight;
+            div.style.top = diff + 'px';
+            div.style.left = (xy.left - parseInt(div.style.width)) + 'px';
+            div.style.display = 'block';
+        }
+        
+        function grid_row_selected(args)
+        {
+            var idx = args.datarow;
+            
+            var modid = dbgrid.datatable.Rows[idx].SEQ_ID;
+            var modurl = dbgrid.datatable.Rows[idx].ModuleUrl;
+            var modname = dbgrid.datatable.Rows[idx].ModuleName;
+            var retval = new Array( modid, modurl, modname );
+            
+            window.returnValue = retval;
+        }
+        
+        function dbgrid_before_post(args)
+        {
+            var sname = dbgrid.getValueAt(args.datarow, 1);
+            var surl = dbgrid.getValueAt(args.datarow, 2);
+            
+            var msg = '';
+            if (trim(sname).length < 1) msg += "Module Name";
+            if (trim(surl).length < 1)
+            {
+                if (msg.length > 0) msg += ", ";
+                msg += "Module Url";
+            }
+            
+            if (msg.length > 0)
+            {
+                alert("Invalid entry for " + msg);
+                dbgrid.curract = "";
+            }
+        }
+        
+        function btn_find_click(args)
+        {
+            var val = document.getElementById('txtfind').value;
+            if (val.length == 0) 
+            {
+                alert('Find needs search criteria.');
+                return;
+            }            
+            
+            var find_args = new datagrid_find_arguments();
+            var farg = new datagrid_find_argument();
+            farg.column_name = "ModuleName";
+            farg.operator = "search";
+            farg.value = val;
+            find_args.addArgument(farg);
+            find_args.addConjunction('|');
+            farg = new datagrid_find_argument();
+            farg.column_name = "ModuleUrl";
+            farg.operator = "search";
+            farg.value = val;
+            find_args.addArgument(farg);
+            find_args.start_row = (dbgrid.row.selected_data_row > -1) ? dbgrid.row.selected_data_row : 0;
+            var locrow = dbgrid.find(find_args, true);
+            
+            if (locrow == -1)
+            {
+                alert("No row found.");
+            }
+            
+            find_close_popup();
+        }
+        
+        function dbgrid_find(args)
+        {
+            var div = document.getElementById('divPopFind');
+            var td = document.getElementById('tdPopFind');
+            var topsize = top.document.getElementById('divCenter').offsetHeight;
+            var topparent = document.getElementById('divBody').offsetHeight;
+            div.style.height = ((topsize > topparent) ? topsize : topparent) + 'px'; 
+            if (isIE) div.className = 'div_undock';
+            else div.setAttribute("class", "div_undock");
+            td.style.height = div.offsetHeight + 'px'; 
+            td.style.width = div.offsetWidth + 'px'; 
+            div.style.display = 'block'; 
+        }
+        
+        function find_close_popup()
+        {
+            document.getElementById('divPopFind').style.display = 'none';
+        }        
+        
+        function create_grid()
+        {
+            dbgrid = new datagrid();
+             { //0
+                var col = new datagrid_column();
+	            col.header = 'ID';
+	            col.datafield = 'SEQ_ID';
+	            col.align = 'center';
+		        col.styles.cell += 'width:5%;display:none';
+		        col.styles.header += 'display:none';
+		        col.styles.datafield += 'display:none';
+	            dbgrid.addColumn(col);	
+		    }             
+		    { //1
+    		    var col = new datagrid_column();
+    		    col.header = 'Name';
+    		    col.datafield = 'ModuleName';
+    		    col.align = 'left';
+    		    col.styles.cell += 'width:25%';
+    		    dbgrid.addColumn(col);
+            }
+            { //2
+    		    var col = new datagrid_column();
+    		    col.header = 'URL';
+    		    col.datafield = 'ModuleUrl';
+    		    col.align = 'left';
+    		    col.styles.cell += 'width:55%';
+    		    dbgrid.addColumn(col);
+            }
+            if (! popup)
+            {
+    		    var col = new datagrid_column();
+    		    col.header = '';
+    		    col.datafield = '';
+    		    col.align = 'center';
+    		    col.type = 'button';
+    		    col.value = String.fromCharCode(187);
+    		    col.onclick = 'grid_btn_browse';
+    		    col.styles.cell += 'width:5%';
+    		    col.styles.datafield += 'width:100%;';
+    		    dbgrid.addColumn(col);
+            }
+            {
+    		    var col = new datagrid_column();
+    		    col.header = 'Target';
+    		    col.datafield = 'ModuleTarget';
+    		    col.align = 'left';
+    		    col.type = 'select';
+    		    col.options = taropts;
+    		    col.styles.cell += 'width:15%';
+    		    col.styles.datafield += 'width: 100%;';
+    		    dbgrid.addColumn(col);
+            } 
+            /*
+            {
+    		    var col = new datagrid_column();
+    		    col.header = '';
+    		    col.datafield = '';
+    		    col.align = 'center';
+    		    col.type = 'button';
+    		    col.value = 'Delete';
+    		    col.delete_button = true;
+    		    //col.onclick = 'grid_btn_click';
+    		    col.styles.cell += 'width:10%;';
+    		    col.styles.datafield += 'width:100%;color:maroon;';
+    		    dbgrid.addColumn(col);
+            }   
+            */
+            dbgrid.caption = 'IRS MODULES';
+            dbgrid.classNames.table = 'table_body';
+            dbgrid.row.normal_style = 'background-color: #f7ffff;';  
+            dbgrid.footer.find_button.none = false;
+            dbgrid.footer.find_button.style += 'background-color: lavender;'; 
+            dbgrid.footer.find_button.onclick = 'dbgrid_find';
+            
+            if (popup) 
+            {
+                dbgrid.row.onclick = 'grid_row_selected';
+                return;
+            }
+                          
+            dbgrid.footer.edit_button.none = false;
+            dbgrid.footer.edit_button.beforepost = 'dbgrid_before_post';
+            dbgrid.footer.edit_button.onpost = 'dbgrid_onpost';
+            dbgrid.footer.add_button.none = false;
+            dbgrid.footer.add_button.beforepost = 'dbgrid_before_post';
+            dbgrid.footer.add_button.style += 'background-color: lavender;'; 
+            dbgrid.footer.add_button.onpost = 'dbgrid_onpost';
+            dbgrid.footer.delete_button.none = false;
+            dbgrid.footer.delete_button.style += 'background-color: lavender;color:maroon;';
+            dbgrid.footer.delete_button.onpost = 'dbgrid_onpost';
+            dbgrid.footer.save_button.none = false;
+            dbgrid.footer.save_button.onclick = 'grid_btn_click';  
+            dbgrid.footer.save_button.style += 'background-color: lavender;';  
+            dbgrid.footer.cancel_button.none = false;
+            dbgrid.footer.cancel_button.style += 'background-color: lavender;'; 
+            
+            
+            dbgrid.postToServer = true;
+        }
+        
+        function close_explore()
+        {
+            var div = document.getElementById('divExplore');
+            div.style.display = 'none';
+            save_row = -1;
+        }
+        
+        function gotIrsModules(rs)
+        {
+            if (rs.error != null)
+            {
+                spawn_errpage(rs.error.Message);
+                return;
+            }
+            
+            var enasav = rs.value[1];
+            
+            if (dbgrid == null || dbgrid.columns.length == 0)
+            {
+                create_grid();
+            }
+            dbgrid.clearChanges();
+            dbgrid.bind(rs.value[0], 'tdModules', 'tblModules');
+            dbgrid.footer.save_button.always_enabled = enasav;
+            
+            try
+            {
+                if (save_pos > 0)
+                {
+                    dbgrid.pg_position(save_pos);
+                    save_pos = 0;
+                }
+                if (save_row > -1 & save_data_row > -1)
+                {
+                    dbgrid.rowSelected(save_data_row, save_row);
+                    save_data_row = -1;
+                    save_row = -1;
+                }
+            }
+            catch (e) {}
+        }
+        
+        function fixdim()
+        {
+            if (top.document.getElementById('divCenter'))
+            {
+                var div = document.getElementById('divBody');
+                
+                div.style.height = (top.document.getElementById('divCenter').offsetHeight) + 'px';
+                div.style.width = (top.document.getElementById('divCenter').offsetWidth) + 'px';
+            }        
+        }
+    
+        function page_setup()
+        {
+            if (top != self)
+            {
+                fixdim();
+                
+                IRSWorld.Admin.Modules.getIrsModules(gotIrsModules);
+                if (hasQueryStrings(window))
+                {
+                    var fun = getQueryString(window, 'function');
+                    popup = (fun == 'popup');
+                }
+                if (popup)
+                {
+                    document.getElementById('tdcloser').style.display = 'block';
+                    if (isIE)
+                    {
+                        document.getElementById('tblpopup1').className = 'opacified';
+                        document.getElementById('tblpopup2').className = 'opacified';
+                        document.getElementById('tdpopup1').className = 'opacified';
+                        document.getElementById('tdpopup2').className = 'opacified';
+                    }
+                    else
+                    {
+                        document.getElementById('tblpopup1').setAttribute('class', 'opacified');
+                        document.getElementById('tblpopup2').setAttribute('class', 'opacified');
+                        document.getElementById('tdpopup1').setAttribute('class', 'opacified');
+                        document.getElementById('tdpopup2').setAttribute('class', 'opacified');
+                    }
+                }
+            }
+            else
+            {
+                document.irs_loader.submit();
+            }        
+        }
+        
+        function close_session()
+        {
+            if (is_closing())
+            {
+                IRSWorld.Admin.Modules.close_session();
+            }
+            else
+            {
+                IRSWorld.Admin.Modules.drop_irsmodules();
+            }
+        } 
+        
+        function fselect()
+        {
+            var sn = d3.aNodes[d3.selectedNode];
+            var npath = '/' + sn._p.name + '/' + sn.name;
+            
+            dbgrid.setColumn(2, npath);
+            
+            close_explore();
+        }       
+    

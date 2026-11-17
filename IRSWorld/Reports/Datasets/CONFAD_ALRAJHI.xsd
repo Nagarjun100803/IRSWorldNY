@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CONFAD_ALRAJHI" targetNamespace="http://tempuri.org/CONFAD_ALRAJHI.xsd" xmlns:mstns="http://tempuri.org/CONFAD_ALRAJHI.xsd" xmlns="http://tempuri.org/CONFAD_ALRAJHI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CONFAD_ALRAJHI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CONFAD_ALRAJHI" msprop:Generator_DataSetName="CONFAD_ALRAJHI">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CONFAD_ALRAJHI" msprop:Generator_UserTableName="CONFAD_ALRAJHI" msprop:Generator_RowDeletedName="CONFAD_ALRAJHIRowDeleted" msprop:Generator_RowChangedName="CONFAD_ALRAJHIRowChanged" msprop:Generator_RowClassName="CONFAD_ALRAJHIRow" msprop:Generator_RowChangingName="CONFAD_ALRAJHIRowChanging" msprop:Generator_RowEvArgName="CONFAD_ALRAJHIRowChangeEvent" msprop:Generator_RowEvHandlerName="CONFAD_ALRAJHIRowChangeEventHandler" msprop:Generator_TableClassName="CONFAD_ALRAJHIDataTable" msprop:Generator_TableVarName="tableCONFAD_ALRAJHI" msprop:Generator_RowDeletingName="CONFAD_ALRAJHIRowDeleting" msprop:Generator_TablePropName="_CONFAD_ALRAJHI">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTALITEMS" msprop:Generator_UserColumnName="TOTALITEMS" msprop:Generator_ColumnVarNameInTable="columnTOTALITEMS" msprop:Generator_ColumnPropNameInRow="TOTALITEMS" msprop:Generator_ColumnPropNameInTable="TOTALITEMSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHPITEMS" msprop:Generator_UserColumnName="PHPITEMS" msprop:Generator_ColumnVarNameInTable="columnPHPITEMS" msprop:Generator_ColumnPropNameInRow="PHPITEMS" msprop:Generator_ColumnPropNameInTable="PHPITEMSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USDITEMS" msprop:Generator_UserColumnName="USDITEMS" msprop:Generator_ColumnVarNameInTable="columnUSDITEMS" msprop:Generator_ColumnPropNameInRow="USDITEMS" msprop:Generator_ColumnPropNameInTable="USDITEMSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EURITEMS" msprop:Generator_UserColumnName="EURITEMS" msprop:Generator_ColumnVarNameInTable="columnEURITEMS" msprop:Generator_ColumnPropNameInRow="EURITEMS" msprop:Generator_ColumnPropNameInTable="EURITEMSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHPAMT" msprop:Generator_UserColumnName="PHPAMT" msprop:Generator_ColumnVarNameInTable="columnPHPAMT" msprop:Generator_ColumnPropNameInRow="PHPAMT" msprop:Generator_ColumnPropNameInTable="PHPAMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USDAMT" msprop:Generator_UserColumnName="USDAMT" msprop:Generator_ColumnVarNameInTable="columnUSDAMT" msprop:Generator_ColumnPropNameInRow="USDAMT" msprop:Generator_ColumnPropNameInTable="USDAMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EURAMT" msprop:Generator_UserColumnName="EURAMT" msprop:Generator_ColumnVarNameInTable="columnEURAMT" msprop:Generator_ColumnPropNameInRow="EURAMT" msprop:Generator_ColumnPropNameInTable="EURAMTColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

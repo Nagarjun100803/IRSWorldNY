@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFedAchMessage" targetNamespace="http://tempuri.org/dsFedAchMessage.xsd" xmlns:mstns="http://tempuri.org/dsFedAchMessage.xsd" xmlns="http://tempuri.org/dsFedAchMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFedAchMessage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsFedAchMessage" msprop:Generator_DataSetName="dsFedAchMessage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFedAchMessage" msprop:Generator_UserTableName="dtFedAchMessage" msprop:Generator_RowDeletedName="dtFedAchMessageRowDeleted" msprop:Generator_RowChangedName="dtFedAchMessageRowChanged" msprop:Generator_RowClassName="dtFedAchMessageRow" msprop:Generator_RowChangingName="dtFedAchMessageRowChanging" msprop:Generator_RowEvArgName="dtFedAchMessageRowChangeEvent" msprop:Generator_RowEvHandlerName="dtFedAchMessageRowChangeEventHandler" msprop:Generator_TableClassName="dtFedAchMessageDataTable" msprop:Generator_TableVarName="tabledtFedAchMessage" msprop:Generator_RowDeletingName="dtFedAchMessageRowDeleting" msprop:Generator_TablePropName="dtFedAchMessage">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FileName" msprop:Generator_UserColumnName="FileName" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="UW_SEQ_ID" msprop:Generator_UserColumnName="UW_SEQ_ID" msprop:Generator_ColumnPropNameInRow="UW_SEQ_ID" msprop:Generator_ColumnVarNameInTable="columnUW_SEQ_ID" msprop:Generator_ColumnPropNameInTable="UW_SEQ_IDColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="WatchList_FieldName" msprop:Generator_UserColumnName="WatchList_FieldName" msprop:Generator_ColumnPropNameInRow="WatchList_FieldName" msprop:Generator_ColumnVarNameInTable="columnWatchList_FieldName" msprop:Generator_ColumnPropNameInTable="WatchList_FieldNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="WatchList_Value" msprop:Generator_UserColumnName="WatchList_Value" msprop:Generator_ColumnPropNameInRow="WatchList_Value" msprop:Generator_ColumnVarNameInTable="columnWatchList_Value" msprop:Generator_ColumnPropNameInTable="WatchList_ValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LineNumber" msprop:Generator_UserColumnName="LineNumber" msprop:Generator_ColumnPropNameInRow="LineNumber" msprop:Generator_ColumnVarNameInTable="columnLineNumber" msprop:Generator_ColumnPropNameInTable="LineNumberColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Matching_Tag" msprop:Generator_UserColumnName="Matching_Tag" msprop:Generator_ColumnPropNameInRow="Matching_Tag" msprop:Generator_ColumnVarNameInTable="columnMatching_Tag" msprop:Generator_ColumnPropNameInTable="Matching_TagColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Tag_Value" msprop:Generator_UserColumnName="Tag_Value" msprop:Generator_ColumnVarNameInTable="columnTag_Value" msprop:Generator_ColumnPropNameInRow="Tag_Value" msprop:Generator_ColumnPropNameInTable="Tag_ValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IMAD" msprop:Generator_UserColumnName="IMAD" msprop:Generator_ColumnPropNameInRow="IMAD" msprop:Generator_ColumnVarNameInTable="columnIMAD" msprop:Generator_ColumnPropNameInTable="IMADColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Sender_ABA" msprop:Generator_UserColumnName="Sender_ABA" msprop:Generator_ColumnPropNameInRow="Sender_ABA" msprop:Generator_ColumnVarNameInTable="columnSender_ABA" msprop:Generator_ColumnPropNameInTable="Sender_ABAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Receiver_ABA" msprop:Generator_UserColumnName="Receiver_ABA" msprop:Generator_ColumnPropNameInRow="Receiver_ABA" msprop:Generator_ColumnVarNameInTable="columnReceiver_ABA" msprop:Generator_ColumnPropNameInTable="Receiver_ABAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Originator" msprop:Generator_UserColumnName="Originator" msprop:Generator_ColumnVarNameInTable="columnOriginator" msprop:Generator_ColumnPropNameInRow="Originator" msprop:Generator_ColumnPropNameInTable="OriginatorColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Beneficiary" msprop:Generator_UserColumnName="Beneficiary" msprop:Generator_ColumnVarNameInTable="columnBeneficiary" msprop:Generator_ColumnPropNameInRow="Beneficiary" msprop:Generator_ColumnPropNameInTable="BeneficiaryColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateUploaded" msprop:Generator_UserColumnName="DateUploaded" msprop:Generator_ColumnVarNameInTable="columnDateUploaded" msprop:Generator_ColumnPropNameInRow="DateUploaded" msprop:Generator_ColumnPropNameInTable="DateUploadedColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_GFMCNewMembers" targetNamespace="http://tempuri.org/ds_GFMCNewMembers.xsd" xmlns:mstns="http://tempuri.org/ds_GFMCNewMembers.xsd" xmlns="http://tempuri.org/ds_GFMCNewMembers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_GFMCNewMembers" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_GFMCNewMembers" msprop:Generator_DataSetName="ds_GFMCNewMembers">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGFMCNewMembers" msprop:Generator_UserTableName="dtGFMCNewMembers" msprop:Generator_RowDeletedName="dtGFMCNewMembersRowDeleted" msprop:Generator_TableClassName="dtGFMCNewMembersDataTable" msprop:Generator_RowChangedName="dtGFMCNewMembersRowChanged" msprop:Generator_RowClassName="dtGFMCNewMembersRow" msprop:Generator_RowChangingName="dtGFMCNewMembersRowChanging" msprop:Generator_RowEvArgName="dtGFMCNewMembersRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGFMCNewMembersRowChangeEventHandler" msprop:Generator_TablePropName="dtGFMCNewMembers" msprop:Generator_TableVarName="tabledtGFMCNewMembers" msprop:Generator_RowDeletingName="dtGFMCNewMembersRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MONTH_x0020_CREATED" msprop:Generator_UserColumnName="MONTH CREATED" msprop:Generator_ColumnPropNameInRow="MONTH_CREATED" msprop:Generator_ColumnVarNameInTable="columnMONTH_CREATED" msprop:Generator_ColumnPropNameInTable="MONTH_CREATEDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH" msprop:Generator_UserColumnName="BRANCH" msprop:Generator_ColumnPropNameInRow="BRANCH" msprop:Generator_ColumnVarNameInTable="columnBRANCH" msprop:Generator_ColumnPropNameInTable="BRANCHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NEW_x0020_GFC_x0020_MEMBERS" msprop:Generator_UserColumnName="NEW GFC MEMBERS" msprop:Generator_ColumnPropNameInRow="NEW_GFC_MEMBERS" msprop:Generator_ColumnVarNameInTable="columnNEW_GFC_MEMBERS" msprop:Generator_ColumnPropNameInTable="NEW_GFC_MEMBERSColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

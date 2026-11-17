@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="dsSummaryTotalAmt_PC"
+                  targetNamespace="http://tempuri.org/dsSummaryTotalAmt_PC.xsd"
+                  elementFormDefault="qualified"
+                  attributeFormDefault="qualified"
+                  xmlns="http://tempuri.org/dsSummaryTotalAmt_PC.xsd"
+                  xmlns:mstns="http://tempuri.org/dsSummaryTotalAmt_PC.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="dsSummaryTotalAmt_PC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded"></xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_GFCNonGFCMembers" targetNamespace="http://tempuri.org/ds_GFCNonGFCMembers.xsd" xmlns:mstns="http://tempuri.org/ds_GFCNonGFCMembers.xsd" xmlns="http://tempuri.org/ds_GFCNonGFCMembers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_GFCNonGFCMembers" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_GFCNonGFCMembers" msprop:Generator_DataSetName="ds_GFCNonGFCMembers">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_GFCNonGFCMembers" msprop:Generator_UserTableName="dt_GFCNonGFCMembers" msprop:Generator_RowDeletedName="dt_GFCNonGFCMembersRowDeleted" msprop:Generator_RowChangedName="dt_GFCNonGFCMembersRowChanged" msprop:Generator_RowClassName="dt_GFCNonGFCMembersRow" msprop:Generator_RowChangingName="dt_GFCNonGFCMembersRowChanging" msprop:Generator_RowEvArgName="dt_GFCNonGFCMembersRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_GFCNonGFCMembersRowChangeEventHandler" msprop:Generator_TableClassName="dt_GFCNonGFCMembersDataTable" msprop:Generator_TableVarName="tabledt_GFCNonGFCMembers" msprop:Generator_RowDeletingName="dt_GFCNonGFCMembersRowDeleting" msprop:Generator_TablePropName="dt_GFCNonGFCMembers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SDATE" msprop:Generator_UserColumnName="SDATE" msprop:Generator_ColumnVarNameInTable="columnSDATE" msprop:Generator_ColumnPropNameInRow="SDATE" msprop:Generator_ColumnPropNameInTable="SDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EDATE" msprop:Generator_UserColumnName="EDATE" msprop:Generator_ColumnVarNameInTable="columnEDATE" msprop:Generator_ColumnPropNameInRow="EDATE" msprop:Generator_ColumnPropNameInTable="EDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REGIONS" msprop:Generator_UserColumnName="REGIONS" msprop:Generator_ColumnVarNameInTable="columnREGIONS" msprop:Generator_ColumnPropNameInRow="REGIONS" msprop:Generator_ColumnPropNameInTable="REGIONSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH" msprop:Generator_UserColumnName="BRANCH" msprop:Generator_ColumnVarNameInTable="columnBRANCH" msprop:Generator_ColumnPropNameInRow="BRANCH" msprop:Generator_ColumnPropNameInTable="BRANCHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GFCITEMS" msprop:Generator_UserColumnName="GFCITEMS" msprop:Generator_ColumnVarNameInTable="columnGFCITEMS" msprop:Generator_ColumnPropNameInRow="GFCITEMS" msprop:Generator_ColumnPropNameInTable="GFCITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="GFCREM" msprop:Generator_UserColumnName="GFCREM" msprop:Generator_ColumnVarNameInTable="columnGFCREM" msprop:Generator_ColumnPropNameInRow="GFCREM" msprop:Generator_ColumnPropNameInTable="GFCREMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="GFCFEES" msprop:Generator_UserColumnName="GFCFEES" msprop:Generator_ColumnVarNameInTable="columnGFCFEES" msprop:Generator_ColumnPropNameInRow="GFCFEES" msprop:Generator_ColumnPropNameInTable="GFCFEESColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="GFCTOTALREM" msprop:Generator_UserColumnName="GFCTOTALREM" msprop:Generator_ColumnVarNameInTable="columnGFCTOTALREM" msprop:Generator_ColumnPropNameInRow="GFCTOTALREM" msprop:Generator_ColumnPropNameInTable="GFCTOTALREMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="NGFCITEMS" msprop:Generator_UserColumnName="NGFCITEMS" msprop:Generator_ColumnVarNameInTable="columnNGFCITEMS" msprop:Generator_ColumnPropNameInRow="NGFCITEMS" msprop:Generator_ColumnPropNameInTable="NGFCITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NGFCREM" msprop:Generator_UserColumnName="NGFCREM" msprop:Generator_ColumnVarNameInTable="columnNGFCREM" msprop:Generator_ColumnPropNameInRow="NGFCREM" msprop:Generator_ColumnPropNameInTable="NGFCREMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="NGFCFEES" msprop:Generator_UserColumnName="NGFCFEES" msprop:Generator_ColumnVarNameInTable="columnNGFCFEES" msprop:Generator_ColumnPropNameInRow="NGFCFEES" msprop:Generator_ColumnPropNameInTable="NGFCFEESColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="NGCFTOTALREM" msprop:Generator_UserColumnName="NGCFTOTALREM" msprop:Generator_ColumnVarNameInTable="columnNGCFTOTALREM" msprop:Generator_ColumnPropNameInRow="NGCFTOTALREM" msprop:Generator_ColumnPropNameInTable="NGCFTOTALREMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALITEMS" msprop:Generator_UserColumnName="TOTALITEMS" msprop:Generator_ColumnVarNameInTable="columnTOTALITEMS" msprop:Generator_ColumnPropNameInRow="TOTALITEMS" msprop:Generator_ColumnPropNameInTable="TOTALITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTALFEES" msprop:Generator_UserColumnName="TOTALFEES" msprop:Generator_ColumnVarNameInTable="columnTOTALFEES" msprop:Generator_ColumnPropNameInRow="TOTALFEES" msprop:Generator_ColumnPropNameInTable="TOTALFEESColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALVOLUME" msprop:Generator_UserColumnName="TOTALVOLUME" msprop:Generator_ColumnVarNameInTable="columnTOTALVOLUME" msprop:Generator_ColumnPropNameInRow="TOTALVOLUME" msprop:Generator_ColumnPropNameInTable="TOTALVOLUMEColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

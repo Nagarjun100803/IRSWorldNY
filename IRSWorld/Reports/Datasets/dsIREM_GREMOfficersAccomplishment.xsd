@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIREM_GREMOfficersAccomplishment" targetNamespace="http://tempuri.org/dsIREM_GREMOfficersAccomplishment.xsd" xmlns:mstns="http://tempuri.org/dsIREM_GREMOfficersAccomplishment.xsd" xmlns="http://tempuri.org/dsIREM_GREMOfficersAccomplishment.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIREM_GREMOfficersAccomplishment" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIREM_GREMOfficersAccomplishment" msprop:Generator_DataSetName="dsIREM_GREMOfficersAccomplishment">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GREMofficersAccomplishment" msprop:Generator_UserTableName="GREMofficersAccomplishment" msprop:Generator_RowDeletedName="GREMofficersAccomplishmentRowDeleted" msprop:Generator_TableClassName="GREMofficersAccomplishmentDataTable" msprop:Generator_RowChangedName="GREMofficersAccomplishmentRowChanged" msprop:Generator_RowClassName="GREMofficersAccomplishmentRow" msprop:Generator_RowChangingName="GREMofficersAccomplishmentRowChanging" msprop:Generator_RowEvArgName="GREMofficersAccomplishmentRowChangeEvent" msprop:Generator_RowEvHandlerName="GREMofficersAccomplishmentRowChangeEventHandler" msprop:Generator_TablePropName="GREMofficersAccomplishment" msprop:Generator_TableVarName="tableGREMofficersAccomplishment" msprop:Generator_RowDeletingName="GREMofficersAccomplishmentRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OFFICER" msprop:Generator_UserColumnName="OFFICER" msprop:Generator_ColumnPropNameInRow="OFFICER" msprop:Generator_ColumnVarNameInTable="columnOFFICER" msprop:Generator_ColumnPropNameInTable="OFFICERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="APPROVED_x0020_ITEMS" msprop:Generator_UserColumnName="APPROVED ITEMS" msprop:Generator_ColumnPropNameInRow="APPROVED_ITEMS" msprop:Generator_ColumnVarNameInTable="columnAPPROVED_ITEMS" msprop:Generator_ColumnPropNameInTable="APPROVED_ITEMSColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IREMofficersAccomplishment" msprop:Generator_UserTableName="IREMofficersAccomplishment" msprop:Generator_RowDeletedName="IREMofficersAccomplishmentRowDeleted" msprop:Generator_TableClassName="IREMofficersAccomplishmentDataTable" msprop:Generator_RowChangedName="IREMofficersAccomplishmentRowChanged" msprop:Generator_RowClassName="IREMofficersAccomplishmentRow" msprop:Generator_RowChangingName="IREMofficersAccomplishmentRowChanging" msprop:Generator_RowEvArgName="IREMofficersAccomplishmentRowChangeEvent" msprop:Generator_RowEvHandlerName="IREMofficersAccomplishmentRowChangeEventHandler" msprop:Generator_TablePropName="IREMofficersAccomplishment" msprop:Generator_TableVarName="tableIREMofficersAccomplishment" msprop:Generator_RowDeletingName="IREMofficersAccomplishmentRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OFFICER" msprop:Generator_UserColumnName="OFFICER" msprop:Generator_ColumnPropNameInRow="OFFICER" msprop:Generator_ColumnVarNameInTable="columnOFFICER" msprop:Generator_ColumnPropNameInTable="OFFICERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="APPROVED_x0020_ITEMS" msprop:Generator_UserColumnName="APPROVED ITEMS" msprop:Generator_ColumnPropNameInRow="APPROVED_ITEMS" msprop:Generator_ColumnVarNameInTable="columnAPPROVED_ITEMS" msprop:Generator_ColumnPropNameInTable="APPROVED_ITEMSColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

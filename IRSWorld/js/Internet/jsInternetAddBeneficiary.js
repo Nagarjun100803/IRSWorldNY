@@ -1,0 +1,2296 @@
+function Internet_Remitter()
+{
+	this.SEQ_ID             = null;
+	this.Lastname           = null;
+	this.Firstname          = null;
+	this.Middlename         = null;
+	this.Age                = null;
+	this.Birthdate          = null;
+	this.ContactNo          = null;
+	this.Email              = null;
+	
+	this.BankName           = null;
+	this.BranchName         = null;
+	this.AccountNo          = null;
+	this.AccountCurrency    = null;
+	this.AccountType        = null;
+	this.ProductCode        = null;
+	this.CreatedBy          = null;
+	this.DateCreated        = null;	
+	this.CIFID              = null;
+	this.RemitterCIFID      = null;
+	this.grid_ajax_query    = null;
+    this.grid_ajax_page     = "../AjxPage/ajaxgrid.aspx";
+    this.update_flag        = false;
+    this.grid               = null;
+    this.insert_flag        = null;
+    this.set_bene_as_rem    = null;
+    this.REMCIFID           = null;
+    this.CIFType            = null;
+    this.Alias              = null;
+    this.PreferredMailAdd   = null;
+    this.Address3k          = null;
+    
+    //addtl fields : 090910
+    this.IDExpDate          = null;
+    this.DetailedDesc       = null;
+    this.WorkerType         = null;
+    this.AnnualSalary       = null;
+    this.SalCurrency        = null;
+    this.VisaType           = null; 
+    this.VisaType2          = null;    
+    this.RiskRating         = null;
+    this.SourceOfFunds      = null;
+    
+    this.RemIDNo2           = null;
+    this.IDType2            = null;
+    this.IDClassification   = null;
+	this.IDClassification2  = null;
+	
+	this.Address1           = null;
+	this.Address2           = null;
+	this.POBox              = null;   
+	this.ZipCode            = null;
+	this.Address3           = null;
+	this.Address4           = null;
+	this.Address5           = null;
+	this.Address6           = null;	
+	this.CountryCode        = null;	
+	this.RemZip1Code         = null;
+    this.AddressType        = null;
+    
+    this.Address1_Com           = null;
+	this.Address2_Com           = null;
+	this.POBox_Com              = null;   
+	this.ZipCode_Com            = null;
+	this.Address3_Com           = null;
+	this.Address4_Com           = null;
+	this.Address5_Com           = null;
+	this.Address6_Com           = null;	
+	this.CountryCode_Com        = null;	
+	this.RemZip1Code_Com        = null;
+    this.AddressType_Com        = null;
+    
+    this.Address1_Mail          = null;
+	this.Address2_Mail          = null;
+	this.POBox_Mail             = null;   
+	this.ZipCode_Mail           = null;
+	this.Address3_Mail          = null;
+	this.Address4_Mail          = null;
+	this.Address5_Mail          = null;
+	this.Address6_Mail          = null;	
+	this.CountryCode_Mail       = null;	
+	this.RemZip1Code_Mail       = null;
+    this.AddressType_Mail       = null;
+    
+    this.PreferredContact   = null;
+    this.ChargeType         = null;
+    this.VIPType            = null
+    this.REMTOAPPSEQID     = null;
+    this.isSameAsRem        =   null;
+    this.Garnish            =   null;
+    this.isWebRemitter      =   null;
+    this.isPhoneRemitter    =   null;
+    
+    this.AddSeqID           =   null;
+    this.AddSeqID_Com       =   null;
+    this.AddSeqID_Mail      =   null;
+    
+    this.RemOldID           =   null;
+    this.RemReferredBy      =   null;
+    this.currWebPhoneCheckBox = null;
+        
+    this.load_grid_viewer = function()
+    {
+        this.grid = new grid_viewer();
+        this.session_end         = true;
+        this.grid.sql_source     = "sp_internet_grid_cards~" + document.getElementById("txtHiddenSearchSeqId").value;
+        this.grid.div_container  = document.getElementById("divMiniCardsGrid");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;        
+        this.grid.open_grid_view();
+        this.grid = null;
+    }
+    
+    this.process_grid_viewer = function(parameter)
+    {
+        this.grid = new grid_viewer();
+        this.grid.sql_source     = "sp_internet_grid_cards~" + document.getElementById("txtHiddenSearchSeqId").value;
+        this.grid.div_container  = document.getElementById("divMiniCardsGrid");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;
+        this.grid.process_ajax(parameter);
+        this.grid = null;
+    }
+	
+	this.load_client_record = function()
+	{
+	    this.clear_screen();
+	    this.pull_server_client_data();
+	    this.disable_field(true);
+	    this.color_asterisks();
+	    this.add_mode_rem();
+	}
+
+// For Remitter Approval
+    this.load_grid_viewer_apprem = function()
+    {
+        this.grid = new grid_viewer();        
+        this.session_end         = true;
+        this.grid.sql_source     = "sp_internet_grid_rem_for_approval~" + document.getElementById("txtHiddenUserLoc").value;
+        this.grid.div_container  = document.getElementById("DIVREMFORAPP");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;
+        this.grid.page_size      = 10;
+        this.grid.open_grid_view();
+        this.grid = null;
+    }    
+    
+    this.process_grid_apprem = function(parameter)
+    {
+        this.grid = new grid_viewer();
+        this.grid.sql_source     = "sp_internet_grid_rem_for_approval~" + document.getElementById("txtHiddenUserLoc").value;
+        this.grid.div_container  = document.getElementById("DIVREMFORAPP");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;
+        this.grid.page_size      = 10;
+        this.grid.process_ajax(parameter);
+        this.grid = null;
+    }    
+    
+    this.process_grid_rejrem = function(parameter)
+    {
+        this.grid = new grid_viewer();
+        this.grid.sql_source     = "sp_internet_grid_rem_rejected~" + document.getElementById("txtHiddenUserLoc").value;
+        this.grid.div_container  = document.getElementById("DIVREMREJ");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;
+        this.grid.page_size      = 10;
+        this.grid.process_ajax(parameter);
+        this.grid = null;
+    }    
+    
+    this.load_grid_viewer_rejrem = function()
+    {
+        this.grid = new grid_viewer();        
+        this.session_end         = true;
+        this.grid.sql_source     = "sp_internet_grid_rem_rejected~" + document.getElementById("txtHiddenUserLoc").value;
+        this.grid.div_container  = document.getElementById("DIVREMREJ");
+        this.grid.grd_header_back_color = "#26afe5";
+        this.grid.grd_header_fore_color = "#FFFFFF";
+        this.grid.datarow_column = 0;
+        this.grid.page_size      = 10;
+        this.grid.open_grid_view();
+        this.grid = null;
+    }
+
+    this.show_panel_app_rem = function()
+	{
+	    document.getElementById("txtRejectBeneReason").value = '';
+	    this.clear_fields();
+	    showPanel('divBeneficiary');	    
+	    this.get_rem_record();
+	    this.disable_btns(false, false);
+	}
+
+	this.get_rem_record = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.GET_INTERNET_REMITTER_REM_RECORD(this.REMTOAPPSEQID,this.get_rem_rec_callback);
+	}
+	
+    this.get_rem_rec_callback = function(result)
+	{
+	    if (result != null && result.value != null)
+        {    
+            var temp_addr = '';
+            var ds = result.value;
+            this.generic = new generic_method();
+            //this.commons = new common_method();
+                 
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {   
+                Internet_Remitter.SEQ_ID             = ds.Tables[0].Rows[0].SEQ_ID;
+	            Internet_Remitter.CIFClass           = ds.Tables[0].Rows[0].CIFClass;
+	            Internet_Remitter.Lastname           = ds.Tables[0].Rows[0].Lastname;
+	            Internet_Remitter.Firstname          = ds.Tables[0].Rows[0].Firstname;
+	            Internet_Remitter.Middlename         = ds.Tables[0].Rows[0].Middlename;
+	            Internet_Remitter.Age                = ds.Tables[0].Rows[0].Age;
+	            Internet_Remitter.Birthdate          = ds.Tables[0].Rows[0].Birthdate;
+	            Internet_Remitter.Birthplace         = ds.Tables[0].Rows[0].BirthPlace;
+	            Internet_Remitter.Occupation         = ds.Tables[0].Rows[0].Occupation;
+	            Internet_Remitter.Address1           = ds.Tables[0].Rows[0].Address1;
+	            Internet_Remitter.Address2           = ds.Tables[0].Rows[0].Address2;
+	            Internet_Remitter.Address3           = ds.Tables[0].Rows[0].Address3;
+	            Internet_Remitter.Address4           = ds.Tables[0].Rows[0].Address4;
+	            Internet_Remitter.Address5           = ds.Tables[0].Rows[0].Address5;
+	            Internet_Remitter.Address6           = ds.Tables[0].Rows[0].Address6;	            
+	            Internet_Remitter.POBox              = ds.Tables[0].Rows[0].POBox;
+	            Internet_Remitter.TelNo              = ds.Tables[0].Rows[0].TelNo;
+	            Internet_Remitter.MobileNo           = ds.Tables[0].Rows[0].MobileNo;
+	            Internet_Remitter.Email              = ds.Tables[0].Rows[0].Email;
+	            Internet_Remitter.ZipCode            = ds.Tables[0].Rows[0].ZipCode;
+	            Internet_Remitter.AccountNo          = ds.Tables[0].Rows[0].AccountNo;
+	            
+	            if(Internet_Remitter.Address1 == null)   Internet_Remitter.Address1 = '';
+	            if(Internet_Remitter.POBox == null)      Internet_Remitter.POBox = '';
+	            if(Internet_Remitter.Address2 == null)   Internet_Remitter.Address2 = '';
+	            if(Internet_Remitter.Address3 == null)   Internet_Remitter.Address3 = '';
+	            if(Internet_Remitter.Address4 == null)   Internet_Remitter.Address4 = '';
+	            if(Internet_Remitter.Address5 == null)   Internet_Remitter.Address5 = '';
+	            if(Internet_Remitter.Address6 == null)   Internet_Remitter.Address6 = '';
+	            if(Internet_Remitter.Firstname == null)  Internet_Remitter.Firstname = '';
+	            if(Internet_Remitter.Middlename == null) Internet_Remitter.Middlename = '';
+	            if(Internet_Remitter.Lastname == null)   Internet_Remitter.Lastname = '';
+	            
+	            setText('spnBeneName',Internet_Remitter.Firstname + ' ' + Internet_Remitter.Middlename + ' ' + Internet_Remitter.Lastname); //document.getElementById('spnBeneName').innerHTML        = Internet_Remitter.Firstname + ' ' + Internet_Remitter.Middlename + ' ' + Internet_Remitter.Lastname;
+                setText('spnBeneBDate', dateToString(Internet_Remitter.Birthdate).split(' ')[0]); //this.commons.to_mmddyyyy_date(Internet_Remitter.Birthdate));                
+                setText('spnBeneEmailAdd', Internet_Remitter.Email);
+                setText('spnBeneTelNo', Internet_Remitter.TelNo);
+                setText('spnBeneMobNo', Internet_Remitter.MobileNo);
+                temp_addr = Internet_Remitter.Address1 + ' ' + Internet_Remitter.POBox + ' ' + Internet_Remitter.Address2 + ' '+ ' ' + Internet_Remitter.Address3 + ' ' + Internet_Remitter.Address4 + ' ' + Internet_Remitter.Address5 + ' ' + Internet_Remitter.Address6 ;
+                setText('spnBeneAddress', temp_addr);
+                this.generic = new generic_method();
+                this.generic.to_clear_null("spnBeneName~spnBeneAddress~spnBeneBDate~spnBeneEmailAdd~spnBeneProductCode~spnBeneAccountNumber~spnBeneProductCurrency~spnBeneTelNo~spnBeneMobNo");
+                setText('lblInfoHeader', "Remitter Information");
+                setText('lblClientName', "Remitter Name");
+                document.getElementById('trProdCode').style.display = 'none';
+                document.getElementById('trAcctNum').style.display = 'none';
+                document.getElementById('trCurrency').style.display = 'none';
+                document.getElementById('trBankName').style.display = 'none';
+                document.getElementById('Button1').style.display = 'none';
+                document.getElementById('trSupportingDocs').style.display = 'none';
+                                
+                //Internet_Remitter.pop_supporting_docs_list(Internet_Remitter.SEQ_ID); 
+	        }
+	    }
+	}
+	
+	this.pop_supporting_docs_list = function(seq_id)
+	{
+	    var res = IRSWorld.Internet.InternetApproval.getSupportingDocs(seq_id.toString());
+	    
+	    if (res.error == null && res.value != null)
+	    {
+            this.commons = new common_method();
+            this.commons.to_load_dropdownlist("ddSupportingDocs",  res.value, "FldValue", "FldDescription");
+            this.commons = null;
+	    }
+	}
+	
+//	this.delete_temp_files = function()
+//	{   
+//	    IRSWorld.Internet.InternetApproval.delete_temp_files(this.SEQ_ID.toString());
+//	}
+		
+    this.clear_fields = function()
+    {   
+        var fields = "spnBeneName~spnBeneBDate~spnBeneEmailAdd~spnBeneProductCode~spnBeneAccountNumber~";
+            fields += "spnBeneTelNo~spnBeneMobNo~spnBeneProductCurrency~spnBeneAddress~spnBeneBankName";
+        var fld = fields.split('~');
+        var i = 0;
+        
+        for(i=0; i<fld.length; i++)
+        {
+            setText(fld[i], '');
+        }
+    }
+    		
+	this.disable_btns = function(isDisableApp, isDisableRej)
+	{
+	    document.getElementById("btnApproveBene").disabled = isDisableApp;
+	    document.getElementById("btnRejectBene").disabled  = isDisableRej;
+	}    
+	
+	this.approve_rem = function()
+	{
+	    Internet_Remitter_Main.check_session();
+	    
+	    if(confirm('Approve remitter?'))
+	    {
+	        var ds = IRSWorld.Internet.InternetAddBeneficiary.GET_INTERNET_REMITTER_REM_RECORD(this.REMTOAPPSEQID).value;
+	        var enroll_stat = 0; /* 1=bene enrolled, 2=account enrolled, 3=remitter and bene linked */
+	        
+	        this.generic = new generic_method();
+            this.commons = new common_method();
+                 
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {   
+                var plist = '';
+                var ac_plist = '';
+                var telno    = '0';
+                var mobileno = '0';
+                
+                plist += "CIFType~1|";
+	            plist += "CIFClass~1|";
+	            plist += "IRSWorldSystem~1|";
+	            plist += "Remarks~Internet Remitter|";
+	            plist += "PreferredNo~True|";
+	            plist += "PreferredMailAdd~True|";
+	            if(ds.Tables[0].Rows[0].Lastname != null)   plist += "LastName~"    + ds.Tables[0].Rows[0].Lastname + '|';
+	            if(ds.Tables[0].Rows[0].Firstname != null)  plist += "FirstName~"   + ds.Tables[0].Rows[0].Firstname + '|';
+	            if(ds.Tables[0].Rows[0].Middlename != null) plist += "MiddleName~"  + ds.Tables[0].Rows[0].Middlename + '|';	    
+	            if(ds.Tables[0].Rows[0].BirthPlace != null) plist += "BirthPlace~"  + ds.Tables[0].Rows[0].BirthPlace + '|';
+	            if(ds.Tables[0].Rows[0].Birthdate != null)  plist += "BirthDate~"   + this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].Birthdate) + '|';	    
+	            if(ds.Tables[0].Rows[0].Address1 != null)   plist += "Address1~"    + ds.Tables[0].Rows[0].Address1 + '|';
+	            if(ds.Tables[0].Rows[0].Address2 != null)   plist += "Address2~"    + ds.Tables[0].Rows[0].Address2 + '|';
+	            if(ds.Tables[0].Rows[0].Address3 != null)   plist += "Address3~"    + ds.Tables[0].Rows[0].Address3 + '|';
+	            if(ds.Tables[0].Rows[0].Address4 != null)   plist += "Address4~"    + ds.Tables[0].Rows[0].Address4 + '|';
+	            if(ds.Tables[0].Rows[0].Address5 != null)   plist += "Address5~"    + ds.Tables[0].Rows[0].Address5 + '|';	            	            	            	            
+	            if(ds.Tables[0].Rows[0].Address6 != null)   plist += "Address6~"    + ds.Tables[0].Rows[0].Address6 + '|';	            
+	            if(ds.Tables[0].Rows[0].POBox != null)      plist += "POBox~"       + ds.Tables[0].Rows[0].POBox + '|';
+	            if(ds.Tables[0].Rows[0].AddressType != null)plist += "AddressType~" + ds.Tables[0].Rows[0].AddressType + '|';
+	            if(ds.Tables[0].Rows[0].ZipCode != null)    plist += "RemZip1Code~"     + ds.Tables[0].Rows[0].ZipCode + '|';
+	            
+	            if(ds.Tables[0].Rows[0].Address1_Com != null)   plist += "Address1_Com~"    + ds.Tables[0].Rows[0].Address1_Com + '|';
+	            if(ds.Tables[0].Rows[0].Address2_Com != null)   plist += "Address2_Com~"    + ds.Tables[0].Rows[0].Address2_Com + '|';
+	            if(ds.Tables[0].Rows[0].Address3_Com != null)   plist += "Address3_Com~"    + ds.Tables[0].Rows[0].Address3_Com + '|';
+	            if(ds.Tables[0].Rows[0].Address4_Com != null)   plist += "Address4_Com~"    + ds.Tables[0].Rows[0].Address4_Com + '|';
+	            if(ds.Tables[0].Rows[0].Address5_Com != null)   plist += "Address5_Com~"    + ds.Tables[0].Rows[0].Address5_Com + '|';	            	            	            	            
+	            if(ds.Tables[0].Rows[0].Address6_Com != null)   plist += "Address6_Com~"    + ds.Tables[0].Rows[0].Address6_Com + '|';	            
+	            if(ds.Tables[0].Rows[0].POBox_Com != null)      plist += "POBox_Com~"       + ds.Tables[0].Rows[0].POBox_Com + '|';
+	            if(ds.Tables[0].Rows[0].AddressType_Com != null)plist += "AddressType_Com~" + ds.Tables[0].Rows[0].AddressType_Com + '|';
+	            if(ds.Tables[0].Rows[0].ZipCode_Com != null)    plist += "RemZip1Code_Com~" + ds.Tables[0].Rows[0].ZipCode_Com + '|';
+	            
+	            if(ds.Tables[0].Rows[0].Address1_Mail != null)   plist += "Address1_Mail~"    + ds.Tables[0].Rows[0].Address1_Mail + '|';
+	            if(ds.Tables[0].Rows[0].Address2_Mail != null)   plist += "Address2_Mail~"    + ds.Tables[0].Rows[0].Address2_Mail + '|';
+	            if(ds.Tables[0].Rows[0].Address3_Mail != null)   plist += "Address3_Mail~"    + ds.Tables[0].Rows[0].Address3_Mail + '|';
+	            if(ds.Tables[0].Rows[0].Address4_Mail != null)   plist += "Address4_Mail~"    + ds.Tables[0].Rows[0].Address4_Mail + '|';
+	            if(ds.Tables[0].Rows[0].Address5_Mail != null)   plist += "Address5_Mail~"    + ds.Tables[0].Rows[0].Address5_Mail + '|';	            	            	            	            
+	            if(ds.Tables[0].Rows[0].Address6_Mail != null)   plist += "Address6_Mail~"    + ds.Tables[0].Rows[0].Address6_Mail + '|';	            
+	            if(ds.Tables[0].Rows[0].POBox_Mail != null)      plist += "POBox_Mail~"       + ds.Tables[0].Rows[0].POBox_Mail + '|';
+	            if(ds.Tables[0].Rows[0].AddressType_Mail != null)plist += "AddressType_Mail~" + ds.Tables[0].Rows[0].AddressType_Mail + '|';
+	            if(ds.Tables[0].Rows[0].ZipCode_Mail != null)    plist += "RemZip1Code_Mail~"     + ds.Tables[0].Rows[0].ZipCode_Mail + '|';
+	            	            
+	            //if(ds.Tables[0].Rows[0].CreatedBy != null)  plist += "CreatedBy~"   + ds.Tables[0].Rows[0].CreatedBy + '|';
+	            if(ds.Tables[0].Rows[0].TelNo != null)      telno    = ds.Tables[0].Rows[0].TelNo;
+	            if(ds.Tables[0].Rows[0].MobileNo != null)   mobileno = ds.Tables[0].Rows[0].MobileNo;
+	                                                        plist += "ContactNo~"   + mobileno + '^' + telno + '|';
+	                                                        plist += "BranchCode~"  + document.getElementById("txtHiddenUserLoc").value + '|';
+	            if(ds.Tables[0].Rows[0].Email != null)      plist += "EmailAddress~"+ ds.Tables[0].Rows[0].Email + '|';
+	            if(ds.Tables[0].Rows[0].CompanyName != null)plist += "Employer~"    + ds.Tables[0].Rows[0].CompanyName + '|';
+	            if(ds.Tables[0].Rows[0].Occupation != null) plist += "Occupation~"  + ds.Tables[0].Rows[0].Occupation + '|';
+	            
+	            if(ds.Tables[0].Rows[0].IDNo != null)	    plist += "IDNo~"         + ds.Tables[0].Rows[0].IDNo   + '|';
+                if(ds.Tables[0].Rows[0].ExpiryDate != null)	plist += "IDExpiryDate~" + this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate) + '|';
+                if(ds.Tables[0].Rows[0].IDType != null)	    plist += "IDType~"       + ds.Tables[0].Rows[0].IDType    + '|';
+                	            
+	            plist = plist.substring(0, plist.length-1);
+	            
+	            var ret_val = IRSWorld.Internet.InternetAddBeneficiary.enroll_agent(plist).value;
+	            
+	            if(ret_val.length > 0 && ret_val.length <= 16) 
+	            {
+                    var userid = ds.Tables[0].Rows[0].UserID;
+                    var cifid = ret_val;
+                    var fullname = ds.Tables[0].Rows[0].Lastname + ", " + ds.Tables[0].Rows[0].Firstname + " " + ds.Tables[0].Rows[0].Middlename;
+                    
+                    IRSWorld.Internet.InternetAddBeneficiary.set_bene_status(String(ds.Tables[0].Rows[0].SEQ_ID), '1', '');
+                    IRSWorld.Internet.InternetAddBeneficiary.set_bene_created_cifid(String(ds.Tables[0].Rows[0].SEQ_ID), ret_val);
+                    IRSWorld.Internet.InternetAddBeneficiary.insert_user_accounts(cifid,userid,fullname);
+                    alert("REMITTER APPROVED!");
+                    IRSWorld.Internet.InternetApproval.mailer(String(ds.Tables[0].Rows[0].SEQ_ID));
+                    Internet_Remitter.load_grid_viewer_apprem();                    
+                    this.disable_btns(true, true);
+	            }
+	            else /* error in enrolling beneficiary */
+	            {
+	                alert(ret_val + '\n' + "Please try again.");
+	                this.disable_btns(true, false);
+	            }
+	        }	        
+	    }
+	}
+	
+    this.reject_rem = function()
+    {
+        var rej_rsn = document.getElementById('txtRejectBeneReason').value;
+        if(rej_rsn == '')
+        {
+            alert('Please enter reason.');
+        }
+        else
+        {
+            if(confirm('Reject remitter?'))
+            {
+                IRSWorld.Internet.InternetAddBeneficiary.set_bene_status(String(this.REMTOAPPSEQID), '2', rej_rsn);
+                alert('REMITTER REJECTED!');
+                Internet_Remitter.load_grid_viewer_apprem();
+                this.disable_btns(true, true);
+            }
+        }
+    }
+//---------------------------
+
+	this.pull_server_client_data = function()
+	{
+	    if(document.getElementById("txtHiddenUserRole").value == '10') /*if used by client*/
+	    {
+	        if(document.getElementById("txtHiddenUserCIFID").value != '')
+	        {
+                IRSWorld.Internet.InternetAddBeneficiary.get_client_info(document.getElementById("txtHiddenUserCIFID").value, 'CIFID', this.pull_server_client_data_callback);
+	            /* get the info using the CIFID to lessen the trip to the servers
+	            document.getElementById("txtHiddenRemCIFID").value = document.getElementById("txtHiddenUserCIFID").value;   
+	            var ds = IRSWorld.Internet.InternetAddBeneficiary.get_master_seqid(document.getElementById("txtHiddenUserCIFID").value).value;
+	            if (ds != null && ds.Tables[0].Rows.length > 0)
+	            {
+	                var seq_id = ds.Tables[0].Rows[0].SEQ_ID;	            
+	                IRSWorld.Internet.InternetAddBeneficiary.get_client_info(String(seq_id), this.pull_server_client_data_callback);
+	            }
+	            */
+	        }
+	    }
+	    else /*if used by agent remittance*/
+	    {
+	        if(document.getElementById("txtHiddenSearchSeqId").value != '')
+	        {
+	            IRSWorld.Internet.InternetAddBeneficiary.get_client_info(document.getElementById("txtHiddenSearchSeqId").value, 'SEQ_ID', this.pull_server_client_data_callback);
+	        }
+	        else if (document.getElementById("txtHiddenRemCIFID").value != '')
+	        {
+	            IRSWorld.Internet.InternetAddBeneficiary.get_client_info(document.getElementById("txtHiddenRemCIFID").value, 'CIFID', this.pull_server_client_data_callback);
+	            /* Use the cifid for single trip to server
+	            var ds = IRSWorld.Internet.InternetAddBeneficiary.get_master_seqid(document.getElementById("txtHiddenRemCIFID").value).value;
+	            
+	            if (ds != null && ds.Tables[0].Rows.length > 0)
+	            {
+	                var seq_id = ds.Tables[0].Rows[0].SEQ_ID;	            
+	                IRSWorld.Internet.InternetAddBeneficiary.get_client_info(String(seq_id), this.pull_server_client_data_callback);
+	            }
+	            */
+	        }	        
+	    }	    	    
+	}
+	
+	this.pull_server_client_data_callback = function(result)
+	{
+	    if (result != null && result.value != null)
+        {
+            //this.commons = new common_method();
+            this.generic = new generic_method();
+            
+            var ds = result.value;
+            var chkPrefMailAdd = null;
+            
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                document.getElementById("ddCIFType").value = ds.Tables[0].Rows[0].CIFType;
+                
+                Internet_Remitter.BranchCode = ds.Tables[0].Rows[0].BranchCode;
+                
+                if(ciftype_r == 2)
+                {
+                    //chkPrefMailAdd = "chkRemBPrefMailAdd";
+    	            document.getElementById("txtRemBusinessName").value = ds.Tables[0].Rows[0].LastName;
+                    document.getElementById("txtRemShortName").value    = ds.Tables[0].Rows[0].FirstName;
+                    document.getElementById("txtRemBBusType").value     = ds.Tables[0].Rows[0].MiddleName;
+                    document.getElementById("txtRemBAlias").value       = ds.Tables[0].Rows[0].Alias;
+                    
+                    //  FOR HOME ADDRESS
+                    document.getElementById("txtRemBAddress1").value    = ds.Tables[0].Rows[0].Address1;
+                    document.getElementById("txtRemBAddress2").value    = ds.Tables[0].Rows[0].Address2;
+                    document.getElementById("txtRemBPOBox").value       = ds.Tables[0].Rows[0].POBox;
+                    document.getElementById("txtRemBDistrict").value     = ds.Tables[0].Rows[0].Address3;
+                    document.getElementById("txtRemBCity").value       = ds.Tables[0].Rows[0].Address4;
+                    document.getElementById("txtRemBState").value       = ds.Tables[0].Rows[0].Address5;
+                    document.getElementById("txtRemBRegion").value       = ds.Tables[0].Rows[0].Address6;
+                    //this.commons.to_set_dropdownlist_index("ddRemBCountry",          ds.Tables[0].Rows[0].CountryCode);
+                    document.getElementById("ddRemBCountry").value  =  ds.Tables[0].Rows[0].CountryCode;
+                    //this.commons.to_set_dropdownlist_index("ddRemBAddressType",      ds.Tables[0].Rows[0].AddressType);
+                    document.getElementById("ddRemBAddressType").value  =  ds.Tables[0].Rows[0].AddressType;
+                    document.getElementById("txtRemBZip").value = ds.Tables[0].Rows[0].ZipCode;
+                    this.ZipCode = ds.Tables[0].Rows[0].ZipCodeSeqId;
+                    document.getElementById("chkRemBPrefMailAdd").value   = (ds.Tables[0].Rows[0].PreferredMailAdd == true) ? "on" : "off";
+                    document.getElementById("chkRemBPrefMailAdd").checked = (ds.Tables[0].Rows[0].PreferredMailAdd == true) ? true : false;
+                    
+                    //  FOR COMPANY ADDRESS
+                    document.getElementById("txtRemBAddress1_Com").value    = ds.Tables[0].Rows[0].Address1_Com;
+                    document.getElementById("txtRemBAddress2_Com").value    = ds.Tables[0].Rows[0].Address2_Com;
+                    document.getElementById("txtRemBPOBox_Com").value       = ds.Tables[0].Rows[0].POBox_Com;
+                    document.getElementById("txtRemBDistrict_Com").value     = ds.Tables[0].Rows[0].Address3_Com;
+                    document.getElementById("txtRemBCity_Com").value       = ds.Tables[0].Rows[0].Address4_Com;
+                    document.getElementById("txtRemBState_Com").value       = ds.Tables[0].Rows[0].Address5_Com;
+                    document.getElementById("txtRemBRegion_Com").value       = ds.Tables[0].Rows[0].Address6_Com;
+                    //this.commons.to_set_dropdownlist_index("ddRemBCountry_Com",          ds.Tables[0].Rows[0].CountryCode_Com);
+                    document.getElementById("ddRemBCountry_Com").value = ds.Tables[0].Rows[0].CountryCode_Com;
+                    //this.commons.to_set_dropdownlist_index("ddRemBAddressType_Com",      ds.Tables[0].Rows[0].AddressType_Com);
+                    if (document.getElementById("ddRemBAddressType_Com")) document.getElementById("ddRemBAddressType_Com").value = ds.Tables[0].Rows[0].AddressType_Com;
+                    document.getElementById("txtRemBZip_Com").value = ds.Tables[0].Rows[0].ZipCode_Com;
+                    //this.ZipCode = ds.Tables[0].Rows[0].ZipCodeSeqId_Com;
+                    document.getElementById("chkRemBPrefMailAdd_Com").value   = (ds.Tables[0].Rows[0].PreferredMailAdd_Com == true) ? "on" : "off";
+                    document.getElementById("chkRemBPrefMailAdd_Com").checked = (ds.Tables[0].Rows[0].PreferredMailAdd_Com == true) ? true : false;
+                    
+                    //  FOR MAILING ADDRESS
+                    document.getElementById("txtRemBAddress1_Mail").value    = ds.Tables[0].Rows[0].Address1_Mail;
+                    document.getElementById("txtRemBAddress2_Mail").value    = ds.Tables[0].Rows[0].Address2_Mail;
+                    document.getElementById("txtRemBPOBox_Mail").value       = ds.Tables[0].Rows[0].POBox_Mail;
+                    document.getElementById("txtRemBDistrict_Mail").value     = ds.Tables[0].Rows[0].Address3_Mail;
+                    document.getElementById("txtRemBCity_Mail").value       = ds.Tables[0].Rows[0].Address4_Mail;
+                    document.getElementById("txtRemBState_Mail").value       = ds.Tables[0].Rows[0].Address5_Mail;
+                    document.getElementById("txtRemBRegion_Mail").value       = ds.Tables[0].Rows[0].Address6_Mail;
+                    //this.commons.to_set_dropdownlist_index("ddRemBCountry_Mail",          ds.Tables[0].Rows[0].CountryCode_Mail);
+                    document.getElementById("ddRemBCountry_Mail").value = ds.Tables[0].Rows[0].CountryCode_Mail;
+                    //this.commons.to_set_dropdownlist_index("ddRemBAddressType_Mail",      ds.Tables[0].Rows[0].AddressType_Mail);
+                    if (document.getElementById("ddRemBAddressType_Mail")) document.getElementById("ddRemBAddressType_Mail").value = ds.Tables[0].Rows[0].AddressType_Mail;
+                    document.getElementById("txtRemBZip_Mail").value = ds.Tables[0].Rows[0].ZipCode_Mail;
+                    //this.ZipCode = ds.Tables[0].Rows[0].ZipCodeSeqId_Mail;
+                    document.getElementById("chkRemBPrefMailAdd_Mail").value   = (ds.Tables[0].Rows[0].PreferredMailAdd_Mail == true) ? "on" : "off";
+                    document.getElementById("chkRemBPrefMailAdd_Mail").checked = (ds.Tables[0].Rows[0].PreferredMailAdd_Mail == true) ? true : false;
+                                          
+                    //  IDs                      
+                    //this.commons.to_set_dropdownlist_index("ddRemBIDType",           ds.Tables[0].Rows[0].IdType);
+                    document.getElementById("ddRemBIDType").value   = ds.Tables[0].Rows[0].IdType;
+                    //this.commons.to_set_dropdownlist_index("ddRemBVisaType",         ds.Tables[0].Rows[0].VisaType);
+                    document.getElementById("ddRemBVisaType").value   = ds.Tables[0].Rows[0].VisaType;
+                    //this.commons.to_set_dropdownlist_index("ddRemBIDClassification", ds.Tables[0].Rows[0].IDClassification);
+                    document.getElementById("ddRemBIDClassification").value   = ds.Tables[0].Rows[0].IDClassification;
+                    //this.commons.to_set_dropdownlist_index("ddRemBIDType2",          ds.Tables[0].Rows[0].IdType2);
+                    document.getElementById("ddRemBIDType2").value   = ds.Tables[0].Rows[0].IdType2;
+                    //this.commons.to_set_dropdownlist_index("ddRemBVisaType2",        ds.Tables[0].Rows[0].VisaType2);
+                    document.getElementById("ddRemBVisaType2").value   = ds.Tables[0].Rows[0].VisaType2;
+                    //this.commons.to_set_dropdownlist_index("ddRemBIDClassification2",ds.Tables[0].Rows[0].IDClassification2);   
+                    document.getElementById("ddRemBIDClassification2").value   = ds.Tables[0].Rows[0].IDClassification2;     
+                    //this.commons.to_set_dropdownlist_index("ddRemBVIPType",          ds.Tables[0].Rows[0].VIPType);                 
+                    document.getElementById("ddRemBVIPType").value   = ds.Tables[0].Rows[0].VIPType;
+                    //  Contacts                                          
+                    document.getElementById("txtRemBTelNo").value       = ds.Tables[0].Rows[0].TelNo;
+                    document.getElementById("txtRemBMobileNo").value    = ds.Tables[0].Rows[0].MobileNo;
+                    document.getElementById("txtRemBEmailAdd").value    = ds.Tables[0].Rows[0].EmailAddress;
+                    document.getElementById("txtRemBIDNo").value        = ds.Tables[0].Rows[0].IDNo;
+                    document.getElementById("txtRemBIDNo2").value       = ds.Tables[0].Rows[0].IDNo2;
+                    document.getElementById("txtRemBIDExpDate").value   = dateToString(ds.Tables[0].Rows[0].ExpiryDate).split(' ')[0]; //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate); 
+                    document.getElementById("txtRemBIDExpDate2").value  = dateToString(ds.Tables[0].Rows[0].ExpiryDate2).split(' ')[0]; //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate2); 
+                    if (document.getElementById("txtRemBMobileNo").value == '0'){document.getElementById("txtRemBMobileNo").value = '';}
+                                                            
+                    // Others
+                    //this.commons.to_set_dropdownlist_index("ddRemBRiskRating",       ds.Tables[0].Rows[0].RiskRating);
+                    document.getElementById("ddRemBRiskRating").value  = ds.Tables[0].Rows[0].RiskRating;
+                    //this.commons.to_set_dropdownlist_index("ddBusRemPrefContact",    ds.Tables[0].Rows[0].PreferredContact);
+                    document.getElementById("ddBusRemPrefContact").value  = ds.Tables[0].Rows[0].PreferredContact;
+                    this.ChargeType = ds.Tables[0].Rows[0].ChargeType;   
+                    
+                    document.getElementById("txtHiddenChargeType").value = this.ChargeType;
+                    /* test to combine chargetype desc from main data
+                    var ds2 = null;
+                    ds2 = IRSWorld.Internet.InternetAddBeneficiary.get_Charge_type(this.ChargeType).value;
+            
+                    if (ds2 != null && ds2.Tables[0].Rows.length > 0)
+                    {  
+                        document.getElementById("txtRemBChargeType").value = ds2.Tables[0].Rows[0].FldDescription;
+                    }
+                    else
+                    {
+                        document.getElementById("txtRemBChargeType").value = "";
+                    }
+                    */
+                    document.getElementById("txtRemBChargeType").value = (ds.Tables[0].Rows[0].ChargeTypeDesc == null) ? '' : ds.Tables[0].Rows[0].ChargeTypeDesc;
+                    
+                    document.getElementById("chkRemBGarnish").value   = (ds.Tables[0].Rows[0].Garnish == true) ? "on" : "off";
+                    document.getElementById("chkRemBGarnish").checked = (ds.Tables[0].Rows[0].Garnish == true) ? true : false;
+                    
+                    document.getElementById("chkRemBWebRemitter").value   = (ds.Tables[0].Rows[0].isWebRemitter == true) ? "on" : "off";
+                    document.getElementById("chkRemBWebRemitter").checked = (ds.Tables[0].Rows[0].isWebRemitter == true) ? true : false;
+                    
+                    document.getElementById("chkRemBPhoneRemitter").value   = (ds.Tables[0].Rows[0].isPhoneRemitter == true) ? "on" : "off";
+                    document.getElementById("chkRemBPhoneRemitter").checked = (ds.Tables[0].Rows[0].isPhoneRemitter == true) ? true : false;
+                    
+                    document.getElementById("txtRemBOldID").value = ds.Tables[0].Rows[0].Remitter_Inputed_ID;
+                    
+                    this.generic.to_clear_null("txtRemBusinessName~txtRemShortName~txtRemBAlias~txtRemBAddress1~txtRemBTelNo~txtRemBMobileNo~txtRemBPOBox~txtRemBDistrict~txtRemBCity~txtRemBState~txtRemBRegion");
+                    this.generic.to_clear_null("txtRemBEmailAdd~txtRemBIDNo~txtRemBIDNo2~ddRemBIDType~txtRemBIDExpDate~txtRemBIDExpDate2");
+                    this.generic.to_clear_null("txtRemBEmailAdd~txtRemBZip~txtRemBBusType~txtRemBAddress2");
+                    this.generic.to_clear_null("txtRemBAddress1_Com~txtRemBAddress2_Com~txtRemBPOBox_Com~txtRemBDistrict_Com~txtRemBCity_Com~txtRemBState_Com~txtRemBRegion_Com~txtRemBZip_Com");
+                    this.generic.to_clear_null("txtRemBAddress1_Mail~txtRemBAddress2_Mail~txtRemBPOBox_Mail~txtRemBDistrict_Mail~txtRemBCity_Mail~txtRemBState_Mail~txtRemBRegion_Mail~txtRemBZip_Mail~txtRemBOldID");
+                    
+                    try{document.getElementById("txtRemBusinessName").focus()}catch(e){};
+                }     
+                else
+                {   
+                    document.getElementById("txtRemLName").value     = ds.Tables[0].Rows[0].LastName;
+                    document.getElementById("txtRemFName").value     = ds.Tables[0].Rows[0].FirstName;
+                    document.getElementById("txtRemMName").value     = ds.Tables[0].Rows[0].MiddleName;
+                    document.getElementById("txtRemBDate").value     = dateToString(ds.Tables[0].Rows[0].BirthDate).split(' ')[0];//this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].BirthDate); 
+                    document.getElementById("txtRemBPlace").value    = ds.Tables[0].Rows[0].BirthPlace;
+                    
+                    //  FOR HOME ADDRESS
+                    document.getElementById("txtRemAddress1").value  = ds.Tables[0].Rows[0].Address1;
+                    document.getElementById("txtRemAddress2").value  = ds.Tables[0].Rows[0].Address2;
+                    document.getElementById("txtRemPOBox").value  = ds.Tables[0].Rows[0].POBox;
+                    document.getElementById("txtRemDistrict").value     = ds.Tables[0].Rows[0].Address3;
+                    document.getElementById("txtRemCity").value       = ds.Tables[0].Rows[0].Address4;                    
+                    document.getElementById("txtRemState").value       = ds.Tables[0].Rows[0].Address5;                    
+                    document.getElementById("txtRemRegion").value       = ds.Tables[0].Rows[0].Address6;
+                    //this.commons.to_set_dropdownlist_index("ddRemCountry",          ds.Tables[0].Rows[0].CountryCode);
+                    document.getElementById("ddRemCountry").value  = ds.Tables[0].Rows[0].CountryCode;
+                    //this.commons.to_set_dropdownlist_index("ddRemAddressType",      ds.Tables[0].Rows[0].AddressType);
+                    document.getElementById("ddRemAddressType").value  = ds.Tables[0].Rows[0].AddressType;
+                    document.getElementById("txtRemZip").value = ds.Tables[0].Rows[0].ZipCode;
+                    document.getElementById("chkRemPrefMailAdd").value   = (ds.Tables[0].Rows[0].PreferredMailAdd == true) ? "on" : "off";
+                    document.getElementById("chkRemPrefMailAdd").checked = (ds.Tables[0].Rows[0].PreferredMailAdd == true) ? true : false;
+                    Internet_Remitter.AddSeqID = ds.Tables[0].Rows[0].SEQ_ID_Home;
+                                        
+                    //  FOR COMPANY ADDRESS
+                    document.getElementById("txtRemAddress1_Com").value  = ds.Tables[0].Rows[0].Address1_Com;
+                    document.getElementById("txtRemAddress2_Com").value  = ds.Tables[0].Rows[0].Address2_Com;
+                    document.getElementById("txtRemPOBox_Com").value  = ds.Tables[0].Rows[0].POBox_Com;
+                    document.getElementById("txtRemDistrict_Com").value     = ds.Tables[0].Rows[0].Address3_Com;
+                    document.getElementById("txtRemCity_Com").value       = ds.Tables[0].Rows[0].Address4_Com;                    
+                    document.getElementById("txtRemState_Com").value       = ds.Tables[0].Rows[0].Address5_Com;                    
+                    document.getElementById("txtRemRegion_Com").value       = ds.Tables[0].Rows[0].Address6_Com;
+                    //this.commons.to_set_dropdownlist_index("ddRemCountry_Com",          ds.Tables[0].Rows[0].CountryCode_Com);
+                    document.getElementById("ddRemCountry_Com").value  = ds.Tables[0].Rows[0].CountryCode_Com;
+                    //originally commented this.commons.to_set_dropdownlist_index("ddRemAddressType_Com",      ds.Tables[0].Rows[0].AddressType_Com);
+                    document.getElementById("txtRemZip_Com").value = ds.Tables[0].Rows[0].ZipCode_Com;
+                    document.getElementById("chkRemPrefMailAdd_Com").value   = (ds.Tables[0].Rows[0].PreferredMailAdd_Com == true) ? "on" : "off";
+                    document.getElementById("chkRemPrefMailAdd_Com").checked = (ds.Tables[0].Rows[0].PreferredMailAdd_Com == true) ? true : false;
+                    Internet_Remitter.AddSeqID_Com = ds.Tables[0].Rows[0].SEQ_ID_Com;
+                    
+                    //  FOR MAILING ADDRESS
+                    document.getElementById("txtRemAddress1_Mail").value  = ds.Tables[0].Rows[0].Address1_Mail;
+                    document.getElementById("txtRemAddress2_Mail").value  = ds.Tables[0].Rows[0].Address2_Mail;
+                    document.getElementById("txtRemPOBox_Mail").value  = ds.Tables[0].Rows[0].POBox_Mail;
+                    document.getElementById("txtRemDistrict_Mail").value     = ds.Tables[0].Rows[0].Address3_Mail;
+                    document.getElementById("txtRemCity_Mail").value       = ds.Tables[0].Rows[0].Address4_Mail;                    
+                    document.getElementById("txtRemState_Mail").value       = ds.Tables[0].Rows[0].Address5_Mail;                    
+                    document.getElementById("txtRemRegion_Mail").value       = ds.Tables[0].Rows[0].Address6_Mail;
+                    //this.commons.to_set_dropdownlist_index("ddRemCountry_Mail",          ds.Tables[0].Rows[0].CountryCode_Mail);
+                    document.getElementById("ddRemCountry_Mail").value  = ds.Tables[0].Rows[0].CountryCode_Mail;
+                    //originally commented this.commons.to_set_dropdownlist_index("ddRemAddressType_Mail",      ds.Tables[0].Rows[0].AddressType_Mail);
+                    document.getElementById("txtRemZip_Mail").value = ds.Tables[0].Rows[0].ZipCode_Mail;
+                    document.getElementById("chkRemPrefMailAdd_Mail").value   = (ds.Tables[0].Rows[0].PreferredMailAdd_Mail == true) ? "on" : "off";
+                    document.getElementById("chkRemPrefMailAdd_Mail").checked = (ds.Tables[0].Rows[0].PreferredMailAdd_Mail == true) ? true : false;
+                    Internet_Remitter.AddSeqID_Mail = ds.Tables[0].Rows[0].SEQ_ID_Mail;
+                                        
+                    //  IDs
+                    document.getElementById("txtRemIDNo1").value      = ds.Tables[0].Rows[0].IDNo;
+                    document.getElementById("txtRemIDNo2").value     = ds.Tables[0].Rows[0].IDNo2;                                        
+                    //this.commons.to_set_dropdownlist_index("ddRemIDType1",           ds.Tables[0].Rows[0].IdType);
+                    document.getElementById("ddRemIDType1").value  = ds.Tables[0].Rows[0].IdType;
+                    //this.commons.to_set_dropdownlist_index("ddRemVisaType1",         ds.Tables[0].Rows[0].VisaType);
+                    document.getElementById("ddRemVisaType1").value  = ds.Tables[0].Rows[0].VisaType;
+                    //this.commons.to_set_dropdownlist_index("ddRemIDClassification1", ds.Tables[0].Rows[0].IDClassification);
+                    document.getElementById("ddRemIDClassification1").value  = ds.Tables[0].Rows[0].IDClassification;
+                    //this.commons.to_set_dropdownlist_index("ddRemIDType2",          ds.Tables[0].Rows[0].IdType2);
+                    document.getElementById("ddRemIDType2").value  = ds.Tables[0].Rows[0].IdType2;
+                    //this.commons.to_set_dropdownlist_index("ddRemVisaType2",        ds.Tables[0].Rows[0].VisaType2);
+                    document.getElementById("ddRemVisaType2").value  = ds.Tables[0].Rows[0].VisaType2;
+                    //this.commons.to_set_dropdownlist_index("ddRemIDClassification2",ds.Tables[0].Rows[0].IDClassification2);
+                    document.getElementById("ddRemIDClassification2").value  = ds.Tables[0].Rows[0].IDClassification2;
+                    document.getElementById("txtRemIDExpDate").value = dateToString(ds.Tables[0].Rows[0].ExpiryDate).split(' ')[0]; // this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate); 
+                    document.getElementById("txtRemIDExpDate2").value= dateToString(ds.Tables[0].Rows[0].ExpiryDate2).split(' ')[0]; // this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate2);                   
+                    
+                    //  Contacts
+                    document.getElementById("txtRemTelNo").value     = ds.Tables[0].Rows[0].TelNo;
+                    document.getElementById("txtRemMobileNo").value  = ds.Tables[0].Rows[0].MobileNo;
+                    document.getElementById("txtRemEmailAdd").value  = ds.Tables[0].Rows[0].EmailAddress;
+                    //this.commons.to_set_dropdownlist_index("ddRemPrefContact",      ds.Tables[0].Rows[0].PreferredContact);
+                    document.getElementById("ddRemPrefContact").value  = ds.Tables[0].Rows[0].PreferredContact;
+                    //  Occupation
+                    document.getElementById("txtRemCompany").value   = ds.Tables[0].Rows[0].Employer;
+                    document.getElementById("txtRemDetDesc").value   = ds.Tables[0].Rows[0].DetailedDesc;
+                    document.getElementById("txtRemAnnualSal").value = this.generic.formatCurrency(ds.Tables[0].Rows[0].Salary);
+                    //this.commons.to_set_dropdownlist_index("ddRemOccupation",       ds.Tables[0].Rows[0].Occupation);
+                    document.getElementById("ddRemOccupation").value = ds.Tables[0].Rows[0].Occupation;
+                    //this.commons.to_set_dropdownlist_index("ddRemSalCurr",          ds.Tables[0].Rows[0].Currency);
+                    document.getElementById("ddRemSalCurr").value = ds.Tables[0].Rows[0].Currency;
+                    //this.commons.to_set_dropdownlist_index("ddRemWorkerType",       ds.Tables[0].Rows[0].WorkerType);
+                    document.getElementById("ddRemWorkerType").value = ds.Tables[0].Rows[0].WorkerType;
+                    //this.commons.to_set_dropdownlist_index("ddRemRiskRating",       ds.Tables[0].Rows[0].RiskRating);
+                    document.getElementById("ddRemRiskRating").value = ds.Tables[0].Rows[0].RiskRating;
+                    //this.commons.to_set_dropdownlist_index("ddRemSourceOfFunds",    ds.Tables[0].Rows[0].SourceOfFunds);
+                    document.getElementById("ddRemSourceOfFunds").value = ds.Tables[0].Rows[0].SourceOfFunds;
+                    //this.commons.to_set_dropdownlist_index("ddRemVIPType",          ds.Tables[0].Rows[0].VIPType);
+                    document.getElementById("ddRemVIPType").value = ds.Tables[0].Rows[0].VIPType;
+                    
+                    //  Others
+                    document.getElementById("txtRemFCCustId1").value = ds.Tables[0].Rows[0].OtherIDs;
+                    this.ChargeType = ds.Tables[0].Rows[0].ChargeType;
+                    document.getElementById("txtHiddenChargeType").value = this.ChargeType;
+                    /* combine chargetype description into main data
+                    var ds2 = null;
+                    ds2 = IRSWorld.Internet.InternetAddBeneficiary.get_Charge_type(this.ChargeType).value;
+            
+                    if (ds2 != null && ds2.Tables[0].Rows.length > 0)
+                    {  
+                        document.getElementById("txtRemChargeType").value = ds2.Tables[0].Rows[0].FldDescription;
+                    }
+                    else
+                    {
+                        document.getElementById("txtRemChargeType").value = "";
+                    }
+                    */
+                    document.getElementById("txtRemChargeType").value = (ds.Tables[0].Rows[0].ChargeTypeDesc == null) ? '' : ds.Tables[0].Rows[0].ChargeTypeDesc;
+
+                    
+                    if (document.getElementById("txtRemMobileNo").value == '0')
+                    {
+                        document.getElementById("txtRemMobileNo").value = '';
+                    }
+                    document.getElementById("txtAddress3k").value = ds.Tables[0].Rows[0].Address3k;
+                    
+                    document.getElementById("chkRemGarnish").value   = (ds.Tables[0].Rows[0].Garnish == true) ? "on" : "off";
+                    document.getElementById("chkRemGarnish").checked = (ds.Tables[0].Rows[0].Garnish == true) ? true : false;
+                    
+                    document.getElementById("chkRemWebRemitter").value   = (ds.Tables[0].Rows[0].isWebRemitter == true) ? "on" : "off";
+                    document.getElementById("chkRemWebRemitter").checked = (ds.Tables[0].Rows[0].isWebRemitter == true) ? true : false;
+                    
+                    document.getElementById("chkRemPhoneRemitter").value   = (ds.Tables[0].Rows[0].isPhoneRemitter == true) ? "on" : "off";
+                    document.getElementById("chkRemPhoneRemitter").checked = (ds.Tables[0].Rows[0].isPhoneRemitter == true) ? true : false;
+                    
+                    document.getElementById("txtRemOldID").value = ds.Tables[0].Rows[0].Remitter_Inputed_ID;
+                    document.getElementById("txtRemReferredBy").value = ds.Tables[0].Rows[0].RemReferredBy;
+                    
+                    this.generic.to_clear_null("txtRemLName~txtRemFName~txtRemMName~txtRemBDate~txtRemBPlace~txtRemAddress1~txtRemAddress2~txtRemTelNo~txtRemPOBox~txtRemDistrict~txtRemCity~txtRemState~txtRemRegion");
+                    this.generic.to_clear_null("txtRemMobileNo~txtRemEmailAdd~txtRemCompany~txtRemZip~txtRemDetDesc~txtRemAnnualSal~txtRemFCCustId1");
+                    this.generic.to_clear_null("txtRemMobileNo~txtRemEmailAdd~txtRemCompany~ddRemIDType1~txtRemIDNo1~txtRemIDNo2~txtRemZip~txtRemDetDesc~txtRemAnnualSal~txtRemIDExpDate~txtRemIDExpDate2~txtAddress3k~ddRemVIPType~ddRemBVIPType");
+                    this.generic.to_clear_null("txtRemAddress1_Com~txtRemAddress2_Com~txtRemPOBox_Com~txtRemDistrict_Com~txtRemCity_Com~txtRemState_Com~txtRemRegion_Com~txtRemZip_Com");
+                    this.generic.to_clear_null("txtRemAddress1_Mail~txtRemAddress2_Mail~txtRemPOBox_Mail~txtRemDistrict_Mail~txtRemCity_Mail~txtRemState_Mail~txtRemRegion_Mail~txtRemZip_Mail~txtRemOldID~txtRemReferredBy");
+                    
+                    try{document.getElementById("txtRemLName").focus()}catch(e){};
+                }
+                
+                Internet_Remitter.isSameAsRem = ds.Tables[0].Rows[0].isSameAsRem;
+
+                
+                document.getElementById("btnAddBene").disabled = false;           
+            }
+        }
+	}
+	
+    this.set_plist = function()
+	{
+	    if(this.MobileNo == '') this.MobileNo = '0';
+	    if(this.TelNo == '')    this.TelNo    = '0';
+	    
+	    var plist = '';
+	    
+	    plist += "CIFType~" + this.CIFType + '|';
+	    plist += "CIFClass~1|";
+	    plist += "IRSWorldSystem~1|";
+	    plist += "Remarks~Internet Remitter|";	    
+	    plist += "PreferredNo~" + ((this.PreferredContact == '7') ? "True^False" : "False^True") + "|";
+	    plist += "BranchCode~" + this.BranchCode + '|';
+	    
+	    
+	    plist += "ContactNo~"  + this.MobileNo + '^' + this.TelNo + '|'; 	    
+	    
+	    if(this.Lastname != '')	     plist += "LastName~"     + this.Lastname + '|';
+	    if(this.Firstname != '')	 plist += "FirstName~"    + this.Firstname + '|';
+	    if(this.Age != '')	         plist += "Age~"          + this.Age + '|';
+	    if(this.Birthplace != '')	 plist += "BirthPlace~"   + this.Birthplace + '|';
+	    if(this.Birthdate != '')	 plist += "BirthDate~"    + this.Birthdate + '|';	    
+	    if(this.Middlename != '')	 plist += "MiddleName~"   + this.Middlename + '|';
+	    if(this.Alias != '')	     plist += "Alias~"        + this.Alias + '|';
+	    	    
+	    // FOR HOME ADDRESS	    
+	    plist += "Address1~"     + this.Address1 + '|';
+	    plist += "Address2~"     + this.Address2 + '|';
+	    plist += "POBox~"        + this.POBox + '|';	    
+	    plist += "Address3~"     + this.Address3 + '|';
+	    plist += "Address4~"     + this.Address4 + '|';
+	    plist += "Address5~"     + this.Address5 + '|';
+	    plist += "Address6~"     + this.Address6 + '|';
+	    plist += "CountryCode~"  + this.CountryCode + '|';
+	    plist += "PreferredMailAdd~" + this.PreferredMailAdd + '|';
+	    plist += 'ZipCode~|';
+	    plist += "RemZip1Code~"      + this.RemZip1Code + '|';
+	    if(this.AddressType != '' && this.AddressType != 'null')        plist += "AddressType~"  + this.AddressType + '|';
+	    if(this.AddSeqID != '' && this.AddSeqID != 'null' && this.AddSeqID != null)        plist += "AddSeqID~"  + this.AddSeqID + '|';
+	    	    
+	    // FOR COMPANY ADDRESS
+	    plist += "Address1_Com~"     + this.Address1_Com + '|';
+	    plist += "Address2_Com~"     + this.Address2_Com + '|';
+	    plist += "POBox_Com~"        + this.POBox_Com + '|';	    
+	    plist += "Address3_Com~"     + this.Address3_Com + '|';
+	    plist += "Address4_Com~"     + this.Address4_Com + '|';
+	    plist += "Address5_Com~"     + this.Address5_Com + '|';
+	    plist += "Address6_Com~"     + this.Address6_Com + '|';
+	    plist += "CountryCode_Com~"  + this.CountryCode_Com + '|';
+	    plist += "PreferredMailAdd_Com~" + this.PreferredMailAdd_Com + '|';	    
+	    plist += 'ZipCode_Com~|';
+	    plist += "RemZip1Code_Com~"      + this.RemZip1Code_Com + '|';
+	    if(this.AddressType_Com != '' && this.AddressType_Com != 'null')        plist += "AddressType_Com~"  + this.AddressType_Com + '|';
+	    if(this.AddSeqID_Com != '' && this.AddSeqID_Com != 'null' && this.AddSeqID_Com != null)        plist += "AddSeqID_Com~"  + this.AddSeqID_Com + '|';
+	    
+	    // FOR MAIL ADDRESS
+	    plist += "Address1_Mail~"     + this.Address1_Mail+ '|';
+	    plist += "Address2_Mail~"     + this.Address2_Mail + '|';
+	    plist += "POBox_Mail~"        + this.POBox_Mail + '|';	    
+	    plist += "Address3_Mail~"     + this.Address3_Mail + '|';
+	    plist += "Address4_Mail~"     + this.Address4_Mail + '|';
+	    plist += "Address5_Mail~"     + this.Address5_Mail + '|';
+	    plist += "Address6_Mail~"     + this.Address6_Mail + '|';
+	    plist += "CountryCode_Mail~"  + this.CountryCode_Mail + '|';
+	    plist += "PreferredMailAdd_Mail~" + this.PreferredMailAdd_Mail + '|';
+	    plist += 'ZipCode_Mail~|';
+	    plist += "RemZip1Code_Mail~"      + this.RemZip1Code_Mail + '|';
+	    if(this.AddressType_Mail != '' && this.AddressType_Mail != 'null')        plist += "AddressType_Mail~"  + this.AddressType_Mail + '|';
+	    if(this.AddSeqID_Mail != '' && this.AddSeqID_Mail != 'null' && this.AddSeqID_Mail != null)        plist += "AddSeqID_Mail~"  + this.AddSeqID_Mail + '|';
+	    	    
+	    if(this.Email != '')	     plist += "EmailAddress~" + this.Email + '|';
+	    if(this.Company != '')	     plist += "Employer~"     + this.Company + '|';
+	    if(this.RemIDNo != '')	     plist += "IDNo~"         + this.RemIDNo + '|';
+	    if(this.RemIDNo2 != '')	     plist += "IDNo2~"        + this.RemIDNo2+ '|';	    
+	    if(this.CIFID != '')	     plist += "CIFID~"        + this.CIFID + '|';
+	    if(this.IDExpDate != '')	     plist += "IDExpiryDate~"  + this.IDExpDate + '|';
+	    if(this.IDExpDate2 != '')	     plist += "IDExpiryDate2~" + this.IDExpDate2 + '|';
+	    if(this.DetailedDesc != 'null')  plist += "DetailedDesc~"  + this.DetailedDesc + '|';
+	    if(this.AnnualSalary != '')	     plist += "Salary~"        + this.AnnualSalary + '|';	    
+	    if(this.WorkerType != ''  && this.WorkerType != 'null')	        plist += "WorkerType~"   + this.WorkerType + '|';
+	    if(this.Occupation != ''  && this.Occupation != 'null')         plist += "Occupation~"   + this.Occupation + '|';
+	    if(this.SalCurrency != '' && this.SalCurrency != 'null')        plist += "OccCurrency~"  + this.SalCurrency + '|';
+	    if(this.Address3k != ''  && this.Address3k != 'null')	        plist += "Address3k~"   + this.Address3k + '|';
+	    
+	    if(this.IDType != ''      && this.IDType != 'null')	            plist += "IDType~"       + this.IDType + '|';
+	    if(this.IDType2 != ''     && this.IDType2 != 'null')	        plist += "IDType2~"      + this.IDType2 + '|';	    	    
+	    if(this.RemIDNo != ''    && this.RemIDNo != 'null')    	        plist += "VisaType~"     + this.VisaType + '|';
+	    if(this.RemIDNo2 != ''   && this.RemIDNo2 != 'null')   	        plist += "VisaType2~"    + this.VisaType2 + '|';
+	    if(this.IDClassification != ''    && this.IDClassification != 'null')	        plist += "IDClassification~"     + this.IDClassification + '|';
+	    if(this.IDClassification2 != ''   && this.IDClassification2 != 'null')	        plist += "IDClassification2~"    + this.IDClassification2 + '|';
+	    
+	    if(this.RiskRating != ''  && this.RiskRating != 'null')	        plist += "RiskRating~"   + this.RiskRating + '|';
+	    if(this.ChargeType != ''  && this.ChargeType != 'null')	        plist += "ChargeType~"   + this.ChargeType + '|';
+	    if(this.SourceOfFunds != ''  && this.SourceOfFunds != 'null')	plist += "SourceOfFunds~"+ this.SourceOfFunds + '|';	    
+	    	    
+	    if(this.VIPType != '' && this.VIPType != 'null'){ plist += "VIPType~"+ this.VIPType + '|';}
+	    else { plist += "VIPType~|";}
+
+        plist += "Garnish~" + this.Garnish + '|';
+        plist += "isWebRemitter~" + this.isWebRemitter + '|';
+        plist += "isPhoneRemitter~" + this.isPhoneRemitter + '|';
+
+        plist += "Remitter_Inputed_ID~" + this.RemOldID + '|';
+        plist += "RemReferredBy~" + this.RemReferredBy + '|'; 
+	    return plist.substring(0, plist.length-1);
+	}
+
+	this.ClearAnnualSalary = function()
+	{
+	    var source = document.getElementById('ddRemSourceOfFunds').value;
+	    if(source == '' | source == undefined | source == 'null' | source == null)
+	    {
+	        document.getElementById('txtRemAnnualSal').value = '0.00';
+	    }
+	}
+	
+	this.set_record = function()
+	{
+	    this.generic = new generic_method();
+	    
+	    this.CIFID      = ''; 
+	    this.CIFClass   = '1';
+	    this.CreatedBy  = document.getElementById("txtHiddenUserID").value;
+	    if (this.insert_flag == true)
+        {    
+            this.BranchCode = document.getElementById("txtHiddenUserLoc").value;
+        }
+        this.CIFType    = ciftype_r;
+	        
+	    if(ciftype_r == 2)/*business type*/
+	    {
+	        this.Lastname   = document.getElementById("txtRemBusinessName").value;
+	        this.Firstname  = document.getElementById("txtRemShortName").value;
+	        this.Middlename = document.getElementById("txtRemBBusType").value;
+	        this.Alias      = document.getElementById("txtRemBAlias").value;
+	        
+	        // FOR HOME ADDRESS
+	        this.Address1   = document.getElementById("txtRemBAddress1").value;
+	        this.Address2   = document.getElementById("txtRemBAddress2").value;
+	        this.POBox      = document.getElementById("txtRemBPOBox").value;
+	        this.Address3   = document.getElementById("txtRemBDistrict").value;
+	        this.Address4   = document.getElementById("txtRemBCity").value;
+	        this.Address5   = document.getElementById("txtRemBState").value;
+	        this.Address6   = document.getElementById("txtRemBRegion").value;
+	        this.CountryCode    = document.getElementById("ddRemBCountry").value;
+	        this.PreferredMailAdd = document.getElementById("chkRemBPrefMailAdd").checked;
+	        this.AddressType= "2" // always 2 for Home--document.getElementById("ddRemBAddressType").value;
+	        this.ZipCode    = this.generic.to_trim(document.getElementById("txtHiddenZip").value);
+	        this.RemZip1Code = document.getElementById("txtRemBZip").value;
+	        
+	        // FOR COMPANY ADDRESS
+	        this.Address1_Com   = document.getElementById("txtRemBAddress1_Com").value;
+	        this.Address2_Com   = document.getElementById("txtRemBAddress2_Com").value;
+	        this.POBox_Com      = document.getElementById("txtRemBPOBox_Com").value;
+	        this.Address3_Com   = document.getElementById("txtRemBDistrict_Com").value;
+	        this.Address4_Com   = document.getElementById("txtRemBCity_Com").value;
+	        this.Address5_Com   = document.getElementById("txtRemBState_Com").value;
+	        this.Address6_Com   = document.getElementById("txtRemBRegion_Com").value;
+	        this.CountryCode_Com    = document.getElementById("ddRemBCountry_Com").value;
+	        this.PreferredMailAdd_Com = document.getElementById("chkRemBPrefMailAdd_Com").checked;
+	        this.AddressType_Com= "1" // always 1 for Company--document.getElementById("ddRemBAddressType_Com").value;
+	        //this.ZipCode_Com    = this.generic.to_trim(document.getElementById("txtHiddenZip_Com").value);
+	        this.RemZip1Code_Com = document.getElementById("txtRemBZip_Com").value;
+	        
+	        // FOR MAILING ADDRESS
+	        this.Address1_Mail   = document.getElementById("txtRemBAddress1_Mail").value;
+	        this.Address2_Mail   = document.getElementById("txtRemBAddress2_Mail").value;
+	        this.POBox_Mail      = document.getElementById("txtRemBPOBox_Mail").value;
+	        this.Address3_Mail   = document.getElementById("txtRemBDistrict_Mail").value;
+	        this.Address4_Mail   = document.getElementById("txtRemBCity_Mail").value;
+	        this.Address5_Mail   = document.getElementById("txtRemBState_Mail").value;
+	        this.Address6_Mail   = document.getElementById("txtRemBRegion_Mail").value;
+	        this.CountryCode_Mail    = document.getElementById("ddRemBCountry_Mail").value;
+	        this.PreferredMailAdd_Mail = document.getElementById("chkRemBPrefMailAdd_Mail").checked;
+	        this.AddressType_Mail= "3" // always 3 for Mail--document.getElementById("ddRemBAddressType_Mail").value;
+	        //this.ZipCode_Mail    = this.generic.to_trim(document.getElementById("txtHiddenZip_Mail").value);
+	        this.RemZip1Code_Mail = document.getElementById("txtRemBZip_Mail").value;
+	        
+	        this.TelNo      = document.getElementById("txtRemBTelNo").value;
+	        this.MobileNo   = document.getElementById("txtRemBMobileNo").value;
+	        this.Email      = document.getElementById("txtRemBEmailAdd").value;
+	        this.IDType     = document.getElementById("ddRemBIDType").value;
+	        this.IDType2    = document.getElementById("ddRemBIDType2").value;
+	        this.RemIDNo    = document.getElementById("txtRemBIDNo").value;
+	        this.RemIDNo2   = document.getElementById("txtRemBIDNo2").value;
+	        this.SameAsRem  = document.getElementById("chkSameAsRem2").value;
+	        this.Age        = '';
+	        this.Birthdate  = '';
+	        this.Birthplace = '';
+	        this.Company    = ''
+	        this.Occupation = 'null';	    
+	        this.RiskRating = document.getElementById("ddRemBRiskRating").value;
+	        this.IDExpDate  = document.getElementById("txtRemBIDExpDate").value;
+	        this.VisaType   = this.get_visa_type("ddRemBIDType");
+	        this.IDExpDate2 = document.getElementById("txtRemBIDExpDate2").value;
+	        this.VisaType2  = document.getElementById("ddRemBVisaType2").value;
+	        this.IDClassification  = document.getElementById("ddRemBIDClassification").value;
+	        this.IDClassification2 = document.getElementById("ddRemBIDClassification2").value;
+	        this.ChargeType = document.getElementById("txtHiddenChargeType").value;
+	        this.PreferredContact = document.getElementById("ddBusRemPrefContact").value;
+	        this.VIPType = document.getElementById("ddRemBVIPType").value;
+	        this.Garnish = document.getElementById("chkRemBGarnish").checked;
+	        this.isWebRemitter = document.getElementById("chkRemBWebRemitter").checked;
+	        this.isPhoneRemitter = document.getElementById("chkRemBPhoneRemitter").checked;
+            this.RemOldID = document.getElementById("txtRemBOldID").value;
+            this.RemReferredBy = document.getElementById("txtRemBReferredBy").value;
+
+	    }
+	    else /*individual*/
+	    {   
+            this.Lastname   = document.getElementById("txtRemLName").value;
+	        this.Firstname  = document.getElementById("txtRemFName").value;
+	        this.Middlename = document.getElementById("txtRemMName").value;
+	        this.Birthdate  = document.getElementById("txtRemBDate").value;
+	        this.Age        = document.getElementById("txtHiddenRemAge").value;
+	        this.Birthplace = document.getElementById("txtRemBPlace").value;
+	        
+	        // FOR HOME ADDRESS	        
+	        this.Address1   = document.getElementById("txtRemAddress1").value;
+	        this.Address2   = document.getElementById("txtRemAddress2").value;
+	        this.POBox      = document.getElementById("txtRemPOBox").value;	        
+	        this.Address3   = document.getElementById("txtRemDistrict").value;
+	        this.Address4   = document.getElementById("txtRemCity").value;
+	        this.Address5   = document.getElementById("txtRemState").value;
+	        this.Address6   = document.getElementById("txtRemRegion").value;
+	        this.CountryCode    = document.getElementById("ddRemCountry").value;
+	        this.PreferredMailAdd = document.getElementById("chkRemPrefMailAdd").checked;
+	        this.AddressType= "2" //Always 1 from Home--document.getElementById("ddRemAddressType").value;
+	        this.ZipCode    = this.generic.to_trim(document.getElementById("txtHiddenZip").value);
+	        this.RemZip1Code = document.getElementById("txtRemZip").value;
+	        
+	        // FOR COMPANY ADDRESS
+	        this.Address1_Com   = document.getElementById("txtRemAddress1_Com").value;
+	        this.Address2_Com   = document.getElementById("txtRemAddress2_Com").value;
+	        this.POBox_Com      = document.getElementById("txtRemPOBox_Com").value;	        
+	        this.Address3_Com   = document.getElementById("txtRemDistrict_Com").value;
+	        this.Address4_Com   = document.getElementById("txtRemCity_Com").value;
+	        this.Address5_Com   = document.getElementById("txtRemState_Com").value;
+	        this.Address6_Com   = document.getElementById("txtRemRegion_Com").value;
+	        this.CountryCode_Com    = document.getElementById("ddRemCountry_Com").value;
+	        this.PreferredMailAdd_Com = document.getElementById("chkRemPrefMailAdd_Com").checked;
+	        this.AddressType_Com= "1" //Always 1 from Home--document.getElementById("ddRemAddressType").value;
+	        //this.ZipCode_Com    = this.generic.to_trim(document.getElementById("txtHiddenZip_Com").value);
+	        this.RemZip1Code_Com = document.getElementById("txtRemZip_Com").value;
+	        	        
+	        // FOR MAILING ADDRESS
+	        this.Address1_Mail   = document.getElementById("txtRemAddress1_Mail").value;
+	        this.Address2_Mail   = document.getElementById("txtRemAddress2_Mail").value;
+	        this.POBox_Mail      = document.getElementById("txtRemPOBox_Mail").value;	        
+	        this.Address3_Mail   = document.getElementById("txtRemDistrict_Mail").value;
+	        this.Address4_Mail   = document.getElementById("txtRemCity_Mail").value;
+	        this.Address5_Mail   = document.getElementById("txtRemState_Mail").value;
+	        this.Address6_Mail   = document.getElementById("txtRemRegion_Mail").value;
+	        this.CountryCode_Mail    = document.getElementById("ddRemCountry_Mail").value;
+	        this.PreferredMailAdd_Mail = document.getElementById("chkRemPrefMailAdd_Mail").checked;
+	        this.AddressType_Mail= "3" //Always 1 from Home--document.getElementById("ddRemAddressType").value;
+	        //this.ZipCode_Mail    = this.generic.to_trim(document.getElementById("txtHiddenZip_Mail").value);
+	        this.RemZip1Code_Mail = document.getElementById("txtRemZip_Mail").value;
+	        
+	        this.TelNo      = document.getElementById("txtRemTelNo").value;
+	        this.MobileNo   = document.getElementById("txtRemMobileNo").value;
+	        this.Email      = document.getElementById("txtRemEmailAdd").value;
+	        this.Company    = document.getElementById("txtRemCompany").value;
+	        this.Occupation = document.getElementById("ddRemOccupation").value;
+	        this.RemIDNo    = document.getElementById("txtRemIDNo1").value;
+	        this.RemIDNo2   = document.getElementById("txtRemIDNo2").value;
+	        this.IDType2    = document.getElementById("ddRemIDType2").value;
+	        this.IDType     = document.getElementById("ddRemIDType1").value;
+	        this.SameAsRem  = document.getElementById("chkSameAsRem").value;	
+	        this.Alias      = '';    
+	        this.IDExpDate    = document.getElementById("txtRemIDExpDate").value;
+	        this.IDExpDate2   = document.getElementById("txtRemIDExpDate2").value;
+            this.DetailedDesc = document.getElementById("txtRemDetDesc").value;	 
+            this.WorkerType   = document.getElementById("ddRemWorkerType").value;	 
+            this.AnnualSalary = document.getElementById("txtRemAnnualSal").value;	 
+            this.SalCurrency  = document.getElementById("ddRemSalCurr").value;	
+            this.VisaType     = this.get_visa_type("ddRemIDType1");
+            this.VisaType2    = this.get_visa_type("ddRemIDType2");
+            this.RiskRating   = document.getElementById("ddRemRiskRating").value;
+            this.ChargeType   = document.getElementById("txtHiddenChargeType").value;
+            this.SourceOfFunds= document.getElementById("ddRemSourceOfFunds").value;
+            this.IDClassification  = document.getElementById("ddRemIDClassification1").value;
+	        this.IDClassification2 = document.getElementById("ddRemIDClassification2").value;
+	        this.PreferredContact = document.getElementById("ddRemPrefContact").value;
+	        this.Address3k      =   document.getElementById("txtAddress3k").value;
+	        this.VIPType      = document.getElementById("ddRemVIPType").value;
+	        this.Garnish = document.getElementById("chkRemGarnish").checked;
+	        this.isWebRemitter = document.getElementById("chkRemWebRemitter").checked;
+	        this.isPhoneRemitter = document.getElementById("chkRemPhoneRemitter").checked;
+            this.RemOldID = document.getElementById("txtRemOldID").value;
+            this.RemReferredBy = document.getElementById("txtRemReferredBy").value;
+
+	    }
+	    
+	    if (document.getElementById("txtHiddenRemCIFID").value != '')
+	    {
+	        this.CIFID = document.getElementById("txtHiddenRemCIFID").value;
+	    }
+	    else if(document.getElementById("txtHiddenSearchCIFID").value != '')
+	    {
+	        this.CIFID = document.getElementById("txtHiddenSearchCIFID").value;
+	    }	 
+
+	    return this.set_plist();
+	 }
+
+	this.get_visa_type = function(idtype)
+	{
+	    var visatype      = '';
+	    var RemIDType     = Number(document.getElementById("ddRemIDType1").value);
+	    var RemIDType2    = Number(document.getElementById("ddRemIDType2").value);
+	    var RemBIDType    = Number(document.getElementById("ddRemBIDType").value);
+	    var RemBIDType2   = Number(document.getElementById("ddRemBIDType2").value);
+	    
+	    var RemVisaType   = document.getElementById("ddRemVisaType1").value;
+	    var RemVisaType2  = document.getElementById("ddRemVisaType2").value;
+	    var RemBVisaType  = document.getElementById("ddRemBVisaType").value;
+	    var RemBVisaType2 = document.getElementById("ddRemBVisaType2").value;
+	    
+	    switch(idtype)
+	    {
+	        case "ddRemIDType1":
+	        {
+	            if(RemIDType == 4) visatype = RemVisaType; break;
+	        }
+	        case "ddRemIDType2":
+	        {
+	            if(RemIDType2 == 4) visatype = RemVisaType2; break;
+	        }
+	        case "ddRemBIDType":
+	        {
+	            if(RemBIDType == 4) visatype = RemBVisaType; break;
+	        }
+	        case "ddRemBIDType2":
+	        {
+	            if(RemBIDType2 == 4) visatype = RemBVisaType2; break;
+	        }
+	        default: break;
+	    }
+	    return visatype;
+	}
+
+	this.push_data_to_server = function()    
+	{    
+		var data_row = new Array();
+			 
+		data_row[data_row.length] = "CIFClass~2";
+		data_row[data_row.length] = "Lastname~"         + this.Lastname;
+		data_row[data_row.length] = "Firstname~"        + this.Firstname;
+		data_row[data_row.length] = "Middlename~"       + this.Middlename;
+		data_row[data_row.length] = "Age~"              + this.Age;
+		data_row[data_row.length] = "Birthdate~"        + this.Birthdate;
+		data_row[data_row.length] = "ContactNo~"        + this.ContactNo;
+		data_row[data_row.length] = "Email~"            + this.Email;
+		data_row[data_row.length] = "Address1~"         + this.Address1;
+		data_row[data_row.length] = "Address2~"         + this.Address2;
+		data_row[data_row.length] = "Address3~"         + this.Address3;
+		data_row[data_row.length] = "Address4~"         + this.Address4;
+		data_row[data_row.length] = "Address5~"         + this.Address5;
+		data_row[data_row.length] = "Address6~"         + this.Address6;
+		data_row[data_row.length] = "CountryCode~"      + this.CountryCode;
+		data_row[data_row.length] = "POBox~"            + this.POBox;
+		data_row[data_row.length] = "ZipCode~"          + this.ZipCode;
+		data_row[data_row.length] = "RemZip1Code~"       + this.RemZip1Code;
+		data_row[data_row.length] = "BankCode~"         + this.BankName;
+		data_row[data_row.length] = "BranchCode~"       + this.BranchName;   
+		data_row[data_row.length] = "AccountNo~"        + this.AccountNo;     
+		data_row[data_row.length] = "AccountCurrency~"  + this.AccountCurrency;   
+		data_row[data_row.length] = "AccountType~"      + this.AccountType;   
+		data_row[data_row.length] = "ProductCode~"      + this.ProductCode; 
+		data_row[data_row.length] = "CreatedBy~"        + this.CreatedBy;
+		data_row[data_row.length] = "RemitterCIFID~"    + this.RemitterCIFID; 
+		data_row[data_row.length] = "DetailedDesc~"     + this.DetailedDesc;   
+		data_row[data_row.length] = "WorkerType~"       + this.WorkerType; 
+		data_row[data_row.length] = "Salary~"           + this.AnnualSalary;
+		data_row[data_row.length] = "SalaryCurrency~"   + this.SalCurrency;
+		
+		return data_row.join("|");       
+	}	 
+	 
+	this.InternetRem_Sidebar_class = null;        
+	
+	this.update_record = function()
+    {
+        this.update_flag = true;
+        this.SEQ_ID = IRSWorld.Internet.InternetAddBeneficiary.INTERNET_REMITTER_SEQ_ID().value;
+        IRSWorld.Internet.InternetAddBeneficiary.update_record(this.SEQ_ID, this.update_record_callback);
+    }
+    
+    this.update_record_callback = function(result)
+    {
+        if (result.error != null && result.error != "undefined")
+        {
+            this.set_message("UNABLE TO UPDATE RECORD. " + result.error); return; 
+        }
+        
+        if (result != null && result.value != "undefined")
+        {        
+            if (result.value == false)
+            {                
+                var msg = cifmain.read_message();
+                   
+                if (msg != null && msg.value != "undefined")
+                {
+                    alert(msg.value); return;
+                }
+            }
+            
+            this.commons = new common_method();
+            this.commons = null;
+        }        
+    }	
+	
+	this.search_bank = function()
+	{
+	    this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_internet_search_bank~";                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+	}
+    
+	this.compute_age = function(cifclass)
+    {
+        this.generic = new generic_method();
+        
+        if(cifclass == 1)
+        {
+            document.getElementById("txtHiddenRemAge").value = this.generic.compute_age(document.getElementById("txtRemBDate").value);    
+        }       
+        else
+        {
+            document.getElementById("txtHiddenBeneAge").value = this.generic.compute_age(document.getElementById("txtBeneBDate").value);    
+        }
+    }
+    
+    this.save_mode_rem = function()
+    {
+        document.getElementById("btnAddRem").disabled    = true;
+        document.getElementById("btnEditRem").disabled   = true;
+        document.getElementById("btnSaveRem").disabled   = false;
+        document.getElementById("btnCancelRem").disabled = false;
+    }
+      
+    this.add_mode_rem = function()
+    {
+        document.getElementById("btnAddRem").disabled    = false;
+        document.getElementById("btnEditRem").disabled    = false;
+        document.getElementById("btnSaveRem").disabled   = true;
+        document.getElementById("btnCancelRem").disabled = true;
+    }
+    
+    this.btn_cancel_rem = function()
+    {
+        this.clear_screen();
+        this.disable_field(true);
+        this.color_asterisks();
+        this.add_mode_rem();
+    }
+    
+    this.add_remitter = function()
+    {
+        Internet_Remitter_Main.check_session();
+        document.getElementById("txtHiddenRemCIFID").value = '';
+        document.getElementById("txtHiddenSearchCIFID").value = '';
+        
+        this.clear_screen();   
+        this.disable_field(false);
+        this.color_asterisks();
+        this.save_mode_rem();
+        this.insert_flag = true; 
+        document.getElementById("ddCIFType").value = 1;
+        this.set_branchdef_values(); /*get branch defaults*/  
+        this.set_contact_def_values();
+    }
+    
+    this.set_contact_def_values = function()
+    {
+        var contacts = "txtRemTelNo~txtRemMobileNo~txtRemBTelNo~txtRemBMobileNo";        
+        var conts = contacts.split("~");
+        var i=0;        
+        
+        while (i < conts.length) /*while loop naman, lagi na lng for loop eh*/
+        {
+            document.getElementById(conts[i]).value = '0';
+            i++;
+        }        
+    }   
+    
+    this.set_branchdef_values = function()
+    {
+        var ds = IRSWorld.Internet.InternetAddBeneficiary.get_branchdef_values(document.getElementById("txtHiddenUserLoc").value).value;
+        
+        if(ds != null && ds.Tables[0].Rows.length > 0)
+        {
+            this.commons = new common_method();
+            
+            if(document.getElementById("ddCIFType").value == 1)
+            {
+                document.getElementById("ddRemWorkerType").value = ds.Tables[0].Rows[0].WorkerType;
+                document.getElementById("ddRemOccupation").value = ds.Tables[0].Rows[0].Occupation;
+                document.getElementById("ddRemRiskRating").value = ds.Tables[0].Rows[0].RiskRating;
+            }
+            else
+            {
+                document.getElementById("ddRemBRiskRating").value = ds.Tables[0].Rows[0].RiskRating;
+            }
+            this.commons = null;
+        }
+    }
+    
+    this.edit_remitter = function()
+    {
+        Internet_Remitter_Main.check_session();
+        if(Internet_Remitter_Main.check_gfc_user(document.getElementById("txtHiddenRemCIFID").value))
+        {
+            this.disable_field(false);
+            this.color_asterisks();
+            this.save_mode_rem();
+            this.insert_flag = false;
+            Internet_Remitter_Main.show_vtype_from_edit();
+            
+        }        
+    }
+    
+    this.make_client_as_bene = function(cifid)
+	{   
+        plist = "CIFClass~2|CIFID~" + cifid;
+        IRSWorld.Internet.InternetAddBeneficiary.add_cclass(plist);
+	}	
+	this.add_bene_address = function(cifid)
+	{
+	    plist = "";
+	    plist += "CIFID~" + cifid + "|";
+        plist += "PreferredMailAdd~" + this.PreferredMailAdd + '|';
+        plist += "CIFClass~2|";
+        if(this.POBox != '')	     plist += "POBox~"        + this.POBox + '|';
+        if(this.Address1 != '')	     plist += "Address1~"     + this.Address1 + '|';
+        if(this.Address2 != '')	     plist += "Address2~"     + this.Address2 + '|';
+        if(this.ZipCode != '')	     plist += "ZipCode~"      + this.ZipCode + '|';
+        if(this.AddressType != '' && this.AddressType != 'null')        plist += "AddressType~"  + this.AddressType + '|';
+        
+        plist = plist.substring(0, plist.length-1);
+                	    
+	    IRSWorld.Internet.InternetAddBeneficiary.add_bene_address(plist);
+	}
+	this.save_rem_as_his_bene = function(cifid)
+	{
+	    plist = "CIFID~" + cifid + "|RemitterCIFID~" + cifid;
+        IRSWorld.Internet.InternetAddBeneficiary.add_bene(plist).value;	        
+	}
+	
+	this.btn_save_remitter = function()
+	{   
+	    Internet_Remitter_Main.check_session();
+	    if(Internet_Remitter_Main.check_mandatory_fields() == true)
+	    {
+	        if (this.validate_input() == true)
+	        {   
+	            if(ciftype_r == 2)/*business type*/
+	            {
+	                Internet_Remitter_Main.check_and_get_hitlist(document.getElementById("txtRemShortName").value, document.getElementById("txtRemBusinessName").value, document.getElementById("txtRemBBusType").value, 1);	        
+	            }
+	            else
+	            {
+	                Internet_Remitter_Main.check_and_get_hitlist(document.getElementById("txtRemFName").value, document.getElementById("txtRemLName").value, document.getElementById("txtRemMName").value, 1);	        
+	            }
+	        }
+	    }	    	    
+	}
+	
+	this.save_remitter = function()
+	{
+        if (this.check_id_details() == true)
+        {
+            if(this.insert_flag == true)
+            {
+                IRSWorld.Internet.InternetAddBeneficiary.enroll_agent(this.set_record(),this.btn_save_remitter_callback);
+            }
+            else
+            {
+                IRSWorld.Internet.InternetAddBeneficiary.update_agent(this.set_record(),this.btn_save_remitter_callback);
+	            
+                if(this.set_bene_as_rem == true)
+                {
+                    var get_bene = IRSWorld.Internet.InternetAddBeneficiary.get_cifclass_count(document.getElementById("txtHiddenSearchSeqId").value, 2).value;
+                    if(get_bene < 1)
+                    {
+                        this.make_client_as_bene(document.getElementById("txtHiddenSearchCIFID").value);        
+                    }
+                }	            
+            }
+            this.disable_field(true);	
+            this.color_asterisks();        
+            this.add_mode_rem();   
+            Internet_Remitter_Main.disable_cif_type(true);	                	            
+        }	
+	}
+	
+	this.check_id_details = function()
+	{
+	    var ID1_Exists = false;
+	    var ID2_Exists = false;
+	    
+	    var ID1_Name = null;
+	    var ID2_Name = null;
+	    
+	    var s_idno = '';
+	    var s_idtypes = ''; 
+	    
+    
+        var remCIF  =   document.getElementById('txtHiddenRemCIFID').value;
+        remCIF = ((remCIF != null && remCIF != '' && remCIF != 'null' && remCIF != undefined) ? remCIF : "");	    
+	    
+	    if (ciftype_r == 1) // individual
+	    {
+	        // check individual ID 1
+	        if (document.getElementById('txtRemIDNo1').value != null && document.getElementById('txtRemIDNo1').value != '' && document.getElementById('ddRemIDType1').value != null && document.getElementById('ddRemIDType1').value != '')
+	        {
+	            s_idno += document.getElementById('txtRemIDNo1').value;
+	            s_idtypes += document.getElementById('ddRemIDType1').value;
+	        }
+	        s_idno += '~';
+	        s_idtypes += '~';
+	        // check individual ID 2
+	        if (document.getElementById('txtRemIDNo2').value != null && document.getElementById('txtRemIDNo2').value != '' && document.getElementById('ddRemIDType2').value != null && document.getElementById('ddRemIDType2').value != '')
+	        {
+	            s_idno += document.getElementById('txtRemIDNo2').value;
+	            s_idtypes += document.getElementById('ddRemIDType2').value;
+	        }
+	    }
+	    else
+	    {
+            // check business ID 1
+	        if (document.getElementById('txtRemBIDNo').value != null && document.getElementById('txtRemBIDNo').value != '' && document.getElementById('ddRemBIDType').value != null && document.getElementById('ddRemBIDType').value != '')
+	        {
+	            s_idno += document.getElementById('txtRemBIDNo').value;
+	            s_idtypes += document.getElementById('ddRemBIDType').value;
+	        }
+	        s_idno += '~';
+	        s_idtypes += '~';
+	        // check business ID 2
+	        if (document.getElementById('txtRemBIDNo2').value != null && document.getElementById('txtRemBIDNo2').value != '' && document.getElementById('ddRemBIDType2').value != null && document.getElementById('ddRemBIDType2').value != '')
+	        {
+	            s_idno += document.getElementById('txtRemBIDNo2').value;
+	            s_idtypes += document.getElementById('ddRemBIDType2').value;
+	        }   
+	    }
+	    
+        if (s_idno.length > 1 && s_idno != '~')
+        {
+            var dss = IRSWorld.Internet.InternetAddBeneficiary.get_id_details(s_idno, s_idtypes, remCIF).value;
+            if (dss != null)
+            {
+                if (dss[0] != null && dss[0].Tables[0].Rows.length > 0)
+                {
+                    ID1_Exists  =   true;
+                    ID1_Name    =   dss[0].Tables[0].Rows[0].ClientName.toString();
+                }
+                if (dss[1] != null && dss[1].Tables[0].Rows.length > 0)
+                {
+                    ID2_Exists  =   true;
+                    ID2_Name    =   dss[1].Tables[0].Rows[0].ClientName.toString();
+                }	            
+            }
+        }	        	    
+    
+	    var msg = "";
+	    if (ID1_Exists == true)
+	    {
+	        msg += "ID Description(1) and ID Number(1) already belong to \n\r" + ID1_Name + ". Do you want to proceed in adding ID Number(1)?\n\r";
+	    }
+	    if (ID2_Exists == true)
+	    {
+	        msg += "ID Description(2) and ID Number(2) already belong to \n\r" + ID2_Name + ". Do you want to proceed in adding ID Number(2)?";
+	    }
+	    
+	    if (ID1_Exists == true | ID2_Exists == true)
+	    {
+	        return confirm(msg);
+	    }
+	    else
+	    {
+	        return true;
+	    }
+	}
+	
+	this.btn_save_remitter_callback = function(result)
+	{
+	    if(result != null && result.value != null)
+	    {
+	        var ret_val = result.value;
+	        
+	        if(ret_val.length > 0 && ret_val.length <= 16)
+	        {
+	            document.getElementById("txtHiddenRemCIFID").value = ret_val;
+	            
+	            Internet_Remitter.set_rem_cifid(result.value);
+	            
+	            /* remitter and beneficiary are the same (same cifid)
+	                save in: 
+	                1. tbl_cif_master
+	                2. tbl_cif_class (1,2)
+	                3. tbl_cif_beneficiaries(remittercifid = cifid(benecifid))
+	             */
+	             var is_chkSameAsRem = false;
+	             if(ciftype_r == '1') is_chkSameAsRem = document.getElementById("chkSameAsRem").checked;
+	             else is_chkSameAsRem = document.getElementById("chkSameAsRem2").checked;
+	             
+	             if(is_chkSameAsRem == true)
+	             {
+	                Internet_Remitter.make_client_as_bene(document.getElementById("txtHiddenRemCIFID").value); 
+	                Internet_Remitter.save_rem_as_his_bene(document.getElementById("txtHiddenRemCIFID").value);
+	                Internet_Remitter.add_bene_address(document.getElementById("txtHiddenRemCIFID").value);
+	                
+	                if(fxn_isRemit == 'otc')      ret_otc = ret_val + '|' + ret_val;
+	                else if(fxn_isRemit == 'gfc') ret_gfc = ret_val + '|' + ret_val;
+                    else if(fxn_isRemit == 'obp') ret_obp = ret_val;
+	             }
+	             else
+	             {
+	                if(fxn_isRemit == 'otc')      ret_otc = ret_val;
+                    else if(fxn_isRemit == 'gfc') ret_gfc = ret_val;
+                    else if(fxn_isRemit == 'obp') ret_obp = ret_val;
+	             }
+	             
+	             //for soundex saving	             
+                 IRSWorld.Internet.InternetAddBeneficiary.save_soundexlist(ret_val, Internet_Remitter.Firstname, Internet_Remitter.Lastname, Internet_Remitter.Middlename, 1);
+                 
+                 Internet_Remitter.pull_server_client_data();
+            	 alert("REMITTER RECORD COMMITTED SUCCESSFULLY!");
+	        }
+	        else alert(ret_val + '\n' + "Please try again.");
+	    }
+	}
+	
+	this.set_rem_cifid = function(rem_cifid)
+	{
+	    Internet_Remitter.REMCIFID          = rem_cifid;     
+	    Internet_Beneficiary.REMCIFID       = rem_cifid;  
+	    Internet_Remitter_Main.REMCIFID     = rem_cifid;  
+	    Internet_Remitter_Products.REMCIFID = rem_cifid;
+	}
+	
+	this.clear_screen = function()
+    {
+        this.commons = new common_method();     
+        this.commons.to_clear_screen("tblRemInfo1");
+        this.commons.to_clear_screen("tblRemInfo2");
+        this.commons = null;
+    }
+	
+	this.color_asterisks = function()
+	{
+	    Internet_Remitter_Main.color_asterisk("tblRemInfo1");
+	    Internet_Remitter_Main.color_asterisk("tblRemInfo2");
+	}
+	
+	this.disable_field = function(isDisabled)
+	{
+		this.commons = new common_method();     
+		this.commons.to_read_only_2("tblRemInfo1", isDisabled);
+        this.commons.to_read_only_2("tblRemInfo2", isDisabled);
+        this.commons = null;
+       
+        document.getElementById("txtRemChargeType").readOnly = true;
+        document.getElementById("txtRemBChargeType").readOnly = true;
+                
+        document.getElementById("txtRemFCCustId1").readOnly = true;
+        document.getElementById("txtRemFCCustId2").readOnly = true;
+        
+        document.getElementById("chkSameAsRem").disabled = isDisabled;
+        document.getElementById("chkSameAsRem2").disabled = isDisabled;
+                 
+        if (isDisabled)
+        {
+            document.getElementById("trSameAsRem").style.display = 'none';
+            document.getElementById("trSameAsRem2").style.display = 'none';
+        }
+        else
+        {
+            if (this.isSameAsRem != null && this.isSameAsRem != 'null' && this.isSameAsRem == 1)
+            {
+                document.getElementById("trSameAsRem").style.display = 'none';
+                document.getElementById("trSameAsRem2").style.display = 'none';             
+            }
+            else            
+            {
+                document.getElementById("trSameAsRem").style.display = 'block';
+                document.getElementById("trSameAsRem2").style.display = 'block';                  
+            }
+        }
+                
+        if (isDisabled)
+        {
+            if (    
+                    document.getElementById('txtHiddenRemCIFID').value != null && 
+                    document.getElementById('txtHiddenRemCIFID').value != undefined &&
+                    document.getElementById('txtHiddenRemCIFID').value != "" &&
+                    Internet_Remitter_Main.check_cif_customer_id(document.getElementById("txtHiddenUserRole").value)
+                )
+            {
+                document.getElementById("btnFCRemCustID1").disabled    = false;
+                document.getElementById("btnFCRemCustID2").disabled    = false;      
+            }
+        }
+        else
+        {
+                document.getElementById("btnFCRemCustID1").disabled    = true;
+                document.getElementById("btnFCRemCustID2").disabled    = true;        
+        }
+        
+        document.getElementById('divRemSaveCIFtoFCLoading').style.display = 'none';
+	}	
+	
+	this.enable_field = function()
+	{
+		this.commons = new common_method();     
+        this.commons.to_read_only("tblRemInfo", false);
+        this.commons.to_read_only("tblBeneInfo", false);
+        this.commons = null;
+	}
+	
+	this.show_panel = function()
+	{
+	    var fullname     = document.getElementById("txtInternetRemitterFirstName").value + ' ' + document.getElementById("txtInternetRemitterMiddleName").value + ' ' + document.getElementById("txtInternetRemitterLastName").value;
+	    var address      = document.getElementById("txtInternetRemitterRoomNo").value + ' ' + document.getElementById("txtRemZip").value;
+	    var email_add    = document.getElementById("txtInternetRemitterEmail").value;
+	    var product_code = document.getElementById("ddProductCode")[document.getElementById("ddProductCode").selectedIndex].text;
+	    var account_no   = document.getElementById("txtAccountNo").value; 
+	    var currency     = document.getElementById("ddAccountCurrency")[document.getElementById("ddAccountCurrency").selectedIndex].text;
+	    var pnb_branch   = document.getElementById("ddBranchName")[document.getElementById("ddBranchName").selectedIndex].text;
+	    var other_bank   = document.getElementById("ddBankName")[document.getElementById("ddBankName").selectedIndex].text;
+	     	    
+        setText("lblInfoHeader", 'Beneficiary Information');
+        setText("lblClientName", 'Beneficiary Name:'); 
+        setText('spnBeneName', fullname);
+        setText('spnBeneAddress', address);
+        setText('spnBeneEmailAdd', email_add);
+        setText('spnBeneProductCode', product_code);
+        setText('spnBeneAccountNumber', account_no);
+        setText('spnBeneProductCurrency', currency);
+        setText('spnBenePNBBranch', pnb_branch);
+        setText('spnBeneOtherBank', other_bank);
+	    
+	    Internet_Remitter.load_grid_viewer();
+        showPanel('divBeneficiary');
+	}
+	
+	this.insert_to_cifcards = function(intben_cifid, carseqid, seqid)
+	{
+	    this.commons = new common_method();
+	    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_bencards(carseqid).value;
+	    var i_cifid = null;
+	    var cardclass = '';
+	    var cardcurr = '';
+	    var cardctry = '';
+	    
+	    if(ds != null && ds.Tables[0].Rows.length > 0)
+	    {
+	        if (ds.Tables[0].Rows[0].CardClass != null) cardclass = ds.Tables[0].Rows[0].CardClass;
+	        if (ds.Tables[0].Rows[0].Currency != null)  cardcurr = ds.Tables[0].Rows[0].Currency;
+	        if (ds.Tables[0].Rows[0].Country != null)   cardctry = ds.Tables[0].Rows[0].Country;
+	        
+	        i_cifid = IRSWorld.Internet.InternetAddBeneficiary.enroll_cards
+            (
+                document.getElementById("txtHiddenUserCIFID").value,
+                ds.Tables[0].Rows[0].CardNo,
+                ds.Tables[0].Rows[0].CardName,
+                dateToString(ds.Tables[0].Rows[0].ExpiryDate).split(' ')[0], //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].ExpiryDate),
+                ds.Tables[0].Rows[0].BankCode,	                
+                ds.Tables[0].Rows[0].CardType,
+                cardclass,
+                dateToString(ds.Tables[0].Rows[0].IssueDate).split(' ')[0], //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[0].IssueDate),
+                cardcurr,
+                cardctry
+            ).value;
+            
+            if (i_cifid != null)
+            {
+	            IRSWorld.Internet.InternetAddBeneficiary.set_cifid_card(carseqid, i_cifid);
+            }	        
+	    }
+	}
+	
+	this.approve_bene_card = function()
+	{
+	    var seqid = document.getElementById("txtHiddenSearchSeqId").value;
+	    var carseqid = document.getElementById("txtHiddenCardSeqId").value;	    
+	    
+	    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+	    if (ds != null && ds.Tables[0].Rows.length > 0)
+	    {
+	        var intben_cifid = ds.Tables[0].Rows[0].CIFID;
+	        
+	        if(intben_cifid == null || intben_cifid == '')
+            {
+                alert("Beneficiary should be approved first before cards!"); 
+            }
+            else
+            {
+                var ds = null;
+                ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid_card(carseqid).value;
+                {
+                    if (ds != null && ds.Tables[0].Rows.length > 0)
+                    {
+                        var carben_cifid = ds.Tables[0].Rows[0].CIFID;
+                        
+                        if(carben_cifid == null || carben_cifid == '')
+                        {
+                            if(confirm("Approve card?"))
+                            {
+                                this.insert_to_cifcards(intben_cifid, carseqid, seqid);
+                                
+                                var ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid_card(carseqid).value;
+                                if(ds != null && ds.Tables[0].Rows.length > 0)
+                                {
+                                    carben_cifid = ds.Tables[0].Rows[0].CIFID;
+                                    if(carben_cifid == null || carben_cifid == '')
+                                    {
+                                        alert('Card is not approved! Please try again.');
+                                    }
+                                    else
+                                    {
+                                        alert('Card approved!');
+                                        Internet_Remitter_Cards.load_grid_viewer_approve();
+                                    }                    
+                                }
+                            }
+                        }
+                        else
+                        {
+                            alert("Card is alerady approved!");
+                        }
+                    }                    
+                }                
+            }                        
+        }
+	}
+	
+	this.approve_beneficiary = function()
+	{
+	    var seqid = document.getElementById("txtHiddenSearchSeqId").value;
+	    
+	    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+	    if (ds != null && ds.Tables[0].Rows.length > 0)
+	    {
+	        var intben_cifid    = ds.Tables[0].Rows[0].CIFID;
+	        
+	        if(intben_cifid == null || intben_cifid == '')
+            {
+                if(confirm("Approve this beneficiary?"))
+	            {
+    	            this.insert_to_cif_master(seqid);
+                    
+                    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+                    if(ds != null && ds.Tables[0].Rows.length > 0)
+                    {
+                        intben_cifid = ds.Tables[0].Rows[0].CIFID;
+                        if(intben_cifid == null || intben_cifid == '')
+                        {
+                            alert('Beneficiary is not approved! Please try again.');
+                        }
+                        else
+                        {
+                            alert('Beneficiary approved!');
+                        }                    
+                    }
+	            }
+            }
+            else
+            {
+                alert('Beneficiary is already approved!');
+            }
+	    }  	    
+	}
+	
+	this.add_client = function()
+	{
+	    Internet_Remitter_Main.show_panel_add_bene();
+	    this.insert_record();
+	}
+	
+	this.approve_client = function()
+	{
+	    var seqid    = document.getElementById("txtHiddenSearchSeqId").value;
+        var app_cards_flag = false;
+        var cclass   = "Beneficiary";
+        var cards_count = 0;
+	    
+	    if (seqid.length == 0)
+        {
+            seqid = IRSWorld.Internet.InternetAddBeneficiary.INTERNET_REMITTER_SEQ_ID().value;
+            document.getElementById("txtHiddenSearchSeqId").value = seqid;
+        }
+	    
+	    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+	    var intrem_cifid    = ds.Tables[0].Rows[0].CIFID;
+        var cnt_unapp_cards = ds.Tables[0].Rows[0].CountUnApprovedCards; 
+        var cnt_cards       = ds.Tables[0].Rows[0].CountCards;
+        
+        var update_flag = IRSWorld.Internet.InternetAddBeneficiary.update_record(seqid);        
+        if (update_flag.value == false)
+        {
+            alert("Unable to update isapprove field!"); return;
+        }
+	    
+        if(intrem_cifid != null && intrem_cifid != '')
+        {
+            if(cnt_unapp_cards > 0)
+            {
+                if(confirm("Approve cards?"))
+                {
+                    this.insert_to_cif_cards(seqid);
+                    
+                    cards_count = IRSWorld.Internet.InternetAddBeneficiary.get_cif_cards_count(intrem_cifid);
+                    if(cards_count.value > 0)
+                    {
+                        IRSWorld.Internet.InternetAddBeneficiary.approve_cards(seqid, intrem_cifid);
+                    }
+                    
+                    this.load_grid_viewer();
+                    app_cards_flag = true;
+                    
+                    alert("Cards approved!");
+                }
+            }
+            if(cnt_cards > 0)
+            {
+                if(cnt_unapp_cards == 0) alert(cclass + " and cards are already approved!");
+            } 
+            else alert(cclass + " already approved!");              
+        }
+        else
+        {
+            if(cnt_cards > 0)
+            {   
+                if(confirm("Approve " + cclass + " and cards?"))
+                {
+                    this.insert_to_cif_master(seqid);
+                    
+                    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+                    if(ds != null && ds.Tables[0].Rows.length > 0)
+                    {
+                        intrem_cifid = ds.Tables[0].Rows[0].CIFID;
+                    }	                
+	                if(intrem_cifid != null)
+	                {
+	                    this.insert_to_cif_cards(seqid);
+                    
+                        cards_count = IRSWorld.Internet.InternetAddBeneficiary.get_cif_cards_count(intrem_cifid);
+                        if(cards_count.value > 0)
+                        {
+                            IRSWorld.Internet.InternetAddBeneficiary.approve_cards(seqid, intrem_cifid);
+                        }
+	                }
+                                       
+                    this.load_grid_viewer();
+                }                
+            }
+            else
+            {
+                if(confirm("Approve " + cclass + "?"))
+                this.insert_to_cif_master(seqid);
+                
+                var ds = IRSWorld.Internet.InternetAddBeneficiary.get_isapproved(seqid).value;
+                if(ds != null && ds.Tables[0].Rows.length > 0)
+                {
+                    intrem_cifid = ds.Tables[0].Rows[0].CIFID;
+                }
+            }
+	        
+            if(intrem_cifid != null && intrem_cifid != '')
+            {
+                this.load_record(); 
+                if(cnt_cards > 0) alert(cclass + " and cards approved!");
+                else alert(cclass + " approved!");        
+            }
+            else
+            {
+                alert('Unable to approve, please try again.');
+            }
+        }   
+	}
+	
+	this.insert_to_cif_master = function(seqid)
+	{
+	    var i_cifid = null;
+	    var rem_age = document.getElementById("txtInternetRemitterAge").value;
+	    if (rem_age == '') rem_age = 0;
+	    
+	    i_cifid = IRSWorld.Internet.InternetAddBeneficiary.enroll_client
+        (
+            seqid,
+            document.getElementById("txtInternetRemitterLastName").value,
+            document.getElementById("txtInternetRemitterFirstName").value,
+            document.getElementById("txtInternetRemitterMiddleName").value,
+            document.getElementById("txtInternetRemitterBirthdate").value,
+            rem_age,
+            document.getElementById("txtHiddenUserLoc").value,                        
+            document.getElementById("txtInternetRemitterContactNos").value,
+            document.getElementById("txtInternetRemitterEmail").value,                        
+            document.getElementById("txtInternetRemitterRoomNo").value,
+            document.getElementById("txtHiddenZip").value,
+            document.getElementById("txtAccountNo").value,            
+            document.getElementById("ddAccountCurrency").value,
+            document.getElementById("ddAccountType").value,
+            'Internet Beneficiary', '2', document.getElementById("txtHiddenUserCIFID").value
+        ).value;
+        
+        if (i_cifid != null)
+        {
+            IRSWorld.Internet.InternetAddBeneficiary.set_cifid(seqid, i_cifid);
+        }
+	}	
+    
+	this.insert_to_cif_cards = function(seqid)
+	{
+	    this.commons = new common_method();
+	    var ds = IRSWorld.Internet.InternetAddBeneficiary.get_cards(seqid).value;
+	    
+	    if(ds != null && ds.Tables[0].Rows.length > 0)
+	    {
+	        for (i=0; i<ds.Tables[0].Rows.length; i++)
+	        {
+	            IRSWorld.Internet.InternetAddBeneficiary.enroll_cards
+	            (
+	                ds.Tables[0].Rows[i].CIFID,
+	                ds.Tables[0].Rows[i].CardNo,
+	                ds.Tables[0].Rows[i].CardName,
+	                dateToString(ds.Tables[0].Rows[i].ExpiryDate).split(' ')[0], //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[i].ExpiryDate),
+	                ds.Tables[0].Rows[i].BankCode,	                
+	                ds.Tables[0].Rows[i].CardType,
+	                ds.Tables[0].Rows[i].CardClass,
+	                dateToString(ds.Tables[0].Rows[i].IssueDate).split(' ')[0], //this.commons.to_mmddyyyy_date(ds.Tables[0].Rows[i].IssueDate),
+	                ds.Tables[0].Rows[i].Currency,
+	                ds.Tables[0].Rows[i].Country
+	            );
+	        }
+	    }	    
+	}
+    this.onCheck_Preferred = function(ciftype, addType)
+    {
+        if (document.getElementById(addType).checked == true)
+        {   
+            if (ciftype == 1)
+            {
+                document.getElementById("chkRemPrefMailAdd").value = "off";
+                document.getElementById("chkRemPrefMailAdd").checked = false;
+                
+                document.getElementById("chkRemPrefMailAdd_Com").value = "off";
+                document.getElementById("chkRemPrefMailAdd_Com").checked = false;
+                
+                document.getElementById("chkRemPrefMailAdd_Mail").value = "off";
+                document.getElementById("chkRemPrefMailAdd_Mail").checked = false;
+                
+                if (this.hasAddress(addType))
+                {   
+                    document.getElementById(addType).value   = "off";
+                    document.getElementById(addType).checked = true;
+                }
+                else
+                {
+                    alert("You cannot select a blank address as preferred.");
+                }
+            }
+            else
+            {
+                document.getElementById("chkRemBPrefMailAdd").value = "off";
+                document.getElementById("chkRemBPrefMailAdd").checked = false;
+                
+                document.getElementById("chkRemBPrefMailAdd_Com").value = "off";
+                document.getElementById("chkRemBPrefMailAdd_Com").checked = false;
+                
+                document.getElementById("chkRemBPrefMailAdd_Mail").value = "off";
+                document.getElementById("chkRemBPrefMailAdd_Mail").checked = false;
+                
+                if (this.hasAddress(addType))
+                {   
+                    document.getElementById(addType).value   = "off";
+                    document.getElementById(addType).checked = true;
+                }
+                else
+                {
+                    alert("You cannot select a blank address as preferred.");
+                }
+            }
+        } 
+    }
+    
+    this.hasAddress = function(addType)
+    {
+        var address = "";
+        this.generic = new generic_method();
+        
+        if (addType == "chkRemPrefMailAdd")
+        {
+            address += document.getElementById("txtRemAddress1").value;
+            address += document.getElementById("txtRemAddress2").value;
+            address += document.getElementById("txtRemPOBox").value;
+            address += document.getElementById("txtRemDistrict").value;
+            address += document.getElementById("txtRemCity").value;
+            address += document.getElementById("txtRemState").value;
+            address += document.getElementById("txtRemRegion").value;
+            address += (document.getElementById("ddRemCountry").value == 'Nan' || document.getElementById("ddRemCountry").value == 'null' || document.getElementById("ddRemCountry").value == null) ? "" : document.getElementById("ddRemCountry").value;
+            address += document.getElementById("txtRemZip").value;
+            
+        }
+        else if (addType == "chkRemPrefMailAdd_Com")
+        {
+            address += document.getElementById("txtRemAddress1_Com").value;
+            address += document.getElementById("txtRemAddress2_Com").value;
+            address += document.getElementById("txtRemPOBox_Com").value;
+            address += document.getElementById("txtRemDistrict_Com").value;
+            address += document.getElementById("txtRemCity_Com").value;
+            address += document.getElementById("txtRemState_Com").value;
+            address += document.getElementById("txtRemRegion_Com").value;
+            address += (document.getElementById("ddRemCountry_Com").value == 'Nan' || document.getElementById("ddRemCountry_Com").value == 'null' || document.getElementById("ddRemCountry_Com").value == null) ? "" : document.getElementById("ddRemCountry_Com").value;
+            address += document.getElementById("txtRemZip_Com").value;
+        }
+        else if (addType == "chkRemPrefMailAdd_Mail")
+        {
+            address += document.getElementById("txtRemAddress1_Mail").value;
+            address += document.getElementById("txtRemAddress2_Mail").value;
+            address += document.getElementById("txtRemPOBox_Mail").value;
+            address += document.getElementById("txtRemDistrict_Mail").value;
+            address += document.getElementById("txtRemCity_Mail").value;
+            address += document.getElementById("txtRemState_Mail").value;
+            address += document.getElementById("txtRemRegion_Mail").value;
+            address += (document.getElementById("ddRemCountry_Mail").value == 'Nan' || document.getElementById("ddRemCountry_Mail").value == 'null' || document.getElementById("ddRemCountry_Mail").value == null) ? "" : document.getElementById("ddRemCountry_Mail").value;
+            address += document.getElementById("txtRemZip_Mail").value;
+        }
+        else if (addType == "chkRemBPrefMailAdd")
+        {
+            address += document.getElementById("txtRemBAddress1").value;
+            address += document.getElementById("txtRemBAddress2").value;
+            address += document.getElementById("txtRemBPOBox").value;
+            address += document.getElementById("txtRemBDistrict").value;
+            address += document.getElementById("txtRemBCity").value;
+            address += document.getElementById("txtRemBState").value;
+            address += document.getElementById("txtRemBRegion").value;
+            address += (document.getElementById("ddRemBCountry").value == 'Nan' || document.getElementById("ddRemBCountry").value == 'null' || document.getElementById("ddRemBCountry").value == null) ? "" : document.getElementById("ddRemBCountry").value;
+            address += document.getElementById("txtRemBZip").value;
+        }
+        else if (addType == "chkRemBPrefMailAdd_Com")
+        {
+            address += document.getElementById("txtRemBAddress1_Com").value;
+            address += document.getElementById("txtRemBAddress2_Com").value;
+            address += document.getElementById("txtRemBPOBox_Com").value;
+            address += document.getElementById("txtRemBDistrict_Com").value;
+            address += document.getElementById("txtRemBCity_Com").value;
+            address += document.getElementById("txtRemBState_Com").value;
+            address += document.getElementById("txtRemBRegion_Com").value;
+            address += (document.getElementById("ddRemBCountry_Com").value == 'Nan' || document.getElementById("ddRemBCountry_Com").value == 'null' || document.getElementById("ddRemBCountry_Com").value == null) ? "" : document.getElementById("ddRemBCountry_Com").value;
+            address += document.getElementById("txtRemBZip_Com").value;
+        }
+        else if (addType == "chkRemBPrefMailAdd_Mail")
+        {
+            address += document.getElementById("txtRemBAddress1_Mail").value;
+            address += document.getElementById("txtRemBAddress2_Mail").value;
+            address += document.getElementById("txtRemBPOBox_Mail").value;
+            address += document.getElementById("txtRemBDistrict_Mail").value;
+            address += document.getElementById("txtRemBCity_Mail").value;
+            address += document.getElementById("txtRemBState_Mail").value;
+            address += document.getElementById("txtRemBRegion_Mail").value;
+            address += (document.getElementById("ddRemBCountry_Mail").value == 'Nan' || document.getElementById("ddRemBCountry_Mail").value == 'null' || document.getElementById("ddRemBCountry_Mail").value == null) ? "" : document.getElementById("ddRemBCountry_Mail").value;
+            address += document.getElementById("txtRemBZip_Mail").value;
+        }
+        
+        if (this.generic.to_trim(address) != "")
+        {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    this.showOverride = function(checkBoxId)
+    {
+        if (document.getElementById("txtHiddenUserRole").value != '4' && document.getElementById("txtHiddenUserRole").value != '8')
+        {
+            alert('Updating of Web and Phone remitter tag needs to be override.\nPlease provide Overrider User Name and Password.');   
+            this.currWebPhoneCheckBox = checkBoxId;
+            var override = new generic_override();
+            override.open_Web_Phone_Remitter_Tag_Override();
+        }
+    }
+    
+    this.showRemOtherID = function(visible)
+    {
+        var displayType = (visible == true) ? 'block' : 'none';
+        
+        document.getElementById('tdRemBOldIDCap').style.display = displayType;
+        document.getElementById('tdRemBOldID').style.display = displayType;
+        document.getElementById('tdRemOldIDCap').style.display = displayType;
+        document.getElementById('tdRemOldID').style.display = displayType;
+    
+//        if (visible == true)
+//        {
+//            document.getElementById('trRemBOldID').style.display = 'block';
+//            document.getElementById('trRemOldID').style.display = 'block';
+//        }
+//        else
+//        {
+//            document.getElementById('trRemBOldID').style.display = 'none';
+//            document.getElementById('trRemOldID').style.display = 'none';
+//        }
+    }
+    
+    this.canOverride = function()
+    {
+        // do nothing
+        alert('Override Successfull');
+    }
+    
+    this.cancelOverride = function()
+    {   
+        //Rollback changes if cancelled
+        alert('Undoing changes...');
+        document.getElementById(this.currWebPhoneCheckBox).value   = (document.getElementById(this.currWebPhoneCheckBox).checked == true) ? "off" : "on";
+        document.getElementById(this.currWebPhoneCheckBox).checked = (document.getElementById(this.currWebPhoneCheckBox).checked == true) ? false : true;
+    }
+    
+	this.validate_input = function()
+    {     
+        this.generic     = new generic_method();        
+        this.error_input = '';
+        var foc_elem     = '';
+        var isValidID    = true;
+        var isValidID2   = true;
+        
+        
+        if(document.getElementById("ddCIFType").value == 'null')
+		{
+			alert('Please select CIF Type of Remitter.');
+            document.getElementById("ddCIFType").focus();
+            return false;
+		}	
+		
+		if(ciftype_r == 1)
+		{
+		    if (this.generic.is_alpha(document.getElementById("txtRemLName").value) == false)
+            {           
+                this.error_input += "Last name contains invalid character(s).\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemLName';            
+            }
+            if (this.generic.is_alpha(document.getElementById("txtRemFName").value) == false)
+            {           
+                this.error_input += "First name contains invalid character(s).\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemFName';            
+            }
+            if (this.generic.is_alpha(document.getElementById("txtRemMName").value) == false)
+            {           
+                this.error_input += "Middle name contains invalid character(s).\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemMName';            
+            }		   	
+            
+		    if (this.generic.to_validate_bdate(document.getElementById("txtRemBDate").value) == false)
+            {           
+                this.error_input += "Invalid birth date.\n";    
+                if (foc_elem.length == 0) foc_elem = 'txtRemBDate';       
+            }
+            else
+            {
+                var remAge = this.generic.compute_age(document.getElementById("txtRemBDate").value);
+                var age_limit = IRSWorld.Internet.InternetAddBeneficiary.AgeLimit().value;
+                
+                if (parseFloat(remAge) < age_limit)
+                {
+                    this.error_input += "Client who are below "+ age_limit +" yrs old are not allowed.\n";
+                    if (foc_elem.length == 0) foc_elem = 'txtRemBDate'; 
+                }                
+            }
+            
+             /*Add to check if preferred is clicked*/
+            if (document.getElementById("chkBenePrefMailAdd").checked == false && document.getElementById("chkBenePrefMailAdd_Com").checked == false && document.getElementById("chkBenePrefMailAdd_Mail").checked == false)
+            {
+                alert('Please select Preferred Mailing Address.');
+                return false
+            }
+            
+		    if(this.generic.to_validate_email(document.getElementById("txtRemEmailAdd").value) == false)
+		    {
+			    this.error_input += "Invalid email address.\n";
+			    if (foc_elem.length == 0) foc_elem = 'txtRemEmailAdd'; 
+		    }
+		    
+		    if (this.generic.validate_USDate(document.getElementById("txtRemIDExpDate").value) == false)
+            {           
+                isValidID = false;
+                this.error_input += "Expiry date of ID(1) is invalid.\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemIDExpDate';         
+            }
+            if (isValidID == true && this.generic.to_validate_expiration(document.getElementById("txtRemIDExpDate").value) == false)
+            {           
+                this.error_input += "ID(1) Expired.\n";  
+                if (foc_elem.length == 0) foc_elem = 'txtRemIDExpDate';                      
+            }
+            
+            if (this.generic.validate_USDate(document.getElementById("txtRemIDExpDate2").value) == false)
+            {           
+                isValidID2 = false;
+                this.error_input += "Expiry date of ID(2) is invalid.\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemIDExpDate2';         
+            }
+            if (isValidID2 == true && this.generic.to_validate_expiration(document.getElementById("txtRemIDExpDate2").value) == false)
+            {           
+                this.error_input += "ID(2) Expired.\n";  
+                if (foc_elem.length == 0) foc_elem = 'txtRemIDExpDate2';                      
+            }
+            
+            if(document.getElementById("ddRemIDType1").value == '23')
+            {
+                var ds = null;
+                ds = IRSWorld.Internet.InternetAddBeneficiary.validate_sssno(document.getElementById("txtRemIDNo1").value, '').value;
+                
+                if (ds != '1')
+                {
+                    this.error_input += "SSS ID no (1) is invalid.\n";  
+                    if (foc_elem.length == 0) foc_elem = 'txtRemIDNo1';
+                }
+            }
+            
+            if(document.getElementById("ddRemIDType2").value == '23')
+            {
+                var ds2 = null;
+                ds2 = IRSWorld.Internet.InternetAddBeneficiary.validate_sssno(document.getElementById("txtRemIDNo2").value, '').value;
+                
+                if (ds2 != '1')
+                {
+                    this.error_input += "SSS ID no (2) is invalid.\n";  
+                    if (foc_elem.length == 0) foc_elem = 'txtRemIDNo2';
+                }
+            }
+		    
+	        var source = document.getElementById('ddRemSourceOfFunds').value;
+	        var sal = document.getElementById('txtRemAnnualSal').value;
+    	    
+	        if (sal != null && sal != 'null' && sal != '' && parseFloat(sal) != 0)
+	        {
+	            if(source == '' | source == undefined | source == 'null' | source == null)
+	            {
+	                this.error_input += "Source of fund should not be blank if Annual Salary is not blank and not equal to zero.\n";	                
+	                if (foc_elem.length == 0) foc_elem = 'ddRemSourceOfFunds'; 
+	            }
+            }            
+		}
+		else
+		{
+		    if (this.generic.is_alpha(document.getElementById("txtRemBusinessName").value) == false)
+            {           
+                this.error_input += "Business name contains invalid character(s).\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemBusinessName';            
+            }
+            if (this.generic.is_alpha(document.getElementById("txtRemShortName").value) == false)
+            {           
+                this.error_input += "Short name contains invalid character(s).\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemShortName';            
+            }
+            
+		    if(this.generic.to_validate_email(document.getElementById("txtRemBEmailAdd").value) == false)
+		    {
+			    this.error_input += "Invalid email address.\n";
+			    if (foc_elem.length == 0) foc_elem = 'txtRemBEmailAdd'; 
+		    }
+		    if (this.generic.validate_USDate(document.getElementById("txtRemBIDExpDate").value) == false)
+            {           
+                isValidID = false;
+                this.error_input += "Expiry date of ID(1) is invalid.\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemBIDExpDate';         
+            }
+            if (isValidID == true && this.generic.to_validate_expiration(document.getElementById("txtRemBIDExpDate").value) == false)
+            {           
+                this.error_input += "ID(1) Expired.\n";  
+                if (foc_elem.length == 0) foc_elem = 'txtRemBIDExpDate';                      
+            }
+            
+            if (this.generic.validate_USDate(document.getElementById("txtRemBIDExpDate2").value) == false)
+            { 
+                isValidID2 = false;
+                this.error_input += "Expiry date of ID(2) is invalid.\n"; 
+                if (foc_elem.length == 0) foc_elem = 'txtRemBIDExpDate2';         
+            }
+            if (isValidID2 == true && this.generic.to_validate_expiration(document.getElementById("txtRemBIDExpDate2").value) == false)
+            {           
+                this.error_input += "ID(2) Expired.\n";  
+                if (foc_elem.length == 0) foc_elem = 'txtRemBIDExpDate2';                      
+            }
+            
+            if(document.getElementById("ddRemBIDType").value == '23')
+            {
+                var ds = null;
+                ds = IRSWorld.Internet.InternetAddBeneficiary.validate_sssno(document.getElementById("txtRemBIDNo").value, '').value;
+                
+                if (ds != '1')
+                {                    
+                    this.error_input += "SSS ID no (1) is invalid.\n";  
+                    if (foc_elem.length == 0) foc_elem = 'txtRemBIDNo';
+                }
+            }
+            
+            if(document.getElementById("ddRemBIDType2").value == '23')
+            {
+                var ds2 = null;
+                ds2 = IRSWorld.Internet.InternetAddBeneficiary.validate_sssno(document.getElementById("txtRemBIDNo2").value, '').value;
+                
+                if (ds2 != '1')
+                {                    
+                    this.error_input += "SSS ID no (2) is invalid.\n";  
+                    if (foc_elem.length == 0) foc_elem = 'txtRemBIDNo2';
+                }
+            }            
+		    
+		}
+        if (foc_elem.length > 0)
+        {
+            try
+            {
+                document.getElementById(foc_elem).focus();
+                if(foc_elem.substring(0,3) == 'txt') document.getElementById(foc_elem).select();
+            }
+            catch(e){}
+        }
+        if (this.error_input != '')
+        {
+            alert(this.error_input);
+            return false;
+        }
+        
+        return true;
+    }
+}
+
+

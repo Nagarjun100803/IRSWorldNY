@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="air_PendingOverrideTransactionReport" targetNamespace="http://tempuri.org/air_PendingOverrideTransactionReport.xsd" xmlns:mstns="http://tempuri.org/air_PendingOverrideTransactionReport.xsd" xmlns="http://tempuri.org/air_PendingOverrideTransactionReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="air_PendingOverrideTransactionReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="air_PendingOverrideTransactionReport" msprop:Generator_DataSetName="air_PendingOverrideTransactionReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PendingOverrideTransaction" msprop:Generator_UserTableName="PendingOverrideTransaction" msprop:Generator_RowDeletedName="PendingOverrideTransactionRowDeleted" msprop:Generator_TableClassName="PendingOverrideTransactionDataTable" msprop:Generator_RowChangedName="PendingOverrideTransactionRowChanged" msprop:Generator_RowClassName="PendingOverrideTransactionRow" msprop:Generator_RowChangingName="PendingOverrideTransactionRowChanging" msprop:Generator_RowEvArgName="PendingOverrideTransactionRowChangeEvent" msprop:Generator_RowEvHandlerName="PendingOverrideTransactionRowChangeEventHandler" msprop:Generator_TablePropName="PendingOverrideTransaction" msprop:Generator_TableVarName="tablePendingOverrideTransaction" msprop:Generator_RowDeletingName="PendingOverrideTransactionRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Transaction_Date" msprop:Generator_UserColumnName="Transaction_Date" msprop:Generator_ColumnPropNameInRow="Transaction_Date" msprop:Generator_ColumnVarNameInTable="columnTransaction_Date" msprop:Generator_ColumnPropNameInTable="Transaction_DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Reference_No" msprop:Generator_UserColumnName="Reference_No" msprop:Generator_ColumnPropNameInRow="Reference_No" msprop:Generator_ColumnVarNameInTable="columnReference_No" msprop:Generator_ColumnPropNameInTable="Reference_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_Name" msprop:Generator_UserColumnName="Remitter_Name" msprop:Generator_ColumnPropNameInRow="Remitter_Name" msprop:Generator_ColumnVarNameInTable="columnRemitter_Name" msprop:Generator_ColumnPropNameInTable="Remitter_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Beneficiary_Name" msprop:Generator_UserColumnName="Beneficiary_Name" msprop:Generator_ColumnPropNameInRow="Beneficiary_Name" msprop:Generator_ColumnVarNameInTable="columnBeneficiary_Name" msprop:Generator_ColumnPropNameInTable="Beneficiary_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Account_No" msprop:Generator_UserColumnName="Account_No" msprop:Generator_ColumnPropNameInRow="Account_No" msprop:Generator_ColumnVarNameInTable="columnAccount_No" msprop:Generator_ColumnPropNameInTable="Account_NoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gross_Amount" msprop:Generator_UserColumnName="Gross_Amount" msprop:Generator_ColumnPropNameInRow="Gross_Amount" msprop:Generator_ColumnVarNameInTable="columnGross_Amount" msprop:Generator_ColumnPropNameInTable="Gross_AmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Product_Type" msprop:Generator_UserColumnName="Product_Type" msprop:Generator_ColumnPropNameInRow="Product_Type" msprop:Generator_ColumnVarNameInTable="columnProduct_Type" msprop:Generator_ColumnPropNameInTable="Product_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nature_of_Override" msprop:Generator_UserColumnName="Nature_of_Override" msprop:Generator_ColumnPropNameInRow="Nature_of_Override" msprop:Generator_ColumnVarNameInTable="columnNature_of_Override" msprop:Generator_ColumnPropNameInTable="Nature_of_OverrideColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingBranch" msprop:Generator_UserColumnName="RemittingBranch" msprop:Generator_ColumnPropNameInRow="RemittingBranch" msprop:Generator_ColumnVarNameInTable="columnRemittingBranch" msprop:Generator_ColumnPropNameInTable="RemittingBranchColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

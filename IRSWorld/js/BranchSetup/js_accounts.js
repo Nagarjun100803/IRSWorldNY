@@ -1,0 +1,1017 @@
+var dbgrid_IBFT;
+var dbgrid_NSVS;
+var dbgrid_GL;
+var gl_type = 1;
+var gl_fileType;
+var glFileType = new Array();
+var glCurrency = new Array();
+var ibatchFileType = new Array();
+var glBranchCode = new Array();
+var selectVal = new Array();
+var selectID = new Array();
+var remove = new remove_spaces();
+
+var prodopts;
+
+var curract;
+var ddlID;
+
+var guserrolecode = '0';
+
+
+$(document).ready(function () {
+    getrolecode();
+});
+
+function getrolecode() {
+    try {
+        IRSWorld.BranchSetup.Accounts.getrolecode(function (result) {
+            if (result.error == null) {
+                guserrolecode = result.value;
+            }
+            else {
+                alert("Failed to get role, please reload the page");
+            }
+        });
+    }
+    catch (err) { //err.message
+        spawn_errpage('Failed to get role. Please try again.');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+function getdropdown()
+{
+    this.Load_Branches = function()
+    {
+        IRSWorld.BranchSetup.Accounts.getBranches(this.load_ddlBranch_callback);
+    }
+    
+    this.load_ddlBranch_callback = function(result)
+    {
+        if (result.value != null && result.value != "undefined")
+        {
+            this.commons = new common_method();
+            this.commons.to_load_dropdownlist("ddlBranch", result.value, "BranchCode", "BranchName");
+            
+        }
+    }
+}
+
+        function fixht()
+        {
+            document.getElementById('divBody').style.height = (top.document.getElementById('divCenter').offsetHeight - 30) + 'px';
+            document.getElementById('divBody').style.width = (top.document.getElementById('divCenter').offsetWidth - 3) + 'px';
+        }
+        
+        function fixmain()
+        {
+            var brmain = false;
+            try
+            {
+                 brmain = parent.is_branchsetup_main();
+            }
+            catch(e){}
+            
+            if (!brmain)
+            {
+                document.getElementById('theBody').onresize = fixht;
+                document.getElementById('divBody').style.overflow = 'auto';
+                
+                fixht();
+            }        
+        }    
+
+function page_setup()
+{
+    load_dropdown();
+    fixmain();
+    set_visibility('Main');
+    prodopts = IRSWorld.BranchSetup.Accounts.getDdlData().value;
+}
+
+function load_dropdown()
+{
+    new getdropdown().Load_Branches();
+    set_startup_value();
+    new getAccountCurrency().Load_AccountCurrency();
+}
+
+function set_visibility(tbl)
+{
+    if(tbl=='Main')
+    {
+        document.getElementById('tdNSVS').style.display = 'none';
+        document.getElementById('tdIBFT').style.display = 'none';
+        document.getElementById('tdGL').style.display = 'none';
+        document.getElementById('tblMain').style.display = 'block';
+        document.getElementById('btnBack').style.display = 'none';
+    }
+    else if (tbl=='Data')
+    {
+        document.getElementById('tdNSVS').style.display = 'block';
+        document.getElementById('tdIBFT').style.display = 'block';
+        document.getElementById('tdGL').style.display = 'block';
+        document.getElementById('tblMain').style.display = 'none';
+        document.getElementById('btnBack').style.display = 'block';
+    }
+}
+
+function getAccountCurrency()
+{
+    this.Load_AccountCurrency = function()
+    {
+        var branchcode = document.getElementById('ddlBranch').value;
+        IRSWorld.BranchSetup.Accounts.getAccountCurrency(branchcode,this.load_ddlAcctCurrency_callback);
+    }
+    
+    this.load_ddlAcctCurrency_callback = function(result)
+    {
+        if (result.value != null && result.value != "undefined")
+        {
+            this.commons = new common_method();
+            this.commons.to_load_dropdownlist("ddlAcctCurrency", result.value, "fldValue", "flddescription");
+        }
+    }
+}
+
+function create_grid_NSVS()
+{
+    dbgrid_NSVS = new datagrid();
+    {
+        var col = new datagrid_column();
+        col.header = 'Account Number';
+        col.datafield = 'AccountNumber';
+        col.onchange = 'check_char_inputted';
+        col.align = 'right';
+        col.styles.cell += 'width:30%';
+        dbgrid_NSVS.addColumn(col);
+    }
+    {
+	    var col = new datagrid_column();
+	    col.header = 'SEQ ID';
+	    col.styles.header += 'display:none;';
+	    col.styles.datafield += 'display:none;';
+	    col.datafield = 'SEQ_ID';
+	    col.align = 'left';
+	    col.styles.cell += 'width:8%;display:none;';
+	    dbgrid_NSVS.addColumn(col);
+    }
+    
+      
+    dbgrid_NSVS.caption = 'NSVS Account';
+    dbgrid_NSVS.classNames.table = 'table_body';
+    dbgrid_NSVS.rows_page = 12;
+    dbgrid_NSVS.row.normal_style = 'background-color: #f7ffff;';  
+    dbgrid_NSVS.footer.add_button.none = false;
+    dbgrid_NSVS.footer.add_button.style += 'background-color: lavender;color:maroon;';
+    dbgrid_NSVS.footer.add_button.beforepost = 'add_before_post';
+    dbgrid_NSVS.footer.delete_button.onclick = '';  
+    dbgrid_NSVS.footer.delete_button.none = false;          
+    dbgrid_NSVS.footer.save_button.none = false;
+    dbgrid_NSVS.footer.save_button.onclick = 'save_nsvs_acct';  
+    dbgrid_NSVS.footer.save_button.style += 'background-color: lavender;';  
+    dbgrid_NSVS.footer.cancel_button.none = false;
+    dbgrid_NSVS.footer.cancel_button.style += 'background-color: lavender;';
+}
+
+
+
+function create_grid_IBFT()
+{
+    dbgrid_IBFT = new datagrid();
+    {
+        var col = new datagrid_column();
+        col.header = 'Account Number';
+        col.datafield = 'AccountNumber';
+        col.align = 'right';
+        col.onchange = 'check_char_inputted';
+        col.styles.cell += 'width:30%';
+        dbgrid_IBFT.addColumn(col);
+    }
+    {
+        var col = new datagrid_column();
+        col.header = 'PinBlock';
+        col.datafield = 'PinBlock';
+        col.align = 'left';
+        col.type = 'check';
+        col.styles.cell += 'width:5%';
+        dbgrid_IBFT.addColumn(col);
+    }
+   {
+        var col = new datagrid_column();
+        col.header = 'CardNo';
+        col.datafield = 'CardNo';
+        col.onchange = 'check_char_inputted';
+        col.align = 'right';
+        col.styles.cell += 'width:30%';
+        dbgrid_IBFT.addColumn(col);
+    }
+    {
+        var col = new datagrid_column();
+        col.header = 'PIN';
+        col.datafield = 'PIN';
+        col.type = 'password';
+        col.align = 'right';
+        col.styles.cell += 'width:30%';
+        dbgrid_IBFT.addColumn(col);
+    }
+    {//3
+        var col = new datagrid_column();
+        col.header = 'AccountType';
+        col.datafield = 'AccountType';
+        col.align = 'left';
+        col.type = 'select';
+        col.options = prodopts;
+        //col.onchange = 'prodgrid_prod_changed'
+        col.styles.cell += 'width:70%;text-align:left;';
+        col.styles.datafield += 'width: 100%; border: solid 1px navy;';
+        dbgrid_IBFT.addColumn(col);	
+    }
+    
+    
+//    {
+//        var col = new datagrid_column();
+//	    col.header = '';
+//	    col.datafield = '';
+//	    col.align = 'center';
+//	    col.type = 'button';
+//	    col.value = 'Edit';
+//	    col.edit_button = true;
+//	    col.styles.cell += 'width:10%';
+//	    col.styles.datafield += 'width:100%;';
+//	    dbgrid_IBFT.addColumn(col);
+//    }
+    {
+	    var col = new datagrid_column();
+	    col.header = 'SEQ ID';
+	    col.styles.header += 'display:none;';
+	    col.styles.datafield += 'display:none;';
+	    col.datafield = 'SEQ_ID';
+	    col.align = 'left';
+	    col.styles.cell += 'width:8%;display:none;';
+	    dbgrid_IBFT.addColumn(col);
+    }
+    
+    dbgrid_IBFT.footer.edit_button.onclick = '';  
+    dbgrid_IBFT.footer.edit_button.none = false;   
+    dbgrid_IBFT.caption = 'IBFT Account';
+    dbgrid_IBFT.classNames.table = 'table_body';
+    dbgrid_IBFT.rows_page = 12;
+    dbgrid_IBFT.row.normal_style = 'background-color: #f7ffff;';  
+    dbgrid_IBFT.footer.add_button.none = false;
+    dbgrid_IBFT.footer.add_button.style += 'background-color: lavender;color:maroon;';
+    dbgrid_IBFT.footer.delete_button.onclick = '';  
+    dbgrid_IBFT.footer.delete_button.none = false;          
+    dbgrid_IBFT.footer.save_button.none = false;
+    dbgrid_IBFT.footer.save_button.onclick = 'save_ibft_acct';  
+    dbgrid_IBFT.footer.save_button.style += 'background-color: lavender;';  
+    dbgrid_IBFT.footer.cancel_button.none = false;
+    dbgrid_IBFT.footer.cancel_button.style += 'background-color: lavender;';
+}
+
+
+function add_before_post(args)
+{
+    var acct_num = dbgrid_NSVS.getValueAt(args.datarow,0);
+    var bool = IRSWorld.BranchSetup.Accounts.check_acct_num(acct_num).value;
+    if(!bool)
+    {
+        alert('Account number invalid');
+        dbgrid_NSVS.curract = '';
+        return;
+    }
+}
+
+
+function populate_record_IBFT()
+{
+/*FOR IBFT*/
+    var brcode = document.getElementById('ddlBranch').value;
+    var acctcurrency = document.getElementById('ddlAcctCurrency').value;
+    
+    if((document.getElementById('ddlAcctCurrency').length - 1) <= 0) 
+    {
+        alert('Please add currency under Currency Categories >> Account Currency');
+        return;
+    }
+    
+    if ((brcode =='' | brcode=='null') | (acctcurrency=='' | acctcurrency=='null'))
+    {
+        alert('Please complete the search');
+        return;
+    }
+    
+    
+    IRSWorld.BranchSetup.Accounts.getIBFTAccount(brcode,acctcurrency,bind_grid_IBFT);
+    set_visibility('Data');
+}
+
+function populate_record_NSVS()
+{
+/*FOR NSVS*/
+    var brcode = document.getElementById('ddlBranch').value;
+    var acctcurrency = document.getElementById('ddlAcctCurrency').value;
+    
+    if ((brcode =='' | brcode=='null') | (acctcurrency=='' | acctcurrency=='null'))
+    {
+        return;
+    }
+    
+    IRSWorld.BranchSetup.Accounts.getNSVSAccount(brcode,acctcurrency,bind_grid_NSVS);
+    set_visibility('Data');
+}
+
+
+function bind_grid_NSVS(accts)
+{
+    if (accts.error != null)
+    {
+        spawn_errpage(accts.error);
+        return;
+    }
+    
+    create_grid_NSVS();
+    ajax_show_status(true);
+    dbgrid_NSVS.bind(accts.value, 'tdNSVS', 'gridNSVS');
+    ajax_show_status(false);
+} 
+
+
+function check_char_inputted(args)
+{
+    var val;
+    var _desc = document.getElementById(args.control).value;
+    if(remove.trim(_desc) =='' | remove.trim(_desc) == 'undefined' | remove.trim(_desc) == null)
+    {
+        alert('Description must not be empty!');
+        return;
+    }
+
+
+    var txt = document.getElementById(args.control);
+    var isinvalid = isSpecial(txt.value);
+    if(isinvalid)
+    {
+        alert('Error! Special character(s) not allowed');
+        document.getElementById(args.control).value = '';
+        return;
+    }
+}   
+
+
+
+
+function bind_grid_IBFT(accts)
+{
+    if (accts.error != null)
+    {
+        spawn_errpage(accts.error.Message);
+        return;
+    }
+    
+    create_grid_IBFT();
+    ajax_show_status(true);
+    dbgrid_IBFT.bind(accts.value, 'tdIBFT', 'gridIBFT');
+    ajax_show_status(false);
+} 
+
+
+function save_ibft_acct(args)
+{
+    if (guserrolecode == '2') {
+        alert('Approver is not allowed to modify current set-up.')
+        return;
+    }
+
+    if (args.value == dbgrid_IBFT.footer.save_button.value)
+    {
+        var brcode=document.getElementById('ddlBranch').value;
+        var acctcurr=document.getElementById('ddlAcctCurrency').value;                            
+        IRSWorld.BranchSetup.Accounts.applyEdits(args.additions, args.deletes, args.edits,brcode,acctcurr,'IBFT',save_ibft_acct_callback);
+        
+    }
+}
+
+function save_ibft_acct_callback(result)
+{
+    if(result.value == null | result.value == undefined)
+    {
+        alert(result.error);
+        populate_record_IBFT();
+        return;
+    }
+    populate_record_IBFT();
+    alert('Successfully submitted for approval');
+}
+
+
+
+function save_nsvs_acct(args)
+{
+    if (guserrolecode == '2') {
+        alert('Approver is not allowed to modify current set-up.')
+        return;
+    }
+
+    if(dbgrid_NSVS.datatable.Rows.length >0 )
+    {
+        if(!(args.deletes.length > 0))
+        {
+            alert('There should only be 1 NSVS Account per currency');
+            populate_record_NSVS();
+            return;
+        }
+    }
+    if (args.value == dbgrid_IBFT.footer.save_button.value)
+    {
+        var brcode=document.getElementById('ddlBranch').value;
+        var acctcurr=document.getElementById('ddlAcctCurrency').value;                            
+        IRSWorld.BranchSetup.Accounts.applyEdits(args.additions, args.deletes, args.edits,brcode,acctcurr,'NSVS',save_nsvs_acct_callback);
+       
+    }
+}
+
+
+function save_nsvs_acct_callback(result)
+{
+    if(result.value == null | result.value == undefined)
+    {
+        alert(result.error);
+        populate_record_NSVS();
+        return;
+    }
+    populate_record_NSVS();
+    alert('Successfully submitted for approval');
+}
+
+
+function set_startup_value()
+{
+    this.commons = new common_method();
+    this.commons.to_set_dropdownlist_index('ddlBranch',IRSWorld.BranchSetup.Accounts.getStartUpLocation().value);
+    //this.commons.to_set_dropdownlist_index('ddlAcctCurrency',1);
+    this.commons.to_set_dropdownlist_index('colBranch', IRSWorld.BranchSetup.Accounts.getStartUpLocation().value);
+}
+
+function _onclick()
+{
+    alert(document.getElementById('ddlAcctCurrency').value);
+}
+
+function remove_spaces()
+{
+    this.LTrim = function( value ) 
+    {	
+	    var re = /\s*((\S+\s*)*)/;
+	    return value.replace(re, "$1");	
+    }
+    
+    this.RTrim = function( value ) 
+    {	
+	    var re = /((\s*\S+)*)\s*/;
+	    return value.replace(re, "$1");
+	}
+  
+    this.trim = function( value ) 
+    {	
+	    return this.LTrim(this.RTrim(value));
+	}
+}
+
+
+
+
+//For GL Account
+
+function create_grid_GL()
+{ 
+    dbgrid_GL = new datagrid();
+    gl_fileType = gl_type;
+
+    {
+        var col = new datagrid_column();
+        col.header = 'SEQ_ID';
+        col.styles.header += 'display:none;';
+        col.styles.datafield += 'display:none;';
+        col.datafield = 'SEQ_ID';
+        col.align = 'left';
+        col.styles.cell += 'display:none;';
+        dbgrid_GL.addColumn(col);
+    }
+    
+    {
+        var col = new datagrid_column();
+        col.header = 'GL Type';
+        col.datafield = 'glType';
+        col.align = 'center';
+        col.type = 'select';
+        col.options = glFileType;
+        col.styles.cell += 'width:15%';
+        col.onchange = 'check_glType';
+        dbgrid_GL.addColumn(col);
+    }
+    
+    
+    {    
+        var col = new datagrid_column();
+        col.header = 'Branch Code';
+        col.datafield = 'branchcode';
+        col.align = 'left';
+        col.editable = false;
+        col.styles.cell += 'width:15%';
+        dbgrid_GL.addColumn(col);
+    }
+    
+    {
+        var col = new datagrid_column();
+        col.header = 'File Type';
+        col.styles.header += 'display:none;';
+        col.datafield = 'filetype';
+        col.align = 'center';
+        col.type = 'select';
+        col.options = ibatchFileType;
+       // col.onchange = 'show_recordID';
+        dbgrid_GL.addColumn(col);
+        col.styles.cell += 'display:none;';
+    }
+        
+    {
+        var col = new datagrid_column();
+        col.header = 'Account';
+        col.datafield = 'glAccount';
+        col.align = 'left';
+        col.styles.cell += 'width:15%';
+        col.editable = true;
+       // col.onchange = 'validate_input';
+        dbgrid_GL.addColumn(col);
+    }
+
+    {
+        var col = new datagrid_column();
+        col.header = 'Currency';
+        col.datafield = 'glCurrency';
+        col.styles.cell += 'width:20%';
+        col.align = 'center';
+        col.type = 'select';
+        col.options = glCurrency;
+        dbgrid_GL.addColumn(col);
+    }
+    
+    {
+        var col = new datagrid_column();
+        col.header = 'Description';
+        col.datafield = 'description';
+        col.align = 'left';
+        col.styles.cell += 'width:30%';
+        col.editable = true;
+       // col.onchange = 'validate_input';
+        dbgrid_GL.addColumn(col);
+    }
+    
+    {
+        var col = new datagrid_column();
+        col.header = 'Record ID';
+        col.datafield = 'recordID';
+        col.align = 'left';
+        col.styles.cell += 'width:10%';
+        col.editable = true;
+        dbgrid_GL.addColumn(col);
+    }
+    
+    {
+        var col = new datagrid_column();
+        col.header = 'deleted';
+        col.styles.header += 'display:none;';
+        col.styles.datafield += 'display:none;';
+        col.datafield = 'deleted';
+        col.align = 'left';
+        col.styles.cell += 'display:none;';
+        dbgrid_GL.addColumn(col);
+    }
+
+
+    dbgrid_GL.caption = 'GL ACCOUNT';
+    dbgrid_GL.classNames.table = 'table_body';
+    dbgrid_GL.rows_page = 12;
+    dbgrid_GL.row.normal_style = 'background-color: #f7ffff;'; 
+    dbgrid_GL.footer.add_button.none = false;
+    dbgrid_GL.footer.add_button.onclick = 'add_gl_acct';
+    dbgrid_GL.footer.add_button.style += 'background-color: lavender;color:maroon;'; 
+    dbgrid_GL.footer.add_button.beforepost = 'validate_input';
+    dbgrid_GL.footer.edit_button.none = false;
+    dbgrid_GL.footer.edit_button.onclick = 'edit_gl_acct';
+    dbgrid_GL.footer.edit_button.style += 'background-color: lavender;color:maroon;';    
+    dbgrid_GL.footer.edit_button.beforepost = 'validate_input';        
+    dbgrid_GL.footer.save_button.none = false;
+    dbgrid_GL.footer.save_button.onclick = 'save_gl_acct';  
+    dbgrid_GL.footer.save_button.style += 'background-color: lavender;';  
+    dbgrid_GL.footer.delete_button.none = false;
+    dbgrid_GL.footer.cancel_button.none = false;
+    dbgrid_GL.footer.cancel_button.onclick = 'populate_record_GL';
+    dbgrid_GL.footer.cancel_button.style += 'background-color: lavender;';
+}
+
+function getGLFileType()
+{
+    var rows =  IRSWorld.BranchSetup.Accounts.getGLFileType("GLacctType").value.Rows;
+    glFileType = new Array();
+    for(var i = 0;i <= rows.length - 1;i++)
+    {
+        glFileType[glFileType.length] = rows[i].FldValue + '~' + rows[i].FldDescription;
+    }
+}
+
+function getGLCurrency()
+{  
+   var rows =  IRSWorld.BranchSetup.Accounts.getGLCurrency("Currency").value.Rows;
+   glCurrency = new Array();
+   glCurrency[glCurrency.length] = 0 + '~N/A';
+   
+   for(var i = 0;i <= rows.length - 1;i++)
+   {     
+        glCurrency[glCurrency.length] = rows[i].FldValue + '~' + rows[i].FldDescription;
+   }
+}
+
+function getIbatchFileType()
+{  
+   var rows =  IRSWorld.BranchSetup.Accounts.getIbatchFileType("IBatch").value.Rows;
+   ibatchFileType = new Array();
+   
+   for(var i = 0;i <= rows.length - 1;i++)
+   {
+        ibatchFileType[ibatchFileType.length] = rows[i].FldCode + '~' + rows[i].FldDescription;
+   }
+}
+
+function populate_record_GL()
+{
+    var brcode = document.getElementById('ddlBranch').value;
+    var acctcurrency = document.getElementById('ddlAcctCurrency').value;
+    
+    if ((brcode =='' | brcode=='null') | (acctcurrency=='' | acctcurrency=='null'))
+    {
+        return;
+    }
+    
+    getGLFileType();
+    getGLCurrency();
+    getIbatchFileType();
+    
+    IRSWorld.BranchSetup.Accounts.getGLAccount(brcode,acctcurrency,bind_grid_GL);
+    
+    set_visibility('Data');
+    curract = ' ';
+}
+
+
+function bind_grid_GL(accts)
+{
+    if (accts.error != null)
+    {
+        spawn_errpage(accts.error);
+        return;
+    }
+    
+    create_grid_GL();
+    ajax_show_status(true);
+   
+    dbgrid_GL.bind(accts.value, 'tdGL', 'gridGL');
+    ajax_show_status(false);
+} 
+
+
+function save_gl_acct(args)
+{
+//    if(dbgrid_GL.datatable.Rows.length >0 )
+//    {
+//        if(!(args.deletes.length > 0))
+//        {
+//            alert('There should only be 1 GL Account per currency');
+//            populate_record_GL();
+//            return;
+//        }
+    //    }
+
+
+    if (guserrolecode == '2') {
+        alert('Approver is not allowed to modify current set-up.')
+        return;
+    }
+
+    if (args.value == dbgrid_GL.footer.save_button.value)
+    {
+        var brcode=document.getElementById('ddlBranch').value;
+        var acctcurr=document.getElementById('ddlAcctCurrency').value;                            
+        IRSWorld.BranchSetup.Accounts.applyEdits(args.additions, args.deletes, args.edits,brcode,acctcurr,'GL',save_gl_acct_callback);
+       
+    }
+}
+
+function save_gl_acct_callback(result)
+{
+    if(result.value == null | result.value == undefined)
+    {
+        alert(result.error);
+        bind_grid_GL();
+        return;
+    }
+    populate_record_GL();
+    alert('Successfully submitted for approval');
+}
+
+function check_glType(args)
+{  
+    var gl_type = document.getElementById(args.control).value;
+    
+    var tbl = document.getElementById(dbgrid_GL.id);
+    
+    if (curract == "Add")
+    {
+        dbgrid_GL.setColumn(4, ' ');
+        dbgrid_GL.setColumn(6, ' ');
+    }
+    
+    var selData = dbgrid_GL.row.selected;
+
+    var trid = dbgrid_GL.id + '_tr_' + selData;
+    var tr = document.getElementById(trid);
+    
+    var bodi = document.getElementById(dbgrid_GL.id + '_tbody');
+    var rows = bodi.getElementsByTagName('tr');
+    
+    for (var j = 0; j < rows.length; j++)
+    {
+        tr = rows.item(j);
+        if (trid == tr.id)
+        {
+            var sel = tr.cells;
+            var s = sel.item(1);
+                        
+            if (s && gl_type == 1)
+            {
+                var acct = sel.item(4);
+                var brcd = sel.item(2);
+                brcd.innerHTML = acct.innerHTML;
+               
+                var brcode = document.getElementById('ddlBranch').value;
+                var acctcurrency = document.getElementById('ddlAcctCurrency').value;
+    
+                dbgrid_GL.setColumn(2, brcode);
+                dbgrid_GL.setColumn(5, acctcurrency);
+                dbgrid_GL.setColumn(7, "N/A");
+                            
+                if (tbl)
+	            {
+		            var r = tbl.rows;
+	                
+	                for (var i = 0; i < r.length; i++)
+	                {
+	                    try
+	                    {
+		                    var sels = r.item(i).cells;
+		                    var tdCurr = sels.item(5);
+		                    
+		                    tdCurr.style.display = 'block';
+		                }
+		                
+		                catch (e)
+		                {
+		                    break;
+		                }
+	                }		
+                }
+                break;
+            }
+                        
+           else if (s && gl_type == 2)
+           {
+                var fType = sel.item(3);
+                var glFType = sel.item(2);
+                glFType.innerHTML = fType.innerHTML;
+                
+                if(selectVal[7] != "" || selectVal[7] != "N/A")
+                {
+                    dbgrid_GL.setColumn(7, selectVal[7]);
+                }
+                
+                if (tbl)
+	            {
+		            var r = tbl.rows;
+	                
+	                for (var i = 0; i < r.length; i++)
+	                {
+	                    try
+	                    {
+		                    var sels = r.item(i).cells;
+		                    var tdCurr = sels.item(5);
+                    		            
+		                    tdCurr.style.display = 'none';
+		                }
+		                
+		                catch (e)
+		                {
+		                    break;
+		                }
+	                }		
+                 }
+                 break;
+            }
+        }
+    }
+	return;
+}
+
+function show_recordID(args)
+{
+    var glRecordID = document.getElementById(args.control).value;
+
+    return;
+}
+
+function add_gl_acct(args)
+{
+    var brcode = document.getElementById('ddlBranch').value;
+    var acctcurrency = document.getElementById('ddlAcctCurrency').value;
+    
+    dbgrid_GL.setColumn(2, brcode);
+    dbgrid_GL.setColumn(5, acctcurrency);
+    dbgrid_GL.setColumn(7, "N/A");
+    
+    curract = args.value;
+    return;
+}
+
+function edit_gl_acct(args)
+{   
+    var selData = dbgrid_GL.row.selected;
+    var trid = dbgrid_GL.id + '_tr_' + selData;
+    var tr = document.getElementById(trid);
+    
+    if (tr)
+    {   
+        var sells = tr.cells;
+        for (var j = 0; j < sells.length; j++)
+        {
+            if (sells.item(j).hasChildNodes())
+            {
+                var childs = sells.item(j).childNodes;
+                for (var k=0; k < childs.length; k++)
+                {
+                    var tag = childs[k].nodeName;
+                    
+                    selectVal[j] = childs[k].value;
+                    selectID[j] = childs[k].id;
+                    if(tag == "SELECT" && childs[k].id == selectID[3])
+                    {
+                        ddlID = childs[k];
+                    }
+                }
+            }
+        }
+    }
+    
+    var bodi = document.getElementById(dbgrid_GL.id + '_tbody');
+        var rows = bodi.getElementsByTagName('tr');
+        
+        for (var j = 0; j < rows.length; j++)
+        {   
+            tr = rows.item(j);
+            if (trid == tr.id)
+            {
+                var sel = tr.cells;
+                var s = sel.item(1);
+                if (s)
+                {
+                    var fType = sel.item(3);
+                    var glFType = sel.item(2);
+                    
+                    if(selectVal[1] == 1)
+                    {
+                        var brcode = document.getElementById('ddlBranch').value;
+                        dbgrid_GL.setColumn(2, brcode);
+                    }
+                    
+                    if(selectVal[1] == 2)
+                    {   
+                        setSelectedValue(ddlID, selectVal[2]);
+                        glFType.innerHTML = fType.innerHTML;
+                        if(selectVal[7] != "" || selectVal[7] != "N/A")
+                        {
+                            dbgrid_GL.setColumn(7, selectVal[7]);
+                        }
+                    }
+                }
+                break;
+            }
+            
+            var tbl = document.getElementById(dbgrid_GL.id);
+            if (tbl)
+	        {
+		        var r = tbl.rows;
+	            for (var i = 0; i < r.length; i++)
+	            {
+	                try
+	                {
+		                var sels = r.item(i).cells;
+		                var tdCurr = sels.item(5);
+        		                   
+		                tdCurr.style.display = (selectVal[1] == 1) ? 'block' : 'none';
+		            }
+		            catch (e)
+		            {
+		                break;
+		            }
+	            }		
+            }
+    
+           curract = args.value;
+        }
+       
+    return;
+}
+
+function setSelectedValue(ddl, val)
+{                        
+    for (var i = 0; i < ddl.options.length; i++)
+    {
+        var opts = ddl.options;
+        var opt_val = opts.item(i).value;
+        if (val == opt_val)
+        {
+            ddl.selectedIndex = i;
+            return true;
+        }
+    }
+}
+
+
+function validate_input(args)
+{
+    var _glType = dbgrid_GL.getValueAt(args.datarow,1);
+    var _brcode = dbgrid_GL.getValueAt(args.datarow,2);
+    var _account = dbgrid_GL.getValueAt(args.datarow,4);
+    var _desc = dbgrid_GL.getValueAt(args.datarow, 6);
+
+    var _curract = curract;
+
+    var isinvalid = isSpecial(_account);
+    if(isinvalid)
+    {
+        alert('Error! Special character(s) not allowed');
+        //document.getElementById(args.control).value = '';
+        dbgrid_GL.curract = '';
+        return;
+    }
+    
+    if(trim(_account) == null || trim(_account) == '')
+    {
+        alert('Account number required.');
+        dbgrid_GL.curract = '';
+        return;
+    }
+    else if(trim(_desc) == null || trim(_desc) == '')
+    {
+        alert('Description must not be empty');
+        dbgrid_GL.curract = '';
+        return;
+    }
+    for(var i=0;i<= dbgrid_GL.datatable.Rows.length - 1;i++)
+    {
+        if(args.datarow != i && curract == "Add")
+        {
+            if(_glType == dbgrid_GL.getValueAt(i,1) && _brcode == dbgrid_GL.getValueAt(i,2) && _account == dbgrid_GL.getValueAt(i,4))
+            {   var _curract = "Add";
+                alert('Duplicate record exist');
+                dbgrid_GL.curract = ' ';
+                        
+                return;
+            }
+        }
+        
+        if (args.datarow != i && curract == "Edit")
+        {
+            if(_glType == dbgrid_GL.getValueAt(i,1) && _brcode == dbgrid_GL.getValueAt(i,2) && _account == dbgrid_GL.getValueAt(i,4))
+            {   
+                var _curract = "Edit";
+                alert('Duplicate record exist');
+                dbgrid_GL.curract = ' ';
+                        
+                return;
+            }
+        }
+                
+    }
+    
+    dbgrid_GL.curract = _curract;
+    return;
+}

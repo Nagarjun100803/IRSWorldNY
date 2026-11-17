@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRT015" targetNamespace="http://tempuri.org/dsGRT015.xsd" xmlns:mstns="http://tempuri.org/dsGRT015.xsd" xmlns="http://tempuri.org/dsGRT015.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRT015" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRT015" msprop:Generator_DataSetName="dsGRT015">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRT015_Dollar" msprop:Generator_UserTableName="dtGRT015_Dollar" msprop:Generator_RowDeletedName="dtGRT015_DollarRowDeleted" msprop:Generator_TableClassName="dtGRT015_DollarDataTable" msprop:Generator_RowChangedName="dtGRT015_DollarRowChanged" msprop:Generator_RowClassName="dtGRT015_DollarRow" msprop:Generator_RowChangingName="dtGRT015_DollarRowChanging" msprop:Generator_RowEvArgName="dtGRT015_DollarRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT015_DollarRowChangeEventHandler" msprop:Generator_TablePropName="dtGRT015_Dollar" msprop:Generator_TableVarName="tabledtGRT015_Dollar" msprop:Generator_RowDeletingName="dtGRT015_DollarRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trans_Date" msprop:Generator_UserColumnName="Trans_Date" msprop:Generator_ColumnPropNameInRow="Trans_Date" msprop:Generator_ColumnVarNameInTable="columnTrans_Date" msprop:Generator_ColumnPropNameInTable="Trans_DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FX_Amount" msprop:Generator_UserColumnName="FX_Amount" msprop:Generator_ColumnPropNameInRow="FX_Amount" msprop:Generator_ColumnVarNameInTable="columnFX_Amount" msprop:Generator_ColumnPropNameInTable="FX_AmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Credit_Peso" msprop:Generator_UserColumnName="Credit_Peso" msprop:Generator_ColumnPropNameInRow="Credit_Peso" msprop:Generator_ColumnVarNameInTable="columnCredit_Peso" msprop:Generator_ColumnPropNameInTable="Credit_PesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_Charges" msprop:Generator_UserColumnName="Total_Charges" msprop:Generator_ColumnPropNameInRow="Total_Charges" msprop:Generator_ColumnVarNameInTable="columnTotal_Charges" msprop:Generator_ColumnPropNameInTable="Total_ChargesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Net_Peso" msprop:Generator_UserColumnName="Net_Peso" msprop:Generator_ColumnPropNameInRow="Net_Peso" msprop:Generator_ColumnVarNameInTable="columnNet_Peso" msprop:Generator_ColumnPropNameInTable="Net_PesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Net_Dollar" msprop:Generator_UserColumnName="Net_Dollar" msprop:Generator_ColumnPropNameInRow="Net_Dollar" msprop:Generator_ColumnVarNameInTable="columnNet_Dollar" msprop:Generator_ColumnPropNameInTable="Net_DollarColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtGRT015_Peso" msprop:Generator_UserTableName="dtGRT015_Peso" msprop:Generator_RowDeletedName="dtGRT015_PesoRowDeleted" msprop:Generator_TableClassName="dtGRT015_PesoDataTable" msprop:Generator_RowChangedName="dtGRT015_PesoRowChanged" msprop:Generator_RowClassName="dtGRT015_PesoRow" msprop:Generator_RowChangingName="dtGRT015_PesoRowChanging" msprop:Generator_RowEvArgName="dtGRT015_PesoRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRT015_PesoRowChangeEventHandler" msprop:Generator_TablePropName="dtGRT015_Peso" msprop:Generator_TableVarName="tabledtGRT015_Peso" msprop:Generator_RowDeletingName="dtGRT015_PesoRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trans_Date" msprop:Generator_UserColumnName="Trans_Date" msprop:Generator_ColumnPropNameInRow="Trans_Date" msprop:Generator_ColumnVarNameInTable="columnTrans_Date" msprop:Generator_ColumnPropNameInTable="Trans_DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FX_Amount" msprop:Generator_UserColumnName="FX_Amount" msprop:Generator_ColumnPropNameInRow="FX_Amount" msprop:Generator_ColumnVarNameInTable="columnFX_Amount" msprop:Generator_ColumnPropNameInTable="FX_AmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Credit_Peso" msprop:Generator_UserColumnName="Credit_Peso" msprop:Generator_ColumnPropNameInRow="Credit_Peso" msprop:Generator_ColumnVarNameInTable="columnCredit_Peso" msprop:Generator_ColumnPropNameInTable="Credit_PesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_Charges" msprop:Generator_UserColumnName="Total_Charges" msprop:Generator_ColumnPropNameInRow="Total_Charges" msprop:Generator_ColumnVarNameInTable="columnTotal_Charges" msprop:Generator_ColumnPropNameInTable="Total_ChargesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Net_Peso" msprop:Generator_UserColumnName="Net_Peso" msprop:Generator_ColumnPropNameInRow="Net_Peso" msprop:Generator_ColumnVarNameInTable="columnNet_Peso" msprop:Generator_ColumnPropNameInTable="Net_PesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Net_Dollar" msprop:Generator_UserColumnName="Net_Dollar" msprop:Generator_ColumnPropNameInRow="Net_Dollar" msprop:Generator_ColumnVarNameInTable="columnNet_Dollar" msprop:Generator_ColumnPropNameInTable="Net_DollarColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

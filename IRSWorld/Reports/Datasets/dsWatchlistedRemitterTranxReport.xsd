@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsWatchlistedRemitterTranxReport" targetNamespace="http://tempuri.org/dsWatchlistedRemitterTranxReport.xsd" xmlns:mstns="http://tempuri.org/dsWatchlistedRemitterTranxReport.xsd" xmlns="http://tempuri.org/dsWatchlistedRemitterTranxReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsWatchlistedRemitterTranxReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsWatchlistedRemitterTranxReport" msprop:Generator_DataSetName="dsWatchlistedRemitterTranxReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtWatchlistedRemitterTranxReport" msprop:Generator_UserTableName="dtWatchlistedRemitterTranxReport" msprop:Generator_RowDeletedName="dtWatchlistedRemitterTranxReportRowDeleted" msprop:Generator_TableClassName="dtWatchlistedRemitterTranxReportDataTable" msprop:Generator_RowChangedName="dtWatchlistedRemitterTranxReportRowChanged" msprop:Generator_RowClassName="dtWatchlistedRemitterTranxReportRow" msprop:Generator_RowChangingName="dtWatchlistedRemitterTranxReportRowChanging" msprop:Generator_RowEvArgName="dtWatchlistedRemitterTranxReportRowChangeEvent" msprop:Generator_RowEvHandlerName="dtWatchlistedRemitterTranxReportRowChangeEventHandler" msprop:Generator_TablePropName="dtWatchlistedRemitterTranxReport" msprop:Generator_TableVarName="tabledtWatchlistedRemitterTranxReport" msprop:Generator_RowDeletingName="dtWatchlistedRemitterTranxReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittanceSystem" msprop:Generator_UserColumnName="RemittanceSystem" msprop:Generator_ColumnPropNameInRow="RemittanceSystem" msprop:Generator_ColumnVarNameInTable="columnRemittanceSystem" msprop:Generator_ColumnPropNameInTable="RemittanceSystemColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CIFID" msprop:Generator_UserColumnName="CIFID" msprop:Generator_ColumnPropNameInRow="CIFID" msprop:Generator_ColumnVarNameInTable="columnCIFID" msprop:Generator_ColumnPropNameInTable="CIFIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterFullName" msprop:Generator_UserColumnName="RemitterFullName" msprop:Generator_ColumnPropNameInRow="RemitterFullName" msprop:Generator_ColumnVarNameInTable="columnRemitterFullName" msprop:Generator_ColumnPropNameInTable="RemitterFullNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="WATCHLIST" msprop:Generator_UserColumnName="WATCHLIST" msprop:Generator_ColumnPropNameInRow="WATCHLIST" msprop:Generator_ColumnVarNameInTable="columnWATCHLIST" msprop:Generator_ColumnPropNameInTable="WATCHLISTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MatchedWatchlistName" msprop:Generator_UserColumnName="MatchedWatchlistName" msprop:Generator_ColumnPropNameInRow="MatchedWatchlistName" msprop:Generator_ColumnVarNameInTable="columnMatchedWatchlistName" msprop:Generator_ColumnPropNameInTable="MatchedWatchlistNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxDate" msprop:Generator_UserColumnName="TranxDate" msprop:Generator_ColumnPropNameInRow="TranxDate" msprop:Generator_ColumnVarNameInTable="columnTranxDate" msprop:Generator_ColumnPropNameInTable="TranxDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Referenceno" msprop:Generator_UserColumnName="Referenceno" msprop:Generator_ColumnPropNameInRow="Referenceno" msprop:Generator_ColumnVarNameInTable="columnReferenceno" msprop:Generator_ColumnPropNameInTable="ReferencenoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingCurrency" msprop:Generator_UserColumnName="RemittingCurrency" msprop:Generator_ColumnPropNameInRow="RemittingCurrency" msprop:Generator_ColumnVarNameInTable="columnRemittingCurrency" msprop:Generator_ColumnPropNameInTable="RemittingCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ImplementationType" msprop:Generator_UserColumnName="ImplementationType" msprop:Generator_ColumnPropNameInRow="ImplementationType" msprop:Generator_ColumnVarNameInTable="columnImplementationType" msprop:Generator_ColumnPropNameInTable="ImplementationTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Paymode" msprop:Generator_UserColumnName="Paymode" msprop:Generator_ColumnPropNameInRow="Paymode" msprop:Generator_ColumnVarNameInTable="columnPaymode" msprop:Generator_ColumnPropNameInTable="PaymodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GrossRemAmount" msprop:Generator_UserColumnName="GrossRemAmount" msprop:Generator_ColumnPropNameInRow="GrossRemAmount" msprop:Generator_ColumnVarNameInTable="columnGrossRemAmount" msprop:Generator_ColumnPropNameInTable="GrossRemAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NetRemAmount" msprop:Generator_UserColumnName="NetRemAmount" msprop:Generator_ColumnPropNameInRow="NetRemAmount" msprop:Generator_ColumnVarNameInTable="columnNetRemAmount" msprop:Generator_ColumnPropNameInTable="NetRemAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NettoBeneAmount" msprop:Generator_UserColumnName="NettoBeneAmount" msprop:Generator_ColumnPropNameInRow="NettoBeneAmount" msprop:Generator_ColumnVarNameInTable="columnNettoBeneAmount" msprop:Generator_ColumnPropNameInTable="NettoBeneAmountColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

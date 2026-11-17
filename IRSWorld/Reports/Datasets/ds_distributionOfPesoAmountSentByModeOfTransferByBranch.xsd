@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_distributionOfPesoAmountSentByModeOfTransferByBranch" targetNamespace="http://tempuri.org/ds_distributionOfPesoAmountSentByModeOfTransferByBranch.xsd" xmlns:mstns="http://tempuri.org/ds_distributionOfPesoAmountSentByModeOfTransferByBranch.xsd" xmlns="http://tempuri.org/ds_distributionOfPesoAmountSentByModeOfTransferByBranch.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_distributionOfPesoAmountSentByModeOfTransferByBranch" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_distributionOfPesoAmountSentByModeOfTransferByBranch" msprop:Generator_DataSetName="ds_distributionOfPesoAmountSentByModeOfTransferByBranch">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Online-PHP" msprop:Generator_UserColumnName="Online-PHP" msprop:Generator_ColumnPropNameInRow="_Online_PHP" msprop:Generator_ColumnVarNameInTable="_columnOnline_PHP" msprop:Generator_ColumnPropNameInTable="_Online_PHPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Online-USD" msprop:Generator_UserColumnName="Online-USD" msprop:Generator_ColumnPropNameInRow="_Online_USD" msprop:Generator_ColumnVarNameInTable="_columnOnline_USD" msprop:Generator_ColumnPropNameInTable="_Online_USDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0033_D-PHP" msprop:Generator_UserColumnName="3D-PHP" msprop:Generator_ColumnPropNameInRow="_3D_PHP" msprop:Generator_ColumnVarNameInTable="_column3D_PHP" msprop:Generator_ColumnPropNameInTable="_3D_PHPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0033_D-USD" msprop:Generator_UserColumnName="3D-USD" msprop:Generator_ColumnPropNameInRow="_3D_USD" msprop:Generator_ColumnVarNameInTable="_column3D_USD" msprop:Generator_ColumnPropNameInTable="_3D_USDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BPO-PHP" msprop:Generator_UserColumnName="BPO-PHP" msprop:Generator_ColumnPropNameInRow="_BPO_PHP" msprop:Generator_ColumnVarNameInTable="_columnBPO_PHP" msprop:Generator_ColumnPropNameInTable="_BPO_PHPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BPO-USD" msprop:Generator_UserColumnName="BPO-USD" msprop:Generator_ColumnPropNameInRow="_BPO_USD" msprop:Generator_ColumnVarNameInTable="_columnBPO_USD" msprop:Generator_ColumnPropNameInTable="_BPO_USDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Total-PHP" msprop:Generator_UserColumnName="Total-PHP" msprop:Generator_ColumnPropNameInRow="_Total_PHP" msprop:Generator_ColumnVarNameInTable="_columnTotal_PHP" msprop:Generator_ColumnPropNameInTable="_Total_PHPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Total-USD" msprop:Generator_UserColumnName="Total-USD" msprop:Generator_ColumnPropNameInRow="_Total_USD" msprop:Generator_ColumnVarNameInTable="_columnTotal_USD" msprop:Generator_ColumnPropNameInTable="_Total_USDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

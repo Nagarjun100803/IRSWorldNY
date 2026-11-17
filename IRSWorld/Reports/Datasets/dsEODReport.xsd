@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEODReport" targetNamespace="http://tempuri.org/dsEODReport.xsd" xmlns:mstns="http://tempuri.org/dsEODReport.xsd" xmlns="http://tempuri.org/dsEODReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEODReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEODReport" msprop:Generator_DataSetName="dsEODReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtEOD_Report" msprop:Generator_UserTableName="dtEOD_Report" msprop:Generator_RowDeletedName="dtEOD_ReportRowDeleted" msprop:Generator_TableClassName="dtEOD_ReportDataTable" msprop:Generator_RowChangedName="dtEOD_ReportRowChanged" msprop:Generator_RowClassName="dtEOD_ReportRow" msprop:Generator_RowChangingName="dtEOD_ReportRowChanging" msprop:Generator_RowEvArgName="dtEOD_ReportRowChangeEvent" msprop:Generator_RowEvHandlerName="dtEOD_ReportRowChangeEventHandler" msprop:Generator_TablePropName="dtEOD_Report" msprop:Generator_TableVarName="tabledtEOD_Report" msprop:Generator_RowDeletingName="dtEOD_ReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemittingCcy" msprop:Generator_UserColumnName="RemittingCcy" msprop:Generator_ColumnPropNameInRow="RemittingCcy" msprop:Generator_ColumnVarNameInTable="columnRemittingCcy" msprop:Generator_ColumnPropNameInTable="RemittingCcyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_UserColumnName="ProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingAmt" msprop:Generator_UserColumnName="RemittingAmt" msprop:Generator_ColumnPropNameInRow="RemittingAmt" msprop:Generator_ColumnVarNameInTable="columnRemittingAmt" msprop:Generator_ColumnPropNameInTable="RemittingAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOfItems" msprop:Generator_UserColumnName="NumOfItems" msprop:Generator_ColumnPropNameInRow="NumOfItems" msprop:Generator_ColumnVarNameInTable="columnNumOfItems" msprop:Generator_ColumnPropNameInTable="NumOfItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittanceAmt" msprop:Generator_UserColumnName="RemittanceAmt" msprop:Generator_ColumnPropNameInRow="RemittanceAmt" msprop:Generator_ColumnVarNameInTable="columnRemittanceAmt" msprop:Generator_ColumnPropNameInTable="RemittanceAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_RemittingAmt" msprop:Generator_UserColumnName="Total_RemittingAmt" msprop:Generator_ColumnPropNameInRow="Total_RemittingAmt" msprop:Generator_ColumnVarNameInTable="columnTotal_RemittingAmt" msprop:Generator_ColumnPropNameInTable="Total_RemittingAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_NumOfItems" msprop:Generator_UserColumnName="Total_NumOfItems" msprop:Generator_ColumnPropNameInRow="Total_NumOfItems" msprop:Generator_ColumnVarNameInTable="columnTotal_NumOfItems" msprop:Generator_ColumnPropNameInTable="Total_NumOfItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_RemittanceAmt" msprop:Generator_UserColumnName="Total_RemittanceAmt" msprop:Generator_ColumnPropNameInRow="Total_RemittanceAmt" msprop:Generator_ColumnVarNameInTable="columnTotal_RemittanceAmt" msprop:Generator_ColumnPropNameInTable="Total_RemittanceAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GrandTotal_NumOfItems" msprop:Generator_UserColumnName="GrandTotal_NumOfItems" msprop:Generator_ColumnPropNameInRow="GrandTotal_NumOfItems" msprop:Generator_ColumnVarNameInTable="columnGrandTotal_NumOfItems" msprop:Generator_ColumnPropNameInTable="GrandTotal_NumOfItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GrandTotal_RemittanceAmt" msprop:Generator_UserColumnName="GrandTotal_RemittanceAmt" msprop:Generator_ColumnPropNameInRow="GrandTotal_RemittanceAmt" msprop:Generator_ColumnVarNameInTable="columnGrandTotal_RemittanceAmt" msprop:Generator_ColumnPropNameInTable="GrandTotal_RemittanceAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OPE" msprop:Generator_UserColumnName="OPE" msprop:Generator_ColumnPropNameInRow="OPE" msprop:Generator_ColumnVarNameInTable="columnOPE" msprop:Generator_ColumnPropNameInTable="OPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DocStamp" msprop:Generator_UserColumnName="DocStamp" msprop:Generator_ColumnPropNameInRow="DocStamp" msprop:Generator_ColumnVarNameInTable="columnDocStamp" msprop:Generator_ColumnPropNameInTable="DocStampColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DollarToPesoTxnsByBranch" targetNamespace="http://tempuri.org/ds_DollarToPesoTxnsByBranch.xsd" xmlns:mstns="http://tempuri.org/ds_DollarToPesoTxnsByBranch.xsd" xmlns="http://tempuri.org/ds_DollarToPesoTxnsByBranch.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DollarToPesoTxnsByBranch" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DollarToPesoTxnsByBranch" msprop:Generator_DataSetName="ds_DollarToPesoTxnsByBranch">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtByBranch" msprop:Generator_UserTableName="dtByBranch" msprop:Generator_RowDeletedName="dtByBranchRowDeleted" msprop:Generator_RowChangedName="dtByBranchRowChanged" msprop:Generator_RowClassName="dtByBranchRow" msprop:Generator_RowChangingName="dtByBranchRowChanging" msprop:Generator_RowEvArgName="dtByBranchRowChangeEvent" msprop:Generator_RowEvHandlerName="dtByBranchRowChangeEventHandler" msprop:Generator_TableClassName="dtByBranchDataTable" msprop:Generator_TableVarName="tabledtByBranch" msprop:Generator_RowDeletingName="dtByBranchRowDeleting" msprop:Generator_TablePropName="dtByBranch">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCd" msprop:Generator_UserColumnName="BranchCd" msprop:Generator_ColumnVarNameInTable="columnBranchCd" msprop:Generator_ColumnPropNameInRow="BranchCd" msprop:Generator_ColumnPropNameInTable="BranchCdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TrxnDate" msprop:Generator_UserColumnName="TrxnDate" msprop:Generator_ColumnVarNameInTable="columnTrxnDate" msprop:Generator_ColumnPropNameInRow="TrxnDate" msprop:Generator_ColumnPropNameInTable="TrxnDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalAmountPHP" msprop:Generator_UserColumnName="TotalAmountPHP" msprop:Generator_ColumnVarNameInTable="columnTotalAmountPHP" msprop:Generator_ColumnPropNameInRow="TotalAmountPHP" msprop:Generator_ColumnPropNameInTable="TotalAmountPHPColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalAmountUSD" msprop:Generator_UserColumnName="TotalAmountUSD" msprop:Generator_ColumnVarNameInTable="columnTotalAmountUSD" msprop:Generator_ColumnPropNameInRow="TotalAmountUSD" msprop:Generator_ColumnPropNameInTable="TotalAmountUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

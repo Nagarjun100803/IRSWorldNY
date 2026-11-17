@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds3d_Tranx" targetNamespace="http://tempuri.org/ds3d_Tranx.xsd" xmlns:mstns="http://tempuri.org/ds3d_Tranx.xsd" xmlns="http://tempuri.org/ds3d_Tranx.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds3d_Tranx" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds3d_Tranx" msprop:Generator_DataSetName="ds3d_Tranx">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds3d_Tranx" msprop:Generator_UserTableName="ds3d_Tranx" msprop:Generator_RowDeletedName="ds3d_TranxRowDeleted" msprop:Generator_RowChangedName="ds3d_TranxRowChanged" msprop:Generator_RowClassName="ds3d_TranxRow" msprop:Generator_RowChangingName="ds3d_TranxRowChanging" msprop:Generator_RowEvArgName="ds3d_TranxRowChangeEvent" msprop:Generator_RowEvHandlerName="ds3d_TranxRowChangeEventHandler" msprop:Generator_TableClassName="ds3d_TranxDataTable" msprop:Generator_TableVarName="tableds3d_Tranx" msprop:Generator_RowDeletingName="ds3d_TranxRowDeleting" msprop:Generator_TablePropName="_ds3d_Tranx">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterID" msprop:Generator_UserColumnName="RemitterID" msprop:Generator_ColumnVarNameInTable="columnRemitterID" msprop:Generator_ColumnPropNameInRow="RemitterID" msprop:Generator_ColumnPropNameInTable="RemitterIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferenceNo" msprop:Generator_UserColumnName="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittedAmt" msprop:Generator_UserColumnName="RemittedAmt" msprop:Generator_ColumnVarNameInTable="columnRemittedAmt" msprop:Generator_ColumnPropNameInRow="RemittedAmt" msprop:Generator_ColumnPropNameInTable="RemittedAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Commission" msprop:Generator_UserColumnName="Commission" msprop:Generator_ColumnVarNameInTable="columnCommission" msprop:Generator_ColumnPropNameInRow="Commission" msprop:Generator_ColumnPropNameInTable="CommissionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetAmt" msprop:Generator_UserColumnName="NetAmt" msprop:Generator_ColumnVarNameInTable="columnNetAmt" msprop:Generator_ColumnPropNameInRow="NetAmt" msprop:Generator_ColumnPropNameInTable="NetAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_UserColumnName="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ParamDate" msprop:Generator_UserColumnName="ParamDate" msprop:Generator_ColumnVarNameInTable="columnParamDate" msprop:Generator_ColumnPropNameInRow="ParamDate" msprop:Generator_ColumnPropNameInTable="ParamDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchType" msprop:Generator_UserColumnName="BranchType" msprop:Generator_ColumnPropNameInRow="BranchType" msprop:Generator_ColumnVarNameInTable="columnBranchType" msprop:Generator_ColumnPropNameInTable="BranchTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

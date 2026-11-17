@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_TotalProcessedOFWRemittance" targetNamespace="http://tempuri.org/ds_TotalProcessedOFWRemittance.xsd" xmlns:mstns="http://tempuri.org/ds_TotalProcessedOFWRemittance.xsd" xmlns="http://tempuri.org/ds_TotalProcessedOFWRemittance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_TotalProcessedOFWRemittance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_TotalProcessedOFWRemittance" msprop:Generator_DataSetName="ds_TotalProcessedOFWRemittance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="usp_TotalProcessedOFWRemittance" msprop:Generator_UserTableName="usp_TotalProcessedOFWRemittance" msprop:Generator_RowDeletedName="usp_TotalProcessedOFWRemittanceRowDeleted" msprop:Generator_RowChangedName="usp_TotalProcessedOFWRemittanceRowChanged" msprop:Generator_RowClassName="usp_TotalProcessedOFWRemittanceRow" msprop:Generator_RowChangingName="usp_TotalProcessedOFWRemittanceRowChanging" msprop:Generator_RowEvArgName="usp_TotalProcessedOFWRemittanceRowChangeEvent" msprop:Generator_RowEvHandlerName="usp_TotalProcessedOFWRemittanceRowChangeEventHandler" msprop:Generator_TableClassName="usp_TotalProcessedOFWRemittanceDataTable" msprop:Generator_TableVarName="tableusp_TotalProcessedOFWRemittance" msprop:Generator_RowDeletingName="usp_TotalProcessedOFWRemittanceRowDeleting" msprop:Generator_TablePropName="usp_TotalProcessedOFWRemittance">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="From" msprop:Generator_UserColumnName="From" msprop:Generator_ColumnVarNameInTable="columnFrom" msprop:Generator_ColumnPropNameInRow="From" msprop:Generator_ColumnPropNameInTable="FromColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Region_x0020_and_x0020_Group" msprop:Generator_UserColumnName="Region and Group" msprop:Generator_ColumnVarNameInTable="columnRegion_and_Group" msprop:Generator_ColumnPropNameInRow="Region_and_Group" msprop:Generator_ColumnPropNameInTable="Region_and_GroupColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PHP" msprop:Generator_UserColumnName="PHP" msprop:Generator_ColumnVarNameInTable="columnPHP" msprop:Generator_ColumnPropNameInRow="PHP" msprop:Generator_ColumnPropNameInTable="PHPColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USD" msprop:Generator_UserColumnName="USD" msprop:Generator_ColumnVarNameInTable="columnUSD" msprop:Generator_ColumnPropNameInRow="USD" msprop:Generator_ColumnPropNameInTable="USDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SGD" msprop:Generator_UserColumnName="SGD" msprop:Generator_ColumnVarNameInTable="columnSGD" msprop:Generator_ColumnPropNameInRow="SGD" msprop:Generator_ColumnPropNameInTable="SGDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HKD" msprop:Generator_UserColumnName="HKD" msprop:Generator_ColumnVarNameInTable="columnHKD" msprop:Generator_ColumnPropNameInRow="HKD" msprop:Generator_ColumnPropNameInTable="HKDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EUR" msprop:Generator_UserColumnName="EUR" msprop:Generator_ColumnVarNameInTable="columnEUR" msprop:Generator_ColumnPropNameInRow="EUR" msprop:Generator_ColumnPropNameInTable="EURColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YEN" msprop:Generator_UserColumnName="YEN" msprop:Generator_ColumnVarNameInTable="columnYEN" msprop:Generator_ColumnPropNameInRow="YEN" msprop:Generator_ColumnPropNameInTable="YENColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GBP" msprop:Generator_UserColumnName="GBP" msprop:Generator_ColumnVarNameInTable="columnGBP" msprop:Generator_ColumnPropNameInRow="GBP" msprop:Generator_ColumnPropNameInTable="GBPColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AUD" msprop:Generator_UserColumnName="AUD" msprop:Generator_ColumnVarNameInTable="columnAUD" msprop:Generator_ColumnPropNameInRow="AUD" msprop:Generator_ColumnPropNameInTable="AUDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CAD" msprop:Generator_UserColumnName="CAD" msprop:Generator_ColumnVarNameInTable="columnCAD" msprop:Generator_ColumnPropNameInRow="CAD" msprop:Generator_ColumnPropNameInTable="CADColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CHF" msprop:Generator_UserColumnName="CHF" msprop:Generator_ColumnVarNameInTable="columnCHF" msprop:Generator_ColumnPropNameInRow="CHF" msprop:Generator_ColumnPropNameInTable="CHFColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SAR" msprop:Generator_UserColumnName="SAR" msprop:Generator_ColumnVarNameInTable="columnSAR" msprop:Generator_ColumnPropNameInRow="SAR" msprop:Generator_ColumnPropNameInTable="SARColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BHD" msprop:Generator_UserColumnName="BHD" msprop:Generator_ColumnVarNameInTable="columnBHD" msprop:Generator_ColumnPropNameInRow="BHD" msprop:Generator_ColumnPropNameInTable="BHDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ISK" msprop:Generator_UserColumnName="ISK" msprop:Generator_ColumnVarNameInTable="columnISK" msprop:Generator_ColumnPropNameInRow="ISK" msprop:Generator_ColumnPropNameInTable="ISKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CYP" msprop:Generator_UserColumnName="CYP" msprop:Generator_ColumnVarNameInTable="columnCYP" msprop:Generator_ColumnPropNameInRow="CYP" msprop:Generator_ColumnPropNameInTable="CYPColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HUF" msprop:Generator_UserColumnName="HUF" msprop:Generator_ColumnVarNameInTable="columnHUF" msprop:Generator_ColumnPropNameInRow="HUF" msprop:Generator_ColumnPropNameInTable="HUFColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOK" msprop:Generator_UserColumnName="NOK" msprop:Generator_ColumnVarNameInTable="columnNOK" msprop:Generator_ColumnPropNameInRow="NOK" msprop:Generator_ColumnPropNameInTable="NOKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SEK" msprop:Generator_UserColumnName="SEK" msprop:Generator_ColumnVarNameInTable="columnSEK" msprop:Generator_ColumnPropNameInRow="SEK" msprop:Generator_ColumnPropNameInTable="SEKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DKK" msprop:Generator_UserColumnName="DKK" msprop:Generator_ColumnVarNameInTable="columnDKK" msprop:Generator_ColumnPropNameInRow="DKK" msprop:Generator_ColumnPropNameInTable="DKKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NZD" msprop:Generator_UserColumnName="NZD" msprop:Generator_ColumnVarNameInTable="columnNZD" msprop:Generator_ColumnPropNameInRow="NZD" msprop:Generator_ColumnPropNameInTable="NZDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MYR" msprop:Generator_UserColumnName="MYR" msprop:Generator_ColumnVarNameInTable="columnMYR" msprop:Generator_ColumnPropNameInRow="MYR" msprop:Generator_ColumnPropNameInTable="MYRColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BND" msprop:Generator_UserColumnName="BND" msprop:Generator_ColumnVarNameInTable="columnBND" msprop:Generator_ColumnPropNameInRow="BND" msprop:Generator_ColumnPropNameInTable="BNDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AED" msprop:Generator_UserColumnName="AED" msprop:Generator_ColumnVarNameInTable="columnAED" msprop:Generator_ColumnPropNameInRow="AED" msprop:Generator_ColumnPropNameInTable="AEDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IDR" msprop:Generator_UserColumnName="IDR" msprop:Generator_ColumnVarNameInTable="columnIDR" msprop:Generator_ColumnPropNameInRow="IDR" msprop:Generator_ColumnPropNameInTable="IDRColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="THB" msprop:Generator_UserColumnName="THB" msprop:Generator_ColumnVarNameInTable="columnTHB" msprop:Generator_ColumnPropNameInRow="THB" msprop:Generator_ColumnPropNameInTable="THBColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TWD" msprop:Generator_UserColumnName="TWD" msprop:Generator_ColumnVarNameInTable="columnTWD" msprop:Generator_ColumnPropNameInRow="TWD" msprop:Generator_ColumnPropNameInTable="TWDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ZAR" msprop:Generator_UserColumnName="ZAR" msprop:Generator_ColumnVarNameInTable="columnZAR" msprop:Generator_ColumnPropNameInRow="ZAR" msprop:Generator_ColumnPropNameInTable="ZARColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalUSD" msprop:Generator_UserColumnName="TotalUSD" msprop:Generator_ColumnVarNameInTable="columnTotalUSD" msprop:Generator_ColumnPropNameInRow="TotalUSD" msprop:Generator_ColumnPropNameInTable="TotalUSDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="To" msprop:Generator_UserColumnName="To" msprop:Generator_ColumnPropNameInRow="To" msprop:Generator_ColumnVarNameInTable="columnTo" msprop:Generator_ColumnPropNameInTable="ToColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

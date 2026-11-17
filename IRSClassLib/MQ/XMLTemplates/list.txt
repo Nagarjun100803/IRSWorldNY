@@ -1,0 +1,29 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 308F-B3BC
+
+ Directory of C:\Workspaces\PNB Workspace\Core Banking - Java Library\templates
+
+02/19/2008  08:49 PM             2,412 AddSweepoutRequest.xml
+02/20/2008  06:20 PM             2,511 BillsPayment.xml
+02/19/2008  08:50 PM               765 CASABalanceInquiry.xml
+02/19/2008  08:50 PM               630 CASABranchProduct.xml
+02/19/2008  08:50 PM               859 CheckbookRequest.xml
+02/19/2008  08:50 PM               613 CustomerAccountRelationshipManager.inquireAccountRelationForCustomerRequest.xml
+02/19/2008  08:51 PM               584 CustomerManager.listAccountsOfCustomerRequest.xml
+02/19/2008  08:51 PM               749 DemandDepositManager.creditRequest.xml
+02/19/2008  08:51 PM               748 DemandDepositManager.debitRequest.xml
+02/20/2008  06:20 PM               933 FundsTransfer.xml
+02/19/2008  08:52 PM               569 InquireCustomerInformation.xml
+02/19/2008  08:52 PM             1,004 inquireListOfTransactionRequest.xml
+02/19/2008  08:52 PM               992 List.xml
+02/19/2008  08:53 PM               813 LoanDetailsInquiry.xml
+02/19/2008  08:53 PM               589 LOANSBranchProduct.xml
+03/11/2008  04:45 PM               575 MemoManager.inquireCustomerMemoRequest.xml
+02/19/2008  08:53 PM               637 RequestAccountDetails1.xml
+02/19/2008  08:53 PM               603 RequestAccountDetails2.xml
+02/19/2008  08:54 PM             1,002 RequestAccountStatement.xml
+02/13/2008  03:59 PM               596 TDBranchProduct.xml
+02/19/2008  08:54 PM               872 TDInquireDepositDetails.xml
+02/19/2008  08:54 PM               615 TermDepositManager.inquireTermDepositDetailsRequest.xml
+              22 File(s)         19,671 bytes
+               0 Dir(s)   4,118,573,056 bytes free

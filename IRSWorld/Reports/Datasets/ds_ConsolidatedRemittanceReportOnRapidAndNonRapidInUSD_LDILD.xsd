@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE" targetNamespace="http://tempuri.org/ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE.xsd" xmlns:mstns="http://tempuri.org/ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE.xsd" xmlns="http://tempuri.org/ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE" msprop:Generator_DataSetName="ds_ConsolidatedRemittanceReportOnRapidAndNonRapidInUSD_LDILDE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ConsolidatedRemittanceReportConvertedToUSD" msprop:Generator_UserTableName="ConsolidatedRemittanceReportConvertedToUSD" msprop:Generator_RowDeletedName="ConsolidatedRemittanceReportConvertedToUSDRowDeleted" msprop:Generator_RowChangedName="ConsolidatedRemittanceReportConvertedToUSDRowChanged" msprop:Generator_RowClassName="ConsolidatedRemittanceReportConvertedToUSDRow" msprop:Generator_RowChangingName="ConsolidatedRemittanceReportConvertedToUSDRowChanging" msprop:Generator_RowEvArgName="ConsolidatedRemittanceReportConvertedToUSDRowChangeEvent" msprop:Generator_RowEvHandlerName="ConsolidatedRemittanceReportConvertedToUSDRowChangeEventHandler" msprop:Generator_TableClassName="ConsolidatedRemittanceReportConvertedToUSDDataTable" msprop:Generator_TableVarName="tableConsolidatedRemittanceReportConvertedToUSD" msprop:Generator_RowDeletingName="ConsolidatedRemittanceReportConvertedToUSDRowDeleting" msprop:Generator_TablePropName="ConsolidatedRemittanceReportConvertedToUSD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lcaption" msprop:Generator_UserColumnName="lcaption" msprop:Generator_ColumnVarNameInTable="columnlcaption" msprop:Generator_ColumnPropNameInRow="lcaption" msprop:Generator_ColumnPropNameInTable="lcaptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="startdate" msprop:Generator_UserColumnName="startdate" msprop:Generator_ColumnVarNameInTable="columnstartdate" msprop:Generator_ColumnPropNameInRow="startdate" msprop:Generator_ColumnPropNameInTable="startdateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="enddate" msprop:Generator_UserColumnName="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LDEITEMS" msprop:Generator_UserColumnName="LDEITEMS" msprop:Generator_ColumnVarNameInTable="columnLDEITEMS" msprop:Generator_ColumnPropNameInRow="LDEITEMS" msprop:Generator_ColumnPropNameInTable="LDEITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LDEAMT" msprop:Generator_UserColumnName="LDEAMT" msprop:Generator_ColumnVarNameInTable="columnLDEAMT" msprop:Generator_ColumnPropNameInRow="LDEAMT" msprop:Generator_ColumnPropNameInTable="LDEAMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LDIITEMS" msprop:Generator_UserColumnName="LDIITEMS" msprop:Generator_ColumnVarNameInTable="columnLDIITEMS" msprop:Generator_ColumnPropNameInRow="LDIITEMS" msprop:Generator_ColumnPropNameInTable="LDIITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LDIAMT" msprop:Generator_UserColumnName="LDIAMT" msprop:Generator_ColumnVarNameInTable="columnLDIAMT" msprop:Generator_ColumnPropNameInRow="LDIAMT" msprop:Generator_ColumnPropNameInTable="LDIAMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LDIEITEMS" msprop:Generator_UserColumnName="LDIEITEMS" msprop:Generator_ColumnVarNameInTable="columnLDIEITEMS" msprop:Generator_ColumnPropNameInRow="LDIEITEMS" msprop:Generator_ColumnPropNameInTable="LDIEITEMSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LDIEAMT" msprop:Generator_UserColumnName="LDIEAMT" msprop:Generator_ColumnVarNameInTable="columnLDIEAMT" msprop:Generator_ColumnPropNameInRow="LDIEAMT" msprop:Generator_ColumnPropNameInTable="LDIEAMTColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

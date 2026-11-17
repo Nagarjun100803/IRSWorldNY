@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createISOMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="connectionStringUS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="connectionStringEA" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeOut" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteHost" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="port" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="channelCode" type="tns:ChannelCode" />
+            <s:element minOccurs="1" maxOccurs="1" name="isoCode" type="tns:ISOCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="ATMNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="tns:IBFTMode" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="merchantType" type="tns:MerchantType" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="referenceNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isIRSWorldSetup" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ChannelCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="IRS" />
+          <s:enumeration value="IRSWorld" />
+          <s:enumeration value="ARS" />
+          <s:enumeration value="GRS" />
+          <s:enumeration value="GFC" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ISOCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="BalanceInquiry" />
+          <s:enumeration value="FT" />
+          <s:enumeration value="FTTestResponse" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="IBFTMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="WithDrawalorCashAdvance" />
+          <s:enumeration value="BalanceInquiry" />
+          <s:enumeration value="IntraFundTransfer" />
+          <s:enumeration value="InterBankFundTransfer" />
+          <s:enumeration value="IBFTTransferDeposit" />
+          <s:enumeration value="CheckbookRequest" />
+          <s:enumeration value="StatementRequest" />
+          <s:enumeration value="BillsPayment" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="AccountType">
+        <s:restriction base="s:string">
+          <s:enumeration value="DefaultAccount" />
+          <s:enumeration value="SA" />
+          <s:enumeration value="CA" />
+          <s:enumeration value="Credit" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MerchantType">
+        <s:restriction base="s:string">
+          <s:enumeration value="ATM" />
+          <s:enumeration value="POS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="createISOMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createISOMessageResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="createISOMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:createISOMessage" />
+  </wsdl:message>
+  <wsdl:message name="createISOMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:createISOMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsIBFTSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createISOMessage">
+      <wsdl:input message="tns:createISOMessageSoapIn" />
+      <wsdl:output message="tns:createISOMessageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsIBFTSoap" type="tns:wsIBFTSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createISOMessage">
+      <soap:operation soapAction="http://tempuri.org/createISOMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsIBFTSoap12" type="tns:wsIBFTSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createISOMessage">
+      <soap12:operation soapAction="http://tempuri.org/createISOMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsIBFT">
+    <wsdl:port name="wsIBFTSoap" binding="tns:wsIBFTSoap">
+      <soap:address location="http://localhost:58401/wsIBFT.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsIBFTSoap12" binding="tns:wsIBFTSoap12">
+      <soap12:address location="http://localhost:58401/wsIBFT.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

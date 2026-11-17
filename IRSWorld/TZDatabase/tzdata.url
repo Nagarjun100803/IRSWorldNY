@@ -1,0 +1,7 @@
+ftp://elsie.nci.nih.gov/pub/
+
+
+Get the latest tzdataYYYYx.tar.gz  from the above URL
+extract the archive into a directory. Then parse it
+from tzdb program to produce the TimeZone.XML and 
+other xml files (eg. Zone.XML, Links.XML, Rules.XML).

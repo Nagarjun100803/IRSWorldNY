@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRR016" targetNamespace="http://tempuri.org/dsGRR016.xsd" xmlns:mstns="http://tempuri.org/dsGRR016.xsd" xmlns="http://tempuri.org/dsGRR016.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRR016" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRR016" msprop:Generator_DataSetName="dsGRR016">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRR016" msprop:Generator_UserTableName="dtGRR016" msprop:Generator_RowDeletedName="dtGRR016RowDeleted" msprop:Generator_RowChangedName="dtGRR016RowChanged" msprop:Generator_RowClassName="dtGRR016Row" msprop:Generator_RowChangingName="dtGRR016RowChanging" msprop:Generator_RowEvArgName="dtGRR016RowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRR016RowChangeEventHandler" msprop:Generator_TableClassName="dtGRR016DataTable" msprop:Generator_TableVarName="tabledtGRR016" msprop:Generator_RowDeletingName="dtGRR016RowDeleting" msprop:Generator_TablePropName="dtGRR016">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Due_Cd" msprop:Generator_UserColumnName="Due_Cd" msprop:Generator_ColumnPropNameInRow="Due_Cd" msprop:Generator_ColumnVarNameInTable="columnDue_Cd" msprop:Generator_ColumnPropNameInTable="Due_CdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Record_ID" msprop:Generator_UserColumnName="Record_ID" msprop:Generator_ColumnPropNameInRow="Record_ID" msprop:Generator_ColumnVarNameInTable="columnRecord_ID" msprop:Generator_ColumnPropNameInTable="Record_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PNBOffice" msprop:Generator_UserColumnName="PNBOffice" msprop:Generator_ColumnPropNameInRow="PNBOffice" msprop:Generator_ColumnVarNameInTable="columnPNBOffice" msprop:Generator_ColumnPropNameInTable="PNBOfficeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Debit_Peso" msprop:Generator_UserColumnName="Debit_Peso" msprop:Generator_ColumnPropNameInRow="Debit_Peso" msprop:Generator_ColumnVarNameInTable="columnDebit_Peso" msprop:Generator_ColumnPropNameInTable="Debit_PesoColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Due_Desc" msprop:Generator_UserColumnName="Due_Desc" msprop:Generator_ColumnPropNameInRow="Due_Desc" msprop:Generator_ColumnVarNameInTable="columnDue_Desc" msprop:Generator_ColumnPropNameInTable="Due_DescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CoveringBankCd" msprop:Generator_UserColumnName="CoveringBankCd" msprop:Generator_ColumnPropNameInRow="CoveringBankCd" msprop:Generator_ColumnVarNameInTable="columnCoveringBankCd" msprop:Generator_ColumnPropNameInTable="CoveringBankCdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CoveringBankName" msprop:Generator_UserColumnName="CoveringBankName" msprop:Generator_ColumnPropNameInRow="CoveringBankName" msprop:Generator_ColumnVarNameInTable="columnCoveringBankName" msprop:Generator_ColumnPropNameInTable="CoveringBankNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Date_of_Transfer" msprop:Generator_UserColumnName="Date_of_Transfer" msprop:Generator_ColumnPropNameInRow="Date_of_Transfer" msprop:Generator_ColumnVarNameInTable="columnDate_of_Transfer" msprop:Generator_ColumnPropNameInTable="Date_of_TransferColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="File_Ind" msprop:Generator_UserColumnName="File_Ind" msprop:Generator_ColumnPropNameInRow="File_Ind" msprop:Generator_ColumnVarNameInTable="columnFile_Ind" msprop:Generator_ColumnPropNameInTable="File_IndColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sp_ItemsAndVolumebyMonth" targetNamespace="http://tempuri.org/sp_ItemsAndVolumebyMonth.xsd" xmlns:mstns="http://tempuri.org/sp_ItemsAndVolumebyMonth.xsd" xmlns="http://tempuri.org/sp_ItemsAndVolumebyMonth.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="sp_ItemsAndVolumebyMonth" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="sp_ItemsAndVolumebyMonth" msprop:Generator_DataSetName="sp_ItemsAndVolumebyMonth">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sp_ItemsAndVolumebyMonth" msprop:Generator_UserTableName="sp_ItemsAndVolumebyMonth" msprop:Generator_RowDeletedName="sp_ItemsAndVolumebyMonthRowDeleted" msprop:Generator_RowChangedName="sp_ItemsAndVolumebyMonthRowChanged" msprop:Generator_RowClassName="sp_ItemsAndVolumebyMonthRow" msprop:Generator_RowChangingName="sp_ItemsAndVolumebyMonthRowChanging" msprop:Generator_RowEvArgName="sp_ItemsAndVolumebyMonthRowChangeEvent" msprop:Generator_RowEvHandlerName="sp_ItemsAndVolumebyMonthRowChangeEventHandler" msprop:Generator_TableClassName="sp_ItemsAndVolumebyMonthDataTable" msprop:Generator_TableVarName="tablesp_ItemsAndVolumebyMonth" msprop:Generator_RowDeletingName="sp_ItemsAndVolumebyMonthRowDeleting" msprop:Generator_TablePropName="_sp_ItemsAndVolumebyMonth">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Items" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Volume" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

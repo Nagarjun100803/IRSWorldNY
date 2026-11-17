@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRemSalesVolume" targetNamespace="http://tempuri.org/dsRemSalesVolume.xsd" xmlns:mstns="http://tempuri.org/dsRemSalesVolume.xsd" xmlns="http://tempuri.org/dsRemSalesVolume.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRemSalesVolume" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsRemSalesVolume" msprop:Generator_DataSetName="dsRemSalesVolume">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RemSalesVolume_x0028_Product_x0029_" msprop:Generator_UserTableName="RemSalesVolume(Product)" msprop:Generator_RowDeletedName="_RemSalesVolume_Product_RowDeleted" msprop:Generator_RowChangedName="_RemSalesVolume_Product_RowChanged" msprop:Generator_RowClassName="_RemSalesVolume_Product_Row" msprop:Generator_RowChangingName="_RemSalesVolume_Product_RowChanging" msprop:Generator_RowEvArgName="_RemSalesVolume_Product_RowChangeEvent" msprop:Generator_RowEvHandlerName="_RemSalesVolume_Product_RowChangeEventHandler" msprop:Generator_TableClassName="_RemSalesVolume_Product_DataTable" msprop:Generator_TableVarName="_tableRemSalesVolume_Product_" msprop:Generator_RowDeletingName="_RemSalesVolume_Product_RowDeleting" msprop:Generator_TablePropName="_RemSalesVolume_Product_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PRODUCT_x0020_TYPE" msprop:Generator_UserColumnName="PRODUCT TYPE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_TYPE" msprop:Generator_ColumnPropNameInRow="PRODUCT_TYPE" msprop:Generator_ColumnPropNameInTable="PRODUCT_TYPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="No.of_x0020_Trxns" msprop:Generator_UserColumnName="No.of Trxns" msprop:Generator_ColumnVarNameInTable="_columnNo_of_Trxns" msprop:Generator_ColumnPropNameInRow="_No_of_Trxns" msprop:Generator_ColumnPropNameInTable="_No_of_TrxnsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Volume_x0020__x0028_in_x0020_PHP_x0029_" msprop:Generator_UserColumnName="Total Volume (in PHP)" msprop:Generator_ColumnVarNameInTable="_columnTotal_Volume__in_PHP_" msprop:Generator_ColumnPropNameInRow="_Total_Volume__in_PHP_" msprop:Generator_ColumnPropNameInTable="_Total_Volume__in_PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Fees" msprop:Generator_UserColumnName="Total Fees" msprop:Generator_ColumnVarNameInTable="columnTotal_Fees" msprop:Generator_ColumnPropNameInRow="Total_Fees" msprop:Generator_ColumnPropNameInTable="Total_FeesColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Active_x0020_Cards_x002F_Accts" msprop:Generator_UserColumnName="Active Cards/Accts" msprop:Generator_ColumnVarNameInTable="_columnActive_Cards_Accts" msprop:Generator_ColumnPropNameInRow="_Active_Cards_Accts" msprop:Generator_ColumnPropNameInTable="_Active_Cards_AcctsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="No._x0020_of_x0020_Trxns" msprop:Generator_UserColumnName="No. of Trxns" msprop:Generator_ColumnVarNameInTable="_columnNo__of_Trxns" msprop:Generator_ColumnPropNameInRow="_No__of_Trxns" msprop:Generator_ColumnPropNameInTable="_No__of_TrxnsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Volume_x0028_in_x0020_PHP_x0029_" msprop:Generator_UserColumnName="Total Volume(in PHP)" msprop:Generator_ColumnVarNameInTable="_columnTotal_Volume_in_PHP_" msprop:Generator_ColumnPropNameInRow="_Total_Volume_in_PHP_" msprop:Generator_ColumnPropNameInTable="_Total_Volume_in_PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remmitance_x0020_per_x0020_txn" msprop:Generator_UserColumnName="Remmitance per txn" msprop:Generator_ColumnVarNameInTable="columnRemmitance_per_txn" msprop:Generator_ColumnPropNameInRow="Remmitance_per_txn" msprop:Generator_ColumnPropNameInTable="Remmitance_per_txnColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RemSalesVolume_x0028_Country_x0029_" msprop:Generator_UserTableName="RemSalesVolume(Country)" msprop:Generator_RowDeletedName="_RemSalesVolume_Country_RowDeleted" msprop:Generator_TableClassName="_RemSalesVolume_Country_DataTable" msprop:Generator_RowChangedName="_RemSalesVolume_Country_RowChanged" msprop:Generator_RowClassName="_RemSalesVolume_Country_Row" msprop:Generator_RowChangingName="_RemSalesVolume_Country_RowChanging" msprop:Generator_RowEvArgName="_RemSalesVolume_Country_RowChangeEvent" msprop:Generator_RowEvHandlerName="_RemSalesVolume_Country_RowChangeEventHandler" msprop:Generator_TablePropName="_RemSalesVolume_Country_" msprop:Generator_TableVarName="_tableRemSalesVolume_Country_" msprop:Generator_RowDeletingName="_RemSalesVolume_Country_RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Country" msprop:Generator_UserColumnName="Country" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInTable="CountryColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="No._x0020_of_x0020_Trxns" msprop:Generator_UserColumnName="No. of Trxns" msprop:Generator_ColumnPropNameInRow="_No__of_Trxns" msprop:Generator_ColumnVarNameInTable="_columnNo__of_Trxns" msprop:Generator_ColumnPropNameInTable="_No__of_TrxnsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Volume_x0020__x0028_in_x0020_PHP_x0029_" msprop:Generator_UserColumnName="Total Volume (in PHP)" msprop:Generator_ColumnPropNameInRow="_Total_Volume__in_PHP_" msprop:Generator_ColumnVarNameInTable="_columnTotal_Volume__in_PHP_" msprop:Generator_ColumnPropNameInTable="_Total_Volume__in_PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Fees" msprop:Generator_UserColumnName="Total Fees" msprop:Generator_ColumnPropNameInRow="Total_Fees" msprop:Generator_ColumnVarNameInTable="columnTotal_Fees" msprop:Generator_ColumnPropNameInTable="Total_FeesColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Active_x0020_Cards_x002F_Accts" msprop:Generator_UserColumnName="Active Cards/Accts" msprop:Generator_ColumnPropNameInRow="_Active_Cards_Accts" msprop:Generator_ColumnVarNameInTable="_columnActive_Cards_Accts" msprop:Generator_ColumnPropNameInTable="_Active_Cards_AcctsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="No_x0020__x0020_of_x0020_Trxn" msprop:Generator_UserColumnName="No  of Trxn" msprop:Generator_ColumnPropNameInRow="No__of_Trxn" msprop:Generator_ColumnVarNameInTable="columnNo__of_Trxn" msprop:Generator_ColumnPropNameInTable="No__of_TrxnColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_x0020_Volume_x0028_in_x0020_PHP_x0029_" msprop:Generator_UserColumnName="Total Volume(in PHP)" msprop:Generator_ColumnPropNameInRow="_Total_Volume_in_PHP_" msprop:Generator_ColumnVarNameInTable="_columnTotal_Volume_in_PHP_" msprop:Generator_ColumnPropNameInTable="_Total_Volume_in_PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remmitance_x0020_per_x0020_txn" msprop:Generator_UserColumnName="Remmitance per txn" msprop:Generator_ColumnPropNameInRow="Remmitance_per_txn" msprop:Generator_ColumnVarNameInTable="columnRemmitance_per_txn" msprop:Generator_ColumnPropNameInTable="Remmitance_per_txnColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

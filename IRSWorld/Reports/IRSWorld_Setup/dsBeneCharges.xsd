@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBenecharges" targetNamespace="http://tempuri.org/dsBenecharges.xsd" xmlns:mstns="http://tempuri.org/dsBenecharges.xsd" xmlns="http://tempuri.org/dsBenecharges.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBenecharges" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsBenecharges" msprop:Generator_DataSetName="dsBenecharges">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtBeneCharges" msprop:Generator_UserTableName="dtBeneCharges" msprop:Generator_RowDeletedName="dtBeneChargesRowDeleted" msprop:Generator_RowChangedName="dtBeneChargesRowChanged" msprop:Generator_RowClassName="dtBeneChargesRow" msprop:Generator_RowChangingName="dtBeneChargesRowChanging" msprop:Generator_RowEvArgName="dtBeneChargesRowChangeEvent" msprop:Generator_RowEvHandlerName="dtBeneChargesRowChangeEventHandler" msprop:Generator_TableClassName="dtBeneChargesDataTable" msprop:Generator_TableVarName="tabledtBeneCharges" msprop:Generator_RowDeletingName="dtBeneChargesRowDeleting" msprop:Generator_TablePropName="dtBeneCharges">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OPE" msprop:Generator_UserColumnName="OPE" msprop:Generator_ColumnVarNameInTable="columnOPE" msprop:Generator_ColumnPropNameInRow="OPE" msprop:Generator_ColumnPropNameInTable="OPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DOCStamp" msprop:Generator_UserColumnName="DOCStamp" msprop:Generator_ColumnVarNameInTable="columnDOCStamp" msprop:Generator_ColumnPropNameInRow="DOCStamp" msprop:Generator_ColumnPropNameInTable="DOCStampColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxDate" msprop:Generator_UserColumnName="TranxDate" msprop:Generator_ColumnPropNameInRow="TranxDate" msprop:Generator_ColumnVarNameInTable="columnTranxDate" msprop:Generator_ColumnPropNameInTable="TranxDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

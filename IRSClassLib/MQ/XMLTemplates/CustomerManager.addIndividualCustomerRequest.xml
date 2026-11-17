@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Operation="addIndividualCustomer( SessionContext, NewIndividualDTO, int)" Service="CustomerManagerService" targetNamespace="http://customer.app.fcr.iflex.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CustomerManager.customer.app.fcr.iflex.com/addIndividualCustomer ../xsd/CustomerManager/CustomerManager.addIndividualCustomerRequest.xsd">
+	<SessionContext BankCode="8" Channel="" ExternalBatchNumber="0" ExternalReferenceNo="" ExternalSystemAuditTrailNumber="0" LocalDateTimeText="" OriginalReferenceNo="" OverridenWarnings="" PostingDateText="" ServiceCode="" SessionTicket="" TransactionBranch="1072" UserId="" UserReferenceNumber="" ValueDateText="">
+		<Reason Comment="" ReasonCode="0"/>
+		<SupervisorContext PrimaryPassword="" UserId=""/>
+	</SessionContext>
+	<CustomerDetailsDTO Category="A" CifType="C" CountryOfResidence="PH" CustomerEducation="1" CustomerId="0" CustomerMobilePhone="" DateOfBirthOrRegistration="12-10-1980" EmailId="abc@gmail.com" EmployeeId="" HomeBranchCode="1072" IcType="I" IsStaff="true" Language="ENG" MaritalStatus="2" NationalIdentificationCode="PH" Nationality="PH" Origin="" Phone="12345678" ProfessionCode="15" Relation="" Sex="M" ShortName="" SignatureType="1"><Address City="MANILA CITY" Country="PH" Line1="PH" Line2="PH" Line3="PH" State="METRO MANILA" Zip="1234"/><Name FirstName="aaa" LastName="ccc" MidName="bbb" Prefix="MR" ShortName="abc"/></CustomerDetailsDTO>
+	<TransactionType>0</TransactionType>
+</input>

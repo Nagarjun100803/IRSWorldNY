@@ -1,0 +1,748 @@
+
+var js_FEDpopup = new js_FED_popup();
+
+var dbgrid;
+var edit_mode = false;
+var status_opts = new Array();
+
+function update_taropts()
+{
+    var status = IRSWorld.FED.FEDACHStatusUpdater.get_status();
+    if (status.error != null)
+    {
+        alert(status.error.Message);
+    }
+    else
+    {
+        dt = status.value;
+        for (var i = 0; i < dt.Rows.length; i++)
+        {
+            status_opts[status_opts.length] = dt.Rows[i].FldCode + '~' + dt.Rows[i].FldDescription;
+        }
+    }
+}
+
+if (!Array.prototype.indexOf)
+{
+  Array.prototype.indexOf = function(elt /*, from*/)
+  {
+    var len = this.length;
+
+    var from = Number(arguments[1]) || 0;
+    from = (from < 0)
+         ? Math.ceil(from)
+         : Math.floor(from);
+    if (from < 0)
+      from += len;
+
+    for (; from < len; from++)
+    {
+      if (from in this &&
+          this[from] === elt)
+        return from;
+    }
+    return -1;
+  };
+}
+
+function fedach_status_updater()
+{
+    this.fedreferenceno =   null;
+    this.dateFrom       =   null;
+    this.dateTo         =   null;
+    this.status         =   null;
+    var fed_viewer      =   this;
+    var rem_seq_id      =   null; 
+    var refno           =   null; 
+    var status          =   null;
+    var accountno       =   null;
+    var BeneName        =   null;
+    var total_records   =   null;
+    var update_result   =   null;
+    var results_value   =   null;
+   
+    this.init = function()
+    {
+        update_taropts();        
+      
+        edit_mode = false;
+        this.set_mode();
+        //this.ddl_on_change();
+        //document.getElementById('tdfedstatgrid').style.display = 'none';
+        
+        
+    }
+    
+    this.display_file_listing = function(fedrefno,datefrom,dateto,status)
+    {
+        
+        //document.getElementById('divFEDStatusListing').style.display = 'block';
+    
+        
+        AjaxPro.timeoutPeriod = 100 * 1000;
+        AjaxPro.onTimeout = function()
+        {                    
+            var errmsg = 'SERVER NOT RESPONDING. DISPLAYING OF FILES FAILED.';
+            alert(errmsg);             
+        } 
+
+        IRSWorld.FED.FEDACHStatusUpdater.get_transactions(fedrefno, datefrom,dateto,status,this.display_file_listing_callback)
+    }
+    this.display_file_listing_callback = function(result)
+    {
+        js_FEDpopup.close_msg_prompt();
+        
+        if (result.error != null)
+        {
+            alert(result.error.Message)
+            return;
+        }
+        //==================================================================
+        // RFC-15618 Managed File Transfer Project
+        /*dbgrid = fed_viewer.create_filelist_grid();
+        dbgrid.clearFilter();
+        dbgrid.filter.enabled = false;
+        dbgrid.rows_page = 5;
+        dbgrid.on_page_change = 'fed_viewer.on_page_change';
+        dbgrid.autoPost = true;
+        dbgrid.bind(result.value, 'tdfedstatgrid', 'tblFEDfilelisting');
+
+        fed_viewer.enableRow(edit_mode);*/
+
+        if (isIE == true)
+        {
+            dbgrid = fed_viewer.create_filelist_grid();
+            dbgrid.clearFilter();
+            dbgrid.filter.enabled = false;
+            dbgrid.rows_page = 10;
+            dbgrid.on_page_change = 'fed_viewer.on_page_change';
+            dbgrid.autoPost = true;
+            dbgrid.bind(result.value, 'tdfedstatgrid', 'tblFEDfilelisting');
+
+            fed_viewer.enableRow(edit_mode);
+        }
+        else {
+            dbgrid = fed_viewer.create_filelist_grid_all();
+            dbgrid.clearFilter();
+            dbgrid.filter.enabled = false;
+            dbgrid.rows_page = 10;
+            dbgrid.on_page_change = 'fed_viewer.on_page_change';
+            dbgrid.autoPost = true;
+            dbgrid.bind(result.value, 'tdfedstatgrid', 'tblFEDfilelisting');
+            total_records = result.value.Rows.length;
+            fed_viewer.enableRow(edit_mode);
+
+            ddl_on_change_value();
+        }
+        //==================================================================
+    }
+
+    this.create_filelist_grid = function()
+    {
+         //==================================================
+         // Col No 0; SEQ_ID
+         //==================================================
+         gv = new datagrid();             
+         {
+		    var col = new datagrid_column();
+		    col.align = 'left';
+		    col.header = 'SEQ ID';
+		    col.datafield = 'Seq_Id';
+            col.styles.cell += 'width:auto;display:none';
+		    col.styles.header += 'display:none';
+		    col.styles.datafield += 'display:none';
+		    
+		    gv.addColumn(col);
+         }       
+         //==================================================
+         // Col No 1; IRSWRefNo
+         //==================================================        
+         {
+		    var col = new datagrid_column();
+		    col.header = 'IRSWRefNo';
+		    col.datafield = 'referenceno';
+		    col.align = 'right';
+		    col.styles.cell += 'width:16%';
+		    col.editable = false;
+		    gv.addColumn(col);
+         }
+          //==================================================
+         // Col No 1; FEDRefNo
+         //==================================================        
+         {
+		    var col = new datagrid_column();
+		    col.header = 'FEDRefNo';
+		    col.datafield = 'fedreferenceno';
+		    col.align = 'right';
+		    col.styles.cell += 'width:16%';
+		    col.editable = false;
+		    gv.addColumn(col);
+         }
+         //==================================================
+         // Col No 2; Remitter_Name
+         //==================================================     
+         {
+		    var col = new datagrid_column();
+		    col.header = 'Remitter_Name';
+		    col.datafield = 'Remitter_Name';
+		    col.align = 'right';
+		    col.styles.cell += 'width:20%';
+		    col.editable = false;
+		    gv.addColumn(col);
+         } 
+         //==================================================
+         // Col No 3; Beneficiary_Name
+         //==================================================             
+         {
+		    var col = new datagrid_column();
+		    col.header = 'Beneficiary_Name';
+		    col.datafield = 'BeneficiaryInfo';
+		    col.align = 'right';
+		    col.styles.cell += 'width:20%';
+		    col.editable = false;
+		    gv.addColumn(col);
+         }      
+         //==================================================
+         // Col No 4; Account_Number
+         //==================================================             
+         {
+		    var col = new datagrid_column();
+		    col.header = 'Account_Number';
+		    col.datafield = 'Account_Number';
+		    col.align = 'right';
+		    col.styles.cell += 'width:auto';
+		    col.editable = false;
+		    gv.addColumn(col);
+         } 
+        
+         //==================================================
+         // Col No 5; Currency
+         //==================================================             
+         {
+		    var col = new datagrid_column();
+		    col.header = 'Currency';
+		    col.datafield = 'NETCCY';
+		    col.align = 'right';
+		    col.styles.cell += 'width:auto';
+		    col.editable = false;
+		    gv.addColumn(col);
+         }
+         //==================================================
+         // Col No 6; Amount
+         //==================================================             
+         {
+		    var col = new datagrid_column();
+		    col.header = 'Amount';
+		    col.datafield = 'NETAMOUNT';
+		    col.align = 'left';
+		    col.styles.cell += 'width:16%;';
+		    col.editable = false;
+		    gv.addColumn(col);        
+         }                    
+         //==================================================
+         // Col No 7; TranxStatus
+         //==================================================           
+         {
+            var col = new datagrid_column();
+            col.header = 'TranxStatus';
+            col.datafield = 'TSTATUS';
+            col.align = 'left';
+            col.type = 'select';
+            col.options = status_opts;
+            col.styles.cell += 'width:15%';
+            col.styles.datafield += 'width: 100%;';
+            col.editable = false;
+            col.onchange = 'fed_viewer.on_status_change';
+            gv.addColumn(col);
+         } 
+         
+        gv.row.normal_style = 'background-color: #f7ffff;';                      
+        return gv;
+    }
+
+    this.create_filelist_grid_all = function () {
+        //==================================================
+        // Col No 0; SEQ_ID
+        //==================================================
+        gv = new datagrid();
+        {
+            var col = new datagrid_column();
+            col.align = 'left';
+            col.header = 'SEQ ID';
+            col.datafield = 'Seq_Id';
+            col.styles.cell += 'width:auto;display:none';
+            col.styles.header += 'display:none';
+            col.styles.datafield += 'display:none';
+
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 1; IRSWRefNo
+        //==================================================        
+        {
+            var col = new datagrid_column();
+            col.header = 'IRSWRefNo';
+            col.datafield = 'referenceno';
+            col.align = 'right';
+            col.styles.cell += 'width:16%';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 1; FEDRefNo
+        //==================================================        
+        {
+            var col = new datagrid_column();
+            col.header = 'FEDRefNo';
+            col.datafield = 'fedreferenceno';
+            col.align = 'right';
+            col.styles.cell += 'width:16%';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 2; Remitter_Name
+        //==================================================     
+        {
+            var col = new datagrid_column();
+            col.header = 'Remitter_Name';
+            col.datafield = 'Remitter_Name';
+            col.align = 'right';
+            col.styles.cell += 'width:20%';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 3; Beneficiary_Name
+        //==================================================             
+        {
+            var col = new datagrid_column();
+            col.header = 'Beneficiary_Name';
+            col.datafield = 'BeneficiaryInfo';
+            col.align = 'right';
+            col.styles.cell += 'width:20%';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 4; Account_Number
+        //==================================================             
+        {
+            var col = new datagrid_column();
+            col.header = 'Account_Number';
+            col.datafield = 'Account_Number';
+            col.align = 'right';
+            col.styles.cell += 'width:auto';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+
+        //==================================================
+        // Col No 5; Currency
+        //==================================================             
+        {
+            var col = new datagrid_column();
+            col.header = 'Currency';
+            col.datafield = 'NETCCY';
+            col.align = 'right';
+            col.styles.cell += 'width:auto';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 6; Amount
+        //==================================================             
+        {
+            var col = new datagrid_column();
+            col.header = 'Amount';
+            col.datafield = 'NETAMOUNT';
+            col.align = 'left';
+            col.styles.cell += 'width:16%;';
+            col.editable = false;
+            gv.addColumn(col);
+        }
+        //==================================================
+        // Col No 7; TranxStatus
+        //==================================================           
+        {
+            var col = new datagrid_column();
+            col.header = 'TranxStatus';
+            col.datafield = 'TSTATUS';
+            col.align = 'left';
+            col.type = 'select';
+            col.options = status_opts;
+            col.styles.cell += 'width:15%';
+            col.styles.datafield += 'width: 100%;';
+            col.editable = false;
+            col.onchange = 'fed_viewer.on_status_change_ddl';
+            gv.addColumn(col);
+        }
+
+        gv.row.normal_style = 'background-color: #f7ffff;';
+        return gv;
+    }
+
+    this.update_callback = function(res)
+    {
+        if (res.error != null)
+        {
+            alert(res.error.Message);
+        }
+        else
+        {
+            alert('update successfull');
+        }
+    }
+    
+    this.on_page_change = function()
+    {
+        ddl_on_change_value();
+        this.enableRow(edit_mode);
+    }
+    
+    this.get_updated_rows_values = function()
+    {
+        var EditedRows = dbgrid.editRows;
+        var params = "";
+        var rows = new Array();
+        // Get Edited Rows
+        for (var i = 0; i < EditedRows.length; i++)
+        {
+            if (rows.indexOf(EditedRows[i].datarow) < 0)
+            {
+                rows[rows.length] = EditedRows[i].datarow;
+            }
+        }
+        
+        for (var j = 0; j < rows.length; j++)
+        {
+            params = params     + dbgrid.getDataAt(rows[j],0)
+                                + '~' + dbgrid.getDataAt(rows[j],1)
+                                + '~' + dbgrid.getDataAt(rows[j],8) 
+                                + '~' + dbgrid.getDataAt(rows[j],5) 
+                                + '~' + dbgrid.getDataAt(rows[j],4) 
+                                + '|';  
+        }       
+        return params
+    }
+
+    this.on_status_change = function(args)
+    {
+        dbgrid.curract = 'Edit';
+        a = args;
+        dbgrid.doPost(a.datarow, false);
+        dbgrid.curract = '';
+    }
+
+    //==================================================================
+    // RFC-15618 Managed File Transfer Project
+    function ddl_on_change_value() {
+        var inputs = document.getElementsByTagName("select");
+        for (i = 0; i <= inputs.length - 1; i++) {
+            ids = inputs[i].getAttribute("id");
+            if (ids.indexOf("TSTATUS") > 0) {
+                document.getElementById(ids).setAttribute('onchange', 'fed_viewer.on_status_change_ddl("' + ids + '")');
+            }
+        }
+    }
+
+    this.on_status_change_ddl = function (ids) {
+        var arr_value = ids.split('_');
+        var arr_row = arr_value[3];
+
+        rem_seq_id = dbgrid.getValueAt(arr_row, 0).toString();
+        refno = dbgrid.getValueAt(arr_row, 1).toString();
+        status = dbgrid.getValueAt(arr_row, 8).toString();
+        accountno = dbgrid.getValueAt(arr_row, 5).toString();
+        BeneName = dbgrid.getValueAt(arr_row, 4).toString();
+
+        update_result = IRSWorld.FED.FEDACHStatusUpdater.update_records(rem_seq_id, refno, status, accountno, BeneName).value;
+        if (update_result != null && update_result != "null" && update_result != "" && update_result != "undefined") {
+            results_value += refno + "\n";
+        }
+    }
+    //==================================================================
+    
+    this.ddl_on_change = function()
+    {
+        document.getElementById('ddlStatus').value = '';
+        //document.getElementById('tdfedstatgrid').style.display = 'none';
+            
+        this.pop_status(document.getElementById('ddlStatus').value);
+    }
+    
+   
+    
+    this.pop_status = function()
+    {
+        var result = IRSWorld.FED.FEDACHStatusUpdater.get_status();
+        if (result.error != null)
+        {
+            alert(result.error.Message);
+        }
+        else
+        {
+            this.commons = new common_method();
+            this.commons.to_load_dropdownlist("ddlStatus",  result.value, "FldCode", "FldDescription");
+            this.commons = null;            
+        }        
+    }
+    
+    this.search_display = function()
+    {
+        this.fedreferenceno  = document.getElementById('txtFedAchRefNo').value;
+        this.dateFrom  = document.getElementById('txtDateFrom').value;
+        this.dateTo  = document.getElementById('txtDateTo').value;
+        
+        js_FEDpopup.open_msg_prompt("SELECTING DATA");      
+    
+        if (this.fedreferenceno != 'null')
+        {
+            this.display_file_listing(this.fedreferenceno ,this.dateFrom,this.dateTo ,this.status);
+        }
+            
+        edit_mode = false;
+        this.set_mode();
+    }
+    
+    this.ddlfilelist_onchange = function()
+    {
+        document.getElementById('ddlView').value = '';
+        document.getElementById('tdfedstatgrid').style.display = 'none';
+    }
+    
+    this.btnEdit_click = function()
+    {
+       if (edit_mode == false)
+       {
+            edit_mode = true;
+            this.set_mode();
+       }
+       else
+       {
+           //==================================================================
+           // RFC-15618 Managed File Transfer Project
+           if (isIE == true) {
+               var param = this.get_updated_rows_values();
+               if (param == null | param == '' | param == 'null') {
+                   alert('No changes has been made.');
+                   return;
+               }
+
+               js_FEDpopup.open_msg_prompt("UPDATING DATA");
+               var result = IRSWorld.FED.FEDACHStatusUpdater.update_status(param);
+
+               js_FEDpopup.close_msg_prompt();
+
+               if (result.error != null) {
+                   alert(result.error.Message);
+               }
+               else {
+                   edit_mode = false;
+                   this.set_mode();
+
+
+                   if (this.fedreferenceno != null) {
+                       this.display_file_listing(this.fedreferenceno, this.dateFrom, this.dateTo, this.status);
+                   }
+                   alert('Status where sucessfuly updated.');
+               }
+           }
+           else {
+               if (results_value != null && results_value != "null" && results_value != "" && results_value != "undefined") {
+                    alert("There are " + results_value.toString() + " records that encountered error while updating transaction status.\n Kindly verify transaction status and try again.");
+                }
+                else {
+                    edit_mode = false;
+                    this.set_mode();
+                    alert('Status where sucessfuly updated.');
+                }
+
+                this.display_file_listing(this.fedreferenceno, this.dateFrom, this.dateTo, this.status);
+            }
+            //==================================================================
+       }
+       
+       this.enableRow(edit_mode);
+    }
+    
+    this.btnCancel_onclick = function()
+    {
+    
+        if (this.fedreferenceno  != 'null' )
+        {
+            this.display_file_listing(this.fedreferenceno ,this.dateFrom,this.dateTo,this.status  );
+        }
+        
+        edit_mode = false;
+        this.set_mode();
+        this.enableRow(edit_mode);
+    }
+    
+    this.set_mode = function()
+    {     
+        if (edit_mode == true)
+        {                    
+            
+            document.getElementById('btnCancel').disabled = false;            
+            document.getElementById('btnSearch').disabled = true;            
+            setText('btnEdit','Save');
+            
+        }
+        else
+        {  
+            document.getElementById('btnCancel').disabled = true;                       
+            document.getElementById('btnSearch').disabled = false;             
+            setText('btnEdit','Edit');            
+        }              
+    }
+      
+    this.enableRow = function(enable)
+    {
+        var tabid =  document.getElementById('tblFEDfilelisting');
+        var read_only = !enable;
+        
+        var tblrows = tabid.rows;
+        if (tblrows == undefined) return;
+        for (var i = 0; i < tblrows.length; i++)
+        {
+            var sells = tblrows[i].cells;
+            for (var j = 0; j < sells.length; j++)
+            {
+                if (sells.item(j).hasChildNodes())
+                {
+                    var childs = sells.item(j).childNodes;
+                    for (var k=0; k < childs.length; k++)
+                    {
+                        if (childs[k].nodeName == 'SELECT' | childs[k].nodeName == 'img' )
+                        {
+                            childs[k].disabled = read_only;
+                        }               
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+function js_FED_popup()
+{
+    this.msg_prompt_control = null;
+    
+    this.create_popup = function()
+    {
+        this.open_modal_window();
+    }
+    this.close_popup = function()
+    {
+        this.close_modal_window();
+    }
+     this.open_msg_prompt = function(msg)
+    {
+        this.msg_prompt_control = new screen_msg_demo();
+        this.msg_prompt_control.open_screen();
+        this.msg_prompt_control.change_msg(msg);
+    }
+    
+    this.close_msg_prompt = function()
+    {
+        if (this.msg_prompt_control != null)
+        {
+            this.msg_prompt_control.close_screen();
+        }
+
+        this.msg_prompt_control = null;
+    }    
+    
+    this.open_modal_window = function()
+    {
+        this.load_modal_css();
+    
+        this.outer_modal_div           = document.createElement("div");
+        this.outer_modal_div.id        = "outer_mod_div_fed";
+        this.outer_modal_div.className = "outer_fed";
+    
+        document.body.style.margin = "0px";
+        document.body.appendChild(this.outer_modal_div);
+        document.getElementById("outer_mod_div_fed").style.height = screen.height;
+    
+        this.construct_div_content();
+        this.commons = new common_method();
+        this.commons.to_show_hide_combobox(false);
+        this.commons = null;
+    }
+
+    this.close_modal_window = function()
+    {
+        this.commons = new common_method();
+        this.commons.to_show_hide_combobox(true);
+        this.commons = null;
+
+        if(this.outer_modal_div != null){document.body.removeChild(this.outer_modal_div);this.outer_modal_div  = null;}
+        if(this.inner_modal_div != null){document.body.removeChild(this.inner_modal_div);this.inner_modal_div  = null;}
+
+        document.body.style.margin = "";
+    }
+
+    this.construct_div_content = function()
+    {
+        var content_div = null;
+
+            this.inner_modal_div              = document.createElement("div");
+            this.inner_modal_div.className    = "inner_div";		
+            this.inner_modal_div.id           = "inner_mod_div_fed";
+            this.inner_modal_div.style.height = "auto";		
+            this.inner_modal_div.style.width  = "650px";
+            this.inner_modal_div.style.top    = "30px";
+            this.inner_modal_div.style.left   = (parseInt(screen.width) - parseInt(this.inner_modal_div.style.width)) / 2 - 10 + "px";
+            this.inner_modal_div.style.border = "medium solid white";
+
+            content_div                       = document.createElement("div");
+            content_div.id                    = "content_mod_div_fed";
+            content_div.style.background      = "transparent";
+            content_div.innerHTML             = "<center><img src = '.././images/ajaxloader.gif'></img></center>";
+
+            this.inner_modal_div.appendChild(content_div);
+
+            document.body.appendChild(this.inner_modal_div);
+    }
+	
+    this.load_modal_css = function()
+    {	    
+            var file_reference = document.createElement("link");
+            
+            file_reference.setAttribute("rel", "stylesheet");
+            file_reference.setAttribute("type", "text/css");
+            file_reference.setAttribute("href", ".././css/cssmodals.css");
+
+            if (typeof file_reference !="undefined")
+            {		    
+                document.getElementsByTagName("head")[0].appendChild(file_reference);
+            }
+    }
+        
+    window.onscroll = function () 
+    {            
+        var i = 0;
+        var m = 0;
+    
+        var divelement_outer = document.documentElement.getElementsByTagName("div");
+        var divelement_inner = document.documentElement.getElementsByTagName("div");
+                        
+            for(i = 0; i < divelement_outer.length;i++)
+            {
+                if (divelement_outer.item(i).id == "outer_mod_div_fed")
+                {
+                    divelement_outer.item(i).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;break;
+                }	        
+            }
+            for(m = 0; m < divelement_inner.length;m++)
+            {
+                if (divelement_inner.item(m).id == "inner_mod_div_fed")
+                {
+                    divelement_outer.item(m).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop + 30 : document.body.scrollTop + 30;break;
+                }
+            }
+    }
+}

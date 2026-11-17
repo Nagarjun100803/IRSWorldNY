@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRS_GEFU" targetNamespace="http://tempuri.org/dsGRS_GEFU.xsd" xmlns:mstns="http://tempuri.org/dsGRS_GEFU.xsd" xmlns="http://tempuri.org/dsGRS_GEFU.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRS_GEFU" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRS_GEFU" msprop:Generator_DataSetName="dsGRS_GEFU">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRS_GEFU" msprop:Generator_UserTableName="dtGRS_GEFU" msprop:Generator_RowDeletedName="dtGRS_GEFURowDeleted" msprop:Generator_RowChangedName="dtGRS_GEFURowChanged" msprop:Generator_RowClassName="dtGRS_GEFURow" msprop:Generator_RowChangingName="dtGRS_GEFURowChanging" msprop:Generator_RowEvArgName="dtGRS_GEFURowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRS_GEFURowChangeEventHandler" msprop:Generator_TableClassName="dtGRS_GEFUDataTable" msprop:Generator_TableVarName="tabledtGRS_GEFU" msprop:Generator_RowDeletingName="dtGRS_GEFURowDeleting" msprop:Generator_TablePropName="dtGRS_GEFU">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rbu_fcdu" msprop:Generator_UserColumnName="rbu_fcdu" msprop:Generator_ColumnVarNameInTable="columnrbu_fcdu" msprop:Generator_ColumnPropNameInRow="rbu_fcdu" msprop:Generator_ColumnPropNameInTable="rbu_fcduColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GLAcctCode" msprop:Generator_UserColumnName="GLAcctCode" msprop:Generator_ColumnVarNameInTable="columnGLAcctCode" msprop:Generator_ColumnPropNameInRow="GLAcctCode" msprop:Generator_ColumnPropNameInTable="GLAcctCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GLDesc" msprop:Generator_UserColumnName="GLDesc" msprop:Generator_ColumnVarNameInTable="columnGLDesc" msprop:Generator_ColumnPropNameInRow="GLDesc" msprop:Generator_ColumnPropNameInTable="GLDescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DebitCreditTag" msprop:Generator_UserColumnName="DebitCreditTag" msprop:Generator_ColumnVarNameInTable="columnDebitCreditTag" msprop:Generator_ColumnPropNameInRow="DebitCreditTag" msprop:Generator_ColumnPropNameInTable="DebitCreditTagColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxCurrency" msprop:Generator_UserColumnName="TranxCurrency" msprop:Generator_ColumnVarNameInTable="columnTranxCurrency" msprop:Generator_ColumnPropNameInRow="TranxCurrency" msprop:Generator_ColumnPropNameInTable="TranxCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxAmount" msprop:Generator_UserColumnName="TranxAmount" msprop:Generator_ColumnVarNameInTable="columnTranxAmount" msprop:Generator_ColumnPropNameInRow="TranxAmount" msprop:Generator_ColumnPropNameInTable="TranxAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalCurrency" msprop:Generator_UserColumnName="LocalCurrency" msprop:Generator_ColumnVarNameInTable="columnLocalCurrency" msprop:Generator_ColumnPropNameInRow="LocalCurrency" msprop:Generator_ColumnPropNameInTable="LocalCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalAmount" msprop:Generator_UserColumnName="LocalAmount" msprop:Generator_ColumnVarNameInTable="columnLocalAmount" msprop:Generator_ColumnPropNameInRow="LocalAmount" msprop:Generator_ColumnPropNameInTable="LocalAmountColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FC_API_001">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_casa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_txn_count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dat_txn" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_001Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FC_API_001Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_002">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_casa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_txn_count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dat_txn" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_002Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FC_API_002Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_003_Get_FC_Acct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_003_Get_FC_AcctResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FC_API_003_Get_FC_AcctResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_004_Get_Online_SOA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_no" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_to" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_004_Get_Online_SOAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FC_API_004_Get_Online_SOAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_005">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_casa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dat_txn" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="act_amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="txn_mnem" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="txn_brn" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FC_API_005Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FC_API_005Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FC_API_001SoapIn">
+    <wsdl:part name="parameters" element="tns:FC_API_001" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_001SoapOut">
+    <wsdl:part name="parameters" element="tns:FC_API_001Response" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_002SoapIn">
+    <wsdl:part name="parameters" element="tns:FC_API_002" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_002SoapOut">
+    <wsdl:part name="parameters" element="tns:FC_API_002Response" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_003_Get_FC_AcctSoapIn">
+    <wsdl:part name="parameters" element="tns:FC_API_003_Get_FC_Acct" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_003_Get_FC_AcctSoapOut">
+    <wsdl:part name="parameters" element="tns:FC_API_003_Get_FC_AcctResponse" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_004_Get_Online_SOASoapIn">
+    <wsdl:part name="parameters" element="tns:FC_API_004_Get_Online_SOA" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_004_Get_Online_SOASoapOut">
+    <wsdl:part name="parameters" element="tns:FC_API_004_Get_Online_SOAResponse" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_005SoapIn">
+    <wsdl:part name="parameters" element="tns:FC_API_005" />
+  </wsdl:message>
+  <wsdl:message name="FC_API_005SoapOut">
+    <wsdl:part name="parameters" element="tns:FC_API_005Response" />
+  </wsdl:message>
+  <wsdl:portType name="FC_ServiceSoap">
+    <wsdl:operation name="FC_API_001">
+      <wsdl:input message="tns:FC_API_001SoapIn" />
+      <wsdl:output message="tns:FC_API_001SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_002">
+      <wsdl:input message="tns:FC_API_002SoapIn" />
+      <wsdl:output message="tns:FC_API_002SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_003_Get_FC_Acct">
+      <wsdl:input message="tns:FC_API_003_Get_FC_AcctSoapIn" />
+      <wsdl:output message="tns:FC_API_003_Get_FC_AcctSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_004_Get_Online_SOA">
+      <wsdl:input message="tns:FC_API_004_Get_Online_SOASoapIn" />
+      <wsdl:output message="tns:FC_API_004_Get_Online_SOASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_005">
+      <wsdl:input message="tns:FC_API_005SoapIn" />
+      <wsdl:output message="tns:FC_API_005SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FC_ServiceSoap" type="tns:FC_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FC_API_001">
+      <soap:operation soapAction="http://tempuri.org/FC_API_001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_002">
+      <soap:operation soapAction="http://tempuri.org/FC_API_002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_003_Get_FC_Acct">
+      <soap:operation soapAction="http://tempuri.org/FC_API_003_Get_FC_Acct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_004_Get_Online_SOA">
+      <soap:operation soapAction="http://tempuri.org/FC_API_004_Get_Online_SOA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_005">
+      <soap:operation soapAction="http://tempuri.org/FC_API_005" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FC_ServiceSoap12" type="tns:FC_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FC_API_001">
+      <soap12:operation soapAction="http://tempuri.org/FC_API_001" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_002">
+      <soap12:operation soapAction="http://tempuri.org/FC_API_002" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_003_Get_FC_Acct">
+      <soap12:operation soapAction="http://tempuri.org/FC_API_003_Get_FC_Acct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_004_Get_Online_SOA">
+      <soap12:operation soapAction="http://tempuri.org/FC_API_004_Get_Online_SOA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FC_API_005">
+      <soap12:operation soapAction="http://tempuri.org/FC_API_005" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FC_Service">
+    <wsdl:port name="FC_ServiceSoap" binding="tns:FC_ServiceSoap">
+      <soap:address location="http://192.168.20.117/FC_API_Webservice_Setup/FC_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FC_ServiceSoap12" binding="tns:FC_ServiceSoap12">
+      <soap12:address location="http://192.168.20.117/FC_API_Webservice_Setup/FC_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

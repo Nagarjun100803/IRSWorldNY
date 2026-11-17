@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPendingForApproval" targetNamespace="http://tempuri.org/dsPendingForApproval.xsd" xmlns:mstns="http://tempuri.org/dsPendingForApproval.xsd" xmlns="http://tempuri.org/dsPendingForApproval.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPendingForApproval" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsPendingForApproval" msprop:Generator_DataSetName="dsPendingForApproval">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPendingForApproval" msprop:Generator_UserTableName="dtPendingForApproval" msprop:Generator_RowDeletedName="dtPendingForApprovalRowDeleted" msprop:Generator_RowChangedName="dtPendingForApprovalRowChanged" msprop:Generator_RowClassName="dtPendingForApprovalRow" msprop:Generator_RowChangingName="dtPendingForApprovalRowChanging" msprop:Generator_RowEvArgName="dtPendingForApprovalRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPendingForApprovalRowChangeEventHandler" msprop:Generator_TableClassName="dtPendingForApprovalDataTable" msprop:Generator_TableVarName="tabledtPendingForApproval" msprop:Generator_RowDeletingName="dtPendingForApprovalRowDeleting" msprop:Generator_TablePropName="dtPendingForApproval">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranxDate" msprop:Generator_UserColumnName="TranxDate" msprop:Generator_ColumnVarNameInTable="columnTranxDate" msprop:Generator_ColumnPropNameInRow="TranxDate" msprop:Generator_ColumnPropNameInTable="TranxDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxRefNo" msprop:Generator_UserColumnName="TranxRefNo" msprop:Generator_ColumnVarNameInTable="columnTranxRefNo" msprop:Generator_ColumnPropNameInRow="TranxRefNo" msprop:Generator_ColumnPropNameInTable="TranxRefNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PayMode" msprop:Generator_UserColumnName="PayMode" msprop:Generator_ColumnVarNameInTable="columnPayMode" msprop:Generator_ColumnPropNameInRow="PayMode" msprop:Generator_ColumnPropNameInTable="PayModeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittanceCcy" msprop:Generator_UserColumnName="RemittanceCcy" msprop:Generator_ColumnVarNameInTable="columnRemittanceCcy" msprop:Generator_ColumnPropNameInRow="RemittanceCcy" msprop:Generator_ColumnPropNameInTable="RemittanceCcyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittanceAmt" msprop:Generator_UserColumnName="RemittanceAmt" msprop:Generator_ColumnVarNameInTable="columnRemittanceAmt" msprop:Generator_ColumnPropNameInRow="RemittanceAmt" msprop:Generator_ColumnPropNameInTable="RemittanceAmtColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Ccy_NetToBenef" msprop:Generator_UserColumnName="Ccy_NetToBenef" msprop:Generator_ColumnVarNameInTable="columnCcy_NetToBenef" msprop:Generator_ColumnPropNameInRow="Ccy_NetToBenef" msprop:Generator_ColumnPropNameInTable="Ccy_NetToBenefColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Amt_NetToBenef" msprop:Generator_UserColumnName="Amt_NetToBenef" msprop:Generator_ColumnVarNameInTable="columnAmt_NetToBenef" msprop:Generator_ColumnPropNameInRow="Amt_NetToBenef" msprop:Generator_ColumnPropNameInTable="Amt_NetToBenefColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ProductType" msprop:Generator_UserColumnName="ProductType" msprop:Generator_ColumnVarNameInTable="columnProductType" msprop:Generator_ColumnPropNameInRow="ProductType" msprop:Generator_ColumnPropNameInTable="ProductTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountNo" msprop:Generator_UserColumnName="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PayeeBankName" msprop:Generator_UserColumnName="PayeeBankName" msprop:Generator_ColumnVarNameInTable="columnPayeeBankName" msprop:Generator_ColumnPropNameInRow="PayeeBankName" msprop:Generator_ColumnPropNameInTable="PayeeBankNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TellerID" msprop:Generator_UserColumnName="TellerID" msprop:Generator_ColumnVarNameInTable="columnTellerID" msprop:Generator_ColumnPropNameInRow="TellerID" msprop:Generator_ColumnPropNameInTable="TellerIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingBranch" msprop:Generator_UserColumnName="RemittingBranch" msprop:Generator_ColumnPropNameInRow="RemittingBranch" msprop:Generator_ColumnVarNameInTable="columnRemittingBranch" msprop:Generator_ColumnPropNameInTable="RemittingBranchColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGREMdetListOfBnkChargesOPEDocStamp" targetNamespace="http://tempuri.org/dsGREMdetListOfBnkChargesOPEDocStamp.xsd" xmlns:mstns="http://tempuri.org/dsGREMdetListOfBnkChargesOPEDocStamp.xsd" xmlns="http://tempuri.org/dsGREMdetListOfBnkChargesOPEDocStamp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGREMdetListOfBnkChargesOPEDocStamp" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGREMdetListOfBnkChargesOPEDocStamp" msprop:Generator_DataSetName="dsGREMdetListOfBnkChargesOPEDocStamp">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GREMdetListOfBnkChargesOPEDocStamp" msprop:Generator_UserTableName="GREMdetListOfBnkChargesOPEDocStamp" msprop:Generator_RowDeletedName="GREMdetListOfBnkChargesOPEDocStampRowDeleted" msprop:Generator_RowChangedName="GREMdetListOfBnkChargesOPEDocStampRowChanged" msprop:Generator_RowClassName="GREMdetListOfBnkChargesOPEDocStampRow" msprop:Generator_RowChangingName="GREMdetListOfBnkChargesOPEDocStampRowChanging" msprop:Generator_RowEvArgName="GREMdetListOfBnkChargesOPEDocStampRowChangeEvent" msprop:Generator_RowEvHandlerName="GREMdetListOfBnkChargesOPEDocStampRowChangeEventHandler" msprop:Generator_TableClassName="GREMdetListOfBnkChargesOPEDocStampDataTable" msprop:Generator_TableVarName="tableGREMdetListOfBnkChargesOPEDocStamp" msprop:Generator_RowDeletingName="GREMdetListOfBnkChargesOPEDocStampRowDeleting" msprop:Generator_TablePropName="GREMdetListOfBnkChargesOPEDocStamp">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COMPANY" msprop:Generator_UserColumnName="COMPANY" msprop:Generator_ColumnPropNameInRow="COMPANY" msprop:Generator_ColumnVarNameInTable="columnCOMPANY" msprop:Generator_ColumnPropNameInTable="COMPANYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AMOUNT" msprop:Generator_UserColumnName="AMOUNT" msprop:Generator_ColumnPropNameInRow="AMOUNT" msprop:Generator_ColumnVarNameInTable="columnAMOUNT" msprop:Generator_ColumnPropNameInTable="AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="MONTH" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CHARGENAME" msprop:Generator_UserColumnName="CHARGENAME" msprop:Generator_ColumnPropNameInRow="CHARGENAME" msprop:Generator_ColumnVarNameInTable="columnCHARGENAME" msprop:Generator_ColumnPropNameInTable="CHARGENAMEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

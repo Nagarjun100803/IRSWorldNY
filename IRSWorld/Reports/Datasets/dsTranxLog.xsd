@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTranxLog" targetNamespace="http://tempuri.org/dsTranxLog.xsd" xmlns:mstns="http://tempuri.org/dsTranxLog.xsd" xmlns="http://tempuri.org/dsTranxLog.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTranxLog" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTranxLog" msprop:Generator_DataSetName="dsTranxLog">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTranxLog" msprop:Generator_UserTableName="dtTranxLog" msprop:Generator_RowDeletedName="dtTranxLogRowDeleted" msprop:Generator_TableClassName="dtTranxLogDataTable" msprop:Generator_RowChangedName="dtTranxLogRowChanged" msprop:Generator_RowClassName="dtTranxLogRow" msprop:Generator_RowChangingName="dtTranxLogRowChanging" msprop:Generator_RowEvArgName="dtTranxLogRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTranxLogRowChangeEventHandler" msprop:Generator_TablePropName="dtTranxLog" msprop:Generator_TableVarName="tabledtTranxLog" msprop:Generator_RowDeletingName="dtTranxLogRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranxDate" msprop:Generator_UserColumnName="TranxDate" msprop:Generator_ColumnPropNameInRow="TranxDate" msprop:Generator_ColumnVarNameInTable="columnTranxDate" msprop:Generator_ColumnPropNameInTable="TranxDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferenceNo" msprop:Generator_UserColumnName="ReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Transtatus" msprop:Generator_UserColumnName="Transtatus" msprop:Generator_ColumnPropNameInRow="Transtatus" msprop:Generator_ColumnVarNameInTable="columnTranstatus" msprop:Generator_ColumnPropNameInTable="TranstatusColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BenefiacyName" msprop:Generator_UserColumnName="BenefiacyName" msprop:Generator_ColumnPropNameInRow="BenefiacyName" msprop:Generator_ColumnVarNameInTable="columnBenefiacyName" msprop:Generator_ColumnPropNameInTable="BenefiacyNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

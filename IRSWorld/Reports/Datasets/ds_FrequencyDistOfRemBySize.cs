@@ -1,0 +1,11 @@
+﻿namespace IRSWorld.Reports.Datasets
+{
+
+
+    partial class ds_FrequencyDistOfRemBySize
+    {
+        partial class dt_freqDistRemBySizeDataTable
+        {
+        }
+    }
+}

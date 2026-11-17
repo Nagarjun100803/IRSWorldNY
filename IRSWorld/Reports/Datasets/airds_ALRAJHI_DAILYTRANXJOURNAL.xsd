@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="airds_ALRAJHI_DAILYTRANXJOURNAL" targetNamespace="http://tempuri.org/airds_ALRAJHI_DAILYTRANXJOURNAL.xsd" xmlns:mstns="http://tempuri.org/airds_ALRAJHI_DAILYTRANXJOURNAL.xsd" xmlns="http://tempuri.org/airds_ALRAJHI_DAILYTRANXJOURNAL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="airds_ALRAJHI_DAILYTRANXJOURNAL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="airds_ALRAJHI_DAILYTRANXJOURNAL" msprop:Generator_DataSetName="airds_ALRAJHI_DAILYTRANXJOURNAL">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="airPROC_ALRAJHI_DAILYTRANXJOURNAL" msprop:Generator_UserTableName="airPROC_ALRAJHI_DAILYTRANXJOURNAL" msprop:Generator_RowDeletedName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowDeleted" msprop:Generator_RowChangedName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowChanged" msprop:Generator_RowClassName="airPROC_ALRAJHI_DAILYTRANXJOURNALRow" msprop:Generator_RowChangingName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowChanging" msprop:Generator_RowEvArgName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowChangeEvent" msprop:Generator_RowEvHandlerName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowChangeEventHandler" msprop:Generator_TableClassName="airPROC_ALRAJHI_DAILYTRANXJOURNALDataTable" msprop:Generator_TableVarName="tableairPROC_ALRAJHI_DAILYTRANXJOURNAL" msprop:Generator_RowDeletingName="airPROC_ALRAJHI_DAILYTRANXJOURNALRowDeleting" msprop:Generator_TablePropName="airPROC_ALRAJHI_DAILYTRANXJOURNAL">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STARTDATE" msprop:Generator_UserColumnName="STARTDATE" msprop:Generator_ColumnVarNameInTable="columnSTARTDATE" msprop:Generator_ColumnPropNameInRow="STARTDATE" msprop:Generator_ColumnPropNameInTable="STARTDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ENDDATE" msprop:Generator_UserColumnName="ENDDATE" msprop:Generator_ColumnVarNameInTable="columnENDDATE" msprop:Generator_ColumnPropNameInRow="ENDDATE" msprop:Generator_ColumnPropNameInTable="ENDDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REMITTINGBRANCH" msprop:Generator_UserColumnName="REMITTINGBRANCH" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBRANCH" msprop:Generator_ColumnPropNameInRow="REMITTINGBRANCH" msprop:Generator_ColumnPropNameInTable="REMITTINGBRANCHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANXDATE" msprop:Generator_UserColumnName="TRANXDATE" msprop:Generator_ColumnVarNameInTable="columnTRANXDATE" msprop:Generator_ColumnPropNameInRow="TRANXDATE" msprop:Generator_ColumnPropNameInTable="TRANXDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REFERENCENO" msprop:Generator_UserColumnName="REFERENCENO" msprop:Generator_ColumnVarNameInTable="columnREFERENCENO" msprop:Generator_ColumnPropNameInRow="REFERENCENO" msprop:Generator_ColumnPropNameInTable="REFERENCENOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x005B_FILENAME_x005D_" msprop:Generator_UserColumnName="[FILENAME]" msprop:Generator_ColumnVarNameInTable="_column_FILENAME_" msprop:Generator_ColumnPropNameInRow="__FILENAME_" msprop:Generator_ColumnPropNameInTable="__FILENAME_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="PON" msprop:Generator_UserColumnName="PON" msprop:Generator_ColumnVarNameInTable="columnPON" msprop:Generator_ColumnPropNameInRow="PON" msprop:Generator_ColumnPropNameInTable="PONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTERNAME" msprop:Generator_UserColumnName="REMITTERNAME" msprop:Generator_ColumnVarNameInTable="columnREMITTERNAME" msprop:Generator_ColumnPropNameInRow="REMITTERNAME" msprop:Generator_ColumnPropNameInTable="REMITTERNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEFICIARYNAME" msprop:Generator_UserColumnName="BENEFICIARYNAME" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARYNAME" msprop:Generator_ColumnPropNameInRow="BENEFICIARYNAME" msprop:Generator_ColumnPropNameInTable="BENEFICIARYNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCOUNTNO" msprop:Generator_UserColumnName="ACCOUNTNO" msprop:Generator_ColumnVarNameInTable="columnACCOUNTNO" msprop:Generator_ColumnPropNameInRow="ACCOUNTNO" msprop:Generator_ColumnPropNameInTable="ACCOUNTNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTINGCURRENCY" msprop:Generator_UserColumnName="REMITTINGCURRENCY" msprop:Generator_ColumnVarNameInTable="columnREMITTINGCURRENCY" msprop:Generator_ColumnPropNameInRow="REMITTINGCURRENCY" msprop:Generator_ColumnPropNameInTable="REMITTINGCURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYMETHOD" msprop:Generator_UserColumnName="PAYMETHOD" msprop:Generator_ColumnVarNameInTable="columnPAYMETHOD" msprop:Generator_ColumnPropNameInRow="PAYMETHOD" msprop:Generator_ColumnPropNameInTable="PAYMETHODColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GROSSAMOUNT" msprop:Generator_UserColumnName="GROSSAMOUNT" msprop:Generator_ColumnVarNameInTable="columnGROSSAMOUNT" msprop:Generator_ColumnPropNameInRow="GROSSAMOUNT" msprop:Generator_ColumnPropNameInTable="GROSSAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ACCOUNTCURRENCY" msprop:Generator_UserColumnName="ACCOUNTCURRENCY" msprop:Generator_ColumnVarNameInTable="columnACCOUNTCURRENCY" msprop:Generator_ColumnPropNameInRow="ACCOUNTCURRENCY" msprop:Generator_ColumnPropNameInTable="ACCOUNTCURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NETTOBENEAMOUNT" msprop:Generator_UserColumnName="NETTOBENEAMOUNT" msprop:Generator_ColumnVarNameInTable="columnNETTOBENEAMOUNT" msprop:Generator_ColumnPropNameInRow="NETTOBENEAMOUNT" msprop:Generator_ColumnPropNameInTable="NETTOBENEAMOUNTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FXRATES" msprop:Generator_UserColumnName="FXRATES" msprop:Generator_ColumnVarNameInTable="columnFXRATES" msprop:Generator_ColumnPropNameInRow="FXRATES" msprop:Generator_ColumnPropNameInTable="FXRATESColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TRANSACTIONSTATUS" msprop:Generator_UserColumnName="TRANSACTIONSTATUS" msprop:Generator_ColumnVarNameInTable="columnTRANSACTIONSTATUS" msprop:Generator_ColumnPropNameInRow="TRANSACTIONSTATUS" msprop:Generator_ColumnPropNameInTable="TRANSACTIONSTATUSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,47 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using IRSClassLib;
+
+namespace IRSWorld.Test
+{
+    public partial class TestMQ : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(TestMQ));
+        }
+
+        [AjaxPro.AjaxMethod(AjaxPro.HttpSessionStateRequirement.ReadWrite)]
+        public DataTable getSettingIDs()
+        {
+            testmq tmq = new testmq();
+            String msg = "";
+            DataTable dt = tmq.getSettingIDs(out msg);
+            if (dt != null) return dt;
+
+            throw new Exception(msg);
+        }
+
+        [AjaxPro.AjaxMethod(AjaxPro.HttpSessionStateRequirement.ReadWrite)]
+        public Object getAccountDetails(String fcrid, String acctno)
+        {
+            String msg = "";
+            Object ds = new testmq().getAccountDetails(fcrid, acctno, out msg);
+            if (ds == null)
+            {
+                throw new Exception(msg);
+            }
+
+            return ds;
+        }
+
+    }
+}

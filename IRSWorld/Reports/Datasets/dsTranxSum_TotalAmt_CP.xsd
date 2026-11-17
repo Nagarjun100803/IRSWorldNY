@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTranxSum_TotalAmt_CP" targetNamespace="http://tempuri.org/dsTranxSum_TotalAmt_CP.xsd" xmlns:mstns="http://tempuri.org/dsTranxSum_TotalAmt_CP.xsd" xmlns="http://tempuri.org/dsTranxSum_TotalAmt_CP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTranxSum_TotalAmt_CP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTranxSum_TotalAmt_CP" msprop:Generator_DataSetName="dsTranxSum_TotalAmt_CP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTranxSum_TotalAmt_CP" msprop:Generator_UserTableName="dtTranxSum_TotalAmt_CP" msprop:Generator_RowDeletedName="dtTranxSum_TotalAmt_CPRowDeleted" msprop:Generator_TableClassName="dtTranxSum_TotalAmt_CPDataTable" msprop:Generator_RowChangedName="dtTranxSum_TotalAmt_CPRowChanged" msprop:Generator_RowClassName="dtTranxSum_TotalAmt_CPRow" msprop:Generator_RowChangingName="dtTranxSum_TotalAmt_CPRowChanging" msprop:Generator_RowEvArgName="dtTranxSum_TotalAmt_CPRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTranxSum_TotalAmt_CPRowChangeEventHandler" msprop:Generator_TablePropName="dtTranxSum_TotalAmt_CP" msprop:Generator_TableVarName="tabledtTranxSum_TotalAmt_CP" msprop:Generator_RowDeletingName="dtTranxSum_TotalAmt_CPRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranxSource" msprop:Generator_UserColumnName="TranxSource" msprop:Generator_ColumnPropNameInRow="TranxSource" msprop:Generator_ColumnVarNameInTable="columnTranxSource" msprop:Generator_ColumnPropNameInTable="TranxSourceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOfItems" msprop:Generator_UserColumnName="NumOfItems" msprop:Generator_ColumnPropNameInRow="NumOfItems" msprop:Generator_ColumnVarNameInTable="columnNumOfItems" msprop:Generator_ColumnPropNameInTable="NumOfItemsColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

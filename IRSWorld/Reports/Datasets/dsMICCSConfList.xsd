@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMICCSConfList" targetNamespace="http://tempuri.org/dsMICCSConfList.xsd" xmlns:mstns="http://tempuri.org/dsMICCSConfList.xsd" xmlns="http://tempuri.org/dsMICCSConfList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMICCSConfList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMICCSConfList" msprop:Generator_DataSetName="dsMICCSConfList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtConfList" msprop:Generator_UserTableName="dtConfList" msprop:Generator_RowDeletedName="dtConfListRowDeleted" msprop:Generator_RowChangedName="dtConfListRowChanged" msprop:Generator_RowClassName="dtConfListRow" msprop:Generator_RowChangingName="dtConfListRowChanging" msprop:Generator_RowEvArgName="dtConfListRowChangeEvent" msprop:Generator_RowEvHandlerName="dtConfListRowChangeEventHandler" msprop:Generator_TableClassName="dtConfListDataTable" msprop:Generator_TableVarName="tabledtConfList" msprop:Generator_RowDeletingName="dtConfListRowDeleting" msprop:Generator_TablePropName="dtConfList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountNo" msprop:Generator_UserColumnName="AccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Seq_ID" msprop:Generator_UserColumnName="Seq_ID" msprop:Generator_ColumnPropNameInRow="Seq_ID" msprop:Generator_ColumnVarNameInTable="columnSeq_ID" msprop:Generator_ColumnPropNameInTable="Seq_IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FullName" msprop:Generator_UserColumnName="FullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountReceived" msprop:Generator_UserColumnName="AmountReceived" msprop:Generator_ColumnPropNameInRow="AmountReceived" msprop:Generator_ColumnVarNameInTable="columnAmountReceived" msprop:Generator_ColumnPropNameInTable="AmountReceivedColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

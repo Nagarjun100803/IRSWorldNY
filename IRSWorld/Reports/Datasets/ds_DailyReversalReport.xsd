@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DailyReversalReport" targetNamespace="http://tempuri.org/ds_DailyReversalReport.xsd" xmlns:mstns="http://tempuri.org/ds_DailyReversalReport.xsd" xmlns="http://tempuri.org/ds_DailyReversalReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DailyReversalReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_DailyReversalReport" msprop:Generator_UserDSName="ds_DailyReversalReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_DailyReversalReport" msprop:Generator_TableClassName="dt_DailyReversalReportDataTable" msprop:Generator_TableVarName="tabledt_DailyReversalReport" msprop:Generator_TablePropName="dt_DailyReversalReport" msprop:Generator_RowDeletingName="dt_DailyReversalReportRowDeleting" msprop:Generator_RowChangingName="dt_DailyReversalReportRowChanging" msprop:Generator_RowEvHandlerName="dt_DailyReversalReportRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_DailyReversalReportRowDeleted" msprop:Generator_UserTableName="dt_DailyReversalReport" msprop:Generator_RowChangedName="dt_DailyReversalReportRowChanged" msprop:Generator_RowEvArgName="dt_DailyReversalReportRowChangeEvent" msprop:Generator_RowClassName="dt_DailyReversalReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" msprop:Generator_UserColumnName="ReferenceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingCurrency" msprop:Generator_ColumnVarNameInTable="columnRemittingCurrency" msprop:Generator_ColumnPropNameInRow="RemittingCurrency" msprop:Generator_ColumnPropNameInTable="RemittingCurrencyColumn" msprop:Generator_UserColumnName="RemittingCurrency" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmount" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" msprop:Generator_UserColumnName="NetAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="NetToBenCurrency" msprop:Generator_ColumnVarNameInTable="columnNetToBenCurrency" msprop:Generator_ColumnPropNameInRow="NetToBenCurrency" msprop:Generator_ColumnPropNameInTable="NetToBenCurrencyColumn" msprop:Generator_UserColumnName="NetToBenCurrency" type="xs:string" minOccurs="0" />
+              <xs:element name="NetToBenAmount" msprop:Generator_ColumnVarNameInTable="columnNetToBenAmount" msprop:Generator_ColumnPropNameInRow="NetToBenAmount" msprop:Generator_ColumnPropNameInTable="NetToBenAmountColumn" msprop:Generator_UserColumnName="NetToBenAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" msprop:Generator_UserColumnName="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" msprop:Generator_UserColumnName="AccountNo" type="xs:string" minOccurs="0" />
+              <xs:element name="BankName" msprop:Generator_ColumnVarNameInTable="columnBankName" msprop:Generator_ColumnPropNameInRow="BankName" msprop:Generator_ColumnPropNameInTable="BankNameColumn" msprop:Generator_UserColumnName="BankName" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionDate" msprop:Generator_ColumnVarNameInTable="columnTransactionDate" msprop:Generator_ColumnPropNameInRow="TransactionDate" msprop:Generator_ColumnPropNameInTable="TransactionDateColumn" msprop:Generator_UserColumnName="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateImplementedOverseas" msprop:Generator_ColumnVarNameInTable="columnDateImplementedOverseas" msprop:Generator_ColumnPropNameInRow="DateImplementedOverseas" msprop:Generator_ColumnPropNameInTable="DateImplementedOverseasColumn" msprop:Generator_UserColumnName="DateImplementedOverseas" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MakerID" msprop:Generator_ColumnVarNameInTable="columnMakerID" msprop:Generator_ColumnPropNameInRow="MakerID" msprop:Generator_ColumnPropNameInTable="MakerIDColumn" msprop:Generator_UserColumnName="MakerID" type="xs:string" minOccurs="0" />
+              <xs:element name="CheckerID" msprop:Generator_ColumnVarNameInTable="columnCheckerID" msprop:Generator_ColumnPropNameInRow="CheckerID" msprop:Generator_ColumnPropNameInTable="CheckerIDColumn" msprop:Generator_UserColumnName="CheckerID" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" msprop:Generator_UserColumnName="BranchName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_ARMReportByTransDate" targetNamespace="http://tempuri.org/ds_ARMReportByTransDate.xsd" xmlns:mstns="http://tempuri.org/ds_ARMReportByTransDate.xsd" xmlns="http://tempuri.org/ds_ARMReportByTransDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_ARMReportByTransDate" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_ARMReportByTransDate" msprop:Generator_DataSetName="ds_ARMReportByTransDate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="KIOSK_x0020_SITE" msprop:Generator_UserColumnName="KIOSK SITE" msprop:Generator_ColumnVarNameInTable="columnKIOSK_SITE" msprop:Generator_ColumnPropNameInRow="KIOSK_SITE" msprop:Generator_ColumnPropNameInTable="KIOSK_SITEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="VOLUME" msprop:Generator_UserColumnName="VOLUME" msprop:Generator_ColumnVarNameInTable="columnVOLUME" msprop:Generator_ColumnPropNameInRow="VOLUME" msprop:Generator_ColumnPropNameInTable="VOLUMEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FEE" msprop:Generator_UserColumnName="FEE" msprop:Generator_ColumnVarNameInTable="columnFEE" msprop:Generator_ColumnPropNameInRow="FEE" msprop:Generator_ColumnPropNameInTable="FEEColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

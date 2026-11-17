@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMICCSHold" targetNamespace="http://tempuri.org/dsMICCSHold.xsd" xmlns:mstns="http://tempuri.org/dsMICCSHold.xsd" xmlns="http://tempuri.org/dsMICCSHold.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMICCSHold" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMICCSHold" msprop:Generator_DataSetName="dsMICCSHold">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtHold" msprop:Generator_UserTableName="dtHold" msprop:Generator_RowDeletedName="dtHoldRowDeleted" msprop:Generator_RowChangedName="dtHoldRowChanged" msprop:Generator_RowClassName="dtHoldRow" msprop:Generator_RowChangingName="dtHoldRowChanging" msprop:Generator_RowEvArgName="dtHoldRowChangeEvent" msprop:Generator_RowEvHandlerName="dtHoldRowChangeEventHandler" msprop:Generator_TableClassName="dtHoldDataTable" msprop:Generator_TableVarName="tabledtHold" msprop:Generator_RowDeletingName="dtHoldRowDeleting" msprop:Generator_TablePropName="dtHold">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountNo" msprop:Generator_UserColumnName="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Seq_ID" msprop:Generator_UserColumnName="Seq_ID" msprop:Generator_ColumnVarNameInTable="columnSeq_ID" msprop:Generator_ColumnPropNameInRow="Seq_ID" msprop:Generator_ColumnPropNameInTable="Seq_IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FullName" msprop:Generator_UserColumnName="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterNameJPN" msprop:Generator_UserColumnName="RemitterNameJPN" msprop:Generator_ColumnVarNameInTable="columnRemitterNameJPN" msprop:Generator_ColumnPropNameInRow="RemitterNameJPN" msprop:Generator_ColumnPropNameInTable="RemitterNameJPNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountReceived" msprop:Generator_UserColumnName="AmountReceived" msprop:Generator_ColumnVarNameInTable="columnAmountReceived" msprop:Generator_ColumnPropNameInRow="AmountReceived" msprop:Generator_ColumnPropNameInTable="AmountReceivedColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

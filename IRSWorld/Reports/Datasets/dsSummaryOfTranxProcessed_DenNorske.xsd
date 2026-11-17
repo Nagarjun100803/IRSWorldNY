@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsSummaryOfTranxProcessed_DenNorske" targetNamespace="http://tempuri.org/dsSummaryOfTranxProcessed_DenNorske.xsd" xmlns:mstns="http://tempuri.org/dsSummaryOfTranxProcessed_DenNorske.xsd" xmlns="http://tempuri.org/dsSummaryOfTranxProcessed_DenNorske.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsSummaryOfTranxProcessed_DenNorske" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsSummaryOfTranxProcessed_DenNorske" msprop:Generator_DataSetName="dsSummaryOfTranxProcessed_DenNorske">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtSummaryOfTranxProcessed_GREM_DenNorske_Oslo" msprop:Generator_UserTableName="dtSummaryOfTranxProcessed_GREM_DenNorske_Oslo" msprop:Generator_RowDeletedName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowDeleted" msprop:Generator_TableClassName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloDataTable" msprop:Generator_RowChangedName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowChanged" msprop:Generator_RowClassName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRow" msprop:Generator_RowChangingName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowChanging" msprop:Generator_RowEvArgName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowChangeEvent" msprop:Generator_RowEvHandlerName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowChangeEventHandler" msprop:Generator_TablePropName="dtSummaryOfTranxProcessed_GREM_DenNorske_Oslo" msprop:Generator_TableVarName="tabledtSummaryOfTranxProcessed_GREM_DenNorske_Oslo" msprop:Generator_RowDeletingName="dtSummaryOfTranxProcessed_GREM_DenNorske_OsloRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATEFROM" msprop:Generator_UserColumnName="DATEFROM" msprop:Generator_ColumnPropNameInRow="DATEFROM" msprop:Generator_ColumnVarNameInTable="columnDATEFROM" msprop:Generator_ColumnPropNameInTable="DATEFROMColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATETO" msprop:Generator_UserColumnName="DATETO" msprop:Generator_ColumnPropNameInRow="DATETO" msprop:Generator_ColumnVarNameInTable="columnDATETO" msprop:Generator_ColumnPropNameInTable="DATETOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMBANK_COMPANY_PAYROLL" msprop:Generator_UserColumnName="REMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnPropNameInRow="REMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnVarNameInTable="columnREMBANK_COMPANY_PAYROLL" msprop:Generator_ColumnPropNameInTable="REMBANK_COMPANY_PAYROLLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NO_x0020_OF_x0020_SERVICE_x0020_FEE" msprop:Generator_UserColumnName="NO OF SERVICE FEE" msprop:Generator_ColumnPropNameInRow="NO_OF_SERVICE_FEE" msprop:Generator_ColumnVarNameInTable="columnNO_OF_SERVICE_FEE" msprop:Generator_ColumnPropNameInTable="NO_OF_SERVICE_FEEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USD_x0020_SERVICE_x0020_FEE" msprop:Generator_UserColumnName="USD SERVICE FEE" msprop:Generator_ColumnPropNameInRow="USD_SERVICE_FEE" msprop:Generator_ColumnVarNameInTable="columnUSD_SERVICE_FEE" msprop:Generator_ColumnPropNameInTable="USD_SERVICE_FEEColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PHP_x0020_OPE" msprop:Generator_UserColumnName="PHP OPE" msprop:Generator_ColumnPropNameInRow="PHP_OPE" msprop:Generator_ColumnVarNameInTable="columnPHP_OPE" msprop:Generator_ColumnPropNameInTable="PHP_OPEColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

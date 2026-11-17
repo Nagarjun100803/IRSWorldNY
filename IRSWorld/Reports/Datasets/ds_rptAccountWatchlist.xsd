@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_rptAccountWatchlist" targetNamespace="http://tempuri.org/ds_rptAccountWatchlist.xsd" xmlns:mstns="http://tempuri.org/ds_rptAccountWatchlist.xsd" xmlns="http://tempuri.org/ds_rptAccountWatchlist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_rptAccountWatchlist" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_rptAccountWatchlist" msprop:Generator_DataSetName="ds_rptAccountWatchlist">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_rptAccountWatchlist" msprop:Generator_UserTableName="dt_rptAccountWatchlist" msprop:Generator_RowDeletedName="dt_rptAccountWatchlistRowDeleted" msprop:Generator_RowChangedName="dt_rptAccountWatchlistRowChanged" msprop:Generator_RowClassName="dt_rptAccountWatchlistRow" msprop:Generator_RowChangingName="dt_rptAccountWatchlistRowChanging" msprop:Generator_RowEvArgName="dt_rptAccountWatchlistRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_rptAccountWatchlistRowChangeEventHandler" msprop:Generator_TableClassName="dt_rptAccountWatchlistDataTable" msprop:Generator_TableVarName="tabledt_rptAccountWatchlist" msprop:Generator_RowDeletingName="dt_rptAccountWatchlistRowDeleting" msprop:Generator_TablePropName="dt_rptAccountWatchlist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="startdate" msprop:Generator_UserColumnName="startdate" msprop:Generator_ColumnVarNameInTable="columnstartdate" msprop:Generator_ColumnPropNameInRow="startdate" msprop:Generator_ColumnPropNameInTable="startdateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="enddate" msprop:Generator_UserColumnName="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ctype" msprop:Generator_UserColumnName="ctype" msprop:Generator_ColumnVarNameInTable="columnctype" msprop:Generator_ColumnPropNameInRow="ctype" msprop:Generator_ColumnPropNameInTable="ctypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="accountno" msprop:Generator_UserColumnName="accountno" msprop:Generator_ColumnVarNameInTable="columnaccountno" msprop:Generator_ColumnPropNameInRow="accountno" msprop:Generator_ColumnPropNameInTable="accountnoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="rembenID" msprop:Generator_UserColumnName="rembenID" msprop:Generator_ColumnVarNameInTable="columnrembenID" msprop:Generator_ColumnPropNameInRow="rembenID" msprop:Generator_ColumnPropNameInTable="rembenIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="nettobenamount" msprop:Generator_UserColumnName="nettobenamount" msprop:Generator_ColumnVarNameInTable="columnnettobenamount" msprop:Generator_ColumnPropNameInRow="nettobenamount" msprop:Generator_ColumnPropNameInTable="nettobenamountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tranxdate" msprop:Generator_UserColumnName="tranxdate" msprop:Generator_ColumnVarNameInTable="columntranxdate" msprop:Generator_ColumnPropNameInRow="tranxdate" msprop:Generator_ColumnPropNameInTable="tranxdateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

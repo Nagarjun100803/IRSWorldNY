@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="deriveParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deriveParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deriveParametersResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DBNull" />
+      <s:element name="deriveParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keep_object" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deriveParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deriveParameterResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getErrorMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="getErrorMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getErrorMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tblname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSchemaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReturnCommand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cmdtext" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReturnCommandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReturnCommandResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataSetByCmdKeep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keep_object" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="tblnames" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="enforce" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDataSetByCmdKeepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataSetByCmdKeepResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataSetByString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlstring" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sp" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="tblnames" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="enforce" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataSetByStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataSetByStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLastScopeIdentity">
+        <s:complexType />
+      </s:element>
+      <s:element name="getLastScopeIdentityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getLastScopeIdentityResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataSetByCmdKeep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keep_object" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="tblname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataSetByCmdKeepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateDataSetByCmdKeepResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataSetByString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlstring" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sp" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="tblname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataSetByStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateDataSetByStringResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureByCmdKeep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keep_object" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureByCmdKeepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="execStoredProcedureByCmdKeepResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureByString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="tblnames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureByStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="execStoredProcedureByStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execStoredProcedureUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="execStoredProcedureUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sqlUpdateByCmdKeep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keep_object" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sqlUpdateByCmdKeepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sqlUpdateByCmdKeepResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sqlUpdateByString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlstring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sqlUpdateByStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sqlUpdateByStringResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execScalarSp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execScalarSpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="execScalarSpResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execScalar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connection_string" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlstmt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execScalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="execScalarResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="deriveParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:deriveParameters" />
+  </wsdl:message>
+  <wsdl:message name="deriveParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:deriveParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="deriveParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:deriveParameter" />
+  </wsdl:message>
+  <wsdl:message name="deriveParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:deriveParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="getErrorMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:getErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="getErrorMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:getErrorMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:getSchema" />
+  </wsdl:message>
+  <wsdl:message name="getSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:getSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReturnCommandSoapIn">
+    <wsdl:part name="parameters" element="tns:getReturnCommand" />
+  </wsdl:message>
+  <wsdl:message name="getReturnCommandSoapOut">
+    <wsdl:part name="parameters" element="tns:getReturnCommandResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSetByCmdKeepSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataSetByCmdKeep" />
+  </wsdl:message>
+  <wsdl:message name="getDataSetByCmdKeepSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataSetByCmdKeepResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSetByStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataSetByString" />
+  </wsdl:message>
+  <wsdl:message name="getDataSetByStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataSetByStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLastScopeIdentitySoapIn">
+    <wsdl:part name="parameters" element="tns:getLastScopeIdentity" />
+  </wsdl:message>
+  <wsdl:message name="getLastScopeIdentitySoapOut">
+    <wsdl:part name="parameters" element="tns:getLastScopeIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataSetByCmdKeepSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataSetByCmdKeep" />
+  </wsdl:message>
+  <wsdl:message name="updateDataSetByCmdKeepSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataSetByCmdKeepResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataSetByStringSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataSetByString" />
+  </wsdl:message>
+  <wsdl:message name="updateDataSetByStringSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataSetByStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureByCmdKeepSoapIn">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureByCmdKeep" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureByCmdKeepSoapOut">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureByCmdKeepResponse" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureByStringSoapIn">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureByString" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureByStringSoapOut">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureByStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureUpdate" />
+  </wsdl:message>
+  <wsdl:message name="execStoredProcedureUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:execStoredProcedureUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="sqlUpdateByCmdKeepSoapIn">
+    <wsdl:part name="parameters" element="tns:sqlUpdateByCmdKeep" />
+  </wsdl:message>
+  <wsdl:message name="sqlUpdateByCmdKeepSoapOut">
+    <wsdl:part name="parameters" element="tns:sqlUpdateByCmdKeepResponse" />
+  </wsdl:message>
+  <wsdl:message name="sqlUpdateByStringSoapIn">
+    <wsdl:part name="parameters" element="tns:sqlUpdateByString" />
+  </wsdl:message>
+  <wsdl:message name="sqlUpdateByStringSoapOut">
+    <wsdl:part name="parameters" element="tns:sqlUpdateByStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="execScalarSpSoapIn">
+    <wsdl:part name="parameters" element="tns:execScalarSp" />
+  </wsdl:message>
+  <wsdl:message name="execScalarSpSoapOut">
+    <wsdl:part name="parameters" element="tns:execScalarSpResponse" />
+  </wsdl:message>
+  <wsdl:message name="execScalarSoapIn">
+    <wsdl:part name="parameters" element="tns:execScalar" />
+  </wsdl:message>
+  <wsdl:message name="execScalarSoapOut">
+    <wsdl:part name="parameters" element="tns:execScalarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsSqlCommonsSoap">
+    <wsdl:operation name="deriveParameter">
+      <wsdl:input name="deriveParameters" message="tns:deriveParametersSoapIn" />
+      <wsdl:output name="deriveParameters" message="tns:deriveParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deriveParameter">
+      <wsdl:input message="tns:deriveParameterSoapIn" />
+      <wsdl:output message="tns:deriveParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getErrorMessage">
+      <wsdl:input message="tns:getErrorMessageSoapIn" />
+      <wsdl:output message="tns:getErrorMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchema">
+      <wsdl:input message="tns:getSchemaSoapIn" />
+      <wsdl:output message="tns:getSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getReturnCommand">
+      <wsdl:input message="tns:getReturnCommandSoapIn" />
+      <wsdl:output message="tns:getReturnCommandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get A DataSet using SqlCommand store in sqlHelperCommandKeep object</wsdl:documentation>
+      <wsdl:input name="getDataSetByCmdKeep" message="tns:getDataSetByCmdKeepSoapIn" />
+      <wsdl:output name="getDataSetByCmdKeep" message="tns:getDataSetByCmdKeepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get A DataSet using SQL String or Stored Procedure name</wsdl:documentation>
+      <wsdl:input name="getDataSetByString" message="tns:getDataSetByStringSoapIn" />
+      <wsdl:output name="getDataSetByString" message="tns:getDataSetByStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastScopeIndentity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the identity value after insert</wsdl:documentation>
+      <wsdl:input name="getLastScopeIdentity" message="tns:getLastScopeIdentitySoapIn" />
+      <wsdl:output name="getLastScopeIdentity" message="tns:getLastScopeIdentitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save DataSet using SqlCommand store in sqlHelperCommandKeep object</wsdl:documentation>
+      <wsdl:input name="updateDataSetByCmdKeep" message="tns:updateDataSetByCmdKeepSoapIn" />
+      <wsdl:output name="updateDataSetByCmdKeep" message="tns:updateDataSetByCmdKeepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save DataSet using Sql statement or stored procedure</wsdl:documentation>
+      <wsdl:input name="updateDataSetByString" message="tns:updateDataSetByStringSoapIn" />
+      <wsdl:output name="updateDataSetByString" message="tns:updateDataSetByStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Exec Strored Procedure using sqlHelperCommandKeep object</wsdl:documentation>
+      <wsdl:input name="execStoredProcedureByCmdKeep" message="tns:execStoredProcedureByCmdKeepSoapIn" />
+      <wsdl:output name="execStoredProcedureByCmdKeep" message="tns:execStoredProcedureByCmdKeepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Exec Strored Procedure using its name</wsdl:documentation>
+      <wsdl:input name="execStoredProcedureByString" message="tns:execStoredProcedureByStringSoapIn" />
+      <wsdl:output name="execStoredProcedureByString" message="tns:execStoredProcedureByStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedureUpdate">
+      <wsdl:input message="tns:execStoredProcedureUpdateSoapIn" />
+      <wsdl:output message="tns:execStoredProcedureUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <wsdl:input name="sqlUpdateByCmdKeep" message="tns:sqlUpdateByCmdKeepSoapIn" />
+      <wsdl:output name="sqlUpdateByCmdKeep" message="tns:sqlUpdateByCmdKeepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <wsdl:input name="sqlUpdateByString" message="tns:sqlUpdateByStringSoapIn" />
+      <wsdl:output name="sqlUpdateByString" message="tns:sqlUpdateByStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="execScalarSp">
+      <wsdl:input message="tns:execScalarSpSoapIn" />
+      <wsdl:output message="tns:execScalarSpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="execScalar">
+      <wsdl:input message="tns:execScalarSoapIn" />
+      <wsdl:output message="tns:execScalarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsSqlCommonsSoap" type="tns:wsSqlCommonsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="deriveParameter">
+      <soap:operation soapAction="http://tempuri.org/deriveParameters" style="document" />
+      <wsdl:input name="deriveParameters">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deriveParameters">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deriveParameter">
+      <soap:operation soapAction="http://tempuri.org/deriveParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getErrorMessage">
+      <soap:operation soapAction="http://tempuri.org/getErrorMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchema">
+      <soap:operation soapAction="http://tempuri.org/getSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReturnCommand">
+      <soap:operation soapAction="http://tempuri.org/getReturnCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <soap:operation soapAction="http://tempuri.org/getDataSetByCmdKeep" style="document" />
+      <wsdl:input name="getDataSetByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDataSetByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <soap:operation soapAction="http://tempuri.org/getDataSetByString" style="document" />
+      <wsdl:input name="getDataSetByString">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDataSetByString">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastScopeIndentity">
+      <soap:operation soapAction="http://tempuri.org/getLastScopeIdentity" style="document" />
+      <wsdl:input name="getLastScopeIdentity">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastScopeIdentity">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <soap:operation soapAction="http://tempuri.org/updateDataSetByCmdKeep" style="document" />
+      <wsdl:input name="updateDataSetByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDataSetByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <soap:operation soapAction="http://tempuri.org/updateDataSetByString" style="document" />
+      <wsdl:input name="updateDataSetByString">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDataSetByString">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <soap:operation soapAction="http://tempuri.org/execStoredProcedureByCmdKeep" style="document" />
+      <wsdl:input name="execStoredProcedureByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="execStoredProcedureByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <soap:operation soapAction="http://tempuri.org/execStoredProcedureByString" style="document" />
+      <wsdl:input name="execStoredProcedureByString">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="execStoredProcedureByString">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedureUpdate">
+      <soap:operation soapAction="http://tempuri.org/execStoredProcedureUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <soap:operation soapAction="http://tempuri.org/sqlUpdateByCmdKeep" style="document" />
+      <wsdl:input name="sqlUpdateByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqlUpdateByCmdKeep">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <soap:operation soapAction="http://tempuri.org/sqlUpdateByString" style="document" />
+      <wsdl:input name="sqlUpdateByString">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqlUpdateByString">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execScalarSp">
+      <soap:operation soapAction="http://tempuri.org/execScalarSp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execScalar">
+      <soap:operation soapAction="http://tempuri.org/execScalar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsSqlCommonsSoap12" type="tns:wsSqlCommonsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="deriveParameter">
+      <soap12:operation soapAction="http://tempuri.org/deriveParameters" style="document" />
+      <wsdl:input name="deriveParameters">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deriveParameters">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deriveParameter">
+      <soap12:operation soapAction="http://tempuri.org/deriveParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getErrorMessage">
+      <soap12:operation soapAction="http://tempuri.org/getErrorMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchema">
+      <soap12:operation soapAction="http://tempuri.org/getSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReturnCommand">
+      <soap12:operation soapAction="http://tempuri.org/getReturnCommand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <soap12:operation soapAction="http://tempuri.org/getDataSetByCmdKeep" style="document" />
+      <wsdl:input name="getDataSetByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDataSetByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <soap12:operation soapAction="http://tempuri.org/getDataSetByString" style="document" />
+      <wsdl:input name="getDataSetByString">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDataSetByString">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastScopeIndentity">
+      <soap12:operation soapAction="http://tempuri.org/getLastScopeIdentity" style="document" />
+      <wsdl:input name="getLastScopeIdentity">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastScopeIdentity">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <soap12:operation soapAction="http://tempuri.org/updateDataSetByCmdKeep" style="document" />
+      <wsdl:input name="updateDataSetByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDataSetByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataSet">
+      <soap12:operation soapAction="http://tempuri.org/updateDataSetByString" style="document" />
+      <wsdl:input name="updateDataSetByString">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDataSetByString">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <soap12:operation soapAction="http://tempuri.org/execStoredProcedureByCmdKeep" style="document" />
+      <wsdl:input name="execStoredProcedureByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="execStoredProcedureByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedure">
+      <soap12:operation soapAction="http://tempuri.org/execStoredProcedureByString" style="document" />
+      <wsdl:input name="execStoredProcedureByString">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="execStoredProcedureByString">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execStoredProcedureUpdate">
+      <soap12:operation soapAction="http://tempuri.org/execStoredProcedureUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <soap12:operation soapAction="http://tempuri.org/sqlUpdateByCmdKeep" style="document" />
+      <wsdl:input name="sqlUpdateByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqlUpdateByCmdKeep">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqlUpdate">
+      <soap12:operation soapAction="http://tempuri.org/sqlUpdateByString" style="document" />
+      <wsdl:input name="sqlUpdateByString">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqlUpdateByString">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execScalarSp">
+      <soap12:operation soapAction="http://tempuri.org/execScalarSp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execScalar">
+      <soap12:operation soapAction="http://tempuri.org/execScalar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsSqlCommons">
+    <wsdl:port name="wsSqlCommonsSoap" binding="tns:wsSqlCommonsSoap">
+      <soap:address location="http://localhost:2453/wsSqlCommons.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsSqlCommonsSoap12" binding="tns:wsSqlCommonsSoap12">
+      <soap12:address location="http://localhost:2453/wsSqlCommons.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

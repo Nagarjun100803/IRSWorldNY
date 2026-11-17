@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_ItemsAndVolumeYTD" targetNamespace="http://tempuri.org/ds_ItemsAndVolumeYTD.xsd" xmlns:mstns="http://tempuri.org/ds_ItemsAndVolumeYTD.xsd" xmlns="http://tempuri.org/ds_ItemsAndVolumeYTD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_ItemsAndVolumeYTD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_ItemsAndVolumeYTD" msprop:Generator_DataSetName="ds_ItemsAndVolumeYTD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds_ItemsAndVolumeYTD" msprop:Generator_UserTableName="ds_ItemsAndVolumeYTD" msprop:Generator_RowDeletedName="ds_ItemsAndVolumeYTDRowDeleted" msprop:Generator_RowChangedName="ds_ItemsAndVolumeYTDRowChanged" msprop:Generator_RowClassName="ds_ItemsAndVolumeYTDRow" msprop:Generator_RowChangingName="ds_ItemsAndVolumeYTDRowChanging" msprop:Generator_RowEvArgName="ds_ItemsAndVolumeYTDRowChangeEvent" msprop:Generator_RowEvHandlerName="ds_ItemsAndVolumeYTDRowChangeEventHandler" msprop:Generator_TableClassName="ds_ItemsAndVolumeYTDDataTable" msprop:Generator_TableVarName="tableds_ItemsAndVolumeYTD" msprop:Generator_RowDeletingName="ds_ItemsAndVolumeYTDRowDeleting" msprop:Generator_TablePropName="_ds_ItemsAndVolumeYTD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Items" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Volume" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fromdt" msprop:Generator_UserColumnName="fromdt" msprop:Generator_ColumnVarNameInTable="columnfromdt" msprop:Generator_ColumnPropNameInRow="fromdt" msprop:Generator_ColumnPropNameInTable="fromdtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="todt" msprop:Generator_UserColumnName="todt" msprop:Generator_ColumnVarNameInTable="columntodt" msprop:Generator_ColumnPropNameInRow="todt" msprop:Generator_ColumnPropNameInTable="todtColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,3616 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB421E95-4BBA-4AFA-98A3-CDB2926819D5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IRSWorld</RootNamespace>
+    <AssemblyName>IRSWorld</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ajax, Version=5.7.22.2, Culture=neutral" />
+    <Reference Include="AjaxPro.2, Version=9.2.17.1, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WINDOWS\assembly\GAC_MSIL\CrystalDecisions.Web\10.2.3600.0__692fbea5521e1304\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="IRSClassLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IRSClassLib\bin\Debug\IRSClassLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3D\Courier_3D_List.aspx" />
+    <Content Include="3D\Extract_3D.aspx" />
+    <Content Include="3D\Tran_3D_Details.aspx" />
+    <Content Include="Admin\AuditLogViewer.aspx" />
+    <Content Include="Admin\FCRHostSetup.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Menu.aspx" />
+    <Content Include="Admin\MenuProfiles.aspx" />
+    <Content Include="Admin\Modules.aspx" />
+    <Content Include="Admin\Override.aspx" />
+    <Content Include="Admin\Password.aspx" />
+    <Content Include="Admin\ProductSetup.aspx" />
+    <Content Include="Admin\UserAdmin.aspx" />
+    <Content Include="Admin\UserAdmin2.aspx" />
+    <Content Include="Ajax\Ajax.dll" />
+    <Content Include="Ajax\AjaxPro.2.dll" />
+    <Content Include="Ajax\AjaxPro.dll" />
+    <Content Include="Ajax\AjaxPro.JSON.2.dll" />
+    <Content Include="Ajax\AjaxPro.JSON.dll" />
+    <Content Include="AjxPage\ajaxgrid.aspx" />
+    <Content Include="AjxPage\ajaxgridview.aspx" />
+    <Content Include="APAS\APASAmendments.aspx" />
+    <Content Include="APAS\APASApprovalWindow.aspx" />
+    <Content Include="APAS\APASMain.aspx" />
+    <Content Include="APAS\APASMain_Apprvr.aspx" />
+    <Content Include="APAS\APASPayoutCurrency.aspx" />
+    <Content Include="APAS\APASPayoutPartnerFees.aspx" />
+    <Content Include="APAS\APASPayoutPartnerSetup.aspx" />
+    <Content Include="APAS\APASPNBBranches.aspx" />
+    <Content Include="APAS\APASTransactionStatus.aspx" />
+    <Content Include="APAS\APASLockedTransaction.aspx" />
+    <Content Include="BillsPayment\BillsPayment.aspx" />
+    <Content Include="BillsPayment\OBPSCharge.aspx" />
+    <Content Include="BillsPayment\OBPSCharges.aspx" />
+    <Content Include="BillsPayment\OBPSDenomination.aspx" />
+    <Content Include="BillsPayment\OBPSDynamicField.aspx" />
+    <Content Include="BillsPayment\OBPSRemitter.aspx" />
+    <Content Include="BillsPayment\OBPSTransactions.aspx" />
+    <Content Include="BranchSetup\Accounts.aspx" />
+    <Content Include="BranchSetup\BranchDefaults.aspx" />
+    <Content Include="BranchSetup\BranchHolidays.aspx" />
+    <Content Include="BranchSetup\BranchLookup.aspx" />
+    <Content Include="BranchSetup\BranchOperation.aspx" />
+    <Content Include="BranchSetup\BranchSetupMain.aspx" />
+    <Content Include="BranchSetup\Branch_Definition.aspx" />
+    <Content Include="BranchSetup\BranchSetup.aspx" />
+    <Content Include="BranchSetup\Charges.aspx" />
+    <Content Include="BranchSetup\Disclaimer.aspx" />
+    <Content Include="BranchSetup\ReportSetup.aspx" />
+    <Content Include="BranchSetup\ReportsLookup.aspx" />
+    <Content Include="BranchSetup\MachineSetup.aspx" />
+    <Content Include="BranchSetup\PaymentGatewayDefaults.aspx" />
+    <Content Include="BranchSetup\CurrencyGroup.aspx" />
+    <Content Include="BranchSetup\CurrencyRates.aspx" />
+    <Content Include="BranchSetup\DynaValidation.aspx" />
+    <Content Include="BranchSetup\Exceptions.aspx" />
+    <Content Include="BranchSetup\Holidays.aspx" />
+    <Content Include="BranchSetup\MessageGroup.aspx" />
+    <Content Include="BranchSetup\Messages.aspx" />
+    <Content Include="BranchSetup\Receipts.aspx" />
+    <Content Include="BranchSetup\Tiered_Charges.aspx" />
+    <Content Include="BranchSetup\Valid_IDs.aspx" />
+    <Content Include="BranchSetup\ZipCode.aspx" />
+    <Content Include="Card\CardRemTeller.aspx" />
+    <Content Include="Card\GFMCMaintenance.aspx" />
+    <Content Include="Cash\CashTransactionEntry.aspx" />
+    <Content Include="Cash\TellerCashManagement.aspx" />
+    <Content Include="CIF\Beneficiary.aspx" />
+    <Content Include="CIF\cifmain.aspx" />
+    <Content Include="CIF\CIFViewDetails.aspx" />
+    <Content Include="Compliance\ComplianceLoader.aspx" />
+    <Content Include="Controls\MessageBoard.ascx" />
+    <Content Include="Controls\PageFooter.ascx" />
+    <Content Include="Controls\PageHeader.ascx" />
+    <Content Include="Controls\Template.aspx" />
+    <Content Include="css\ARM.css" />
+    <Content Include="css\cssmodals.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="GEFUUpload\AccountingEntries.aspx" />
+    <Content Include="GEFUUpload\BookingRates.aspx" />
+    <Content Include="GEFUUpload\FileReportsExtract.aspx" />
+    <Content Include="GEFUUpload\GEFUMaintenance.aspx" />
+    <Content Include="GEFUUpload\IflexAccounts.aspx" />
+    <Content Include="GFC\GFCAggregation.aspx" />
+    <Content Include="GFC\GFCCardCKUpload.aspx" />
+    <Content Include="GFC\GFCEnrollment.aspx" />
+    <Content Include="GFC\GFCMaintenance.aspx" />
+    <Content Include="GFC\GFCSearch.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="GRSGEFUMaintenance\GRSGEFUMaintenance.aspx" />
+    <Content Include="GRSMaintenance\GRSMaintenance.aspx" />
+    <Content Include="GRSMaintenance\GRSSplitter.aspx" />
+    <Content Include="GRSMaintenance\IBatchMaintenance.aspx" />
+    <Content Include="GRSMaintenance\PUNLAMaintenance.aspx" />
+    <Content Include="GRS\Loading\GRSLoading.aspx" />
+    <Content Include="GRS\Processing\GRSDataEntry.aspx" />
+    <Content Include="HelpOnline\Help.aspx" />
+    <Content Include="HelpOnline\help.css" />
+    <Content Include="HelpOnline\pages\bills.htm" />
+    <Content Include="HelpOnline\pages\branch.htm" />
+    <Content Include="HelpOnline\pages\changepass.htm" />
+    <Content Include="HelpOnline\pages\cif.htm" />
+    <Content Include="HelpOnline\pages\default.htm" />
+    <Content Include="HelpOnline\pages\inetremit.htm" />
+    <Content Include="HelpOnline\pages\inettxn.htm" />
+    <Content Include="HelpOnline\pages\intro.htm" />
+    <Content Include="HelpOnline\pages\loginout.htm" />
+    <Content Include="HelpOnline\pages\lookup.htm" />
+    <Content Include="HelpOnline\pages\menu.htm" />
+    <Content Include="HelpOnline\pages\modules.htm" />
+    <Content Include="HelpOnline\pages\profiles.htm" />
+    <Content Include="HelpOnline\pages\remittance.htm" />
+    <Content Include="HelpOnline\pages\users.htm" />
+    <Content Include="HelpOnline\pages\whattodo.htm" />
+    <Content Include="images\ajaxloader.gif" />
+    <Content Include="images\BillsPayment.jpg" />
+    <Content Include="images\calendar\close.gif" />
+    <Content Include="images\calendar\divider.gif" />
+    <Content Include="images\calendar\drop1.gif" />
+    <Content Include="images\calendar\drop2.gif" />
+    <Content Include="images\calendar\imgcalen.png" />
+    <Content Include="images\calendar\left1.gif" />
+    <Content Include="images\calendar\left2.gif" />
+    <Content Include="images\calendar\right1.gif" />
+    <Content Include="images\calendar\right2.gif" />
+    <Content Include="images\cap.gif" />
+    <Content Include="images\cardsecurity.jpg" />
+    <Content Include="images\down.jpg" />
+    <Content Include="images\GlobalFilipino.gif" />
+    <Content Include="images\img\aqua_dayDown.gif" />
+    <Content Include="images\img\aqua_dayNormal.gif" />
+    <Content Include="images\img\aqua_dayOver.gif" />
+    <Content Include="images\img\armygreen_dayDown.gif" />
+    <Content Include="images\img\armygreen_dayNormal.gif" />
+    <Content Include="images\img\armygreen_dayOver.gif" />
+    <Content Include="images\img\bananasplit_dayDown.gif" />
+    <Content Include="images\img\bananasplit_dayNormal.gif" />
+    <Content Include="images\img\bananasplit_dayOver.gif" />
+    <Content Include="images\img\beige_dayDown.gif" />
+    <Content Include="images\img\beige_dayNormal.gif" />
+    <Content Include="images\img\beige_dayOver.gif" />
+    <Content Include="images\img\boxBottomLeftCorner.png" />
+    <Content Include="images\img\boxBottomRightCorner.png" />
+    <Content Include="images\img\boxSideWallPx.gif" />
+    <Content Include="images\img\boxSideWallPx.png" />
+    <Content Include="images\img\boxTopLeftCorner.png" />
+    <Content Include="images\img\boxTopPx.gif" />
+    <Content Include="images\img\boxTopPx.png" />
+    <Content Include="images\img\boxTopRightCorner.png" />
+    <Content Include="images\img\closeButton_down.gif" />
+    <Content Include="images\img\closeButton_normal.gif" />
+    <Content Include="images\img\closeButton_over.gif" />
+    <Content Include="images\img\deepblue_dayDown.gif" />
+    <Content Include="images\img\deepblue_dayNormal.gif" />
+    <Content Include="images\img\deepblue_dayOver.gif" />
+    <Content Include="images\img\greenish_dayDown.gif" />
+    <Content Include="images\img\greenish_dayNormal.gif" />
+    <Content Include="images\img\greenish_dayOver.gif" />
+    <Content Include="images\img\lightgreen_dayDown.gif" />
+    <Content Include="images\img\lightgreen_dayNormal.gif" />
+    <Content Include="images\img\lightgreen_dayOver.gif" />
+    <Content Include="images\img\monthBackward_down.gif" />
+    <Content Include="images\img\monthBackward_normal.gif" />
+    <Content Include="images\img\monthBackward_over.gif" />
+    <Content Include="images\img\monthForward_down.gif" />
+    <Content Include="images\img\monthForward_normal.gif" />
+    <Content Include="images\img\monthForward_over.gif" />
+    <Content Include="images\img\ocean_blue_dayDown.gif" />
+    <Content Include="images\img\ocean_blue_dayNormal.gif" />
+    <Content Include="images\img\ocean_blue_dayOver.gif" />
+    <Content Include="images\img\orange_dayDown.gif" />
+    <Content Include="images\img\orange_dayNormal.gif" />
+    <Content Include="images\img\orange_dayOver.gif" />
+    <Content Include="images\img\peppermint_dayDown.gif" />
+    <Content Include="images\img\peppermint_dayNormal.gif" />
+    <Content Include="images\img\peppermint_dayOver.gif" />
+    <Content Include="images\img\pink_dayDown.gif" />
+    <Content Include="images\img\pink_dayNormal.gif" />
+    <Content Include="images\img\pink_dayOver.gif" />
+    <Content Include="images\img\purple_dayDown.gif" />
+    <Content Include="images\img\purple_dayNormal.gif" />
+    <Content Include="images\img\purple_dayOver.gif" />
+    <Content Include="images\img\torqoise_dayDown.gif" />
+    <Content Include="images\img\torqoise_dayNormal.gif" />
+    <Content Include="images\img\torqoise_dayOver.gif" />
+    <Content Include="images\img\yearBackward_down.gif" />
+    <Content Include="images\img\yearBackward_normal.gif" />
+    <Content Include="images\img\yearBackward_over.gif" />
+    <Content Include="images\img\yearForward_down.gif" />
+    <Content Include="images\img\yearForward_normal.gif" />
+    <Content Include="images\img\yearForward_over.gif" />
+    <Content Include="images\PNBLOGOembsmaller.png" />
+    <Content Include="css\Default.css" />
+    <Content Include="images\Remittance.jpg" />
+    <Content Include="images\rend.gif" />
+    <Content Include="images\toe.gif" />
+    <Content Include="images\up.jpg" />
+    <Content Include="images\error.png" />
+    <Content Include="images\wb1.jpg" />
+    <Content Include="images\wb2.gif" />
+    <Content Include="images\wb3.jpg" />
+    <Content Include="images\wb4-50.jpg" />
+    <Content Include="images\wb4.jpg" />
+    <Content Include="Internet\Internet3DCallback.aspx" />
+    <Content Include="Internet\Internet3DSecure.aspx" />
+    <Content Include="Internet\InternetMain.aspx" />
+    <Content Include="Internet\InternetPage.aspx" />
+    <Content Include="Internet\InternetRemitter.aspx" />
+    <Content Include="Internet\InternetTransaction.aspx" />
+    <Content Include="Internet\InternetTransaction2.aspx" />
+    <Content Include="Internet\InternetTranViewDetails.aspx" />
+    <Content Include="IRIS\IRISMain.aspx" />
+    <Content Include="IRIS\IRIS_iuser.aspx" />
+    <Content Include="IRSFileLoader\BatchUploader.aspx" />
+    <Content Include="IRSFileLoader\ComplianceViewer.aspx" />
+    <Content Include="IRSFileLoader\FileLoaderSetup.aspx" />
+    <Content Include="IRSFileLoader\HitViewer.aspx" />
+    <Content Include="IRSFileLoader\UploadedTransaction.aspx" />
+    <Content Include="IRSFileLoader\UploadFile.aspx" />
+    <Content Include="IRSFileLoader\OtherChannels.aspx" />
+    <Content Include="IRSFileLoader\UploadProcess.aspx" />
+    <Content Include="js\3D\Courier_Tran_List.js" />
+    <Content Include="js\3D\Extract_3D.js" />
+    <Content Include="js\Admin\AuditLogViewer.js" />
+    <Content Include="js\Admin\jsFCRHostSetup.js" />
+    <Content Include="js\Admin\jsMenu.js" />
+    <Content Include="js\Admin\jsMenuProfiles.js" />
+    <Content Include="js\Admin\jsModules.js" />
+    <Content Include="js\Admin\jsOverride.js" />
+    <Content Include="js\Admin\jsProductSetup.js" />
+    <Content Include="js\Admin\Login.js" />
+    <Content Include="js\Admin\Password.js" />
+    <Content Include="js\Admin\treetab.css" />
+    <Content Include="js\Admin\treetab.js" />
+    <Content Include="js\Admin\UserAdmin.js" />
+    <Content Include="js\Admin\user_record.js" />
+    <Content Include="js\APAS\jsAPAS.js" />
+    <Content Include="js\APAS\jsAPASAmendments.js" />
+    <Content Include="js\APAS\jsAPASApprovalWindow.js" />
+    <Content Include="js\APAS\jsAPASLockedTrxn.js" />
+    <Content Include="js\APAS\jsAPASPayoutPartnerSetup.js" />
+    <Content Include="js\APAS\jsAPASPNBBranches.js" />
+    <Content Include="js\APAS\jsAPAS_apprvr.js" />
+    <Content Include="js\APAS\jsAPAS_Processed_trnx.js" />
+    <Content Include="js\APAS\jspayoutcurrencies.js" />
+    <Content Include="js\APAS\jsPayoutPartnerFee.js" />
+    <Content Include="js\APAS\sample.js" />
+    <Content Include="js\BillsPayment\jsBillsPayOBPSRemitter.js" />
+    <Content Include="js\BillsPayment\jsBillsPayRemTeller.js" />
+    <Content Include="js\BillsPayment\jsOBPSDenomination.js" />
+    <Content Include="js\BillsPayment\jsOBPSoverride.js" />
+    <Content Include="js\BillsPayment\jsOBPSTransactions.js" />
+    <Content Include="js\BillsPayment\jsOBPSView.js" />
+    <Content Include="js\BillsPayment\js_OBPSSideMenu.js" />
+    <Content Include="js\BranchSetup\js_BranchOperation.js" />
+    <Content Include="js\BranchSetup\js_Disclaimer.js" />
+    <Content Include="js\BranchSetup\js_ReportSetup.js" />
+    <Content Include="js\BranchSetup\js_BranchGateway.js" />
+    <Content Include="js\BranchSetup\js_MachineSetup.js" />
+    <Content Include="js\BranchSetup\js_Messages.js" />
+    <Content Include="js\BranchSetup\js_accounts.js" />
+    <Content Include="js\BranchSetup\js_branchdefaults.js" />
+    <Content Include="js\BranchSetup\js_BranchLookup.js" />
+    <Content Include="js\BranchSetup\js_BranchSetup.js" />
+    <Content Include="js\BranchSetup\js_BranchSetupMain.js" />
+    <Content Include="js\BranchSetup\js_branchsetup_branch_definition.js" />
+    <Content Include="js\BranchSetup\js_charges.js" />
+    <Content Include="js\BranchSetup\js_currencygroup.js" />
+    <Content Include="js\BranchSetup\js_CurrencyRates.js" />
+    <Content Include="js\BranchSetup\js_dynavalidation.js" />
+    <Content Include="js\BranchSetup\js_Exception.js" />
+    <Content Include="js\BranchSetup\js_holidays.js" />
+    <Content Include="js\BranchSetup\js_MessageGroup.js" />
+    <Content Include="js\BranchSetup\js_receipts.js" />
+    <Content Include="js\BranchSetup\js_valid_id.js" />
+    <Content Include="js\BranchSetup\js_zipcode.js" />
+    <Content Include="js\CardRem\jsCardRemTeller.js" />
+    <Content Include="js\CardRem\jsGFMCMaintenance.js" />
+    <Content Include="js\Cash\js_cash_breakdown_txn.js" />
+    <Content Include="js\Cash\js_cash_tellercashmanagement.js" />
+    <Content Include="js\CIF\js_cif_accounts.js" />
+    <Content Include="js\CIF\js_cif_address.js" />
+    <Content Include="js\CIF\js_cif_beneficiaries.js" />
+    <Content Include="js\CIF\js_cif_cards.js" />
+    <Content Include="js\CIF\js_cif_classifications.js" />
+    <Content Include="js\CIF\js_cif_contacts.js" />
+    <Content Include="js\CIF\js_cif_ids.js" />
+    <Content Include="js\CIF\js_cif_main.js" />
+    <Content Include="js\CIF\js_cif_master.js" />
+    <Content Include="js\CIF\js_cif_merchant.js" />
+    <Content Include="js\CIF\js_cif_merchants.js" />
+    <Content Include="js\CIF\js_cif_occupations.js" />
+    <Content Include="js\CIF\js_cif_other_ids.js" />
+    <Content Include="js\CIF\js_cif_remitters.js" />
+    <Content Include="js\CIF\js_cif_spouse.js" />
+    <Content Include="js\CIF\js_cif_viewdetails.js" />
+    <Content Include="js\CIF\js_cif_watchlist.js" />
+    <Content Include="js\Concurrent.Thread.js" />
+    <Content Include="js\FileLoader\jsUploadedTransactions.js" />
+    <Content Include="js\FileLoader\js_batchupload.js" />
+    <Content Include="js\FileLoader\js_complianceviewer.js" />
+    <Content Include="js\FileLoader\js_hitviewer.js" />
+    <Content Include="js\FileLoader\js_irsfileloader.js" />
+    <Content Include="js\FileLoader\js_otherchannelsdefaults.js" />
+    <Content Include="js\FileLoader\js_uploadfile.js" />
+    <Content Include="js\FileLoader\js_otherchannels.js" />
+    <Content Include="js\FileLoader\js_uploadprocess.js" />
+    <Content Include="js\FileLoader\js_viewuploadedfiles.js" />
+    <Content Include="js\GEFUUpload\js_accountingentries.js" />
+    <Content Include="js\GEFUUpload\js_BookingRates.js" />
+    <Content Include="js\GEFUUpload\js_gefumaintenance.js" />
+    <Content Include="js\GEFUUpload\js_GEFU_Reports.js" />
+    <Content Include="js\GEFUUpload\js_iflexaccounts.js" />
+    <Content Include="js\GFC\jsGFCAggregation.js" />
+    <Content Include="js\GFC\jsGFCCardCKUpload.js" />
+    <Content Include="js\GFC\jsGFCEnrollment.js" />
+    <Content Include="js\GFC\jsGFCMaintenance.js" />
+    <Content Include="js\GFC\jsGFCSearch.js" />
+    <Content Include="js\GRSGEFUMaintenance\js_GRSAccountingEntries.js" />
+    <Content Include="js\GRSGEFUMaintenance\js_grsCorrBank.js" />
+    <Content Include="js\GRSGEFUMaintenance\js_grsgefu.js" />
+    <Content Include="js\GRSGEFUMaintenance\js_grsgefumaintenance.js" />
+    <Content Include="js\GRS\js_BatchMaint.js" />
+    <Content Include="js\GRS\js_PUNLAMaint.js" />
+    <Content Include="js\Internet\jsInternet3DCallback.js" />
+    <Content Include="js\Internet\jsInternetGridView.js" />
+    <Content Include="js\Internet\jsInternetMain.js" />
+    <Content Include="js\Internet\jsInternetPage.js" />
+    <Content Include="js\Internet\jsInternetRemitter.js" />
+    <Content Include="js\Internet\jsInternetRemitterCards.js" />
+    <Content Include="js\Internet\jsInternetRemSideBar.js" />
+    <Content Include="js\Internet\jsInternetSideBar.js" />
+    <Content Include="js\Internet\jsInternetTransaction.js" />
+    <Content Include="js\Internet\jsInternetTransaction2.js" />
+    <Content Include="js\Internet\jsInternetTranSaving.js" />
+    <Content Include="js\Internet\jsInternetTranViewDetails.js" />
+    <Content Include="js\IRIS\jsIRIS.js" />
+    <Content Include="js\IRIS\jsIRIS_iuser.js" />
+    <Content Include="js\jsCommons.js" />
+    <Content Include="js\jscommonmethod.js" />
+    <Content Include="js\jsgridselector.js" />
+    <Content Include="js\jshttprequest.js" />
+    <Content Include="js\jsmenu.js" />
+    <Content Include="js\jsmodalwindow.js" />
+    <Content Include="js\jspad\images\jspad\bold.gif" />
+    <Content Include="js\jspad\images\jspad\bullets.gif" />
+    <Content Include="js\jspad\images\jspad\center.gif" />
+    <Content Include="js\jspad\images\jspad\copy.gif" />
+    <Content Include="js\jspad\images\jspad\cut.gif" />
+    <Content Include="js\jspad\images\jspad\fg.gif" />
+    <Content Include="js\jspad\images\jspad\italic.gif" />
+    <Content Include="js\jspad\images\jspad\left.gif" />
+    <Content Include="js\jspad\images\jspad\new.gif" />
+    <Content Include="js\jspad\images\jspad\open.gif" />
+    <Content Include="js\jspad\images\jspad\paste.gif" />
+    <Content Include="js\jspad\images\jspad\right.gif" />
+    <Content Include="js\jspad\images\jspad\save.gif" />
+    <Content Include="js\jspad\images\jspad\underline.gif" />
+    <Content Include="js\jspad\jspad.js" />
+    <Content Include="js\jstree\dtree.css" />
+    <Content Include="js\jstree\dtree.js" />
+    <Content Include="js\jstree\dtree\base.gif" />
+    <Content Include="js\jstree\dtree\cd.gif" />
+    <Content Include="js\jstree\dtree\empty.gif" />
+    <Content Include="js\jstree\dtree\folder.gif" />
+    <Content Include="js\jstree\dtree\folderopen.gif" />
+    <Content Include="js\jstree\dtree\globe.gif" />
+    <Content Include="js\jstree\dtree\imgfolder.gif" />
+    <Content Include="js\jstree\dtree\join.gif" />
+    <Content Include="js\jstree\dtree\joinbottom.gif" />
+    <Content Include="js\jstree\dtree\line.gif" />
+    <Content Include="js\jstree\dtree\minus.gif" />
+    <Content Include="js\jstree\dtree\minusbottom.gif" />
+    <Content Include="js\jstree\dtree\musicfolder.gif" />
+    <Content Include="js\jstree\dtree\nolines_minus.gif" />
+    <Content Include="js\jstree\dtree\nolines_plus.gif" />
+    <Content Include="js\jstree\dtree\page.gif" />
+    <Content Include="js\jstree\dtree\plus.gif" />
+    <Content Include="js\jstree\dtree\plusbottom.gif" />
+    <Content Include="js\jstree\dtree\question.gif" />
+    <Content Include="js\jstree\dtree\trash.gif" />
+    <Content Include="js\js_generic.js" />
+    <Content Include="js\js_sidebar.js" />
+    <Content Include="js\Look_Up\js_look_up.js" />
+    <Content Include="js\Main\ARM.js" />
+    <Content Include="js\Main\jsCalendar.js" />
+    <Content Include="js\Main\jsCenter.js" />
+    <Content Include="js\Main\jsMain.js" />
+    <Content Include="js\OBPS\jsobpssearch.js" />
+    <Content Include="js\Remittance\jsOTCandViewTrans.js" />
+    <Content Include="js\Remittance\jsremcommons.js" />
+    <Content Include="js\Remittance\jsRemExternals.js" />
+    <Content Include="js\Remittance\jsRemittanceSearch.js" />
+    <Content Include="js\Remittance\jsremittersearch.js" />
+    <Content Include="js\Remittance\jsremsaving.js" />
+    <Content Include="js\popcalendar.js" />
+    <Content Include="js\Remittance\jsRemTranAPAS.js" />
+    <Content Include="js\Remittance\jsRemTranCreditToAccount.js" />
+    <Content Include="js\Remittance\jsremtrandetails.js" />
+    <Content Include="js\Remittance\jsRemTranEPCS.js" />
+    <Content Include="js\Remittance\jsRemTranGFMC.js" />
+    <Content Include="js\Remittance\jsRemTranOpenAccountAssistance.js" />
+    <Content Include="js\Remittance\jsRemTranRemittanceCommons.js" />
+    <Content Include="js\Remittance\jsRemTranRapidRemit.js" />
+    <Content Include="js\Remittance\jsRemTranRemittance.js" />
+    <Content Include="js\Remittance\jsRemTranDoorToBank.js" />
+    <Content Include="js\Remittance\jsRemTranDoorToDoor.js" />
+    <Content Include="js\Remittance\jsRemTranIBFT.js" />
+    <Content Include="js\Remittance\js_remtrandoortobank.js" />
+    <Content Include="js\Remittance\js_remtrandoortodoor.js" />
+    <Content Include="js\Remittance\js_remtranibft.js" />
+    <Content Include="js\Remittance\js_remtranopenaccount.js" />
+    <Content Include="js\Remittance\jsRemTranPAW.js" />
+    <Content Include="js\Remittance\jsRemTranPDDTS.js" />
+    <Content Include="js\Remittance\jsRemOTC.js" />
+    <Content Include="js\Remittance\js_remtranpaw.js" />
+    <Content Include="js\Remittance\js_remtranpddts.js" />
+    <Content Include="js\Remittance\js_remtranplacement.js" />
+    <Content Include="js\Remittance\js_rem_tran_generic.js" />
+    <Content Include="js\Reports\js_ReportsTemplate.js" />
+    <Content Include="js\Template\jsOTCTemplate.js" />
+    <Content Include="Look_Up\Look_Up.aspx" />
+    <Content Include="Main\ARMMain.aspx" />
+    <Content Include="Main\frmCenter.aspx" />
+    <Content Include="Main\frmFooter.aspx" />
+    <Content Include="Main\IRSMain.aspx" />
+    <Content Include="OBPS\OBPSTransaction.aspx" />
+    <Content Include="OBPS\ObpsTranSearch.aspx" />
+    <Content Include="Remittance\OTCViewAndApproval.aspx" />
+    <Content Include="Remittance\RemTeller.aspx" />
+    <Content Include="Remittance\RemTellering.aspx" />
+    <Content Include="Remittance\RemTranAPAS.aspx" />
+    <Content Include="Remittance\RemTranCalculator.aspx" />
+    <Content Include="Remittance\RemTranCreditToAccount.aspx" />
+    <Content Include="Remittance\RemTranDoorToBank.aspx" />
+    <Content Include="Remittance\RemTranDoorToDoor.aspx" />
+    <Content Include="Remittance\RemTranEPCCS.aspx" />
+    <Content Include="Remittance\RemTranGFMC.aspx" />
+    <Content Include="Remittance\RemTranIBFT.aspx" />
+    <Content Include="Remittance\RemTranOpenAccount.aspx" />
+    <Content Include="Remittance\RemTranOpenAccountAssistance.aspx" />
+    <Content Include="Remittance\RemTranPAW.aspx" />
+    <Content Include="Remittance\RemTranPDDTS.aspx" />
+    <Content Include="Remittance\RemOTC.aspx" />
+    <Content Include="Remittance\RemTranPopUpEntry.aspx" />
+    <Content Include="Remittance\RemTranRapidRemit.aspx" />
+    <Content Include="Remittance\RemTranGeneric.aspx" />
+    <Content Include="Remittance\RemTranSearch.aspx" />
+    <Content Include="Remittance\RemTransView.aspx" />
+    <Content Include="Remittance\RemTranSWIFT.aspx" />
+    <Content Include="Remittance\RemTranViewDetails.aspx" />
+    <Content Include="Reports\Pages\Report_Viewer.aspx" />
+    <Content Include="Reports\Pages\Report_Holder.aspx" />
+    <Content Include="Template\OTCTemplate.aspx" />
+    <Content Include="testAgent.aspx" />
+    <Content Include="Test\test.aspx" />
+    <Content Include="Test\TestMQ.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3D\Courier_3D_List.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Courier_3D_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3D\Courier_3D_List.aspx.designer.cs">
+      <DependentUpon>Courier_3D_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3D\Extract_3D.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Extract_3D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3D\Extract_3D.aspx.designer.cs">
+      <DependentUpon>Extract_3D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3D\Tran_3D_Details.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Tran_3D_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3D\Tran_3D_Details.aspx.designer.cs">
+      <DependentUpon>Tran_3D_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AuditLogViewer.aspx.cs">
+      <DependentUpon>AuditLogViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AuditLogViewer.aspx.designer.cs">
+      <DependentUpon>AuditLogViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FCRHostSetup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>FCRHostSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FCRHostSetup.aspx.designer.cs">
+      <DependentUpon>FCRHostSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Menu.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MenuProfiles.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MenuProfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MenuProfiles.aspx.designer.cs">
+      <DependentUpon>MenuProfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Modules.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Modules.aspx.designer.cs">
+      <DependentUpon>Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Override.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Override.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Override.aspx.designer.cs">
+      <DependentUpon>Override.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Password.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Password.aspx.designer.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductSetup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ProductSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductSetup.aspx.designer.cs">
+      <DependentUpon>ProductSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserAdmin.aspx.cs">
+      <DependentUpon>UserAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserAdmin.aspx.designer.cs">
+      <DependentUpon>UserAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserAdmin2.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UserAdmin2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserAdmin2.aspx.designer.cs">
+      <DependentUpon>UserAdmin2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjxPage\ajaxgrid.aspx.cs">
+      <DependentUpon>ajaxgrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjxPage\ajaxgrid.aspx.designer.cs">
+      <DependentUpon>ajaxgrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjxPage\ajaxgridview.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ajaxgridview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjxPage\ajaxgridview.aspx.designer.cs">
+      <DependentUpon>ajaxgridview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASAmendments.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASAmendments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASAmendments.aspx.designer.cs">
+      <DependentUpon>APASAmendments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASApprovalWindow.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASApprovalWindow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASApprovalWindow.aspx.designer.cs">
+      <DependentUpon>APASApprovalWindow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASMain.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASMain.aspx.designer.cs">
+      <DependentUpon>APASMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASMain_Apprvr.aspx.cs">
+      <DependentUpon>APASMain_Apprvr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APAS\APASMain_Apprvr.aspx.designer.cs">
+      <DependentUpon>APASMain_Apprvr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutCurrency.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASPayoutCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutCurrency.aspx.designer.cs">
+      <DependentUpon>APASPayoutCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutPartnerFees.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASPayoutPartnerFees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutPartnerFees.aspx.designer.cs">
+      <DependentUpon>APASPayoutPartnerFees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutPartnerSetup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASPayoutPartnerSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPayoutPartnerSetup.aspx.designer.cs">
+      <DependentUpon>APASPayoutPartnerSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPNBBranches.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASPNBBranches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASPNBBranches.aspx.designer.cs">
+      <DependentUpon>APASPNBBranches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASTransactionStatus.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASTransactionStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASTransactionStatus.aspx.designer.cs">
+      <DependentUpon>APASTransactionStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASLockedTransaction.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APASLockedTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APAS\APASLockedTransaction.aspx.designer.cs">
+      <DependentUpon>APASLockedTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\BillsPayment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BillsPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\BillsPayment.aspx.designer.cs">
+      <DependentUpon>BillsPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSCharge.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OBPSCharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSCharge.aspx.designer.cs">
+      <DependentUpon>OBPSCharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSCharges.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OBPSCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSCharges.aspx.designer.cs">
+      <DependentUpon>OBPSCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSDenomination.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OBPSDenomination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSDenomination.aspx.designer.cs">
+      <DependentUpon>OBPSDenomination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSDynamicField.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OBPSDynamicField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSDynamicField.aspx.designer.cs">
+      <DependentUpon>OBPSDynamicField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSRemitter.aspx.cs">
+      <DependentUpon>OBPSRemitter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSRemitter.aspx.designer.cs">
+      <DependentUpon>OBPSRemitter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSTransactions.aspx.cs">
+      <DependentUpon>OBPSTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillsPayment\OBPSTransactions.aspx.designer.cs">
+      <DependentUpon>OBPSTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Accounts.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Accounts.aspx.designer.cs">
+      <DependentUpon>Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchDefaults.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchDefaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchDefaults.aspx.designer.cs">
+      <DependentUpon>BranchDefaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchHolidays.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchHolidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchHolidays.aspx.designer.cs">
+      <DependentUpon>BranchHolidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchLookup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchLookup.aspx.designer.cs">
+      <DependentUpon>BranchLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchOperation.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchOperation.aspx.designer.cs">
+      <DependentUpon>BranchOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchSetupMain.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchSetupMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchSetupMain.aspx.designer.cs">
+      <DependentUpon>BranchSetupMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Branch_Definition.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Branch_Definition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Branch_Definition.aspx.designer.cs">
+      <DependentUpon>Branch_Definition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchSetup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BranchSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\BranchSetup.aspx.designer.cs">
+      <DependentUpon>BranchSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Charges.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Charges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Charges.aspx.designer.cs">
+      <DependentUpon>Charges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Disclaimer.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Disclaimer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Disclaimer.aspx.designer.cs">
+      <DependentUpon>Disclaimer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\ReportSetup.aspx.cs">
+      <DependentUpon>ReportSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchSetup\ReportSetup.aspx.designer.cs">
+      <DependentUpon>ReportSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\ReportsLookup.aspx.cs">
+      <DependentUpon>ReportsLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchSetup\ReportsLookup.aspx.designer.cs">
+      <DependentUpon>ReportsLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\MachineSetup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MachineSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\MachineSetup.aspx.designer.cs">
+      <DependentUpon>MachineSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\PaymentGatewayDefaults.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PaymentGatewayDefaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\PaymentGatewayDefaults.aspx.designer.cs">
+      <DependentUpon>PaymentGatewayDefaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\CurrencyGroup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CurrencyGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\CurrencyGroup.aspx.designer.cs">
+      <DependentUpon>CurrencyGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\CurrencyRates.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CurrencyRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\CurrencyRates.aspx.designer.cs">
+      <DependentUpon>CurrencyRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\DynaValidation.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DynaValidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\DynaValidation.aspx.designer.cs">
+      <DependentUpon>DynaValidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Exceptions.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Exceptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Exceptions.aspx.designer.cs">
+      <DependentUpon>Exceptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Holidays.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Holidays.aspx.designer.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\MessageGroup.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MessageGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\MessageGroup.aspx.designer.cs">
+      <DependentUpon>MessageGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Messages.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Receipts.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Receipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Receipts.aspx.designer.cs">
+      <DependentUpon>Receipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Tiered_Charges.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Tiered_Charges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Tiered_Charges.aspx.designer.cs">
+      <DependentUpon>Tiered_Charges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Valid_IDs.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Valid_IDs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\Valid_IDs.aspx.designer.cs">
+      <DependentUpon>Valid_IDs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\ZipCode.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZipCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSetup\ZipCode.aspx.designer.cs">
+      <DependentUpon>ZipCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card\CardRemTeller.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CardRemTeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card\CardRemTeller.aspx.designer.cs">
+      <DependentUpon>CardRemTeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card\GFMCMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFMCMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card\GFMCMaintenance.aspx.designer.cs">
+      <DependentUpon>GFMCMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\CashTransactionEntry.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CashTransactionEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\CashTransactionEntry.aspx.designer.cs">
+      <DependentUpon>CashTransactionEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\TellerCashManagement.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TellerCashManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\TellerCashManagement.aspx.designer.cs">
+      <DependentUpon>TellerCashManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\Beneficiary.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Beneficiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\Beneficiary.aspx.designer.cs">
+      <DependentUpon>Beneficiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\cifmain.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>cifmain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\cifmain.aspx.designer.cs">
+      <DependentUpon>cifmain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\CIFViewDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CIFViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIF\CIFViewDetails.aspx.designer.cs">
+      <DependentUpon>CIFViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compliance\ComplianceLoader.aspx.cs">
+      <DependentUpon>ComplianceLoader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compliance\ComplianceLoader.aspx.designer.cs">
+      <DependentUpon>ComplianceLoader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageBoard.ascx.cs">
+      <DependentUpon>MessageBoard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageBoard.ascx.designer.cs">
+      <DependentUpon>MessageBoard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageFooter.ascx.cs">
+      <DependentUpon>PageFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PageFooter.ascx.designer.cs">
+      <DependentUpon>PageFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHeader.ascx.cs">
+      <DependentUpon>PageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHeader.ascx.designer.cs">
+      <DependentUpon>PageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Template.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Template.aspx.designer.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\AccountingEntries.aspx.cs">
+      <DependentUpon>AccountingEntries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GEFUUpload\AccountingEntries.aspx.designer.cs">
+      <DependentUpon>AccountingEntries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\BookingRates.aspx.cs">
+      <DependentUpon>BookingRates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GEFUUpload\BookingRates.aspx.designer.cs">
+      <DependentUpon>BookingRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\FileReportsExtract.aspx.cs">
+      <DependentUpon>FileReportsExtract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GEFUUpload\FileReportsExtract.aspx.designer.cs">
+      <DependentUpon>FileReportsExtract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\GEFUMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GEFUMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\GEFUMaintenance.aspx.designer.cs">
+      <DependentUpon>GEFUMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GEFUUpload\IflexAccounts.aspx.cs">
+      <DependentUpon>IflexAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GEFUUpload\IflexAccounts.aspx.designer.cs">
+      <DependentUpon>IflexAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCAggregation.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFCAggregation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCAggregation.aspx.designer.cs">
+      <DependentUpon>GFCAggregation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCCardCKUpload.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFCCardCKUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCCardCKUpload.aspx.designer.cs">
+      <DependentUpon>GFCCardCKUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCEnrollment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFCEnrollment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCEnrollment.aspx.designer.cs">
+      <DependentUpon>GFCEnrollment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFCMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCMaintenance.aspx.designer.cs">
+      <DependentUpon>GFCMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCSearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GFCSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GFC\GFCSearch.aspx.designer.cs">
+      <DependentUpon>GFCSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GRSGEFUMaintenance\GRSGEFUMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GRSGEFUMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSGEFUMaintenance\GRSGEFUMaintenance.aspx.designer.cs">
+      <DependentUpon>GRSGEFUMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\GRSMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GRSMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\GRSMaintenance.aspx.designer.cs">
+      <DependentUpon>GRSMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\GRSSplitter.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GRSSplitter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\GRSSplitter.aspx.designer.cs">
+      <DependentUpon>GRSSplitter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\IBatchMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>IBatchMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\IBatchMaintenance.aspx.designer.cs">
+      <DependentUpon>IBatchMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\PUNLAMaintenance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PUNLAMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRSMaintenance\PUNLAMaintenance.aspx.designer.cs">
+      <DependentUpon>PUNLAMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GRS\Loading\GRSLoading.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GRS\Loading\GRSLoading.aspx.designer.cs">
+      <DependentUpon>GRSLoading.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRS\Processing\GRSDataEntry.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GRS\Processing\GRSDataEntry.aspx.designer.cs">
+      <DependentUpon>GRSDataEntry.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpOnline\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpOnline\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\Internet3DCallback.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Internet3DCallback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\Internet3DCallback.aspx.designer.cs">
+      <DependentUpon>Internet3DCallback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\Internet3DSecure.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Internet3DSecure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\Internet3DSecure.aspx.designer.cs">
+      <DependentUpon>Internet3DSecure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetMain.aspx.cs">
+      <DependentUpon>InternetMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internet\InternetMain.aspx.designer.cs">
+      <DependentUpon>InternetMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetPage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InternetPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetPage.aspx.designer.cs">
+      <DependentUpon>InternetPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetRemitter.aspx.cs">
+      <DependentUpon>InternetRemitter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internet\InternetRemitter.aspx.designer.cs">
+      <DependentUpon>InternetRemitter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetTransaction.aspx.cs">
+      <DependentUpon>InternetTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internet\InternetTransaction.aspx.designer.cs">
+      <DependentUpon>InternetTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetTransaction2.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InternetTransaction2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetTransaction2.aspx.designer.cs">
+      <DependentUpon>InternetTransaction2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internet\InternetTranViewDetails.aspx.cs">
+      <DependentUpon>InternetTranViewDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internet\InternetTranViewDetails.aspx.designer.cs">
+      <DependentUpon>InternetTranViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRIS\IRISMain.aspx.cs">
+      <DependentUpon>IRISMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRIS\IRISMain.aspx.designer.cs">
+      <DependentUpon>IRISMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRIS\IRIS_iuser.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>IRIS_iuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRIS\IRIS_iuser.aspx.designer.cs">
+      <DependentUpon>IRIS_iuser.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\BatchUploader.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BatchUploader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\BatchUploader.aspx.designer.cs">
+      <DependentUpon>BatchUploader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\ComplianceViewer.aspx.cs">
+      <DependentUpon>ComplianceViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRSFileLoader\ComplianceViewer.aspx.designer.cs">
+      <DependentUpon>ComplianceViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\FileLoaderSetup.aspx.cs">
+      <DependentUpon>FileLoaderSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRSFileLoader\FileLoaderSetup.aspx.designer.cs">
+      <DependentUpon>FileLoaderSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\HitViewer.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HitViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\HitViewer.aspx.designer.cs">
+      <DependentUpon>HitViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadedTransaction.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UploadedTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadedTransaction.aspx.designer.cs">
+      <DependentUpon>UploadedTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\OtherChannels.aspx.cs">
+      <DependentUpon>OtherChannels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRSFileLoader\OtherChannels.aspx.designer.cs">
+      <DependentUpon>OtherChannels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadProcess.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UploadProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRSFileLoader\UploadProcess.aspx.designer.cs">
+      <DependentUpon>UploadProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Look_Up\Look_Up.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Look_Up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Look_Up\Look_Up.aspx.designer.cs">
+      <DependentUpon>Look_Up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\ARMMain.aspx.cs">
+      <DependentUpon>ARMMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\ARMMain.aspx.designer.cs">
+      <DependentUpon>ARMMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmCenter.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>frmCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmCenter.aspx.designer.cs">
+      <DependentUpon>frmCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmFooter.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>frmFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmFooter.aspx.designer.cs">
+      <DependentUpon>frmFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\IRSMain.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>IRSMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\IRSMain.aspx.designer.cs">
+      <DependentUpon>IRSMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OBPS\OBPSTransaction.aspx.cs">
+      <DependentUpon>OBPSTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OBPS\OBPSTransaction.aspx.designer.cs">
+      <DependentUpon>OBPSTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OBPS\ObpsTranSearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ObpsTranSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OBPS\ObpsTranSearch.aspx.designer.cs">
+      <DependentUpon>ObpsTranSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\OTCViewAndApproval.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OTCViewAndApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\OTCViewAndApproval.aspx.designer.cs">
+      <DependentUpon>OTCViewAndApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranAPAS.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranAPAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranAPAS.aspx.designer.cs">
+      <DependentUpon>RemTranAPAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranCalculator.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranCalculator.aspx.designer.cs">
+      <DependentUpon>RemTranCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranCreditToAccount.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranCreditToAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranCreditToAccount.aspx.designer.cs">
+      <DependentUpon>RemTranCreditToAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranDoorToBank.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranDoorToBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranDoorToBank.aspx.designer.cs">
+      <DependentUpon>RemTranDoorToBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranDoorToDoor.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranDoorToDoor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranDoorToDoor.aspx.designer.cs">
+      <DependentUpon>RemTranDoorToDoor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranEPCCS.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranEPCCS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranEPCCS.aspx.designer.cs">
+      <DependentUpon>RemTranEPCCS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranGFMC.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranGFMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranGFMC.aspx.designer.cs">
+      <DependentUpon>RemTranGFMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranIBFT.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranIBFT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranIBFT.aspx.designer.cs">
+      <DependentUpon>RemTranIBFT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranOpenAccount.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranOpenAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranOpenAccount.aspx.designer.cs">
+      <DependentUpon>RemTranOpenAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranOpenAccountAssistance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranOpenAccountAssistance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranOpenAccountAssistance.aspx.designer.cs">
+      <DependentUpon>RemTranOpenAccountAssistance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPAW.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranPAW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPAW.aspx.designer.cs">
+      <DependentUpon>RemTranPAW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPDDTS.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranPDDTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPDDTS.aspx.designer.cs">
+      <DependentUpon>RemTranPDDTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemOTC.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemOTC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemOTC.aspx.designer.cs">
+      <DependentUpon>RemOTC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPopUpEntry.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranPopUpEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranPopUpEntry.aspx.designer.cs">
+      <DependentUpon>RemTranPopUpEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTransView.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTransView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTransView.aspx.designer.cs">
+      <DependentUpon>RemTransView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranSWIFT.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranSWIFT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranSWIFT.aspx.designer.cs">
+      <DependentUpon>RemTranSWIFT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\APAS\APASLockedTransaction.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASLockedTransaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\APAS\APASPaidAtPayoutPartners.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASPaidAtPayoutPartners.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\APAS\APASPayoutPartnerDetailedReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASPayoutPartnerDetailedReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\APAS\APASPayoutPartnerSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASPayoutPartnerSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\APAS\APASReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\APAS\APASServiceFeeReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APASServiceFeeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ARM\dsARMReceipt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsARMReceipt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ARM\rptARMReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptARMReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CIF\CIFNewForm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CIFNewForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Class\irsAJAXReport.cs" />
+    <Compile Include="Reports\Datasets\ds3D_Txn.Designer.cs">
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAccountingRecon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAccountingRecon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASLockedTransaction.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAPASLockedTransaction.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASPaidAtPayoutPartners.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAPASPaidAtPayoutPartners.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASPayoutPartnerDetailedReport.cs">
+      <DependentUpon>dsAPASPayoutPartnerDetailedReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASPayoutPartnerDetailedReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAPASPayoutPartnerDetailedReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASReceipt.cs">
+      <DependentUpon>dsAPASReceipt.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASReceipt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAPASReceipt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAPASServiceFeeReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAPASServiceFeeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsARM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsARM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsAuditLog.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsBPO_Txn.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsCashierTxnSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCashierTxnSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsCCHO_items_received.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsCHO_items_received.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsCIFDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCIFDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsClearedChecks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsClearedChecks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsConsolidatedReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsConsolidatedReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsCPB_Items.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsCPB_Value.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailyRecordKeepingLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDailyRecordKeepingLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsDailySum_Php_RemAmt.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailySum_Php_RemItems.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailySum_USDlr_RemAmt.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailySum_USDlr_RemItems.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailyTranxJournal.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailyTranxJournalSummary.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsDailyTxn_consolidated.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsEODReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEODReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsFEDACH_CO.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsFEDACH_Items_Rejected.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsFEDACH_PRI_OL.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsFEDACH_PTS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFEDACH_PTS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsFEDACH_RR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFEDACH_RR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsFEDACH_TOH.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsFEDACH_TRSO.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsFEDACH_Txn_Summary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFEDACH_Txn_Summary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsFreq_Size.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsLargeCurrency.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsMOTLargeCurrencyTranx.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsMOT_Items_RCI.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsMOT_Value_RCI.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsMTD_Summary_RCI.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsOBPSTransactions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOBPSTransactions.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsOnlineTranx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOnlineTranx.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsOnline_Txn_RCI.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsOutstandingChecks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOutstandingChecks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsOverrideTranx.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsPendingForApproval.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsRCIReport.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsReceipt.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsReceiptRemit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReceiptRemit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsRejectedTranx.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsRemitterException.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsRem_CHOR.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsReversedTranx.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsStatisticalReport.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsSummaryNetAmt_CO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSummaryNetAmt_CO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsSummaryNetAmt_PC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSummaryNetAmt_PC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsSummaryTotalAmt_CO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSummaryTotalAmt_CO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsSummaryTotalAmt_PC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSummaryTotalAmt_PC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsTellersTotalReport_PC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTellersTotalReport_PC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsTellersTotalRpt_NetAmt_CO.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsTranxLog.Designer.cs" />
+    <Compile Include="Reports\Datasets\dsTranxSum_NetAmt_P.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTranxSum_NetAmt_P.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsTranxSum_TotalAmt_CP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTranxSum_TotalAmt_CP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\dsTxnLog_RCI.Designer.cs" />
+    <Compile Include="Reports\GRS\rptDLI.cs">
+      <DependentUpon>rptDLI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsBranchAccounts_Setup.cs">
+      <DependentUpon>dsBranchAccounts_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsBranchAccounts_Setup.Designer.cs">
+      <DependentUpon>dsBranchAccounts_Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsBranchDefaults_Setup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBranchDefaults_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsBranch_Setup.cs">
+      <DependentUpon>dsBranch_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsBranch_Setup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBranch_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsCharges_Setup.cs">
+      <DependentUpon>dsCharges_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsCurrencyCategories_Setup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCurrencyCategories_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsCurrencyRates_Setup.cs">
+      <DependentUpon>dsCurrencyRates_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsCurrencyRates_Setup.Designer.cs">
+      <DependentUpon>dsCurrencyRates_Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsHoliday_Setup.cs">
+      <DependentUpon>dsHoliday_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsHoliday_Setup.Designer.cs">
+      <DependentUpon>dsHoliday_Setup.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsLookup_Setup.cs">
+      <DependentUpon>dsLookup_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsLookup_Setup.Designer.cs">
+      <DependentUpon>dsLookup_Setup.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsReceipt_Setup.cs">
+      <DependentUpon>dsReceipt_Setup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\dsReceipt_Setup.Designer.cs">
+      <DependentUpon>dsReceipt_Setup.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_BranchAccounts_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_BranchAccounts_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_BranchDefaults_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_BranchDefaults_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_Branch_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_Branch_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_Charges_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_Charges_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_CurrencyCategories_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_CurrencyCategories_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_CurrencyRates_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_CurrencyRates_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_Holiday_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_Holiday_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_Lookup_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_Lookup_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IRSWorld_Setup\rptPNB_Receipt_Setup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPNB_Receipt_Setup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\OBPS\OBPSTransactionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OBPSTransactionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pages\Report_Viewer.aspx.cs">
+      <DependentUpon>Report_Viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Pages\Report_Viewer.aspx.designer.cs">
+      <DependentUpon>Report_Viewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pages\Report_Holder.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Report_Holder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pages\Report_Holder.aspx.designer.cs">
+      <DependentUpon>Report_Holder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rpt3D_Txn.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt3D_Txn.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rpt3D_TXN1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptBPO_TXN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBPO_TXN.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCCHO_Items_Received.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCCHO_Items_Received.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCCHO_ITEMS_RECEIVED1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCHO_Items_Received.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCHO_Items_Received.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCHO_ITEMS_RECEIVED1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCPB_ITEMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCPB_ITEMS.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptCPB_VALUE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCPB_VALUE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptDAILYSUM_PHP_REMAMT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYSUM_PHP_REMAMT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptDAILYSUM_PHP_REMITEMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYSUM_PHP_REMITEMS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptDAILYSUM_USDLR_REMAMT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYSUM_USDLR_REMAMT.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptDAILYSUM_USDLR_REM_ITEMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYSUM_USDLR_REM_ITEMS.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptDAILYTXN_CONSOLIDATED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYTXN_CONSOLIDATED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_CO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_CO.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_ITEMS_REJECTED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_ITEMS_REJECTED.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_PRI_OL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_PRI_OL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_RR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_RR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_TOH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_TOH.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_TRSO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_TRSO.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFEDACH_TXN_SUMMARY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_TXN_SUMMARY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptFREQ_SIZE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFREQ_SIZE.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptMOT_ITEMS_RCI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMOT_ITEMS_RCI.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptMOT_VALUE_RCI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMOT_VALUE_RCI.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptMTD_SUMMARY_RCI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMTD_SUMMARY_RCI.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptONLINE_TXN_RCI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptONLINE_TXN_RCI.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RCI\rptRCIReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRCIReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptREM_CHOR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptREM_CHOR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCI\rptTXNLOG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXNLOG.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSummaryTotalAmt_CO.cs">
+      <DependentUpon>rptSummaryTotalAmt_CO.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSummaryTotalAmt_PC.cs">
+      <DependentUpon>rptSummaryTotalAmt_PC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSummaryNetAmt_PC.cs">
+      <DependentUpon>rptSummaryNetAmt_PC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSummaryNetAmt_CO.cs">
+      <DependentUpon>rptSummaryNetAmt_CO.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptAccountingRecon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAccountingRecon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptCashierTxnSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCashierTxnSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptConsolidatedReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConsolidatedReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptDailyRecordKeepingLog.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDailyRecordKeepingLog.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptEOD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEOD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptReceiptRemit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReceiptRemit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTellersTotalRpt_CO.cs">
+      <DependentUpon>rptTellersTotalRpt_CO.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptDailyTranxJournal_Summary.cs">
+      <DependentUpon>rptDailyTranxJournal_Summary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSummaryClearedChk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSummaryClearedChk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTranxSum_NetAmt_CP.cs">
+      <DependentUpon>rptTranxSum_NetAmt_CP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Standard\rptDailyTranxJournal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDailyTranxJournal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptOverrideTranx.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOverrideTranx.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptPendingForApproval.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPendingForApproval.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptRejectedTranx.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRejectedTranx.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptRemitterException.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRemitterException.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptReversedTranx.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReversedTranx.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptClearedChecks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClearedChecks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptOutstandingCheck.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOutstandingCheck.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTranxSum_TotalAmt_CP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTranxSum_TotalAmt_CP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\OTCTemplate.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OTCTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\OTCTemplate.aspx.designer.cs">
+      <DependentUpon>OTCTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testAgent.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>testAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testAgent.aspx.designer.cs">
+      <DependentUpon>testAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestMQ.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestMQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestMQ.aspx.designer.cs">
+      <DependentUpon>TestMQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TranClass\RemTranCardCommons.cs" />
+    <Compile Include="TranClass\RemTranExtra.cs" />
+    <Compile Include="TranClass\RemTranGFMCCommons.cs" />
+    <Compile Include="TranClass\RemTranSaving.cs" />
+    <Compile Include="TranClass\RemTranCommons.cs" />
+    <Compile Include="Remittance\RemTeller.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTeller.aspx.designer.cs">
+      <DependentUpon>RemTeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTellering.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTellering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTellering.aspx.designer.cs">
+      <DependentUpon>RemTellering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranRapidRemit.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranRapidRemit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranRapidRemit.aspx.designer.cs">
+      <DependentUpon>RemTranRapidRemit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranGeneric.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranGeneric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranGeneric.aspx.designer.cs">
+      <DependentUpon>RemTranGeneric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranSearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranSearch.aspx.designer.cs">
+      <DependentUpon>RemTranSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranViewDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RemTranViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance\RemTranViewDetails.aspx.designer.cs">
+      <DependentUpon>RemTranViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\London\rptRAPID_GBP_TO_USD_G.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRAPID_GBP_TO_USD_G.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\London\rptTXN_GBP_G.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXN_GBP_G.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\London\rptTXN_GBP_TO_USD_SOURCE_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXN_GBP_TO_USD_SOURCE_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\London\rptTXN_GBP_TO_USD_SOURCE_G.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXN_GBP_TO_USD_SOURCE_G.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTemplate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rpt3D_D1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt3D_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptAuditLog.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAuditLog.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptBPO_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBPO_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptCPB_ITEMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCPB_ITEMS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptCPB_VALUE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCPB_VALUE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptDAILYTXN_CONSOLIDATED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDAILYTXN_CONSOLIDATED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTellersTotalRpt_PC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTellersTotalRpt_PC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFEDACH_CO_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_CO_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFEDACH_IR_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_IR_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFEDACH_OHOLD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_OHOLD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFEDACH_PTS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_PTS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFEDACH_REQUIRE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFEDACH_REQUIRE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptFOR_SIZE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFOR_SIZE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptHO_ITEMS_RECEIVED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHO_ITEMS_RECEIVED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptLARGE_CURRENCY_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLARGE_CURRENCY_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptMOT_D_NUMBER.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMOT_D_NUMBER.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptMOT_D_VALUE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMOT_D_VALUE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptMOT_LARGE_CURRENCY_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMOT_LARGE_CURRENCY_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptMTD_TXN_SUMMARY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMTD_TXN_SUMMARY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptNA_CO_SUM_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNA_CO_SUM_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptNA_PC_SUM_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNA_PC_SUM_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptNA_PC_SUM_G.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNA_PC_SUM_G.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptONLINE_DAILY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptONLINE_DAILY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptRH01_DL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRH01_DL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptSTAT_CTA_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSTAT_CTA_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTSR_NET_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTSR_NET_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTSR_TOTAL_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTSR_TOTAL_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTSR_Total_Detail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTSR_Total_Detail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTXN_LOG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXN_LOG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Standard\rptTXN_REM_AS_BENE_D.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTXN_REM_AS_BENE_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Test\test.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\APAS\APASLockedTransaction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASLockedTransaction.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APAS\APASPaidAtPayoutPartners.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASPaidAtPayoutPartners.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APAS\APASPayoutPartnerDetailedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASPayoutPartnerDetailedReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APAS\APASPayoutPartnerSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASPayoutPartnerSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APAS\APASReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASReceipt.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APAS\APASServiceFeeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APASServiceFeeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ARM\rptARMReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptARMReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CIF\CIFNewForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CIFNewForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GRS\rptDLI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDLI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_BranchAccounts_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_BranchAccounts_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_BranchDefaults_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_BranchDefaults_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_Branch_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_Branch_Setup.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_Charges_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_Charges_Setup.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_CurrencyCategories_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_CurrencyCategories_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_CurrencyRates_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_CurrencyRates_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_Holiday_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_Holiday_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_Lookup_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_Lookup_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IRSWorld_Setup\rptPNB_Receipt_Setup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPNB_Receipt_Setup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\London\rptRAPID_GBP_TO_USD_G.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRAPID_GBP_TO_USD_G.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\London\rptTXN_GBP_G.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXN_GBP_G.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\London\rptTXN_GBP_TO_USD_SOURCE_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXN_GBP_TO_USD_SOURCE_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\London\rptTXN_GBP_TO_USD_SOURCE_G.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXN_GBP_TO_USD_SOURCE_G.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OBPS\OBPSTransactionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OBPSTransactionReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rpt3D_Txn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt3D_Txn.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptBPO_TXN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBPO_TXN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptCCHO_Items_Received.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCCHO_Items_Received.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptCHO_Items_Received.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCHO_Items_Received.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptCPB_ITEMS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCPB_ITEMS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptCPB_VALUE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCPB_VALUE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptDAILYSUM_PHP_REMAMT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYSUM_PHP_REMAMT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptDAILYSUM_PHP_REMITEMS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYSUM_PHP_REMITEMS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptDAILYSUM_USDLR_REMAMT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYSUM_USDLR_REMAMT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptDAILYSUM_USDLR_REM_ITEMS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYSUM_USDLR_REM_ITEMS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptDAILYTXN_CONSOLIDATED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYTXN_CONSOLIDATED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_CO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_CO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_ITEMS_REJECTED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_ITEMS_REJECTED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_PRI_OL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_PRI_OL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_RR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_RR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_TOH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_TOH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_TRSO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_TRSO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFEDACH_TXN_SUMMARY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_TXN_SUMMARY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptFREQ_SIZE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFREQ_SIZE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptMOT_ITEMS_RCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMOT_ITEMS_RCI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptMOT_VALUE_RCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMOT_VALUE_RCI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptMTD_SUMMARY_RCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMTD_SUMMARY_RCI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptONLINE_TXN_RCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptONLINE_TXN_RCI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptRCIReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRCIReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptREM_CHOR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptREM_CHOR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCI\rptTXNLOG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXNLOG.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTemplate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTemplate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSummaryTotalAmt_CO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryTotalAmt_CO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSummaryTotalAmt_PC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryTotalAmt_PC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSummaryNetAmt_PC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryNetAmt_PC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSummaryNetAmt_CO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryNetAmt_CO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptAccountingRecon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAccountingRecon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptCashierTxnSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashierTxnSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptConsolidatedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConsolidatedReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptDailyRecordKeepingLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDailyRecordKeepingLog.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptEOD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEOD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptReceiptRemit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReceiptRemit.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTellersTotalRpt_CO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTellersTotalRpt_CO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptDailyTranxJournal_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDailyTranxJournal_Summary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSummaryClearedChk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryClearedChk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTranxSum_NetAmt_CP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTranxSum_NetAmt_CP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rpt3D_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt3D_D1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptAuditLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAuditLog.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptBPO_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBPO_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptCPB_ITEMS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCPB_ITEMS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptCPB_VALUE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCPB_VALUE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptDailyTranxJournal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDailyTranxJournal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptDAILYTXN_CONSOLIDATED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDAILYTXN_CONSOLIDATED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTellersTotalRpt_PC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTellersTotalRpt_PC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFEDACH_CO_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_CO_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFEDACH_IR_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_IR_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFEDACH_OHOLD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_OHOLD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFEDACH_PTS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_PTS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFEDACH_REQUIRE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFEDACH_REQUIRE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptFOR_SIZE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFOR_SIZE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptHO_ITEMS_RECEIVED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHO_ITEMS_RECEIVED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptLARGE_CURRENCY_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLARGE_CURRENCY_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptMOT_D_NUMBER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMOT_D_NUMBER.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptMOT_D_VALUE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMOT_D_VALUE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptMOT_LARGE_CURRENCY_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMOT_LARGE_CURRENCY_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptMTD_TXN_SUMMARY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMTD_TXN_SUMMARY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptNA_CO_SUM_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNA_CO_SUM_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptNA_PC_SUM_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNA_PC_SUM_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptNA_PC_SUM_G.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNA_PC_SUM_G.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptONLINE_DAILY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptONLINE_DAILY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptOverrideTranx.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOverrideTranx.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptPendingForApproval.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPendingForApproval.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptRejectedTranx.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRejectedTranx.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptRemitterException.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRemitterException.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptReversedTranx.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReversedTranx.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptRH01_DL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRH01_DL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptSTAT_CTA_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTAT_CTA_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptClearedChecks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClearedChecks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptOutstandingCheck.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOutstandingCheck.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTranxSum_TotalAmt_CP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTranxSum_TotalAmt_CP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTSR_NET_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTSR_NET_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTSR_TOTAL_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTSR_TOTAL_D.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTSR_Total_Detail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTSR_Total_Detail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTXN_LOG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXN_LOG.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Standard\rptTXN_REM_AS_BENE_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTXN_REM_AS_BENE_D.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="js\jstree\dtree\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ARM\dsARMReceipt.xsc">
+      <DependentUpon>dsARMReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ARM\dsARMReceipt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsARMReceipt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ARM\dsARMReceipt.xss">
+      <DependentUpon>dsARMReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\ds3D_Txn.xsc">
+      <DependentUpon>ds3D_Txn.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\ds3D_Txn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\ds3D_Txn.xss">
+      <DependentUpon>ds3D_Txn.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAccountingRecon.xsc">
+      <DependentUpon>dsAccountingRecon.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAccountingRecon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAccountingRecon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAccountingRecon.xss">
+      <DependentUpon>dsAccountingRecon.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASLockedTransaction.xsc">
+      <DependentUpon>dsAPASLockedTransaction.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASLockedTransaction.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAPASLockedTransaction.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAPASLockedTransaction.xss">
+      <DependentUpon>dsAPASLockedTransaction.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPaidAtPayoutPartners.xsc">
+      <DependentUpon>dsAPASPaidAtPayoutPartners.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPaidAtPayoutPartners.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAPASPaidAtPayoutPartners.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPaidAtPayoutPartners.xss">
+      <DependentUpon>dsAPASPaidAtPayoutPartners.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPayoutPartnerDetailedReport.xsc">
+      <DependentUpon>dsAPASPayoutPartnerDetailedReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPayoutPartnerDetailedReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAPASPayoutPartnerDetailedReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAPASPayoutPartnerDetailedReport.xss">
+      <DependentUpon>dsAPASPayoutPartnerDetailedReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASReceipt.xsc">
+      <DependentUpon>dsAPASReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASReceipt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAPASReceipt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAPASReceipt.xss">
+      <DependentUpon>dsAPASReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASServiceFeeReport.xsc">
+      <DependentUpon>dsAPASServiceFeeReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAPASServiceFeeReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAPASServiceFeeReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsAPASServiceFeeReport.xss">
+      <DependentUpon>dsAPASServiceFeeReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsARM.xsc">
+      <DependentUpon>dsARM.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsARM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsARM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsARM.xss">
+      <DependentUpon>dsARM.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAuditLog.xsc">
+      <DependentUpon>dsAuditLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsAuditLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsAuditLog.xss">
+      <DependentUpon>dsAuditLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsBPO_Txn.xsc">
+      <DependentUpon>dsBPO_Txn.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsBPO_Txn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsBPO_Txn.xss">
+      <DependentUpon>dsBPO_Txn.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCashierTxnSummary.xsc">
+      <DependentUpon>dsCashierTxnSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCashierTxnSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCashierTxnSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsCashierTxnSummary.xss">
+      <DependentUpon>dsCashierTxnSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCCHO_items_received.xsc">
+      <DependentUpon>dsCCHO_items_received.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCCHO_items_received.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsCCHO_items_received.xss">
+      <DependentUpon>dsCCHO_items_received.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCHO_items_received.xsc">
+      <DependentUpon>dsCHO_items_received.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCHO_items_received.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsCHO_items_received.xss">
+      <DependentUpon>dsCHO_items_received.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCIFDetails.xsc">
+      <DependentUpon>dsCIFDetails.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCIFDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCIFDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsCIFDetails.xss">
+      <DependentUpon>dsCIFDetails.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsClearedChecks.xsc">
+      <DependentUpon>dsClearedChecks.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsClearedChecks.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsClearedChecks.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsClearedChecks.xss">
+      <DependentUpon>dsClearedChecks.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsConsolidatedReport.xsc">
+      <DependentUpon>dsConsolidatedReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsConsolidatedReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsConsolidatedReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsConsolidatedReport.xss">
+      <DependentUpon>dsConsolidatedReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Items.xsc">
+      <DependentUpon>dsCPB_Items.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Items.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Items.xss">
+      <DependentUpon>dsCPB_Items.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Value.xsc">
+      <DependentUpon>dsCPB_Value.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Value.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsCPB_Value.xss">
+      <DependentUpon>dsCPB_Value.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyRecordKeepingLog.xsc">
+      <DependentUpon>dsDailyRecordKeepingLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyRecordKeepingLog.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDailyRecordKeepingLog.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsDailyRecordKeepingLog.xss">
+      <DependentUpon>dsDailyRecordKeepingLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemAmt.xsc">
+      <DependentUpon>dsDailySum_Php_RemAmt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemAmt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemAmt.xss">
+      <DependentUpon>dsDailySum_Php_RemAmt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemItems.xsc">
+      <DependentUpon>dsDailySum_Php_RemItems.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemItems.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_Php_RemItems.xss">
+      <DependentUpon>dsDailySum_Php_RemItems.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemAmt.xsc">
+      <DependentUpon>dsDailySum_USDlr_RemAmt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemAmt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemAmt.xss">
+      <DependentUpon>dsDailySum_USDlr_RemAmt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemItems.xsc">
+      <DependentUpon>dsDailySum_USDlr_RemItems.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemItems.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailySum_USDlr_RemItems.xss">
+      <DependentUpon>dsDailySum_USDlr_RemItems.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournal.xsc">
+      <DependentUpon>dsDailyTranxJournal.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournal.xss">
+      <DependentUpon>dsDailyTranxJournal.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournalSummary.xsc">
+      <DependentUpon>dsDailyTranxJournalSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournalSummary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTranxJournalSummary.xss">
+      <DependentUpon>dsDailyTranxJournalSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTxn_consolidated.xsc">
+      <DependentUpon>dsDailyTxn_consolidated.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTxn_consolidated.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsDailyTxn_consolidated.xss">
+      <DependentUpon>dsDailyTxn_consolidated.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsEODReport.xsc">
+      <DependentUpon>dsEODReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsEODReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEODReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsEODReport.xss">
+      <DependentUpon>dsEODReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_CO.xsc">
+      <DependentUpon>dsFEDACH_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_CO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_CO.xss">
+      <DependentUpon>dsFEDACH_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Items_Rejected.xsc">
+      <DependentUpon>dsFEDACH_Items_Rejected.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Items_Rejected.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Items_Rejected.xss">
+      <DependentUpon>dsFEDACH_Items_Rejected.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PRI_OL.xsc">
+      <DependentUpon>dsFEDACH_PRI_OL.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PRI_OL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PRI_OL.xss">
+      <DependentUpon>dsFEDACH_PRI_OL.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PTS.xsc">
+      <DependentUpon>dsFEDACH_PTS.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PTS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFEDACH_PTS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_PTS.xss">
+      <DependentUpon>dsFEDACH_PTS.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_RR.xsc">
+      <DependentUpon>dsFEDACH_RR.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_RR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFEDACH_RR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_RR.xss">
+      <DependentUpon>dsFEDACH_RR.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TOH.xsc">
+      <DependentUpon>dsFEDACH_TOH.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TOH.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TOH.xss">
+      <DependentUpon>dsFEDACH_TOH.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TRSO.xsc">
+      <DependentUpon>dsFEDACH_TRSO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TRSO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_TRSO.xss">
+      <DependentUpon>dsFEDACH_TRSO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Txn_Summary.xsc">
+      <DependentUpon>dsFEDACH_Txn_Summary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Txn_Summary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFEDACH_Txn_Summary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsFEDACH_Txn_Summary.xss">
+      <DependentUpon>dsFEDACH_Txn_Summary.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFreq_Size.xsc">
+      <DependentUpon>dsFreq_Size.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsFreq_Size.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsFreq_Size.xss">
+      <DependentUpon>dsFreq_Size.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsLargeCurrency.xsc">
+      <DependentUpon>dsLargeCurrency.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsLargeCurrency.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsLargeCurrency.xss">
+      <DependentUpon>dsLargeCurrency.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOTLargeCurrencyTranx.xsc">
+      <DependentUpon>dsMOTLargeCurrencyTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOTLargeCurrencyTranx.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsMOTLargeCurrencyTranx.xss">
+      <DependentUpon>dsMOTLargeCurrencyTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Items_RCI.xsc">
+      <DependentUpon>dsMOT_Items_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Items_RCI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Items_RCI.xss">
+      <DependentUpon>dsMOT_Items_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Value_RCI.xsc">
+      <DependentUpon>dsMOT_Value_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Value_RCI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsMOT_Value_RCI.xss">
+      <DependentUpon>dsMOT_Value_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMTD_Summary_RCI.xsc">
+      <DependentUpon>dsMTD_Summary_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsMTD_Summary_RCI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsMTD_Summary_RCI.xss">
+      <DependentUpon>dsMTD_Summary_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOBPSTransactions.xsc">
+      <DependentUpon>dsOBPSTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOBPSTransactions.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOBPSTransactions.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsOBPSTransactions.xss">
+      <DependentUpon>dsOBPSTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOnlineTranx.xsc">
+      <DependentUpon>dsOnlineTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOnlineTranx.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOnlineTranx.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsOnlineTranx.xss">
+      <DependentUpon>dsOnlineTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOnline_Txn_RCI.xsc">
+      <DependentUpon>dsOnline_Txn_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOnline_Txn_RCI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsOnline_Txn_RCI.xss">
+      <DependentUpon>dsOnline_Txn_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOutstandingChecks.xsc">
+      <DependentUpon>dsOutstandingChecks.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOutstandingChecks.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOutstandingChecks.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsOutstandingChecks.xss">
+      <DependentUpon>dsOutstandingChecks.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOverrideTranx.xsc">
+      <DependentUpon>dsOverrideTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsOverrideTranx.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsOverrideTranx.xss">
+      <DependentUpon>dsOverrideTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsPendingForApproval.xsc">
+      <DependentUpon>dsPendingForApproval.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsPendingForApproval.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsPendingForApproval.xss">
+      <DependentUpon>dsPendingForApproval.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRCIReport.xsc">
+      <DependentUpon>dsRCIReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRCIReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsRCIReport.xss">
+      <DependentUpon>dsRCIReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReceipt.xsc">
+      <DependentUpon>dsReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReceipt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsReceipt.xss">
+      <DependentUpon>dsReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReceiptRemit.xsc">
+      <DependentUpon>dsReceiptRemit.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReceiptRemit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReceiptRemit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsReceiptRemit.xss">
+      <DependentUpon>dsReceiptRemit.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRejectedTranx.xsc">
+      <DependentUpon>dsRejectedTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRejectedTranx.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsRejectedTranx.xss">
+      <DependentUpon>dsRejectedTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRemitterException.xsc">
+      <DependentUpon>dsRemitterException.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRemitterException.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsRemitterException.xss">
+      <DependentUpon>dsRemitterException.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRem_CHOR.xsc">
+      <DependentUpon>dsRem_CHOR.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsRem_CHOR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsRem_CHOR.xss">
+      <DependentUpon>dsRem_CHOR.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReversedTranx.xsc">
+      <DependentUpon>dsReversedTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsReversedTranx.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsReversedTranx.xss">
+      <DependentUpon>dsReversedTranx.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsStatisticalReport.xsc">
+      <DependentUpon>dsStatisticalReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsStatisticalReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsStatisticalReport.xss">
+      <DependentUpon>dsStatisticalReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_CO.xsc">
+      <DependentUpon>dsSummaryNetAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_CO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummaryNetAmt_CO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_CO.xss">
+      <DependentUpon>dsSummaryNetAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_PC.xsc">
+      <DependentUpon>dsSummaryNetAmt_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_PC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummaryNetAmt_PC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryNetAmt_PC.xss">
+      <DependentUpon>dsSummaryNetAmt_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_CO.xsc">
+      <DependentUpon>dsSummaryTotalAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_CO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummaryTotalAmt_CO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_CO.xss">
+      <DependentUpon>dsSummaryTotalAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_PC.xsc">
+      <DependentUpon>dsSummaryTotalAmt_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_PC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummaryTotalAmt_PC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsSummaryTotalAmt_PC.xss">
+      <DependentUpon>dsSummaryTotalAmt_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalReport_PC.xsc">
+      <DependentUpon>dsTellersTotalReport_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalReport_PC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTellersTotalReport_PC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalReport_PC.xss">
+      <DependentUpon>dsTellersTotalReport_PC.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalRpt_NetAmt_CO.xsc">
+      <DependentUpon>dsTellersTotalRpt_NetAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalRpt_NetAmt_CO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsTellersTotalRpt_NetAmt_CO.xss">
+      <DependentUpon>dsTellersTotalRpt_NetAmt_CO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxLog.xsc">
+      <DependentUpon>dsTranxLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsTranxLog.xss">
+      <DependentUpon>dsTranxLog.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_NetAmt_P.xsc">
+      <DependentUpon>dsTranxSum_NetAmt_P.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_NetAmt_P.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTranxSum_NetAmt_P.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_NetAmt_P.xss">
+      <DependentUpon>dsTranxSum_NetAmt_P.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_TotalAmt_CP.xsc">
+      <DependentUpon>dsTranxSum_TotalAmt_CP.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_TotalAmt_CP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTranxSum_TotalAmt_CP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\dsTranxSum_TotalAmt_CP.xss">
+      <DependentUpon>dsTranxSum_TotalAmt_CP.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTxnLog_RCI.xsc">
+      <DependentUpon>dsTxnLog_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\dsTxnLog_RCI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\dsTxnLog_RCI.xss">
+      <DependentUpon>dsTxnLog_RCI.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchAccounts_Setup.xsc">
+      <DependentUpon>dsBranchAccounts_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchAccounts_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchAccounts_Setup.xss">
+      <DependentUpon>dsBranchAccounts_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchDefaults_Setup.xsc">
+      <DependentUpon>dsBranchDefaults_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchDefaults_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBranchDefaults_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranchDefaults_Setup.xss">
+      <DependentUpon>dsBranchDefaults_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranch_Setup.xsc">
+      <DependentUpon>dsBranch_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranch_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBranch_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsBranch_Setup.xss">
+      <DependentUpon>dsBranch_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCharges_Setup.xsc">
+      <DependentUpon>dsCharges_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCharges_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCharges_Setup.xss">
+      <DependentUpon>dsCharges_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyCategories_Setup.xsc">
+      <DependentUpon>dsCurrencyCategories_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyCategories_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCurrencyCategories_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyCategories_Setup.xss">
+      <DependentUpon>dsCurrencyCategories_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyRates_Setup.xsc">
+      <DependentUpon>dsCurrencyRates_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyRates_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsCurrencyRates_Setup.xss">
+      <DependentUpon>dsCurrencyRates_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsHoliday_Setup.xsc">
+      <DependentUpon>dsHoliday_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsHoliday_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHoliday_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsHoliday_Setup.xss">
+      <DependentUpon>dsHoliday_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsLookup_Setup.xsc">
+      <DependentUpon>dsLookup_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsLookup_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLookup_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsLookup_Setup.xss">
+      <DependentUpon>dsLookup_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsReceipt_Setup.xsc">
+      <DependentUpon>dsReceipt_Setup.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsReceipt_Setup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReceipt_Setup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\IRSWorld_Setup\dsReceipt_Setup.xss">
+      <DependentUpon>dsReceipt_Setup.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GRS\EOT\" />
+    <Folder Include="HelpOnline\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2758</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

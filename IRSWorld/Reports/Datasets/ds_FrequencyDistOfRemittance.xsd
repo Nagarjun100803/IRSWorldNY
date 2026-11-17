@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_FrequencyDistOfRemittance" targetNamespace="http://tempuri.org/ds_FrequencyDistOfRemittance.xsd" xmlns:mstns="http://tempuri.org/ds_FrequencyDistOfRemittance.xsd" xmlns="http://tempuri.org/ds_FrequencyDistOfRemittance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_FrequencyDistOfRemittance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_FrequencyDistOfRemittance" msprop:Generator_DataSetName="ds_FrequencyDistOfRemittance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_FrequencyDistOfRemittances" msprop:Generator_UserTableName="dt_FrequencyDistOfRemittances" msprop:Generator_RowDeletedName="dt_FrequencyDistOfRemittancesRowDeleted" msprop:Generator_RowChangedName="dt_FrequencyDistOfRemittancesRowChanged" msprop:Generator_RowClassName="dt_FrequencyDistOfRemittancesRow" msprop:Generator_RowChangingName="dt_FrequencyDistOfRemittancesRowChanging" msprop:Generator_RowEvArgName="dt_FrequencyDistOfRemittancesRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_FrequencyDistOfRemittancesRowChangeEventHandler" msprop:Generator_TableClassName="dt_FrequencyDistOfRemittancesDataTable" msprop:Generator_TableVarName="tabledt_FrequencyDistOfRemittances" msprop:Generator_RowDeletingName="dt_FrequencyDistOfRemittancesRowDeleting" msprop:Generator_TablePropName="dt_FrequencyDistOfRemittances">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SDATE" msprop:Generator_UserColumnName="SDATE" msprop:Generator_ColumnVarNameInTable="columnSDATE" msprop:Generator_ColumnPropNameInRow="SDATE" msprop:Generator_ColumnPropNameInTable="SDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EDATE" msprop:Generator_UserColumnName="EDATE" msprop:Generator_ColumnVarNameInTable="columnEDATE" msprop:Generator_ColumnPropNameInRow="EDATE" msprop:Generator_ColumnPropNameInTable="EDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Index" msprop:Generator_UserColumnName="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnPropNameInTable="IndexColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Frequency" msprop:Generator_UserColumnName="Frequency" msprop:Generator_ColumnVarNameInTable="columnFrequency" msprop:Generator_ColumnPropNameInRow="Frequency" msprop:Generator_ColumnPropNameInTable="FrequencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Range" msprop:Generator_UserColumnName="Range" msprop:Generator_ColumnVarNameInTable="columnRange" msprop:Generator_ColumnPropNameInRow="Range" msprop:Generator_ColumnPropNameInTable="RangeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Number_x0020_of_x0020_Items" msprop:Generator_UserColumnName="Number of Items" msprop:Generator_ColumnVarNameInTable="columnNumber_of_Items" msprop:Generator_ColumnPropNameInRow="Number_of_Items" msprop:Generator_ColumnPropNameInTable="Number_of_ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Average_x0020_Per_x0020_Items" msprop:Generator_UserColumnName="Average Per Items" msprop:Generator_ColumnVarNameInTable="columnAverage_Per_Items" msprop:Generator_ColumnPropNameInRow="Average_Per_Items" msprop:Generator_ColumnPropNameInTable="Average_Per_ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FEES" msprop:Generator_UserColumnName="FEES" msprop:Generator_ColumnVarNameInTable="columnFEES" msprop:Generator_ColumnPropNameInRow="FEES" msprop:Generator_ColumnPropNameInTable="FEESColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

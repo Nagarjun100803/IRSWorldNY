@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIREMreportOnKeypunchersOutput" targetNamespace="http://tempuri.org/dsIREMreportOnKeypunchersOutput.xsd" xmlns:mstns="http://tempuri.org/dsIREMreportOnKeypunchersOutput.xsd" xmlns="http://tempuri.org/dsIREMreportOnKeypunchersOutput.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIREMreportOnKeypunchersOutput" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIREMreportOnKeypunchersOutput" msprop:Generator_DataSetName="dsIREMreportOnKeypunchersOutput">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IREMreportOnKeypunchersOutput" msprop:Generator_UserTableName="IREMreportOnKeypunchersOutput" msprop:Generator_RowDeletedName="IREMreportOnKeypunchersOutputRowDeleted" msprop:Generator_RowChangedName="IREMreportOnKeypunchersOutputRowChanged" msprop:Generator_RowClassName="IREMreportOnKeypunchersOutputRow" msprop:Generator_RowChangingName="IREMreportOnKeypunchersOutputRowChanging" msprop:Generator_RowEvArgName="IREMreportOnKeypunchersOutputRowChangeEvent" msprop:Generator_RowEvHandlerName="IREMreportOnKeypunchersOutputRowChangeEventHandler" msprop:Generator_TableClassName="IREMreportOnKeypunchersOutputDataTable" msprop:Generator_TableVarName="tableIREMreportOnKeypunchersOutput" msprop:Generator_RowDeletingName="IREMreportOnKeypunchersOutputRowDeleting" msprop:Generator_TablePropName="IREMreportOnKeypunchersOutput">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LAST_x0020_NAME" msprop:Generator_UserColumnName="LAST NAME" msprop:Generator_ColumnVarNameInTable="columnLAST_NAME" msprop:Generator_ColumnPropNameInRow="LAST_NAME" msprop:Generator_ColumnPropNameInTable="LAST_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MAKER" msprop:Generator_UserColumnName="MAKER" msprop:Generator_ColumnPropNameInRow="MAKER" msprop:Generator_ColumnVarNameInTable="columnMAKER" msprop:Generator_ColumnPropNameInTable="MAKERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SOURCE" msprop:Generator_UserColumnName="SOURCE" msprop:Generator_ColumnPropNameInRow="SOURCE" msprop:Generator_ColumnVarNameInTable="columnSOURCE" msprop:Generator_ColumnPropNameInTable="SOURCEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

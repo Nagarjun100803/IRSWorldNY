@@ -1,0 +1,42 @@
+.treetab
+{
+    font-family: Arial; font-size: 12px; font-weight: bold;
+    background-color: lightblue;
+}
+.treetab_node
+{
+    font-family: Arial; font-size: 12px; font-weight: bold;
+    background-color: azure;
+}        
+.treetab td
+{
+    border:solid 1px powderblue;
+    border-collapse: collapse;
+    color: midnightblue;
+}
+.treetab select
+{
+    border:solid 1px powderblue;
+    border-collapse: collapse;
+    color: midnightblue;
+}     
+.treetab_node select
+{
+    border:solid 1px powderblue;
+    border-collapse: collapse;
+    color: midnightblue;
+}             
+.treetab_node td
+{
+    border:solid 1px powderblue;
+    border-collapse: collapse;
+    color: midnightblue;
+} 
+.treetab th
+{
+    background-color:midnightblue;
+    color: Aliceblue;
+    border:solid 1px powderblue;
+    height: 22px;
+    text-align: center;
+}    

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_BalikRemitters" targetNamespace="http://tempuri.org/ds_BalikRemitters.xsd" xmlns:mstns="http://tempuri.org/ds_BalikRemitters.xsd" xmlns="http://tempuri.org/ds_BalikRemitters.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_BalikRemitters" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_BalikRemitters" msprop:Generator_DataSetName="ds_BalikRemitters">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds_BalikRemitters" msprop:Generator_UserTableName="ds_BalikRemitters" msprop:Generator_RowDeletedName="ds_BalikRemittersRowDeleted" msprop:Generator_TableClassName="ds_BalikRemittersDataTable" msprop:Generator_RowChangedName="ds_BalikRemittersRowChanged" msprop:Generator_RowClassName="ds_BalikRemittersRow" msprop:Generator_RowChangingName="ds_BalikRemittersRowChanging" msprop:Generator_RowEvArgName="ds_BalikRemittersRowChangeEvent" msprop:Generator_RowEvHandlerName="ds_BalikRemittersRowChangeEventHandler" msprop:Generator_TablePropName="_ds_BalikRemitters" msprop:Generator_TableVarName="tableds_BalikRemitters" msprop:Generator_RowDeletingName="ds_BalikRemittersRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Balik_Remitters" msprop:Generator_UserColumnName="Balik_Remitters" msprop:Generator_ColumnPropNameInRow="Balik_Remitters" msprop:Generator_ColumnVarNameInTable="columnBalik_Remitters" msprop:Generator_ColumnPropNameInTable="Balik_RemittersColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Start_Date" msprop:Generator_UserColumnName="Start_Date" msprop:Generator_ColumnPropNameInRow="Start_Date" msprop:Generator_ColumnVarNameInTable="columnStart_Date" msprop:Generator_ColumnPropNameInTable="Start_DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="End_Date" msprop:Generator_UserColumnName="End_Date" msprop:Generator_ColumnPropNameInRow="End_Date" msprop:Generator_ColumnVarNameInTable="columnEnd_Date" msprop:Generator_ColumnPropNameInTable="End_DateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

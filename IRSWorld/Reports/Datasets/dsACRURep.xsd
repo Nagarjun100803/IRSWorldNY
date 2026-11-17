@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsACRURep" targetNamespace="http://tempuri.org/dsACRURep.xsd" xmlns:mstns="http://tempuri.org/dsACRURep.xsd" xmlns="http://tempuri.org/dsACRURep.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsACRURep" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsACRURep" msprop:Generator_DataSetName="dsACRURep">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtACRUCorplanCashieringDiv" msprop:Generator_UserTableName="dtACRUCorplanCashieringDiv" msprop:Generator_RowDeletedName="dtACRUCorplanCashieringDivRowDeleted" msprop:Generator_RowChangedName="dtACRUCorplanCashieringDivRowChanged" msprop:Generator_RowClassName="dtACRUCorplanCashieringDivRow" msprop:Generator_RowChangingName="dtACRUCorplanCashieringDivRowChanging" msprop:Generator_RowEvArgName="dtACRUCorplanCashieringDivRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUCorplanCashieringDivRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUCorplanCashieringDivDataTable" msprop:Generator_TableVarName="tabledtACRUCorplanCashieringDiv" msprop:Generator_RowDeletingName="dtACRUCorplanCashieringDivRowDeleting" msprop:Generator_TablePropName="dtACRUCorplanCashieringDiv">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PNB_x0020_BRANCH_x0020_NAME" msprop:Generator_UserColumnName="PNB BRANCH NAME" msprop:Generator_ColumnVarNameInTable="columnPNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInRow="PNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInTable="PNB_BRANCH_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PESO_x0020_EQUIV" msprop:Generator_UserColumnName="PESO EQUIV" msprop:Generator_ColumnVarNameInTable="columnPESO_EQUIV" msprop:Generator_ColumnPropNameInRow="PESO_EQUIV" msprop:Generator_ColumnPropNameInTable="PESO_EQUIVColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="HEADER_x0020_DATE" msprop:Generator_UserColumnName="HEADER DATE" msprop:Generator_ColumnPropNameInRow="HEADER_DATE" msprop:Generator_ColumnVarNameInTable="columnHEADER_DATE" msprop:Generator_ColumnPropNameInTable="HEADER_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_UserTableName="dtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_RowDeletedName="dtACRUCorplanPNBBranchesFromCorrBanksRowDeleted" msprop:Generator_RowChangedName="dtACRUCorplanPNBBranchesFromCorrBanksRowChanged" msprop:Generator_RowClassName="dtACRUCorplanPNBBranchesFromCorrBanksRow" msprop:Generator_RowChangingName="dtACRUCorplanPNBBranchesFromCorrBanksRowChanging" msprop:Generator_RowEvArgName="dtACRUCorplanPNBBranchesFromCorrBanksRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUCorplanPNBBranchesFromCorrBanksRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUCorplanPNBBranchesFromCorrBanksDataTable" msprop:Generator_TableVarName="tabledtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_RowDeletingName="dtACRUCorplanPNBBranchesFromCorrBanksRowDeleting" msprop:Generator_TablePropName="dtACRUCorplanPNBBranchesFromCorrBanks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PNB_x0020_BRANCH_x0020_NAME" msprop:Generator_UserColumnName="PNB BRANCH NAME" msprop:Generator_ColumnVarNameInTable="columnPNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInRow="PNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInTable="PNB_BRANCH_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PESO_x0020_EQUIV" msprop:Generator_UserColumnName="PESO EQUIV" msprop:Generator_ColumnVarNameInTable="columnPESO_EQUIV" msprop:Generator_ColumnPropNameInRow="PESO_EQUIV" msprop:Generator_ColumnPropNameInTable="PESO_EQUIVColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BRANCH_x0020_GROUP" msprop:Generator_UserColumnName="BRANCH GROUP" msprop:Generator_ColumnPropNameInRow="BRANCH_GROUP" msprop:Generator_ColumnVarNameInTable="columnBRANCH_GROUP" msprop:Generator_ColumnPropNameInTable="BRANCH_GROUPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="HEADER_x0020_DATE" msprop:Generator_UserColumnName="HEADER DATE" msprop:Generator_ColumnPropNameInRow="HEADER_DATE" msprop:Generator_ColumnVarNameInTable="columnHEADER_DATE" msprop:Generator_ColumnPropNameInTable="HEADER_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACRUORDSummGREMPRXERPSExco" msprop:Generator_UserTableName="ACRUORDSummGREMPRXERPSExco" msprop:Generator_RowDeletedName="ACRUORDSummGREMPRXERPSExcoRowDeleted" msprop:Generator_RowChangedName="ACRUORDSummGREMPRXERPSExcoRowChanged" msprop:Generator_RowClassName="ACRUORDSummGREMPRXERPSExcoRow" msprop:Generator_RowChangingName="ACRUORDSummGREMPRXERPSExcoRowChanging" msprop:Generator_RowEvArgName="ACRUORDSummGREMPRXERPSExcoRowChangeEvent" msprop:Generator_RowEvHandlerName="ACRUORDSummGREMPRXERPSExcoRowChangeEventHandler" msprop:Generator_TableClassName="ACRUORDSummGREMPRXERPSExcoDataTable" msprop:Generator_TableVarName="tableACRUORDSummGREMPRXERPSExco" msprop:Generator_RowDeletingName="ACRUORDSummGREMPRXERPSExcoRowDeleting" msprop:Generator_TablePropName="ACRUORDSummGREMPRXERPSExco">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REM_x0020_BANK_x002F_COMPANY_x002F_PAYROLL_x0020_NAME" msprop:Generator_UserColumnName="REM BANK/COMPANY/PAYROLL NAME" msprop:Generator_ColumnVarNameInTable="_columnREM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnPropNameInRow="_REM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnPropNameInTable="_REM_BANK_COMPANY_PAYROLL_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TXN_x0020_DATE" msprop:Generator_UserColumnName="TXN DATE" msprop:Generator_ColumnVarNameInTable="columnTXN_DATE" msprop:Generator_ColumnPropNameInRow="TXN_DATE" msprop:Generator_ColumnPropNameInTable="TXN_DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_CURRENCY" msprop:Generator_UserColumnName="REMITTING CURRENCY" msprop:Generator_ColumnVarNameInTable="columnREMITTING_CURRENCY" msprop:Generator_ColumnPropNameInRow="REMITTING_CURRENCY" msprop:Generator_ColumnPropNameInTable="REMITTING_CURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TARGET_x0020_CURRENCY" msprop:Generator_UserColumnName="TARGET CURRENCY" msprop:Generator_ColumnVarNameInTable="columnTARGET_CURRENCY" msprop:Generator_ColumnPropNameInRow="TARGET_CURRENCY" msprop:Generator_ColumnPropNameInTable="TARGET_CURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FX_x0020_AMOUNT" msprop:Generator_UserColumnName="FX AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFX_AMOUNT" msprop:Generator_ColumnPropNameInRow="FX_AMOUNT" msprop:Generator_ColumnPropNameInTable="FX_AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DEBIT_x0020_PESO" msprop:Generator_UserColumnName="DEBIT PESO" msprop:Generator_ColumnVarNameInTable="columnDEBIT_PESO" msprop:Generator_ColumnPropNameInRow="DEBIT_PESO" msprop:Generator_ColumnPropNameInTable="DEBIT_PESOColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GROSS_x0020_PESO" msprop:Generator_UserColumnName="GROSS PESO" msprop:Generator_ColumnVarNameInTable="columnGROSS_PESO" msprop:Generator_ColumnPropNameInRow="GROSS_PESO" msprop:Generator_ColumnPropNameInTable="GROSS_PESOColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DEBIT_x0020_PRX" msprop:Generator_UserColumnName="DEBIT PRX" msprop:Generator_ColumnVarNameInTable="columnDEBIT_PRX" msprop:Generator_ColumnPropNameInRow="DEBIT_PRX" msprop:Generator_ColumnPropNameInTable="DEBIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CREDIT_x0020_PRX" msprop:Generator_UserColumnName="CREDIT PRX" msprop:Generator_ColumnVarNameInTable="columnCREDIT_PRX" msprop:Generator_ColumnPropNameInRow="CREDIT_PRX" msprop:Generator_ColumnPropNameInTable="CREDIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BKNG" msprop:Generator_UserColumnName="BKNG" msprop:Generator_ColumnVarNameInTable="columnBKNG" msprop:Generator_ColumnPropNameInRow="BKNG" msprop:Generator_ColumnPropNameInTable="BKNGColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BUYNG" msprop:Generator_UserColumnName="BUYNG" msprop:Generator_ColumnVarNameInTable="columnBUYNG" msprop:Generator_ColumnPropNameInRow="BUYNG" msprop:Generator_ColumnPropNameInTable="BUYNGColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HEADER_x0020_DATE" msprop:Generator_UserColumnName="HEADER DATE" msprop:Generator_ColumnVarNameInTable="columnHEADER_DATE" msprop:Generator_ColumnPropNameInRow="HEADER_DATE" msprop:Generator_ColumnPropNameInTable="HEADER_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtACRUORDSummaryGREMPRX" msprop:Generator_UserTableName="dtACRUORDSummaryGREMPRX" msprop:Generator_RowDeletedName="dtACRUORDSummaryGREMPRXRowDeleted" msprop:Generator_RowChangedName="dtACRUORDSummaryGREMPRXRowChanged" msprop:Generator_RowClassName="dtACRUORDSummaryGREMPRXRow" msprop:Generator_RowChangingName="dtACRUORDSummaryGREMPRXRowChanging" msprop:Generator_RowEvArgName="dtACRUORDSummaryGREMPRXRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUORDSummaryGREMPRXRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUORDSummaryGREMPRXDataTable" msprop:Generator_TableVarName="tabledtACRUORDSummaryGREMPRX" msprop:Generator_RowDeletingName="dtACRUORDSummaryGREMPRXRowDeleting" msprop:Generator_TablePropName="dtACRUORDSummaryGREMPRX">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BRANCH_x0020_GROUP" msprop:Generator_UserColumnName="BRANCH GROUP" msprop:Generator_ColumnVarNameInTable="columnBRANCH_GROUP" msprop:Generator_ColumnPropNameInRow="BRANCH_GROUP" msprop:Generator_ColumnPropNameInTable="BRANCH_GROUPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REM_x0020_BANK_x002F_COMPANY_x002F_PAYROLL_x0020_NAME" msprop:Generator_UserColumnName="REM BANK/COMPANY/PAYROLL NAME" msprop:Generator_ColumnVarNameInTable="_columnREM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnPropNameInRow="_REM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnPropNameInTable="_REM_BANK_COMPANY_PAYROLL_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DEBIT_x0020_PRX" msprop:Generator_UserColumnName="DEBIT PRX" msprop:Generator_ColumnVarNameInTable="columnDEBIT_PRX" msprop:Generator_ColumnPropNameInRow="DEBIT_PRX" msprop:Generator_ColumnPropNameInTable="DEBIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CREDIT_x0020_PRX" msprop:Generator_UserColumnName="CREDIT PRX" msprop:Generator_ColumnVarNameInTable="columnCREDIT_PRX" msprop:Generator_ColumnPropNameInRow="CREDIT_PRX" msprop:Generator_ColumnPropNameInTable="CREDIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="HEADER_x0020_DATE" msprop:Generator_UserColumnName="HEADER DATE" msprop:Generator_ColumnPropNameInRow="HEADER_DATE" msprop:Generator_ColumnVarNameInTable="columnHEADER_DATE" msprop:Generator_ColumnPropNameInTable="HEADER_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtACRUORDSummaryIREMPRX" msprop:Generator_UserTableName="dtACRUORDSummaryIREMPRX" msprop:Generator_RowDeletedName="dtACRUORDSummaryIREMPRXRowDeleted" msprop:Generator_RowChangedName="dtACRUORDSummaryIREMPRXRowChanged" msprop:Generator_RowClassName="dtACRUORDSummaryIREMPRXRow" msprop:Generator_RowChangingName="dtACRUORDSummaryIREMPRXRowChanging" msprop:Generator_RowEvArgName="dtACRUORDSummaryIREMPRXRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUORDSummaryIREMPRXRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUORDSummaryIREMPRXDataTable" msprop:Generator_TableVarName="tabledtACRUORDSummaryIREMPRX" msprop:Generator_RowDeletingName="dtACRUORDSummaryIREMPRXRowDeleting" msprop:Generator_TablePropName="dtACRUORDSummaryIREMPRX">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BRANCH_x0020_GROUP" msprop:Generator_UserColumnName="BRANCH GROUP" msprop:Generator_ColumnPropNameInRow="BRANCH_GROUP" msprop:Generator_ColumnVarNameInTable="columnBRANCH_GROUP" msprop:Generator_ColumnPropNameInTable="BRANCH_GROUPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REM_x0020_BANK_x002F_COMPANY_x002F_PAYROLL_x0020_NAME" msprop:Generator_UserColumnName="REM BANK/COMPANY/PAYROLL NAME" msprop:Generator_ColumnPropNameInRow="_REM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnVarNameInTable="_columnREM_BANK_COMPANY_PAYROLL_NAME" msprop:Generator_ColumnPropNameInTable="_REM_BANK_COMPANY_PAYROLL_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DEBIT_x0020_PRX" msprop:Generator_UserColumnName="DEBIT PRX" msprop:Generator_ColumnPropNameInRow="DEBIT_PRX" msprop:Generator_ColumnVarNameInTable="columnDEBIT_PRX" msprop:Generator_ColumnPropNameInTable="DEBIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CREDIT_x0020_PRX" msprop:Generator_UserColumnName="CREDIT PRX" msprop:Generator_ColumnVarNameInTable="columnCREDIT_PRX" msprop:Generator_ColumnPropNameInRow="CREDIT_PRX" msprop:Generator_ColumnPropNameInTable="CREDIT_PRXColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="HEADER_x0020_DATE" msprop:Generator_UserColumnName="HEADER DATE" msprop:Generator_ColumnPropNameInRow="HEADER_DATE" msprop:Generator_ColumnVarNameInTable="columnHEADER_DATE" msprop:Generator_ColumnPropNameInTable="HEADER_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

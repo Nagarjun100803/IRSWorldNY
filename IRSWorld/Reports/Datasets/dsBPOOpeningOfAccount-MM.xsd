@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBPOOpeningOfAccount-MM" targetNamespace="http://tempuri.org/dsBPOOpeningOfAccount-MM.xsd" xmlns:mstns="http://tempuri.org/dsBPOOpeningOfAccount-MM.xsd" xmlns="http://tempuri.org/dsBPOOpeningOfAccount-MM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBPOOpeningOfAccount-MM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsBPOOpeningOfAccount-MM" msprop:Generator_DataSetName="_dsBPOOpeningOfAccount_MM">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BPOOpeningOfAccount-MM" msprop:Generator_UserTableName="BPOOpeningOfAccount-MM" msprop:Generator_RowDeletedName="_BPOOpeningOfAccount_MMRowDeleted" msprop:Generator_RowChangedName="_BPOOpeningOfAccount_MMRowChanged" msprop:Generator_RowClassName="_BPOOpeningOfAccount_MMRow" msprop:Generator_RowChangingName="_BPOOpeningOfAccount_MMRowChanging" msprop:Generator_RowEvArgName="_BPOOpeningOfAccount_MMRowChangeEvent" msprop:Generator_RowEvHandlerName="_BPOOpeningOfAccount_MMRowChangeEventHandler" msprop:Generator_TableClassName="_BPOOpeningOfAccount_MMDataTable" msprop:Generator_TableVarName="_tableBPOOpeningOfAccount_MM" msprop:Generator_RowDeletingName="_BPOOpeningOfAccount_MMRowDeleting" msprop:Generator_TablePropName="_BPOOpeningOfAccount_MM">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NAME_x0020_OF_x0020_BENEFICIARY" msprop:Generator_UserColumnName="NAME OF BENEFICIARY" msprop:Generator_ColumnPropNameInRow="NAME_OF_BENEFICIARY" msprop:Generator_ColumnVarNameInTable="columnNAME_OF_BENEFICIARY" msprop:Generator_ColumnPropNameInTable="NAME_OF_BENEFICIARYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME_x0020_OF_x0020_REMITTER" msprop:Generator_UserColumnName="NAME OF REMITTER" msprop:Generator_ColumnPropNameInRow="NAME_OF_REMITTER" msprop:Generator_ColumnVarNameInTable="columnNAME_OF_REMITTER" msprop:Generator_ColumnPropNameInTable="NAME_OF_REMITTERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYEE_x0020_BANK_x0020_NAME" msprop:Generator_UserColumnName="PAYEE BANK NAME" msprop:Generator_ColumnPropNameInRow="PAYEE_BANK_NAME" msprop:Generator_ColumnVarNameInTable="columnPAYEE_BANK_NAME" msprop:Generator_ColumnPropNameInTable="PAYEE_BANK_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REFNUM_x0020_THEIRS" msprop:Generator_UserColumnName="REFNUM THEIRS" msprop:Generator_ColumnPropNameInRow="REFNUM_THEIRS" msprop:Generator_ColumnVarNameInTable="columnREFNUM_THEIRS" msprop:Generator_ColumnPropNameInTable="REFNUM_THEIRSColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="AMOUNT_x0020_REMITTED" msprop:Generator_UserColumnName="AMOUNT REMITTED" msprop:Generator_ColumnPropNameInRow="AMOUNT_REMITTED" msprop:Generator_ColumnVarNameInTable="columnAMOUNT_REMITTED" msprop:Generator_ColumnPropNameInTable="AMOUNT_REMITTEDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PESO_x0020_EQUIVALENT" msprop:Generator_UserColumnName="PESO EQUIVALENT" msprop:Generator_ColumnPropNameInRow="PESO_EQUIVALENT" msprop:Generator_ColumnVarNameInTable="columnPESO_EQUIVALENT" msprop:Generator_ColumnPropNameInTable="PESO_EQUIVALENTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RATE_x0020_USED" msprop:Generator_UserColumnName="RATE USED" msprop:Generator_ColumnPropNameInRow="RATE_USED" msprop:Generator_ColumnVarNameInTable="columnRATE_USED" msprop:Generator_ColumnPropNameInTable="RATE_USEDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REIMBURSING_x0020_BANK" msprop:Generator_UserColumnName="REIMBURSING BANK" msprop:Generator_ColumnPropNameInRow="REIMBURSING_BANK" msprop:Generator_ColumnVarNameInTable="columnREIMBURSING_BANK" msprop:Generator_ColumnPropNameInTable="REIMBURSING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CHARGES" msprop:Generator_UserColumnName="CHARGES" msprop:Generator_ColumnPropNameInRow="CHARGES" msprop:Generator_ColumnVarNameInTable="columnCHARGES" msprop:Generator_ColumnPropNameInTable="CHARGESColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_x0020_CHARGES" msprop:Generator_UserColumnName="TOTAL CHARGES" msprop:Generator_ColumnPropNameInRow="TOTAL_CHARGES" msprop:Generator_ColumnVarNameInTable="columnTOTAL_CHARGES" msprop:Generator_ColumnPropNameInTable="TOTAL_CHARGESColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NET_x0020_PYMT_x0020__x002F__x0020_CREDIT" msprop:Generator_UserColumnName="NET PYMT / CREDIT" msprop:Generator_ColumnPropNameInRow="_NET_PYMT___CREDIT" msprop:Generator_ColumnVarNameInTable="_columnNET_PYMT___CREDIT" msprop:Generator_ColumnPropNameInTable="_NET_PYMT___CREDITColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NET_x0020_AMOUNT" msprop:Generator_UserColumnName="NET AMOUNT" msprop:Generator_ColumnPropNameInRow="NET_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnNET_AMOUNT" msprop:Generator_ColumnPropNameInTable="NET_AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="REF_x0020_NUM_x0020_OURS" msprop:Generator_UserColumnName="REF NUM OURS" msprop:Generator_ColumnPropNameInRow="REF_NUM_OURS" msprop:Generator_ColumnVarNameInTable="columnREF_NUM_OURS" msprop:Generator_ColumnPropNameInTable="REF_NUM_OURSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRCODE_x0020__x002F__x0020_ACTYPE" msprop:Generator_UserColumnName="BRCODE / ACTYPE" msprop:Generator_ColumnPropNameInRow="_BRCODE___ACTYPE" msprop:Generator_ColumnVarNameInTable="_columnBRCODE___ACTYPE" msprop:Generator_ColumnPropNameInTable="_BRCODE___ACTYPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYMODE" msprop:Generator_UserColumnName="PAYMODE" msprop:Generator_ColumnPropNameInRow="PAYMODE" msprop:Generator_ColumnVarNameInTable="columnPAYMODE" msprop:Generator_ColumnPropNameInTable="PAYMODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_x0020_NO" msprop:Generator_UserColumnName="FILE NO" msprop:Generator_ColumnPropNameInRow="FILE_NO" msprop:Generator_ColumnVarNameInTable="columnFILE_NO" msprop:Generator_ColumnPropNameInTable="FILE_NOColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

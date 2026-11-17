@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsHoldOverItemsReceived" targetNamespace="http://tempuri.org/dsHoldOverItemsReceived.xsd" xmlns:mstns="http://tempuri.org/dsHoldOverItemsReceived.xsd" xmlns="http://tempuri.org/dsHoldOverItemsReceived.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsHoldOverItemsReceived" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsHoldOverItemsReceived" msprop:Generator_DataSetName="dsHoldOverItemsReceived">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsHoldOverItemsReceived" msprop:Generator_UserTableName="dsHoldOverItemsReceived" msprop:Generator_RowDeletedName="dsHoldOverItemsReceivedRowDeleted" msprop:Generator_RowChangedName="dsHoldOverItemsReceivedRowChanged" msprop:Generator_RowClassName="dsHoldOverItemsReceivedRow" msprop:Generator_RowChangingName="dsHoldOverItemsReceivedRowChanging" msprop:Generator_RowEvArgName="dsHoldOverItemsReceivedRowChangeEvent" msprop:Generator_RowEvHandlerName="dsHoldOverItemsReceivedRowChangeEventHandler" msprop:Generator_TableClassName="dsHoldOverItemsReceivedDataTable" msprop:Generator_TableVarName="tabledsHoldOverItemsReceived" msprop:Generator_RowDeletingName="dsHoldOverItemsReceivedRowDeleting" msprop:Generator_TablePropName="_dsHoldOverItemsReceived">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterID" msprop:Generator_UserColumnName="RemitterID" msprop:Generator_ColumnVarNameInTable="columnRemitterID" msprop:Generator_ColumnPropNameInRow="RemitterID" msprop:Generator_ColumnPropNameInTable="RemitterIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferenceNo" msprop:Generator_UserColumnName="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ClearingDate" msprop:Generator_UserColumnName="ClearingDate" msprop:Generator_ColumnVarNameInTable="columnClearingDate" msprop:Generator_ColumnPropNameInRow="ClearingDate" msprop:Generator_ColumnPropNameInTable="ClearingDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittedAmt" msprop:Generator_UserColumnName="RemittedAmt" msprop:Generator_ColumnVarNameInTable="columnRemittedAmt" msprop:Generator_ColumnPropNameInRow="RemittedAmt" msprop:Generator_ColumnPropNameInTable="RemittedAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Commission" msprop:Generator_UserColumnName="Commission" msprop:Generator_ColumnVarNameInTable="columnCommission" msprop:Generator_ColumnPropNameInRow="Commission" msprop:Generator_ColumnPropNameInTable="CommissionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetAmt" msprop:Generator_UserColumnName="NetAmt" msprop:Generator_ColumnVarNameInTable="columnNetAmt" msprop:Generator_ColumnPropNameInRow="NetAmt" msprop:Generator_ColumnPropNameInTable="NetAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_UserColumnName="CurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

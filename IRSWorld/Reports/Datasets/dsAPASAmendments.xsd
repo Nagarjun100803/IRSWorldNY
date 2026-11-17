@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAPASAmendments" targetNamespace="http://tempuri.org/dsAPASAmendments.xsd" xmlns:mstns="http://tempuri.org/dsAPASAmendments.xsd" xmlns="http://tempuri.org/dsAPASAmendments.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAPASAmendments" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsAPASAmendments" msprop:Generator_DataSetName="dsAPASAmendments">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtAmendments" msprop:Generator_UserTableName="dtAmendments" msprop:Generator_RowDeletedName="dtAmendmentsRowDeleted" msprop:Generator_RowChangedName="dtAmendmentsRowChanged" msprop:Generator_RowClassName="dtAmendmentsRow" msprop:Generator_RowChangingName="dtAmendmentsRowChanging" msprop:Generator_RowEvArgName="dtAmendmentsRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAmendmentsRowChangeEventHandler" msprop:Generator_TableClassName="dtAmendmentsDataTable" msprop:Generator_TableVarName="tabledtAmendments" msprop:Generator_RowDeletingName="dtAmendmentsRowDeleting" msprop:Generator_TablePropName="dtAmendments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Implem_Date" msprop:Generator_UserColumnName="Implem_Date" msprop:Generator_ColumnVarNameInTable="columnImplem_Date" msprop:Generator_ColumnPropNameInRow="Implem_Date" msprop:Generator_ColumnPropNameInTable="Implem_DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FromName" msprop:Generator_UserColumnName="FromName" msprop:Generator_ColumnVarNameInTable="columnFromName" msprop:Generator_ColumnPropNameInRow="FromName" msprop:Generator_ColumnPropNameInTable="FromNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ToName" msprop:Generator_UserColumnName="ToName" msprop:Generator_ColumnVarNameInTable="columnToName" msprop:Generator_ColumnPropNameInRow="ToName" msprop:Generator_ColumnPropNameInTable="ToNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FromAddress" msprop:Generator_UserColumnName="FromAddress" msprop:Generator_ColumnVarNameInTable="columnFromAddress" msprop:Generator_ColumnPropNameInRow="FromAddress" msprop:Generator_ColumnPropNameInTable="FromAddressColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ToAddress" msprop:Generator_UserColumnName="ToAddress" msprop:Generator_ColumnVarNameInTable="columnToAddress" msprop:Generator_ColumnPropNameInRow="ToAddress" msprop:Generator_ColumnPropNameInTable="ToAddressColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RefNoTheirs" msprop:Generator_UserColumnName="RefNoTheirs" msprop:Generator_ColumnVarNameInTable="columnRefNoTheirs" msprop:Generator_ColumnPropNameInRow="RefNoTheirs" msprop:Generator_ColumnPropNameInTable="RefNoTheirsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RefNoOurs" msprop:Generator_UserColumnName="RefNoOurs" msprop:Generator_ColumnVarNameInTable="columnRefNoOurs" msprop:Generator_ColumnPropNameInRow="RefNoOurs" msprop:Generator_ColumnPropNameInTable="RefNoOursColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateAmended" msprop:Generator_UserColumnName="DateAmended" msprop:Generator_ColumnVarNameInTable="columnDateAmended" msprop:Generator_ColumnPropNameInRow="DateAmended" msprop:Generator_ColumnPropNameInTable="DateAmendedColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_UserColumnName="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FromDt" msprop:Generator_UserColumnName="FromDt" msprop:Generator_ColumnPropNameInRow="FromDt" msprop:Generator_ColumnVarNameInTable="columnFromDt" msprop:Generator_ColumnPropNameInTable="FromDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ToDt" msprop:Generator_UserColumnName="ToDt" msprop:Generator_ColumnPropNameInRow="ToDt" msprop:Generator_ColumnVarNameInTable="columnToDt" msprop:Generator_ColumnPropNameInTable="ToDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_UserColumnName="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

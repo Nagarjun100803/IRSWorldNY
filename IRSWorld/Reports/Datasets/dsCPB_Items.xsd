@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCPB_Items" targetNamespace="http://tempuri.org/dsCPB_Items.xsd" xmlns:mstns="http://tempuri.org/dsCPB_Items.xsd" xmlns="http://tempuri.org/dsCPB_Items.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCPB_Items" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsCPB_Items" msprop:Generator_DataSetName="dsCPB_Items">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCPB_Items" msprop:Generator_UserTableName="dtCPB_Items" msprop:Generator_RowDeletedName="dtCPB_ItemsRowDeleted" msprop:Generator_TableClassName="dtCPB_ItemsDataTable" msprop:Generator_RowChangedName="dtCPB_ItemsRowChanged" msprop:Generator_RowClassName="dtCPB_ItemsRow" msprop:Generator_RowChangingName="dtCPB_ItemsRowChanging" msprop:Generator_RowEvArgName="dtCPB_ItemsRowChangeEvent" msprop:Generator_RowEvHandlerName="dtCPB_ItemsRowChangeEventHandler" msprop:Generator_TablePropName="dtCPB_Items" msprop:Generator_TableVarName="tabledtCPB_Items" msprop:Generator_RowDeletingName="dtCPB_ItemsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DollarPeso" msprop:Generator_UserColumnName="DollarPeso" msprop:Generator_ColumnPropNameInRow="DollarPeso" msprop:Generator_ColumnVarNameInTable="columnDollarPeso" msprop:Generator_ColumnPropNameInTable="DollarPesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareDP" msprop:Generator_UserColumnName="ShareDP" msprop:Generator_ColumnPropNameInRow="ShareDP" msprop:Generator_ColumnVarNameInTable="columnShareDP" msprop:Generator_ColumnPropNameInTable="ShareDPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DollarDollar" msprop:Generator_UserColumnName="DollarDollar" msprop:Generator_ColumnPropNameInRow="DollarDollar" msprop:Generator_ColumnVarNameInTable="columnDollarDollar" msprop:Generator_ColumnPropNameInTable="DollarDollarColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareDD" msprop:Generator_UserColumnName="ShareDD" msprop:Generator_ColumnPropNameInRow="ShareDD" msprop:Generator_ColumnVarNameInTable="columnShareDD" msprop:Generator_ColumnPropNameInTable="ShareDDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YTDTotal" msprop:Generator_UserColumnName="YTDTotal" msprop:Generator_ColumnPropNameInRow="YTDTotal" msprop:Generator_ColumnVarNameInTable="columnYTDTotal" msprop:Generator_ColumnPropNameInTable="YTDTotalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YTDDollarPeso" msprop:Generator_UserColumnName="YTDDollarPeso" msprop:Generator_ColumnPropNameInRow="YTDDollarPeso" msprop:Generator_ColumnVarNameInTable="columnYTDDollarPeso" msprop:Generator_ColumnPropNameInTable="YTDDollarPesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YTDShareDP" msprop:Generator_UserColumnName="YTDShareDP" msprop:Generator_ColumnPropNameInRow="YTDShareDP" msprop:Generator_ColumnVarNameInTable="columnYTDShareDP" msprop:Generator_ColumnPropNameInTable="YTDShareDPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YTDDollarDollar" msprop:Generator_UserColumnName="YTDDollarDollar" msprop:Generator_ColumnPropNameInRow="YTDDollarDollar" msprop:Generator_ColumnVarNameInTable="columnYTDDollarDollar" msprop:Generator_ColumnPropNameInTable="YTDDollarDollarColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YTDShareDD" msprop:Generator_UserColumnName="YTDShareDD" msprop:Generator_ColumnPropNameInRow="YTDShareDD" msprop:Generator_ColumnVarNameInTable="columnYTDShareDD" msprop:Generator_ColumnPropNameInTable="YTDShareDDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

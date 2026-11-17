@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_NewRemittersInfoReport" targetNamespace="http://tempuri.org/ds_NewRemittersInfoReport.xsd" xmlns:mstns="http://tempuri.org/ds_NewRemittersInfoReport.xsd" xmlns="http://tempuri.org/ds_NewRemittersInfoReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_NewRemittersInfoReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_NewRemittersInfoReport" msprop:Generator_DataSetName="ds_NewRemittersInfoReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds_NewRemittersInfoReport" msprop:Generator_UserTableName="ds_NewRemittersInfoReport" msprop:Generator_RowDeletedName="ds_NewRemittersInfoReportRowDeleted" msprop:Generator_TableClassName="ds_NewRemittersInfoReportDataTable" msprop:Generator_RowChangedName="ds_NewRemittersInfoReportRowChanged" msprop:Generator_RowClassName="ds_NewRemittersInfoReportRow" msprop:Generator_RowChangingName="ds_NewRemittersInfoReportRowChanging" msprop:Generator_RowEvArgName="ds_NewRemittersInfoReportRowChangeEvent" msprop:Generator_RowEvHandlerName="ds_NewRemittersInfoReportRowChangeEventHandler" msprop:Generator_TablePropName="_ds_NewRemittersInfoReport" msprop:Generator_TableVarName="tableds_NewRemittersInfoReport" msprop:Generator_RowDeletingName="ds_NewRemittersInfoReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterCIFID" msprop:Generator_UserColumnName="RemitterCIFID" msprop:Generator_ColumnPropNameInRow="RemitterCIFID" msprop:Generator_ColumnVarNameInTable="columnRemitterCIFID" msprop:Generator_ColumnPropNameInTable="RemitterCIFIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_x0020_Fullname" msprop:Generator_UserColumnName="Remitter Fullname" msprop:Generator_ColumnPropNameInRow="Remitter_Fullname" msprop:Generator_ColumnVarNameInTable="columnRemitter_Fullname" msprop:Generator_ColumnPropNameInTable="Remitter_FullnameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_x0020_Birthdate" msprop:Generator_UserColumnName="Remitter Birthdate" msprop:Generator_ColumnPropNameInRow="Remitter_Birthdate" msprop:Generator_ColumnVarNameInTable="columnRemitter_Birthdate" msprop:Generator_ColumnPropNameInTable="Remitter_BirthdateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_x0020_Birthplace" msprop:Generator_UserColumnName="Remitter Birthplace" msprop:Generator_ColumnPropNameInRow="Remitter_Birthplace" msprop:Generator_ColumnVarNameInTable="columnRemitter_Birthplace" msprop:Generator_ColumnPropNameInTable="Remitter_BirthplaceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_x0020_Gender" msprop:Generator_UserColumnName="Remitter Gender" msprop:Generator_ColumnPropNameInRow="Remitter_Gender" msprop:Generator_ColumnVarNameInTable="columnRemitter_Gender" msprop:Generator_ColumnPropNameInTable="Remitter_GenderColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitter_x0020_Transaction_x0020_Date" msprop:Generator_UserColumnName="Remitter Transaction Date" msprop:Generator_ColumnPropNameInRow="Remitter_Transaction_Date" msprop:Generator_ColumnVarNameInTable="columnRemitter_Transaction_Date" msprop:Generator_ColumnPropNameInTable="Remitter_Transaction_DateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remitters_x0020_ID_x0020_No." msprop:Generator_UserColumnName="Remitters ID No." msprop:Generator_ColumnPropNameInRow="_Remitters_ID_No_" msprop:Generator_ColumnVarNameInTable="_columnRemitters_ID_No_" msprop:Generator_ColumnPropNameInTable="_Remitters_ID_No_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMISReports" targetNamespace="http://tempuri.org/dsMISReports.xsd" xmlns:mstns="http://tempuri.org/dsMISReports.xsd" xmlns="http://tempuri.org/dsMISReports.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IRSWorldConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="IRSWorldConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IRSWorld.Properties.Settings.GlobalReference.Default.IRSWorldConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMISReports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMISReports" msprop:Generator_DataSetName="dsMISReports">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsChairmanTarriela" msprop:Generator_UserTableName="dsChairmanTarriela" msprop:Generator_RowDeletedName="dsChairmanTarrielaRowDeleted" msprop:Generator_RowChangedName="dsChairmanTarrielaRowChanged" msprop:Generator_RowClassName="dsChairmanTarrielaRow" msprop:Generator_RowChangingName="dsChairmanTarrielaRowChanging" msprop:Generator_RowEvArgName="dsChairmanTarrielaRowChangeEvent" msprop:Generator_RowEvHandlerName="dsChairmanTarrielaRowChangeEventHandler" msprop:Generator_TableClassName="dsChairmanTarrielaDataTable" msprop:Generator_TableVarName="tabledsChairmanTarriela" msprop:Generator_RowDeletingName="dsChairmanTarrielaRowDeleting" msprop:Generator_TablePropName="dsChairmanTarriela">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CURRENCY" msprop:Generator_UserColumnName="CURRENCY" msprop:Generator_ColumnPropNameInRow="CURRENCY" msprop:Generator_ColumnVarNameInTable="columnCURRENCY" msprop:Generator_ColumnPropNameInTable="CURRENCYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRmitProcBPO" msprop:Generator_UserTableName="dsSchedRmitProcBPO" msprop:Generator_RowDeletedName="dsSchedRmitProcBPORowDeleted" msprop:Generator_RowChangedName="dsSchedRmitProcBPORowChanged" msprop:Generator_RowClassName="dsSchedRmitProcBPORow" msprop:Generator_RowChangingName="dsSchedRmitProcBPORowChanging" msprop:Generator_RowEvArgName="dsSchedRmitProcBPORowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRmitProcBPORowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRmitProcBPODataTable" msprop:Generator_TableVarName="tabledsSchedRmitProcBPO" msprop:Generator_RowDeletingName="dsSchedRmitProcBPORowDeleting" msprop:Generator_TablePropName="dsSchedRmitProcBPO">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordID" msprop:Generator_UserColumnName="RecordID" msprop:Generator_ColumnPropNameInRow="RecordID" msprop:Generator_ColumnVarNameInTable="columnRecordID" msprop:Generator_ColumnPropNameInTable="RecordIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Corr_Bank_Name" msprop:Generator_UserColumnName="Corr_Bank_Name" msprop:Generator_ColumnPropNameInRow="Corr_Bank_Name" msprop:Generator_ColumnVarNameInTable="columnCorr_Bank_Name" msprop:Generator_ColumnPropNameInTable="Corr_Bank_NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Items" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRmitProcNonBPO" msprop:Generator_UserTableName="dsSchedRmitProcNonBPO" msprop:Generator_RowDeletedName="dsSchedRmitProcNonBPORowDeleted" msprop:Generator_RowChangedName="dsSchedRmitProcNonBPORowChanged" msprop:Generator_RowClassName="dsSchedRmitProcNonBPORow" msprop:Generator_RowChangingName="dsSchedRmitProcNonBPORowChanging" msprop:Generator_RowEvArgName="dsSchedRmitProcNonBPORowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRmitProcNonBPORowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRmitProcNonBPODataTable" msprop:Generator_TableVarName="tabledsSchedRmitProcNonBPO" msprop:Generator_RowDeletingName="dsSchedRmitProcNonBPORowDeleting" msprop:Generator_TablePropName="dsSchedRmitProcNonBPO">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordID" msprop:Generator_UserColumnName="RecordID" msprop:Generator_ColumnVarNameInTable="columnRecordID" msprop:Generator_ColumnPropNameInRow="RecordID" msprop:Generator_ColumnPropNameInTable="RecordIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Company" msprop:Generator_UserColumnName="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Items" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsImplCC_DD" msprop:Generator_UserTableName="dsImplCC_DD" msprop:Generator_RowDeletedName="dsImplCC_DDRowDeleted" msprop:Generator_RowChangedName="dsImplCC_DDRowChanged" msprop:Generator_RowClassName="dsImplCC_DDRow" msprop:Generator_RowChangingName="dsImplCC_DDRowChanging" msprop:Generator_RowEvArgName="dsImplCC_DDRowChangeEvent" msprop:Generator_RowEvHandlerName="dsImplCC_DDRowChangeEventHandler" msprop:Generator_TableClassName="dsImplCC_DDDataTable" msprop:Generator_TableVarName="tabledsImplCC_DD" msprop:Generator_RowDeletingName="dsImplCC_DDRowDeleting" msprop:Generator_TablePropName="dsImplCC_DD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DATE" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsConsRpt1Imple" msprop:Generator_UserTableName="dsConsRpt1Imple" msprop:Generator_RowDeletedName="dsConsRpt1ImpleRowDeleted" msprop:Generator_RowChangedName="dsConsRpt1ImpleRowChanged" msprop:Generator_RowClassName="dsConsRpt1ImpleRow" msprop:Generator_RowChangingName="dsConsRpt1ImpleRowChanging" msprop:Generator_RowEvArgName="dsConsRpt1ImpleRowChangeEvent" msprop:Generator_RowEvHandlerName="dsConsRpt1ImpleRowChangeEventHandler" msprop:Generator_TableClassName="dsConsRpt1ImpleDataTable" msprop:Generator_TableVarName="tabledsConsRpt1Imple" msprop:Generator_RowDeletingName="dsConsRpt1ImpleRowDeleting" msprop:Generator_TablePropName="dsConsRpt1Imple">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DATE" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRemProcBPO_GREM" msprop:Generator_UserTableName="dsSchedRemProcBPO_GREM" msprop:Generator_RowDeletedName="dsSchedRemProcBPO_GREMRowDeleted" msprop:Generator_RowChangedName="dsSchedRemProcBPO_GREMRowChanged" msprop:Generator_RowClassName="dsSchedRemProcBPO_GREMRow" msprop:Generator_RowChangingName="dsSchedRemProcBPO_GREMRowChanging" msprop:Generator_RowEvArgName="dsSchedRemProcBPO_GREMRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRemProcBPO_GREMRowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRemProcBPO_GREMDataTable" msprop:Generator_TableVarName="tabledsSchedRemProcBPO_GREM" msprop:Generator_RowDeletingName="dsSchedRemProcBPO_GREMRowDeleting" msprop:Generator_TablePropName="dsSchedRemProcBPO_GREM">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRemProcNonBPO_GREM" msprop:Generator_UserTableName="dsSchedRemProcNonBPO_GREM" msprop:Generator_RowDeletedName="dsSchedRemProcNonBPO_GREMRowDeleted" msprop:Generator_RowChangedName="dsSchedRemProcNonBPO_GREMRowChanged" msprop:Generator_RowClassName="dsSchedRemProcNonBPO_GREMRow" msprop:Generator_RowChangingName="dsSchedRemProcNonBPO_GREMRowChanging" msprop:Generator_RowEvArgName="dsSchedRemProcNonBPO_GREMRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRemProcNonBPO_GREMRowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRemProcNonBPO_GREMDataTable" msprop:Generator_TableVarName="tabledsSchedRemProcNonBPO_GREM" msprop:Generator_RowDeletingName="dsSchedRemProcNonBPO_GREMRowDeleting" msprop:Generator_TablePropName="dsSchedRemProcNonBPO_GREM">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSpclRemitImplDubai" msprop:Generator_UserTableName="dsSpclRemitImplDubai" msprop:Generator_RowDeletedName="dsSpclRemitImplDubaiRowDeleted" msprop:Generator_RowChangedName="dsSpclRemitImplDubaiRowChanged" msprop:Generator_RowClassName="dsSpclRemitImplDubaiRow" msprop:Generator_RowChangingName="dsSpclRemitImplDubaiRowChanging" msprop:Generator_RowEvArgName="dsSpclRemitImplDubaiRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSpclRemitImplDubaiRowChangeEventHandler" msprop:Generator_TableClassName="dsSpclRemitImplDubaiDataTable" msprop:Generator_TableVarName="tabledsSpclRemitImplDubai" msprop:Generator_RowDeletingName="dsSpclRemitImplDubaiRowDeleting" msprop:Generator_TablePropName="dsSpclRemitImplDubai">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_rpt_SpclRemitImpleGREMTrans" msprop:Generator_UserTableName="sp_rpt_SpclRemitImpleGREMTrans" msprop:Generator_RowDeletedName="sp_rpt_SpclRemitImpleGREMTransRowDeleted" msprop:Generator_RowChangedName="sp_rpt_SpclRemitImpleGREMTransRowChanged" msprop:Generator_RowClassName="sp_rpt_SpclRemitImpleGREMTransRow" msprop:Generator_RowChangingName="sp_rpt_SpclRemitImpleGREMTransRowChanging" msprop:Generator_RowEvArgName="sp_rpt_SpclRemitImpleGREMTransRowChangeEvent" msprop:Generator_RowEvHandlerName="sp_rpt_SpclRemitImpleGREMTransRowChangeEventHandler" msprop:Generator_TableClassName="sp_rpt_SpclRemitImpleGREMTransDataTable" msprop:Generator_TableVarName="tablesp_rpt_SpclRemitImpleGREMTrans" msprop:Generator_RowDeletingName="sp_rpt_SpclRemitImpleGREMTransRowDeleting" msprop:Generator_TablePropName="sp_rpt_SpclRemitImpleGREMTrans">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECORDID" msprop:Generator_UserColumnName="RECORDID" msprop:Generator_ColumnPropNameInRow="RECORDID" msprop:Generator_ColumnVarNameInTable="columnRECORDID" msprop:Generator_ColumnPropNameInTable="RECORDIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSpclRemitImplCorbankGSRT" msprop:Generator_UserTableName="dsSpclRemitImplCorbankGSRT" msprop:Generator_RowDeletedName="dsSpclRemitImplCorbankGSRTRowDeleted" msprop:Generator_RowChangedName="dsSpclRemitImplCorbankGSRTRowChanged" msprop:Generator_RowClassName="dsSpclRemitImplCorbankGSRTRow" msprop:Generator_RowChangingName="dsSpclRemitImplCorbankGSRTRowChanging" msprop:Generator_RowEvArgName="dsSpclRemitImplCorbankGSRTRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSpclRemitImplCorbankGSRTRowChangeEventHandler" msprop:Generator_TableClassName="dsSpclRemitImplCorbankGSRTDataTable" msprop:Generator_TableVarName="tabledsSpclRemitImplCorbankGSRT" msprop:Generator_RowDeletingName="dsSpclRemitImplCorbankGSRTRowDeleting" msprop:Generator_TablePropName="dsSpclRemitImplCorbankGSRT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSpclRemitImplCorrbankRegion" msprop:Generator_UserTableName="dsSpclRemitImplCorrbankRegion" msprop:Generator_RowDeletedName="dsSpclRemitImplCorrbankRegionRowDeleted" msprop:Generator_RowChangedName="dsSpclRemitImplCorrbankRegionRowChanged" msprop:Generator_RowClassName="dsSpclRemitImplCorrbankRegionRow" msprop:Generator_RowChangingName="dsSpclRemitImplCorrbankRegionRowChanging" msprop:Generator_RowEvArgName="dsSpclRemitImplCorrbankRegionRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSpclRemitImplCorrbankRegionRowChangeEventHandler" msprop:Generator_TableClassName="dsSpclRemitImplCorrbankRegionDataTable" msprop:Generator_TableVarName="tabledsSpclRemitImplCorrbankRegion" msprop:Generator_RowDeletingName="dsSpclRemitImplCorrbankRegionRowDeleting" msprop:Generator_TablePropName="dsSpclRemitImplCorrbankRegion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPLEMENTATION" msprop:Generator_UserColumnName="IMPLEMENTATION" msprop:Generator_ColumnPropNameInRow="IMPLEMENTATION" msprop:Generator_ColumnVarNameInTable="columnIMPLEMENTATION" msprop:Generator_ColumnPropNameInTable="IMPLEMENTATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRmitProcBPOCorrBanks" msprop:Generator_UserTableName="dsSchedRmitProcBPOCorrBanks" msprop:Generator_RowDeletedName="dsSchedRmitProcBPOCorrBanksRowDeleted" msprop:Generator_RowChangedName="dsSchedRmitProcBPOCorrBanksRowChanged" msprop:Generator_RowClassName="dsSchedRmitProcBPOCorrBanksRow" msprop:Generator_RowChangingName="dsSchedRmitProcBPOCorrBanksRowChanging" msprop:Generator_RowEvArgName="dsSchedRmitProcBPOCorrBanksRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRmitProcBPOCorrBanksRowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRmitProcBPOCorrBanksDataTable" msprop:Generator_TableVarName="tabledsSchedRmitProcBPOCorrBanks" msprop:Generator_RowDeletingName="dsSchedRmitProcBPOCorrBanksRowDeleting" msprop:Generator_TablePropName="dsSchedRmitProcBPOCorrBanks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsSchedRmitProcNonBPOCorrBanks" msprop:Generator_UserTableName="dsSchedRmitProcNonBPOCorrBanks" msprop:Generator_RowDeletedName="dsSchedRmitProcNonBPOCorrBanksRowDeleted" msprop:Generator_RowChangedName="dsSchedRmitProcNonBPOCorrBanksRowChanged" msprop:Generator_RowClassName="dsSchedRmitProcNonBPOCorrBanksRow" msprop:Generator_RowChangingName="dsSchedRmitProcNonBPOCorrBanksRowChanging" msprop:Generator_RowEvArgName="dsSchedRmitProcNonBPOCorrBanksRowChangeEvent" msprop:Generator_RowEvHandlerName="dsSchedRmitProcNonBPOCorrBanksRowChangeEventHandler" msprop:Generator_TableClassName="dsSchedRmitProcNonBPOCorrBanksDataTable" msprop:Generator_TableVarName="tabledsSchedRmitProcNonBPOCorrBanks" msprop:Generator_RowDeletingName="dsSchedRmitProcNonBPOCorrBanksRowDeleting" msprop:Generator_TablePropName="dsSchedRmitProcNonBPOCorrBanks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsStatDoorToBank" msprop:Generator_UserTableName="dsStatDoorToBank" msprop:Generator_RowDeletedName="dsStatDoorToBankRowDeleted" msprop:Generator_RowChangedName="dsStatDoorToBankRowChanged" msprop:Generator_RowClassName="dsStatDoorToBankRow" msprop:Generator_RowChangingName="dsStatDoorToBankRowChanging" msprop:Generator_RowEvArgName="dsStatDoorToBankRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStatDoorToBankRowChangeEventHandler" msprop:Generator_TableClassName="dsStatDoorToBankDataTable" msprop:Generator_TableVarName="tabledsStatDoorToBank" msprop:Generator_RowDeletingName="dsStatDoorToBankRowDeleting" msprop:Generator_TablePropName="dsStatDoorToBank">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECORDID" msprop:Generator_UserColumnName="RECORDID" msprop:Generator_ColumnVarNameInTable="columnRECORDID" msprop:Generator_ColumnPropNameInRow="RECORDID" msprop:Generator_ColumnPropNameInTable="RECORDIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_rpt_StatPayrollREm2" msprop:Generator_UserTableName="sp_rpt_StatPayrollREm2" msprop:Generator_RowDeletedName="sp_rpt_StatPayrollREm2RowDeleted" msprop:Generator_RowChangedName="sp_rpt_StatPayrollREm2RowChanged" msprop:Generator_RowClassName="sp_rpt_StatPayrollREm2Row" msprop:Generator_RowChangingName="sp_rpt_StatPayrollREm2RowChanging" msprop:Generator_RowEvArgName="sp_rpt_StatPayrollREm2RowChangeEvent" msprop:Generator_RowEvHandlerName="sp_rpt_StatPayrollREm2RowChangeEventHandler" msprop:Generator_TableClassName="sp_rpt_StatPayrollREm2DataTable" msprop:Generator_TableVarName="tablesp_rpt_StatPayrollREm2" msprop:Generator_RowDeletingName="sp_rpt_StatPayrollREm2RowDeleting" msprop:Generator_TablePropName="sp_rpt_StatPayrollREm2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECORDID" msprop:Generator_UserColumnName="RECORDID" msprop:Generator_ColumnVarNameInTable="columnRECORDID" msprop:Generator_ColumnPropNameInRow="RECORDID" msprop:Generator_ColumnPropNameInTable="RECORDIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsChrgNosVosBrkdwnPHP" msprop:Generator_UserTableName="dsChrgNosVosBrkdwnPHP" msprop:Generator_RowDeletedName="dsChrgNosVosBrkdwnPHPRowDeleted" msprop:Generator_RowChangedName="dsChrgNosVosBrkdwnPHPRowChanged" msprop:Generator_RowClassName="dsChrgNosVosBrkdwnPHPRow" msprop:Generator_RowChangingName="dsChrgNosVosBrkdwnPHPRowChanging" msprop:Generator_RowEvArgName="dsChrgNosVosBrkdwnPHPRowChangeEvent" msprop:Generator_RowEvHandlerName="dsChrgNosVosBrkdwnPHPRowChangeEventHandler" msprop:Generator_TableClassName="dsChrgNosVosBrkdwnPHPDataTable" msprop:Generator_TableVarName="tabledsChrgNosVosBrkdwnPHP" msprop:Generator_RowDeletingName="dsChrgNosVosBrkdwnPHPRowDeleting" msprop:Generator_TablePropName="dsChrgNosVosBrkdwnPHP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SERVICE_x0020_FEES" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SERVICE FEES" msprop:Generator_ColumnPropNameInRow="SERVICE_FEES" msprop:Generator_ColumnVarNameInTable="columnSERVICE_FEES" msprop:Generator_ColumnPropNameInTable="SERVICE_FEESColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsChrgNosVosBrkdwnUSD" msprop:Generator_UserTableName="dsChrgNosVosBrkdwnUSD" msprop:Generator_RowDeletedName="dsChrgNosVosBrkdwnUSDRowDeleted" msprop:Generator_RowChangedName="dsChrgNosVosBrkdwnUSDRowChanged" msprop:Generator_RowClassName="dsChrgNosVosBrkdwnUSDRow" msprop:Generator_RowChangingName="dsChrgNosVosBrkdwnUSDRowChanging" msprop:Generator_RowEvArgName="dsChrgNosVosBrkdwnUSDRowChangeEvent" msprop:Generator_RowEvHandlerName="dsChrgNosVosBrkdwnUSDRowChangeEventHandler" msprop:Generator_TableClassName="dsChrgNosVosBrkdwnUSDDataTable" msprop:Generator_TableVarName="tabledsChrgNosVosBrkdwnUSD" msprop:Generator_RowDeletingName="dsChrgNosVosBrkdwnUSDRowDeleting" msprop:Generator_TablePropName="dsChrgNosVosBrkdwnUSD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SERVICE_x0020_FEES" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SERVICE FEES" msprop:Generator_ColumnPropNameInRow="SERVICE_FEES" msprop:Generator_ColumnVarNameInTable="columnSERVICE_FEES" msprop:Generator_ColumnPropNameInTable="SERVICE_FEESColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsStatGREMonREMProcPHP" msprop:Generator_UserTableName="dsStatGREMonREMProcPHP" msprop:Generator_RowDeletedName="dsStatGREMonREMProcPHPRowDeleted" msprop:Generator_RowChangedName="dsStatGREMonREMProcPHPRowChanged" msprop:Generator_RowClassName="dsStatGREMonREMProcPHPRow" msprop:Generator_RowChangingName="dsStatGREMonREMProcPHPRowChanging" msprop:Generator_RowEvArgName="dsStatGREMonREMProcPHPRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStatGREMonREMProcPHPRowChangeEventHandler" msprop:Generator_TableClassName="dsStatGREMonREMProcPHPDataTable" msprop:Generator_TableVarName="tabledsStatGREMonREMProcPHP" msprop:Generator_RowDeletingName="dsStatGREMonREMProcPHPRowDeleting" msprop:Generator_TablePropName="dsStatGREMonREMProcPHP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsStatGREMonREMProcUSD" msprop:Generator_UserTableName="dsStatGREMonREMProcUSD" msprop:Generator_RowDeletedName="dsStatGREMonREMProcUSDRowDeleted" msprop:Generator_RowChangedName="dsStatGREMonREMProcUSDRowChanged" msprop:Generator_RowClassName="dsStatGREMonREMProcUSDRow" msprop:Generator_RowChangingName="dsStatGREMonREMProcUSDRowChanging" msprop:Generator_RowEvArgName="dsStatGREMonREMProcUSDRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStatGREMonREMProcUSDRowChangeEventHandler" msprop:Generator_TableClassName="dsStatGREMonREMProcUSDDataTable" msprop:Generator_TableVarName="tabledsStatGREMonREMProcUSD" msprop:Generator_RowDeletingName="dsStatGREMonREMProcUSDRowDeleting" msprop:Generator_TablePropName="dsStatGREMonREMProcUSD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsStatDTBTrans" msprop:Generator_UserTableName="dsStatDTBTrans" msprop:Generator_RowDeletedName="dsStatDTBTransRowDeleted" msprop:Generator_TableClassName="dsStatDTBTransDataTable" msprop:Generator_RowChangedName="dsStatDTBTransRowChanged" msprop:Generator_RowClassName="dsStatDTBTransRow" msprop:Generator_RowChangingName="dsStatDTBTransRowChanging" msprop:Generator_RowEvArgName="dsStatDTBTransRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStatDTBTransRowChangeEventHandler" msprop:Generator_TablePropName="dsStatDTBTrans" msprop:Generator_TableVarName="tabledsStatDTBTrans" msprop:Generator_RowDeletingName="dsStatDTBTransRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTINGBANK" msprop:Generator_UserColumnName="REMITTINGBANK" msprop:Generator_ColumnPropNameInRow="REMITTINGBANK" msprop:Generator_ColumnVarNameInTable="columnREMITTINGBANK" msprop:Generator_ColumnPropNameInTable="REMITTINGBANKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="USAMOUNT" msprop:Generator_UserColumnName="USAMOUNT" msprop:Generator_ColumnPropNameInRow="USAMOUNT" msprop:Generator_ColumnVarNameInTable="columnUSAMOUNT" msprop:Generator_ColumnPropNameInTable="USAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PESOEQUIV" msprop:Generator_UserColumnName="PESOEQUIV" msprop:Generator_ColumnPropNameInRow="PESOEQUIV" msprop:Generator_ColumnVarNameInTable="columnPESOEQUIV" msprop:Generator_ColumnPropNameInTable="PESOEQUIVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_UserColumnName="YEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REGION" msprop:Generator_UserColumnName="REGION" msprop:Generator_ColumnPropNameInRow="REGION" msprop:Generator_ColumnVarNameInTable="columnREGION" msprop:Generator_ColumnPropNameInTable="REGIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

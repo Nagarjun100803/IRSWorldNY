@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Operation="listAccountsOfCustomer( SessionContext, long)" Service="CustomerManagerService" targetNamespace="http://customer.app.fcr.iflex.com">
+	<SessionContext ExternalBatchNumber="" ServiceCode="" BankCode="" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="IBS" PrimaryPassword=""/>
+	</SessionContext>
+	<CustomerId/>
+</input>

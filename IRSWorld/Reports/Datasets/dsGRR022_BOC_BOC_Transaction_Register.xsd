@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRR022_BOC_BOC_Transaction_Register" targetNamespace="http://tempuri.org/dsGRR022_BOC_BOC_Transaction_Register.xsd" xmlns:mstns="http://tempuri.org/dsGRR022_BOC_BOC_Transaction_Register.xsd" xmlns="http://tempuri.org/dsGRR022_BOC_BOC_Transaction_Register.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRR022_BOC_BOC_Transaction_Register" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRR022_BOC_BOC_Transaction_Register" msprop:Generator_DataSetName="dsGRR022_BOC_BOC_Transaction_Register">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRR022_BOC-BOC_Transaction_Register" msprop:Generator_UserTableName="dtGRR022_BOC-BOC_Transaction_Register" msprop:Generator_RowDeletedName="_dtGRR022_BOC_BOC_Transaction_RegisterRowDeleted" msprop:Generator_TableClassName="_dtGRR022_BOC_BOC_Transaction_RegisterDataTable" msprop:Generator_RowChangedName="_dtGRR022_BOC_BOC_Transaction_RegisterRowChanged" msprop:Generator_RowClassName="_dtGRR022_BOC_BOC_Transaction_RegisterRow" msprop:Generator_RowChangingName="_dtGRR022_BOC_BOC_Transaction_RegisterRowChanging" msprop:Generator_RowEvArgName="_dtGRR022_BOC_BOC_Transaction_RegisterRowChangeEvent" msprop:Generator_RowEvHandlerName="_dtGRR022_BOC_BOC_Transaction_RegisterRowChangeEventHandler" msprop:Generator_TablePropName="_dtGRR022_BOC_BOC_Transaction_Register" msprop:Generator_TableVarName="_tabledtGRR022_BOC_BOC_Transaction_Register" msprop:Generator_RowDeletingName="_dtGRR022_BOC_BOC_Transaction_RegisterRowDeleting">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

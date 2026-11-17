@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIRSWorld_Setup_NonGeneric" targetNamespace="http://tempuri.org/dsIRSWorld_Setup_NonGeneric.xsd" xmlns:mstns="http://tempuri.org/dsIRSWorld_Setup_NonGeneric.xsd" xmlns="http://tempuri.org/dsIRSWorld_Setup_NonGeneric.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIRSWorld_Setup_NonGeneric" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIRSWorld_Setup_NonGeneric" msprop:Generator_DataSetName="dsIRSWorld_Setup_NonGeneric">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtAPAS_PayAllowCurr" msprop:Generator_UserTableName="dtAPAS_PayAllowCurr" msprop:Generator_RowDeletedName="dtAPAS_PayAllowCurrRowDeleted" msprop:Generator_RowChangedName="dtAPAS_PayAllowCurrRowChanged" msprop:Generator_RowClassName="dtAPAS_PayAllowCurrRow" msprop:Generator_RowChangingName="dtAPAS_PayAllowCurrRowChanging" msprop:Generator_RowEvArgName="dtAPAS_PayAllowCurrRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAPAS_PayAllowCurrRowChangeEventHandler" msprop:Generator_TableClassName="dtAPAS_PayAllowCurrDataTable" msprop:Generator_TableVarName="tabledtAPAS_PayAllowCurr" msprop:Generator_RowDeletingName="dtAPAS_PayAllowCurrRowDeleting" msprop:Generator_TablePropName="dtAPAS_PayAllowCurr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHNAME" msprop:Generator_UserColumnName="BRANCHNAME" msprop:Generator_ColumnPropNameInRow="BRANCHNAME" msprop:Generator_ColumnVarNameInTable="columnBRANCHNAME" msprop:Generator_ColumnPropNameInTable="BRANCHNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtAPAS_PayAllowSubBr" msprop:Generator_UserTableName="dtAPAS_PayAllowSubBr" msprop:Generator_RowDeletedName="dtAPAS_PayAllowSubBrRowDeleted" msprop:Generator_RowChangedName="dtAPAS_PayAllowSubBrRowChanged" msprop:Generator_RowClassName="dtAPAS_PayAllowSubBrRow" msprop:Generator_RowChangingName="dtAPAS_PayAllowSubBrRowChanging" msprop:Generator_RowEvArgName="dtAPAS_PayAllowSubBrRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAPAS_PayAllowSubBrRowChangeEventHandler" msprop:Generator_TableClassName="dtAPAS_PayAllowSubBrDataTable" msprop:Generator_TableVarName="tabledtAPAS_PayAllowSubBr" msprop:Generator_RowDeletingName="dtAPAS_PayAllowSubBrRowDeleting" msprop:Generator_TablePropName="dtAPAS_PayAllowSubBr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MOTHERBRANCHNAME" msprop:Generator_UserColumnName="MOTHERBRANCHNAME" msprop:Generator_ColumnPropNameInRow="MOTHERBRANCHNAME" msprop:Generator_ColumnVarNameInTable="columnMOTHERBRANCHNAME" msprop:Generator_ColumnPropNameInTable="MOTHERBRANCHNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHCODE" msprop:Generator_UserColumnName="BRANCHCODE" msprop:Generator_ColumnPropNameInRow="BRANCHCODE" msprop:Generator_ColumnVarNameInTable="columnBRANCHCODE" msprop:Generator_ColumnPropNameInTable="BRANCHCODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHNAME" msprop:Generator_UserColumnName="BRANCHNAME" msprop:Generator_ColumnPropNameInRow="BRANCHNAME" msprop:Generator_ColumnVarNameInTable="columnBRANCHNAME" msprop:Generator_ColumnPropNameInTable="BRANCHNAMEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtAPAS_PayCurr" msprop:Generator_UserTableName="dtAPAS_PayCurr" msprop:Generator_RowDeletedName="dtAPAS_PayCurrRowDeleted" msprop:Generator_RowChangedName="dtAPAS_PayCurrRowChanged" msprop:Generator_RowClassName="dtAPAS_PayCurrRow" msprop:Generator_RowChangingName="dtAPAS_PayCurrRowChanging" msprop:Generator_RowEvArgName="dtAPAS_PayCurrRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAPAS_PayCurrRowChangeEventHandler" msprop:Generator_TableClassName="dtAPAS_PayCurrDataTable" msprop:Generator_TableVarName="tabledtAPAS_PayCurr" msprop:Generator_RowDeletingName="dtAPAS_PayCurrRowDeleting" msprop:Generator_TablePropName="dtAPAS_PayCurr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDAccountNo" msprop:Generator_UserColumnName="ORDAccountNo" msprop:Generator_ColumnPropNameInRow="ORDAccountNo" msprop:Generator_ColumnVarNameInTable="columnORDAccountNo" msprop:Generator_ColumnPropNameInTable="ORDAccountNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ModuleID" msprop:Generator_UserColumnName="ModuleID" msprop:Generator_ColumnPropNameInRow="ModuleID" msprop:Generator_ColumnVarNameInTable="columnModuleID" msprop:Generator_ColumnPropNameInTable="ModuleIDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtAPAS_PayPartner" msprop:Generator_UserTableName="dtAPAS_PayPartner" msprop:Generator_RowDeletedName="dtAPAS_PayPartnerRowDeleted" msprop:Generator_RowChangedName="dtAPAS_PayPartnerRowChanged" msprop:Generator_RowClassName="dtAPAS_PayPartnerRow" msprop:Generator_RowChangingName="dtAPAS_PayPartnerRowChanging" msprop:Generator_RowEvArgName="dtAPAS_PayPartnerRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAPAS_PayPartnerRowChangeEventHandler" msprop:Generator_TableClassName="dtAPAS_PayPartnerDataTable" msprop:Generator_TableVarName="tabledtAPAS_PayPartner" msprop:Generator_RowDeletingName="dtAPAS_PayPartnerRowDeleting" msprop:Generator_TablePropName="dtAPAS_PayPartner">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Payout_Curr" msprop:Generator_UserColumnName="Payout_Curr" msprop:Generator_ColumnPropNameInRow="Payout_Curr" msprop:Generator_ColumnVarNameInTable="columnPayout_Curr" msprop:Generator_ColumnPropNameInTable="Payout_CurrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionLimit" msprop:Generator_UserColumnName="TransactionLimit" msprop:Generator_ColumnPropNameInRow="TransactionLimit" msprop:Generator_ColumnVarNameInTable="columnTransactionLimit" msprop:Generator_ColumnPropNameInTable="TransactionLimitColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AcctNum" msprop:Generator_UserColumnName="AcctNum" msprop:Generator_ColumnPropNameInRow="AcctNum" msprop:Generator_ColumnVarNameInTable="columnAcctNum" msprop:Generator_ColumnPropNameInTable="AcctNumColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Logo" msprop:Generator_UserColumnName="Logo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInTable="LogoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="onBehalfOf" msprop:Generator_UserColumnName="onBehalfOf" msprop:Generator_ColumnPropNameInRow="onBehalfOf" msprop:Generator_ColumnVarNameInTable="columnonBehalfOf" msprop:Generator_ColumnPropNameInTable="onBehalfOfColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtAPAS_PayPartnerFee" msprop:Generator_UserTableName="dtAPAS_PayPartnerFee" msprop:Generator_RowDeletedName="dtAPAS_PayPartnerFeeRowDeleted" msprop:Generator_RowChangedName="dtAPAS_PayPartnerFeeRowChanged" msprop:Generator_RowClassName="dtAPAS_PayPartnerFeeRow" msprop:Generator_RowChangingName="dtAPAS_PayPartnerFeeRowChanging" msprop:Generator_RowEvArgName="dtAPAS_PayPartnerFeeRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAPAS_PayPartnerFeeRowChangeEventHandler" msprop:Generator_TableClassName="dtAPAS_PayPartnerFeeDataTable" msprop:Generator_TableVarName="tabledtAPAS_PayPartnerFee" msprop:Generator_RowDeletingName="dtAPAS_PayPartnerFeeRowDeleting" msprop:Generator_TablePropName="dtAPAS_PayPartnerFee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHNAME" msprop:Generator_UserColumnName="BRANCHNAME" msprop:Generator_ColumnPropNameInRow="BRANCHNAME" msprop:Generator_ColumnVarNameInTable="columnBRANCHNAME" msprop:Generator_ColumnPropNameInTable="BRANCHNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FeeCode" msprop:Generator_UserColumnName="FeeCode" msprop:Generator_ColumnPropNameInRow="FeeCode" msprop:Generator_ColumnVarNameInTable="columnFeeCode" msprop:Generator_ColumnPropNameInTable="FeeCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FEE_x0020_CODE_x0020_DESCRIPTION" msprop:Generator_UserColumnName="FEE CODE DESCRIPTION" msprop:Generator_ColumnPropNameInRow="FEE_CODE_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnFEE_CODE_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="FEE_CODE_DESCRIPTIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MinNum" msprop:Generator_UserColumnName="MinNum" msprop:Generator_ColumnPropNameInRow="MinNum" msprop:Generator_ColumnVarNameInTable="columnMinNum" msprop:Generator_ColumnPropNameInTable="MinNumColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxNum" msprop:Generator_UserColumnName="MaxNum" msprop:Generator_ColumnPropNameInRow="MaxNum" msprop:Generator_ColumnVarNameInTable="columnMaxNum" msprop:Generator_ColumnPropNameInTable="MaxNumColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FeeAmount" msprop:Generator_UserColumnName="FeeAmount" msprop:Generator_ColumnPropNameInRow="FeeAmount" msprop:Generator_ColumnVarNameInTable="columnFeeAmount" msprop:Generator_ColumnPropNameInTable="FeeAmountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PayoutCurr" msprop:Generator_UserColumnName="PayoutCurr" msprop:Generator_ColumnPropNameInRow="PayoutCurr" msprop:Generator_ColumnVarNameInTable="columnPayoutCurr" msprop:Generator_ColumnPropNameInTable="PayoutCurrColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

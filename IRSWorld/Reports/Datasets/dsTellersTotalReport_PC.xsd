@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTellersTotalReport_PC" targetNamespace="http://tempuri.org/dsTellersTotalReport_PC.xsd" xmlns:mstns="http://tempuri.org/dsTellersTotalReport_PC.xsd" xmlns="http://tempuri.org/dsTellersTotalReport_PC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTellersTotalReport_PC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTellersTotalReport_PC" msprop:Generator_DataSetName="dsTellersTotalReport_PC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTellersTotalRpt_PC" msprop:Generator_UserTableName="dtTellersTotalRpt_PC" msprop:Generator_RowDeletedName="dtTellersTotalRpt_PCRowDeleted" msprop:Generator_RowChangedName="dtTellersTotalRpt_PCRowChanged" msprop:Generator_RowClassName="dtTellersTotalRpt_PCRow" msprop:Generator_RowChangingName="dtTellersTotalRpt_PCRowChanging" msprop:Generator_RowEvArgName="dtTellersTotalRpt_PCRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTellersTotalRpt_PCRowChangeEventHandler" msprop:Generator_TableClassName="dtTellersTotalRpt_PCDataTable" msprop:Generator_TableVarName="tabledtTellersTotalRpt_PC" msprop:Generator_RowDeletingName="dtTellersTotalRpt_PCRowDeleting" msprop:Generator_TablePropName="dtTellersTotalRpt_PC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Teller" msprop:Generator_UserColumnName="Teller" msprop:Generator_ColumnPropNameInRow="Teller" msprop:Generator_ColumnVarNameInTable="columnTeller" msprop:Generator_ColumnPropNameInTable="TellerColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingBranch" msprop:Generator_UserColumnName="RemittingBranch" msprop:Generator_ColumnVarNameInTable="columnRemittingBranch" msprop:Generator_ColumnPropNameInRow="RemittingBranch" msprop:Generator_ColumnPropNameInTable="RemittingBranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TranxSource" msprop:Generator_UserColumnName="TranxSource" msprop:Generator_ColumnPropNameInRow="TranxSource" msprop:Generator_ColumnVarNameInTable="columnTranxSource" msprop:Generator_ColumnPropNameInTable="TranxSourceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOfItems" msprop:Generator_UserColumnName="NumOfItems" msprop:Generator_ColumnPropNameInRow="NumOfItems" msprop:Generator_ColumnVarNameInTable="columnNumOfItems" msprop:Generator_ColumnPropNameInTable="NumOfItemsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LocalCurrency" msprop:Generator_UserColumnName="LocalCurrency" msprop:Generator_ColumnPropNameInRow="LocalCurrency" msprop:Generator_ColumnVarNameInTable="columnLocalCurrency" msprop:Generator_ColumnPropNameInTable="LocalCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingCurrency" msprop:Generator_UserColumnName="RemittingCurrency" msprop:Generator_ColumnPropNameInRow="RemittingCurrency" msprop:Generator_ColumnVarNameInTable="columnRemittingCurrency" msprop:Generator_ColumnPropNameInTable="RemittingCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmount" msprop:Generator_UserColumnName="NetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetToBeneCurrency" msprop:Generator_UserColumnName="NetToBeneCurrency" msprop:Generator_ColumnPropNameInRow="NetToBeneCurrency" msprop:Generator_ColumnVarNameInTable="columnNetToBeneCurrency" msprop:Generator_ColumnPropNameInTable="NetToBeneCurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NetToBeneAmount" msprop:Generator_UserColumnName="NetToBeneAmount" msprop:Generator_ColumnPropNameInRow="NetToBeneAmount" msprop:Generator_ColumnVarNameInTable="columnNetToBeneAmount" msprop:Generator_ColumnPropNameInTable="NetToBeneAmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_GrossRem_Amount" msprop:Generator_UserColumnName="Total_GrossRem_Amount" msprop:Generator_ColumnVarNameInTable="columnTotal_GrossRem_Amount" msprop:Generator_ColumnPropNameInRow="Total_GrossRem_Amount" msprop:Generator_ColumnPropNameInTable="Total_GrossRem_AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Commission_Currency" msprop:Generator_UserColumnName="Commission_Currency" msprop:Generator_ColumnVarNameInTable="columnCommission_Currency" msprop:Generator_ColumnPropNameInRow="Commission_Currency" msprop:Generator_ColumnPropNameInTable="Commission_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_Commission" msprop:Generator_UserColumnName="Total_Commission" msprop:Generator_ColumnPropNameInRow="Total_Commission" msprop:Generator_ColumnVarNameInTable="columnTotal_Commission" msprop:Generator_ColumnPropNameInTable="Total_CommissionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cable_Currency" msprop:Generator_UserColumnName="Cable_Currency" msprop:Generator_ColumnVarNameInTable="columnCable_Currency" msprop:Generator_ColumnPropNameInRow="Cable_Currency" msprop:Generator_ColumnPropNameInTable="Cable_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Cable" msprop:Generator_UserColumnName="Cable" msprop:Generator_ColumnPropNameInRow="Cable" msprop:Generator_ColumnVarNameInTable="columnCable" msprop:Generator_ColumnPropNameInTable="CableColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Local_BackEnd_Currency" msprop:Generator_UserColumnName="Local_BackEnd_Currency" msprop:Generator_ColumnVarNameInTable="columnLocal_BackEnd_Currency" msprop:Generator_ColumnPropNameInRow="Local_BackEnd_Currency" msprop:Generator_ColumnPropNameInTable="Local_BackEnd_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BackEndCharges" msprop:Generator_UserColumnName="BackEndCharges" msprop:Generator_ColumnPropNameInRow="BackEndCharges" msprop:Generator_ColumnVarNameInTable="columnBackEndCharges" msprop:Generator_ColumnPropNameInTable="BackEndChargesColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocStamps_Currency" msprop:Generator_UserColumnName="DocStamps_Currency" msprop:Generator_ColumnVarNameInTable="columnDocStamps_Currency" msprop:Generator_ColumnPropNameInRow="DocStamps_Currency" msprop:Generator_ColumnPropNameInTable="DocStamps_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DocStamps" msprop:Generator_UserColumnName="DocStamps" msprop:Generator_ColumnPropNameInRow="DocStamps" msprop:Generator_ColumnVarNameInTable="columnDocStamps" msprop:Generator_ColumnPropNameInTable="DocStampsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Local_ServiceFee_Currency" msprop:Generator_UserColumnName="Local_ServiceFee_Currency" msprop:Generator_ColumnVarNameInTable="columnLocal_ServiceFee_Currency" msprop:Generator_ColumnPropNameInRow="Local_ServiceFee_Currency" msprop:Generator_ColumnPropNameInTable="Local_ServiceFee_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_ServiceFee" msprop:Generator_UserColumnName="Total_ServiceFee" msprop:Generator_ColumnVarNameInTable="columnTotal_ServiceFee" msprop:Generator_ColumnPropNameInRow="Total_ServiceFee" msprop:Generator_ColumnPropNameInTable="Total_ServiceFeeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OPE_Currency" msprop:Generator_UserColumnName="OPE_Currency" msprop:Generator_ColumnVarNameInTable="columnOPE_Currency" msprop:Generator_ColumnPropNameInRow="OPE_Currency" msprop:Generator_ColumnPropNameInTable="OPE_CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OPE" msprop:Generator_UserColumnName="OPE" msprop:Generator_ColumnPropNameInRow="OPE" msprop:Generator_ColumnVarNameInTable="columnOPE" msprop:Generator_ColumnPropNameInTable="OPEColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PayMode" msprop:Generator_UserColumnName="PayMode" msprop:Generator_ColumnVarNameInTable="columnPayMode" msprop:Generator_ColumnPropNameInRow="PayMode" msprop:Generator_ColumnPropNameInTable="PayModeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalLocCharges" msprop:Generator_UserColumnName="TotalLocCharges" msprop:Generator_ColumnPropNameInRow="TotalLocCharges" msprop:Generator_ColumnVarNameInTable="columnTotalLocCharges" msprop:Generator_ColumnPropNameInTable="TotalLocChargesColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_backend_charges" msprop:Generator_UserColumnName="total_backend_charges" msprop:Generator_ColumnPropNameInRow="total_backend_charges" msprop:Generator_ColumnVarNameInTable="columntotal_backend_charges" msprop:Generator_ColumnPropNameInTable="total_backend_chargesColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

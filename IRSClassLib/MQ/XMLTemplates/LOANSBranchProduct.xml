@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Operation="inquireAccountAttributes( SessionContext, String)" Service="LoanAccountMaintenanceService"  targetNamespace="http://loans.app.fcr.iflex.com">
+	<SessionContext ExternalBatchNumber="" ServiceCode="" BankCode="" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</SessionContext>
+	<AccountId/>
+</input>

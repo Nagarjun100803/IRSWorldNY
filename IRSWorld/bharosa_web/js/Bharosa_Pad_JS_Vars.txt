@@ -1,0 +1,44 @@
+name 		- Required unique name of pad instance
+type 		- T_KEYPAD/T_PINPAD/T_QUIZPAD/T_PINPADNOIMG (T_KEYPAD) 
+url 		- Base url used for image requests, uses relative path if url is "" ("")
+capsOnImgLoc 	- Location of caps on image ("")
+capsShiftImgLoc - Location of caps shift image ("")
+
+
+showDataDiv 	- Show or do not show Data/Asterik div (true)
+adaComp		- Boolean of ADA Compliant pad (false)
+left		- Left attribute of the pad div style ("0")
+top		- Top attribute of the pad div style ("0")
+
+map 		- Image map name override (name + "Map")
+mapStartX	- X coordinate of upper left corner of Map (8)
+mapStartY	- Y coordinate of upper left corner of Map (38)
+width		- Div / Image width override (Pad specific defaults)
+height		- Div / Image height override (Pad specific defaults)
+
+dataDivStyle	- CSS Style string to use for Data/Asterisk div (Pad specific defaults)
+dataInputStyle	- CSS Style string to use for Data Input Field in TextPad (Pad specific defaults)
+maxLength	- Numeric value of max characters allowed to enter.. often dictated by space available in UI (Pad specific defaults)
+capsOnStyle	- CSS Style string to use for placement of CapsOnDiv ("left:190px;top:0px;")
+capsShiftStyle	- CSS Style string to use for placement of CapsShiftDiv ("left:190px;top:0px;")
+
+canDrag		- Boolean of pad drag ability (true)
+canHide		- Boolean of pad hide ability (canDrag value)
+startVisible	- Boolean of pad visible at page load (true)
+submitForm	- Boolean of form submission when enter is clicked (true)
+
+shiftDown 	- Boolean of shift state (false)
+capsDown	- Boolean of caps state (false)
+
+externalField	- HTML Input Object to display data masking in.
+
+USAGE:
+
+var myPad = new Bharosa_Pad({name:"myPad", left:"100", top:"100", canDrag:true, startVisible:false, submitForm:false});
+
+Variable name and name attribute must be the same in a single instance of the pad.  Each individual instance must have a unique name on the page.
+
+
+Fuction Overrides:
+
+customClickEnter - function on the object that can be overriden to perform page actions when the user clicks enter button on the pad.

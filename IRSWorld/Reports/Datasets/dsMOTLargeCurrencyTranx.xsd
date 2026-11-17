@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMOTLargeCurrencyTranx" targetNamespace="http://tempuri.org/dsMOTLargeCurrencyTranx.xsd" xmlns:mstns="http://tempuri.org/dsMOTLargeCurrencyTranx.xsd" xmlns="http://tempuri.org/dsMOTLargeCurrencyTranx.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMOTLargeCurrencyTranx" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMOTLargeCurrencyTranx" msprop:Generator_DataSetName="dsMOTLargeCurrencyTranx">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsMOTLargeCurrencyTranx" msprop:Generator_UserTableName="dsMOTLargeCurrencyTranx" msprop:Generator_RowDeletedName="dsMOTLargeCurrencyTranxRowDeleted" msprop:Generator_RowChangedName="dsMOTLargeCurrencyTranxRowChanged" msprop:Generator_RowClassName="dsMOTLargeCurrencyTranxRow" msprop:Generator_RowChangingName="dsMOTLargeCurrencyTranxRowChanging" msprop:Generator_RowEvArgName="dsMOTLargeCurrencyTranxRowChangeEvent" msprop:Generator_RowEvHandlerName="dsMOTLargeCurrencyTranxRowChangeEventHandler" msprop:Generator_TableClassName="dsMOTLargeCurrencyTranxDataTable" msprop:Generator_TableVarName="tabledsMOTLargeCurrencyTranx" msprop:Generator_RowDeletingName="dsMOTLargeCurrencyTranxRowDeleting" msprop:Generator_TablePropName="_dsMOTLargeCurrencyTranx">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterCIFID" msprop:Generator_UserColumnName="RemitterCIFID" msprop:Generator_ColumnPropNameInRow="RemitterCIFID" msprop:Generator_ColumnVarNameInTable="columnRemitterCIFID" msprop:Generator_ColumnPropNameInTable="RemitterCIFIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NoOfItems" msprop:Generator_UserColumnName="NoOfItems" msprop:Generator_ColumnPropNameInRow="NoOfItems" msprop:Generator_ColumnVarNameInTable="columnNoOfItems" msprop:Generator_ColumnPropNameInTable="NoOfItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountFrom" msprop:Generator_UserColumnName="AmountFrom" msprop:Generator_ColumnVarNameInTable="columnAmountFrom" msprop:Generator_ColumnPropNameInRow="AmountFrom" msprop:Generator_ColumnPropNameInTable="AmountFromColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="AmountTo" msprop:Generator_UserColumnName="AmountTo" msprop:Generator_ColumnVarNameInTable="columnAmountTo" msprop:Generator_ColumnPropNameInRow="AmountTo" msprop:Generator_ColumnPropNameInTable="AmountToColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DefaultComputation" msprop:Generator_UserColumnName="DefaultComputation" msprop:Generator_ColumnVarNameInTable="columnDefaultComputation" msprop:Generator_ColumnPropNameInRow="DefaultComputation" msprop:Generator_ColumnPropNameInTable="DefaultComputationColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittingBranch" msprop:Generator_UserColumnName="RemittingBranch" msprop:Generator_ColumnVarNameInTable="columnRemittingBranch" msprop:Generator_ColumnPropNameInRow="RemittingBranch" msprop:Generator_ColumnPropNameInTable="RemittingBranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchType" msprop:Generator_UserColumnName="BranchType" msprop:Generator_ColumnPropNameInRow="BranchType" msprop:Generator_ColumnVarNameInTable="columnBranchType" msprop:Generator_ColumnPropNameInTable="BranchTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

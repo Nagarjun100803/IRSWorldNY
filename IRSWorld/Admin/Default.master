@@ -1,0 +1,32 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Sign On</title>
+    	<script language="javascript" src="../bharosa_web/js/bharosa_uio.js" type="text/javascript"></script>
+		<link href="~/bharosa_web/css/bharosa_uio.css" type="text/css" rel="stylesheet"/>
+		
+		<!-- js files for keypad -->
+        <script language="javascript" src="../bharosa_web/js/bharosa_pad.js" type="text/javascript"></script>
+        <script src="../js/commons.js" type="text/javascript"></script>
+</head>
+<body>
+<center>
+    <form id="form1" runat="server" method="post" onsubmit="javascript:return validateFields();">
+    <!--
+    <div class="bharosaPage"><img height="61" alt="Header" src="../bharosa_web/images/Oracle_header.gif" width="780" border="0"/></div>
+    -->
+    <div class="bharosaPage" style="width:780">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        
+        
+        
+        </asp:contentplaceholder>
+    </div>
+    <div class="bharosaPage"><img height="46" alt="Footer" src="../bharosa_web/images/Oracle_footer.gif" style="width:780"/></div>
+    </form>
+</center>
+</body>
+</html>

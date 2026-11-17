@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Service="TermDepositManagerService" Operation="inquireTermDepositDetails( SessionContext, String, int)" targetNamespace="http://td.deposit.app.fcr.iflex.com">
+	<SessionContext ExternalBatchNumber="" ServiceCode="" BankCode="8" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</SessionContext>
+	<AccountId/>
+	<DepositNumber/>
+</input>

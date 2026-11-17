@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DailyTotalByBranch" targetNamespace="http://tempuri.org/ds_DailyTotalByBranch.xsd" xmlns:mstns="http://tempuri.org/ds_DailyTotalByBranch.xsd" xmlns="http://tempuri.org/ds_DailyTotalByBranch.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DailyTotalByBranch" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DailyTotalByBranch" msprop:Generator_DataSetName="ds_DailyTotalByBranch">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDailyTotalbyBranch" msprop:Generator_UserTableName="dtDailyTotalbyBranch" msprop:Generator_RowDeletedName="dtDailyTotalbyBranchRowDeleted" msprop:Generator_TableClassName="dtDailyTotalbyBranchDataTable" msprop:Generator_RowChangedName="dtDailyTotalbyBranchRowChanged" msprop:Generator_RowClassName="dtDailyTotalbyBranchRow" msprop:Generator_RowChangingName="dtDailyTotalbyBranchRowChanging" msprop:Generator_RowEvArgName="dtDailyTotalbyBranchRowChangeEvent" msprop:Generator_RowEvHandlerName="dtDailyTotalbyBranchRowChangeEventHandler" msprop:Generator_TablePropName="dtDailyTotalbyBranch" msprop:Generator_TableVarName="tabledtDailyTotalbyBranch" msprop:Generator_RowDeletingName="dtDailyTotalbyBranchRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Peso_Equivalent" msprop:Generator_UserColumnName="Peso_Equivalent" msprop:Generator_ColumnPropNameInRow="Peso_Equivalent" msprop:Generator_ColumnVarNameInTable="columnPeso_Equivalent" msprop:Generator_ColumnPropNameInTable="Peso_EquivalentColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USDEquivalent" msprop:Generator_UserColumnName="USDEquivalent" msprop:Generator_ColumnPropNameInRow="USDEquivalent" msprop:Generator_ColumnVarNameInTable="columnUSDEquivalent" msprop:Generator_ColumnPropNameInTable="USDEquivalentColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="FEEPHP" msprop:Generator_UserColumnName="FEEPHP" msprop:Generator_ColumnPropNameInRow="FEEPHP" msprop:Generator_ColumnVarNameInTable="columnFEEPHP" msprop:Generator_ColumnPropNameInTable="FEEPHPColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PHPItems" msprop:Generator_UserColumnName="PHPItems" msprop:Generator_ColumnPropNameInRow="PHPItems" msprop:Generator_ColumnVarNameInTable="columnPHPItems" msprop:Generator_ColumnPropNameInTable="PHPItemsColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="USDTOUSD" msprop:Generator_UserColumnName="USDTOUSD" msprop:Generator_ColumnPropNameInRow="USDTOUSD" msprop:Generator_ColumnVarNameInTable="columnUSDTOUSD" msprop:Generator_ColumnPropNameInTable="USDTOUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="FEEDOLLAR" msprop:Generator_UserColumnName="FEEDOLLAR" msprop:Generator_ColumnPropNameInRow="FEEDOLLAR" msprop:Generator_ColumnVarNameInTable="columnFEEDOLLAR" msprop:Generator_ColumnPropNameInTable="FEEDOLLARColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="USDITEMS" msprop:Generator_UserColumnName="USDITEMS" msprop:Generator_ColumnPropNameInRow="USDITEMS" msprop:Generator_ColumnVarNameInTable="columnUSDITEMS" msprop:Generator_ColumnPropNameInTable="USDITEMSColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTALItems" msprop:Generator_UserColumnName="TOTALItems" msprop:Generator_ColumnPropNameInRow="TOTALItems" msprop:Generator_ColumnVarNameInTable="columnTOTALItems" msprop:Generator_ColumnPropNameInTable="TOTALItemsColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALAmount" msprop:Generator_UserColumnName="TOTALAmount" msprop:Generator_ColumnPropNameInRow="TOTALAmount" msprop:Generator_ColumnVarNameInTable="columnTOTALAmount" msprop:Generator_ColumnPropNameInTable="TOTALAmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALFees" msprop:Generator_UserColumnName="TOTALFees" msprop:Generator_ColumnPropNameInRow="TOTALFees" msprop:Generator_ColumnVarNameInTable="columnTOTALFees" msprop:Generator_ColumnPropNameInTable="TOTALFeesColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,649 @@
+function rem_otc_commit()
+{
+    var icls = this;
+
+    this.RemitMethod          = 4;        
+    this.SEQ_ID               = 0;
+    this.DateImplemented      = null;
+    this.DateSent             = null;
+    this.printed              = null;    
+    this.RemitStationID       = null;
+    this.RemittingBranch      = null;
+    this.ReferenceNo          = null;
+    this.ExtlReferenceNo      = null;
+    this.Transtatus           = null;
+    this.TranxDate            = null;
+    this.ProductChargesID     = null;
+    this.RemitterCIFID        = null;
+    this.BeneficiaryCIFID     = null;
+    this.AccountSEQID         = null;
+    this.RemittingCurrency    = null;
+    this.GrossRemAmount       = null;
+    this.NetRemAmount         = null;
+    this.NettoBeneCurrency    = null;
+    this.NettoBeneAmount      = null;
+    this.TotalLocalCharge     = null;
+    this.TransactionSource    = null;
+    this.ReceiptMode          = null;
+    this.TransactionPurpose   = null;
+    this.OtherPurpose         = null;
+    this.SpecialMessage       = null;
+    this.LocalCurrency        = null;
+    this.ForexTargetToAccount = null;
+    this.ForexTargetToSource  = null;
+    this.ForexTargetToUSD     = null;
+    this.ForexTargetToPHP     = null;
+    this.ForexTargetToEUR     = null;
+    this.ForexSourceToTarget  = null;
+    this.ForexSourceToUSD     = null;
+    this.ForexSourceToPHP     = null;
+    this.DatePostedOverseas   = null; //Added by Troy 20110615. For saving of date posted overseas.
+    this.DatePostedLocal      = null; //Added by Troy 20110808. For saving of date posted local.
+    this.SourceofFunds        = null;
+    this.ChargeLocally        = null;
+    this.msg_string           = null;
+    this.commit_status        = null;
+    this.session_columns_arr  = null;
+
+    this.total_backend_charges      = null;
+    this.total_benef_charges        = null;    
+    this.remitter_address_seq_id    = null;
+    this.remitter_contact_seq_id    = null;
+    this.beneficiary_address_seq_id = null;
+    this.beneficiary_contact_seq_id = null;
+    this.account_no                 = null;
+
+    this.comit_scrn = null;
+
+    this.reload_remittance_record = function(transaction_id)
+    {
+        this.SEQ_ID = transaction_id; 
+        
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. Loading remittance record failed."); eval("javascript:transaction_reload_commit();");
+        }        
+        
+        IRSWorld.TranClass.RemTranSaving.reload_remittance_record(transaction_id, this.reload_remittance_record_callback);
+    }
+    
+    this.reload_remittance_record_callback = function(result)
+    {
+        if (result != null && result.value != null)
+        {
+            var ds = result.value;
+            
+            icls.RemitStationID        = ds.Tables[0].Rows[0].RemitStationID;
+            icls.RemittingBranch       = ds.Tables[0].Rows[0].RemittingBranch;
+            icls.ReferenceNo           = ds.Tables[0].Rows[0].ReferenceNo;
+            icls.ExtlReferenceNo       = ds.Tables[0].Rows[0].ExtlReferenceNo;
+            icls.Transtatus            = ds.Tables[0].Rows[0].Transtatus;
+            icls.TranxDate             = ds.Tables[0].Rows[0].TranxDate;
+            icls.ProductChargesID      = ds.Tables[0].Rows[0].ProductChargesID;
+            icls.RemitterCIFID         = ds.Tables[0].Rows[0].RemitterCIFID;
+            icls.BeneficiaryCIFID      = ds.Tables[0].Rows[0].BeneficiaryCIFID;
+            icls.AccountSEQID          = ds.Tables[0].Rows[0].AccountSEQID;
+            icls.RemittingCurrency     = ds.Tables[0].Rows[0].RemittingCurrency;
+            icls.GrossRemAmount        = ds.Tables[0].Rows[0].GrossRemAmount;
+            icls.NetRemAmount          = ds.Tables[0].Rows[0].NetRemAmount;
+            icls.NettoBeneCurrency     = ds.Tables[0].Rows[0].NettoBeneCurrency;
+            icls.NettoBeneAmount       = ds.Tables[0].Rows[0].NettoBeneAmount;
+            icls.TotalLocalCharge      = ds.Tables[0].Rows[0].TotalLocalCharge;
+            icls.TransactionSource     = ds.Tables[0].Rows[0].TransactionSource;
+            icls.ReceiptMode           = ds.Tables[0].Rows[0].ReceiptMode;
+            icls.TransactionPurpose    = ds.Tables[0].Rows[0].TransactionPurpose;
+            icls.OtherPurpose          = ds.Tables[0].Rows[0].OtherPurpose;
+            icls.SpecialMessage        = ds.Tables[0].Rows[0].SpecialMessage;
+            icls.LocalCurrency         = ds.Tables[0].Rows[0].LocalCurrency;
+            icls.ForexTargetToAccount  = ds.Tables[0].Rows[0].ForexRemittingToAccount;
+            icls.ForexTargetToSource   = ds.Tables[0].Rows[0].ForexRemittingToSource;
+            icls.ForexTargetToUSD      = ds.Tables[0].Rows[0].ForexRemittingToUSD;
+            icls.ForexTargetToPHP      = ds.Tables[0].Rows[0].ForexRemittingToPHP;
+            icls.ForexTargetToEUR      = ds.Tables[0].Rows[0].ForexRemittingToEUR;
+            icls.ForexSourceToTarget   = ds.Tables[0].Rows[0].ForexLocalToTarget;
+            icls.ForexSourceToUSD      = ds.Tables[0].Rows[0].ForexLocalToUSD;
+            icls.ForexSourceToPHP      = ds.Tables[0].Rows[0].ForexLocalToPHP;
+            icls.SourceofFunds         = ds.Tables[0].Rows[0].SourceofFunds;
+            icls.ChargeLocally         = ds.Tables[0].Rows[0].ChargeLocally;
+            icls.printed               = ds.Tables[0].Rows[0].printed;
+            icls.total_backend_charges = ds.Tables[0].Rows[0].total_backend_charges;
+
+            icls.remitter_address_seq_id    = ds.Tables[0].Rows[0].RemitterAddressSeqID;
+            icls.remitter_contact_seq_id    = ds.Tables[0].Rows[0].RemitterContactSeqID;
+            icls.beneficiary_address_seq_id = ds.Tables[0].Rows[0].BeneficiaryAddressSeqID;
+            icls.beneficiary_contact_seq_id = ds.Tables[0].Rows[0].BeneficiaryContactSeqID;
+
+            eval("javascript:transaction_reload_commit(icls);");
+        }
+    }
+
+    this.commit_dup_record = function()
+    {
+        if (this.comit_scrn != null)
+        {
+            this.comit_scrn.close_screen();
+            this.comit_scrn = null;
+        }
+
+        icls.comit_scrn = new commit_screen_commit();
+        icls.comit_scrn.open_screen();
+    
+        AjaxPro.timeoutPeriod = 100 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            icls.comit_scrn.close_screen();
+
+            icls.msg_string    = "Host server not responding to client request. Unable to commit remittance transaction.";
+            icls.commit_status = false;
+
+            eval("javascript:push_commit_result(icls);"); 
+        }
+
+        IRSWorld.TranClass.RemTranSaving.insert_dup_record(this.construct_column_array(), this.commit_record_callback);
+    }
+
+    this.commit_record = function()
+    {
+        if (this.comit_scrn != null)
+        {
+            this.comit_scrn.close_screen();
+            this.comit_scrn = null;
+        }
+    
+        icls.comit_scrn = new commit_screen_commit();
+        icls.comit_scrn.open_screen();
+    
+        AjaxPro.timeoutPeriod = 100 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            icls.comit_scrn.close_screen();
+        
+            icls.msg_string    = "Host server not responding to client request. Unable to commit remittance transaction.";
+            icls.commit_status = false;
+
+            eval("javascript:push_commit_result(icls);"); 
+        }
+
+        if (this.SEQ_ID != null)
+        {
+            if (parseInt(this.SEQ_ID) > 0)
+            {
+                IRSWorld.TranClass.RemTranSaving.update_record(this.construct_column_array(), this.SEQ_ID ,this.commit_record_callback );
+            }
+            else
+            {
+                IRSWorld.TranClass.RemTranSaving.insert_record(this.construct_column_array(), this.commit_record_callback);
+            }
+            this.check_federal_disclosure();
+        }
+    }
+    
+    this.commit_record_callback = function(result)
+    {
+        icls.comit_scrn.change_msg("Done processing client request ...");
+        icls.comit_scrn.close_screen();
+
+        try
+        {
+            if (result != null && result.error != null)
+            {
+                icls.msg_string    = result.value;
+                icls.commit_status = false;
+                
+                eval("javascript:push_commit_result(icls);"); return;
+            }
+
+            if (result != null && result.value != null)
+            {
+                if (result.value == false)
+                {
+                    AjaxPro.timeoutPeriod = 1000 * 1000;
+                    
+                    AjaxPro.onTimeout = function()
+                    {
+                        alert("Server not responding. Loading server message failed.");
+                    }
+
+                    var msg = IRSWorld.TranClass.RemTranSaving.get_server_error_messages();
+
+                    if (msg != null && msg.value != '')
+                    {
+                        icls.msg_string    = msg.value;
+                        icls.commit_status = false;
+                        
+                        eval("javascript:push_commit_result(icls);");  return;
+                    }
+                }
+                else
+                {
+                    AjaxPro.timeoutPeriod = 1000 * 1000;
+                    
+                    AjaxPro.onTimeout = function()
+                    {
+                        alert("Server not responding. Loading remittance sequence id failed.");
+                    }
+
+                    icls.SEQ_ID = IRSWorld.TranClass.RemTranSaving.get_remittance_sequence_id().value;
+                    icls.push_commit_response(icls.SEQ_ID);
+                    
+                    return true;
+                }
+            }
+            else
+            {
+                icls.msg_string    = "Error processing transaction.\n\n System unable to initialize properly.";
+                icls.commit_status = false;
+                
+                eval("javascript:push_commit_result(icls);"); return;
+            }        
+        
+        }
+        catch(err)
+        {
+            icls.msg_string    = "Error encountered while processing transaction: " + err;
+            icls.commit_status = false;
+
+            eval("javascript:push_commit_result(icls);");            
+        }
+    }
+    /*
+        Added by  : Neil 
+        Date      : Jan 2012
+        start
+    */
+    this.check_federal_disclosure = function()
+    {
+        IRSWorld.TranClass.RemTranExtra.check_federal_disclosure(this.get_array_value_remitterID(),this.get_array_value_trxnDate(), this.check_federal_disclosure_callback);
+    }
+    
+    this.check_federal_disclosure_callback = function(result)
+    {
+        if (result != null && result.value != null)
+        {                
+            AjaxPro.timeoutPeriod = 1000 * 1000;                
+            AjaxPro.onTimeout = function()
+            {
+                alert("Server not responding. Loading remittance sequence id failed.");
+            }            
+            if (result.value[0] == "true")
+            {
+                alert(result.value[1]);                                
+            }
+            return;               
+        }
+        else
+        {
+            alert("Error while checking Federal disclosure.");                
+            return;
+        }                        
+    }
+    
+    this.get_array_value_remitterID = function()
+    {
+        var arryobj     = this.construct_column_array();
+        var varcol      = arryobj.split("|");
+        var column      = varcol[9].split("~")
+        var columnvalue = column[1] // value of the column set            
+        return columnvalue;
+    }
+    
+     this.get_array_value_trxnDate = function()
+    {
+        var arryobj     = this.construct_column_array();
+        var varcol      = arryobj.split("|");
+        var column      = varcol[32].split("~")
+        var columnvalue = column[1] // value of the column set            
+        var dat         = Date.parse(columnvalue);
+        var theDate     = new Date(dat); 
+        var month       = theDate.getMonth()+1
+        var day         = theDate.getDate()
+        var year        = theDate.getFullYear()
+        return month + "/" + day + "/" + year;
+    }
+    
+     /*
+        end
+        Added by  : Neil 
+        Date      : Jan 2012
+    */
+    
+    this.push_commit_response = function(sequence_id)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        
+        AjaxPro.onTimeout = function()
+        {
+            alert("Server not responding. Reload remittance transaction failed.");
+        }
+    
+        IRSWorld.TranClass.RemTranSaving.reload_remittance_record(sequence_id, this.push_commit_response_callback);
+    }
+    
+    this.push_commit_response_callback = function(result)
+    {
+        if (result != null && result.error != null)
+        {
+            icls.msg_string    = "Transaction committed successfully! But failed to reload transaction record with the following system message: \n\n" + result.error;
+            icls.commit_status = false;            
+        }
+        else
+        {
+            var ds = result.value;
+            
+            icls.msg_string            = null;
+            icls.commit_status         = true;
+
+            icls.RemitStationID        = ds.Tables[0].Rows[0].RemitStationID;
+            icls.RemittingBranch       = ds.Tables[0].Rows[0].RemittingBranch;
+            icls.ReferenceNo           = ds.Tables[0].Rows[0].ReferenceNo;
+            if (typeof(iremit) != "undefined")
+            {
+                iremit.transaction_reference_no = ds.Tables[0].Rows[0].ReferenceNo; //Added by Troy 20120809
+            }
+            icls.ExtlReferenceNo       = ds.Tables[0].Rows[0].ExtlReferenceNo;
+            icls.Transtatus            = ds.Tables[0].Rows[0].Transtatus;
+            icls.TranxDate             = ds.Tables[0].Rows[0].TranxDate;
+            icls.ProductChargesID      = ds.Tables[0].Rows[0].ProductChargesID;
+            icls.RemitterCIFID         = ds.Tables[0].Rows[0].RemitterCIFID;
+            icls.BeneficiaryCIFID      = ds.Tables[0].Rows[0].BeneficiaryCIFID;
+            icls.AccountSEQID          = ds.Tables[0].Rows[0].AccountSEQID;
+            icls.RemittingCurrency     = ds.Tables[0].Rows[0].RemittingCurrency;
+            icls.GrossRemAmount        = ds.Tables[0].Rows[0].GrossRemAmount;
+            icls.NetRemAmount          = ds.Tables[0].Rows[0].NetRemAmount;
+            icls.NettoBeneCurrency     = ds.Tables[0].Rows[0].NettoBeneCurrency;
+            icls.NettoBeneAmount       = ds.Tables[0].Rows[0].NettoBeneAmount;
+            icls.TotalLocalCharge      = ds.Tables[0].Rows[0].TotalLocalCharge;
+            icls.TransactionSource     = ds.Tables[0].Rows[0].TransactionSource;
+            icls.ReceiptMode           = ds.Tables[0].Rows[0].ReceiptMode;
+            icls.TransactionPurpose    = ds.Tables[0].Rows[0].TransactionPurpose;
+            icls.OtherPurpose          = ds.Tables[0].Rows[0].OtherPurpose;
+            icls.SpecialMessage        = ds.Tables[0].Rows[0].SpecialMessage;
+            icls.LocalCurrency         = ds.Tables[0].Rows[0].LocalCurrency;
+            icls.ForexTargetToAccount  = ds.Tables[0].Rows[0].ForexRemittingToAccount;
+            icls.ForexTargetToSource   = ds.Tables[0].Rows[0].ForexRemittingToSource;
+            icls.ForexTargetToUSD      = ds.Tables[0].Rows[0].ForexRemittingToUSD;
+            icls.ForexTargetToPHP      = ds.Tables[0].Rows[0].ForexRemittingToPHP;
+            icls.ForexTargetToEUR      = ds.Tables[0].Rows[0].ForexRemittingToEUR;
+            icls.ForexSourceToTarget   = ds.Tables[0].Rows[0].ForexLocalToTarget;
+            icls.ForexSourceToUSD      = ds.Tables[0].Rows[0].ForexLocalToUSD;
+            icls.ForexSourceToPHP      = ds.Tables[0].Rows[0].ForexLocalToPHP;
+            icls.SourceofFunds         = ds.Tables[0].Rows[0].SourceofFunds;
+            icls.ChargeLocally         = ds.Tables[0].Rows[0].ChargeLocally;
+            icls.printed               = ds.Tables[0].Rows[0].printed;
+            icls.total_backend_charges = ds.Tables[0].Rows[0].total_backend_charges;
+            
+            icls.remitter_address_seq_id    = ds.Tables[0].Rows[0].RemitterAddressSeqID;
+            icls.remitter_contact_seq_id    = ds.Tables[0].Rows[0].RemitterContactSeqID;
+            icls.beneficiary_address_seq_id = ds.Tables[0].Rows[0].BeneficiaryAddressSeqID;
+            icls.beneficiary_contact_seq_id = ds.Tables[0].Rows[0].BeneficiaryContactSeqID;
+        }
+
+        eval("javascript:push_commit_result(icls);");
+    }
+
+    this.construct_column_array = function()
+    {
+        var data_row = new Array();
+
+        data_row[data_row.length] = "SEQ_ID~"                  + this.SEQ_ID;
+        data_row[data_row.length] = "RemitMethod~"             + this.RemitMethod;
+        data_row[data_row.length] = "RemitStationID~"          + this.RemitStationID;
+        data_row[data_row.length] = "RemittingBranch~"         + this.RemittingBranch;
+        data_row[data_row.length] = "ReferenceNo~"             + this.ReferenceNo;
+        data_row[data_row.length] = "ExtlReferenceNo~"         + this.ExtlReferenceNo;
+        data_row[data_row.length] = "Transtatus~"              + this.Transtatus;
+        data_row[data_row.length] = "TranxDate~"               + this.TranxDate;
+        data_row[data_row.length] = "ProductChargesID~"        + this.ProductChargesID;
+        data_row[data_row.length] = "RemitterCIFID~"           + this.RemitterCIFID;
+        data_row[data_row.length] = "BeneficiaryCIFID~"        + this.BeneficiaryCIFID;
+        data_row[data_row.length] = "AccountSEQID~"            + this.AccountSEQID;
+        data_row[data_row.length] = "RemittingCurrency~"       + this.RemittingCurrency;
+        data_row[data_row.length] = "GrossRemAmount~"          + this.GrossRemAmount;
+        data_row[data_row.length] = "NetRemAmount~"            + this.NetRemAmount;
+        data_row[data_row.length] = "NettoBeneCurrency~"       + this.NettoBeneCurrency;
+        data_row[data_row.length] = "NettoBeneAmount~"         + this.NettoBeneAmount;
+        data_row[data_row.length] = "TotalLocalCharge~"        + this.TotalLocalCharge;
+        data_row[data_row.length] = "TransactionSource~"       + this.TransactionSource;
+        data_row[data_row.length] = "ReceiptMode~"             + this.ReceiptMode;
+        data_row[data_row.length] = "TransactionPurpose~"      + this.TransactionPurpose;
+        data_row[data_row.length] = "OtherPurpose~"            + this.OtherPurpose;
+        data_row[data_row.length] = "SpecialMessage~"          + this.SpecialMessage;
+        data_row[data_row.length] = "LocalCurrency~"           + this.LocalCurrency;
+        data_row[data_row.length] = "ForexRemittingToAccount~" + this.ForexTargetToAccount;
+        data_row[data_row.length] = "ForexRemittingToLocal~"   + this.ForexTargetToSource;
+        data_row[data_row.length] = "ForexRemittingToUSD~"     + this.ForexTargetToUSD;
+        data_row[data_row.length] = "ForexRemittingToPHP~"     + this.ForexTargetToPHP;
+        data_row[data_row.length] = "ForexRemittingToEUR~"     + this.ForexTargetToEUR;        
+        data_row[data_row.length] = "ForexLocalToRemitting~"   + this.ForexSourceToTarget;
+        data_row[data_row.length] = "ForexLocalToUSD~"         + this.ForexSourceToUSD;
+        data_row[data_row.length] = "ForexLocalToPHP~"         + this.ForexSourceToPHP;        
+        data_row[data_row.length] = "DatePostedOverseas~"      + this.DatePostedOverseas;
+        data_row[data_row.length] = "DatePostedLocal~"         + this.DatePostedLocal;
+        data_row[data_row.length] = "SourceofFunds~"           + this.SourceofFunds;
+        data_row[data_row.length] = "printed~"                 + this.printed;
+        data_row[data_row.length] = "ChargeLocally~"           + this.ChargeLocally;
+        data_row[data_row.length] = "total_backend_charges~"   + this.total_backend_charges;        
+        data_row[data_row.length] = "total_benef_charges~"     + this.total_benef_charges;
+        data_row[data_row.length] = "RemitterAddressSeqID~"    + this.remitter_address_seq_id;
+        data_row[data_row.length] = "RemitterContactSeqID~"    + this.remitter_contact_seq_id;
+        data_row[data_row.length] = "BeneficiaryAddressSeqID~" + this.beneficiary_address_seq_id;
+        data_row[data_row.length] = "BeneficiaryContactSeqID~" + this.beneficiary_contact_seq_id;
+        data_row[data_row.length] = "RemitterAccountNo~" + this.account_no;
+        /* OBBA EXCISE TAX */
+        data_row[data_row.length] = "OBBAComputedTax~";
+        data_row[data_row.length] = "OBBAPercentage~";
+        return data_row.join("|");
+    }
+}
+
+function rem_otc_door_commit()
+{
+    var icls = this;
+
+    this.transaction_id = 0;
+    
+    this.commit_record = function()
+    {
+        if (this.transaction_id != null && this.transaction_id > 0)
+        {
+            AjaxPro.timeoutPeriod = 1000 * 1000;
+            
+            AjaxPro.onTimeout = function()
+            {
+                alert("Server not responding. Commit 3D remittance failed.");
+            }        
+
+            IRSWorld.TranClass.rem_door_saving.insert_record(this.construct_column_array(), this.commit_record_callback);
+        }
+    }
+    
+    this.commit_record_callback = function(result)
+    {
+        if (result != null && result.error != null)
+        {
+            icls.msg_string    = result.error;
+            icls.commit_status = false;
+
+            eval("javascript:push_commit_door_result(icls);"); return;
+        }
+        
+        if (result != null && result.value != null)
+        {
+            if (result.value == false)
+            {
+                AjaxPro.timeoutPeriod = 1000 * 1000;
+                
+                AjaxPro.onTimeout = function()
+                {
+                    alert("Server not responding. Loading 3D message failed.");
+                }
+            
+                var msg = IRSWorld.TranClass.rem_door_saving.get_server_error_messages();
+
+                if (msg != null && msg.value != '')
+                {
+                    icls.msg_string    = msg.value;
+                    icls.commit_status = false;
+                }
+            }
+            else
+            {
+                icls.msg_string    = null;
+                icls.commit_status = true;
+            }
+        }
+        else
+        {
+            icls.msg_string    = "Error saving 3D details. System not properly initialized.";
+            icls.commit_status = false;
+        }
+
+        eval("javascript:push_commit_door_result(icls);");
+    }
+    
+    this.construct_column_array = function()
+    {
+        var data_row = new Array();
+
+        data_row[data_row.length] = "txn_seq_id~" + this.transaction_id;
+        
+        return data_row.join("|");
+    }
+
+}
+
+function commit_screen_commit()
+{
+    this.outer_modal_div = null;
+    this.inner_modal_div = null;
+    this.commons = null;
+
+    this.open_screen = function()
+    {
+        this.open_modal_window();
+        
+        var ihtml = "";
+
+        ihtml = '<center>';
+        ihtml += '  <table style="width: 400px; border-right: #336699 1px solid; border-top: #336699 1px solid; border-left: #336699 1px solid; border-bottom: #336699 1px solid">';
+        ihtml += '    <tr><td colspan = "2" style="height: 23px; text-align: center"><img src="../images/ajaxloader.gif" /></td></tr>';
+        ihtml += '    <tr><td class = "cell_desc" colspan="2" style="height: 23px; text-align: center"><label id = "lbl_message_etc_otc_saving">Saving transaction. Please wait ...</label></td></tr>';
+        ihtml += '    <tr><td colspan ="2" style="height: 23px; text-align: center"></td></tr>';
+        ihtml += '  </table>';
+        ihtml += '<center>';
+        
+        document.getElementById("content_mod_div_saving").innerHTML = ihtml;         
+    }
+    
+    this.close_screen = function()
+    {
+        this.close_modal_window();    
+    }
+    
+    this.change_msg = function(msg)
+    {
+        if (msg != null && msg != '')
+        {
+            document.getElementById("lbl_message_etc_otc_saving").innerText = msg;
+        }
+    }
+
+    this.open_modal_window = function()
+	{
+        this.load_modal_css();
+		this.outer_modal_div           = document.createElement("div");
+		this.outer_modal_div.id        = "outer_mod_div_saving";
+		this.outer_modal_div.className = "outer_div";
+
+		document.body.style.margin = "0px";
+		document.body.appendChild(this.outer_modal_div);
+		document.getElementById("outer_mod_div_saving").style.height = screen.height;
+
+		this.construct_div_content();
+
+        this.commons = new common_method();
+        this.commons.to_show_hide_combobox(false);
+        this.commons = null;
+	}
+	
+    this.close_modal_window = function()
+	{
+	    this.commons = new common_method();
+        this.commons.to_show_hide_combobox(true);
+        this.commons = null;
+
+		if(this.outer_modal_div != null){document.body.removeChild(this.outer_modal_div);this.outer_modal_div  = null;}
+		if(this.inner_modal_div != null){document.body.removeChild(this.inner_modal_div);this.inner_modal_div  = null;}
+		if(this.content_iframe  != null){this.content_iframe = null;}
+
+		document.body.style.margin = "";		
+	}
+	
+	this.construct_div_content = function()
+	{
+	    var content_div = null;
+	    
+        content_div                       = document.createElement("div");
+		content_div.id                    = "content_mod_div_saving";
+		content_div.align                 = "left";
+		content_div.style.background      = "transparent";
+		content_div.style.width           = "100%";
+		content_div.innerHTML             = "<center><img src = '.././images/ajaxloader.gif'></img></center>";	    
+		
+		this.inner_modal_div              = document.createElement("div");		
+		this.inner_modal_div.align        = "center";
+		this.inner_modal_div.className    = "inner_div";		
+		this.inner_modal_div.id           = "inner_mod_div_saving";
+		this.inner_modal_div.style.height = "auto";
+		this.inner_modal_div.style.width  = "400px";
+		this.inner_modal_div.style.top    = "30px";
+		this.inner_modal_div.style.left   = (parseInt(screen.width) - parseInt(this.inner_modal_div.style.width)) / 2 - 10 + "px";
+		this.inner_modal_div.style.border = "medium solid white";
+		this.inner_modal_div.appendChild(content_div);
+		
+		document.body.appendChild(this.inner_modal_div);
+	}	
+	
+	this.load_modal_css = function()
+	{	    
+		var file_reference = document.createElement("link");
+		
+	  	file_reference.setAttribute("rel", "stylesheet");
+	  	file_reference.setAttribute("type", "text/css");
+	  	file_reference.setAttribute("href", ".././css/cssmodals.css");
+
+		if (typeof file_reference != "undefined")
+		{		    
+	  		document.getElementsByTagName("head")[0].appendChild(file_reference);
+		}
+	}	 
+	
+	window.onscroll = function () 
+	{
+	    var i = 0;
+	    var m = 0;
+
+    	var divelement_outer = document.documentElement.getElementsByTagName("div");
+    	var divelement_inner = document.documentElement.getElementsByTagName("div");
+
+	    for(i = 0; i < divelement_outer.length;i++)
+	    {
+	        if (divelement_outer.item(i).id == "outer_mod_div_saving")
+	        {
+	            divelement_outer.item(i).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;break;
+	        }
+	    }
+
+	    for(m = 0; m < divelement_inner.length;m++)
+	    {
+	        if (divelement_inner.item(m).id == "inner_mod_div_saving")
+	        {
+	            divelement_outer.item(m).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop + 20 : document.body.scrollTop + 20;break;
+	        }
+	    }
+	}
+}

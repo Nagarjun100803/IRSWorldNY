@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGREMreportOnKeypunchersOutput" targetNamespace="http://tempuri.org/dsGREMreportOnKeypunchersOutput.xsd" xmlns:mstns="http://tempuri.org/dsGREMreportOnKeypunchersOutput.xsd" xmlns="http://tempuri.org/dsGREMreportOnKeypunchersOutput.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGREMreportOnKeypunchersOutput" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGREMreportOnKeypunchersOutput" msprop:Generator_DataSetName="dsGREMreportOnKeypunchersOutput">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GREMreportOnKeypunchersOutput" msprop:Generator_UserTableName="GREMreportOnKeypunchersOutput" msprop:Generator_RowDeletedName="GREMreportOnKeypunchersOutputRowDeleted" msprop:Generator_RowChangedName="GREMreportOnKeypunchersOutputRowChanged" msprop:Generator_RowClassName="GREMreportOnKeypunchersOutputRow" msprop:Generator_RowChangingName="GREMreportOnKeypunchersOutputRowChanging" msprop:Generator_RowEvArgName="GREMreportOnKeypunchersOutputRowChangeEvent" msprop:Generator_RowEvHandlerName="GREMreportOnKeypunchersOutputRowChangeEventHandler" msprop:Generator_TableClassName="GREMreportOnKeypunchersOutputDataTable" msprop:Generator_TableVarName="tableGREMreportOnKeypunchersOutput" msprop:Generator_RowDeletingName="GREMreportOnKeypunchersOutputRowDeleting" msprop:Generator_TablePropName="GREMreportOnKeypunchersOutput">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LAST_x0020_NAME" msprop:Generator_UserColumnName="LAST NAME" msprop:Generator_ColumnVarNameInTable="columnLAST_NAME" msprop:Generator_ColumnPropNameInRow="LAST_NAME" msprop:Generator_ColumnPropNameInTable="LAST_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MAKER" msprop:Generator_UserColumnName="MAKER" msprop:Generator_ColumnPropNameInRow="MAKER" msprop:Generator_ColumnVarNameInTable="columnMAKER" msprop:Generator_ColumnPropNameInTable="MAKERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SOURCE" msprop:Generator_UserColumnName="SOURCE" msprop:Generator_ColumnPropNameInRow="SOURCE" msprop:Generator_ColumnVarNameInTable="columnSOURCE" msprop:Generator_ColumnPropNameInTable="SOURCEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,3002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TimeZones>
+	<TimeZone>
+		<Country>AD</Country>
+		<Latitude>+4230</Latitude>
+		<Longitude>+00131</Longitude>
+		<Name>Europe/Andorra</Name>
+		<RawData>AD	+4230+00131	Europe/Andorra</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AE</Country>
+		<Latitude>+2518</Latitude>
+		<Longitude>+05518</Longitude>
+		<Name>Asia/Dubai</Name>
+		<RawData>AE	+2518+05518	Asia/Dubai</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AF</Country>
+		<Latitude>+3431</Latitude>
+		<Longitude>+06912</Longitude>
+		<Name>Asia/Kabul</Name>
+		<RawData>AF	+3431+06912	Asia/Kabul</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AG</Country>
+		<Latitude>+1703</Latitude>
+		<Longitude>-06148</Longitude>
+		<Name>America/Antigua</Name>
+		<RawData>AG	+1703-06148	America/Antigua</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AI</Country>
+		<Latitude>+1812</Latitude>
+		<Longitude>-06304</Longitude>
+		<Name>America/Anguilla</Name>
+		<RawData>AI	+1812-06304	America/Anguilla</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AL</Country>
+		<Latitude>+4120</Latitude>
+		<Longitude>+01950</Longitude>
+		<Name>Europe/Tirane</Name>
+		<RawData>AL	+4120+01950	Europe/Tirane</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AM</Country>
+		<Latitude>+4011</Latitude>
+		<Longitude>+04430</Longitude>
+		<Name>Asia/Yerevan</Name>
+		<RawData>AM	+4011+04430	Asia/Yerevan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AN</Country>
+		<Latitude>+1211</Latitude>
+		<Longitude>-06900</Longitude>
+		<Name>America/Curacao</Name>
+		<RawData>AN	+1211-06900	America/Curacao</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AO</Country>
+		<Latitude>-0848</Latitude>
+		<Longitude>+01314</Longitude>
+		<Name>Africa/Luanda</Name>
+		<RawData>AO	-0848+01314	Africa/Luanda</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-7750</Latitude>
+		<Longitude>+16636</Longitude>
+		<Name>Antarctica/McMurdo</Name>
+		<Comments>McMurdo Station, Ross Island</Comments>
+		<RawData>AQ	-7750+16636	Antarctica/McMurdo	McMurdo Station, Ross Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-9000</Latitude>
+		<Longitude>+00000</Longitude>
+		<Name>Antarctica/South_Pole</Name>
+		<Comments>Amundsen-Scott Station, South Pole</Comments>
+		<RawData>AQ	-9000+00000	Antarctica/South_Pole	Amundsen-Scott Station, South Pole</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6734</Latitude>
+		<Longitude>-06808</Longitude>
+		<Name>Antarctica/Rothera</Name>
+		<Comments>Rothera Station, Adelaide Island</Comments>
+		<RawData>AQ	-6734-06808	Antarctica/Rothera	Rothera Station, Adelaide Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6448</Latitude>
+		<Longitude>-06406</Longitude>
+		<Name>Antarctica/Palmer</Name>
+		<Comments>Palmer Station, Anvers Island</Comments>
+		<RawData>AQ	-6448-06406	Antarctica/Palmer	Palmer Station, Anvers Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6736</Latitude>
+		<Longitude>+06253</Longitude>
+		<Name>Antarctica/Mawson</Name>
+		<Comments>Mawson Station, Holme Bay</Comments>
+		<RawData>AQ	-6736+06253	Antarctica/Mawson	Mawson Station, Holme Bay</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6835</Latitude>
+		<Longitude>+07758</Longitude>
+		<Name>Antarctica/Davis</Name>
+		<Comments>Davis Station, Vestfold Hills</Comments>
+		<RawData>AQ	-6835+07758	Antarctica/Davis	Davis Station, Vestfold Hills</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6617</Latitude>
+		<Longitude>+11031</Longitude>
+		<Name>Antarctica/Casey</Name>
+		<Comments>Casey Station, Bailey Peninsula</Comments>
+		<RawData>AQ	-6617+11031	Antarctica/Casey	Casey Station, Bailey Peninsula</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-7824</Latitude>
+		<Longitude>+10654</Longitude>
+		<Name>Antarctica/Vostok</Name>
+		<Comments>Vostok Station, S Magnetic Pole</Comments>
+		<RawData>AQ	-7824+10654	Antarctica/Vostok	Vostok Station, S Magnetic Pole</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-6640</Latitude>
+		<Longitude>+14001</Longitude>
+		<Name>Antarctica/DumontDUrville</Name>
+		<Comments>Dumont-d'Urville Station, Terre Adelie</Comments>
+		<RawData>AQ	-6640+14001	Antarctica/DumontDUrville	Dumont-d'Urville Station, Terre Adelie</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AQ</Country>
+		<Latitude>-690022</Latitude>
+		<Longitude>+0393524</Longitude>
+		<Name>Antarctica/Syowa</Name>
+		<Comments>Syowa Station, E Ongul I</Comments>
+		<RawData>AQ	-690022+0393524	Antarctica/Syowa	Syowa Station, E Ongul I</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-3436</Latitude>
+		<Longitude>-05827</Longitude>
+		<Name>America/Argentina/Buenos_Aires</Name>
+		<Comments>Buenos Aires (BA, CF)</Comments>
+		<RawData>AR	-3436-05827	America/Argentina/Buenos_Aires	Buenos Aires (BA, CF)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-3124</Latitude>
+		<Longitude>-06411</Longitude>
+		<Name>America/Argentina/Cordoba</Name>
+		<Comments>most locations (CB, CC, CN, ER, FM, MN, SE, SF)</Comments>
+		<RawData>AR	-3124-06411	America/Argentina/Cordoba	most locations (CB, CC, CN, ER, FM, MN, SE, SF)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-2447</Latitude>
+		<Longitude>-06525</Longitude>
+		<Name>America/Argentina/Salta</Name>
+		<Comments>(SA, LP, NQ, RN)</Comments>
+		<RawData>AR	-2447-06525	America/Argentina/Salta	(SA, LP, NQ, RN)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-2411</Latitude>
+		<Longitude>-06518</Longitude>
+		<Name>America/Argentina/Jujuy</Name>
+		<Comments>Jujuy (JY)</Comments>
+		<RawData>AR	-2411-06518	America/Argentina/Jujuy	Jujuy (JY)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-2649</Latitude>
+		<Longitude>-06513</Longitude>
+		<Name>America/Argentina/Tucuman</Name>
+		<Comments>Tucuman (TM)</Comments>
+		<RawData>AR	-2649-06513	America/Argentina/Tucuman	Tucuman (TM)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-2828</Latitude>
+		<Longitude>-06547</Longitude>
+		<Name>America/Argentina/Catamarca</Name>
+		<Comments>Catamarca (CT), Chubut (CH)</Comments>
+		<RawData>AR	-2828-06547	America/Argentina/Catamarca	Catamarca (CT), Chubut (CH)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-2926</Latitude>
+		<Longitude>-06651</Longitude>
+		<Name>America/Argentina/La_Rioja</Name>
+		<Comments>La Rioja (LR)</Comments>
+		<RawData>AR	-2926-06651	America/Argentina/La_Rioja	La Rioja (LR)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-3132</Latitude>
+		<Longitude>-06831</Longitude>
+		<Name>America/Argentina/San_Juan</Name>
+		<Comments>San Juan (SJ)</Comments>
+		<RawData>AR	-3132-06831	America/Argentina/San_Juan	San Juan (SJ)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-3253</Latitude>
+		<Longitude>-06849</Longitude>
+		<Name>America/Argentina/Mendoza</Name>
+		<Comments>Mendoza (MZ)</Comments>
+		<RawData>AR	-3253-06849	America/Argentina/Mendoza	Mendoza (MZ)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-3319</Latitude>
+		<Longitude>-06621</Longitude>
+		<Name>America/Argentina/San_Luis</Name>
+		<Comments>San Luis (SL)</Comments>
+		<RawData>AR	-3319-06621	America/Argentina/San_Luis	San Luis (SL)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-5138</Latitude>
+		<Longitude>-06913</Longitude>
+		<Name>America/Argentina/Rio_Gallegos</Name>
+		<Comments>Santa Cruz (SC)</Comments>
+		<RawData>AR	-5138-06913	America/Argentina/Rio_Gallegos	Santa Cruz (SC)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AR</Country>
+		<Latitude>-5448</Latitude>
+		<Longitude>-06818</Longitude>
+		<Name>America/Argentina/Ushuaia</Name>
+		<Comments>Tierra del Fuego (TF)</Comments>
+		<RawData>AR	-5448-06818	America/Argentina/Ushuaia	Tierra del Fuego (TF)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AS</Country>
+		<Latitude>-1416</Latitude>
+		<Longitude>-17042</Longitude>
+		<Name>Pacific/Pago_Pago</Name>
+		<RawData>AS	-1416-17042	Pacific/Pago_Pago</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AT</Country>
+		<Latitude>+4813</Latitude>
+		<Longitude>+01620</Longitude>
+		<Name>Europe/Vienna</Name>
+		<RawData>AT	+4813+01620	Europe/Vienna</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3133</Latitude>
+		<Longitude>+15905</Longitude>
+		<Name>Australia/Lord_Howe</Name>
+		<Comments>Lord Howe Island</Comments>
+		<RawData>AU	-3133+15905	Australia/Lord_Howe	Lord Howe Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-4253</Latitude>
+		<Longitude>+14719</Longitude>
+		<Name>Australia/Hobart</Name>
+		<Comments>Tasmania - most locations</Comments>
+		<RawData>AU	-4253+14719	Australia/Hobart	Tasmania - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3956</Latitude>
+		<Longitude>+14352</Longitude>
+		<Name>Australia/Currie</Name>
+		<Comments>Tasmania - King Island</Comments>
+		<RawData>AU	-3956+14352	Australia/Currie	Tasmania - King Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3749</Latitude>
+		<Longitude>+14458</Longitude>
+		<Name>Australia/Melbourne</Name>
+		<Comments>Victoria</Comments>
+		<RawData>AU	-3749+14458	Australia/Melbourne	Victoria</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3352</Latitude>
+		<Longitude>+15113</Longitude>
+		<Name>Australia/Sydney</Name>
+		<Comments>New South Wales - most locations</Comments>
+		<RawData>AU	-3352+15113	Australia/Sydney	New South Wales - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3157</Latitude>
+		<Longitude>+14127</Longitude>
+		<Name>Australia/Broken_Hill</Name>
+		<Comments>New South Wales - Yancowinna</Comments>
+		<RawData>AU	-3157+14127	Australia/Broken_Hill	New South Wales - Yancowinna</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-2728</Latitude>
+		<Longitude>+15302</Longitude>
+		<Name>Australia/Brisbane</Name>
+		<Comments>Queensland - most locations</Comments>
+		<RawData>AU	-2728+15302	Australia/Brisbane	Queensland - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-2016</Latitude>
+		<Longitude>+14900</Longitude>
+		<Name>Australia/Lindeman</Name>
+		<Comments>Queensland - Holiday Islands</Comments>
+		<RawData>AU	-2016+14900	Australia/Lindeman	Queensland - Holiday Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3455</Latitude>
+		<Longitude>+13835</Longitude>
+		<Name>Australia/Adelaide</Name>
+		<Comments>South Australia</Comments>
+		<RawData>AU	-3455+13835	Australia/Adelaide	South Australia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-1228</Latitude>
+		<Longitude>+13050</Longitude>
+		<Name>Australia/Darwin</Name>
+		<Comments>Northern Territory</Comments>
+		<RawData>AU	-1228+13050	Australia/Darwin	Northern Territory</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3157</Latitude>
+		<Longitude>+11551</Longitude>
+		<Name>Australia/Perth</Name>
+		<Comments>Western Australia - most locations</Comments>
+		<RawData>AU	-3157+11551	Australia/Perth	Western Australia - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AU</Country>
+		<Latitude>-3143</Latitude>
+		<Longitude>+12852</Longitude>
+		<Name>Australia/Eucla</Name>
+		<Comments>Western Australia - Eucla area</Comments>
+		<RawData>AU	-3143+12852	Australia/Eucla	Western Australia - Eucla area</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AW</Country>
+		<Latitude>+1230</Latitude>
+		<Longitude>-06958</Longitude>
+		<Name>America/Aruba</Name>
+		<RawData>AW	+1230-06958	America/Aruba</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AX</Country>
+		<Latitude>+6006</Latitude>
+		<Longitude>+01957</Longitude>
+		<Name>Europe/Mariehamn</Name>
+		<RawData>AX	+6006+01957	Europe/Mariehamn</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>AZ</Country>
+		<Latitude>+4023</Latitude>
+		<Longitude>+04951</Longitude>
+		<Name>Asia/Baku</Name>
+		<RawData>AZ	+4023+04951	Asia/Baku</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BA</Country>
+		<Latitude>+4352</Latitude>
+		<Longitude>+01825</Longitude>
+		<Name>Europe/Sarajevo</Name>
+		<RawData>BA	+4352+01825	Europe/Sarajevo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BB</Country>
+		<Latitude>+1306</Latitude>
+		<Longitude>-05937</Longitude>
+		<Name>America/Barbados</Name>
+		<RawData>BB	+1306-05937	America/Barbados</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BD</Country>
+		<Latitude>+2343</Latitude>
+		<Longitude>+09025</Longitude>
+		<Name>Asia/Dhaka</Name>
+		<RawData>BD	+2343+09025	Asia/Dhaka</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BE</Country>
+		<Latitude>+5050</Latitude>
+		<Longitude>+00420</Longitude>
+		<Name>Europe/Brussels</Name>
+		<RawData>BE	+5050+00420	Europe/Brussels</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BF</Country>
+		<Latitude>+1222</Latitude>
+		<Longitude>-00131</Longitude>
+		<Name>Africa/Ouagadougou</Name>
+		<RawData>BF	+1222-00131	Africa/Ouagadougou</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BG</Country>
+		<Latitude>+4241</Latitude>
+		<Longitude>+02319</Longitude>
+		<Name>Europe/Sofia</Name>
+		<RawData>BG	+4241+02319	Europe/Sofia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BH</Country>
+		<Latitude>+2623</Latitude>
+		<Longitude>+05035</Longitude>
+		<Name>Asia/Bahrain</Name>
+		<RawData>BH	+2623+05035	Asia/Bahrain</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BI</Country>
+		<Latitude>-0323</Latitude>
+		<Longitude>+02922</Longitude>
+		<Name>Africa/Bujumbura</Name>
+		<RawData>BI	-0323+02922	Africa/Bujumbura</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BJ</Country>
+		<Latitude>+0629</Latitude>
+		<Longitude>+00237</Longitude>
+		<Name>Africa/Porto-Novo</Name>
+		<RawData>BJ	+0629+00237	Africa/Porto-Novo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BL</Country>
+		<Latitude>+1753</Latitude>
+		<Longitude>-06251</Longitude>
+		<Name>America/St_Barthelemy</Name>
+		<RawData>BL	+1753-06251	America/St_Barthelemy</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BM</Country>
+		<Latitude>+3217</Latitude>
+		<Longitude>-06446</Longitude>
+		<Name>Atlantic/Bermuda</Name>
+		<RawData>BM	+3217-06446	Atlantic/Bermuda</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BN</Country>
+		<Latitude>+0456</Latitude>
+		<Longitude>+11455</Longitude>
+		<Name>Asia/Brunei</Name>
+		<RawData>BN	+0456+11455	Asia/Brunei</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BO</Country>
+		<Latitude>-1630</Latitude>
+		<Longitude>-06809</Longitude>
+		<Name>America/La_Paz</Name>
+		<RawData>BO	-1630-06809	America/La_Paz</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0351</Latitude>
+		<Longitude>-03225</Longitude>
+		<Name>America/Noronha</Name>
+		<Comments>Atlantic islands</Comments>
+		<RawData>BR	-0351-03225	America/Noronha	Atlantic islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0127</Latitude>
+		<Longitude>-04829</Longitude>
+		<Name>America/Belem</Name>
+		<Comments>Amapa, E Para</Comments>
+		<RawData>BR	-0127-04829	America/Belem	Amapa, E Para</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0343</Latitude>
+		<Longitude>-03830</Longitude>
+		<Name>America/Fortaleza</Name>
+		<Comments>NE Brazil (MA, PI, CE, RN, PB)</Comments>
+		<RawData>BR	-0343-03830	America/Fortaleza	NE Brazil (MA, PI, CE, RN, PB)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0803</Latitude>
+		<Longitude>-03454</Longitude>
+		<Name>America/Recife</Name>
+		<Comments>Pernambuco</Comments>
+		<RawData>BR	-0803-03454	America/Recife	Pernambuco</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0712</Latitude>
+		<Longitude>-04812</Longitude>
+		<Name>America/Araguaina</Name>
+		<Comments>Tocantins</Comments>
+		<RawData>BR	-0712-04812	America/Araguaina	Tocantins</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0940</Latitude>
+		<Longitude>-03543</Longitude>
+		<Name>America/Maceio</Name>
+		<Comments>Alagoas, Sergipe</Comments>
+		<RawData>BR	-0940-03543	America/Maceio	Alagoas, Sergipe</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-1259</Latitude>
+		<Longitude>-03831</Longitude>
+		<Name>America/Bahia</Name>
+		<Comments>Bahia</Comments>
+		<RawData>BR	-1259-03831	America/Bahia	Bahia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-2332</Latitude>
+		<Longitude>-04637</Longitude>
+		<Name>America/Sao_Paulo</Name>
+		<Comments>S &amp; SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)</Comments>
+		<RawData>BR	-2332-04637	America/Sao_Paulo	S &amp; SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-2027</Latitude>
+		<Longitude>-05437</Longitude>
+		<Name>America/Campo_Grande</Name>
+		<Comments>Mato Grosso do Sul</Comments>
+		<RawData>BR	-2027-05437	America/Campo_Grande	Mato Grosso do Sul</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-1535</Latitude>
+		<Longitude>-05605</Longitude>
+		<Name>America/Cuiaba</Name>
+		<Comments>Mato Grosso</Comments>
+		<RawData>BR	-1535-05605	America/Cuiaba	Mato Grosso</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0226</Latitude>
+		<Longitude>-05452</Longitude>
+		<Name>America/Santarem</Name>
+		<Comments>W Para</Comments>
+		<RawData>BR	-0226-05452	America/Santarem	W Para</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0846</Latitude>
+		<Longitude>-06354</Longitude>
+		<Name>America/Porto_Velho</Name>
+		<Comments>Rondonia</Comments>
+		<RawData>BR	-0846-06354	America/Porto_Velho	Rondonia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>+0249</Latitude>
+		<Longitude>-06040</Longitude>
+		<Name>America/Boa_Vista</Name>
+		<Comments>Roraima</Comments>
+		<RawData>BR	+0249-06040	America/Boa_Vista	Roraima</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0308</Latitude>
+		<Longitude>-06001</Longitude>
+		<Name>America/Manaus</Name>
+		<Comments>E Amazonas</Comments>
+		<RawData>BR	-0308-06001	America/Manaus	E Amazonas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0640</Latitude>
+		<Longitude>-06952</Longitude>
+		<Name>America/Eirunepe</Name>
+		<Comments>W Amazonas</Comments>
+		<RawData>BR	-0640-06952	America/Eirunepe	W Amazonas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BR</Country>
+		<Latitude>-0958</Latitude>
+		<Longitude>-06748</Longitude>
+		<Name>America/Rio_Branco</Name>
+		<Comments>Acre</Comments>
+		<RawData>BR	-0958-06748	America/Rio_Branco	Acre</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BS</Country>
+		<Latitude>+2505</Latitude>
+		<Longitude>-07721</Longitude>
+		<Name>America/Nassau</Name>
+		<RawData>BS	+2505-07721	America/Nassau</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BT</Country>
+		<Latitude>+2728</Latitude>
+		<Longitude>+08939</Longitude>
+		<Name>Asia/Thimphu</Name>
+		<RawData>BT	+2728+08939	Asia/Thimphu</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BW</Country>
+		<Latitude>-2439</Latitude>
+		<Longitude>+02555</Longitude>
+		<Name>Africa/Gaborone</Name>
+		<RawData>BW	-2439+02555	Africa/Gaborone</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BY</Country>
+		<Latitude>+5354</Latitude>
+		<Longitude>+02734</Longitude>
+		<Name>Europe/Minsk</Name>
+		<RawData>BY	+5354+02734	Europe/Minsk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>BZ</Country>
+		<Latitude>+1730</Latitude>
+		<Longitude>-08812</Longitude>
+		<Name>America/Belize</Name>
+		<RawData>BZ	+1730-08812	America/Belize</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4734</Latitude>
+		<Longitude>-05243</Longitude>
+		<Name>America/St_Johns</Name>
+		<Comments>Newfoundland Time, including SE Labrador</Comments>
+		<RawData>CA	+4734-05243	America/St_Johns	Newfoundland Time, including SE Labrador</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4439</Latitude>
+		<Longitude>-06336</Longitude>
+		<Name>America/Halifax</Name>
+		<Comments>Atlantic Time - Nova Scotia (most places), PEI</Comments>
+		<RawData>CA	+4439-06336	America/Halifax	Atlantic Time - Nova Scotia (most places), PEI</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4612</Latitude>
+		<Longitude>-05957</Longitude>
+		<Name>America/Glace_Bay</Name>
+		<Comments>Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971</Comments>
+		<RawData>CA	+4612-05957	America/Glace_Bay	Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4606</Latitude>
+		<Longitude>-06447</Longitude>
+		<Name>America/Moncton</Name>
+		<Comments>Atlantic Time - New Brunswick</Comments>
+		<RawData>CA	+4606-06447	America/Moncton	Atlantic Time - New Brunswick</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5320</Latitude>
+		<Longitude>-06025</Longitude>
+		<Name>America/Goose_Bay</Name>
+		<Comments>Atlantic Time - Labrador - most locations</Comments>
+		<RawData>CA	+5320-06025	America/Goose_Bay	Atlantic Time - Labrador - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5125</Latitude>
+		<Longitude>-05707</Longitude>
+		<Name>America/Blanc-Sablon</Name>
+		<Comments>Atlantic Standard Time - Quebec - Lower North Shore</Comments>
+		<RawData>CA	+5125-05707	America/Blanc-Sablon	Atlantic Standard Time - Quebec - Lower North Shore</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4531</Latitude>
+		<Longitude>-07334</Longitude>
+		<Name>America/Montreal</Name>
+		<Comments>Eastern Time - Quebec - most locations</Comments>
+		<RawData>CA	+4531-07334	America/Montreal	Eastern Time - Quebec - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4339</Latitude>
+		<Longitude>-07923</Longitude>
+		<Name>America/Toronto</Name>
+		<Comments>Eastern Time - Ontario - most locations</Comments>
+		<RawData>CA	+4339-07923	America/Toronto	Eastern Time - Ontario - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4901</Latitude>
+		<Longitude>-08816</Longitude>
+		<Name>America/Nipigon</Name>
+		<Comments>Eastern Time - Ontario &amp; Quebec - places that did not observe DST 1967-1973</Comments>
+		<RawData>CA	+4901-08816	America/Nipigon	Eastern Time - Ontario &amp; Quebec - places that did not observe DST 1967-1973</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4823</Latitude>
+		<Longitude>-08915</Longitude>
+		<Name>America/Thunder_Bay</Name>
+		<Comments>Eastern Time - Thunder Bay, Ontario</Comments>
+		<RawData>CA	+4823-08915	America/Thunder_Bay	Eastern Time - Thunder Bay, Ontario</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+6344</Latitude>
+		<Longitude>-06828</Longitude>
+		<Name>America/Iqaluit</Name>
+		<Comments>Eastern Time - east Nunavut - most locations</Comments>
+		<RawData>CA	+6344-06828	America/Iqaluit	Eastern Time - east Nunavut - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+6608</Latitude>
+		<Longitude>-06544</Longitude>
+		<Name>America/Pangnirtung</Name>
+		<Comments>Eastern Time - Pangnirtung, Nunavut</Comments>
+		<RawData>CA	+6608-06544	America/Pangnirtung	Eastern Time - Pangnirtung, Nunavut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+744144</Latitude>
+		<Longitude>-0944945</Longitude>
+		<Name>America/Resolute</Name>
+		<Comments>Eastern Standard Time - Resolute, Nunavut</Comments>
+		<RawData>CA	+744144-0944945	America/Resolute	Eastern Standard Time - Resolute, Nunavut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+484531</Latitude>
+		<Longitude>-0913718</Longitude>
+		<Name>America/Atikokan</Name>
+		<Comments>Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut</Comments>
+		<RawData>CA	+484531-0913718	America/Atikokan	Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+624900</Latitude>
+		<Longitude>-0920459</Longitude>
+		<Name>America/Rankin_Inlet</Name>
+		<Comments>Central Time - central Nunavut</Comments>
+		<RawData>CA	+624900-0920459	America/Rankin_Inlet	Central Time - central Nunavut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4953</Latitude>
+		<Longitude>-09709</Longitude>
+		<Name>America/Winnipeg</Name>
+		<Comments>Central Time - Manitoba &amp; west Ontario</Comments>
+		<RawData>CA	+4953-09709	America/Winnipeg	Central Time - Manitoba &amp; west Ontario</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4843</Latitude>
+		<Longitude>-09434</Longitude>
+		<Name>America/Rainy_River</Name>
+		<Comments>Central Time - Rainy River &amp; Fort Frances, Ontario</Comments>
+		<RawData>CA	+4843-09434	America/Rainy_River	Central Time - Rainy River &amp; Fort Frances, Ontario</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5024</Latitude>
+		<Longitude>-10439</Longitude>
+		<Name>America/Regina</Name>
+		<Comments>Central Standard Time - Saskatchewan - most locations</Comments>
+		<RawData>CA	+5024-10439	America/Regina	Central Standard Time - Saskatchewan - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5017</Latitude>
+		<Longitude>-10750</Longitude>
+		<Name>America/Swift_Current</Name>
+		<Comments>Central Standard Time - Saskatchewan - midwest</Comments>
+		<RawData>CA	+5017-10750	America/Swift_Current	Central Standard Time - Saskatchewan - midwest</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5333</Latitude>
+		<Longitude>-11328</Longitude>
+		<Name>America/Edmonton</Name>
+		<Comments>Mountain Time - Alberta, east British Columbia &amp; west Saskatchewan</Comments>
+		<RawData>CA	+5333-11328	America/Edmonton	Mountain Time - Alberta, east British Columbia &amp; west Saskatchewan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+690650</Latitude>
+		<Longitude>-1050310</Longitude>
+		<Name>America/Cambridge_Bay</Name>
+		<Comments>Mountain Time - west Nunavut</Comments>
+		<RawData>CA	+690650-1050310	America/Cambridge_Bay	Mountain Time - west Nunavut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+6227</Latitude>
+		<Longitude>-11421</Longitude>
+		<Name>America/Yellowknife</Name>
+		<Comments>Mountain Time - central Northwest Territories</Comments>
+		<RawData>CA	+6227-11421	America/Yellowknife	Mountain Time - central Northwest Territories</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+682059</Latitude>
+		<Longitude>-1334300</Longitude>
+		<Name>America/Inuvik</Name>
+		<Comments>Mountain Time - west Northwest Territories</Comments>
+		<RawData>CA	+682059-1334300	America/Inuvik	Mountain Time - west Northwest Territories</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+5946</Latitude>
+		<Longitude>-12014</Longitude>
+		<Name>America/Dawson_Creek</Name>
+		<Comments>Mountain Standard Time - Dawson Creek &amp; Fort Saint John, British Columbia</Comments>
+		<RawData>CA	+5946-12014	America/Dawson_Creek	Mountain Standard Time - Dawson Creek &amp; Fort Saint John, British Columbia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+4916</Latitude>
+		<Longitude>-12307</Longitude>
+		<Name>America/Vancouver</Name>
+		<Comments>Pacific Time - west British Columbia</Comments>
+		<RawData>CA	+4916-12307	America/Vancouver	Pacific Time - west British Columbia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+6043</Latitude>
+		<Longitude>-13503</Longitude>
+		<Name>America/Whitehorse</Name>
+		<Comments>Pacific Time - south Yukon</Comments>
+		<RawData>CA	+6043-13503	America/Whitehorse	Pacific Time - south Yukon</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CA</Country>
+		<Latitude>+6404</Latitude>
+		<Longitude>-13925</Longitude>
+		<Name>America/Dawson</Name>
+		<Comments>Pacific Time - north Yukon</Comments>
+		<RawData>CA	+6404-13925	America/Dawson	Pacific Time - north Yukon</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CC</Country>
+		<Latitude>-1210</Latitude>
+		<Longitude>+09655</Longitude>
+		<Name>Indian/Cocos</Name>
+		<RawData>CC	-1210+09655	Indian/Cocos</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CD</Country>
+		<Latitude>-0418</Latitude>
+		<Longitude>+01518</Longitude>
+		<Name>Africa/Kinshasa</Name>
+		<Comments>west Dem. Rep. of Congo</Comments>
+		<RawData>CD	-0418+01518	Africa/Kinshasa	west Dem. Rep. of Congo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CD</Country>
+		<Latitude>-1140</Latitude>
+		<Longitude>+02728</Longitude>
+		<Name>Africa/Lubumbashi</Name>
+		<Comments>east Dem. Rep. of Congo</Comments>
+		<RawData>CD	-1140+02728	Africa/Lubumbashi	east Dem. Rep. of Congo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CF</Country>
+		<Latitude>+0422</Latitude>
+		<Longitude>+01835</Longitude>
+		<Name>Africa/Bangui</Name>
+		<RawData>CF	+0422+01835	Africa/Bangui</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CG</Country>
+		<Latitude>-0416</Latitude>
+		<Longitude>+01517</Longitude>
+		<Name>Africa/Brazzaville</Name>
+		<RawData>CG	-0416+01517	Africa/Brazzaville</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CH</Country>
+		<Latitude>+4723</Latitude>
+		<Longitude>+00832</Longitude>
+		<Name>Europe/Zurich</Name>
+		<RawData>CH	+4723+00832	Europe/Zurich</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CI</Country>
+		<Latitude>+0519</Latitude>
+		<Longitude>-00402</Longitude>
+		<Name>Africa/Abidjan</Name>
+		<RawData>CI	+0519-00402	Africa/Abidjan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CK</Country>
+		<Latitude>-2114</Latitude>
+		<Longitude>-15946</Longitude>
+		<Name>Pacific/Rarotonga</Name>
+		<RawData>CK	-2114-15946	Pacific/Rarotonga</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CL</Country>
+		<Latitude>-3327</Latitude>
+		<Longitude>-07040</Longitude>
+		<Name>America/Santiago</Name>
+		<Comments>most locations</Comments>
+		<RawData>CL	-3327-07040	America/Santiago	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CL</Country>
+		<Latitude>-2709</Latitude>
+		<Longitude>-10926</Longitude>
+		<Name>Pacific/Easter</Name>
+		<Comments>Easter Island &amp; Sala y Gomez</Comments>
+		<RawData>CL	-2709-10926	Pacific/Easter	Easter Island &amp; Sala y Gomez</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CM</Country>
+		<Latitude>+0403</Latitude>
+		<Longitude>+00942</Longitude>
+		<Name>Africa/Douala</Name>
+		<RawData>CM	+0403+00942	Africa/Douala</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CN</Country>
+		<Latitude>+3114</Latitude>
+		<Longitude>+12128</Longitude>
+		<Name>Asia/Shanghai</Name>
+		<Comments>east China - Beijing, Guangdong, Shanghai, etc.</Comments>
+		<RawData>CN	+3114+12128	Asia/Shanghai	east China - Beijing, Guangdong, Shanghai, etc.</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CN</Country>
+		<Latitude>+4545</Latitude>
+		<Longitude>+12641</Longitude>
+		<Name>Asia/Harbin</Name>
+		<Comments>Heilongjiang (except Mohe), Jilin</Comments>
+		<RawData>CN	+4545+12641	Asia/Harbin	Heilongjiang (except Mohe), Jilin</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CN</Country>
+		<Latitude>+2934</Latitude>
+		<Longitude>+10635</Longitude>
+		<Name>Asia/Chongqing</Name>
+		<Comments>central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc.</Comments>
+		<RawData>CN	+2934+10635	Asia/Chongqing	central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc.</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CN</Country>
+		<Latitude>+4348</Latitude>
+		<Longitude>+08735</Longitude>
+		<Name>Asia/Urumqi</Name>
+		<Comments>most of Tibet &amp; Xinjiang</Comments>
+		<RawData>CN	+4348+08735	Asia/Urumqi	most of Tibet &amp; Xinjiang</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CN</Country>
+		<Latitude>+3929</Latitude>
+		<Longitude>+07559</Longitude>
+		<Name>Asia/Kashgar</Name>
+		<Comments>west Tibet &amp; Xinjiang</Comments>
+		<RawData>CN	+3929+07559	Asia/Kashgar	west Tibet &amp; Xinjiang</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CO</Country>
+		<Latitude>+0436</Latitude>
+		<Longitude>-07405</Longitude>
+		<Name>America/Bogota</Name>
+		<RawData>CO	+0436-07405	America/Bogota</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CR</Country>
+		<Latitude>+0956</Latitude>
+		<Longitude>-08405</Longitude>
+		<Name>America/Costa_Rica</Name>
+		<RawData>CR	+0956-08405	America/Costa_Rica</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CU</Country>
+		<Latitude>+2308</Latitude>
+		<Longitude>-08222</Longitude>
+		<Name>America/Havana</Name>
+		<RawData>CU	+2308-08222	America/Havana</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CV</Country>
+		<Latitude>+1455</Latitude>
+		<Longitude>-02331</Longitude>
+		<Name>Atlantic/Cape_Verde</Name>
+		<RawData>CV	+1455-02331	Atlantic/Cape_Verde</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CX</Country>
+		<Latitude>-1025</Latitude>
+		<Longitude>+10543</Longitude>
+		<Name>Indian/Christmas</Name>
+		<RawData>CX	-1025+10543	Indian/Christmas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CY</Country>
+		<Latitude>+3510</Latitude>
+		<Longitude>+03322</Longitude>
+		<Name>Asia/Nicosia</Name>
+		<RawData>CY	+3510+03322	Asia/Nicosia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>CZ</Country>
+		<Latitude>+5005</Latitude>
+		<Longitude>+01426</Longitude>
+		<Name>Europe/Prague</Name>
+		<RawData>CZ	+5005+01426	Europe/Prague</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DE</Country>
+		<Latitude>+5230</Latitude>
+		<Longitude>+01322</Longitude>
+		<Name>Europe/Berlin</Name>
+		<RawData>DE	+5230+01322	Europe/Berlin</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DJ</Country>
+		<Latitude>+1136</Latitude>
+		<Longitude>+04309</Longitude>
+		<Name>Africa/Djibouti</Name>
+		<RawData>DJ	+1136+04309	Africa/Djibouti</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DK</Country>
+		<Latitude>+5540</Latitude>
+		<Longitude>+01235</Longitude>
+		<Name>Europe/Copenhagen</Name>
+		<RawData>DK	+5540+01235	Europe/Copenhagen</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DM</Country>
+		<Latitude>+1518</Latitude>
+		<Longitude>-06124</Longitude>
+		<Name>America/Dominica</Name>
+		<RawData>DM	+1518-06124	America/Dominica</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DO</Country>
+		<Latitude>+1828</Latitude>
+		<Longitude>-06954</Longitude>
+		<Name>America/Santo_Domingo</Name>
+		<RawData>DO	+1828-06954	America/Santo_Domingo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>DZ</Country>
+		<Latitude>+3647</Latitude>
+		<Longitude>+00303</Longitude>
+		<Name>Africa/Algiers</Name>
+		<RawData>DZ	+3647+00303	Africa/Algiers</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>EC</Country>
+		<Latitude>-0210</Latitude>
+		<Longitude>-07950</Longitude>
+		<Name>America/Guayaquil</Name>
+		<Comments>mainland</Comments>
+		<RawData>EC	-0210-07950	America/Guayaquil	mainland</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>EC</Country>
+		<Latitude>-0054</Latitude>
+		<Longitude>-08936</Longitude>
+		<Name>Pacific/Galapagos</Name>
+		<Comments>Galapagos Islands</Comments>
+		<RawData>EC	-0054-08936	Pacific/Galapagos	Galapagos Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>EE</Country>
+		<Latitude>+5925</Latitude>
+		<Longitude>+02445</Longitude>
+		<Name>Europe/Tallinn</Name>
+		<RawData>EE	+5925+02445	Europe/Tallinn</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>EG</Country>
+		<Latitude>+3003</Latitude>
+		<Longitude>+03115</Longitude>
+		<Name>Africa/Cairo</Name>
+		<RawData>EG	+3003+03115	Africa/Cairo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>EH</Country>
+		<Latitude>+2709</Latitude>
+		<Longitude>-01312</Longitude>
+		<Name>Africa/El_Aaiun</Name>
+		<RawData>EH	+2709-01312	Africa/El_Aaiun</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ER</Country>
+		<Latitude>+1520</Latitude>
+		<Longitude>+03853</Longitude>
+		<Name>Africa/Asmara</Name>
+		<RawData>ER	+1520+03853	Africa/Asmara</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ES</Country>
+		<Latitude>+4024</Latitude>
+		<Longitude>-00341</Longitude>
+		<Name>Europe/Madrid</Name>
+		<Comments>mainland</Comments>
+		<RawData>ES	+4024-00341	Europe/Madrid	mainland</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ES</Country>
+		<Latitude>+3553</Latitude>
+		<Longitude>-00519</Longitude>
+		<Name>Africa/Ceuta</Name>
+		<Comments>Ceuta &amp; Melilla</Comments>
+		<RawData>ES	+3553-00519	Africa/Ceuta	Ceuta &amp; Melilla</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ES</Country>
+		<Latitude>+2806</Latitude>
+		<Longitude>-01524</Longitude>
+		<Name>Atlantic/Canary</Name>
+		<Comments>Canary Islands</Comments>
+		<RawData>ES	+2806-01524	Atlantic/Canary	Canary Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ET</Country>
+		<Latitude>+0902</Latitude>
+		<Longitude>+03842</Longitude>
+		<Name>Africa/Addis_Ababa</Name>
+		<RawData>ET	+0902+03842	Africa/Addis_Ababa</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FI</Country>
+		<Latitude>+6010</Latitude>
+		<Longitude>+02458</Longitude>
+		<Name>Europe/Helsinki</Name>
+		<RawData>FI	+6010+02458	Europe/Helsinki</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FJ</Country>
+		<Latitude>-1808</Latitude>
+		<Longitude>+17825</Longitude>
+		<Name>Pacific/Fiji</Name>
+		<RawData>FJ	-1808+17825	Pacific/Fiji</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FK</Country>
+		<Latitude>-5142</Latitude>
+		<Longitude>-05751</Longitude>
+		<Name>Atlantic/Stanley</Name>
+		<RawData>FK	-5142-05751	Atlantic/Stanley</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FM</Country>
+		<Latitude>+0725</Latitude>
+		<Longitude>+15147</Longitude>
+		<Name>Pacific/Truk</Name>
+		<Comments>Truk (Chuuk) and Yap</Comments>
+		<RawData>FM	+0725+15147	Pacific/Truk	Truk (Chuuk) and Yap</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FM</Country>
+		<Latitude>+0658</Latitude>
+		<Longitude>+15813</Longitude>
+		<Name>Pacific/Ponape</Name>
+		<Comments>Ponape (Pohnpei)</Comments>
+		<RawData>FM	+0658+15813	Pacific/Ponape	Ponape (Pohnpei)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FM</Country>
+		<Latitude>+0519</Latitude>
+		<Longitude>+16259</Longitude>
+		<Name>Pacific/Kosrae</Name>
+		<Comments>Kosrae</Comments>
+		<RawData>FM	+0519+16259	Pacific/Kosrae	Kosrae</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FO</Country>
+		<Latitude>+6201</Latitude>
+		<Longitude>-00646</Longitude>
+		<Name>Atlantic/Faroe</Name>
+		<RawData>FO	+6201-00646	Atlantic/Faroe</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>FR</Country>
+		<Latitude>+4852</Latitude>
+		<Longitude>+00220</Longitude>
+		<Name>Europe/Paris</Name>
+		<RawData>FR	+4852+00220	Europe/Paris</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GA</Country>
+		<Latitude>+0023</Latitude>
+		<Longitude>+00927</Longitude>
+		<Name>Africa/Libreville</Name>
+		<RawData>GA	+0023+00927	Africa/Libreville</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GB</Country>
+		<Latitude>+513030</Latitude>
+		<Longitude>-0000731</Longitude>
+		<Name>Europe/London</Name>
+		<RawData>GB	+513030-0000731	Europe/London</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GD</Country>
+		<Latitude>+1203</Latitude>
+		<Longitude>-06145</Longitude>
+		<Name>America/Grenada</Name>
+		<RawData>GD	+1203-06145	America/Grenada</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GE</Country>
+		<Latitude>+4143</Latitude>
+		<Longitude>+04449</Longitude>
+		<Name>Asia/Tbilisi</Name>
+		<RawData>GE	+4143+04449	Asia/Tbilisi</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GF</Country>
+		<Latitude>+0456</Latitude>
+		<Longitude>-05220</Longitude>
+		<Name>America/Cayenne</Name>
+		<RawData>GF	+0456-05220	America/Cayenne</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GG</Country>
+		<Latitude>+4927</Latitude>
+		<Longitude>-00232</Longitude>
+		<Name>Europe/Guernsey</Name>
+		<RawData>GG	+4927-00232	Europe/Guernsey</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GH</Country>
+		<Latitude>+0533</Latitude>
+		<Longitude>-00013</Longitude>
+		<Name>Africa/Accra</Name>
+		<RawData>GH	+0533-00013	Africa/Accra</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GI</Country>
+		<Latitude>+3608</Latitude>
+		<Longitude>-00521</Longitude>
+		<Name>Europe/Gibraltar</Name>
+		<RawData>GI	+3608-00521	Europe/Gibraltar</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GL</Country>
+		<Latitude>+6411</Latitude>
+		<Longitude>-05144</Longitude>
+		<Name>America/Godthab</Name>
+		<Comments>most locations</Comments>
+		<RawData>GL	+6411-05144	America/Godthab	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GL</Country>
+		<Latitude>+7646</Latitude>
+		<Longitude>-01840</Longitude>
+		<Name>America/Danmarkshavn</Name>
+		<Comments>east coast, north of Scoresbysund</Comments>
+		<RawData>GL	+7646-01840	America/Danmarkshavn	east coast, north of Scoresbysund</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GL</Country>
+		<Latitude>+7029</Latitude>
+		<Longitude>-02158</Longitude>
+		<Name>America/Scoresbysund</Name>
+		<Comments>Scoresbysund / Ittoqqortoormiit</Comments>
+		<RawData>GL	+7029-02158	America/Scoresbysund	Scoresbysund / Ittoqqortoormiit</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GL</Country>
+		<Latitude>+7634</Latitude>
+		<Longitude>-06847</Longitude>
+		<Name>America/Thule</Name>
+		<Comments>Thule / Pituffik</Comments>
+		<RawData>GL	+7634-06847	America/Thule	Thule / Pituffik</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GM</Country>
+		<Latitude>+1328</Latitude>
+		<Longitude>-01639</Longitude>
+		<Name>Africa/Banjul</Name>
+		<RawData>GM	+1328-01639	Africa/Banjul</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GN</Country>
+		<Latitude>+0931</Latitude>
+		<Longitude>-01343</Longitude>
+		<Name>Africa/Conakry</Name>
+		<RawData>GN	+0931-01343	Africa/Conakry</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GP</Country>
+		<Latitude>+1614</Latitude>
+		<Longitude>-06132</Longitude>
+		<Name>America/Guadeloupe</Name>
+		<RawData>GP	+1614-06132	America/Guadeloupe</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GQ</Country>
+		<Latitude>+0345</Latitude>
+		<Longitude>+00847</Longitude>
+		<Name>Africa/Malabo</Name>
+		<RawData>GQ	+0345+00847	Africa/Malabo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GR</Country>
+		<Latitude>+3758</Latitude>
+		<Longitude>+02343</Longitude>
+		<Name>Europe/Athens</Name>
+		<RawData>GR	+3758+02343	Europe/Athens</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GS</Country>
+		<Latitude>-5416</Latitude>
+		<Longitude>-03632</Longitude>
+		<Name>Atlantic/South_Georgia</Name>
+		<RawData>GS	-5416-03632	Atlantic/South_Georgia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GT</Country>
+		<Latitude>+1438</Latitude>
+		<Longitude>-09031</Longitude>
+		<Name>America/Guatemala</Name>
+		<RawData>GT	+1438-09031	America/Guatemala</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GU</Country>
+		<Latitude>+1328</Latitude>
+		<Longitude>+14445</Longitude>
+		<Name>Pacific/Guam</Name>
+		<RawData>GU	+1328+14445	Pacific/Guam</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GW</Country>
+		<Latitude>+1151</Latitude>
+		<Longitude>-01535</Longitude>
+		<Name>Africa/Bissau</Name>
+		<RawData>GW	+1151-01535	Africa/Bissau</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>GY</Country>
+		<Latitude>+0648</Latitude>
+		<Longitude>-05810</Longitude>
+		<Name>America/Guyana</Name>
+		<RawData>GY	+0648-05810	America/Guyana</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>HK</Country>
+		<Latitude>+2217</Latitude>
+		<Longitude>+11409</Longitude>
+		<Name>Asia/Hong_Kong</Name>
+		<RawData>HK	+2217+11409	Asia/Hong_Kong</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>HN</Country>
+		<Latitude>+1406</Latitude>
+		<Longitude>-08713</Longitude>
+		<Name>America/Tegucigalpa</Name>
+		<RawData>HN	+1406-08713	America/Tegucigalpa</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>HR</Country>
+		<Latitude>+4548</Latitude>
+		<Longitude>+01558</Longitude>
+		<Name>Europe/Zagreb</Name>
+		<RawData>HR	+4548+01558	Europe/Zagreb</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>HT</Country>
+		<Latitude>+1832</Latitude>
+		<Longitude>-07220</Longitude>
+		<Name>America/Port-au-Prince</Name>
+		<RawData>HT	+1832-07220	America/Port-au-Prince</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>HU</Country>
+		<Latitude>+4730</Latitude>
+		<Longitude>+01905</Longitude>
+		<Name>Europe/Budapest</Name>
+		<RawData>HU	+4730+01905	Europe/Budapest</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ID</Country>
+		<Latitude>-0610</Latitude>
+		<Longitude>+10648</Longitude>
+		<Name>Asia/Jakarta</Name>
+		<Comments>Java &amp; Sumatra</Comments>
+		<RawData>ID	-0610+10648	Asia/Jakarta	Java &amp; Sumatra</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ID</Country>
+		<Latitude>-0002</Latitude>
+		<Longitude>+10920</Longitude>
+		<Name>Asia/Pontianak</Name>
+		<Comments>west &amp; central Borneo</Comments>
+		<RawData>ID	-0002+10920	Asia/Pontianak	west &amp; central Borneo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ID</Country>
+		<Latitude>-0507</Latitude>
+		<Longitude>+11924</Longitude>
+		<Name>Asia/Makassar</Name>
+		<Comments>east &amp; south Borneo, Celebes, Bali, Nusa Tengarra, west Timor</Comments>
+		<RawData>ID	-0507+11924	Asia/Makassar	east &amp; south Borneo, Celebes, Bali, Nusa Tengarra, west Timor</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ID</Country>
+		<Latitude>-0232</Latitude>
+		<Longitude>+14042</Longitude>
+		<Name>Asia/Jayapura</Name>
+		<Comments>Irian Jaya &amp; the Moluccas</Comments>
+		<RawData>ID	-0232+14042	Asia/Jayapura	Irian Jaya &amp; the Moluccas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IE</Country>
+		<Latitude>+5320</Latitude>
+		<Longitude>-00615</Longitude>
+		<Name>Europe/Dublin</Name>
+		<RawData>IE	+5320-00615	Europe/Dublin</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IL</Country>
+		<Latitude>+3146</Latitude>
+		<Longitude>+03514</Longitude>
+		<Name>Asia/Jerusalem</Name>
+		<RawData>IL	+3146+03514	Asia/Jerusalem</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IM</Country>
+		<Latitude>+5409</Latitude>
+		<Longitude>-00428</Longitude>
+		<Name>Europe/Isle_of_Man</Name>
+		<RawData>IM	+5409-00428	Europe/Isle_of_Man</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IN</Country>
+		<Latitude>+2232</Latitude>
+		<Longitude>+08822</Longitude>
+		<Name>Asia/Kolkata</Name>
+		<RawData>IN	+2232+08822	Asia/Kolkata</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IO</Country>
+		<Latitude>-0720</Latitude>
+		<Longitude>+07225</Longitude>
+		<Name>Indian/Chagos</Name>
+		<RawData>IO	-0720+07225	Indian/Chagos</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IQ</Country>
+		<Latitude>+3321</Latitude>
+		<Longitude>+04425</Longitude>
+		<Name>Asia/Baghdad</Name>
+		<RawData>IQ	+3321+04425	Asia/Baghdad</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IR</Country>
+		<Latitude>+3540</Latitude>
+		<Longitude>+05126</Longitude>
+		<Name>Asia/Tehran</Name>
+		<RawData>IR	+3540+05126	Asia/Tehran</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IS</Country>
+		<Latitude>+6409</Latitude>
+		<Longitude>-02151</Longitude>
+		<Name>Atlantic/Reykjavik</Name>
+		<RawData>IS	+6409-02151	Atlantic/Reykjavik</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>IT</Country>
+		<Latitude>+4154</Latitude>
+		<Longitude>+01229</Longitude>
+		<Name>Europe/Rome</Name>
+		<RawData>IT	+4154+01229	Europe/Rome</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>JE</Country>
+		<Latitude>+4912</Latitude>
+		<Longitude>-00207</Longitude>
+		<Name>Europe/Jersey</Name>
+		<RawData>JE	+4912-00207	Europe/Jersey</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>JM</Country>
+		<Latitude>+1800</Latitude>
+		<Longitude>-07648</Longitude>
+		<Name>America/Jamaica</Name>
+		<RawData>JM	+1800-07648	America/Jamaica</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>JO</Country>
+		<Latitude>+3157</Latitude>
+		<Longitude>+03556</Longitude>
+		<Name>Asia/Amman</Name>
+		<RawData>JO	+3157+03556	Asia/Amman</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>JP</Country>
+		<Latitude>+353916</Latitude>
+		<Longitude>+1394441</Longitude>
+		<Name>Asia/Tokyo</Name>
+		<RawData>JP	+353916+1394441	Asia/Tokyo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KE</Country>
+		<Latitude>-0117</Latitude>
+		<Longitude>+03649</Longitude>
+		<Name>Africa/Nairobi</Name>
+		<RawData>KE	-0117+03649	Africa/Nairobi</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KG</Country>
+		<Latitude>+4254</Latitude>
+		<Longitude>+07436</Longitude>
+		<Name>Asia/Bishkek</Name>
+		<RawData>KG	+4254+07436	Asia/Bishkek</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KH</Country>
+		<Latitude>+1133</Latitude>
+		<Longitude>+10455</Longitude>
+		<Name>Asia/Phnom_Penh</Name>
+		<RawData>KH	+1133+10455	Asia/Phnom_Penh</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KI</Country>
+		<Latitude>+0125</Latitude>
+		<Longitude>+17300</Longitude>
+		<Name>Pacific/Tarawa</Name>
+		<Comments>Gilbert Islands</Comments>
+		<RawData>KI	+0125+17300	Pacific/Tarawa	Gilbert Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KI</Country>
+		<Latitude>-0308</Latitude>
+		<Longitude>-17105</Longitude>
+		<Name>Pacific/Enderbury</Name>
+		<Comments>Phoenix Islands</Comments>
+		<RawData>KI	-0308-17105	Pacific/Enderbury	Phoenix Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KI</Country>
+		<Latitude>+0152</Latitude>
+		<Longitude>-15720</Longitude>
+		<Name>Pacific/Kiritimati</Name>
+		<Comments>Line Islands</Comments>
+		<RawData>KI	+0152-15720	Pacific/Kiritimati	Line Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KM</Country>
+		<Latitude>-1141</Latitude>
+		<Longitude>+04316</Longitude>
+		<Name>Indian/Comoro</Name>
+		<RawData>KM	-1141+04316	Indian/Comoro</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KN</Country>
+		<Latitude>+1718</Latitude>
+		<Longitude>-06243</Longitude>
+		<Name>America/St_Kitts</Name>
+		<RawData>KN	+1718-06243	America/St_Kitts</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KP</Country>
+		<Latitude>+3901</Latitude>
+		<Longitude>+12545</Longitude>
+		<Name>Asia/Pyongyang</Name>
+		<RawData>KP	+3901+12545	Asia/Pyongyang</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KR</Country>
+		<Latitude>+3733</Latitude>
+		<Longitude>+12658</Longitude>
+		<Name>Asia/Seoul</Name>
+		<RawData>KR	+3733+12658	Asia/Seoul</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KW</Country>
+		<Latitude>+2920</Latitude>
+		<Longitude>+04759</Longitude>
+		<Name>Asia/Kuwait</Name>
+		<RawData>KW	+2920+04759	Asia/Kuwait</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KY</Country>
+		<Latitude>+1918</Latitude>
+		<Longitude>-08123</Longitude>
+		<Name>America/Cayman</Name>
+		<RawData>KY	+1918-08123	America/Cayman</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KZ</Country>
+		<Latitude>+4315</Latitude>
+		<Longitude>+07657</Longitude>
+		<Name>Asia/Almaty</Name>
+		<Comments>most locations</Comments>
+		<RawData>KZ	+4315+07657	Asia/Almaty	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KZ</Country>
+		<Latitude>+4448</Latitude>
+		<Longitude>+06528</Longitude>
+		<Name>Asia/Qyzylorda</Name>
+		<Comments>Qyzylorda (Kyzylorda, Kzyl-Orda)</Comments>
+		<RawData>KZ	+4448+06528	Asia/Qyzylorda	Qyzylorda (Kyzylorda, Kzyl-Orda)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KZ</Country>
+		<Latitude>+5017</Latitude>
+		<Longitude>+05710</Longitude>
+		<Name>Asia/Aqtobe</Name>
+		<Comments>Aqtobe (Aktobe)</Comments>
+		<RawData>KZ	+5017+05710	Asia/Aqtobe	Aqtobe (Aktobe)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KZ</Country>
+		<Latitude>+4431</Latitude>
+		<Longitude>+05016</Longitude>
+		<Name>Asia/Aqtau</Name>
+		<Comments>Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)</Comments>
+		<RawData>KZ	+4431+05016	Asia/Aqtau	Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>KZ</Country>
+		<Latitude>+5113</Latitude>
+		<Longitude>+05121</Longitude>
+		<Name>Asia/Oral</Name>
+		<Comments>West Kazakhstan</Comments>
+		<RawData>KZ	+5113+05121	Asia/Oral	West Kazakhstan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LA</Country>
+		<Latitude>+1758</Latitude>
+		<Longitude>+10236</Longitude>
+		<Name>Asia/Vientiane</Name>
+		<RawData>LA	+1758+10236	Asia/Vientiane</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LB</Country>
+		<Latitude>+3353</Latitude>
+		<Longitude>+03530</Longitude>
+		<Name>Asia/Beirut</Name>
+		<RawData>LB	+3353+03530	Asia/Beirut</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LC</Country>
+		<Latitude>+1401</Latitude>
+		<Longitude>-06100</Longitude>
+		<Name>America/St_Lucia</Name>
+		<RawData>LC	+1401-06100	America/St_Lucia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LI</Country>
+		<Latitude>+4709</Latitude>
+		<Longitude>+00931</Longitude>
+		<Name>Europe/Vaduz</Name>
+		<RawData>LI	+4709+00931	Europe/Vaduz</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LK</Country>
+		<Latitude>+0656</Latitude>
+		<Longitude>+07951</Longitude>
+		<Name>Asia/Colombo</Name>
+		<RawData>LK	+0656+07951	Asia/Colombo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LR</Country>
+		<Latitude>+0618</Latitude>
+		<Longitude>-01047</Longitude>
+		<Name>Africa/Monrovia</Name>
+		<RawData>LR	+0618-01047	Africa/Monrovia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LS</Country>
+		<Latitude>-2928</Latitude>
+		<Longitude>+02730</Longitude>
+		<Name>Africa/Maseru</Name>
+		<RawData>LS	-2928+02730	Africa/Maseru</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LT</Country>
+		<Latitude>+5441</Latitude>
+		<Longitude>+02519</Longitude>
+		<Name>Europe/Vilnius</Name>
+		<RawData>LT	+5441+02519	Europe/Vilnius</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LU</Country>
+		<Latitude>+4936</Latitude>
+		<Longitude>+00609</Longitude>
+		<Name>Europe/Luxembourg</Name>
+		<RawData>LU	+4936+00609	Europe/Luxembourg</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LV</Country>
+		<Latitude>+5657</Latitude>
+		<Longitude>+02406</Longitude>
+		<Name>Europe/Riga</Name>
+		<RawData>LV	+5657+02406	Europe/Riga</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>LY</Country>
+		<Latitude>+3254</Latitude>
+		<Longitude>+01311</Longitude>
+		<Name>Africa/Tripoli</Name>
+		<RawData>LY	+3254+01311	Africa/Tripoli</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MA</Country>
+		<Latitude>+3339</Latitude>
+		<Longitude>-00735</Longitude>
+		<Name>Africa/Casablanca</Name>
+		<RawData>MA	+3339-00735	Africa/Casablanca</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MC</Country>
+		<Latitude>+4342</Latitude>
+		<Longitude>+00723</Longitude>
+		<Name>Europe/Monaco</Name>
+		<RawData>MC	+4342+00723	Europe/Monaco</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MD</Country>
+		<Latitude>+4700</Latitude>
+		<Longitude>+02850</Longitude>
+		<Name>Europe/Chisinau</Name>
+		<RawData>MD	+4700+02850	Europe/Chisinau</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ME</Country>
+		<Latitude>+4226</Latitude>
+		<Longitude>+01916</Longitude>
+		<Name>Europe/Podgorica</Name>
+		<RawData>ME	+4226+01916	Europe/Podgorica</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MF</Country>
+		<Latitude>+1804</Latitude>
+		<Longitude>-06305</Longitude>
+		<Name>America/Marigot</Name>
+		<RawData>MF	+1804-06305	America/Marigot</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MG</Country>
+		<Latitude>-1855</Latitude>
+		<Longitude>+04731</Longitude>
+		<Name>Indian/Antananarivo</Name>
+		<RawData>MG	-1855+04731	Indian/Antananarivo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MH</Country>
+		<Latitude>+0709</Latitude>
+		<Longitude>+17112</Longitude>
+		<Name>Pacific/Majuro</Name>
+		<Comments>most locations</Comments>
+		<RawData>MH	+0709+17112	Pacific/Majuro	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MH</Country>
+		<Latitude>+0905</Latitude>
+		<Longitude>+16720</Longitude>
+		<Name>Pacific/Kwajalein</Name>
+		<Comments>Kwajalein</Comments>
+		<RawData>MH	+0905+16720	Pacific/Kwajalein	Kwajalein</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MK</Country>
+		<Latitude>+4159</Latitude>
+		<Longitude>+02126</Longitude>
+		<Name>Europe/Skopje</Name>
+		<RawData>MK	+4159+02126	Europe/Skopje</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ML</Country>
+		<Latitude>+1239</Latitude>
+		<Longitude>-00800</Longitude>
+		<Name>Africa/Bamako</Name>
+		<RawData>ML	+1239-00800	Africa/Bamako</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MM</Country>
+		<Latitude>+1647</Latitude>
+		<Longitude>+09610</Longitude>
+		<Name>Asia/Rangoon</Name>
+		<RawData>MM	+1647+09610	Asia/Rangoon</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MN</Country>
+		<Latitude>+4755</Latitude>
+		<Longitude>+10653</Longitude>
+		<Name>Asia/Ulaanbaatar</Name>
+		<Comments>most locations</Comments>
+		<RawData>MN	+4755+10653	Asia/Ulaanbaatar	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MN</Country>
+		<Latitude>+4801</Latitude>
+		<Longitude>+09139</Longitude>
+		<Name>Asia/Hovd</Name>
+		<Comments>Bayan-Olgiy, Govi-Altai, Hovd, Uvs, Zavkhan</Comments>
+		<RawData>MN	+4801+09139	Asia/Hovd	Bayan-Olgiy, Govi-Altai, Hovd, Uvs, Zavkhan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MN</Country>
+		<Latitude>+4804</Latitude>
+		<Longitude>+11430</Longitude>
+		<Name>Asia/Choibalsan</Name>
+		<Comments>Dornod, Sukhbaatar</Comments>
+		<RawData>MN	+4804+11430	Asia/Choibalsan	Dornod, Sukhbaatar</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MO</Country>
+		<Latitude>+2214</Latitude>
+		<Longitude>+11335</Longitude>
+		<Name>Asia/Macau</Name>
+		<RawData>MO	+2214+11335	Asia/Macau</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MP</Country>
+		<Latitude>+1512</Latitude>
+		<Longitude>+14545</Longitude>
+		<Name>Pacific/Saipan</Name>
+		<RawData>MP	+1512+14545	Pacific/Saipan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MQ</Country>
+		<Latitude>+1436</Latitude>
+		<Longitude>-06105</Longitude>
+		<Name>America/Martinique</Name>
+		<RawData>MQ	+1436-06105	America/Martinique</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MR</Country>
+		<Latitude>+1806</Latitude>
+		<Longitude>-01557</Longitude>
+		<Name>Africa/Nouakchott</Name>
+		<RawData>MR	+1806-01557	Africa/Nouakchott</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MS</Country>
+		<Latitude>+1643</Latitude>
+		<Longitude>-06213</Longitude>
+		<Name>America/Montserrat</Name>
+		<RawData>MS	+1643-06213	America/Montserrat</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MT</Country>
+		<Latitude>+3554</Latitude>
+		<Longitude>+01431</Longitude>
+		<Name>Europe/Malta</Name>
+		<RawData>MT	+3554+01431	Europe/Malta</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MU</Country>
+		<Latitude>-2010</Latitude>
+		<Longitude>+05730</Longitude>
+		<Name>Indian/Mauritius</Name>
+		<RawData>MU	-2010+05730	Indian/Mauritius</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MV</Country>
+		<Latitude>+0410</Latitude>
+		<Longitude>+07330</Longitude>
+		<Name>Indian/Maldives</Name>
+		<RawData>MV	+0410+07330	Indian/Maldives</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MW</Country>
+		<Latitude>-1547</Latitude>
+		<Longitude>+03500</Longitude>
+		<Name>Africa/Blantyre</Name>
+		<RawData>MW	-1547+03500	Africa/Blantyre</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+1924</Latitude>
+		<Longitude>-09909</Longitude>
+		<Name>America/Mexico_City</Name>
+		<Comments>Central Time - most locations</Comments>
+		<RawData>MX	+1924-09909	America/Mexico_City	Central Time - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2105</Latitude>
+		<Longitude>-08646</Longitude>
+		<Name>America/Cancun</Name>
+		<Comments>Central Time - Quintana Roo</Comments>
+		<RawData>MX	+2105-08646	America/Cancun	Central Time - Quintana Roo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2058</Latitude>
+		<Longitude>-08937</Longitude>
+		<Name>America/Merida</Name>
+		<Comments>Central Time - Campeche, Yucatan</Comments>
+		<RawData>MX	+2058-08937	America/Merida	Central Time - Campeche, Yucatan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2540</Latitude>
+		<Longitude>-10019</Longitude>
+		<Name>America/Monterrey</Name>
+		<Comments>Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas</Comments>
+		<RawData>MX	+2540-10019	America/Monterrey	Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2313</Latitude>
+		<Longitude>-10625</Longitude>
+		<Name>America/Mazatlan</Name>
+		<Comments>Mountain Time - S Baja, Nayarit, Sinaloa</Comments>
+		<RawData>MX	+2313-10625	America/Mazatlan	Mountain Time - S Baja, Nayarit, Sinaloa</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2838</Latitude>
+		<Longitude>-10605</Longitude>
+		<Name>America/Chihuahua</Name>
+		<Comments>Mountain Time - Chihuahua</Comments>
+		<RawData>MX	+2838-10605	America/Chihuahua	Mountain Time - Chihuahua</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+2904</Latitude>
+		<Longitude>-11058</Longitude>
+		<Name>America/Hermosillo</Name>
+		<Comments>Mountain Standard Time - Sonora</Comments>
+		<RawData>MX	+2904-11058	America/Hermosillo	Mountain Standard Time - Sonora</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MX</Country>
+		<Latitude>+3232</Latitude>
+		<Longitude>-11701</Longitude>
+		<Name>America/Tijuana</Name>
+		<Comments>Pacific Time</Comments>
+		<RawData>MX	+3232-11701	America/Tijuana	Pacific Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MY</Country>
+		<Latitude>+0310</Latitude>
+		<Longitude>+10142</Longitude>
+		<Name>Asia/Kuala_Lumpur</Name>
+		<Comments>peninsular Malaysia</Comments>
+		<RawData>MY	+0310+10142	Asia/Kuala_Lumpur	peninsular Malaysia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MY</Country>
+		<Latitude>+0133</Latitude>
+		<Longitude>+11020</Longitude>
+		<Name>Asia/Kuching</Name>
+		<Comments>Sabah &amp; Sarawak</Comments>
+		<RawData>MY	+0133+11020	Asia/Kuching	Sabah &amp; Sarawak</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>MZ</Country>
+		<Latitude>-2558</Latitude>
+		<Longitude>+03235</Longitude>
+		<Name>Africa/Maputo</Name>
+		<RawData>MZ	-2558+03235	Africa/Maputo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NA</Country>
+		<Latitude>-2234</Latitude>
+		<Longitude>+01706</Longitude>
+		<Name>Africa/Windhoek</Name>
+		<RawData>NA	-2234+01706	Africa/Windhoek</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NC</Country>
+		<Latitude>-2216</Latitude>
+		<Longitude>+16627</Longitude>
+		<Name>Pacific/Noumea</Name>
+		<RawData>NC	-2216+16627	Pacific/Noumea</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NE</Country>
+		<Latitude>+1331</Latitude>
+		<Longitude>+00207</Longitude>
+		<Name>Africa/Niamey</Name>
+		<RawData>NE	+1331+00207	Africa/Niamey</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NF</Country>
+		<Latitude>-2903</Latitude>
+		<Longitude>+16758</Longitude>
+		<Name>Pacific/Norfolk</Name>
+		<RawData>NF	-2903+16758	Pacific/Norfolk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NG</Country>
+		<Latitude>+0627</Latitude>
+		<Longitude>+00324</Longitude>
+		<Name>Africa/Lagos</Name>
+		<RawData>NG	+0627+00324	Africa/Lagos</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NI</Country>
+		<Latitude>+1209</Latitude>
+		<Longitude>-08617</Longitude>
+		<Name>America/Managua</Name>
+		<RawData>NI	+1209-08617	America/Managua</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NL</Country>
+		<Latitude>+5222</Latitude>
+		<Longitude>+00454</Longitude>
+		<Name>Europe/Amsterdam</Name>
+		<RawData>NL	+5222+00454	Europe/Amsterdam</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NO</Country>
+		<Latitude>+5955</Latitude>
+		<Longitude>+01045</Longitude>
+		<Name>Europe/Oslo</Name>
+		<RawData>NO	+5955+01045	Europe/Oslo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NP</Country>
+		<Latitude>+2743</Latitude>
+		<Longitude>+08519</Longitude>
+		<Name>Asia/Kathmandu</Name>
+		<RawData>NP	+2743+08519	Asia/Kathmandu</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NR</Country>
+		<Latitude>-0031</Latitude>
+		<Longitude>+16655</Longitude>
+		<Name>Pacific/Nauru</Name>
+		<RawData>NR	-0031+16655	Pacific/Nauru</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NU</Country>
+		<Latitude>-1901</Latitude>
+		<Longitude>-16955</Longitude>
+		<Name>Pacific/Niue</Name>
+		<RawData>NU	-1901-16955	Pacific/Niue</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NZ</Country>
+		<Latitude>-3652</Latitude>
+		<Longitude>+17446</Longitude>
+		<Name>Pacific/Auckland</Name>
+		<Comments>most locations</Comments>
+		<RawData>NZ	-3652+17446	Pacific/Auckland	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>NZ</Country>
+		<Latitude>-4357</Latitude>
+		<Longitude>-17633</Longitude>
+		<Name>Pacific/Chatham</Name>
+		<Comments>Chatham Islands</Comments>
+		<RawData>NZ	-4357-17633	Pacific/Chatham	Chatham Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>OM</Country>
+		<Latitude>+2336</Latitude>
+		<Longitude>+05835</Longitude>
+		<Name>Asia/Muscat</Name>
+		<RawData>OM	+2336+05835	Asia/Muscat</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PA</Country>
+		<Latitude>+0858</Latitude>
+		<Longitude>-07932</Longitude>
+		<Name>America/Panama</Name>
+		<RawData>PA	+0858-07932	America/Panama</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PE</Country>
+		<Latitude>-1203</Latitude>
+		<Longitude>-07703</Longitude>
+		<Name>America/Lima</Name>
+		<RawData>PE	-1203-07703	America/Lima</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PF</Country>
+		<Latitude>-1732</Latitude>
+		<Longitude>-14934</Longitude>
+		<Name>Pacific/Tahiti</Name>
+		<Comments>Society Islands</Comments>
+		<RawData>PF	-1732-14934	Pacific/Tahiti	Society Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PF</Country>
+		<Latitude>-0900</Latitude>
+		<Longitude>-13930</Longitude>
+		<Name>Pacific/Marquesas</Name>
+		<Comments>Marquesas Islands</Comments>
+		<RawData>PF	-0900-13930	Pacific/Marquesas	Marquesas Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PF</Country>
+		<Latitude>-2308</Latitude>
+		<Longitude>-13457</Longitude>
+		<Name>Pacific/Gambier</Name>
+		<Comments>Gambier Islands</Comments>
+		<RawData>PF	-2308-13457	Pacific/Gambier	Gambier Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PG</Country>
+		<Latitude>-0930</Latitude>
+		<Longitude>+14710</Longitude>
+		<Name>Pacific/Port_Moresby</Name>
+		<RawData>PG	-0930+14710	Pacific/Port_Moresby</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PH</Country>
+		<Latitude>+1435</Latitude>
+		<Longitude>+12100</Longitude>
+		<Name>Asia/Manila</Name>
+		<RawData>PH	+1435+12100	Asia/Manila</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PK</Country>
+		<Latitude>+2452</Latitude>
+		<Longitude>+06703</Longitude>
+		<Name>Asia/Karachi</Name>
+		<RawData>PK	+2452+06703	Asia/Karachi</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PL</Country>
+		<Latitude>+5215</Latitude>
+		<Longitude>+02100</Longitude>
+		<Name>Europe/Warsaw</Name>
+		<RawData>PL	+5215+02100	Europe/Warsaw</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PM</Country>
+		<Latitude>+4703</Latitude>
+		<Longitude>-05620</Longitude>
+		<Name>America/Miquelon</Name>
+		<RawData>PM	+4703-05620	America/Miquelon</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PN</Country>
+		<Latitude>-2504</Latitude>
+		<Longitude>-13005</Longitude>
+		<Name>Pacific/Pitcairn</Name>
+		<RawData>PN	-2504-13005	Pacific/Pitcairn</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PR</Country>
+		<Latitude>+182806</Latitude>
+		<Longitude>-0660622</Longitude>
+		<Name>America/Puerto_Rico</Name>
+		<RawData>PR	+182806-0660622	America/Puerto_Rico</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PS</Country>
+		<Latitude>+3130</Latitude>
+		<Longitude>+03428</Longitude>
+		<Name>Asia/Gaza</Name>
+		<RawData>PS	+3130+03428	Asia/Gaza</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PT</Country>
+		<Latitude>+3843</Latitude>
+		<Longitude>-00908</Longitude>
+		<Name>Europe/Lisbon</Name>
+		<Comments>mainland</Comments>
+		<RawData>PT	+3843-00908	Europe/Lisbon	mainland</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PT</Country>
+		<Latitude>+3238</Latitude>
+		<Longitude>-01654</Longitude>
+		<Name>Atlantic/Madeira</Name>
+		<Comments>Madeira Islands</Comments>
+		<RawData>PT	+3238-01654	Atlantic/Madeira	Madeira Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PT</Country>
+		<Latitude>+3744</Latitude>
+		<Longitude>-02540</Longitude>
+		<Name>Atlantic/Azores</Name>
+		<Comments>Azores</Comments>
+		<RawData>PT	+3744-02540	Atlantic/Azores	Azores</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PW</Country>
+		<Latitude>+0720</Latitude>
+		<Longitude>+13429</Longitude>
+		<Name>Pacific/Palau</Name>
+		<RawData>PW	+0720+13429	Pacific/Palau</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>PY</Country>
+		<Latitude>-2516</Latitude>
+		<Longitude>-05740</Longitude>
+		<Name>America/Asuncion</Name>
+		<RawData>PY	-2516-05740	America/Asuncion</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>QA</Country>
+		<Latitude>+2517</Latitude>
+		<Longitude>+05132</Longitude>
+		<Name>Asia/Qatar</Name>
+		<RawData>QA	+2517+05132	Asia/Qatar</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RE</Country>
+		<Latitude>-2052</Latitude>
+		<Longitude>+05528</Longitude>
+		<Name>Indian/Reunion</Name>
+		<RawData>RE	-2052+05528	Indian/Reunion</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RO</Country>
+		<Latitude>+4426</Latitude>
+		<Longitude>+02606</Longitude>
+		<Name>Europe/Bucharest</Name>
+		<RawData>RO	+4426+02606	Europe/Bucharest</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RS</Country>
+		<Latitude>+4450</Latitude>
+		<Longitude>+02030</Longitude>
+		<Name>Europe/Belgrade</Name>
+		<RawData>RS	+4450+02030	Europe/Belgrade</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5443</Latitude>
+		<Longitude>+02030</Longitude>
+		<Name>Europe/Kaliningrad</Name>
+		<Comments>Moscow-01 - Kaliningrad</Comments>
+		<RawData>RU	+5443+02030	Europe/Kaliningrad	Moscow-01 - Kaliningrad</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5545</Latitude>
+		<Longitude>+03735</Longitude>
+		<Name>Europe/Moscow</Name>
+		<Comments>Moscow+00 - west Russia</Comments>
+		<RawData>RU	+5545+03735	Europe/Moscow	Moscow+00 - west Russia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+4844</Latitude>
+		<Longitude>+04425</Longitude>
+		<Name>Europe/Volgograd</Name>
+		<Comments>Moscow+00 - Caspian Sea</Comments>
+		<RawData>RU	+4844+04425	Europe/Volgograd	Moscow+00 - Caspian Sea</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5312</Latitude>
+		<Longitude>+05009</Longitude>
+		<Name>Europe/Samara</Name>
+		<Comments>Moscow+01 - Samara, Udmurtia</Comments>
+		<RawData>RU	+5312+05009	Europe/Samara	Moscow+01 - Samara, Udmurtia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5651</Latitude>
+		<Longitude>+06036</Longitude>
+		<Name>Asia/Yekaterinburg</Name>
+		<Comments>Moscow+02 - Urals</Comments>
+		<RawData>RU	+5651+06036	Asia/Yekaterinburg	Moscow+02 - Urals</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5500</Latitude>
+		<Longitude>+07324</Longitude>
+		<Name>Asia/Omsk</Name>
+		<Comments>Moscow+03 - west Siberia</Comments>
+		<RawData>RU	+5500+07324	Asia/Omsk	Moscow+03 - west Siberia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5502</Latitude>
+		<Longitude>+08255</Longitude>
+		<Name>Asia/Novosibirsk</Name>
+		<Comments>Moscow+03 - Novosibirsk</Comments>
+		<RawData>RU	+5502+08255	Asia/Novosibirsk	Moscow+03 - Novosibirsk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5345</Latitude>
+		<Longitude>+08707</Longitude>
+		<Name>Asia/Novokuznetsk</Name>
+		<Comments>Moscow+03 - Novokuznetsk</Comments>
+		<RawData>RU	+5345+08707	Asia/Novokuznetsk	Moscow+03 - Novokuznetsk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5601</Latitude>
+		<Longitude>+09250</Longitude>
+		<Name>Asia/Krasnoyarsk</Name>
+		<Comments>Moscow+04 - Yenisei River</Comments>
+		<RawData>RU	+5601+09250	Asia/Krasnoyarsk	Moscow+04 - Yenisei River</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5216</Latitude>
+		<Longitude>+10420</Longitude>
+		<Name>Asia/Irkutsk</Name>
+		<Comments>Moscow+05 - Lake Baikal</Comments>
+		<RawData>RU	+5216+10420	Asia/Irkutsk	Moscow+05 - Lake Baikal</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+6200</Latitude>
+		<Longitude>+12940</Longitude>
+		<Name>Asia/Yakutsk</Name>
+		<Comments>Moscow+06 - Lena River</Comments>
+		<RawData>RU	+6200+12940	Asia/Yakutsk	Moscow+06 - Lena River</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+4310</Latitude>
+		<Longitude>+13156</Longitude>
+		<Name>Asia/Vladivostok</Name>
+		<Comments>Moscow+07 - Amur River</Comments>
+		<RawData>RU	+4310+13156	Asia/Vladivostok	Moscow+07 - Amur River</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+4658</Latitude>
+		<Longitude>+14242</Longitude>
+		<Name>Asia/Sakhalin</Name>
+		<Comments>Moscow+07 - Sakhalin Island</Comments>
+		<RawData>RU	+4658+14242	Asia/Sakhalin	Moscow+07 - Sakhalin Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5934</Latitude>
+		<Longitude>+15048</Longitude>
+		<Name>Asia/Magadan</Name>
+		<Comments>Moscow+08 - Magadan</Comments>
+		<RawData>RU	+5934+15048	Asia/Magadan	Moscow+08 - Magadan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+5301</Latitude>
+		<Longitude>+15839</Longitude>
+		<Name>Asia/Kamchatka</Name>
+		<Comments>Moscow+09 - Kamchatka</Comments>
+		<RawData>RU	+5301+15839	Asia/Kamchatka	Moscow+09 - Kamchatka</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RU</Country>
+		<Latitude>+6445</Latitude>
+		<Longitude>+17729</Longitude>
+		<Name>Asia/Anadyr</Name>
+		<Comments>Moscow+10 - Bering Sea</Comments>
+		<RawData>RU	+6445+17729	Asia/Anadyr	Moscow+10 - Bering Sea</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>RW</Country>
+		<Latitude>-0157</Latitude>
+		<Longitude>+03004</Longitude>
+		<Name>Africa/Kigali</Name>
+		<RawData>RW	-0157+03004	Africa/Kigali</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SA</Country>
+		<Latitude>+2438</Latitude>
+		<Longitude>+04643</Longitude>
+		<Name>Asia/Riyadh</Name>
+		<RawData>SA	+2438+04643	Asia/Riyadh</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SB</Country>
+		<Latitude>-0932</Latitude>
+		<Longitude>+16012</Longitude>
+		<Name>Pacific/Guadalcanal</Name>
+		<RawData>SB	-0932+16012	Pacific/Guadalcanal</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SC</Country>
+		<Latitude>-0440</Latitude>
+		<Longitude>+05528</Longitude>
+		<Name>Indian/Mahe</Name>
+		<RawData>SC	-0440+05528	Indian/Mahe</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SD</Country>
+		<Latitude>+1536</Latitude>
+		<Longitude>+03232</Longitude>
+		<Name>Africa/Khartoum</Name>
+		<RawData>SD	+1536+03232	Africa/Khartoum</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SE</Country>
+		<Latitude>+5920</Latitude>
+		<Longitude>+01803</Longitude>
+		<Name>Europe/Stockholm</Name>
+		<RawData>SE	+5920+01803	Europe/Stockholm</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SG</Country>
+		<Latitude>+0117</Latitude>
+		<Longitude>+10351</Longitude>
+		<Name>Asia/Singapore</Name>
+		<RawData>SG	+0117+10351	Asia/Singapore</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SH</Country>
+		<Latitude>-1555</Latitude>
+		<Longitude>-00542</Longitude>
+		<Name>Atlantic/St_Helena</Name>
+		<RawData>SH	-1555-00542	Atlantic/St_Helena</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SI</Country>
+		<Latitude>+4603</Latitude>
+		<Longitude>+01431</Longitude>
+		<Name>Europe/Ljubljana</Name>
+		<RawData>SI	+4603+01431	Europe/Ljubljana</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SJ</Country>
+		<Latitude>+7800</Latitude>
+		<Longitude>+01600</Longitude>
+		<Name>Arctic/Longyearbyen</Name>
+		<RawData>SJ	+7800+01600	Arctic/Longyearbyen</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SK</Country>
+		<Latitude>+4809</Latitude>
+		<Longitude>+01707</Longitude>
+		<Name>Europe/Bratislava</Name>
+		<RawData>SK	+4809+01707	Europe/Bratislava</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SL</Country>
+		<Latitude>+0830</Latitude>
+		<Longitude>-01315</Longitude>
+		<Name>Africa/Freetown</Name>
+		<RawData>SL	+0830-01315	Africa/Freetown</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SM</Country>
+		<Latitude>+4355</Latitude>
+		<Longitude>+01228</Longitude>
+		<Name>Europe/San_Marino</Name>
+		<RawData>SM	+4355+01228	Europe/San_Marino</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SN</Country>
+		<Latitude>+1440</Latitude>
+		<Longitude>-01726</Longitude>
+		<Name>Africa/Dakar</Name>
+		<RawData>SN	+1440-01726	Africa/Dakar</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SO</Country>
+		<Latitude>+0204</Latitude>
+		<Longitude>+04522</Longitude>
+		<Name>Africa/Mogadishu</Name>
+		<RawData>SO	+0204+04522	Africa/Mogadishu</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SR</Country>
+		<Latitude>+0550</Latitude>
+		<Longitude>-05510</Longitude>
+		<Name>America/Paramaribo</Name>
+		<RawData>SR	+0550-05510	America/Paramaribo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ST</Country>
+		<Latitude>+0020</Latitude>
+		<Longitude>+00644</Longitude>
+		<Name>Africa/Sao_Tome</Name>
+		<RawData>ST	+0020+00644	Africa/Sao_Tome</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SV</Country>
+		<Latitude>+1342</Latitude>
+		<Longitude>-08912</Longitude>
+		<Name>America/El_Salvador</Name>
+		<RawData>SV	+1342-08912	America/El_Salvador</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SY</Country>
+		<Latitude>+3330</Latitude>
+		<Longitude>+03618</Longitude>
+		<Name>Asia/Damascus</Name>
+		<RawData>SY	+3330+03618	Asia/Damascus</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>SZ</Country>
+		<Latitude>-2618</Latitude>
+		<Longitude>+03106</Longitude>
+		<Name>Africa/Mbabane</Name>
+		<RawData>SZ	-2618+03106	Africa/Mbabane</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TC</Country>
+		<Latitude>+2128</Latitude>
+		<Longitude>-07108</Longitude>
+		<Name>America/Grand_Turk</Name>
+		<RawData>TC	+2128-07108	America/Grand_Turk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TD</Country>
+		<Latitude>+1207</Latitude>
+		<Longitude>+01503</Longitude>
+		<Name>Africa/Ndjamena</Name>
+		<RawData>TD	+1207+01503	Africa/Ndjamena</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TF</Country>
+		<Latitude>-492110</Latitude>
+		<Longitude>+0701303</Longitude>
+		<Name>Indian/Kerguelen</Name>
+		<RawData>TF	-492110+0701303	Indian/Kerguelen</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TG</Country>
+		<Latitude>+0608</Latitude>
+		<Longitude>+00113</Longitude>
+		<Name>Africa/Lome</Name>
+		<RawData>TG	+0608+00113	Africa/Lome</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TH</Country>
+		<Latitude>+1345</Latitude>
+		<Longitude>+10031</Longitude>
+		<Name>Asia/Bangkok</Name>
+		<RawData>TH	+1345+10031	Asia/Bangkok</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TJ</Country>
+		<Latitude>+3835</Latitude>
+		<Longitude>+06848</Longitude>
+		<Name>Asia/Dushanbe</Name>
+		<RawData>TJ	+3835+06848	Asia/Dushanbe</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TK</Country>
+		<Latitude>-0922</Latitude>
+		<Longitude>-17114</Longitude>
+		<Name>Pacific/Fakaofo</Name>
+		<RawData>TK	-0922-17114	Pacific/Fakaofo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TL</Country>
+		<Latitude>-0833</Latitude>
+		<Longitude>+12535</Longitude>
+		<Name>Asia/Dili</Name>
+		<RawData>TL	-0833+12535	Asia/Dili</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TM</Country>
+		<Latitude>+3757</Latitude>
+		<Longitude>+05823</Longitude>
+		<Name>Asia/Ashgabat</Name>
+		<RawData>TM	+3757+05823	Asia/Ashgabat</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TN</Country>
+		<Latitude>+3648</Latitude>
+		<Longitude>+01011</Longitude>
+		<Name>Africa/Tunis</Name>
+		<RawData>TN	+3648+01011	Africa/Tunis</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TO</Country>
+		<Latitude>-2110</Latitude>
+		<Longitude>-17510</Longitude>
+		<Name>Pacific/Tongatapu</Name>
+		<RawData>TO	-2110-17510	Pacific/Tongatapu</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TR</Country>
+		<Latitude>+4101</Latitude>
+		<Longitude>+02858</Longitude>
+		<Name>Europe/Istanbul</Name>
+		<RawData>TR	+4101+02858	Europe/Istanbul</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TT</Country>
+		<Latitude>+1039</Latitude>
+		<Longitude>-06131</Longitude>
+		<Name>America/Port_of_Spain</Name>
+		<RawData>TT	+1039-06131	America/Port_of_Spain</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TV</Country>
+		<Latitude>-0831</Latitude>
+		<Longitude>+17913</Longitude>
+		<Name>Pacific/Funafuti</Name>
+		<RawData>TV	-0831+17913	Pacific/Funafuti</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TW</Country>
+		<Latitude>+2503</Latitude>
+		<Longitude>+12130</Longitude>
+		<Name>Asia/Taipei</Name>
+		<RawData>TW	+2503+12130	Asia/Taipei</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>TZ</Country>
+		<Latitude>-0648</Latitude>
+		<Longitude>+03917</Longitude>
+		<Name>Africa/Dar_es_Salaam</Name>
+		<RawData>TZ	-0648+03917	Africa/Dar_es_Salaam</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UA</Country>
+		<Latitude>+5026</Latitude>
+		<Longitude>+03031</Longitude>
+		<Name>Europe/Kiev</Name>
+		<Comments>most locations</Comments>
+		<RawData>UA	+5026+03031	Europe/Kiev	most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UA</Country>
+		<Latitude>+4837</Latitude>
+		<Longitude>+02218</Longitude>
+		<Name>Europe/Uzhgorod</Name>
+		<Comments>Ruthenia</Comments>
+		<RawData>UA	+4837+02218	Europe/Uzhgorod	Ruthenia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UA</Country>
+		<Latitude>+4750</Latitude>
+		<Longitude>+03510</Longitude>
+		<Name>Europe/Zaporozhye</Name>
+		<Comments>Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk</Comments>
+		<RawData>UA	+4750+03510	Europe/Zaporozhye	Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UA</Country>
+		<Latitude>+4457</Latitude>
+		<Longitude>+03406</Longitude>
+		<Name>Europe/Simferopol</Name>
+		<Comments>central Crimea</Comments>
+		<RawData>UA	+4457+03406	Europe/Simferopol	central Crimea</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UG</Country>
+		<Latitude>+0019</Latitude>
+		<Longitude>+03225</Longitude>
+		<Name>Africa/Kampala</Name>
+		<RawData>UG	+0019+03225	Africa/Kampala</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UM</Country>
+		<Latitude>+1645</Latitude>
+		<Longitude>-16931</Longitude>
+		<Name>Pacific/Johnston</Name>
+		<Comments>Johnston Atoll</Comments>
+		<RawData>UM	+1645-16931	Pacific/Johnston	Johnston Atoll</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UM</Country>
+		<Latitude>+2813</Latitude>
+		<Longitude>-17722</Longitude>
+		<Name>Pacific/Midway</Name>
+		<Comments>Midway Islands</Comments>
+		<RawData>UM	+2813-17722	Pacific/Midway	Midway Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UM</Country>
+		<Latitude>+1917</Latitude>
+		<Longitude>+16637</Longitude>
+		<Name>Pacific/Wake</Name>
+		<Comments>Wake Island</Comments>
+		<RawData>UM	+1917+16637	Pacific/Wake	Wake Island</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+404251</Latitude>
+		<Longitude>-0740023</Longitude>
+		<Name>America/New_York</Name>
+		<Comments>Eastern Time</Comments>
+		<RawData>US	+404251-0740023	America/New_York	Eastern Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+421953</Latitude>
+		<Longitude>-0830245</Longitude>
+		<Name>America/Detroit</Name>
+		<Comments>Eastern Time - Michigan - most locations</Comments>
+		<RawData>US	+421953-0830245	America/Detroit	Eastern Time - Michigan - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+381515</Latitude>
+		<Longitude>-0854534</Longitude>
+		<Name>America/Kentucky/Louisville</Name>
+		<Comments>Eastern Time - Kentucky - Louisville area</Comments>
+		<RawData>US	+381515-0854534	America/Kentucky/Louisville	Eastern Time - Kentucky - Louisville area</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+364947</Latitude>
+		<Longitude>-0845057</Longitude>
+		<Name>America/Kentucky/Monticello</Name>
+		<Comments>Eastern Time - Kentucky - Wayne County</Comments>
+		<RawData>US	+364947-0845057	America/Kentucky/Monticello	Eastern Time - Kentucky - Wayne County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+394606</Latitude>
+		<Longitude>-0860929</Longitude>
+		<Name>America/Indiana/Indianapolis</Name>
+		<Comments>Eastern Time - Indiana - most locations</Comments>
+		<RawData>US	+394606-0860929	America/Indiana/Indianapolis	Eastern Time - Indiana - most locations</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+384038</Latitude>
+		<Longitude>-0873143</Longitude>
+		<Name>America/Indiana/Vincennes</Name>
+		<Comments>Eastern Time - Indiana - Daviess, Dubois, Knox &amp; Martin Counties</Comments>
+		<RawData>US	+384038-0873143	America/Indiana/Vincennes	Eastern Time - Indiana - Daviess, Dubois, Knox &amp; Martin Counties</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+410305</Latitude>
+		<Longitude>-0863611</Longitude>
+		<Name>America/Indiana/Winamac</Name>
+		<Comments>Eastern Time - Indiana - Pulaski County</Comments>
+		<RawData>US	+410305-0863611	America/Indiana/Winamac	Eastern Time - Indiana - Pulaski County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+382232</Latitude>
+		<Longitude>-0862041</Longitude>
+		<Name>America/Indiana/Marengo</Name>
+		<Comments>Eastern Time - Indiana - Crawford County</Comments>
+		<RawData>US	+382232-0862041	America/Indiana/Marengo	Eastern Time - Indiana - Crawford County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+382931</Latitude>
+		<Longitude>-0871643</Longitude>
+		<Name>America/Indiana/Petersburg</Name>
+		<Comments>Eastern Time - Indiana - Pike County</Comments>
+		<RawData>US	+382931-0871643	America/Indiana/Petersburg	Eastern Time - Indiana - Pike County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+384452</Latitude>
+		<Longitude>-0850402</Longitude>
+		<Name>America/Indiana/Vevay</Name>
+		<Comments>Eastern Time - Indiana - Switzerland County</Comments>
+		<RawData>US	+384452-0850402	America/Indiana/Vevay	Eastern Time - Indiana - Switzerland County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+415100</Latitude>
+		<Longitude>-0873900</Longitude>
+		<Name>America/Chicago</Name>
+		<Comments>Central Time</Comments>
+		<RawData>US	+415100-0873900	America/Chicago	Central Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+375711</Latitude>
+		<Longitude>-0864541</Longitude>
+		<Name>America/Indiana/Tell_City</Name>
+		<Comments>Central Time - Indiana - Perry County</Comments>
+		<RawData>US	+375711-0864541	America/Indiana/Tell_City	Central Time - Indiana - Perry County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+411745</Latitude>
+		<Longitude>-0863730</Longitude>
+		<Name>America/Indiana/Knox</Name>
+		<Comments>Central Time - Indiana - Starke County</Comments>
+		<RawData>US	+411745-0863730	America/Indiana/Knox	Central Time - Indiana - Starke County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+450628</Latitude>
+		<Longitude>-0873651</Longitude>
+		<Name>America/Menominee</Name>
+		<Comments>Central Time - Michigan - Dickinson, Gogebic, Iron &amp; Menominee Counties</Comments>
+		<RawData>US	+450628-0873651	America/Menominee	Central Time - Michigan - Dickinson, Gogebic, Iron &amp; Menominee Counties</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+470659</Latitude>
+		<Longitude>-1011757</Longitude>
+		<Name>America/North_Dakota/Center</Name>
+		<Comments>Central Time - North Dakota - Oliver County</Comments>
+		<RawData>US	+470659-1011757	America/North_Dakota/Center	Central Time - North Dakota - Oliver County</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+465042</Latitude>
+		<Longitude>-1012439</Longitude>
+		<Name>America/North_Dakota/New_Salem</Name>
+		<Comments>Central Time - North Dakota - Morton County (except Mandan area)</Comments>
+		<RawData>US	+465042-1012439	America/North_Dakota/New_Salem	Central Time - North Dakota - Morton County (except Mandan area)</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+394421</Latitude>
+		<Longitude>-1045903</Longitude>
+		<Name>America/Denver</Name>
+		<Comments>Mountain Time</Comments>
+		<RawData>US	+394421-1045903	America/Denver	Mountain Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+433649</Latitude>
+		<Longitude>-1161209</Longitude>
+		<Name>America/Boise</Name>
+		<Comments>Mountain Time - south Idaho &amp; east Oregon</Comments>
+		<RawData>US	+433649-1161209	America/Boise	Mountain Time - south Idaho &amp; east Oregon</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+364708</Latitude>
+		<Longitude>-1084111</Longitude>
+		<Name>America/Shiprock</Name>
+		<Comments>Mountain Time - Navajo</Comments>
+		<RawData>US	+364708-1084111	America/Shiprock	Mountain Time - Navajo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+332654</Latitude>
+		<Longitude>-1120424</Longitude>
+		<Name>America/Phoenix</Name>
+		<Comments>Mountain Standard Time - Arizona</Comments>
+		<RawData>US	+332654-1120424	America/Phoenix	Mountain Standard Time - Arizona</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+340308</Latitude>
+		<Longitude>-1181434</Longitude>
+		<Name>America/Los_Angeles</Name>
+		<Comments>Pacific Time</Comments>
+		<RawData>US	+340308-1181434	America/Los_Angeles	Pacific Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+611305</Latitude>
+		<Longitude>-1495401</Longitude>
+		<Name>America/Anchorage</Name>
+		<Comments>Alaska Time</Comments>
+		<RawData>US	+611305-1495401	America/Anchorage	Alaska Time</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+581807</Latitude>
+		<Longitude>-1342511</Longitude>
+		<Name>America/Juneau</Name>
+		<Comments>Alaska Time - Alaska panhandle</Comments>
+		<RawData>US	+581807-1342511	America/Juneau	Alaska Time - Alaska panhandle</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+593249</Latitude>
+		<Longitude>-1394338</Longitude>
+		<Name>America/Yakutat</Name>
+		<Comments>Alaska Time - Alaska panhandle neck</Comments>
+		<RawData>US	+593249-1394338	America/Yakutat	Alaska Time - Alaska panhandle neck</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+643004</Latitude>
+		<Longitude>-1652423</Longitude>
+		<Name>America/Nome</Name>
+		<Comments>Alaska Time - west Alaska</Comments>
+		<RawData>US	+643004-1652423	America/Nome	Alaska Time - west Alaska</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+515248</Latitude>
+		<Longitude>-1763929</Longitude>
+		<Name>America/Adak</Name>
+		<Comments>Aleutian Islands</Comments>
+		<RawData>US	+515248-1763929	America/Adak	Aleutian Islands</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>US</Country>
+		<Latitude>+211825</Latitude>
+		<Longitude>-1575130</Longitude>
+		<Name>Pacific/Honolulu</Name>
+		<Comments>Hawaii</Comments>
+		<RawData>US	+211825-1575130	Pacific/Honolulu	Hawaii</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UY</Country>
+		<Latitude>-3453</Latitude>
+		<Longitude>-05611</Longitude>
+		<Name>America/Montevideo</Name>
+		<RawData>UY	-3453-05611	America/Montevideo</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UZ</Country>
+		<Latitude>+3940</Latitude>
+		<Longitude>+06648</Longitude>
+		<Name>Asia/Samarkand</Name>
+		<Comments>west Uzbekistan</Comments>
+		<RawData>UZ	+3940+06648	Asia/Samarkand	west Uzbekistan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>UZ</Country>
+		<Latitude>+4120</Latitude>
+		<Longitude>+06918</Longitude>
+		<Name>Asia/Tashkent</Name>
+		<Comments>east Uzbekistan</Comments>
+		<RawData>UZ	+4120+06918	Asia/Tashkent	east Uzbekistan</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VA</Country>
+		<Latitude>+415408</Latitude>
+		<Longitude>+0122711</Longitude>
+		<Name>Europe/Vatican</Name>
+		<RawData>VA	+415408+0122711	Europe/Vatican</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VC</Country>
+		<Latitude>+1309</Latitude>
+		<Longitude>-06114</Longitude>
+		<Name>America/St_Vincent</Name>
+		<RawData>VC	+1309-06114	America/St_Vincent</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VE</Country>
+		<Latitude>+1030</Latitude>
+		<Longitude>-06656</Longitude>
+		<Name>America/Caracas</Name>
+		<RawData>VE	+1030-06656	America/Caracas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VG</Country>
+		<Latitude>+1827</Latitude>
+		<Longitude>-06437</Longitude>
+		<Name>America/Tortola</Name>
+		<RawData>VG	+1827-06437	America/Tortola</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VI</Country>
+		<Latitude>+1821</Latitude>
+		<Longitude>-06456</Longitude>
+		<Name>America/St_Thomas</Name>
+		<RawData>VI	+1821-06456	America/St_Thomas</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VN</Country>
+		<Latitude>+1045</Latitude>
+		<Longitude>+10640</Longitude>
+		<Name>Asia/Ho_Chi_Minh</Name>
+		<RawData>VN	+1045+10640	Asia/Ho_Chi_Minh</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>VU</Country>
+		<Latitude>-1740</Latitude>
+		<Longitude>+16825</Longitude>
+		<Name>Pacific/Efate</Name>
+		<RawData>VU	-1740+16825	Pacific/Efate</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>WF</Country>
+		<Latitude>-1318</Latitude>
+		<Longitude>-17610</Longitude>
+		<Name>Pacific/Wallis</Name>
+		<RawData>WF	-1318-17610	Pacific/Wallis</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>WS</Country>
+		<Latitude>-1350</Latitude>
+		<Longitude>-17144</Longitude>
+		<Name>Pacific/Apia</Name>
+		<RawData>WS	-1350-17144	Pacific/Apia</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>YE</Country>
+		<Latitude>+1245</Latitude>
+		<Longitude>+04512</Longitude>
+		<Name>Asia/Aden</Name>
+		<RawData>YE	+1245+04512	Asia/Aden</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>YT</Country>
+		<Latitude>-1247</Latitude>
+		<Longitude>+04514</Longitude>
+		<Name>Indian/Mayotte</Name>
+		<RawData>YT	-1247+04514	Indian/Mayotte</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ZA</Country>
+		<Latitude>-2615</Latitude>
+		<Longitude>+02800</Longitude>
+		<Name>Africa/Johannesburg</Name>
+		<RawData>ZA	-2615+02800	Africa/Johannesburg</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ZM</Country>
+		<Latitude>-1525</Latitude>
+		<Longitude>+02817</Longitude>
+		<Name>Africa/Lusaka</Name>
+		<RawData>ZM	-1525+02817	Africa/Lusaka</RawData>
+	</TimeZone>
+	<TimeZone>
+		<Country>ZW</Country>
+		<Latitude>-1750</Latitude>
+		<Longitude>+03103</Longitude>
+		<Name>Africa/Harare</Name>
+		<RawData>ZW	-1750+03103	Africa/Harare</RawData>
+	</TimeZone>
+</TimeZones>

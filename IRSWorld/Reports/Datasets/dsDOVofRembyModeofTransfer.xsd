@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDOVofRembyModeofTransfer" targetNamespace="http://tempuri.org/dsDOVofRembyModeofTransfer.xsd" xmlns:mstns="http://tempuri.org/dsDOVofRembyModeofTransfer.xsd" xmlns="http://tempuri.org/dsDOVofRembyModeofTransfer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IRSWorldConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="IRSWorldConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IRSWorld.Properties.Settings.GlobalReference.Default.IRSWorldConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDOVofRembyModeofTransfer" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDOVofRembyModeofTransfer" msprop:Generator_DataSetName="dsDOVofRembyModeofTransfer">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsDOVofRemitTransfer" msprop:Generator_UserTableName="dsDOVofRemitTransfer" msprop:Generator_RowDeletedName="dsDOVofRemitTransferRowDeleted" msprop:Generator_TableClassName="dsDOVofRemitTransferDataTable" msprop:Generator_RowChangedName="dsDOVofRemitTransferRowChanged" msprop:Generator_RowClassName="dsDOVofRemitTransferRow" msprop:Generator_RowChangingName="dsDOVofRemitTransferRowChanging" msprop:Generator_RowEvArgName="dsDOVofRemitTransferRowChangeEvent" msprop:Generator_RowEvHandlerName="dsDOVofRemitTransferRowChangeEventHandler" msprop:Generator_TablePropName="dsDOVofRemitTransfer" msprop:Generator_TableVarName="tabledsDOVofRemitTransfer" msprop:Generator_RowDeletingName="dsDOVofRemitTransferRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Branch" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Online" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Online" msprop:Generator_ColumnPropNameInRow="Online" msprop:Generator_ColumnVarNameInTable="columnOnline" msprop:Generator_ColumnPropNameInTable="OnlineColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0033_D" msdata:ReadOnly="true" msprop:Generator_UserColumnName="3D" msprop:Generator_ColumnPropNameInRow="_3D" msprop:Generator_ColumnVarNameInTable="column3D" msprop:Generator_ColumnPropNameInTable="_3DColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BPO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="BPO" msprop:Generator_ColumnPropNameInRow="BPO" msprop:Generator_ColumnVarNameInTable="columnBPO" msprop:Generator_ColumnPropNameInTable="BPOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

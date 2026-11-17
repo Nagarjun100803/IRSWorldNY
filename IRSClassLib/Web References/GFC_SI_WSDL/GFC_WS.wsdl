@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://GFC_WS/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://GFC_WS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://GFC_WS/">
+      <s:element name="PurchaseGFC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Birthday" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDPres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromSourceOfFundCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RMNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IRSRemID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhilSysID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PurchaseGFCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PurchaseGFCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAggregate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GFCNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactingBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAggregateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAggregateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GFCNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrollmentGFC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Approver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrollmentGFCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollmentGFCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PingDBConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingDBConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingDBConnectionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKBIEquivalent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKBIEquivalentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKBIEquivalentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountBalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCashCardLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactingBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionAmount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCashCardLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCashCardLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExceedLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionRefNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactingBranch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExceedLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckExceedLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PurchaseGFCSoapIn">
+    <wsdl:part name="parameters" element="tns:PurchaseGFC" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseGFCSoapOut">
+    <wsdl:part name="parameters" element="tns:PurchaseGFCResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAggregate" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAggregateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCSoapIn">
+    <wsdl:part name="parameters" element="tns:EnrollmentGFC" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCSoapOut">
+    <wsdl:part name="parameters" element="tns:EnrollmentGFCResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingDBConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:PingDBConnection" />
+  </wsdl:message>
+  <wsdl:message name="PingDBConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:PingDBConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKBIEquivalent" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKBIEquivalentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCashCardLimit" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCashCardLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckExceedLimit" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckExceedLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseGFCHttpGetIn">
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="SubBranch" type="s:string" />
+    <wsdl:part name="Lname" type="s:string" />
+    <wsdl:part name="Fname" type="s:string" />
+    <wsdl:part name="Mname" type="s:string" />
+    <wsdl:part name="Birthday" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="Nationality" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="Address3" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="Province" type="s:string" />
+    <wsdl:part name="Region" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="TelNo" type="s:string" />
+    <wsdl:part name="MobileCountry" type="s:string" />
+    <wsdl:part name="MobileNo" type="s:string" />
+    <wsdl:part name="EMail" type="s:string" />
+    <wsdl:part name="CurrCode" type="s:string" />
+    <wsdl:part name="CardNo" type="s:string" />
+    <wsdl:part name="IDPres" type="s:string" />
+    <wsdl:part name="IDType" type="s:string" />
+    <wsdl:part name="EmployerName" type="s:string" />
+    <wsdl:part name="Occupation" type="s:string" />
+    <wsdl:part name="FromSourceOfFundCountry" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="RMNumber" type="s:string" />
+    <wsdl:part name="IRSRemID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="PhilSysID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseGFCHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateHttpGetIn">
+    <wsdl:part name="GFCNumber" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="TransactingBranch" type="s:string" />
+    <wsdl:part name="TransactionAmount" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsHttpGetIn">
+    <wsdl:part name="GFCNumber" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCHttpGetIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="CardNo" type="s:string" />
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="Approver" type="s:string" />
+    <wsdl:part name="BCode" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="TransType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingDBConnectionHttpGetIn" />
+  <wsdl:message name="PingDBConnectionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentHttpGetIn">
+    <wsdl:part name="AccountID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="transactingBranch" type="s:string" />
+    <wsdl:part name="transactionAmount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitHttpGetIn">
+    <wsdl:part name="TransactionRefNo" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="TransactionAmount" type="s:string" />
+    <wsdl:part name="TransactingBranch" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseGFCHttpPostIn">
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="SubBranch" type="s:string" />
+    <wsdl:part name="Lname" type="s:string" />
+    <wsdl:part name="Fname" type="s:string" />
+    <wsdl:part name="Mname" type="s:string" />
+    <wsdl:part name="Birthday" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="Nationality" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="Address3" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="Province" type="s:string" />
+    <wsdl:part name="Region" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="TelNo" type="s:string" />
+    <wsdl:part name="MobileCountry" type="s:string" />
+    <wsdl:part name="MobileNo" type="s:string" />
+    <wsdl:part name="EMail" type="s:string" />
+    <wsdl:part name="CurrCode" type="s:string" />
+    <wsdl:part name="CardNo" type="s:string" />
+    <wsdl:part name="IDPres" type="s:string" />
+    <wsdl:part name="IDType" type="s:string" />
+    <wsdl:part name="EmployerName" type="s:string" />
+    <wsdl:part name="Occupation" type="s:string" />
+    <wsdl:part name="FromSourceOfFundCountry" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="RMNumber" type="s:string" />
+    <wsdl:part name="IRSRemID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="PhilSysID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseGFCHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateHttpPostIn">
+    <wsdl:part name="GFCNumber" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="TransactingBranch" type="s:string" />
+    <wsdl:part name="TransactionAmount" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAggregateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsHttpPostIn">
+    <wsdl:part name="GFCNumber" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCHttpPostIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="CardNo" type="s:string" />
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="Approver" type="s:string" />
+    <wsdl:part name="BCode" type="s:string" />
+    <wsdl:part name="SystemSource" type="s:string" />
+    <wsdl:part name="TransType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollmentGFCHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingDBConnectionHttpPostIn" />
+  <wsdl:message name="PingDBConnectionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentHttpPostIn">
+    <wsdl:part name="AccountID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKBIEquivalentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="transactingBranch" type="s:string" />
+    <wsdl:part name="transactionAmount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCashCardLimitHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitHttpPostIn">
+    <wsdl:part name="TransactionRefNo" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="TransactionAmount" type="s:string" />
+    <wsdl:part name="TransactingBranch" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckExceedLimitHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="GFC_WebServiceSoap">
+    <wsdl:operation name="PurchaseGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service to get account and enroll customer to GFC and RM.&lt;BR&gt;Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;SystemSource* = Source system&lt;br&gt;BranchCode* = Issuing branch (5760 / S000)&lt;br&gt;SubBranch = Issuing sub branch&lt;br&gt;Lname* = Last name&lt;br&gt;Fname* = First Name&lt;br&gt;Mname = Middle Name &lt;br&gt;Birthday* = Date of birth (1995-01-01)&lt;br&gt;Country* = Issuing Country (JAPAN)&lt;br&gt;Nationality = Country nationality (PHILIPPINES)&lt;br&gt;Address1* = Address 1 &lt;br&gt;Address2 = Address 2&lt;br&gt;Address3 = Address 3&lt;br&gt;City* = City &lt;br&gt;Province* = Province &lt;br&gt;Region* = Region &lt;br&gt;ZipCode* = Numeric zip code &lt;br&gt;TelNo* = Telephone number &lt;br&gt;MobileCountry* = Mobile Country &lt;br&gt;MobileNo* = CP number &lt;br&gt;EMail* = eMail Address &lt;br&gt;CurrCode* = GFC currency code (PHP/USD)&lt;br&gt;CardNo* = GFC card number (5921080412345678)&lt;br&gt;IDPres* = ID number (12345679)&lt;br&gt;IDType* = Require ID type&lt;br&gt;EmployerName = Employer name&lt;br&gt;Occupation = Occupation&lt;br&gt;FromSourceOfFundCountry* = Country where remittance will originate (JAPAN)&lt;br&gt;Group = GFC Group (PDOS)&lt;br&gt;RMNumber = RM Number of customer (if available)&lt;br&gt;IRSRemID = IRSW / ARS remitter I.D.&lt;br&gt;UserID = For IRSW, send IRS only.  For ARS, send user I.D.&lt;br&gt;PhilSysID = PhilSys ID</wsdl:documentation>
+      <wsdl:input message="tns:PurchaseGFCSoapIn" />
+      <wsdl:output message="tns:PurchaseGFCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RemainingLimitBeforeTxn|GFC Aggregation Limit|TransactionAmountPHP|BaseTraceNo|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.  Required if account number is not available&lt;br&gt;AccountNum* = Account Number.  Required if GFC number is not available&lt;br&gt;TransactingBranch* = Transacting branch&lt;br&gt;TransactionAmount = Transaction Amount&lt;br&gt;SystemSource = System source&lt;br&gt;string UserID = User ID</wsdl:documentation>
+      <wsdl:input message="tns:CheckAggregateSoapIn" />
+      <wsdl:output message="tns:CheckAggregateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetCardDetailsSoapIn" />
+      <wsdl:output message="tns:GetCardDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;AccountNumber* = Account Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountDetailsSoapIn" />
+      <wsdl:output message="tns:GetAccountDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;CustomerID* = Customer ID&lt;br&gt;CardNo* = Card No&lt;br&gt;AccountNo* = Account No&lt;br&gt;Approver* = Approver&lt;br&gt;BCode* = Branch CodeSystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:EnrollmentGFCSoapIn" />
+      <wsdl:output message="tns:EnrollmentGFCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <wsdl:input message="tns:PingDBConnectionSoapIn" />
+      <wsdl:output message="tns:PingDBConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <wsdl:input message="tns:GetKBIEquivalentSoapIn" />
+      <wsdl:output message="tns:GetKBIEquivalentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input message="tns:GetAccountBalanceSoapIn" />
+      <wsdl:output message="tns:GetAccountBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <wsdl:input message="tns:GetCashCardLimitSoapIn" />
+      <wsdl:output message="tns:GetCashCardLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <wsdl:input message="tns:CheckExceedLimitSoapIn" />
+      <wsdl:output message="tns:CheckExceedLimitSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GFC_WebServiceHttpGet">
+    <wsdl:operation name="PurchaseGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service to get account and enroll customer to GFC and RM.&lt;BR&gt;Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;SystemSource* = Source system&lt;br&gt;BranchCode* = Issuing branch (5760 / S000)&lt;br&gt;SubBranch = Issuing sub branch&lt;br&gt;Lname* = Last name&lt;br&gt;Fname* = First Name&lt;br&gt;Mname = Middle Name &lt;br&gt;Birthday* = Date of birth (1995-01-01)&lt;br&gt;Country* = Issuing Country (JAPAN)&lt;br&gt;Nationality = Country nationality (PHILIPPINES)&lt;br&gt;Address1* = Address 1 &lt;br&gt;Address2 = Address 2&lt;br&gt;Address3 = Address 3&lt;br&gt;City* = City &lt;br&gt;Province* = Province &lt;br&gt;Region* = Region &lt;br&gt;ZipCode* = Numeric zip code &lt;br&gt;TelNo* = Telephone number &lt;br&gt;MobileCountry* = Mobile Country &lt;br&gt;MobileNo* = CP number &lt;br&gt;EMail* = eMail Address &lt;br&gt;CurrCode* = GFC currency code (PHP/USD)&lt;br&gt;CardNo* = GFC card number (5921080412345678)&lt;br&gt;IDPres* = ID number (12345679)&lt;br&gt;IDType* = Require ID type&lt;br&gt;EmployerName = Employer name&lt;br&gt;Occupation = Occupation&lt;br&gt;FromSourceOfFundCountry* = Country where remittance will originate (JAPAN)&lt;br&gt;Group = GFC Group (PDOS)&lt;br&gt;RMNumber = RM Number of customer (if available)&lt;br&gt;IRSRemID = IRSW / ARS remitter I.D.&lt;br&gt;UserID = For IRSW, send IRS only.  For ARS, send user I.D.&lt;br&gt;PhilSysID = PhilSys ID</wsdl:documentation>
+      <wsdl:input message="tns:PurchaseGFCHttpGetIn" />
+      <wsdl:output message="tns:PurchaseGFCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RemainingLimitBeforeTxn|GFC Aggregation Limit|TransactionAmountPHP|BaseTraceNo|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.  Required if account number is not available&lt;br&gt;AccountNum* = Account Number.  Required if GFC number is not available&lt;br&gt;TransactingBranch* = Transacting branch&lt;br&gt;TransactionAmount = Transaction Amount&lt;br&gt;SystemSource = System source&lt;br&gt;string UserID = User ID</wsdl:documentation>
+      <wsdl:input message="tns:CheckAggregateHttpGetIn" />
+      <wsdl:output message="tns:CheckAggregateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetCardDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetCardDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;AccountNumber* = Account Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetAccountDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;CustomerID* = Customer ID&lt;br&gt;CardNo* = Card No&lt;br&gt;AccountNo* = Account No&lt;br&gt;Approver* = Approver&lt;br&gt;BCode* = Branch CodeSystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:EnrollmentGFCHttpGetIn" />
+      <wsdl:output message="tns:EnrollmentGFCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <wsdl:input message="tns:PingDBConnectionHttpGetIn" />
+      <wsdl:output message="tns:PingDBConnectionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <wsdl:input message="tns:GetKBIEquivalentHttpGetIn" />
+      <wsdl:output message="tns:GetKBIEquivalentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input message="tns:GetAccountBalanceHttpGetIn" />
+      <wsdl:output message="tns:GetAccountBalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <wsdl:input message="tns:GetCashCardLimitHttpGetIn" />
+      <wsdl:output message="tns:GetCashCardLimitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <wsdl:input message="tns:CheckExceedLimitHttpGetIn" />
+      <wsdl:output message="tns:CheckExceedLimitHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GFC_WebServiceHttpPost">
+    <wsdl:operation name="PurchaseGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service to get account and enroll customer to GFC and RM.&lt;BR&gt;Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;SystemSource* = Source system&lt;br&gt;BranchCode* = Issuing branch (5760 / S000)&lt;br&gt;SubBranch = Issuing sub branch&lt;br&gt;Lname* = Last name&lt;br&gt;Fname* = First Name&lt;br&gt;Mname = Middle Name &lt;br&gt;Birthday* = Date of birth (1995-01-01)&lt;br&gt;Country* = Issuing Country (JAPAN)&lt;br&gt;Nationality = Country nationality (PHILIPPINES)&lt;br&gt;Address1* = Address 1 &lt;br&gt;Address2 = Address 2&lt;br&gt;Address3 = Address 3&lt;br&gt;City* = City &lt;br&gt;Province* = Province &lt;br&gt;Region* = Region &lt;br&gt;ZipCode* = Numeric zip code &lt;br&gt;TelNo* = Telephone number &lt;br&gt;MobileCountry* = Mobile Country &lt;br&gt;MobileNo* = CP number &lt;br&gt;EMail* = eMail Address &lt;br&gt;CurrCode* = GFC currency code (PHP/USD)&lt;br&gt;CardNo* = GFC card number (5921080412345678)&lt;br&gt;IDPres* = ID number (12345679)&lt;br&gt;IDType* = Require ID type&lt;br&gt;EmployerName = Employer name&lt;br&gt;Occupation = Occupation&lt;br&gt;FromSourceOfFundCountry* = Country where remittance will originate (JAPAN)&lt;br&gt;Group = GFC Group (PDOS)&lt;br&gt;RMNumber = RM Number of customer (if available)&lt;br&gt;IRSRemID = IRSW / ARS remitter I.D.&lt;br&gt;UserID = For IRSW, send IRS only.  For ARS, send user I.D.&lt;br&gt;PhilSysID = PhilSys ID</wsdl:documentation>
+      <wsdl:input message="tns:PurchaseGFCHttpPostIn" />
+      <wsdl:output message="tns:PurchaseGFCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RemainingLimitBeforeTxn|GFC Aggregation Limit|TransactionAmountPHP|BaseTraceNo|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.  Required if account number is not available&lt;br&gt;AccountNum* = Account Number.  Required if GFC number is not available&lt;br&gt;TransactingBranch* = Transacting branch&lt;br&gt;TransactionAmount = Transaction Amount&lt;br&gt;SystemSource = System source&lt;br&gt;string UserID = User ID</wsdl:documentation>
+      <wsdl:input message="tns:CheckAggregateHttpPostIn" />
+      <wsdl:output message="tns:CheckAggregateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;GFCNumber* = GFC Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetCardDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetCardDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = StatusCode|Lastname|Firstname|Middlename|BirthDay|CardNumber|RMNumber|CardStatus|Remarks/Error&lt;br&gt;AccountNumber* = Account Number.&lt;br&gt;SystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetAccountDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Return = Status Code|RMNumber|Account Number|Card Number|BaseTraceNo|Remarks/Error&lt;br&gt;CustomerID* = Customer ID&lt;br&gt;CardNo* = Card No&lt;br&gt;AccountNo* = Account No&lt;br&gt;Approver* = Approver&lt;br&gt;BCode* = Branch CodeSystemSource = System source</wsdl:documentation>
+      <wsdl:input message="tns:EnrollmentGFCHttpPostIn" />
+      <wsdl:output message="tns:EnrollmentGFCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <wsdl:input message="tns:PingDBConnectionHttpPostIn" />
+      <wsdl:output message="tns:PingDBConnectionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <wsdl:input message="tns:GetKBIEquivalentHttpPostIn" />
+      <wsdl:output message="tns:GetKBIEquivalentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input message="tns:GetAccountBalanceHttpPostIn" />
+      <wsdl:output message="tns:GetAccountBalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <wsdl:input message="tns:GetCashCardLimitHttpPostIn" />
+      <wsdl:output message="tns:GetCashCardLimitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <wsdl:input message="tns:CheckExceedLimitHttpPostIn" />
+      <wsdl:output message="tns:CheckExceedLimitHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GFC_WebServiceSoap" type="tns:GFC_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PurchaseGFC">
+      <soap:operation soapAction="http://GFC_WS/PurchaseGFC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <soap:operation soapAction="http://GFC_WS/CheckAggregate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <soap:operation soapAction="http://GFC_WS/GetCardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <soap:operation soapAction="http://GFC_WS/GetAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <soap:operation soapAction="http://GFC_WS/EnrollmentGFC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <soap:operation soapAction="http://GFC_WS/PingDBConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <soap:operation soapAction="http://GFC_WS/GetKBIEquivalent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://GFC_WS/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <soap:operation soapAction="http://GFC_WS/GetAccountBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <soap:operation soapAction="http://GFC_WS/GetCashCardLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <soap:operation soapAction="http://GFC_WS/CheckExceedLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GFC_WebServiceSoap12" type="tns:GFC_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PurchaseGFC">
+      <soap12:operation soapAction="http://GFC_WS/PurchaseGFC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <soap12:operation soapAction="http://GFC_WS/CheckAggregate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <soap12:operation soapAction="http://GFC_WS/GetCardDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <soap12:operation soapAction="http://GFC_WS/GetAccountDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <soap12:operation soapAction="http://GFC_WS/EnrollmentGFC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <soap12:operation soapAction="http://GFC_WS/PingDBConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <soap12:operation soapAction="http://GFC_WS/GetKBIEquivalent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://GFC_WS/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <soap12:operation soapAction="http://GFC_WS/GetAccountBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <soap12:operation soapAction="http://GFC_WS/GetCashCardLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <soap12:operation soapAction="http://GFC_WS/CheckExceedLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GFC_WebServiceHttpGet" type="tns:GFC_WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="PurchaseGFC">
+      <http:operation location="/PurchaseGFC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <http:operation location="/CheckAggregate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <http:operation location="/GetCardDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <http:operation location="/GetAccountDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <http:operation location="/EnrollmentGFC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <http:operation location="/PingDBConnection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <http:operation location="/GetKBIEquivalent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <http:operation location="/GetAccountBalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <http:operation location="/GetCashCardLimit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <http:operation location="/CheckExceedLimit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GFC_WebServiceHttpPost" type="tns:GFC_WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="PurchaseGFC">
+      <http:operation location="/PurchaseGFC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAggregate">
+      <http:operation location="/CheckAggregate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <http:operation location="/GetCardDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <http:operation location="/GetAccountDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentGFC">
+      <http:operation location="/EnrollmentGFC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingDBConnection">
+      <http:operation location="/PingDBConnection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBIEquivalent">
+      <http:operation location="/GetKBIEquivalent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <http:operation location="/GetAccountBalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashCardLimit">
+      <http:operation location="/GetCashCardLimit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExceedLimit">
+      <http:operation location="/CheckExceedLimit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GFC_WebService">
+    <wsdl:port name="GFC_WebServiceSoap" binding="tns:GFC_WebServiceSoap">
+      <soap:address location="https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GFC_WebServiceSoap12" binding="tns:GFC_WebServiceSoap12">
+      <soap12:address location="https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GFC_WebServiceHttpGet" binding="tns:GFC_WebServiceHttpGet">
+      <http:address location="https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GFC_WebServiceHttpPost" binding="tns:GFC_WebServiceHttpPost">
+      <http:address location="https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

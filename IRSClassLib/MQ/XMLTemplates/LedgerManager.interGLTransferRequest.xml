@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input  Service="LedgerManagerService" Operation="interGLTransfer( SessionContext, String, String, double, String, String, float, String, int)" targetNamespace="http://ledger.app.fcr.iflex.com">
+	<SessionContext ExternalBatchNumber="" ServiceCode="1006" BankCode="8" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""></SupervisorContext>
+	</SessionContext>
+	<FromGLCode/>
+	<Narrative/>
+	<TransactionAmount/>
+	<TransactionCurrencyCode/>
+	<ToGLCode/>
+	<TransactionRate/>
+	<ReferenceNumber/>
+	<TransactionType/>
+</input>

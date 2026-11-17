@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WebRemittanceStatus" targetNamespace="http://tempuri.org/WebRemittanceStatus.xsd" xmlns:mstns="http://tempuri.org/WebRemittanceStatus.xsd" xmlns="http://tempuri.org/WebRemittanceStatus.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WebRemittanceStatus" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="WebRemittanceStatus" msprop:Generator_DataSetName="WebRemittanceStatus">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WebRemittanceStatus" msprop:Generator_UserTableName="WebRemittanceStatus" msprop:Generator_RowDeletedName="WebRemittanceStatusRowDeleted" msprop:Generator_TableClassName="WebRemittanceStatusDataTable" msprop:Generator_RowChangedName="WebRemittanceStatusRowChanged" msprop:Generator_RowClassName="WebRemittanceStatusRow" msprop:Generator_RowChangingName="WebRemittanceStatusRowChanging" msprop:Generator_RowEvArgName="WebRemittanceStatusRowChangeEvent" msprop:Generator_RowEvHandlerName="WebRemittanceStatusRowChangeEventHandler" msprop:Generator_TablePropName="_WebRemittanceStatus" msprop:Generator_TableVarName="tableWebRemittanceStatus" msprop:Generator_RowDeletingName="WebRemittanceStatusRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CIF_ID" msprop:Generator_UserColumnName="CIF_ID" msprop:Generator_ColumnPropNameInRow="CIF_ID" msprop:Generator_ColumnVarNameInTable="columnCIF_ID" msprop:Generator_ColumnPropNameInTable="CIF_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="T_x0024__x0024__ID" msprop:Generator_UserColumnName="T$$_ID" msprop:Generator_ColumnPropNameInRow="_T___ID" msprop:Generator_ColumnVarNameInTable="_columnT___ID" msprop:Generator_ColumnPropNameInTable="_T___IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="USER_ID" msprop:Generator_UserColumnName="USER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER_NAME" msprop:Generator_UserColumnName="REMITTER_NAME" msprop:Generator_ColumnPropNameInRow="REMITTER_NAME" msprop:Generator_ColumnVarNameInTable="columnREMITTER_NAME" msprop:Generator_ColumnPropNameInTable="REMITTER_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CHANGE_PASSWORD" msprop:Generator_UserColumnName="CHANGE_PASSWORD" msprop:Generator_ColumnPropNameInRow="CHANGE_PASSWORD" msprop:Generator_ColumnVarNameInTable="columnCHANGE_PASSWORD" msprop:Generator_ColumnPropNameInTable="CHANGE_PASSWORDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="HO_DATE_CREATION" msprop:Generator_UserColumnName="HO_DATE_CREATION" msprop:Generator_ColumnPropNameInRow="HO_DATE_CREATION" msprop:Generator_ColumnVarNameInTable="columnHO_DATE_CREATION" msprop:Generator_ColumnPropNameInTable="HO_DATE_CREATIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OO_DATE_CREATION" msprop:Generator_UserColumnName="OO_DATE_CREATION" msprop:Generator_ColumnPropNameInRow="OO_DATE_CREATION" msprop:Generator_ColumnVarNameInTable="columnOO_DATE_CREATION" msprop:Generator_ColumnPropNameInTable="OO_DATE_CREATIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="USER_FLAG" msprop:Generator_UserColumnName="USER_FLAG" msprop:Generator_ColumnPropNameInRow="USER_FLAG" msprop:Generator_ColumnVarNameInTable="columnUSER_FLAG" msprop:Generator_ColumnPropNameInTable="USER_FLAGColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IDOLOGY" msprop:Generator_UserColumnName="IDOLOGY" msprop:Generator_ColumnPropNameInRow="IDOLOGY" msprop:Generator_ColumnVarNameInTable="columnIDOLOGY" msprop:Generator_ColumnPropNameInTable="IDOLOGYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IDOLOGY_DATE" msprop:Generator_UserColumnName="IDOLOGY_DATE" msprop:Generator_ColumnPropNameInRow="IDOLOGY_DATE" msprop:Generator_ColumnVarNameInTable="columnIDOLOGY_DATE" msprop:Generator_ColumnPropNameInTable="IDOLOGY_DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="START_DATE" msprop:Generator_UserColumnName="START_DATE" msprop:Generator_ColumnPropNameInRow="START_DATE" msprop:Generator_ColumnVarNameInTable="columnSTART_DATE" msprop:Generator_ColumnPropNameInTable="START_DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="END_DATE" msprop:Generator_UserColumnName="END_DATE" msprop:Generator_ColumnPropNameInRow="END_DATE" msprop:Generator_ColumnVarNameInTable="columnEND_DATE" msprop:Generator_ColumnPropNameInTable="END_DATEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

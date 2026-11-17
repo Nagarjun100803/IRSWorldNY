@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+	<AccountAttributesInquiryResponse IsMailHeld="" IsEmployee="" IsJointAccount="" IsRestricted="">
+		<AccountCommonInformation AccountTitle="" StatusType="" AccountId="" ProductCode="" MaintenanceTicket="" ProductName="" CustomerId="" BranchCode="" CustomerShortName="" CurrencyShortName="" CurrencyCode="" BranchName=""/>
+		<Status ReplyText="" IsServiceChargeApplied="" ExternalReferenceNo="" SpReturnValue="" IsOverriden="" ErrorCode="" Memo="" ReplyCode="">
+			<ExtendedReply>
+				<MessagesArray>
+					<Messages Message="" Code=""/>
+				</MessagesArray>
+			</ExtendedReply>
+		</Status>
+	</AccountAttributesInquiryResponse>
+</Response>

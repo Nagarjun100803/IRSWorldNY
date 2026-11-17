@@ -1,0 +1,3577 @@
+var status;
+var status_desc;
+var r_seq_id;
+var gv;
+var grid;
+//var OTCView = new OTCView();
+function reprint_closer()
+{
+    alert("Transaction successfully processed.");   
+    document.js_closer = null;
+}
+
+function delay_timeout()
+{
+    show_frame_dialog('../Reports/Pages/Report_viewer.aspx?trantype=OTC&tranvalue='+OTCView.SEQ_ID, null, '100%', '100%', '0',null, null, true);        
+    alert("Transaction successfully processed.");   
+}
+
+function push_override_result(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.compute_override(param);
+    }
+}
+
+function push_commit_result(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.commit_response(param);
+    }
+}
+
+function transaction_reload_commit(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.reload_commit_response(param);
+    }    
+}
+function push_bulk_payment_order_result()
+{
+    if (OTCView != null)
+    {
+         OTCView.pop_up=0;
+        OTCView.bulk_payment_screen_response();
+    }    
+}
+
+function push_apas_batch_result()
+{
+    if (OTCView != null)
+    {
+         OTCView.pop_up=0;
+        OTCView.apas_batch_screen_response();
+    }
+}
+
+function push_pay_any_where_result()
+{
+    if (OTCView != null)
+    {
+         OTCView.pop_up=0;
+        OTCView.pay_anywhere_screen_result();
+    }    
+}
+
+function push_apas_online_result()
+{
+    if (OTCView != null)
+    {
+         OTCView.pop_up=0;
+        OTCView.apas_online_screen_result();
+    }
+}
+
+function push_account_screen_result()
+{
+    if (OTCView != null)
+    {
+        OTCView.pop_up=0;
+        OTCView.choose_account_screen_result();
+    }
+}
+
+function push_open_account_result()
+{
+    if (OTCView != null)
+    {
+        OTCView.pop_up=0;
+        OTCView.account_open_screen_result();
+    }
+}
+
+function push_door_to_door_result()
+{
+    if (OTCView != null)
+    {
+         OTCView.pop_up=0;
+        OTCView.door_to_door_screen_response();
+    }
+}
+
+function push_waive_charges_result(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.compute_waived_result(param);
+    }
+}
+
+function push_override_result(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.compute_override(param);
+    }
+}
+
+function push_commit_door_result(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.commit_door_response(param);
+    }
+}
+
+function push_open_accounts_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }    
+}
+
+function push_door_to_door_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }
+}
+
+function push_apas_batch_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }
+}
+
+function push_apas_online_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }
+}
+
+function push_paw_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }
+}
+
+function push_bpo_commit_response(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.txn_details_commit_response(param);
+    }
+}
+
+function execute_search_client(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.open_remitter_result(param);
+    }
+}
+
+function execute_ajx_command(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.exec_modal_lookup(param);
+    }
+}
+
+function execute_ajaxgridview_command(param)
+{
+    if (OTCView != null)
+    {
+        OTCView.run_grid_command(param);
+    }
+}
+
+function side_bar_link(modal_keycode,modal_return_value)
+{
+    if (OTCView != null)
+    {
+        OTCView.side_bar_link_execute(modal_keycode, modal_return_value);
+    }
+}
+
+var formatDate = function (formatDate, formatString) {
+	
+	if (formatDate instanceof Date) 
+	{
+		var months = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+		var yyyy = formatDate.getFullYear();
+		var yy = yyyy.toString().substring(2);
+		var m = formatDate.getMonth() + 1;
+		var mm = m < 10 ? "0" + m : m;
+		var mmm = months[m];
+		var d = formatDate.getDate();
+		var dd = d < 10 ? "0" + d : d;
+		
+		var h = formatDate.getHours();
+		var hh = h < 10 ? "0" + h : h;
+		var n = formatDate.getMinutes();
+		var nn = n < 10 ? "0" + n : n;
+		var s = formatDate.getSeconds();
+		var ss = s < 10 ? "0" + s : s;
+		        
+		formatString = formatString.replace(/yyyy/i, yyyy);
+		formatString = formatString.replace(/yy/i, yy);
+		formatString = formatString.replace(/mmm/i, mmm);
+		formatString = formatString.replace(/mm/i, mm);
+		formatString = formatString.replace(/m/i, m);
+		formatString = formatString.replace(/dd/i, dd);
+		formatString = formatString.replace(/d/i, d);
+		formatString = formatString.replace(/hh/i, hh);
+		formatString = formatString.replace(/h/i, h);
+		formatString = formatString.replace(/nn/i, nn);
+		formatString = formatString.replace(/n/i, n);
+		formatString = formatString.replace(/ss/i, ss);
+		formatString = formatString.replace(/s/i, s);
+
+		return formatString;
+	} else {
+		return "";
+	}
+}
+function setLength(id, length){
+   document.getElementById(id).maxLength =length;
+}
+//function execute_ajaxgridview_command(param)
+//{
+//    if (OTCView != null && OTCView != undefined)
+//    {
+//        OTCView.do_gridview(param);
+//    }
+//}
+function deleteRow(tableID) {
+    try {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+
+    for(var i=0; i<rowCount; i++) {
+        var row = table.rows[i];
+        //var chkbox = row.cells[0].childNodes[0];
+        if(null != row) {
+            table.deleteRow(i);
+            rowCount--;
+        i--;
+        }
+
+    }
+    }catch(e) {
+        alert(e);
+    }
+    }
+    
+function deleteRow(tableID,rowStart) {
+    try {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+
+    for(var i=rowStart; i<rowCount; i++) {
+        var row = table.rows[i];
+        //var chkbox = row.cells[0].childNodes[0];
+        if(null != row) {
+            table.deleteRow(i);
+            rowCount--;
+        i--;
+        }
+
+    }
+    }catch(e) {
+        alert(e);
+    }
+    }
+function showDiv(element, isVisible)
+{
+    if (isVisible == true)
+    {
+        document.getElementById(element).style.display = 'block';
+    }
+    else
+    {
+        document.getElementById(element).style.display = 'none';
+    }
+}
+
+function showPanel(divName)
+{
+    var div = document.getElementById(divName);
+    
+    divmask = new maskpanel();
+    divmask.show();
+    showDiv(divName, true);
+    
+    div.style.top = (((document.documentElement.clientHeight / 2) + document.documentElement.scrollTop) - (div.offsetHeight / 2)) + 'px';
+    div.style.left = (((document.documentElement.clientWidth / 2) + document.documentElement.scrollLeft) - (div.offsetWidth / 2)) + 'px';
+}
+
+function hidePanel(divName)
+{
+    showDiv(divName, false);
+    divmask.hide();
+}
+
+function formatCurrency(num,places) {
+num = num.toString().replace(/\$|\,/g,'');
+var amount = num.toString();
+var count = amount.indexOf(".");
+var cents;
+if (count == -1)
+{
+    cents = "00";
+}
+else
+{
+    cents = amount.substring(100, count + 1);
+    if (cents.length == 1)
+    {
+        cents = cents + "0";
+    }
+    else
+    {
+        cents = cents.substring(2, 0);
+    }
+}
+if(isNaN(num))
+num = "0";
+sign = (num == (num = Math.abs(num)));
+num = Math.floor(num*100+0.50000000001);
+//cents = num%100;
+num = Math.floor(num/100).toString();
+len=0;
+//cents=cents.toString();
+//len=cents.length;
+//for(var x=0; x<(places-len) ; x++)
+//   cents = cents + "0";
+
+for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+num = num.substring(0,num.length-(4*i+3))+','+
+num.substring(num.length-(4*i+3));
+return (((sign)?'':'-') + num + '.' + cents);
+}
+
+// **************************************************************************************** //
+// *** Panel
+// **************************************************************************************** //
+var maskpanel = function()
+{
+    this.divobj;
+    
+    this.show = function()  
+    {
+        if(!document.getElementById("xdivmasking"))
+        {
+            var divEle = document.createElement('div');
+            divEle.setAttribute("id", "xdivmasking");
+            document.body.appendChild(divEle);
+            
+            var divSty = document.getElementById("xdivmasking").style;
+            divSty.position = "absolute"; 
+            divSty.top = "0px";
+            divSty.left = "0px";
+            divSty.zIndex = "46";
+            divSty.opacity = ".50";
+            divSty.backgroundColor="#000";
+            divSty.filter = "alpha(opacity=50)";
+ 
+            var divFram = document.createElement('iframe');
+            divFram.setAttribute("id", "xmaskframe");
+            document.body.appendChild(divFram);
+            divSty = document.getElementById("xmaskframe").style;
+            divSty.position = "absolute"; 
+            divSty.top = "0px"; 
+            divSty.left = "0px";
+            divSty.zIndex = "45";
+            divSty.border = "none";
+            divSty.filter = "alpha(opacity=0)";
+      }
+ 
+      this.divobj = document.getElementById("xdivmasking");
+      this.waitifrm = document.getElementById("xmaskframe");
+        
+      var dsh = document.documentElement.scrollHeight;
+      var dch = document.documentElement.clientHeight;
+      var dsw = document.documentElement.scrollWidth;
+      var dcw = document.documentElement.clientWidth;
+      var bdh = (dsh>dch) ? dsh:dch;
+      var bdw = (dsw>dcw) ? dsw:dcw;
+ 
+      this.waitifrm.style.height = this.divobj.style.height = bdh + 'px';
+      this.waitifrm.style.width = this.divobj.style.width = bdw + 'px';
+      this.waitifrm.style.display = this.divobj.style.display = "block";
+   }
+   
+   this.hide = function()
+   {
+       this.waitifrm.style.display = this.divobj.style.display = "none";
+   }
+}
+
+function compute_breakdown()
+{
+
+    var compute_breakdown = this;
+
+    this.outer_modal_div  = null;
+    this.inner_modal_div  = null;
+    this.commons          = null;
+    
+    this.open_breakdown = function(s)
+    {
+        this.open_modal_window();
+        
+        document.getElementById("content_mod_div").innerHTML = s;
+        document.getElementById("content_mod_div").document.getElementById("btn_close_breakdown").onclick = function()
+        {
+            compute_breakdown.close_modal_window();
+        }
+    }    
+
+    this.open_modal_window = function()
+	{
+        this.load_modal_css();
+		this.outer_modal_div           = document.createElement("div");
+		this.outer_modal_div.id        = "outer_mod_div";
+		this.outer_modal_div.className = "outer_div";
+
+		document.body.style.margin = "0px";
+		document.body.appendChild(this.outer_modal_div);
+		document.getElementById("outer_mod_div").style.height = screen.height;
+
+		this.construct_div_content();
+        this.commons = new common_method();
+        this.commons.to_show_hide_combobox(false);
+        this.commons = null;
+	}
+
+	this.close_modal_window = function()
+	{
+	    this.commons = new common_method();
+        this.commons.to_show_hide_combobox(true);
+        this.commons = null;
+
+		if(this.outer_modal_div != null){document.body.removeChild(this.outer_modal_div);this.outer_modal_div  = null;}
+		if(this.inner_modal_div != null){document.body.removeChild(this.inner_modal_div);this.inner_modal_div  = null;}
+
+		document.body.style.margin = "";
+	}
+
+    this.construct_div_content = function()
+	{
+	    var content_div = null;
+
+		this.inner_modal_div              = document.createElement("div");
+		this.inner_modal_div.className    = "inner_div";		
+		this.inner_modal_div.id           = "inner_mod_div";
+		this.inner_modal_div.style.height = "auto";		
+		this.inner_modal_div.style.width  = "400px";
+		this.inner_modal_div.style.top    = "30px";
+		this.inner_modal_div.style.left   = (parseInt(screen.width) - parseInt(this.inner_modal_div.style.width)) / 2 - 10;
+		this.inner_modal_div.style.border = "medium solid white";
+
+		content_div                       = document.createElement("div");
+		content_div.id                    = "content_mod_div";
+		content_div.style.background      = "transparent";
+		content_div.innerHTML             = "<center><img src = '../images/ajaxloader.gif'></img></center>";
+		
+        close_div                         = document.createElement("div");
+		close_div.id                      = "close_mod_div";
+		close_div.style.background        = "transparent";
+		close_div.innerHTML               = "<center></br> <input id = 'btn_close_breakdown' type = 'button' value = 'CLOSE' style = 'width: 23%; height: 24px'/></center>";
+
+		this.inner_modal_div.appendChild(content_div);
+		this.inner_modal_div.appendChild(close_div);
+
+		document.body.appendChild(this.inner_modal_div);
+	}
+	
+	this.load_modal_css = function()
+	{	    
+		var file_reference = document.createElement("link");
+		
+	  	file_reference.setAttribute("rel", "stylesheet");
+	  	file_reference.setAttribute("type", "text/css");
+	  	file_reference.setAttribute("href", "../../css/cssmodals.css");
+
+		if (typeof file_reference !="undefined")
+		{		    
+	  		document.getElementsByTagName("head")[0].appendChild(file_reference)
+		}
+	}
+
+	window.onscroll = function () 
+	{		
+	    var i = 0;
+	    var m = 0;
+    	
+    	var divelement_outer = document.documentElement.getElementsByTagName("div");
+    	var divelement_inner = document.documentElement.getElementsByTagName("div");
+    	    	    	
+	    for(i = 0; i < divelement_outer.length;i++)
+	    {
+	        if (divelement_outer.item(i).id == "outer_mod_div")
+	        {
+	            divelement_outer.item(i).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;break;
+	        }	        
+	    }
+	    for(m = 0; m < divelement_inner.length;m++)
+	    {
+	        if (divelement_inner.item(m).id == "inner_mod_div")
+	        {
+	            divelement_outer.item(m).style.top = document.documentElement.scrollTop ? document.documentElement.scrollTop + 30 : document.body.scrollTop + 30;break;
+	        }
+	    }
+	}
+}
+
+function for_verification()
+{
+    var fnName                      = this;
+    this.grid_ajax_page             = "../AjxPage/ajaxgrid.aspx";
+    this.Location                   = null;
+    this.ReferenceNo                = null;
+    this.Transtatus                 = null;
+    this.TranStatusDesc             = null;
+    this.Remitter                   = null;
+    this.Beneficiary                = null;
+    this.Tranxdate                  = null;
+    this.NettoBeneAmount            =   0;
+    this.NettoBeneCurrency          = null;
+    this.NettoBeneAmountPHP         =   0;
+    this.NettoBeneCurrencyCode      = null;
+    this.NetRemAmount               = 0;
+    this.GrossRemAmount             = 0;
+    this.RemittingCurrency          = null;
+    this.RemittingCurrencyCode      = null;
+    this.ForexRemittingToAccount    = 0;
+    this.ForexRemittingToPHP        = 0;
+    this.ProductCode                = null;
+    this.ProductDesc                = null;
+    this.ImplementationType         = null;
+    this.ImplementationDesc         = null;
+    this.Paymode                    = null;
+    this.PaymodeCode                = null;
+    this.BeneAddress                = null;
+    this.BenefCountry               = null;
+    this.BenefZipcode               = null;
+    this.RemiterAddress             = null;
+    this.RemitterCountry            = null;
+    this.RemZipcode                 = null;
+    this.BranchCode                 = null;
+    this.BranchName                 = null;
+    this.AccountNo                  = null;
+    this.AccountType                = null;
+    this.AccountTypeDesc            = null;
+    this.AccountCurrency            = null;
+    this.AccountCurrencyCode        = null;
+    this.computationtype            = null;
+    this.computationtypedesc        = null; 
+    this.totallocalcharge           = null;
+    this.clearing_date              = null;
+    this.check_no                   = null;
+    this.bank_code                  = null;    
+    this.RemitMethod                = null;
+    this.RemitMethodDesc            = null;
+    this.CardNo                     = null;
+    this.ExpiryDate                 = null;
+    this.currency                   = null;
+    this.cardclass                  = null;    
+    this.MerchantCode               = null;
+    this.MerProdCode                = null;
+    this.SourceofFundsCode          = null;
+    this.TransactionPurposeCode     = null;
+    this.TransactionPurpose         = null;
+    this.SourceofFunds              = null;
+    this.ReceiptMode                = null;
+    this.TransactionSource          = null;
+    this.dtCh                       = "/";
+    this.minYear                    = 1900;
+    this.maxYear                    = 2100;
+    this.LocalTime                  = null;
+    var NewClearingDate             = null;
+    var isOBPS                      = false;
+    this.benef_id                   = null;
+    this.remitter_id                = null;
+    this.account_message            = "";
+    this.SEQ_ID                     = 0;
+    this.transaction_status         = 0;
+    this.gross_rem_amount           = 0;
+    this.net_rem_amount             = 0;
+    this.net_to_bene_currency       = 0;
+    this.net_to_bene_amount         = 0;
+    this.total_local_charge         = 0;
+    this.local_currency             = 0;
+    this.forex_target_to_account    = 0;
+    this.total_backend_charge       = 0;
+    this.ForexTargetToSource        = 0;
+    this.ForexTargetToUSD           = 0;
+    this.ForexTargetToPHP           = 0;
+    this.ForexTargetToEUR           = 0;
+    this.ForexSourceToTarget        = 0;
+    this.ForexSourceToUSD           = 0;
+    this.ForexSourceToPHP           = 0;
+    this.charge_locally             = 0;
+    
+    this.override                   = null;
+    this.product_charge_id          = 0;
+    this.remitter_id                = 0;
+    this.beneficiary_id             = 0;
+    this.benef_acct_sequence        = 0;
+    this.commit_now                 = null;
+    this.modify_implem              = null;
+    this.system_message             = null;
+    this.charge_type                = 0;
+    
+    
+    this.apas_batch                 = null;
+    this.apas_online                = null;
+    this.pay_anywhere               = null;
+    this.open_accounts              = null;
+    this.choose_account             = null;
+    this.door_to_door               = null;
+    this.bulk_payment               = null;
+    this.pop_up                     = 1;
+    this.reimplementation           =false;
+    
+    this.net_to_bene_currency_temp    	 = 0;
+    this.account_currency_temp            = null;
+    this.product_charge_id_temp          = 0;
+    this.benef_acct_sequence_temp        = 0;
+    this.charge_type_temp                = 0;
+    this.ProductCode_temp                = 0;
+    this.ImplementationType_temp         = 0;
+    this.net_to_bene_currency_code_temp  = null;
+    this.total_benef_charges            =0;
+    
+    //==============================================
+    //RFC-29480 : Reversal Limit in IRSW 09242023
+    this.hostmessage = null;
+    //==============================================
+    
+    
+this.isInteger = function(s)
+{
+	var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}
+
+ this.getRoleDesc = function()
+ {
+    var defaultValue;
+    
+    defaultValue = IRSWorld.Remittance.RemTranForVerification.getDefaultValues().value.split("|");  
+    return defaultValue;
+ }
+
+ this.stripCharsInBag= function(s, bag)
+ {
+	var i;
+    var returnString = "";
+    // Search through string's characters one by one.
+    // If character is not in bag, append to returnString.
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+this.daysInFebruary = function(year)
+{
+	// February has 29 days in any year evenly divisible by four,
+    // EXCEPT for centurial years which are not also divisible by 400.
+    return (((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28 );
+}
+
+ this.DaysArray= function(n) {
+	for (var i = 1; i <= n; i++) 
+	{
+		this[i] = 31
+		if (i==4 || i==6 || i==9 || i==11) {this[i] = 30}
+		if (i==2) {this[i] = 29}
+    } 
+    return this;
+}
+
+ this.isDate=function(dtStr)
+ {
+	var daysInMonth     = this.DaysArray(12)
+	var pos1            = dtStr.indexOf(this.dtCh)
+	var pos2            = dtStr.indexOf(this.dtCh,pos1+1)
+	var strMonth        = dtStr.substring(0,pos1)
+	var strDay          = dtStr.substring(pos1+1,pos2)
+	var strYear         = dtStr.substring(pos2+1)
+	strYr               = strYear
+	if (strDay.charAt(0)=="0" && strDay.length>1) strDay    =   strDay.substring(1)
+	if (strMonth.charAt(0)=="0" && strMonth.length>1) strMonth  =   strMonth.substring(1)
+	
+	for (var i = 1; i <= 3; i++) {
+		if (strYr.charAt(0)=="0" && strYr.length>1) strYr=strYr.substring(1)
+	}
+	month   =   parseInt(strMonth)
+	day     =   parseInt(strDay)
+	year    =   parseInt(strYr)
+	if (pos1==-1 || pos2==-1){
+		alert("The date format should be : mm/dd/yyyy")
+		return false
+	}
+	if (strMonth.length<1 || month<1 || month>12){
+		alert("Please enter a valid month")
+		return false
+	}
+	if (strDay.length<1 || day<1 || day>31 || (month==2 && day>this.daysInFebruary(year)) || day > daysInMonth[month]){
+		alert("Please enter a valid day")
+		return false
+	}
+	if (strYear.length != 4 || year==0 || year<this.minYear || year>this.maxYear){
+		alert("Please enter a valid 4 digit year between "+this.minYear+" and "+this.maxYear)
+		return false
+	}
+	if (dtStr.indexOf(this.dtCh,pos2+1)!=-1 || this.isInteger(this.stripCharsInBag(dtStr, this.dtCh))==false){
+		alert("Please enter a valid date")
+		return false
+	}
+    return true
+}
+ 
+ this.do_gridview = function(parameter)
+    {
+        if (parameter != null && parameter != undefined)
+        {
+            var command_param = parameter.split("$");
+                                    
+            if (command_param.length > 0)
+            {                                                
+               if (command_param[0] == "ajx_selected")
+               {
+                  this.rem_txn_sequence_id = command_param[1];
+                  this.remittance_redirection(); 
+                  return;
+               }
+                        
+                this.process_grid_viewer(parameter);
+            }
+        }
+    }
+    
+    //Added by Troy 20120918
+    this.ajaxTimeout = function(message)
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+        AjaxPro.onTimeout = function()
+        {
+            alert(message);
+        }
+    }
+    
+  this.load_remittance_transaction=function()
+  {
+        //document.getElementById('btnremit').disabled = true;
+        this.ajaxTimeout("THERE WAS A PROBLEM WHILE RETRIEVING YOUR RECORD. PLEASE TRY AGAIN.");
+        IRSWorld.Remittance.RemTranForVerification.getlocaltime(this.getlocaltime_callback)
+        IRSWorld.Remittance.RemTranForVerification.get_RemitTrans(this.load_remittance_transaction_callback);
+  }
+  
+  this.getlocaltime_callback = function(param)
+  {
+    this.LocalTime = param;
+  }
+
+  this.load_remittance_transaction_callback=function(param)
+  {
+    if (param.value != null && param.value != undefined)
+       {
+            var ds = param.value;
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                fnName.SEQ_ID                   =ds.Tables[0].Rows[0].SEQ_ID;
+                fnName.ReferenceNo              = ds.Tables[0].Rows[0].ReferenceNo;
+                fnName.Transtatus               = ds.Tables[0].Rows[0].Transtatus;
+                fnName.TranStatusDesc           = ds.Tables[0].Rows[0].TranStatusDesc;
+                fnName.Remitter                 = ds.Tables[0].Rows[0].Remitter;
+                fnName.Beneficiary              = ds.Tables[0].Rows[0].Beneficiary;
+                fnName.Tranxdate                = formatDate(ds.Tables[0].Rows[0].Tranxdate,"mm/dd/yyyy");
+                fnName.NettoBeneAmount          = ds.Tables[0].Rows[0].NettoBeneAmount;
+                fnName.NettoBeneAmountPHP       = ds.Tables[0].Rows[0].NettoBeneAmountPHP;
+                fnName.NettoBeneCurrency        = ds.Tables[0].Rows[0].NettoBeneCurrency;
+                fnName.net_to_bene_currency     = ds.Tables[0].Rows[0].NettoBeneCurrency;
+                fnName.NettoBeneCurrencyCode    =  ds.Tables[0].Rows[0].NettoBeneCurrencyCode;
+                fnName.NetRemAmount             = ds.Tables[0].Rows[0].NetRemAmount;
+                fnName.GrossRemAmount           = ds.Tables[0].Rows[0].GrossRemAmount;
+                fnName.RemittingCurrency        = ds.Tables[0].Rows[0].RemittingCurrency;
+                fnName.RemittingCurrencyCode    = ds.Tables[0].Rows[0].RemittingCurrencyCode;
+                fnName.ForexRemittingToAccount  = ds.Tables[0].Rows[0].ForexRemittingToAccount;
+                fnName.ForexRemittingToPHP      = ds.Tables[0].Rows[0].ForexRemittingToPHP;
+                fnName.ProductCode              = ds.Tables[0].Rows[0].ProductCode;
+                fnName.ProductDesc              = ds.Tables[0].Rows[0].ProductCodeDesc;
+                fnName.ImplementationType       = ds.Tables[0].Rows[0].ImplementationType;
+                fnName.ImplementationDesc       = ds.Tables[0].Rows[0].ImplementationTypeDesc;
+                fnName.Paymode                  = ds.Tables[0].Rows[0].Paymode;
+                fnName.PaymodeCode              = ds.Tables[0].Rows[0].PaymodeCode;
+                fnName.BeneAddress              = ds.Tables[0].Rows[0].BeneficiaryAddress;
+                fnName.BenefCountry             = ds.Tables[0].Rows[0].BeneficiaryCountry;
+                fnName.BenefZipcode             = ds.Tables[0].Rows[0].BeneficiaryZipcode;
+                fnName.RemiterAddress           = ds.Tables[0].Rows[0].RemiterAddress;
+                fnName.RemitterCountry          = ds.Tables[0].Rows[0].RemitterCountry;
+                fnName.RemZipcode               = ds.Tables[0].Rows[0].RemitterZipcode;
+                fnName.BranchCode               =ds.Tables[0].Rows[0].BranchCode;
+                fnName.BranchName               =ds.Tables[0].Rows[0].BranchName;
+                fnName.AccountNo                = ds.Tables[0].Rows[0].AccountNo;
+                fnName.AccountType              = ds.Tables[0].Rows[0].AccountType;
+                fnName.AccountCurrency          = ds.Tables[0].Rows[0].AccountCurrency;
+                fnName.account_currency         = ds.Tables[0].Rows[0].AccountCurrency;
+                fnName.AccountCurrencyCode      = ds.Tables[0].Rows[0].AccountCurrencyCode;
+                fnName.computationtype          = ds.Tables[0].Rows[0].computationtype;
+                fnName.computationtypedesc      =  ds.Tables[0].Rows[0].computationtypedesc; 
+                fnName.totallocalcharge         =  ds.Tables[0].Rows[0].totallocalcharge; 
+                fnName.clearing_date            =formatDate(ds.Tables[0].Rows[0].clearing_date,"mm/dd/yyyy");
+                fnName.check_no                 =ds.Tables[0].Rows[0].check_no;
+                fnName.bank_code                =ds.Tables[0].Rows[0].bank_code;    
+                fnName.RemitMethod              =ds.Tables[0].Rows[0].RemitMethod;  
+                fnName.RemitMethodDesc            =ds.Tables[0].Rows[0].RemitMethodDesc;  
+                fnName.CardNo                   =ds.Tables[0].Rows[0].CardNo;  
+                fnName.ExpiryDate               =formatDate(ds.Tables[0].Rows[0].ExpiryDate,"mm/dd/yyyy");
+                fnName.currency                 =ds.Tables[0].Rows[0].currency;  
+                fnName.cardclass                =ds.Tables[0].Rows[0].cardclass; 
+                fnName.MerchantCode             =ds.Tables[0].Rows[0].merchantcode; 
+                fnName.MerProdCode              =ds.Tables[0].Rows[0].merchantproductcode;   
+                fnName.local_currency           =ds.Tables[0].Rows[0].LocalCurrency;   
+                fnName.SourceofFundsCode        =ds.Tables[0].Rows[0].SourceofFundsCode;   
+                fnName.TransactionPurposeCode   = ds.Tables[0].Rows[0].TransactionPurposeCode;  
+                fnName.total_backend_charge     = ds.Tables[0].Rows[0].total_backend_charges;  
+                fnName.ForexTargetToSource      = ds.Tables[0].Rows[0].ForexRemittingToLocal;  
+                fnName.ForexTargetToUSD         =ds.Tables[0].Rows[0].ForexRemittingToUSD;  
+                fnName.ForexTargetToPHP         = ds.Tables[0].Rows[0].ForexRemittingToPHP;  
+                fnName.ForexTargetToEUR         = ds.Tables[0].Rows[0].ForexRemittingToEUR;  
+                fnName.ForexSourceToTarget      = ds.Tables[0].Rows[0].ForexLocalToRemitting;  
+                fnName.ForexSourceToUSD         = ds.Tables[0].Rows[0].ForexLocalToUSD;  
+                fnName.ForexSourceToPHP         = ds.Tables[0].Rows[0].ForexLocalToPHP;  
+                fnName.product_charge_id        = ds.Tables[0].Rows[0].ProductChargesID;  
+                fnName.beneficiary_id           = ds.Tables[0].Rows[0].Benefid;  
+                fnName.charge_type              = ds.Tables[0].Rows[0].ChargeType;  
+                fnName.Location                 = ds.Tables[0].Rows[0].RemittingBranch;  
+                fnName.remitter_id              =  ds.Tables[0].Rows[0].RemitterID;  
+                fnName.benef_acct_sequence      = ds.Tables[0].Rows[0].Account_ID;  
+                fnName.TransactionPurpose       =  ds.Tables[0].Rows[0].TransactionPurpose;  
+                fnName.SourceofFunds            =  ds.Tables[0].Rows[0].SourceofFunds;  
+                fnName.ReceiptMode              =  ds.Tables[0].Rows[0].ReceiptMode;
+                fnName.TransactionSource        =  ds.Tables[0].Rows[0].TransactionSource;   
+                fnName.total_benef_charges      = ds.Tables[0].Rows[0].total_benef_charges; 
+                
+                //==============================================
+                //RFC-29480 : Reversal Limit in IRSW 09242023
+                fnName.hostmessage = ds.Tables[0].Rows[0].APIMessage;
+                //==============================================
+
+                var exchangerateused= "1" +  fnName.RemittingCurrencyCode  + " to " + ds.Tables[0].Rows[0].ForexRemittingToAccount +  fnName.NettoBeneCurrencyCode;
+                
+                if ((fnName.RemitMethod==2 || fnName.RemitMethod==9 || fnName.RemitMethod==10 ) || fnName.MerchantCode!=null)
+                {
+                    //==============================================
+                    //RFC-29480 : Reversal Limit in IRSW 09242023
+                    document.getElementById("txtOBPSHostMessage").value = fnName.hostmessage;
+                    //==============================================
+                
+                    setText("spnOBPSrateused", exchangerateused);
+                    setText("spnOBPStranstatus", fnName.TranStatusDesc);
+                    setText("spnOBPSrefno", fnName.ReferenceNo);
+                    setText("spnOBPSremittingamount", formatCurrency(fnName.NetRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]");
+                    setText("spnOBPSgrossamount", formatCurrency(fnName.GrossRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]");
+                    setText("spnOBPScomptype", fnName.computationtypedesc);
+                    setText("spnOBPScharge", formatCurrency(fnName.totallocalcharge,2) + " [" + fnName.RemittingCurrencyCode + "]");
+                    setText("spnOBPSamounttobereceived", formatCurrency(fnName.NettoBeneAmount,2) + " [" + fnName.NettoBeneCurrencyCode + "]"); 
+                    //document.getElementById("spnPHPAmount").innerHTML    =formatCurrency(fnName.NettoBeneAmountPHP,2) ;
+                    setText("spnOBPSmodeoftrans", fnName.ProductDesc);
+                    
+                    setText("spnOBPSremittername", fnName.Remitter);
+                    setText("spnOBPSremitteraddress", fnName.RemiterAddress);
+                    setText("spbOBPSremittercountry", fnName.RemitterCountry);
+                    setText("spnOBPSremitterzipcode", fnName.RemZipcode);
+                    
+                    setText("spnOBPSPaymentMethod", fnName.PaymodeCode);
+
+                    setText("lbl_merchant_name", fnName.MerchantCode);
+                    setText("lbl_merchant_prodcode", fnName.MerProdCode);
+                    setText("lbl_merchant_currency", fnName.AccountCurrencyCode);
+                    document.getElementById("btnremit").value    ="Save Changes";
+                    isOBPS=true;
+                    fnName.insertTableRow();
+                    fnName.open_division("div_obps");
+                }
+                else
+                {
+                    //==============================================
+                    //RFC-29480 : Reversal Limit in IRSW 09242023
+                    document.getElementById("txtHostMessage").value = fnName.hostmessage;
+                    //==============================================
+                    
+                    document.getElementById("tdDesc").innerHTML                     =   fnName.RemitMethodDesc + " INFORMATION";
+                    document.getElementById("spnExchangeRateValue").innerHTML       =   exchangerateused;
+                    document.getElementById("spnstatus").innerHTML                  =   fnName.TranStatusDesc  ;
+                    document.getElementById("spnrefno").innerHTML                   =   fnName.ReferenceNo ;
+                    document.getElementById("spnremittingamount").innerHTML         =   formatCurrency(fnName.NetRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"   ;
+                    document.getElementById("spngrossamount").innerHTML             =   formatCurrency(fnName.GrossRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                    document.getElementById("spncomptype").innerHTML                =   fnName.computationtypedesc;
+                    if (fnName.Location=="1170")
+                        document.getElementById("spnCharge").innerHTML                  =   formatCurrency(fnName.total_benef_charges,2) + " [" + fnName.NettoBeneCurrencyCode + "]"  ;
+                    else
+                        document.getElementById("spnCharge").innerHTML                  =   formatCurrency(fnName.totallocalcharge,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                    document.getElementById("spnBenefAmount").innerHTML             =   formatCurrency(fnName.NettoBeneAmount,2) + " [" + fnName.NettoBeneCurrencyCode + "]" ; 
+                    document.getElementById("spnPHPAmount").innerHTML               =   formatCurrency(fnName.NettoBeneAmountPHP,2) ;
+                    document.getElementById("spnProductCode").innerHTML             =   fnName.ProductDesc;
+                    document.getElementById("spnRemitterName").innerHTML            =   fnName.Remitter ;
+                    document.getElementById("spnRemitterAddress").innerHTML         =   fnName.RemiterAddress;
+                    document.getElementById("spnRemitterCountry").innerHTML         =   fnName.RemitterCountry ;
+                    document.getElementById("spnRemitterZipCode").innerHTML         =   fnName.RemZipcode;
+                    
+                    document.getElementById("spnBeneficiaryName").innerHTML         =   fnName.Beneficiary;
+                    document.getElementById("spnBeneficiaryAddress").innerHTML      =   fnName.BeneAddress ;
+                    document.getElementById("spnBeneficiaryCountry").innerHTML      =   fnName.BenefCountry;
+                    document.getElementById("spnBeneficiaryZipCode").innerHTML      =   fnName.BenefZipcode ;
+
+                    document.getElementById("lbl_purpose").innerHTML                =   fnName.TransactionPurposeCode;
+                    document.getElementById("lbl_source_of_fund").innerHTML         =   fnName.SourceofFundsCode;
+                   
+                    document.getElementById("spnPaymentMethod").innerHTML           =   fnName.PaymodeCode  ;
+                    fnName.open_division("div_remittance");
+                    fnName.display_other_remittancedetails("tbl_benef");
+                }
+                document.getElementById('btnremit').disabled        = true;
+                //var control = document.getElementById('btnRemit');
+                //control.style.visibility = "hidden";
+                document.getElementById("divmenu").style.display    = 'block'; 
+                fnName.display_cardoraccountdetails();
+                fnName.load_sidebar();
+                fnName.build_remittance_object();
+                //IRSWorld.Remittance.RemTranForVerification.getlocaltime(this.getlocaltime_callback);
+                
+            }
+         
+            else    
+            {
+                alert("A problem occured in retrieving the data. Please retry.");
+                fnName.remittance_redirection();
+            }
+            
+        }
+        else    
+            {
+                alert("A problem occured in retrieving the data. Please retry.");
+                fnName.remittance_redirection();
+            }
+            
+                        
+           
+  }
+      
+    this.open_division = function(division_id)
+    {
+        this.close_divisions(); document.getElementById(division_id).style.display = 'block';       
+    }
+     this.close_divisions = function()
+    {
+        document.getElementById("div_remittance").style.display         = 'none';
+        document.getElementById("div_obps").style.display               = 'none';
+        
+    }
+    
+    this.show_status=function()                     
+    {
+          if (document.getElementById("div_obps").style.display       == 'block')
+                document.getElementById("spnOBPStranstatus").innerHTML  =   fnName.TranStatusDesc  ;
+                
+          else
+                document.getElementById("spnstatus").innerHTML          =   fnName.TranStatusDesc  ;
+    }
+        
+    this.remit  =   function()
+    {
+        document.getElementById("btnremit").disabled    = true;
+        var refno   =   fnName.ReferenceNo;
+        var acctno  =   fnName.AccountNo;
+        var amount  =   fnName.NetRemAmount;
+        fnName.commit_remittance();
+        //fnNameIRSWorld.Remittance.OTCViewAndApproval.Remit(fnName.SEQ_ID,isOBPS,fnName.remit_callback);
+      
+    }
+    
+    this.remit_callback = function(param)
+    {
+      //alert(param.value);
+          fnName.close_msg_prompt();
+          if (param.value != null && param.value != undefined)
+          {
+          
+                var ds          =   param.value;
+                var message;
+                var tranxstatus =   ds.Tables[0].Rows[0].Transtatus;
+                var tranxdesc   =   ds.Tables[0].Rows[0].TranStatusDesc;
+                if (ds.Tables[0].Rows.length > 0)
+                {
+                    if (tranxstatus!= null )
+                       {
+                          fnName.Transtatus             = tranxstatus;
+                          fnName.TranStatusDesc         = tranxdesc;
+                       }
+                    if (tranxdesc!= null )   
+                        {
+                         
+                          fnName.show_status();
+                        }
+                     
+                        account_message                 =     ds.Tables[0].Rows[0].Message;
+                        alert(account_message);
+                        
+                        if (fnName.RemitMethod==6 || fnName.RemitMethod==8 || fnName.RemitMethod==10)
+                        {
+                         var i_replace = confirm("Do you want to print receipt ?");
+                            if (i_replace == true)
+                            {
+                                fnName.print_receipt();
+                            }
+                        }
+                        
+                        fnName.remittance_redirection();
+                        //fnName.commit_remittance();
+
+                }
+     
+        }
+        else
+        {
+            alert("The system didn't received a response. Please verify the status of the transaction.");
+        }
+    }
+    
+    this.commit_remittance = function()
+    {
+            this.commit_now = new rem_otc_commit();
+            this.commit_now.reload_remittance_record(fnName.SEQ_ID); 
+    }
+    
+    this.commit_response = function(param)
+    {
+        if (param.commit_status == false)
+        {
+            alert(param.msg_string);
+        }
+        else
+        {
+            //alert(account_message);
+            fnName.commit_transaction_details(fnName.SEQ_ID);
+            //IRSWorld.Remittance.RemTranForVerification.Remit(fnName.SEQ_ID,isOBPS,fnName.reimplementation,fnName.remit_callback);
+            //fnName.remittance_redirection();
+        }
+    }
+    
+     this.reversal=function()
+    {
+        if (fnName.Transtatus==2 && isOBPS==true)
+        {
+            alert("No Reversal for OBPS"); return;
+        }
+            this.open_msg_prompt("PLEASE WAIT ...");
+           // document.getElementById("mnureversal").locked = true;
+            IRSWorld.Remittance.RemTranForVerification.Reversal(fnName.SEQ_ID,fnName.remit_callback);
+        
+        
+    }
+    this.reversal_callback= function(param)
+    {   
+        fnName.close_msg_prompt();
+        alert(param.value);
+     
+    }  
+    
+    this.setholditems=function(param)
+    {
+        var tranxstatus = null;
+   
+            if (param==1 && fnName.Transtatus ==15)
+            {
+                tranxstatus =   14
+                
+            }
+            else if (param==0 && fnName.Transtatus ==14)
+            {
+                tranxstatus =   15
+                
+            }
+            else
+             {
+                alert("Not valid for this transaction.Please check the status.")
+                return;
+            }
+            IRSWorld.Remittance.RemTranForVerification.holdtransaction(tranxstatus,fnName.update_status_callback);
+       
+    }
+    this.update_status          =   function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.UpdateStatus(fnName.update_status_callback);
+    }
+    
+    this.update_status_callback = function(param)
+    {
+    if (param != null && param != undefined)
+       {
+            var ds = param.value;
+            if (ds.Tables[0].Rows.length > 0)
+            {
+               fnName.Transtatus             = ds.Tables[0].Rows[0].Transtatus;
+               fnName.TranStatusDesc         = ds.Tables[0].Rows[0].TranStatusDesc;
+               fnName.show_status();
+            }
+        }     
+    }  
+    
+    this.show_clearingdate      = function()
+    {  
+        if (fnName.Paymode == 2 && (fnName.Transtatus ==15 || fnName.Transtatus ==14))
+        {
+            showPanel("divClearingDate");
+            document.getElementById("txtClearingDate").innerHTML    = fnName.clearing_date;
+        }
+        else
+        alert("For check transaction only that has not been processed.");    
+    }
+    
+    this.hide_clearingdate      = function()
+    {
+        hidePanel("divClearingDate");
+    }
+    
+    this.show_charges           = function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.get_ChargesDetails(this.show_charges_callback);
+    } 
+    
+    this.hide_status = function()
+    {
+        hidePanel("divSetStatus");
+        deleteRow("tblcharges");
+    }
+    
+    this.remittance_redirection = function()
+    {
+        var redirect_link = null;
+        IRSWorld.Remittance.RemTranForVerification.get_remittance_page(this.remittance_redirection_callback);
+    }
+    
+    this.remittance_redirection_callback = function(result)
+    {
+        if (result != null && result.value != 'undefined' && result.value != '')
+        {              
+           window.location = result.value; return;
+        }        
+        alert("PAGE NOT FOUND!");
+    }    
+    
+    this.show_charges_callback= function(param)
+    {
+        var theTable        = document.getElementById("tblcharges");
+        var theTableBody    = theTable.tBodies[0];
+         if (param != null && param != undefined)
+           {
+            var ds      = param.value;
+            var dt      = ds.Tables[0];
+            var rowcnt  = dt.Rows;
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            for (var cnt = 0; cnt < dt.Rows.length; cnt++)
+            {                
+                var rowData     = [dt.Rows[cnt].chargename.toString(), dt.Rows[cnt].amount.toString(),dt.Rows[cnt].currency.toString()];
+                var newCell;
+                var newRow      = theTableBody.insertRow(theTableBody.rows.length);
+                for (var i = 0; i < rowData.length; i++) 
+                {       
+                    newCell = newRow.insertCell(i);   
+  
+                    if (i == 0)
+                      {                          
+                          newCell.innerHTML = "<a>" + rowData[i] + ":&nbsp;</a>";
+               
+                          newCell.style.fontSize    = "11px"
+                          newCell.className         ='cell_caption'
+                          newCell.style.textAlign   = "right"
+                          newCell.style.width       = "70%"
+                          newCell.colSpan           = "1"
+                          newCell.style.height      ="11px"
+                      }
+                      else if (i == 1)
+                      {
+                      
+                          newCell.style.width       = "10%"
+                          var el                    = document.createElement('input')
+                          el.type                   = 'text';
+                          el.name                   = dt.Rows[cnt].chargename.toString();//'MerchantInfo'; //'txt' + tfld;
+                          el.id                     = dt.Rows[cnt].chargename.toString();//'txt' + tfld;
+                          el.style.width            = "99%";
+                          el.style.height           = "11px"
+                          el.style.border           = "none";
+                          el.readOnly               = true;
+                          el.value                  = formatCurrency(rowData[i],2);
+                          el.style.align            = "left";
+                          newCell.appendChild(el);
+                          newCell.colSpan           = "1"
+                          newCell.style.textAlign   = "left"
+                        
+                      }
+                      
+                      else
+                      {
+                           newCell.style.width      = "5px"
+                          var el                    = document.createElement('input')
+                          el.type                   = 'text';
+                          el.name                   = dt.Rows[cnt].chargename.toString();//'MerchantInfo'; //'txt' + tfld;
+                          el.id                     = dt.Rows[cnt].chargename.toString();//'txt' + tfld;
+                          el.style.width            = "99%";
+                          el.style.height           = "11px"
+                          el.style.border           = "none";
+                          el.readOnly               = true;
+                          el.value                  = rowData[i];
+                          el.style.align            = "left";
+                          newCell.appendChild(el);
+                          newCell.colSpan           = "1"
+                          newCell.style.textAlign   = "right"
+                       }
+                       
+                }
+            }
+          }   
+       showPanel("div_showcharges");  
+            
+    }
+
+    this.display_cardoraccountdetails = function()
+    {
+        var sp = 'spGetMerchantInfo';
+        IRSWorld.Remittance.RemTranForVerification.getRemitterInfoDetails(this.display_cardoraccountdetails_callback);
+    }   
+       
+    this.display_cardoraccountdetails_callback  = function(param)
+    {
+        if (isOBPS  ==  true)
+            var theTable = document.getElementById("tblOBPSRemitter");
+        else
+            var theTable = document.getElementById("tblRemitter");
+        
+        
+       var theTableBody = theTable.tBodies[0];
+       if (param.value != null && param.value != undefined)
+           {
+            var ds      = param.value;
+            var dt      = ds.Tables[0];
+            var rowcnt  = dt.Rows;
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            for (var cnt = 0; cnt < dt.Rows.length; cnt++)
+            {                
+                var rowData = [dt.Rows[cnt].fldlabel.toString(), dt.Rows[cnt].fldvalue.toString()];
+                var newCell;
+                var newRow  = theTableBody.insertRow(theTableBody.rows.length);
+                for (var i = 0; i < rowData.length; i++) 
+                {       
+                    newCell = newRow.insertCell(i);   
+                    
+                    newCell.style.height ="12px";
+                    if (i == 0)
+                      {                          
+                          newCell.innerHTML         =  rowData[i] + "&nbsp; :";
+                          newCell.className         ='cell_caption'
+                          newCell.style.textAlign   = "right"
+                          newCell.style.width       = "25px"                           
+                      }
+                      else
+                      {
+                      
+                          newCell.style.width       = "35px"
+                          var el                    = document.createElement('input')
+                          el.type                   = 'text';
+                          el.name                   = dt.Rows[cnt].fldlabel.toString();//'MerchantInfo'; //'txt' + tfld;
+                          el.id                     = dt.Rows[cnt].fldlabel.toString();//'txt' + tfld;
+                          el.style.width            ="99%";
+                          el.style.height           = "15px"
+                          el.style.border           ="none";
+                          el.readOnly               = true;
+                          el.value                  = rowData[i];
+                          el.style.align            = "left";
+                          newCell.appendChild(el);
+                          newCell.colSpan           = "1"
+                          newCell.style.textAlign   = "left"
+                      }
+                       
+                }
+            }
+          }
+         
+                        
+         
+    }
+    this.insertTableRow_callback=function(param)
+    {
+        var theTable = document.getElementById("TrnxDetails");
+        var theTableBody = theTable.tBodies[0];
+         if (param.value != null && param.value != undefined)
+           {
+            var ds      = param.value;
+            var dt      =ds.Tables[0];
+            var rowcnt  = dt.Rows;
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            for (var cnt = 0; cnt < dt.Rows.length; cnt++)
+            {                
+                var rowData = [dt.Rows[cnt].FieldLabel.toString(), dt.Rows[cnt].FieldValue.toString()];
+                var newCell;
+                var newRow = theTableBody.insertRow(theTableBody.rows.length);
+                for (var i = 0; i < rowData.length; i++) 
+                {       
+                    newCell = newRow.insertCell(i);            
+                    newCell.style.height ="12px";
+                    if (i == 0)
+                      {                          
+                          newCell.innerHTML         =  rowData[i] + "&nbsp; :";
+                          newCell.className         = 'cell_caption'
+                          newCell.style.textAlign   = "right"
+                          newCell.style.width       = "40%"
+                          newCell.colSpan           = "1"
+                                   
+                      }
+                      else
+                      {
+                      
+                          newCell.style.width       = "60%"
+                          var el                    = document.createElement('input')
+                          el.type                   = 'text';
+                          el.name                   = dt.Rows[cnt].FieldLabel.toString();//'MerchantInfo'; //'txt' + tfld;
+                          el.id                     = dt.Rows[cnt].FieldLabel.toString();//'txt' + tfld;
+                          el.style.width            = "99%";
+                          el.style.height           = "15px"
+                          el.style.border           = "none";
+                          el.readOnly               = true;
+                          el.value                  = rowData[i];
+                          el.style.align            = "left";
+                          newCell.appendChild(el);
+                          newCell.colSpan           = "1"
+                          newCell.style.textAlign   = "left"
+                      }
+                       
+                }
+            }
+          } 
+    }
+    
+    this.insertTableRow = function()
+    {
+        var sp = 'spGetMerchantInfo';
+        IRSWorld.Remittance.RemTranForVerification.getOBPData(fnName.ReferenceNo,fnName.MerchantCode,fnName.MerProdCode,this.insertTableRow_callback);
+    }     
+    
+    this.apply_changes_clearingdate = function()
+    {
+        NewClearingDate =document.getElementById("txtNewClearingDate").value;
+        var ClearingDate =document.getElementById("txtClearingDate").innerHTML;
+        
+        if (NewClearingDate!= null)
+            {
+                if (fnName.isDate(NewClearingDate)==false)
+                {
+                     return;
+                }
+                if (fnName.Transtatus !=14 && fnName.Transtatus !=15  && fnName.Transtatus !=1)
+                {
+                    alert("Current remittance transaction is not valid for this function.Please verify transaction status."); return;   
+                }
+                IRSWorld.Remittance.RemTranForVerification.ModifyClearingDate(NewClearingDate,this.apply_changes_clearingdate_callback)     
+            }       
+    }
+    
+    this.apply_changes_clearingdate_callback    = function(param)
+    {
+        if (param!=null && param!=undefined )
+        {
+             alert("Saved changes");
+             fnName.clearing_date                               =   NewClearingDate;
+             document.getElementById("txtNewClearingDate").value=   "";
+             document.getElementById("Clearing Date").value     =   NewClearingDate;
+             hidePanel("divClearingDate");
+        }
+    }
+    
+    this.print_receipt= function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.ShowReport(fnName.RemitMethod ,isOBPS, this.print_receipt_callback)
+    }
+   this.print_receipt_callback= function()
+    {
+       //window.open('../Reports/Pages/Report_viewer.aspx');
+       document.js_closer = "reprint_closer";
+       //window.setTimeout("delay_timeout()",5000);       
+        show_frame_dialog('../Reports/Pages/Report_viewer.aspx?trantype=OTC&tranvalue='+OTCView.SEQ_ID, null, '100%', '100%', '0',null, null, true);        
+    }
+    
+    this.show_override  = function()
+    {
+        fnName.getRole();
+        if (fnName.Transtatus ==    15)
+            IRSWorld.Remittance.RemTranForVerification.WaivedCharges(isOBPS,this.show_override_callback);
+        else
+            alert("Please check the status.Only transaction with For Approval Status can be waived.");
+    }
+    
+    this.show_override_callback = function(parameter)
+    {
+      if (parameter.value != null && parameter.value != undefined)
+        {
+            var command_param = parameter.value.split("~");
+                                    
+            if (command_param.length > 0)
+            {                                                
+               fnName.NetRemAmount              = command_param[0] ;
+               fnName.GrossRemAmount            = command_param[1] ;
+               fnName.totallocalcharge          = command_param[2] ;
+               fnName.NettoBeneAmount           = command_param[3] ;
+               fnName.NettoBeneAmountPHP        = command_param[4] ;
+               fnName.local_currency            = command_param[5] ;
+               fnName.ForexRemittingToAccount   = command_param[6] ;
+               fnName.total_backend_charge      = command_param[7] ;
+               fnName.ForexTargetToSource       = command_param[8] ;
+               fnName.ForexSourceToTarget       = command_param[9] ;
+               fnName.ForexSourceToPHP          = command_param[10] ;
+               fnName.ForexSourceToUSD          = command_param[11] ;
+               fnName.ForexTargetToPHP          = command_param[12] ;
+               fnName.ForexTargetToUSD          = command_param[13] ;
+               fnName.ForexTargetToEUR          = command_param[14] ;
+               fnName.total_benef_charges       = command_param[15] ;
+               
+             }
+             fnName.update_screen();
+         }
+    }
+    this.update_screen= function()
+    {
+    
+        if (isOBPS == true)
+        {
+                document.getElementById("spnOBPSremittingamount").innerHTML     = formatCurrency(fnName.NetRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"   ;
+                document.getElementById("spnOBPSgrossamount").innerHTML         = formatCurrency(fnName.GrossRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                document.getElementById("spnOBPScharge").innerHTML              = formatCurrency(fnName.totallocalcharge,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                document.getElementById("spnOBPSamounttobereceived").innerHTML  = formatCurrency(fnName.NettoBeneAmount,2) + " [" + fnName.NettoBeneCurrencyCode + "]" ; 
+        }
+        else
+        {
+                document.getElementById("spnremittingamount").innerHTML         = formatCurrency(fnName.NetRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"   ;
+                document.getElementById("spngrossamount").innerHTML             = formatCurrency(fnName.GrossRemAmount,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                if (fnName.Location=="1170")
+                   document.getElementById("spnCharge").innerHTML                  =   formatCurrency(fnName.total_benef_charges,2) + " [" + fnName.NettoBeneCurrencyCode + "]"  ;
+                else
+                   document.getElementById("spnCharge").innerHTML                  =   formatCurrency(fnName.totallocalcharge,2) + " [" + fnName.RemittingCurrencyCode + "]"  ;
+                document.getElementById("spnBenefAmount").innerHTML             = formatCurrency(fnName.NettoBeneAmount,2) + " [" + fnName.NettoBeneCurrencyCode + "]" ; 
+                document.getElementById("spnPHPAmount").innerHTML               = formatCurrency(fnName.NettoBeneAmountPHP,2) ;
+        }
+    }
+    
+    this.getRole    = function()
+    {
+         var role   =   null;
+         role=IRSWorld.Remittance.RemTranForVerification.getRole();
+         return role.value;
+    }
+    
+    this.modal_compute_breakdown = function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.get_breakdown(isOBPS,this.modal_compute_breakdown_callback);
+    }
+    
+    this.modal_compute_breakdown_callback = function(result)
+    {
+        if (result != null || result.value != null)
+        {
+            var breakdown = new compute_breakdown(); breakdown.open_breakdown(result.value);
+        }
+    }
+    this.open_override = function()
+    {
+        if (fnName.Transtatus!=15)
+        {
+            alert("Please check the status.Only transaction with For Approval Status can be overridden."); return;
+        }
+        IRSWorld.Remittance.RemTranForVerification.check_remittance_calculator(isOBPS);
+        this.override = new override_calculator() 
+        this.override.open_override_form("REMITTANCE_CALCULATOR_CLASS");
+    }
+    
+    this.compute_override = function(param)
+    {
+        if (param != null)
+        {
+            this.override = param;
+            this.override.close_modal_window();
+        }
+        IRSWorld.Remittance.RemTranForVerification.compute_override(isOBPS, this.show_override_callback);
+    }    
+    this.display_other_remittancedetails= function(tablename)
+    {
+     var theTable       = document.getElementById(tablename);
+     var theTableBody   = theTable.tBodies[0];
+        
+        var dt = IRSWorld.Remittance.RemTranForVerification.RemittanceDetails( fnName.SEQ_ID).value; 
+        if (dt != null && dt != undefined)
+           {
+            //ar ds = param.value;
+            //var dt=ds.Tables[0];
+            var rowcnt  = dt.Rows;
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            for (var cnt = 0; cnt < dt.Rows.length; cnt++)
+            {                
+                var rowData = [dt.Rows[cnt].fldlabel.toString(), dt.Rows[cnt].fldvalue.toString()];
+                var newCell;
+                var newRow  = theTableBody.insertRow(theTableBody.rows.length);
+                for (var i = 0; i < rowData.length; i++) 
+                {       
+                    newCell = newRow.insertCell(i);   
+                    
+                    newCell.style.height ="12px";
+                    if (i == 0)
+                      {                          
+                          newCell.innerHTML         =  rowData[i] + "&nbsp; :";
+                          newCell.className         ='cell_caption'
+                          newCell.style.textAlign   = "right"
+                          newCell.style.width       = "40%"
+                          newCell.colSpan           = "1"
+                         
+                                                                      
+                      }
+                      else
+                      {
+                      
+                          newCell.style.width       = "60%"
+                          var el                    = document.createElement('input')
+                          el.type                   = 'text';
+                          el.name                   = dt.Rows[cnt].fldlabel.toString();//'MerchantInfo'; //'txt' + tfld;
+                          el.id                     = dt.Rows[cnt].fldlabel.toString();//'txt' + tfld;
+                          el.style.width            = "99%";
+                          el.style.height           = "15px"
+                          el.style.border           = "none";
+                          el.readOnly               = true;
+                          el.value                  = rowData[i];
+                          el.style.align            = "left";
+                          newCell.appendChild(el);
+                          newCell.colSpan           = "1"
+                          newCell.style.textAlign   = "left"
+                      }
+                       
+                }
+            }
+          }
+    }
+    
+    this.popDDL = function(DDL,produtimplem_id,controlsource)
+    {  
+        var dt;  
+        var dt2; 
+        this.cleanDDL(DDL);
+        dt = IRSWorld.Remittance.RemTranForVerification.ControlDetails(produtimplem_id,controlsource).value; 
+       
+        if (dt != null && dt.Rows.length > 0)
+        {            
+            for (var i = 0; i < dt.Rows.length; i++)
+            {
+                if (i == 0)
+                {
+                    var opt2    = document.createElement("option");
+                    opt2.text   = '';
+                    opt2.value  = '';
+                    DDL.options.add(opt2);
+                }
+                var opt     = document.createElement("option");                 
+                opt.text    = dt.Rows[i].fldDescription.toString();
+                opt.value   = dt.Rows[i].Fldvalue.toString();
+                DDL.options.add(opt);
+            }      
+        }
+    }
+    
+    this.cleanDDL = function(DDL)
+    {        
+        DDL.length = 0;
+    }  
+    
+    this.reload_commit_response = function(js_remsaving_class)
+    {
+        this.commit_now = js_remsaving_class;      
+         
+        this.commit_now.SEQ_ID                  = fnName.SEQ_ID;
+        this.commit_now.RemitMethod             = fnName.RemitMethod;
+        this.commit_now.ProductChargesID        =fnName.product_charge_id;
+        this.commit_now.Transtatus              = fnName.Transtatus ;
+        this.commit_now.GrossRemAmount          =  fnName.GrossRemAmount;
+        this.commit_now.NetRemAmount            = fnName.NetRemAmount;
+        this.commit_now.NettoBeneCurrency       = fnName.NettoBeneCurrency ;
+        this.commit_now.NettoBeneAmount         = fnName.NettoBeneAmount;
+        this.commit_now.TotalLocalCharge        = fnName.totallocalcharge;
+        this.commit_now.LocalCurrency           = fnName.local_currency ;
+        this.commit_now.ForexTargetToAccount    = fnName.ForexRemittingToAccount;  
+        this.commit_now.total_backend_charges   = fnName.total_backend_charge;
+        this.commit_now.ForexTargetToSource     = fnName.ForexTargetToSource; 
+        this.commit_now.ForexSourceToTarget     = fnName.ForexSourceToTarget;
+        this.commit_now.ForexSourceToPHP        = fnName.ForexSourceToPHP ;
+        this.commit_now.ForexSourceToUSD        = fnName.ForexSourceToUSD;  
+        this.commit_now.ForexTargetToPHP        = fnName.ForexTargetToPHP;
+        this.commit_now.ForexTargetToPHP        = fnName.ForexTargetToPHP; 
+        this.commit_now.ForexTargetToEUR        = fnName.ForexTargetToEUR;
+        this.commit_now.AccountSEQID            = fnName.benef_acct_sequence;
+        this.commit_now.total_benef_charges     = fnName.total_benef_charges;
+         
+        this.commit_now.commit_record();
+    }
+    
+    this.changeImplementation = function()
+    {
+        this.modify_implem=1;
+        this.load_sidebar();
+        this.set_variable_value_to_temp();
+        this.build_remittance_object();
+        document.getElementById('btnremit').disabled = true;
+       
+    }
+    this.replace_product = function()
+    {
+        var i_replace = confirm("DO YOU WANT TO REPLACE PRODUCT AND DISCARD CURRENT TRANSACTION ?");
+        if (i_replace == true)
+        {
+            this.product_charge_id   = 0;
+            this.ProductCode        = 0;
+            this.ImplementationType = 0;
+            this.disable_remittance_button(true);
+            this.load_sidebar();
+            this.set_product_setup_code();
+        }
+    }
+    this.modal_product_setup = function(keycode)
+    {
+        this.grd_search_keyword = keycode;
+
+        if (this.check_product_setup_ok() == false)
+        {
+            alert(this.system_message); return;
+        }
+
+        this.grd_source  = "sp_approval_rem_product_setup~" + keycode + "~" + this.Location + "~" + this.ProductCode_temp + "~" + this.ImplementationType_temp + "~" + this.Paymode + "~" + this.RemittingCurrency + "~" + this.charge_type + "~0~0~0~0~0";
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+
+    }
+    
+    this.backtomenu = function()
+    {
+        this.modify_implem=null;
+        this.load_sidebar();
+        this.set_final_value_to_variable();
+        document.getElementById('btnremit').disabled = false;
+    }
+     
+    this.get_sidebar_list = function()
+    {
+         var sidebar;
+         sidebar = new Array (
+            new Array(1, 0, 'Update Status', 'javascript:side_bar_link("UPDATESTATUS")'),
+            new Array(2,0,'Back to Search',                'javascript:side_bar_link("back");')
+         );
+//            if (this.modify_implem != null && this.modify_implem == 1)
+//            {
+//                sidebar = new Array
+//                (
+//                    new Array(1,0,'Select New Product',   'javascript:side_bar_link("PRODSET","PRODUCT");'),
+//                    //new Array(3,0,'Send Money using Beneficiary Setup','javascript:side_bar_link("PRODBENEF");'),
+//                    new Array(2,0,'Back to Menu',                'javascript:side_bar_link("backtomenu");')
+//                );
+//            }
+//            else
+//            {
+//                if (this.Location =="1170")
+//                {
+//                
+//                    if (((parseInt(fnName.ProductCode )==10) || (parseInt(fnName.ProductCode )==14) || (parseInt(fnName.ProductCode )==22)) && (parseInt(fnName.ImplementationType)==2))
+//                    {
+//                            sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Reversal',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(2,0,  'Waived Charges', 'javascript:side_bar_link("WAIVED");'),
+//                            new Array(3,0,  'Override Charges/Exchange Rates',        'javascript:side_bar_link("OVERRIDE");'),
+//                            new Array(4,0,  'Set Hold',       'javascript:side_bar_link("SETHOLD");'),
+//                            new Array(5,0,  'Release Hold',            'javascript:side_bar_link( "RELEASEHOLD");'),
+//                            new Array(6,0,  'Change Clearing Date', 'javascript:side_bar_link( "CHANGECLEARING");'),
+//                            new Array(8,0, 'Verify Account', 'javascript:side_bar_link("VERIFYACCOUNT");'),
+//                            new Array(7,0, 'Change Implementation','javascript:side_bar_link("CHANGEIMPLEM");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                             );       
+//                     }
+//                     else
+//                     {
+//                            
+//                             sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Reversal',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(2,0,  'Waived Charges', 'javascript:side_bar_link("WAIVED");'),
+//                            new Array(3,0,  'Override Charges/Exchange Rates',        'javascript:side_bar_link("OVERRIDE");'),
+//                            new Array(4,0,  'Set Hold',       'javascript:side_bar_link("SETHOLD");'),
+//                            new Array(5,0,  'Release Hold',            'javascript:side_bar_link( "RELEASEHOLD");'),
+//                            new Array(6,0,  'Change Clearing Date', 'javascript:side_bar_link( "CHANGECLEARING");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );    
+//                      }
+//                         
+//                }
+//              
+//                else
+//                {
+//                    if ((parseInt(fnName.ImplementationType )==2) || ((parseInt(fnName.ProductCode )==27) && (parseInt(fnName.ImplementationType )==1)) || ((parseInt(fnName.ProductCode )==24) && (parseInt(fnName.ImplementationType )==1)))
+//                    {
+//                       if ((parseInt(fnName.Transtatus)   ==  15) || (parseInt(fnName.Transtatus)   ==  14))
+//                       {
+//                            sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Cancel',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(2,0,  'Waived Charges', 'javascript:side_bar_link("WAIVED");'),
+//                            new Array(3,0,  'Override Charges/Exchange Rates',        'javascript:side_bar_link("OVERRIDE");'),
+//                            new Array(4,0,  'Set Hold',       'javascript:side_bar_link("SETHOLD");'),
+//                            new Array(5,0,  'Release Hold',            'javascript:side_bar_link( "RELEASEHOLD");'),
+//                            new Array(6,0,  'Change Clearing Date', 'javascript:side_bar_link( "CHANGECLEARING");'),
+//                            new Array(8,0, 'Verify Account', 'javascript:side_bar_link("VERIFYACCOUNT");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );  
+//                             document.getElementById('btnremit').disabled = false;    
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "visible";
+//                           
+//                      }
+//                      else if ((parseInt(fnName.Transtatus)   ==  11) || (parseInt(fnName.Transtatus)   ==  12) || (parseInt(fnName.Transtatus)   ==  9))
+//                      {
+//                            sidebar = new Array
+//                            (
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );     
+//                             document.getElementById('btnremit').disabled = true;    
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "hidden";
+//                       }
+//    
+//                      else if ((parseInt(fnName.Transtatus)   ==  2) && (parseInt(fnName.ImplementationType )==2))
+//                      
+//                      {
+//                            sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Reversal',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(8,0, 'Verify Account', 'javascript:side_bar_link("VERIFYACCOUNT");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );  
+//                             document.getElementById('btnremit').disabled = true;     
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "hidden";  
+//                      } 
+//                      else
+//                      {
+//                            sidebar = new Array
+//                            (
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );  
+//                             document.getElementById('btnremit').disabled = true;   
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "hidden";    
+//                      } 
+//                    }                     
+//                     else
+//                     {
+//                        if ((parseInt(fnName.Transtatus)   ==  15) || (parseInt(fnName.Transtatus)   ==  14))
+//                        {
+//                             sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Cancel',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(2,0,  'Waived Charges', 'javascript:side_bar_link("WAIVED");'),
+//                            new Array(3,0,  'Override Charges/Exchange Rates',        'javascript:side_bar_link("OVERRIDE");'),
+//                            new Array(4,0,  'Set Hold',       'javascript:side_bar_link("SETHOLD");'),
+//                            new Array(5,0,  'Release Hold',            'javascript:side_bar_link( "RELEASEHOLD");'),
+//                            new Array(6,0,  'Change Clearing Date', 'javascript:side_bar_link( "CHANGECLEARING");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );   
+//                             document.getElementById('btnremit').disabled = false;  
+//                                  var control = document.getElementById('btnremit');
+//                             control.style.visibility = "visible";
+//                        }
+//                        
+//                         else if (parseInt(fnName.Transtatus)   ==  5)
+//                        {
+//                             sidebar = new Array
+//                            (
+//                            new Array(1,0,  'Reversal',       'javascript:side_bar_link("REVERSAL");'),
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );    
+//                             document.getElementById('btnremit').disabled = true;   
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "hidden";
+//                        }
+//                        
+//                        else 
+//                        {
+//                             sidebar = new Array
+//                            (
+//                            new Array(9,0,  'Show Breakdown',     'javascript:side_bar_link("SHOWBREAKDOWN");'),
+//                            new Array(10,0, 'Re-Print',     'javascript:side_bar_link("REPRINT");'),
+//                            new Array(11,0, 'Back',      'javascript:side_bar_link("BACK");')
+//                      
+//                             );  
+//                             document.getElementById('btnremit').disabled = true;   
+//                             var control = document.getElementById('btnremit');
+//                             control.style.visibility = "hidden";
+//                        }
+//                     
+//                      }
+//                
+//                }
+//         }
+               
+
+        return sidebar;
+    }
+    
+    this.set_status = function() 
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("THE SERVER STOPPED RESPONDING. PLEASE TRY AGAIN");
+        }
+        
+        IRSWorld.Remittance.RemTranForVerification.set_status(status, this.SEQ_ID.toString(), OTCView.set_status_callback);
+    }
+    
+    this.set_status_callback = function(result) 
+    {
+        if (result.value) 
+        {
+            document.getElementById("btnremit").disabled = false;
+            //Edited by Troy 20120828
+            if (document.getElementById("div_obps").style.display       == 'block')
+                setText(document.getElementById('spnOBPStranstatus'), status_desc); 
+          else
+                setText(document.getElementById('spnstatus'), status_desc); 
+        }
+    }
+    
+    this.Save_Changes = function() 
+    {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            alert("THE SERVER STOPPED RESPONDING. PLEASE TRY AGAIN");
+            //this.close_msg_prompt(); setText("lbl_otc_caption", "SERVER NOT RESPONDING. CHECKING AVAILABILITY OF CURRENCY RATES FAILED."); alert("Server not responding. Checking availability of currency rates failed.");
+        }
+        
+		if(fnName.MerchantCode != null && fnName.MerchantCode != undefined)
+		{
+			if(fnName.MerchantCode.toUpperCase() == "GENERIKA")
+			{
+				if (status != null | status != undefined) 
+				{
+					if (confirm("Continue with saving...")) 
+					{
+					   IRSWorld.Remittance.RemTranForVerification.saveStatusGenerika(OTCView.ProductCode, OTCView.saveGenerikaCallback);
+					   OTCView.show_loading_msg('Saving updates...');
+					}
+				}
+				else 
+				{
+					alert("Please select a status!");
+				}
+			}
+			else if (IRSWorld.Remittance.RemTranForVerification.getMerchantType().value == "3")
+		    {
+			    if (confirm("Please make sure that the transaction details have already been pushed to Bayad Center before updating the status.")) 
+			    {
+				    if (status != null | status != undefined) 
+				    {
+					    if (confirm("Continue with saving...")) 
+					    {
+						    IRSWorld.Remittance.RemTranForVerification.save_status(OTCView.ProductCode, OTCView.save_changes_callback);
+						    OTCView.show_loading_msg('Saving updates...');
+					    }
+				    }
+				    else 
+				    {
+					    alert("Please select a status!");
+				    }
+			    }
+		    }
+			else
+			{
+				if (status != null | status != undefined) 
+				{
+					if (confirm("Continue with saving...")) 
+					{
+						IRSWorld.Remittance.RemTranForVerification.save_status(OTCView.ProductCode, OTCView.save_changes_callback);
+						OTCView.show_loading_msg('Saving updates...');
+					}
+				}
+				else 
+				{
+					alert("Please select a status!");
+				}
+			}
+		}
+        else
+        {
+            if (status != null | status != undefined) 
+            {
+                if (confirm("Continue with saving...")) 
+                {
+                    IRSWorld.Remittance.RemTranForVerification.save_status(OTCView.ProductCode, OTCView.save_changes_callback);
+                    OTCView.show_loading_msg('Saving updates...');
+                }
+            }
+            else 
+            {
+                alert("Please select a status!");
+            }
+        }
+    }
+    
+    this.save_changes_callback = function(result) 
+    {
+        hidePanel('divHelp');
+        if (result.value > -1) 
+        {
+            alert("Update successful!");
+            status = 0;
+            r_seq_id = 0;
+            this.SEQ_ID = 0;
+            
+            OTCView.remittance_redirection();
+        }
+    }
+    
+    this.saveGenerikaCallback = function(result) 
+    {
+        hidePanel('divHelp');
+        if (result.value.indexOf("successful") > -1) 
+        {
+            alert(value);
+            status = 0;
+            r_seq_id = 0;
+            this.SEQ_ID = 0;
+            OTCView.remittance_redirection();
+        }
+        else
+        {
+            alert(result.value);
+            status = 0;
+            r_seq_id = 0;
+            this.SEQ_ID = 0;
+        }
+    }
+
+    
+    this.choose_status = function() {
+        AjaxPro.timeoutPeriod = 1000 * 1000;
+    
+        AjaxPro.onTimeout = function()
+        {
+            alert("THE SERVER STOPPED RESPONDING. PLEASE TRY AGAIN");
+            //this.close_msg_prompt(); setText("lbl_otc_caption", "SERVER NOT RESPONDING. CHECKING AVAILABILITY OF CURRENCY RATES FAILED."); alert("Server not responding. Checking availability of currency rates failed.");
+        }
+        var param;
+        param = this.getRoleDesc();
+        if(param[1].toString() == "1074" && param[16].toString().toLowerCase() == "for verification ho")
+        {
+           IRSWorld.Remittance.RemTranForVerification.get_status_HO(OTCView.show_grid_choose_status);
+        }
+        else
+        {
+            IRSWorld.Remittance.RemTranForVerification.get_status(OTCView.show_grid_choose_status);
+        }
+        OTCView.show_loading_msg('');
+    }
+    
+    this.show_loading_msg = function(msg)
+    {
+        new common_method().to_show_loading_message('divMsgContainer');
+        setText(document.getElementById('lblMsg'), msg);
+        showPanel('divHelp');
+    }
+    
+    this.show_grid_choose_status = function(result) {
+        hidePanel('divHelp');
+        if (result.value != null) {
+            var datatable = result.value;
+            grid = OTCView.create_status_grid();
+            grid.filter.enabled = false;            
+            grid.bind(datatable, 'pnlStatus', 'tbl_Status');
+            
+            var dom = document.getElementById("divSetStatus")
+            
+            dom.style.left = "50%"  ;
+            dom.style.top = "2";       
+            dom.style.display = 'block'; 
+            showPanel("divSetStatus");
+        }
+    }
+    
+    this.create_status_grid = function() {
+        gv = new datagrid();
+        
+        {
+		    var col = new datagrid_column(); // 0
+		    col.header = 'Status Code';
+		    col.datafield = 'FLDCODE'; //used in alias SQL
+		    col.align = 'center';
+		    col.styles.cell += 'width:auto';
+		    //col.onclick = 'OTCView.select_column';
+		    col.editable = false;
+		    gv.addColumn(col);
+        } 
+        {
+		    var col = new datagrid_column(); // 0
+		    col.header = 'Status Description';
+		    col.datafield = 'FLDDESCRIPTION'; //used in alias SQL
+		    col.align = 'center';
+		    col.styles.cell += 'width:auto';
+		    //col.onclick = 'OTCView.select_column';
+		    col.editable = false;
+		    gv.addColumn(col);
+        }
+            
+        gv.row.normal_style = 'background-color: #f7ffff;';
+        gv.row.onclick = 'OTCView.select_column';
+        gv.footer.save_button.onclick = 'OTCView.close_set_status_panel'; 
+        return gv;
+    }
+    
+    this.close_set_status_panel = function() {
+        hidepanel(divSetStatus);
+    }
+    
+    this.select_column = function(args) {
+        status = grid.getValueAt(args.datarow, 0);
+        status_desc = grid.getValueAt(args.datarow, 1);
+        OTCView.set_status(status);
+        //hidePanel("divSetStatus");
+    }
+
+    this.side_bar_link_execute = function(modal_keycode, modal_return_value)
+    {
+        switch(modal_keycode.toUpperCase())
+        {
+            case "REVERSAL"         : OTCView.reversal();break;
+            case "CANCEL"           : OTCView.reversal();break;
+            case "WAIVED"           : OTCView.show_override();break;
+            case "OVERRIDE"         : OTCView.open_override();break;
+            case "SETHOLD"          : OTCView.setholditems(1);break;
+            case "RELEASEHOLD"      : OTCView.setholditems(0);break;
+            case "CHANGECLEARING"   : OTCView.show_clearingdate();break;
+            case "CHANGEIMPLEM"     : OTCView.changeImplementation();break;
+            case "VERIFYACCOUNT"    : OTCView.AcountInquiry();break;
+            case "SHOWBREAKDOWN"    : OTCView.modal_compute_breakdown();break;
+            case "REPRINT"          : OTCView.print_receipt();break;
+            case "BACK"             : OTCView.remittance_redirection();break;
+            case "PRODSET"          : OTCView.set_product_value(modal_return_value);break;
+            //case "PRODBENEF"      : OTCView.modal_beneficiary_prod_setup("PRODUCT");break;
+            //case "PRODBENEF"      : OTCView.AcountInquiry();break;
+            case "BACKTOMENU"       : OTCView.backtomenu();break;
+            case "UPDATESTATUS"     : OTCView.choose_status(); break;
+           
+        }
+    }
+     this.load_sidebar = function()
+    {
+  
+            var side_array  = this.get_sidebar_list();
+            var side_winder = new js_sidebar('sidemenu', side_array);
+
+            //document.getElementById("lbl_otc_caption").innerHTML = "REMITTANCE INFORMATION";
+            document.getElementById("divmenu").innerHTML = side_winder.toString();
+    }
+    
+    this.load_unload_sidebar = function()
+    {
+        var div  = document.getElementById("divmenu");
+        var cset = div.style.display;
+                
+        div.style.display = (cset == "block") ? "none" : "block";
+        
+        document.getElementById("anchor_off").innerHTML      = (cset == "block") ? String.fromCharCode(187) : String.fromCharCode(171);
+        document.getElementById('td_remittance').style.width = (cset == "block") ? "0%" : "auto";
+    }
+    
+    this.open_remittance_extra_details = function()
+    {
+        this.need_special_message = false;
+        
+        if (this.ProductCode_temp != null && this.ImplementationType_temp != null)
+        {
+            if (parseInt(this.ProductCode_temp) == 10)
+            {
+                if (parseInt(this.ImplementationType_temp) == 2)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }            
+
+            if (parseInt(this.ProductCode_temp) == 11)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.choose_account_screen(2,1); return;                    
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 11)
+            {
+                if (parseInt(this.ImplementationType_temp) == 11)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 22)
+            {
+                if (parseInt(this.ImplementationType_temp) == 2)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 14)
+            {
+                if (parseInt(this.ImplementationType_temp) == 2)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 16)
+            {
+                if (parseInt(this.ImplementationType_temp) == 10)
+                {
+                    this.choose_account_screen(2,1); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 12)
+            {
+                if (parseInt(this.ImplementationType_temp) == 4)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 12)
+            {
+                if (parseInt(this.ImplementationType_temp) == 5)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }            
+
+            if (parseInt(this.ProductCode_temp) == 13)
+            {
+                if (parseInt(this.ImplementationType_temp) == 5)
+                {
+                    this.choose_account_screen(5, 0); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 15)
+            {
+                if (parseInt(this.ImplementationType_temp) == 7)
+                {
+                    this.account_open_screen(); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 27)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.apas_online_screen(); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 255)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.apas_online_screen(); return;
+                }
+            }            
+
+            if (parseInt(this.ProductCode_temp) == 24)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.pay_anywhere_screen(); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 7)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.apas_batch_screen(); return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 8)
+            {
+                if (parseInt(this.ImplementationType_temp) == 3)
+                {
+                    this.door_to_door_screen(); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 9)
+            {
+                if (parseInt(this.ImplementationType_temp) == 3)
+                {
+                    this.door_to_door_screen(); return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode_temp) == 3)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+                    
+                    return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 4)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+                    
+                    return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 5)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 6)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+
+            if (parseInt(this.ProductCode_temp) == 18)
+            {
+                if (parseInt(this.ImplementationType_temp) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment_screen();
+
+                    return;
+                }
+            }
+        }
+        this.pop_up=1;
+        alert("NOT REQUIRED");
+    }
+    this.choose_account_screen = function(branch_type, pchc_member)
+    {
+        if (this.choose_account == null)
+        {
+            this.choose_account = new rem_modal_accounts();
+        }
+
+        this.the_mode = 1;
+
+        this.choose_account.ProductCode = parseInt(this.ProductCode);
+        this.choose_account.implem_code  = parseInt(this.ImplementationType);
+        this.choose_account.remitter_id  = this.remitter_id;
+        this.choose_account.account_form(this.beneficiary_id, branch_type.toString(), 'OTCView.choose_account', fnName.benef_acct_sequence.toString());
+    }
+
+    this.choose_account_screen_result = function()
+    {
+        this.account_currency_temp     = this.choose_account.currency_code;
+        this.net_to_bene_currency_temp = this.choose_account.currency_code;
+        this.benef_acct_sequence  = this.choose_account.account_seqid;
+
+        //document.getElementById("lbl_account_number").innerHTML =  this.choose_account.account_number;
+
+        this.set_product_charges_id();
+    }
+
+    this.account_open_screen = function()
+    {
+        if (this.open_accounts == null)
+        {
+            this.open_accounts = new rem_modal_open_accounts();
+        }
+        
+        this.the_mode = 2;
+        this.open_accounts.open_account_form(2, 'OTCView.open_accounts');
+    }    
+
+    this.account_open_screen_result = function()
+    {
+        this.account_currency_temp     = this.open_accounts.currency_code;
+        this.net_to_bene_currency_temp = this.open_accounts.currency_code;
+        this.set_product_charges_id();
+    }
+    
+    this.apas_online_screen = function()
+    {
+        if (this.apas_online == null)
+        {
+            this.apas_online = new rem_modal_popups();
+        }        
+
+        this.the_mode = 3;
+        this.apas_online.open_apas_online();
+    }
+    
+    this.apas_online_screen_result = function()
+    {
+        this.account_currency_temp     = this.apas_online.currency;
+        this.net_to_bene_currency_temp = this.apas_online.currency;
+        this.set_product_charges_id();
+    }    
+    
+    this.apas_online_commit_response = function(param)
+    {
+        var s = param.split('~'); this.rem_details_error_msg = null;
+
+        if (s != null)
+        {            
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+        
+        this.open_payment_mode_screen();
+    }
+    
+    this.pay_anywhere_screen = function()
+    {
+        if (this.pay_anywhere == null)
+        {
+            this.pay_anywhere = new rem_modal_popups();
+        }
+        
+        this.the_mode = 4;
+        this.pay_anywhere.open_paw();
+    }
+    
+    this.pay_anywhere_screen_result = function()
+    {
+        this.account_currency_temp     = this.pay_anywhere.currency;
+        this.net_to_bene_currency_temp = this.pay_anywhere.currency;
+        this.set_product_charges_id();
+    }
+    
+    this.pay_anywhere_commit_response = function(param)
+    {
+        var s = param.split('~'); this.rem_details_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+        
+        this.open_payment_mode_screen();
+    }
+    
+    this.door_to_door_screen = function()
+    {
+        if (this.door_to_door == null)
+        {
+            this.door_to_door = new rem_modal_popups();
+        }
+        
+        this.the_mode = 7;
+        this.door_to_door.open_door_to_door(this.beneficiary_id);
+    }
+    
+    this.door_to_door_screen_response = function()
+    {
+        this.account_currency_temp     = this.door_to_door.currency;
+        this.net_to_bene_currency_temp = this.door_to_door.currency;
+        this.set_product_charges_id();
+    }
+    
+    this.door_to_door_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+            else
+            {
+                this.commit_now = new rem_otc_door_commit();
+                this.commit_now.transaction_id = parseInt(this.transaction_sequence_id);
+                this.commit_now.commit_record();
+                
+                return;            
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }        
+    
+    this.apas_batch_screen = function()
+    {
+        if (this.apas_batch == null)
+        {
+            this.apas_batch = new rem_modal_popups();
+        }
+
+        this.the_mode = 5;
+        this.apas_batch.open_apas_batch();
+    }
+
+    this.apas_batch_screen_response = function()
+    {
+        this.account_currency_temp     = this.apas_batch.currency;
+        this.net_to_bene_currency_temp = this.apas_batch.currency;
+        this.set_product_charges_id();
+    }
+
+    this.apas_batch_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }
+    
+    this.bulk_payment_screen = function()
+    {
+        if (this.bulk_payment == null)
+        {
+            this.bulk_payment = new rem_modal_popups();
+        }
+
+        this.the_mode = 8;
+        this.bulk_payment.open_bpo_implem();
+    }
+    
+    this.bulk_payment_screen_response = function()
+    {
+        this.account_currency_temp     = this.bulk_payment.currency;
+        this.net_to_bene_currency_temp = this.bulk_payment.currency;
+        this.set_product_charges_id();    
+    }
+
+    this.bulk_payment_commit_response = function(param)
+    {
+        var s = param.split('~');
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+
+        this.open_payment_mode_screen();
+    }
+    
+    this.open_remitter_proxy_screen = function()
+    {
+        if (this.rem_proxy == null)
+        {
+            this.rem_proxy = new remitter_proxy();
+        }
+
+        this.the_mode = 9;
+        this.rem_proxy.remitter_id = this.remitter_id;
+        this.rem_proxy.open_remitter_proxy();
+    }
+    
+    this.rem_proxy_screen_result = function()
+    {
+        OTCView.set_product_setup_code();
+        OTCView.load_sidebar();
+    }
+//    this.modal_product_setup = function(keycode)
+//    {
+//        this.grd_search_keyword = keycode;
+
+//        if (this.check_product_setup_ok() == false)
+//        {
+//            alert(this.system_message); return;
+//        }
+
+//        this.grd_source  = "sp_otc_rem_product_setup~" + keycode + "~" + this.Location + "~" + this.ProductCode + "~" + this.ImplementationType + "~" + this.Paymode + "~" + this.RemittingCurrency + "~" + this.charge_type + "~0~0~0~0~0";
+//        this.grd_search  = new grid_selector();
+//        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+
+//    }
+    
+    this.modal_beneficiary_prod_setup = function(keycode)
+    {
+        this.grd_search_keyword = keycode;
+        this.grd_source  = "sp_otc_rem_beneficiary_prodsetup~" + fnName.beneficiary_id + "~" + fnName.Location;
+        this.grd_search  = new grid_selector();
+        this.grd_search.open_selection_grid(null, this.grd_source, 0 , null);
+    }  
+    
+      this.chk_product_setups = function()
+    {
+        var ok = true;
+
+        this.system_message = null;
+
+        
+        if (this.ProductCode        == null || parseInt(this.ProductCode)        < 1) {this.system_message  = "PLEASE SELECT PRODUCT.";          return false;}
+        if (this.ImplementationType == null || parseInt(this.ImplementationType) < 1) {this.system_message  = "IMPLEMENTATION TYPE NOT SET.";    return false;}        
+        if (this.Paymode        == null || parseInt(this.Paymode)        < 1) {this.system_message  = "PLEASE SELECT PAYMENT TYPE.";     return false;}
+        if (this.RemittingCurrency  == null || parseInt(this.RemittingCurrency)  < 1) {this.system_message  = "PLEASE SELECT CURRENCY.";         return false;}
+        // if (this.charge_type         == null || parseInt(this.charge_type)         < 1) {this.system_message  = "PLEASE SELECT CHARGE TYPE.";      return false;}
+        //if (this.compute_direction   == null || parseInt(this.compute_direction)   < 1) {this.system_message  = "PLEASE SELECT COMPUTATION TYPE."; return false;}
+        if (this.product_charge_id   == null || parseInt(this.product_charge_id)   < 1) {this.system_message  = "PRODUCT CHARGE SETUP NOT FOUND"; return false;}
+       // if (this.compute_direction.toString().toUpperCase() == "NULL") {this.system_message = "PLEASE SELECT COMPUTATION TYPE."; return false;}
+
+        return ok;
+    }
+    this.check_product_setup_ok = function()
+    {
+      
+        this.system_message = null;
+        return this.chk_product_setups();
+        return true;
+    }
+     this.build_remittance_object = function()
+    {
+        if (this.ProductCode != null && this.ImplementationType != null)
+        {
+            if ((parseInt(this.ProductCode) == 10) && (parseInt(this.ProductCode) == 22))
+            {
+                if (parseInt(this.ImplementationType) == 2)
+                {
+			        this.choose_account = new rem_modal_accounts();
+		            this.choose_account.currency_code = this.account_currency;
+           		    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+			        return;
+                }
+            }            
+
+            if (parseInt(this.ProductCode) == 11)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+			        this.choose_account = new rem_modal_accounts();
+		            this.choose_account.currency_code = this.account_currency;
+           		    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+			        return;
+                }
+            }
+
+            if (parseInt(this.ProductCode) == 11)
+            {
+                if (parseInt(this.ImplementationType) == 11)
+                {
+			        this.choose_account = new rem_modal_accounts();
+		            this.choose_account.currency_code = this.account_currency;
+           		    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+			        return;
+                }
+            }
+            if (parseInt(this.ProductCode) == 12)
+            {
+                if (parseInt(this.ImplementationType) == 4)
+                {
+			        this.choose_account = new rem_modal_accounts();
+		            this.choose_account.currency_code = this.account_currency;
+           		    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+           		    
+			        return;                
+                }
+            }
+
+            if (parseInt(this.ProductCode) == 13)
+            {
+                if (parseInt(this.ImplementationType) == 5)
+                {
+			        this.choose_account = new rem_modal_accounts();
+		            this.choose_account.currency_code = this.account_currency;
+           		    this.choose_account.account_seqid = this.benef_acct_sequence.toString();
+
+			        return;
+                }
+            }
+
+            if (parseInt(this.ProductCode) == 15)
+            {
+                if (parseInt(this.ImplementationType) == 7)
+                {
+			        this.open_accounts = new rem_modal_open_accounts();
+        		    this.open_accounts.currency_code = this.account_currency;
+        		    
+        		    return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 27)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+			        this.apas_online = new rem_modal_popups();
+			        this.apas_online.pop_mode = 2;
+			        this.apas_online.currency = this.account_currency;
+
+			        return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 255)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+			        this.apas_online = new rem_modal_popups();
+			        this.apas_online.pop_mode = 2;
+			        this.apas_online.currency = this.account_currency;
+			        
+			        return;
+                }
+            }
+
+            if (parseInt(this.ProductCode) == 24)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+			        this.pay_anywhere = new rem_modal_popups();
+			        this.pay_anywhere.pop_mode = 3;
+			        this.pay_anywhere.currency = this.account_currency;
+
+			        return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 7)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+			        this.apas_batch = new rem_modal_popups();
+			        this.apas_batch.pop_mode = 1;
+			        this.apas_batch.currency = this.account_currency;
+			        
+			        return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 8)
+            {
+                if (parseInt(this.ImplementationType) == 3)
+                {
+			        this.door_to_door = new rem_modal_popups();
+			        this.door_to_door.pop_mode = 0;
+			        this.door_to_door.currency = this.account_currency;
+
+			        return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 9)
+            {
+                if (parseInt(this.ImplementationType) == 3)
+                {
+			        this.door_to_door = new rem_modal_popups();
+			        this.door_to_door.pop_mode = 0;
+			        this.door_to_door.currency = this.account_currency;
+
+			        return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 3)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment = new rem_modal_popups();
+                    this.bulk_payment.pop_mode = 0;
+                    this.bulk_payment.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 4)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment = new rem_modal_popups();
+                    this.bulk_payment.pop_mode = 0;
+                    this.bulk_payment.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 5)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment = new rem_modal_popups();
+                    this.bulk_payment.pop_mode = 0;
+                    this.bulk_payment.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 6)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment = new rem_modal_popups();
+                    this.bulk_payment.pop_mode = 0;
+                    this.bulk_payment.currency = this.account_currency;
+
+                    return;
+                }
+            }
+            
+            if (parseInt(this.ProductCode) == 18)
+            {
+                if (parseInt(this.ImplementationType) == 1)
+                {
+                    this.need_special_message = true;
+                    this.bulk_payment = new rem_modal_popups();
+                    this.bulk_payment.pop_mode = 0;
+                    this.bulk_payment.currency = this.account_currency;
+
+                    return;
+                }
+            }
+        }
+    }
+    
+    this.exec_modal_lookup = function(param)
+    {
+        var command_param = param.split("$");
+
+        if (command_param != null)
+        {
+            if (command_param[0].toUpperCase() == "AJX_SELECTED")
+            {
+                var param_value = command_param[1].split("~");
+                
+                switch(this.grd_search_keyword.toUpperCase())
+                {                
+                    case "REMITTER_SEARCH"    : this.grd_search.process_ajax(param); this.open_beneficiary_result(command_param[1]); break;
+                    case "BENEFICIARY_SEARCH" : this.set_client_info(command_param[1]); break;
+                    case "PRODUCT"            : this.ProductCode_temp        = parseInt(param_value[0]); this.ImplementationType_temp = parseInt(param_value[1]); this.charge_type_temp = parseInt(param_value[2]);  this.set_product_setup_code(); this.load_sidebar(); break;
+                    case "PAYMENT"            : this.Paymode        = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "RCURRENCY"          : this.RemittingCurrency  = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "CHARGETYPE"         : this.charge_type         = parseInt(param_value[0]); this.set_product_setup_code(); break;
+                    case "RECEIPTMODE"        : this.receipt_mode        = parseInt(param_value[0]); document.getElementById("lbl_receipt_mode").innerHTML       = param_value[1]; break;
+                    case "TRANXPURPOSE"       : this.purpose             = parseInt(param_value[0]); document.getElementById("lbl_purpose").innerHTML            = param_value[1]; break;
+                    case "TRANXSOURCE"        : this.transaction_source  = parseInt(param_value[0]); document.getElementById("lbl_transaction_source").innerHTML = param_value[1]; break;
+                    case "SOURCEOFFUNDS"      : this.source_of_funds     = parseInt(param_value[0]); document.getElementById("lbl_source_of_fund").innerHTML     = param_value[1]; break;
+                }
+            }
+        }
+
+        this.parse_code();
+        
+        if (this.grd_search_keyword.toUpperCase() != "BENEFICIARY_SEARCH")
+        {
+            this.grd_search.process_ajax(param);
+        }
+        else
+        {
+            if (command_param[0].toUpperCase() != "AJX_SELECTED")
+            {
+                this.grd_search.process_ajax(param);
+            }
+        }
+    }
+     this.parse_code = function()
+    {
+        this.ProductCode        = parseInt(this.ProductCode); 
+        this.ImplementationType = parseInt(this.ImplementationType);
+        this.Paymode        = parseInt(this.Paymode);
+        this.RemittingCurrency  = parseInt(this.RemittingCurrency); 
+        this.charge_type         = parseInt(this.charge_type);
+    }
+    
+    this.set_product_setup_code = function()
+    {
+        OTCView.set_product_charges_id();
+        //IRSWorld.Remittance.RemTranForVerification.get_product_setup_code(this.Location, parseInt(this.ProductCode_temp), parseInt(this.ImplementationType_temp), parseInt(this.Paymode), parseInt(this.net_to_bene_currency), parseInt(this.charge_type_temp), this.set_product_setup_code_callback);
+    }
+    
+    this.set_product_setup_code_callback = function(result)
+    {
+        var ds = result.value;
+
+        var Paymode       = parseInt(OTCView.Paymode);
+        var RemittingCurrency = parseInt(OTCView.RemittingCurrency);
+        var charge_type        = parseInt(OTCView.charge_type_temp);
+
+        if (ds != null)
+        {
+            //OTCView.product_charge_id  = 0;
+            //OTCView.rates_is_ready     = 0;
+            OTCView.Paymode       = parseInt(ds.Tables[0].Rows[0].PayMode);
+            OTCView.RemittingCurrency = parseInt(ds.Tables[0].Rows[0].Currency);
+            OTCView.charge_type_temp        = parseInt(ds.Tables[0].Rows[0].ChargeType);
+            
+            if (OTCView.Paymode == null || OTCView.Paymode < 1)
+            {
+                OTCView.Paymode = parseInt(Paymode);
+            }
+            if (OTCView.RemittingCurrency == null || OTCView.RemittingCurrency < 1)
+            {
+                OTCView.RemittingCurrency = parseInt(RemittingCurrency);
+            }
+            if (OTCView.charge_type == null || OTCView.charge_type < 1)
+            {
+                OTCView.charge_type = parseInt(charge_type);
+            }
+        }
+          OTCView.set_product_charges_id();
+//        OTCView.set_compute_mode();
+//        OTCView.set_product_setup_desc();.
+
+    }
+    this.AcountInquiry = function()
+    {
+        var acct = null;
+        
+        this.open_msg_prompt("PLEASE WAIT ...");
+       
+        acct= IRSWorld.Remittance.RemTranForVerification.AccountInquiry(fnName.AccountNo,this.AcountInquiry_callback);
+        
+    }
+    this.AcountInquiry_callback = function(result)
+    {
+        fnName.close_msg_prompt();
+        var acct = result.value;
+        if (acct != null)
+        {
+            alert(acct);
+        }
+    }
+    
+    this.set_product_charges_id = function()
+    {
+       IRSWorld.Remittance.RemTranForVerification.get_charge_id(this.Location, parseInt(this.ProductCode_temp), parseInt(this.ImplementationType_temp), parseInt(this.Paymode), parseInt(this.net_to_bene_currency_temp), parseInt(this.charge_type_temp), parseInt(this.computationtype), this.set_product_charges_id_callback);
+    }
+    
+    this.set_product_charges_id_callback = function(result)
+    {
+        var ds = result.value; 
+
+        //OTCView.product_charge_id  = 0;
+       
+       
+
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                OTCView.product_charge_id_temp  = ds.Tables[0].Rows[0].ProductChargeID;
+               
+              if (fnName.pop_up == 1)
+                {
+                    OTCView.open_remittance_extra_details();
+                }
+                else
+                {
+                    OTCView.set_product_setup_desc();
+                }
+            }
+            else
+                alert("Product Not Found");
+        }
+       
+        fnName.pop_up = 1;
+        //iremit.check_otc_user();
+    }
+
+    this.run_grid_command = function(param)
+    {
+        this.the_mode = parseInt(this.the_mode);
+        
+        if (this.the_mode == 1)
+        {
+            this.choose_account.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 2)
+        {
+            this.open_accounts.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 3)
+        {
+            this.apas_online.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 4)
+        {
+            this.pay_anywhere.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 5)
+        {
+            this.apas_batch.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 6)
+        {
+            this.cheque_payments.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 7)
+        {
+            this.door_to_door.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 8)
+        {
+            this.bulk_payment.do_ajaxgridview(param);
+        }
+        else if (this.the_mode == 9)
+        {
+            this.rem_proxy.do_ajaxgridview(param);
+        }
+    }
+    
+     this.set_product_setup_desc = function()    
+    {
+        IRSWorld.Remittance.RemTranForVerification.get_product_setup_description(parseInt(fnName.ProductCode_temp), 
+                                                                 parseInt(fnName.ImplementationType_temp),
+                                                                 parseInt(fnName.Paymode),
+                                                                 parseInt(fnName.net_to_bene_currency_temp),
+                                                                 parseInt(fnName.charge_type), 
+                                                                 parseInt(fnName.computationtype), 
+                                                                 parseInt(fnName.ReceiptMode), 
+                                                                 parseInt(fnName.TransactionPurpose), 
+                                                                 parseInt(fnName.TransactionSource), 
+                                                                 parseInt(fnName.SourceofFunds), 
+                                                                 this.set_product_setup_desc_callback);
+    }
+    
+    this.set_product_setup_desc_callback = function(result)
+    {
+        var ds = result.value;
+
+        if (ds != null)
+        {
+            document.getElementById("spnProductCode").innerHTML        = ds.Tables[0].Rows[0].product_desc;
+            fnName.compute_now();
+        }
+    }
+    
+    this.compute_now = function()
+    {
+    
+         IRSWorld.Remittance.RemTranForVerification.compute_remittance(this.product_charge_id_temp,this.SEQ_ID, this.compute_now_callback);
+    }
+
+    this.compute_now_callback = function(result)
+    {        
+        var calc = result.value;
+        
+        if (calc != null)
+        {
+            var array_calc = calc.split("~");
+
+
+            fnName.NettoBeneAmountPHP       = array_calc[2];
+            fnName.net_to_bene_currency    = array_calc[3];
+            fnName.local_currency          = array_calc[4];
+            fnName.GrossRemAmount        = array_calc[5];
+            fnName.NetRemAmount          = array_calc[6];
+            fnName.NettoBeneAmount      = array_calc[7];
+            fnName.totallocalcharge      = array_calc[8];
+            fnName.ForexRemittingToAccount = array_calc[9];
+            fnName.ForexTargetToSource  = array_calc[10];
+            fnName.ForexTargetToUSD     = array_calc[11];
+            fnName.ForexTargetToPHP     = array_calc[12];
+            fnName.ForexTargetToEUR     = array_calc[13];
+            fnName.ForexSourceToTarget  = array_calc[14];
+            fnName.ForexSourceToUSD     = array_calc[15];
+            fnName.ForexTargetToPHP     = array_calc[16];
+            fnName.total_backend_charges   = array_calc[17];
+            fnName.update_screen();
+            deleteRow("tbl_benef",5);
+            fnName.update_other_details();
+        }
+     }
+            
+      this.open_msg_prompt = function(msg)
+    {
+        this.msg_prompt_control = new screen_msg_demo();
+        this.msg_prompt_control.open_screen();
+        this.msg_prompt_control.change_msg(msg);
+    }
+    
+    this.close_msg_prompt = function()
+    {
+        if (this.msg_prompt_control != null)
+        {
+            this.msg_prompt_control.close_screen();
+        }
+
+        this.msg_prompt_control = null;
+    }    
+    
+    this.update_other_details= function()
+    {
+        if ((parseInt(fnName.ImplementationType_temp)==2) || (parseInt(fnName.ImplementationType_temp)==11 ) || ((parseInt(fnName.ImplementationType_temp)==1) && (parseInt(this.ProductCode_temp)==11)))
+            fnName.get_account_details();
+        else
+            fnName.get_other_details();
+           
+    }
+    this.get_other_details = function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.get_lookup_description(parseInt(fnName.net_to_bene_currency_temp),"currency",this.get_other_details_callback)
+    }
+    this.get_other_details_callback = function(result)
+    {
+        var acct = result.value;
+        
+        if (acct != null)
+            fnName.net_to_bene_currency_code_temp =acct.Tables[0].Rows[0].flddescription;
+            
+         fnName.reload_remittancedetails("tbl_benef");
+    }
+    this.get_account_details    = function()
+    {
+        IRSWorld.Remittance.RemTranForVerification.get_account_details(fnName.benef_acct_sequence,this.get_account_details_callback)
+    }
+    this.get_account_details_callback   = function(result)
+    {
+         var acct = result.value;
+        
+        if (acct != null)
+        {
+            
+            fnName.AccountNo                  = acct.Tables[0].Rows[0].AccountNo;
+            fnName.AccountType                = acct.Tables[0].Rows[0].AccountType;
+            fnName.AccountTypeDesc            = acct.Tables[0].Rows[0].AccountTypeDesc;
+            fnName.AccountCurrency            = acct.Tables[0].Rows[0].AccountCurrency;
+            fnName.AccountCurrencyCode        = acct.Tables[0].Rows[0].AccountCurrencyDesc;
+            fnName.BranchCode                 = acct.Tables[0].Rows[0].BranchCode;
+            fnName.BranchName                 = acct.Tables[0].Rows[0].BranchName;
+            
+            fnName.reload_remittancedetails("tbl_benef");
+        }
+        
+    }
+    this.reload_remittancedetails= function(tablename)
+    {
+     var theTable       = document.getElementById(tablename);
+     var theTableBody   = theTable.tBodies[0];
+       
+        if (parseInt(this.ProductCode_temp)<1 || parseInt(this.ImplementationType_temp)<1) return;
+        fnName.reimplementation = true;
+        if (parseInt(this.ImplementationType_temp)==1)
+        {
+            if (parseInt(this.ProductCode_temp)==7) //Batch
+            {
+                var accountcurr     = "Net to Bene Currency:"
+                var accountbranch   = "Maintaining Branch:"
+                var counter         = 2
+                
+                for (var cnt = 0; cnt < counter; cnt++)
+                {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                    if (cnt==0)              
+                    var rowData = [accountcurr, this.net_to_bene_currency_code_temp];
+                    if (cnt==1)              
+                    var rowData = [accountbranch, this.BranchName];
+                    
+                    fnName.create_rowdata(theTableBody,rowData);
+                }
+                
+            }
+            
+            if (parseInt(this.ProductCode_temp)==11) // Credit to Account
+            {
+                var accountnum      = "Account Number:"
+            var accounttype     = "Account Type:"
+            var accountcurr     = "Account Currency:"
+            var accountbranch   = "Maintaining Branch:"
+            var counter         = 4
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            
+            for (var cnt = 0; cnt < counter; cnt++)
+            {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                
+                if (cnt==0)              
+                    var rowData = [accountnum, this.AccountNo];
+                if (cnt==1)              
+                    var rowData = [accounttype, this.AccountTypeDesc];
+                if (cnt==2)              
+                    var rowData = [accountcurr, this.AccountCurrencyCode];
+                if (cnt==3)              
+                    var rowData = [accountbranch, this.BranchName];
+                
+                    fnName.create_rowdata(theTableBody,rowData);
+           }
+                
+            }
+            
+            if (parseInt(this.ProductCode_temp)==27) // Online
+            {
+                var accountcurr     = "Account Currency:"
+                var counter         = 1
+                
+                for (var cnt = 0; cnt < counter; cnt++)
+                {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                    if (cnt==0)              
+                    var rowData = [accountcurr, this.net_to_bene_currency_code_temp];
+              
+                    fnName.create_rowdata(theTableBody,rowData);
+                }
+                
+            }
+        }
+        if (parseInt(this.ImplementationType_temp)==2)
+        {
+            var accountnum      = "Account Number:"
+            var accounttype     = "Account Type:"
+            var accountcurr     = "Account Currency:"
+            var accountbranch   = "Maintaining Branch:"
+            var counter         = 4
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            
+            for (var cnt = 0; cnt < counter; cnt++)
+            {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                
+                if (cnt==0)              
+                    var rowData = [accountnum, this.AccountNo];
+                if (cnt==1)              
+                    var rowData = [accounttype, this.AccountTypeDesc];
+                if (cnt==2)              
+                    var rowData = [accountcurr, this.AccountCurrencyCode];
+                if (cnt==3)              
+                    var rowData = [accountbranch, this.BranchName];
+                
+                    fnName.create_rowdata(theTableBody,rowData);
+           }
+           
+        }
+        if (parseInt(this.ImplementationType_temp)==3)
+        {
+            var accountcurr     = "Account Currency:"
+                var counter         = 1
+                
+                for (var cnt = 0; cnt < counter; cnt++)
+                {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                    if (cnt==0)              
+                    var rowData = [accountcurr, this.AccountCurrencyCode];
+              
+                    fnName.create_rowdata(theTableBody,rowData);
+                }
+         }
+          if (parseInt(this.ImplementationType_temp)==11)
+        {
+            var accountnum      = "Account Number:"
+            var accounttype     = "Account Type:"
+            var accountcurr     = "Account Currency:"
+            var accountbranch   = "Maintaining Branch:"
+            var counter         = 4
+            var tfld    = 0;
+            var dfld    = 0;
+            var rfld    = 0;
+            var nfld    = 0;
+            var amfld   = 0;
+            
+            
+            for (var cnt = 0; cnt < counter; cnt++)
+            {    
+                var rowdesc     = null;
+                var rowvalue    = null;
+                var rowData     = null;
+                
+                if (cnt==0)              
+                    var rowData = [accountnum, this.AccountNo];
+                if (cnt==1)              
+                    var rowData = [accounttype, this.AccountTypeDesc];
+                if (cnt==2)              
+                    var rowData = [accountcurr, this.AccountCurrencyCode];
+                if (cnt==3)              
+                    var rowData = [accountbranch, this.BranchName];
+                
+                    fnName.create_rowdata(theTableBody,rowData);
+           }
+           
+        }
+//                var newCell;
+//                var newRow  = theTableBody.insertRow(theTableBody.rows.length);
+//                for (var i = 0; i < rowData.length; i++) 
+//                {       
+//                    newCell = newRow.insertCell(i);   
+//                    
+//                    newCell.style.height ="12px";
+//                    if (i == 0)
+//                      {                          
+//                          newCell.innerHTML         =  rowData[i] + "&nbsp; :";
+//                          newCell.className         ='cell_caption'
+//                          newCell.style.textAlign   = "right"
+//                          newCell.style.width       = "40%"
+//                          newCell.colSpan           = "1"
+//                         
+//                                                                      
+//                      }
+//                      else
+//                      {
+//                      
+//                          newCell.style.width       = "60%"
+//                          var el                    = document.createElement('input')
+//                          el.type                   = 'text';
+//                          //el.name                   = dt.Rows[cnt].fldlabel.toString();//'MerchantInfo'; //'txt' + tfld;
+//                          //el.id                     = dt.Rows[cnt].fldlabel.toString();//'txt' + tfld;
+//                          el.style.width            = "99%";
+//                          el.style.height           = "15px"
+//                          el.style.border           = "none";
+//                          el.readOnly               = true;
+//                          el.value                  = rowData[i];
+//                          el.style.align            = "left";
+//                          newCell.appendChild(el);
+//                          newCell.colSpan           = "1"
+//                          newCell.style.textAlign   = "left"
+//                      }
+//                       
+////                }
+//            }
+//        }
+    }
+    
+    this.create_rowdata = function(theTableBody,rowData)
+    {
+        var newCell;
+        var newRow  = theTableBody.insertRow(theTableBody.rows.length);
+        for (var i = 0; i < rowData.length; i++) 
+        {       
+            newCell = newRow.insertCell(i);   
+            
+            newCell.style.height ="12px";
+            if (i == 0)
+              {                          
+                  newCell.innerHTML         =  rowData[i] + "&nbsp; :";
+                  newCell.className         ='cell_caption'
+                  newCell.style.textAlign   = "right"
+                  newCell.style.width       = "40%"
+                  newCell.colSpan           = "1"
+                 
+                                                              
+              }
+              else
+              {
+              
+                  newCell.style.width       = "60%"
+                  var el                    = document.createElement('input')
+                  el.type                   = 'text';
+                  //el.name                   = dt.Rows[cnt].fldlabel.toString();//'MerchantInfo'; //'txt' + tfld;
+                  //el.id                     = dt.Rows[cnt].fldlabel.toString();//'txt' + tfld;
+                  el.style.width            = "99%";
+                  el.style.height           = "15px"
+                  el.style.border           = "none";
+                  el.readOnly               = true;
+                  el.value                  = rowData[i];
+                  el.style.align            = "left";
+                  newCell.appendChild(el);
+                  newCell.colSpan           = "1"
+                  newCell.style.textAlign   = "left"
+              }
+               
+        }
+     }
+     
+      this.commit_transaction_details = function(transaction_id)
+    {
+        this.transaction_sequence_id = transaction_id;
+
+        if (this.ProductCode != null)
+        {
+            if (parseInt(this.ProductCode) > 0)
+            {
+                if (parseInt(this.ProductCode) == 15)
+                {
+                    if (parseInt(this.ImplementationType) == 7)
+                    {
+                        if (this.open_accounts != null)
+                        {
+                            this.open_accounts.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 8 || parseInt(this.ProductCode) == 9)
+                {
+                    if (parseInt(this.ImplementationType) == 3)
+                    {
+                        if (this.door_to_door != null)
+                        {
+                            this.door_to_door.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 27)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.apas_online != null)
+                        {
+                            this.apas_online.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 24)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.pay_anywhere != null)
+                        {
+                            this.pay_anywhere.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 7)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.apas_batch != null)
+                        {
+                            this.apas_batch.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 3)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 4)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 5)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 6)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else if (parseInt(this.ProductCode) == 18)
+                {
+                    if (parseInt(this.ImplementationType) == 1)
+                    {
+                        if (this.bulk_payment != null)
+                        {
+                            this.bulk_payment.commit_transaction(parseInt(transaction_id));
+                        }
+                    }
+                }
+                else
+                {
+                   this.open_msg_prompt("PLEASE WAIT ...");
+                   IRSWorld.Remittance.RemTranForVerification.Remit(fnName.SEQ_ID,isOBPS,fnName.reimplementation,fnName.remit_callback);
+                }
+            }
+        }
+    }
+    
+    this.txn_details_commit_response = function(param)
+    {
+        var s = param.split('~'); this.rem_details_error_msg = null;
+
+        if (s != null)
+        {
+            if (parseInt(s[0]) == 0)
+            {
+                this.rem_details_error_msg = s[1];
+            }
+        }
+        this.open_msg_prompt("PLEASE WAIT ...");
+        IRSWorld.Remittance.RemTranForVerification.Remit(fnName.SEQ_ID,isOBPS,fnName.reimplementation,fnName.remit_callback);
+    }
+    this.set_final_value_to_variable = function()
+    {
+            if (this.net_to_bene_currency_temp == null || parseInt(this.net_to_bene_currency_temp)>0) 
+                 this.net_to_bene_currency       = this.net_to_bene_currency_temp;
+            if (this.account_currency_temp == null || parseInt(this.account_currency_temp)>0) 
+                this.account_currency           = this.account_currency_temp;
+            if (this.product_charge_id_temp == null || parseInt(this.product_charge_id_temp)>0)       
+                this.product_charge_id          = this.product_charge_id_temp;
+            if (this.benef_acct_sequence_temp == null || parseInt(this.benef_acct_sequence_temp)>0)      
+                this.benef_acct_sequence        = this.benef_acct_sequence_temp;
+            if (this.ProductCode_temp == null || parseInt(this.ProductCode_temp)>0)       
+                this.ProductCode                = this.ProductCode_temp;
+            if (this.ImplementationType_temp == null || parseInt(this.ImplementationType_temp)>0)   
+                this.ImplementationType         = this.ImplementationType_temp;
+    }
+    
+    this.set_variable_value_to_temp= function()
+    {
+            if (this.net_to_bene_currency == null || parseInt(this.net_to_bene_currency)>0) 
+                 this.net_to_bene_currency_temp       = this.net_to_bene_currency;
+            if (this.account_currency == null || parseInt(this.account_currency)>0) 
+                this.account_currency_temp           = this.account_currency;
+            if (this.product_charge_id == null || parseInt(this.product_charge_id)>0)       
+                this.product_charge_id_temp          = this.product_charge_id;
+            if (this.benef_acct_sequence == null || parseInt(this.benef_acct_sequence)>0)      
+                this.benef_acct_sequence_temp        = this.benef_acct_sequence;
+            if (this.ProductCode == null || parseInt(this.ProductCode)>0)       
+                this.ProductCode_temp                = this.ProductCode;
+            if (this.ImplementationType == null || parseInt(this.ImplementationType)>0)   
+                this.ImplementationType_temp        = this.ImplementationType;
+    }
+    this.set_product_value = function(modal_return_value)
+    {
+        
+        this.modal_product_setup(modal_return_value);
+    }
+                 
+}

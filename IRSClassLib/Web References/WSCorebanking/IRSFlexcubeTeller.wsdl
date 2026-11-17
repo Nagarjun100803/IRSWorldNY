@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://corebanking.pnb.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://objects.banking.com/xsd" targetNamespace="http://corebanking.pnb.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>IRSFlexcubeTeller</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax28="http://objects.banking.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://objects.banking.com/xsd">
+      <xs:complexType name="SweepoutDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="beneficiaryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="executionType" type="xs:int" />
+          <xs:element minOccurs="0" name="maximumSweepoutAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="minimumAccountBalance" type="xs:double" />
+          <xs:element minOccurs="0" name="minimumSweepoutAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nextDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="routingNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sweepoutFreequency" type="xs:int" />
+          <xs:element minOccurs="0" name="sweepoutMode" type="xs:int" />
+          <xs:element minOccurs="0" name="targetAccount" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ns="http://corebanking.pnb.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://corebanking.pnb.com">
+      <xs:element name="addSweepout">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sDetails" nillable="true" type="ns0:SweepoutDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addSweepoutResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyServiceCharge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyServiceChargeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitCASA_creditGL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userReference" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="casaAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="glCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionCurrencyCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitCASA_creditGLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitCASAcreditGL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userReference" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="casaAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="glCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionCurrencyCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionBranch" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitCASAcreditGLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitGL_creditCASA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userReference" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="casaAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="glCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionCurrencyCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitGL_creditCASAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitGLcreditCASA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userReference" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="casaAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="glCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionCurrencyCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionBranch" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="debitGLcreditCASAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Exception">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Exception" nillable="true" type="ns:Exception" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eGFMCActivate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardProductCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardCollectMail" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardIssuingBranch" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eGFMCActivateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eGFMCChangeStat">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardStatus" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="changeDescription" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eGFMCChangeStatResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountAttributes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountAttributesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAvailableBalance">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAvailableBalanceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAvailableBalanceToString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAvailableBalanceToStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCurrentBalance">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCurrentBalanceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCustomerInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCustomerInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLoanDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLoanDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMemoText">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="customerID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMemoTextResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getSavingsBalanceReport">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getSavingsBalanceReportResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTermDeposit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTermDepositResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="glToGL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceGL" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="targetGL" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionCurrencyCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionBranch" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="glToGLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listCustomerAccounts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listCustomerAccountsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listTransactionsToString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listTransactionsToStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listTransactionsToString_verbose">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pageNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pageSize" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listTransactionsToString_verboseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="payBill">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="utilityCompanyID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="consumerNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="billNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="paymentDueDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="payBillResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="payBillVerbose">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="utilityCompanyID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="consumerNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="billNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="paymentDueDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="payBillVerboseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestAccountStatementToString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestAccountStatementToStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestAccountStatementToString_verbose">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pageNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pageSize" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestAccountStatementToString_verboseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestCheckbook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="noOfLeaves" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestCheckbookResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="reverseServiceCharge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="externalReference" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="reverseServiceChargeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="transferFunds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="targetAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="transferFundsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="transferFundsVerbose">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="targetAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="transferFundsVerboseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="transferFundsVerboseRequest">
+    <wsdl:part name="parameters" element="ns1:transferFundsVerbose" />
+  </wsdl:message>
+  <wsdl:message name="transferFundsVerboseResponse">
+    <wsdl:part name="parameters" element="ns1:transferFundsVerboseResponse" />
+  </wsdl:message>
+  <wsdl:message name="debitCASA_creditGLRequest">
+    <wsdl:part name="parameters" element="ns1:debitCASA_creditGL" />
+  </wsdl:message>
+  <wsdl:message name="debitCASA_creditGLResponse">
+    <wsdl:part name="parameters" element="ns1:debitCASA_creditGLResponse" />
+  </wsdl:message>
+  <wsdl:message name="transferFundsRequest">
+    <wsdl:part name="parameters" element="ns1:transferFunds" />
+  </wsdl:message>
+  <wsdl:message name="transferFundsResponse">
+    <wsdl:part name="parameters" element="ns1:transferFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCustomerAccountsRequest">
+    <wsdl:part name="parameters" element="ns1:listCustomerAccounts" />
+  </wsdl:message>
+  <wsdl:message name="listCustomerAccountsResponse">
+    <wsdl:part name="parameters" element="ns1:listCustomerAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccountAttributesRequest">
+    <wsdl:part name="parameters" element="ns1:getAccountAttributes" />
+  </wsdl:message>
+  <wsdl:message name="getAccountAttributesResponse">
+    <wsdl:part name="parameters" element="ns1:getAccountAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableBalanceToStringRequest">
+    <wsdl:part name="parameters" element="ns1:getAvailableBalanceToString" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableBalanceToStringResponse">
+    <wsdl:part name="parameters" element="ns1:getAvailableBalanceToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="applyServiceChargeRequest">
+    <wsdl:part name="parameters" element="ns1:applyServiceCharge" />
+  </wsdl:message>
+  <wsdl:message name="applyServiceChargeResponse">
+    <wsdl:part name="parameters" element="ns1:applyServiceChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLoanDetailsRequest">
+    <wsdl:part name="parameters" element="ns1:getLoanDetails" />
+  </wsdl:message>
+  <wsdl:message name="getLoanDetailsResponse">
+    <wsdl:part name="parameters" element="ns1:getLoanDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="reverseServiceChargeRequest">
+    <wsdl:part name="parameters" element="ns1:reverseServiceCharge" />
+  </wsdl:message>
+  <wsdl:message name="reverseServiceChargeResponse">
+    <wsdl:part name="parameters" element="ns1:reverseServiceChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="debitGLcreditCASARequest">
+    <wsdl:part name="parameters" element="ns1:debitGLcreditCASA" />
+  </wsdl:message>
+  <wsdl:message name="debitGLcreditCASAResponse">
+    <wsdl:part name="parameters" element="ns1:debitGLcreditCASAResponse" />
+  </wsdl:message>
+  <wsdl:message name="eGFMCActivateRequest">
+    <wsdl:part name="parameters" element="ns1:eGFMCActivate" />
+  </wsdl:message>
+  <wsdl:message name="eGFMCActivateResponse">
+    <wsdl:part name="parameters" element="ns1:eGFMCActivateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="parameters" element="ns1:Exception" />
+  </wsdl:message>
+  <wsdl:message name="payBillRequest">
+    <wsdl:part name="parameters" element="ns1:payBill" />
+  </wsdl:message>
+  <wsdl:message name="payBillResponse">
+    <wsdl:part name="parameters" element="ns1:payBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="glToGLRequest">
+    <wsdl:part name="parameters" element="ns1:glToGL" />
+  </wsdl:message>
+  <wsdl:message name="glToGLResponse">
+    <wsdl:part name="parameters" element="ns1:glToGLResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSweepoutRequest">
+    <wsdl:part name="parameters" element="ns1:addSweepout" />
+  </wsdl:message>
+  <wsdl:message name="addSweepoutResponse">
+    <wsdl:part name="parameters" element="ns1:addSweepoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="requestCheckbookRequest">
+    <wsdl:part name="parameters" element="ns1:requestCheckbook" />
+  </wsdl:message>
+  <wsdl:message name="requestCheckbookResponse">
+    <wsdl:part name="parameters" element="ns1:requestCheckbookResponse" />
+  </wsdl:message>
+  <wsdl:message name="listTransactionsToStringRequest">
+    <wsdl:part name="parameters" element="ns1:listTransactionsToString" />
+  </wsdl:message>
+  <wsdl:message name="listTransactionsToStringResponse">
+    <wsdl:part name="parameters" element="ns1:listTransactionsToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableBalanceRequest">
+    <wsdl:part name="parameters" element="ns1:getAvailableBalance" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableBalanceResponse">
+    <wsdl:part name="parameters" element="ns1:getAvailableBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentBalanceRequest">
+    <wsdl:part name="parameters" element="ns1:getCurrentBalance" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentBalanceResponse">
+    <wsdl:part name="parameters" element="ns1:getCurrentBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSavingsBalanceReportRequest">
+    <wsdl:part name="parameters" element="ns1:getSavingsBalanceReport" />
+  </wsdl:message>
+  <wsdl:message name="getSavingsBalanceReportResponse">
+    <wsdl:part name="parameters" element="ns1:getSavingsBalanceReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="debitGL_creditCASARequest">
+    <wsdl:part name="parameters" element="ns1:debitGL_creditCASA" />
+  </wsdl:message>
+  <wsdl:message name="debitGL_creditCASAResponse">
+    <wsdl:part name="parameters" element="ns1:debitGL_creditCASAResponse" />
+  </wsdl:message>
+  <wsdl:message name="debitCASAcreditGLRequest">
+    <wsdl:part name="parameters" element="ns1:debitCASAcreditGL" />
+  </wsdl:message>
+  <wsdl:message name="debitCASAcreditGLResponse">
+    <wsdl:part name="parameters" element="ns1:debitCASAcreditGLResponse" />
+  </wsdl:message>
+  <wsdl:message name="listTransactionsToString_verboseRequest">
+    <wsdl:part name="parameters" element="ns1:listTransactionsToString_verbose" />
+  </wsdl:message>
+  <wsdl:message name="listTransactionsToString_verboseResponse">
+    <wsdl:part name="parameters" element="ns1:listTransactionsToString_verboseResponse" />
+  </wsdl:message>
+  <wsdl:message name="payBillVerboseRequest">
+    <wsdl:part name="parameters" element="ns1:payBillVerbose" />
+  </wsdl:message>
+  <wsdl:message name="payBillVerboseResponse">
+    <wsdl:part name="parameters" element="ns1:payBillVerboseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerInfoRequest">
+    <wsdl:part name="parameters" element="ns1:getCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerInfoResponse">
+    <wsdl:part name="parameters" element="ns1:getCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="requestAccountStatementToString_verboseRequest">
+    <wsdl:part name="parameters" element="ns1:requestAccountStatementToString_verbose" />
+  </wsdl:message>
+  <wsdl:message name="requestAccountStatementToString_verboseResponse">
+    <wsdl:part name="parameters" element="ns1:requestAccountStatementToString_verboseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTermDepositRequest">
+    <wsdl:part name="parameters" element="ns1:getTermDeposit" />
+  </wsdl:message>
+  <wsdl:message name="getTermDepositResponse">
+    <wsdl:part name="parameters" element="ns1:getTermDepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="requestAccountStatementToStringRequest">
+    <wsdl:part name="parameters" element="ns1:requestAccountStatementToString" />
+  </wsdl:message>
+  <wsdl:message name="requestAccountStatementToStringResponse">
+    <wsdl:part name="parameters" element="ns1:requestAccountStatementToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMemoTextRequest">
+    <wsdl:part name="parameters" element="ns1:getMemoText" />
+  </wsdl:message>
+  <wsdl:message name="getMemoTextResponse">
+    <wsdl:part name="parameters" element="ns1:getMemoTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="eGFMCChangeStatRequest">
+    <wsdl:part name="parameters" element="ns1:eGFMCChangeStat" />
+  </wsdl:message>
+  <wsdl:message name="eGFMCChangeStatResponse">
+    <wsdl:part name="parameters" element="ns1:eGFMCChangeStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccountDetailsRequest">
+    <wsdl:part name="parameters" element="ns1:getAccountDetails" />
+  </wsdl:message>
+  <wsdl:message name="getAccountDetailsResponse">
+    <wsdl:part name="parameters" element="ns1:getAccountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRSFlexcubeTellerPortType">
+    <wsdl:operation name="transferFundsVerbose">
+      <wsdl:input wsaw:Action="urn:transferFundsVerbose" message="ns1:transferFundsVerboseRequest" />
+      <wsdl:output wsaw:Action="urn:transferFundsVerboseResponse" message="ns1:transferFundsVerboseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="debitCASA_creditGL">
+      <wsdl:input wsaw:Action="urn:debitCASA_creditGL" message="ns1:debitCASA_creditGLRequest" />
+      <wsdl:output wsaw:Action="urn:debitCASA_creditGLResponse" message="ns1:debitCASA_creditGLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="transferFunds">
+      <wsdl:input wsaw:Action="urn:transferFunds" message="ns1:transferFundsRequest" />
+      <wsdl:output wsaw:Action="urn:transferFundsResponse" message="ns1:transferFundsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerAccounts">
+      <wsdl:input wsaw:Action="urn:listCustomerAccounts" message="ns1:listCustomerAccountsRequest" />
+      <wsdl:output wsaw:Action="urn:listCustomerAccountsResponse" message="ns1:listCustomerAccountsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountAttributes">
+      <wsdl:input wsaw:Action="urn:getAccountAttributes" message="ns1:getAccountAttributesRequest" />
+      <wsdl:output wsaw:Action="urn:getAccountAttributesResponse" message="ns1:getAccountAttributesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalanceToString">
+      <wsdl:input wsaw:Action="urn:getAvailableBalanceToString" message="ns1:getAvailableBalanceToStringRequest" />
+      <wsdl:output wsaw:Action="urn:getAvailableBalanceToStringResponse" message="ns1:getAvailableBalanceToStringResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="applyServiceCharge">
+      <wsdl:input wsaw:Action="urn:applyServiceCharge" message="ns1:applyServiceChargeRequest" />
+      <wsdl:output wsaw:Action="urn:applyServiceChargeResponse" message="ns1:applyServiceChargeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLoanDetails">
+      <wsdl:input wsaw:Action="urn:getLoanDetails" message="ns1:getLoanDetailsRequest" />
+      <wsdl:output wsaw:Action="urn:getLoanDetailsResponse" message="ns1:getLoanDetailsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="reverseServiceCharge">
+      <wsdl:input wsaw:Action="urn:reverseServiceCharge" message="ns1:reverseServiceChargeRequest" />
+      <wsdl:output wsaw:Action="urn:reverseServiceChargeResponse" message="ns1:reverseServiceChargeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="debitGLcreditCASA">
+      <wsdl:input wsaw:Action="urn:debitGLcreditCASA" message="ns1:debitGLcreditCASARequest" />
+      <wsdl:output wsaw:Action="urn:debitGLcreditCASAResponse" message="ns1:debitGLcreditCASAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCActivate">
+      <wsdl:input wsaw:Action="urn:eGFMCActivate" message="ns1:eGFMCActivateRequest" />
+      <wsdl:output wsaw:Action="urn:eGFMCActivateResponse" message="ns1:eGFMCActivateResponse" />
+      <wsdl:fault wsaw:Action="urn:eGFMCActivateException" name="Exception" message="ns1:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="payBill">
+      <wsdl:input wsaw:Action="urn:payBill" message="ns1:payBillRequest" />
+      <wsdl:output wsaw:Action="urn:payBillResponse" message="ns1:payBillResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="glToGL">
+      <wsdl:input wsaw:Action="urn:glToGL" message="ns1:glToGLRequest" />
+      <wsdl:output wsaw:Action="urn:glToGLResponse" message="ns1:glToGLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addSweepout">
+      <wsdl:input wsaw:Action="urn:addSweepout" message="ns1:addSweepoutRequest" />
+      <wsdl:output wsaw:Action="urn:addSweepoutResponse" message="ns1:addSweepoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="requestCheckbook">
+      <wsdl:input wsaw:Action="urn:requestCheckbook" message="ns1:requestCheckbookRequest" />
+      <wsdl:output wsaw:Action="urn:requestCheckbookResponse" message="ns1:requestCheckbookResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString">
+      <wsdl:input wsaw:Action="urn:listTransactionsToString" message="ns1:listTransactionsToStringRequest" />
+      <wsdl:output wsaw:Action="urn:listTransactionsToStringResponse" message="ns1:listTransactionsToStringResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <wsdl:input wsaw:Action="urn:getAvailableBalance" message="ns1:getAvailableBalanceRequest" />
+      <wsdl:output wsaw:Action="urn:getAvailableBalanceResponse" message="ns1:getAvailableBalanceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentBalance">
+      <wsdl:input wsaw:Action="urn:getCurrentBalance" message="ns1:getCurrentBalanceRequest" />
+      <wsdl:output wsaw:Action="urn:getCurrentBalanceResponse" message="ns1:getCurrentBalanceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSavingsBalanceReport">
+      <wsdl:input wsaw:Action="urn:getSavingsBalanceReport" message="ns1:getSavingsBalanceReportRequest" />
+      <wsdl:output wsaw:Action="urn:getSavingsBalanceReportResponse" message="ns1:getSavingsBalanceReportResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="debitGL_creditCASA">
+      <wsdl:input wsaw:Action="urn:debitGL_creditCASA" message="ns1:debitGL_creditCASARequest" />
+      <wsdl:output wsaw:Action="urn:debitGL_creditCASAResponse" message="ns1:debitGL_creditCASAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="debitCASAcreditGL">
+      <wsdl:input wsaw:Action="urn:debitCASAcreditGL" message="ns1:debitCASAcreditGLRequest" />
+      <wsdl:output wsaw:Action="urn:debitCASAcreditGLResponse" message="ns1:debitCASAcreditGLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString_verbose">
+      <wsdl:input wsaw:Action="urn:listTransactionsToString_verbose" message="ns1:listTransactionsToString_verboseRequest" />
+      <wsdl:output wsaw:Action="urn:listTransactionsToString_verboseResponse" message="ns1:listTransactionsToString_verboseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="payBillVerbose">
+      <wsdl:input wsaw:Action="urn:payBillVerbose" message="ns1:payBillVerboseRequest" />
+      <wsdl:output wsaw:Action="urn:payBillVerboseResponse" message="ns1:payBillVerboseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerInfo">
+      <wsdl:input wsaw:Action="urn:getCustomerInfo" message="ns1:getCustomerInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getCustomerInfoResponse" message="ns1:getCustomerInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString_verbose">
+      <wsdl:input wsaw:Action="urn:requestAccountStatementToString_verbose" message="ns1:requestAccountStatementToString_verboseRequest" />
+      <wsdl:output wsaw:Action="urn:requestAccountStatementToString_verboseResponse" message="ns1:requestAccountStatementToString_verboseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTermDeposit">
+      <wsdl:input wsaw:Action="urn:getTermDeposit" message="ns1:getTermDepositRequest" />
+      <wsdl:output wsaw:Action="urn:getTermDepositResponse" message="ns1:getTermDepositResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString">
+      <wsdl:input wsaw:Action="urn:requestAccountStatementToString" message="ns1:requestAccountStatementToStringRequest" />
+      <wsdl:output wsaw:Action="urn:requestAccountStatementToStringResponse" message="ns1:requestAccountStatementToStringResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMemoText">
+      <wsdl:input wsaw:Action="urn:getMemoText" message="ns1:getMemoTextRequest" />
+      <wsdl:output wsaw:Action="urn:getMemoTextResponse" message="ns1:getMemoTextResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCChangeStat">
+      <wsdl:input wsaw:Action="urn:eGFMCChangeStat" message="ns1:eGFMCChangeStatRequest" />
+      <wsdl:output wsaw:Action="urn:eGFMCChangeStatResponse" message="ns1:eGFMCChangeStatResponse" />
+      <wsdl:fault wsaw:Action="urn:eGFMCChangeStatException" name="Exception" message="ns1:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <wsdl:input wsaw:Action="urn:getAccountDetails" message="ns1:getAccountDetailsRequest" />
+      <wsdl:output wsaw:Action="urn:getAccountDetailsResponse" message="ns1:getAccountDetailsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IRSFlexcubeTellerSOAP11Binding" type="ns1:IRSFlexcubeTellerPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="transferFundsVerbose">
+      <soap:operation soapAction="urn:transferFundsVerbose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASA_creditGL">
+      <soap:operation soapAction="urn:debitCASA_creditGL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferFunds">
+      <soap:operation soapAction="urn:transferFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerAccounts">
+      <soap:operation soapAction="urn:listCustomerAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountAttributes">
+      <soap:operation soapAction="urn:getAccountAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalanceToString">
+      <soap:operation soapAction="urn:getAvailableBalanceToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyServiceCharge">
+      <soap:operation soapAction="urn:applyServiceCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoanDetails">
+      <soap:operation soapAction="urn:getLoanDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseServiceCharge">
+      <soap:operation soapAction="urn:reverseServiceCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGLcreditCASA">
+      <soap:operation soapAction="urn:debitGLcreditCASA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCActivate">
+      <soap:operation soapAction="urn:eGFMCActivate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="payBill">
+      <soap:operation soapAction="urn:payBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="glToGL">
+      <soap:operation soapAction="urn:glToGL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSweepout">
+      <soap:operation soapAction="urn:addSweepout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestCheckbook">
+      <soap:operation soapAction="urn:requestCheckbook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString">
+      <soap:operation soapAction="urn:listTransactionsToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <soap:operation soapAction="urn:getAvailableBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentBalance">
+      <soap:operation soapAction="urn:getCurrentBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSavingsBalanceReport">
+      <soap:operation soapAction="urn:getSavingsBalanceReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGL_creditCASA">
+      <soap:operation soapAction="urn:debitGL_creditCASA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASAcreditGL">
+      <soap:operation soapAction="urn:debitCASAcreditGL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString_verbose">
+      <soap:operation soapAction="urn:listTransactionsToString_verbose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payBillVerbose">
+      <soap:operation soapAction="urn:payBillVerbose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerInfo">
+      <soap:operation soapAction="urn:getCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString_verbose">
+      <soap:operation soapAction="urn:requestAccountStatementToString_verbose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTermDeposit">
+      <soap:operation soapAction="urn:getTermDeposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString">
+      <soap:operation soapAction="urn:requestAccountStatementToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMemoText">
+      <soap:operation soapAction="urn:getMemoText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCChangeStat">
+      <soap:operation soapAction="urn:eGFMCChangeStat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <soap:operation soapAction="urn:getAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IRSFlexcubeTellerSOAP12Binding" type="ns1:IRSFlexcubeTellerPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="transferFundsVerbose">
+      <soap12:operation soapAction="urn:transferFundsVerbose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASA_creditGL">
+      <soap12:operation soapAction="urn:debitCASA_creditGL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferFunds">
+      <soap12:operation soapAction="urn:transferFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerAccounts">
+      <soap12:operation soapAction="urn:listCustomerAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountAttributes">
+      <soap12:operation soapAction="urn:getAccountAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalanceToString">
+      <soap12:operation soapAction="urn:getAvailableBalanceToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyServiceCharge">
+      <soap12:operation soapAction="urn:applyServiceCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoanDetails">
+      <soap12:operation soapAction="urn:getLoanDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseServiceCharge">
+      <soap12:operation soapAction="urn:reverseServiceCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGLcreditCASA">
+      <soap12:operation soapAction="urn:debitGLcreditCASA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCActivate">
+      <soap12:operation soapAction="urn:eGFMCActivate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="payBill">
+      <soap12:operation soapAction="urn:payBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="glToGL">
+      <soap12:operation soapAction="urn:glToGL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSweepout">
+      <soap12:operation soapAction="urn:addSweepout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestCheckbook">
+      <soap12:operation soapAction="urn:requestCheckbook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString">
+      <soap12:operation soapAction="urn:listTransactionsToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <soap12:operation soapAction="urn:getAvailableBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentBalance">
+      <soap12:operation soapAction="urn:getCurrentBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSavingsBalanceReport">
+      <soap12:operation soapAction="urn:getSavingsBalanceReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGL_creditCASA">
+      <soap12:operation soapAction="urn:debitGL_creditCASA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASAcreditGL">
+      <soap12:operation soapAction="urn:debitCASAcreditGL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString_verbose">
+      <soap12:operation soapAction="urn:listTransactionsToString_verbose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payBillVerbose">
+      <soap12:operation soapAction="urn:payBillVerbose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerInfo">
+      <soap12:operation soapAction="urn:getCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString_verbose">
+      <soap12:operation soapAction="urn:requestAccountStatementToString_verbose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTermDeposit">
+      <soap12:operation soapAction="urn:getTermDeposit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString">
+      <soap12:operation soapAction="urn:requestAccountStatementToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMemoText">
+      <soap12:operation soapAction="urn:getMemoText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCChangeStat">
+      <soap12:operation soapAction="urn:eGFMCChangeStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <soap12:operation soapAction="urn:getAccountDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IRSFlexcubeTellerHttpBinding" type="ns1:IRSFlexcubeTellerPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="transferFundsVerbose">
+      <http:operation location="IRSFlexcubeTeller/transferFundsVerbose" />
+      <wsdl:input>
+        <mime:content part="transferFundsVerbose" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="transferFundsVerbose" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASA_creditGL">
+      <http:operation location="IRSFlexcubeTeller/debitCASA_creditGL" />
+      <wsdl:input>
+        <mime:content part="debitCASA_creditGL" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="debitCASA_creditGL" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferFunds">
+      <http:operation location="IRSFlexcubeTeller/transferFunds" />
+      <wsdl:input>
+        <mime:content part="transferFunds" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="transferFunds" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerAccounts">
+      <http:operation location="IRSFlexcubeTeller/listCustomerAccounts" />
+      <wsdl:input>
+        <mime:content part="listCustomerAccounts" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="listCustomerAccounts" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountAttributes">
+      <http:operation location="IRSFlexcubeTeller/getAccountAttributes" />
+      <wsdl:input>
+        <mime:content part="getAccountAttributes" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getAccountAttributes" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalanceToString">
+      <http:operation location="IRSFlexcubeTeller/getAvailableBalanceToString" />
+      <wsdl:input>
+        <mime:content part="getAvailableBalanceToString" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getAvailableBalanceToString" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyServiceCharge">
+      <http:operation location="IRSFlexcubeTeller/applyServiceCharge" />
+      <wsdl:input>
+        <mime:content part="applyServiceCharge" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="applyServiceCharge" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoanDetails">
+      <http:operation location="IRSFlexcubeTeller/getLoanDetails" />
+      <wsdl:input>
+        <mime:content part="getLoanDetails" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getLoanDetails" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseServiceCharge">
+      <http:operation location="IRSFlexcubeTeller/reverseServiceCharge" />
+      <wsdl:input>
+        <mime:content part="reverseServiceCharge" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="reverseServiceCharge" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGLcreditCASA">
+      <http:operation location="IRSFlexcubeTeller/debitGLcreditCASA" />
+      <wsdl:input>
+        <mime:content part="debitGLcreditCASA" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="debitGLcreditCASA" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCActivate">
+      <http:operation location="IRSFlexcubeTeller/eGFMCActivate" />
+      <wsdl:input>
+        <mime:content part="eGFMCActivate" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="eGFMCActivate" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payBill">
+      <http:operation location="IRSFlexcubeTeller/payBill" />
+      <wsdl:input>
+        <mime:content part="payBill" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="payBill" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="glToGL">
+      <http:operation location="IRSFlexcubeTeller/glToGL" />
+      <wsdl:input>
+        <mime:content part="glToGL" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="glToGL" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSweepout">
+      <http:operation location="IRSFlexcubeTeller/addSweepout" />
+      <wsdl:input>
+        <mime:content part="addSweepout" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="addSweepout" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestCheckbook">
+      <http:operation location="IRSFlexcubeTeller/requestCheckbook" />
+      <wsdl:input>
+        <mime:content part="requestCheckbook" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="requestCheckbook" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString">
+      <http:operation location="IRSFlexcubeTeller/listTransactionsToString" />
+      <wsdl:input>
+        <mime:content part="listTransactionsToString" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="listTransactionsToString" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <http:operation location="IRSFlexcubeTeller/getAvailableBalance" />
+      <wsdl:input>
+        <mime:content part="getAvailableBalance" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getAvailableBalance" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentBalance">
+      <http:operation location="IRSFlexcubeTeller/getCurrentBalance" />
+      <wsdl:input>
+        <mime:content part="getCurrentBalance" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getCurrentBalance" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSavingsBalanceReport">
+      <http:operation location="IRSFlexcubeTeller/getSavingsBalanceReport" />
+      <wsdl:input>
+        <mime:content part="getSavingsBalanceReport" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getSavingsBalanceReport" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitGL_creditCASA">
+      <http:operation location="IRSFlexcubeTeller/debitGL_creditCASA" />
+      <wsdl:input>
+        <mime:content part="debitGL_creditCASA" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="debitGL_creditCASA" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="debitCASAcreditGL">
+      <http:operation location="IRSFlexcubeTeller/debitCASAcreditGL" />
+      <wsdl:input>
+        <mime:content part="debitCASAcreditGL" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="debitCASAcreditGL" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransactionsToString_verbose">
+      <http:operation location="IRSFlexcubeTeller/listTransactionsToString_verbose" />
+      <wsdl:input>
+        <mime:content part="listTransactionsToString_verbose" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="listTransactionsToString_verbose" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payBillVerbose">
+      <http:operation location="IRSFlexcubeTeller/payBillVerbose" />
+      <wsdl:input>
+        <mime:content part="payBillVerbose" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="payBillVerbose" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerInfo">
+      <http:operation location="IRSFlexcubeTeller/getCustomerInfo" />
+      <wsdl:input>
+        <mime:content part="getCustomerInfo" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getCustomerInfo" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString_verbose">
+      <http:operation location="IRSFlexcubeTeller/requestAccountStatementToString_verbose" />
+      <wsdl:input>
+        <mime:content part="requestAccountStatementToString_verbose" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="requestAccountStatementToString_verbose" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTermDeposit">
+      <http:operation location="IRSFlexcubeTeller/getTermDeposit" />
+      <wsdl:input>
+        <mime:content part="getTermDeposit" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getTermDeposit" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestAccountStatementToString">
+      <http:operation location="IRSFlexcubeTeller/requestAccountStatementToString" />
+      <wsdl:input>
+        <mime:content part="requestAccountStatementToString" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="requestAccountStatementToString" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMemoText">
+      <http:operation location="IRSFlexcubeTeller/getMemoText" />
+      <wsdl:input>
+        <mime:content part="getMemoText" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getMemoText" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eGFMCChangeStat">
+      <http:operation location="IRSFlexcubeTeller/eGFMCChangeStat" />
+      <wsdl:input>
+        <mime:content part="eGFMCChangeStat" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="eGFMCChangeStat" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <http:operation location="IRSFlexcubeTeller/getAccountDetails" />
+      <wsdl:input>
+        <mime:content part="getAccountDetails" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getAccountDetails" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IRSFlexcubeTeller">
+    <wsdl:port name="IRSFlexcubeTellerSOAP11port_http" binding="ns1:IRSFlexcubeTellerSOAP11Binding">
+      <soap:address location="http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller" />
+    </wsdl:port>
+    <wsdl:port name="IRSFlexcubeTellerSOAP12port_http" binding="ns1:IRSFlexcubeTellerSOAP12Binding">
+      <soap12:address location="http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller" />
+    </wsdl:port>
+    <wsdl:port name="IRSFlexcubeTellerHttpport" binding="ns1:IRSFlexcubeTellerHttpBinding">
+      <http:address location="http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFreq_Size" targetNamespace="http://tempuri.org/dsFreq_Size.xsd" xmlns:mstns="http://tempuri.org/dsFreq_Size.xsd" xmlns="http://tempuri.org/dsFreq_Size.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFreq_Size" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsFreq_Size" msprop:Generator_DataSetName="dsFreq_Size">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFreq_Size" msprop:Generator_UserTableName="dtFreq_Size" msprop:Generator_RowDeletedName="dtFreq_SizeRowDeleted" msprop:Generator_TableClassName="dtFreq_SizeDataTable" msprop:Generator_RowChangedName="dtFreq_SizeRowChanged" msprop:Generator_RowClassName="dtFreq_SizeRow" msprop:Generator_RowChangingName="dtFreq_SizeRowChanging" msprop:Generator_RowEvArgName="dtFreq_SizeRowChangeEvent" msprop:Generator_RowEvHandlerName="dtFreq_SizeRowChangeEventHandler" msprop:Generator_TablePropName="dtFreq_Size" msprop:Generator_TableVarName="tabledtFreq_Size" msprop:Generator_RowDeletingName="dtFreq_SizeRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Range" msprop:Generator_UserColumnName="Range" msprop:Generator_ColumnPropNameInRow="Range" msprop:Generator_ColumnVarNameInTable="columnRange" msprop:Generator_ColumnPropNameInTable="RangeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOfItems" msprop:Generator_UserColumnName="NumOfItems" msprop:Generator_ColumnPropNameInRow="NumOfItems" msprop:Generator_ColumnVarNameInTable="columnNumOfItems" msprop:Generator_ColumnPropNameInTable="NumOfItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Percent" msprop:Generator_UserColumnName="Percent" msprop:Generator_ColumnPropNameInRow="Percent" msprop:Generator_ColumnVarNameInTable="columnPercent" msprop:Generator_ColumnPropNameInTable="PercentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CmlativeReport" msprop:Generator_UserColumnName="CmlativeReport" msprop:Generator_ColumnPropNameInRow="CmlativeReport" msprop:Generator_ColumnVarNameInTable="columnCmlativeReport" msprop:Generator_ColumnPropNameInTable="CmlativeReportColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AvePerItem" msprop:Generator_UserColumnName="AvePerItem" msprop:Generator_ColumnPropNameInRow="AvePerItem" msprop:Generator_ColumnVarNameInTable="columnAvePerItem" msprop:Generator_ColumnPropNameInTable="AvePerItemColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

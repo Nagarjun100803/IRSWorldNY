@@ -1,0 +1,3568 @@
+var fxn_isRemit;
+var ret_otc   = null;
+var ret_obp   = null;
+var ret_gfc   = '';
+var view_bene = false;
+var ciftype_r   = 1;
+var ciftype_b   = 1;
+var ins_rem_flag = false;
+var active_div  = null;
+var focused_obj = null;
+var otc_client_update = false;
+var hitlist = null
+var hitCIFClass = null;
+var hitCIFisApproval = null;
+var isAgentClient = false;
+
+var ajax_timeout = 600 * 1000;
+
+            
+function divInetRemitResize() // chr
+{
+    if (top.document.getElementById('divCenter'))
+    {
+        var cent = top.document.getElementById('divCenter');
+        var div = document.getElementById('divInternetRemitter');
+        if (div)
+        {
+            div.style.height = (cent.offsetHeight - 30) + 'px';
+        }
+        var divmain = document.getElementById('divmain');
+        if (divmain)
+        {
+            divmain.style.height = (cent.offsetHeight - 30) + 'px';
+        }
+        var td = document.getElementById('tdInternetRemitterSearch');
+        if (td)
+        {
+            td.style.height = (cent.offsetHeight - 30) + 'px';
+        }
+    }
+}
+
+function get_card(cardno)
+{
+    var trimvalue = '';
+    var returnvalue = '';
+    
+    if (cardno.substring(0) == 'E')
+    {
+        alert('Invalid GFMC card supplied. Please check your card and try again.');
+        return;
+    }
+    else
+    {
+        // card swipe contains prefix char ;
+        var i = (cardno.substring(0) == ';' | cardno.substring(0) == '%') ? 1 : 0;
+        //for (var i = 0; i <= (cardno.length - 1); i++)
+        for (; i <= (cardno.length - 1); i++)
+        {
+            trimvalue = cardno.substr(i, 1);
+            if (!isNaN(trimvalue))
+            {
+                returnvalue += trimvalue;
+            }
+        }
+    }
+    
+    return returnvalue.substr(0, 16);
+}
+           
+function gfc_response()
+{   
+    var res  = null;
+    res  = Internet_Remitter_GFC.CardDetails();
+    Internet_Remitter_Products.gfc_callback(res);
+}  
+
+function view_report() /*sample lang*/
+{
+    window.open('../Reports/Pages/Report_viewer.aspx?mergeparam=220^@year$@month$@recordid$^VarChar$VarChar$VarChar$^Year$Month$RecordID$^sp_rptACRUORDSummGREMPRXERPSExco_2^/Standard/rptACRUSummaryOfTxnProcessedGREMPRXERPSExco.rpt^$^&paramvalues=T@year;2010^T@month;08^T@recordid;gdub^&exporttype=PDF&autoprint=false');
+}
+
+function gfcClose()
+{
+    alert('gfcClose ' + self.returnValue);    
+}
+
+function search_check_gfmc(e)
+{
+    var src;
+    if (!e) e = window.event;
+    if (!e.target) 
+        src = window.event.srcElement;
+    else 
+        src = e.target;
+        
+    if(Internet_Remitter_Main.active_panel == 'INTERNET_REM_SEARCH')
+    {
+        if (src.tagName == "INPUT" & src.type == 'text')
+        {
+            var hgfmc_val = getText(src); //document.getElementById(focused_obj).value;
+            var gfmcno    = '';
+            var brcode = document.getElementById('txtHiddenUserLoc').value;
+            
+            if(hgfmc_val.length >= 17) /*ie. ;5921080410012265000=60800001008448000?*/
+            {
+                //gfmcno = like_gfmc(hgfmc_val);  
+                gfmcno = get_card(hgfmc_val)
+                //gfmcno = '5921080400901239'; // test cristina samson
+                var ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid_seqid(gfmcno).value;
+                
+                if(ds != null && ds.Tables[0].Rows.length > 0)
+                {
+                    document.getElementById("txtHiddenSearchSeqId").value = ds.Tables[0].Rows[0].SEQ_ID;
+                    document.getElementById("txtHiddenSearchCIFID").value = ds.Tables[0].Rows[0].CIFID;
+                    document.getElementById("txtHiddenRemCIFID").value    = ds.Tables[0].Rows[0].CIFID;
+                    
+                    Internet_Remitter_Main.search_by_rem();
+                }
+                else
+                {
+                    alert('No record found for card ' + gfmcno);
+                }
+            }
+            else if(hgfmc_val.length == 14 && brcode == 'SIN') /*for loyalty card ie. 174000066226*/
+            {
+                hgfmc_val = hgfmc_val.replace(";","").replace("?","");
+                var ds = null;
+                
+                ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid_seqid_loyalty(hgfmc_val).value;
+                
+                if(ds != null && ds.Tables[0].Rows.length > 0)
+                {
+                    document.getElementById("txtHiddenSearchSeqId").value = ds.Tables[0].Rows[0].SEQ_ID;
+                    document.getElementById("txtHiddenSearchCIFID").value = ds.Tables[0].Rows[0].CIFID;
+                    document.getElementById("txtHiddenRemCIFID").value    = ds.Tables[0].Rows[0].CIFID;
+                    
+                    Internet_Remitter_Main.search_by_rem();
+                }
+                else
+                {
+                    alert('No record found for card ' + hgfmc_val);
+                }
+            }
+        }
+    }        
+}
+
+function acct_check_gfmc(e)
+{
+    var src;
+    if (!e) e = window.event;
+    if (!e.target) 
+        src = window.event.srcElement;
+    else 
+        src = e.target;
+        
+    if (Internet_Remitter_Main.active_panel == 'INTERNET_REM_ADD_BENE' && e.keyCode == 13)
+    {
+        if (src.tagName == "INPUT" && src.type == 'text')
+        {
+            if (src.id == "txtBAccountNo" && src.readOnly == false)
+            {
+                //validate acct no.     	           
+	            if (IRSWorld.Internet.InternetAddBeneficiary.validate_acctno_fcalgo(document.getElementById('txtBAccountNo').value).value == true)
+	            {
+                    AjaxPro.timeoutPeriod = 100 * 1000;
+        
+                    AjaxPro.onTimeout = function()
+                    {
+                        alert("SESSION TIMEOUT");
+                        document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'none';
+                        return; 
+                    }
+                    
+                    document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'block';                
+	                show_loading_message('divBeneSaveCIFtoFCLoading');
+	                IRSWorld.Internet.InternetAddBeneficiary.get_acct_details(document.getElementById('txtBAccountNo').value, check_acct_callback);
+	            }
+	            else
+	            {
+	                alert('Account number is invalid');
+	            }         
+            }
+        }
+    }           
+}
+
+function acct_check_bgfmcno(e)
+{
+    var src;
+    if (!e) e = window.event;
+    if (!e.target) 
+        src = window.event.srcElement;
+    else 
+        src = e.target;
+        
+    if (Internet_Remitter_Main.active_panel == 'INTERNET_REM_ADD_BENE' && e.keyCode == 13)
+    {
+        if (src.tagName == "INPUT" && src.type == 'text')
+        {
+            if(src.id == "txtBGFCNo" && src.readOnly == false)
+            {
+                //validate gfc no.
+                //alert('validating gfc no. please wait');
+                document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'block';                
+	            show_loading_message('divBeneSaveCIFtoFCLoading');
+	            
+	            AjaxPro.timeoutPeriod = 100 * 1000;
+    
+                AjaxPro.onTimeout = function()
+                {
+                    alert("SESSION TIMEOUT");
+                    document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'none';
+                    return; 
+                }   
+
+	            //var ds = IRSWorld.TranClass.RemTranGFMCCommons.GFMCDetails(document.getElementById('txtBGFCNo').value).value;
+	            IRSWorld.TranClass.RemTranGFMCCommons.GFMCDetails_(document.getElementById('txtBGFCNo').value, check_gfc_callback);
+	            
+	            //document.getElementById("Label4").innerHTML = "Validating GFC number. Please wait...";     
+	            //document.getElementById("lbLoadingText").innerHTML = "Validating GFC number. Please wait...";     
+            }
+        }
+    }                       
+            
+ }
+
+function check_gfc_callback(response)
+{
+    document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'none';
+    if (response.error != null)
+    {
+        alert(response.error.Message);
+    }
+    else
+    {
+        var ds = response.value;
+        //this.generic = new generic_method();
+        //if (ds != null && ds.Tables[0].Rows.length > 0 && this.generic.to_trim(ds.Tables[0].Rows[0].rec_CkAcctNo.toString()))
+        if (ds != null && ds.Tables[0].Rows.length > 0 && trim(ds.Tables[0].Rows[0].rec_CkAcctNo.toString()))
+        {
+            alert('GFC Number is valid');
+            document.getElementById('txtBAccountNo').value = ds.Tables[0].Rows[0].rec_CkAcctNo.toString();            
+        }
+        else
+        {
+            alert('GFC number is invalid');
+        }
+    }
+}
+
+function check_acct_callback(response)
+{
+    document.getElementById("divBeneSaveCIFtoFCLoading").style.display = 'none';
+    if (response.error != null)
+    {
+        alert('Account is invalid');
+    }
+    else
+    {
+        var stats = response.value;
+
+        if (stats != null && stats != '')
+        {
+            var acct = stats.split("~");
+            
+            if (acct[4] != document.getElementById('txtBAccountNo').value)
+            {
+                alert("Account no. entered is a KBI account, this will be replaced by an FC account.");
+                document.getElementById('txtBAccountNo').value = acct[4];
+            }
+            
+            alert('Account no. ' + acct[4] + ' Status is ' +  IRSWorld.Internet.InternetAddBeneficiary.get_fld_desc(acct[2],'AccountStatusFC').value );
+        }
+        else
+        {
+            alert('Account is invalid');
+        }
+    }
+}
+
+function set_focus()
+{
+    if (document.getElementById('txtHiddenGFMCNo'))
+    {
+        document.getElementById('txtHiddenGFMCNo').focus();
+        focused_obj = 'txtHiddenGFMCNo';
+    }
+}
+
+function get_focus(id)
+{
+    focused_obj = id;
+}
+
+function load_main()
+{
+    if (hasQueryStrings(window))
+    {
+        this.isRemit = getQueryString(window, 'isRemit');
+        fxn_isRemit = this.isRemit;
+        
+        if (this.isRemit == 'true' || this.isRemit == 'otc'  || this.isRemit == 'obp' || this.isRemit == 'gfc')
+        {
+            Internet_Remitter_Main.show_panel_add_rem();
+            Internet_Remitter_Main.btn_add_remitter();
+        }
+        
+        this.fun   = getQueryString(window, 'function');
+        this.cifid = getQueryString(window, 'cifid');
+        this.seqid = getQueryString(window, 'seqid');
+        
+        /*For OTC Update Client*/
+        var otc_rem_cifid = getQueryString(window, 'remitter_id');
+        var otc_bene_cifid = getQueryString(window, 'beneficiary_id');
+                
+        if (isAgentClient == true && (this.isRemit == null ||this.isRemit == undefined || this.isRemit == ''))
+        {
+            document.getElementById("txtHiddenRemCIFID").value    = otc_rem_cifid;
+            otc_rem_cifid = null;
+            if (fun != 'add_bene')
+            {
+                Internet_Remitter_Main.show_panel_add_rem();
+            }
+        }
+                
+        if(fun == 'show_rem_info')
+        {
+            document.getElementById("txtHiddenRemCIFID").value    = this.cifid;
+            document.getElementById("txtHiddenSearchSeqId").value = this.seqid;
+            
+            ins_rem_flag = false;
+            Internet_Remitter_Main.show_panel_add_rem();
+            Internet_Remitter_Main.set_cif_type(ciftype_r);
+            view_bene = false;
+        }
+        else if(otc_rem_cifid != null && otc_rem_cifid != 'null' && otc_rem_cifid != '' && otc_rem_cifid != undefined && otc_rem_cifid != 'undefined')
+        {
+            this.cifid = otc_rem_cifid;
+            this.seqid = '';
+            otc_client_update = true;
+            
+            document.getElementById("txtHiddenRemCIFID").value    = this.cifid;
+            document.getElementById("txtHiddenSearchSeqId").value = this.seqid;
+            
+            var ds1 = IRSWorld.Internet.InternetAddBeneficiary.get_master_seqid(otc_bene_cifid).value;
+            if(ds1 != null && ds1.Tables[0].Rows.length > 0)
+            {
+                document.getElementById("txtHiddenBeneMasterSeqId").value = ds1.Tables[0].Rows[0].SEQ_ID;
+            }
+            
+            ins_rem_flag = false;
+            Internet_Remitter_Main.show_panel_add_rem();
+            Internet_Remitter_Main.set_cif_type(ciftype_r);
+            view_bene = true;
+            
+            setText('capResult','Client Information');
+            Internet_Remitter_Main.show_panel_add_bene(false);
+        }
+        else if (fun == 'add_bene')
+        {
+            Internet_Remitter_Main.show_panel_add_bene(false);
+        }
+    }
+}
+
+function close_session()
+{    
+    IRSWorld.Internet.InternetAddBeneficiary.drop_session();
+}
+
+function closer_int_txn()
+{
+    if(fxn_isRemit == 'true')
+    {
+        parent.returnValue = "OK";
+        eval('parent.internetRemitterClose();');
+        
+        if (parent.document.getElementById('xdiv'))
+        {
+            parent.document.getElementById('xdiv').style.display='none';
+            parent.document.forms[0].removeChild(parent.document.getElementById('xdiv'));
+        }
+        else if (document.getElementById('xdiv'))
+        {
+            document.getElementById('xdiv').style.display='none';
+            document.forms[0].removeChild(document.getElementById('xdiv'));
+        }
+    }
+    else if (fxn_isRemit == 'otc')
+    {
+        if(!confirm('Exit client enrollment?')) return;
+        
+        window.returnValue = ret_otc;
+        close_frame_dialog();
+    }
+    else if (fxn_isRemit == 'obp')
+    {
+        if(!confirm('Exit client enrollment?')) return;
+        
+        window.returnValue = ret_obp;
+        close_frame_dialog();
+    }    
+    else if (fxn_isRemit == 'gfc')
+    {
+        if(!confirm('Exit client enrollment?')) return;
+        
+        window.returnValue = ret_gfc;
+        close_frame_dialog();
+    }
+    else
+    {
+        if(!confirm('Exit client enrollment?')) return;
+        close_frame_dialog();
+    }
+}
+
+function InternetRem_Sidebar()
+{
+    this.get_side_bar_visibility = function(division_id, anchor_id)
+    {
+        var div  = document.getElementById(division_id);
+        var cset = div.style.display;
+
+        div.style.display = (cset == "block") ? "none" : "block";
+        var partd = div.parentNode;
+        if (partd && partd.tagName.toLowerCase == 'td')
+        {
+            partd.style.width = (cset == "block") ? "1%" : "15%";
+        }
+        
+        document.getElementById(anchor_id).innerHTML = (cset == "block") ? String.fromCharCode(187) : String.fromCharCode(171);
+    }
+
+    this.get_side_bar = function()
+    {
+        var side_array  = this.get_side_bar_list();
+        var side_winder = new js_sidebar('sidemenu', side_array);
+        
+        return side_winder.toString();      
+    }
+     
+    this.get_side_bar_list = function()
+    {  
+        if(Internet_Remitter_Main.active_panel != 'INTERNET_REM_APP_BENE')
+        {
+            var cifid  = document.getElementById("txtHiddenRemCIFID").value;
+            var urole = document.getElementById("txtHiddenUserRole").value;
+            
+            if (urole  == '10')
+            {
+                var enableCardEnroll = IRSWorld.Internet.InternetAddBeneficiary.get_web_remittance_defaults('CRDENROLL').value;
+                var enableAcctEnroll = IRSWorld.Internet.InternetAddBeneficiary.get_web_remittance_defaults('ACCTENROLL').value;
+                
+                var add_rem      = new Array(1,0,'Remitter Info',   'javascript:Internet_Remitter_Main.show_panel_add_rem();');
+                var add_rem_bene = new Array(2,0,'Beneficiary Info','javascript:Internet_Remitter_Main.show_panel_add_bene(true);');
+                var add_prod     = new Array(3,0,'Mode of Remittance Info',   'javascript:hidetblBeneInfo();');
+                var add_cards    = new Array(4,0,'Cards Info',      'javascript:Internet_Remitter_Main.show_panel_add_cards();');
+                var add_acct  = new Array(5,0,'Accounts Info',        'javascript:Internet_Remitter_Main.show_panel_add_acct();');
+                var close        = new Array(9,0,'Close',           'javascript:closer_int_txn();');
+                                
+                var sidebar = new Array(add_rem, add_rem_bene, add_prod);
+                                         
+                if (enableCardEnroll == true)
+                {
+                    sidebar[sidebar.length] = add_cards;
+                }                
+                if (enableAcctEnroll == true)
+                {
+                    sidebar[sidebar.length] = add_acct;
+                }
+                
+                sidebar[sidebar.length] = close;
+            }
+            else //if (urole == '7' || urole == '8' || urole == '13' || urole == '1' || urole == '2')
+            {
+                var add_rem   = new Array(1,0,'Remitter Info',   'javascript:Internet_Remitter_Main.show_panel_add_rem();');
+                var add_bene  = new Array(2,0,'Beneficiary Info','javascript:Internet_Remitter_Main.do_add_bene();');
+                var add_prod  = new Array(3,0,'Products',        'javascript:Internet_Remitter_Main.show_panel_add_prod();');
+                var add_acct  = new Array(4,0,'Accounts',        'javascript:Internet_Remitter_Main.show_panel_add_acct();');
+                var add_card  = new Array(5,0,'Cards',           'javascript:Internet_Remitter_Main.show_panel_add_cards();');
+                var add_ids   = new Array(6,0,'Ids',             'javascript:Internet_Remitter_Main.show_panel_add_ids();');                
+                var view_det  = new Array(7,0,'View Details',    'javascript:Internet_Remitter_Main.cif_view_details();');
+                var search    = new Array(8,0,'Search',          'javascript:Internet_Remitter_Main.show_panel_search();');
+                var close     = new Array(9,0,'Close',           'javascript:closer_int_txn();');
+                var add_van   = new Array(10,0,'Virtual Acct. No.', 'javascript:Internet_Remitter_Main.show_panel_add_van();');
+                var add_notes   = new Array(11,0,'Client Notes', 'javascript:Internet_Remitter_Main.show_panel_add_notes();');
+                var is_remit = fxn_isRemit;
+                
+                if(is_remit == 'true' || is_remit == 'otc')
+                {
+                    if (otc_client_update == true)
+                    {
+                        if (isAgentClient == true)
+                        {
+                            var sidebar = new Array(add_rem, add_bene, add_prod, add_ids, close);
+                        }
+                        else
+                        {
+                            var sidebar = new Array(add_rem, add_bene, add_prod, add_acct, add_card, add_ids, add_van, add_notes, close);
+                        }                     
+                    }
+                    else
+                    {
+                        if (isAgentClient == true)
+                        {
+                            var sidebar = new Array(add_rem, add_bene, add_prod, add_ids, close);
+                        }
+                        else
+                        {
+                            var sidebar = new Array(add_rem, add_bene, add_prod, add_acct, add_card, add_ids, add_van, add_notes, search, close);
+                        }                        
+                    }
+                    
+                }
+                else if(is_remit == 'obp')
+                {
+                    var sidebar = new Array(add_rem, close);
+                }
+                else if (is_remit == 'gfc')
+                {
+                    var sidebar = new Array(add_rem, add_bene, add_ids, search, close);
+                }
+                else if (isAgentClient == true) // Agent Roles
+                {
+                    var sidebar = new Array(add_rem, add_bene, add_prod, add_ids, close);   
+                }
+                else
+                {
+                    var sidebar = new Array(add_rem, add_bene, add_prod, add_acct, add_card, add_ids, add_van, add_notes, view_det, search);   
+                }
+            }        
+            
+            return sidebar;
+        }
+        else
+        {
+            var app_bene = new Array(1,0,'Beneficiary Approval',   'javascript:Internet_Remitter_Main.show_panel_app_bene();');
+            var app_card = new Array(2,0,'Card Approval',          'javascript:Internet_Remitter_Main.show_panel_app_card();');
+            var back     = new Array(3,0,'Back',                  'javascript:Internet_Remitter_Main.show_panel_search();');
+            
+            var sidebar  = new Array(app_bene, app_card, back);
+                
+            return sidebar;
+        }        
+    }
+}
+    function hidetblBeneInfo()
+    {
+        document.getElementById('tblBeneInfo').style.visibility = 'hidden';
+        document.getElementById('tblBeneInfo').style.display = 'none';
+        }
+function showPanel(divName)
+{
+    var div = document.getElementById(divName);
+    
+    divmask = new maskpanel();
+    divmask.show();
+    
+    if (divName == 'divBeneficiary' | divName == 'divCard' | divName == 'divSearchBeneficiary')
+    {
+        document.getElementById(divName).style.position = 'absolute';    
+    }
+    document.getElementById(divName).style.display   = "block";
+    
+    div.style.top = (((document.documentElement.clientHeight / 2) + document.documentElement.scrollTop) - (div.offsetHeight / 2)) + 'px';
+    div.style.left = (((document.documentElement.clientWidth / 2) + document.documentElement.scrollLeft) - (div.offsetWidth / 2)) + 'px';
+}
+
+function hidePanel(divName)
+{
+    document.getElementById(divName).style.display   = "none";    
+    divmask.hide();
+}
+
+function cif_detail_close()
+{    
+}
+
+function execute_ajx_command(param)
+{
+    if (Internet_Remitter_Main != null && Internet_Remitter_Main != "undefined")
+    {
+        Internet_Remitter_Main.do_ajax(param);
+    }
+}
+
+function execute_ajaxgridview_command(param)
+{
+    if (Internet_Remitter_Main != null && Internet_Remitter_Main != "undefined")
+    {
+        Internet_Remitter_Main.do_ajaxgridview(param);
+    }
+}
+
+function Internet_Remitter_Main()
+{
+   this.grid_ajax_query    = null;
+   this.grid_ajax_page     = "../AjxPage/ajaxgrid.aspx";
+   this.active_panel       = null;
+   this.active_grid        = null;
+   this.active_popup       = null; 
+   this.REMCIFID           = null;
+   var searchBankFlag      = null;
+   this.fldval             = null; 
+      
+   /*  
+        Author          : Hajz 
+        Description     : Incorporate saving of CIF to FC 
+        Date Added      : 01/21/2010 
+        Last Modified   : 01/21/2010
+    */
+    this.insert_CIF_to_FC = function(mode, txtFieldName)
+    {
+        var CIFID = "";
+        document.getElementById('txtHiddenFCCustCurrenctField').value = txtFieldName;
+        if (mode == 'rem')
+        {
+            CIFID = document.getElementById('txtHiddenRemCIFID').value;
+        }
+        else
+        {
+            CIFID = document.getElementById('txtHiddenSelectedBeneCIFID').value;
+        }
+        
+        AjaxPro.timeoutPeriod = 100 * 1000;
+
+        AjaxPro.onTimeout = function()
+        {
+            this.show_div_save_cif_fc_loading("", false);                
+            alert("SESSION TIMEOUT");
+            return; 
+        }
+        
+        this.show_div_save_cif_fc_loading(mode, true);
+        return IRSWorld.Internet.InternetAddBeneficiary.INSERT_CIF_TO_FC(CIFID, this.insert_CIF_to_FC_callback);
+    }
+        
+    this.insert_CIF_to_FC_callback = function(response)
+    {
+        Internet_Remitter_Main.show_div_save_cif_fc_loading("", false);
+        if (response.error != null)
+        {
+            alert(response.error.toString());
+        }
+        else
+        {
+            var res = response.value.toString().split('|')
+            
+            if (res[0] == '00')
+            {   
+                setText(document.getElementById('txtHiddenFCCustCurrenctField').value, res[2]);
+                alert(res[1]);
+            }
+            else
+            {
+                alert(res[1])
+            }
+        }
+    }
+    
+	this.check_and_get_hitlist = function(FName, LName, MName, CIFClass, isApproval)
+	{
+	    if (isApproval != null & isApproval != undefined && isApproval == true)
+	    {
+	        isApproval  =   true;
+	        this.hitCIFisApproval = true;
+	    }
+	    else
+	    {
+	        isApproval  =   false;
+	        this.hitCIFisApproval = false;
+	    }
+	    
+	    var result = IRSWorld.Internet.InternetAddBeneficiary.check_and_get_hitlist(FName, LName,MName);
+	    var hitlist = result.value;
+	    
+	    if (hitlist != null && hitlist != '')
+	    {
+	        this.active_panel  = "INTERNET_REM_HITLIST";
+	        
+	        if (isApproval == true) { hidePanel('divBeneficiary') };
+	        
+	        if (isAgentClient == true)
+	        {
+	            if (CIFClass == 1)
+	            {
+	                alert('Remitter Name: ' +  ((FName == null) ? "" : FName) + ' ' + ((MName == null) ? "" : MName) + ' ' + ((LName == null) ? "" : LName) + ' is in the WatchList');
+	                Internet_Remitter.save_remitter();
+	            }
+	            else
+	            {
+	                alert('Beneficiary Name: ' +  ((FName == null) ? "" : FName) + ' ' + ((MName == null) ? "" : MName) + ' ' + ((LName == null) ? "" : LName) + ' is in the WatchList');
+	                Internet_Beneficiary.save_beneficiary();
+	            }
+	        }
+	        else
+	        {
+	            this.view_hitlist(((FName == null) ? "" : FName), ((LName == null) ? "" : LName), ((MName == null) ? "" : MName), CIFClass);
+	        }
+	    }
+	    else
+	    {
+	        if (CIFClass == 1)
+	        {
+	            if (isApproval == true)
+	            {
+	                Internet_Remitter.approve_rem();
+	            }
+	            else
+	            {
+	                Internet_Remitter.save_remitter();
+	            }
+	            
+	        }
+	        else
+	        {
+	            if (isApproval == true)
+	            {
+	                Internet_Beneficiary.approve_bene();
+	            }
+	            else
+	            {
+	                Internet_Beneficiary.save_beneficiary();
+	            }
+	        }
+	    }
+	}    
+    
+    this.view_hitlist = function(FName, LName,MName, CIFClass)
+    {
+        this.hitCIFClass = CIFClass;
+
+        var BranchCode = document.getElementById("txtHiddenUserLoc").value;              
+        var phonetics  = IRSWorld.Internet.InternetAddBeneficiary.get_hit_list_phonetic().value;
+
+        phonetics = phonetics.split("~");              
+
+        hitlist = new generic_override();
+        
+        if (phonetics != null)
+        {
+            hitlist.enroll_phonetics_1 = phonetics[0];
+            hitlist.enroll_phonetics_2 = phonetics[1];
+            hitlist.enroll_phonetics_3 = phonetics[2];
+            hitlist.enroll_phonetics_4 = phonetics[3];
+            hitlist.enroll_phonetics_5 = phonetics[4];
+            hitlist.enroll_phonetics_6 = phonetics[5];
+            hitlist.enroll_phonetics_7 = phonetics[6];
+            hitlist.enroll_phonetics_8 = phonetics[7];
+        }
+
+        hitlist.open_cif_client_hit_list(FName, LName, MName, BranchCode);                
+    }
+    
+    
+    
+    this.proceed_hit_list = function()
+    {
+        if (this.hitCIFisApproval == true)
+        {
+            showPanel('divBeneficiary');
+            if (this.hitCIFClass == 1)
+            {
+                Internet_Remitter.approve_rem();
+            }
+            else
+            {
+                Internet_Beneficiary.approve_bene();
+            }
+        }
+        else if (this.hitCIFClass == 1)
+        {
+            Internet_Remitter.save_remitter();            
+        }
+        else
+        {
+            Internet_Beneficiary.save_beneficiary();
+        }
+        hitlist.close_modal_window();
+    }
+    
+    this.cancel_hit_list = function()
+    {
+        alert("Saving cancelled due to hitlist");
+        if (this.hitCIFisApproval == true)
+        {
+            showPanel('divBeneficiary');
+        }
+        else if (this.hitCIFClass == 2)
+        {
+            Internet_Beneficiary.load_grid_viewer_cifbene();
+        }       
+    }
+    
+   this.check_cif_customer_id = function(UserRole)
+   {
+        return IRSWorld.Internet.InternetAddBeneficiary.check_userrole_rights_for_fccustomer_id(UserRole).value;         
+   }
+
+   /*  
+        Author          : Hajz 
+        Description     : Incorporate saving of Charge Type 
+        Date Added      : 03/10/2010 
+        Last Modified   : 03/10/2010
+    */
+   this.get_Charge_type = function(txtFieldName)
+   {
+        this.active_popup = 'search_chargetype';
+        
+        var uloc  = document.getElementById("txtHiddenUserLoc").value;
+        var urole = document.getElementById("txtHiddenUserRole").value;
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_cif_search_chargetype~" + uloc + "~" + urole;                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.fldval);     
+   }
+   
+   	this.show_div_save_cif_fc_loading = function(Mode,  isVisible)
+	{
+	    var DivHdrName;
+	    var DivDtlName;
+	    var DivLabel;
+	    
+	    if (Mode == 'rem')
+	    {
+	        DivHdrName  =  'divRemSaveCIFtoFCLoading'; 
+	        DivDtlName  =  'divRemSaveCIFtoFCLoading'; 
+	        DivLabel    =  'Label3'
+	    }
+	    else
+	    {
+	        DivHdrName  =  'divBeneSaveCIFtoFCLoading'; 
+	        DivDtlName  =  'divBeneSaveCIFtoFCLoading'; 
+	        DivLabel    =  'lbLoadingText'	        
+	    }
+	    
+	    if(isVisible == true)
+	    {
+            show_loading_message(DivDtlName);
+	        document.getElementById(DivHdrName).style.display = 'block';
+	        
+            document.getElementById("btnFCRemCustID1").disabled    = true;
+            document.getElementById("btnFCRemCustID2").disabled    = true;
+            document.getElementById("btnFCBeneCustID1").disabled    = true;
+            document.getElementById("btnFCBeneCustID2").disabled    = true;            	        
+	    }
+	    else
+	    {
+	        document.getElementById('divRemSaveCIFtoFCLoading').style.display = 'none';
+	        document.getElementById('divBeneSaveCIFtoFCLoading').style.display = 'none';
+	        
+            document.getElementById("btnFCRemCustID1").disabled    = false;
+            document.getElementById("btnFCRemCustID2").disabled    = false;
+            document.getElementById("btnFCBeneCustID1").disabled    = false;
+            document.getElementById("btnFCBeneCustID2").disabled    = false;	        
+	    }
+	}    
+   
+   this.cif_view_details = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        var remcifid = document.getElementById("txtHiddenRemCIFID").value;
+        var remseqid = document.getElementById("txtHiddenSearchSeqId").value;
+        
+        window.location = "../CIF/CIFViewDetails.aspx?" + remcifid + '&' + remseqid + '&' + 'int';
+   }
+    
+   this.get_active_grid = function(active_grid)
+   {
+        this.active_grid = active_grid;
+   }
+   
+   this.load_approv_defaults = function()
+   {
+        this.active_panel = 'INTERNET_REM_APP_BENE';
+   }
+   
+   this.keyup = function(elem_id, e)
+   {
+        var src;
+        if (!e) e = window.event;
+        if (!e.target) 
+            src = window.event.srcElement;
+        else 
+            src = e.target;
+               
+       if (src.tagName == "INPUT" & src.type == 'text' ||
+           src.tagName == "INPUT" & src.type == 'checkbox' ||
+           src.tagName == "SELECT" & src.type == 'select-one')
+       {
+           if (e.keyCode == 13) 
+           {
+                if(elem_id == 'ddSearchBeneByCIFType' || elem_id == 'txtSearchBeneByLN' ||
+                   elem_id == 'txtSearchBeneByFN' || elem_id == 'txtSearchBeneByMN')
+                {
+                    document.getElementById('btnSearchBenef').click();
+                }
+                if(elem_id == 'txtSearchLName' || elem_id == 'txtSearchFName' ||
+                   elem_id == 'txtSearchMName' || elem_id == 'txtSearchBDate')
+                {
+                    document.getElementById('btnSearch').click();
+                }
+           }
+       }
+   }
+    
+   this.set_rem_cifid = function(rem_cifid)
+   {
+	    Internet_Remitter.REMCIFID          = rem_cifid;     
+	    Internet_Beneficiary.REMCIFID       = rem_cifid;  
+	    Internet_Remitter_Main.REMCIFID     = rem_cifid;  
+	    Internet_Remitter_Products.REMCIFID = rem_cifid;
+   }
+	
+   this.get_cif_type = function(cifid)
+   {
+        return IRSWorld.Internet.InternetAddBeneficiary.get_cif_type(cifid).value;
+   }
+   
+   this.get_cif_type2 = function(seqid)
+   {
+        return IRSWorld.Internet.InternetAddBeneficiary.get_cif_type2(seqid).value;
+   }
+   
+   this.disable_cif_type = function(isDisabled)
+   {
+        document.getElementById("ddCIFType").disabled = isDisabled;
+   }
+   
+   this.disable_cif_type2 = function(isDisabled)
+   {
+        //if(isDisabled == false)
+        //document.getElementById("ddCIFType2").disabled = false;
+        //else
+        //document.getElementById("ddCIFType2").disabled = true;
+        document.getElementById("ddCIFType2").disabled = isDisabled;
+   }
+   
+   this.set_cif_type = function(cif_type)
+   {
+        //this.commons = new common_method();
+        //this.commons.to_set_dropdownlist_index("ddCIFType",  cif_type);
+        document.getElementById("ddCIFType").value = cif_type;
+   }
+   
+   this.set_cif_type2 = function(cif_type)
+   {
+        //this.commons = new common_method();
+        //this.commons.to_set_dropdownlist_index("ddCIFType2",  cif_type);
+        document.getElementById("ddCIFType2").value = cif_type;
+   }
+   
+   this.check_id_expired = function(seq_id) /*checks expired IDs*/
+    {
+        var ds = IRSWorld.Internet.InternetAddBeneficiary.get_id_expirydate(seq_id).value;
+        var i  = 0;
+        var expired_ids = '';
+        var count       = 0;
+        
+        this.generic_method = new generic_method();
+        if (ds != null && ds.Tables[0].Rows.length > 0)
+        {
+            for(i = 0; i< ds.Tables[0].Rows.length; i++)
+            {
+                if(this.generic_method.to_validate_expiration(String(ds.Tables[0].Rows[i].ExpiryDate)) == false)
+                {
+                    expired_ids += String(ds.Tables[0].Rows[i].IDNo) + ',';    
+                    count++;                
+                }
+            }
+            
+            if(expired_ids != '')
+            {
+                if(count == 1)
+                {
+                    alert('ID number ' + expired_ids.substring(0, expired_ids.length-1) + ' is already expired!');
+                }
+                else
+                {
+                    alert('ID numbers ' + expired_ids.substring(0, expired_ids.length-1) + ' are already expired!');
+                }
+            }
+        }
+    }
+   
+   this.search_by_rem = function()
+   {
+       ins_rem_flag = false;
+       this.show_panel_add_rem();
+       view_bene = false;
+       
+       this.check_id_expired(document.getElementById("txtHiddenSearchSeqId").value);
+   }
+   
+   this.search_by_bene_callback = function(result)
+   {
+       if (result.error != null)
+       {
+            alert(result.error.Message);
+            return;
+       }
+       if(result.value < 1)
+       {
+//            if(confirm('OK: Create Beneficiary as Remitter\nCANCEL: View Beneficiary Details'))
+//            {
+//                document.getElementById("txtHiddenSearchSeqId").value = document.getElementById("txtHiddenBeneMasterSeqId").value;
+//                document.getElementById("txtHiddenSearchCIFID").value = plist[1];
+//                
+//                Internet_Remitter_Main.show_panel_add_rem();
+//                Internet_Remitter_Main.show_panel_rem_ind_or_business(ciftype_b);
+//                Internet_Remitter_Main.disable_cif_type(true);
+//                Internet_Remitter_Main.set_cif_type(ciftype_b);
+//                Internet_Remitter.disable_field(false);
+//                Internet_Remitter.insert_flag = false;
+//                Internet_Remitter.set_bene_as_rem = true;
+//                Internet_Remitter_Main.save_mode_rem();
+//                document.getElementById("btnCancelRem").disabled = true;   
+//                view_bene = false;                                 
+//            }
+//            else /* view bene info */
+//            {
+//                Internet_Remitter_Main.show_panel_add_bene();
+//                Internet_Remitter_Main.show_panel_bene_ind_or_business(ciftype_b);
+//                Internet_Remitter_Main.disable_cif_type2(true);
+//                Internet_Remitter_Main.set_cif_type2(ciftype_b);
+//                Internet_Beneficiary.load_benecif_record(2);
+//                document.getElementById('divBeneGridCIF').style.display = "none";
+//                view_bene = true;
+////            } 
+//       }
+//       else /* selected bene has a remitter cif class */
+//       {
+            Internet_Remitter_Main.show_panel_add_bene();
+            Internet_Remitter_Main.show_panel_bene_ind_or_business(ciftype_b);
+            Internet_Remitter_Main.disable_cif_type2(true);
+            Internet_Remitter_Main.set_cif_type2(ciftype_b);
+            Internet_Beneficiary.load_benecif_record(2);
+            document.getElementById('divBeneGridCIF').style.display = "none";
+
+            view_bene = true;
+      }    
+   }
+
+   this.do_ajax = function(parameter)
+   {
+       if (parameter != null && parameter != "undefined")
+       {
+           var command_param = parameter.split("$");                
+               
+           if (command_param.length > 0)
+           {
+               if (command_param[0] == "ajx_selected")
+               { 
+                   var panel = this.active_panel;
+                   if(panel == "INTERNET_REM_ADD_REM") panel = "INTERNET_REM_ADD_BENE";
+                   
+                   switch(panel)
+                   {
+                       case "INTERNET_REM_SEARCH":
+                       {
+                           var searchby = document.getElementById("ddSearchBy").value; /* 1 if remitter, 2 if beneficiary*/
+                           var plist = command_param[1].split('~');
+
+                           document.getElementById("txtHiddenRemCIFID").value          = plist[0];
+                           document.getElementById("txtHiddenSearchCIFID").value       = plist[0];
+                           document.getElementById("txtHiddenSelectedBeneCIFID").value = plist[1];
+                           document.getElementById("txtHiddenSearchSeqId").value       = plist[2];
+                           document.getElementById("txtHiddenBeneMasterSeqId").value   = plist[3];
+                           ciftype_r = plist[4];
+                           ciftype_b = plist[5];
+                            
+                           if(searchby == '1')
+                           {
+                               this.search_by_rem();
+                           }
+                           else
+                           {
+                               //get_rem = IRSWorld.Internet.InternetAddBeneficiary.get_cifclass_count(document.getElementById("txtHiddenBeneMasterSeqId").value, 1).value;
+                               IRSWorld.Internet.InternetAddBeneficiary.get_cifclass_count(document.getElementById("txtHiddenBeneMasterSeqId").value, 1, this.search_by_bene_callback);
+                           }                           
+                           
+                           break;
+                       }
+                       case "INTERNET_REM_ADD_BENE":
+                       {
+                            if (this.active_popup == 'search_zip' || this.active_popup == 'search_zip_com' || this.active_popup == 'search_zip_mail')
+                            {
+                                if (this.active_popup == 'search_zip') { document.getElementById("txtHiddenZipSeqId").value = command_param[1]; }
+                                else if (this.active_popup == 'search_zip_com') { document.getElementById("txtHiddenZipSeqId_Com").value = command_param[1]; }      
+                                else if (this.active_popup == 'search_zip_mail') { document.getElementById("txtHiddenZipSeqId_Mail").value = command_param[1]; }            
+                                                                                                        
+                                var ds = null;
+                                ds = IRSWorld.Internet.InternetAddBeneficiary.get_zipcode(command_param[1]).value;
+                                if(ds != null && ds.Tables[0].Rows.length > 0)
+                                {
+                                    var zipcode      = ds.Tables[0].Rows[0].Truezipcode;
+                                    var municipality = ds.Tables[0].Rows[0].Municipality;
+                                    var province     = ds.Tables[0].Rows[0].Province;
+                                }                         
+                                
+                                document.getElementById("txtHiddenZip").value = zipcode;
+                                
+                                if(confirm("Select zip code " + zipcode + "?"))
+                                {
+                                    var zippie = municipality + ", " + province + " " + zipcode;
+                                    
+                                    if (this.active_panel == "INTERNET_REM_ADD_BENE")
+                                    {
+                                        var zipcodeField = "";
+                                
+                                        //if(document.getElementById('ddCIFType2').value == "" | document.getElementById('ddCIFType2').value == "null" )
+                                        if (document.getElementById('ddCIFType2').value == "2")
+                                        {
+                                            if (this.active_popup == 'search_zip'){ zipcodeField = "txtBeneBZip"; }
+                                            else if(this.active_popup == 'search_zip_com'){ zipcodeField = "txtBeneBZip_Com"; }
+                                            else if(this.active_popup == 'search_zip_mail'){ zipcodeField = "txtBeneBZip_Mail"; }
+                                        }
+                                        else if (document.getElementById('ddCIFType2').value == "1" || document.getElementById('ddCIFType2').value == "null" || document.getElementById('ddCIFType2').value == null)
+                                        {
+                                            ciftype_b = 1;
+                                            if (this.active_popup == 'search_zip'){ zipcodeField = "txtBeneZip"; }
+                                            else if(this.active_popup == 'search_zip_com'){ zipcodeField = "txtBeneZip_Com"; }
+                                            else if(this.active_popup == 'search_zip_mail'){ zipcodeField = "txtBeneZip_Mail"; }
+                                        }
+                                        else
+                                        {
+                                            if (this.active_popup == 'search_zip'){ zipcodeField = "txtBeneBZip"; }
+                                            else if(this.active_popup == 'search_zip_com'){ zipcodeField = "txtBeneBZip_Com"; }
+                                            else if(this.active_popup == 'search_zip_mail'){ zipcodeField = "txtBeneBZip_Mail"; }
+                                        }
+                                        
+                                        document.getElementById(zipcodeField).value = zippie;
+                                    }
+                                    else
+                                    {
+                                        if(document.getElementById('ddCIFType').value == "" | document.getElementById('ddCIFType').value == "null" )
+                                        {
+                                            ciftype_r = 1;
+                                        }
+                                    
+                                        if(ciftype_r == 1)
+                                        document.getElementById("txtRemZip").value = zippie;
+                                        else
+                                        document.getElementById("txtRemBZip").value = zippie;
+                                    }
+                                }else return;
+                            }
+                            else if (this.active_popup == 'search_chargetype')
+                            {
+                                document.getElementById('txtHiddenChargeType').value = "";
+                                
+                                var ds = IRSWorld.Internet.InternetAddBeneficiary.get_Charge_type(command_param[1]).value;
+                                
+                                if (ds != null && ds.Tables[0].Rows.length > 0)
+                                {
+                                    document.getElementById('txtHiddenChargeType').value = command_param[1];
+                                    
+                                    document.getElementById('txtRemChargeType').value = ds.Tables[0].Rows[0].FldDescription;
+                                    document.getElementById('txtRemBChargeType').value = ds.Tables[0].Rows[0].FldDescription;
+                                }
+                            }
+                            else
+                            {
+                                document.getElementById("txtHiddenBeneMasterSeqId").value = command_param[1];
+                                
+                                var ds = null;
+                                ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid(command_param[1]).value;
+                                if(ds != null && ds.Tables[0].Rows.length > 0)
+                                {
+                                    var cust_cifid = ds.Tables[0].Rows[0].CIFID;
+                                    document.getElementById("txtHiddenSelectedBeneCIFID").value = cust_cifid;                                
+                                    
+                                    var bciftype = this.get_cif_type(cust_cifid);
+                                    this.show_panel_bene_ind_or_business(bciftype);
+                                    this.set_cif_type2(bciftype);   
+                                }
+                                Internet_Beneficiary.insert_flag = 'searched';
+                                
+                                Internet_Beneficiary.load_benecif_record(1);
+                                Internet_Beneficiary.disable_field(false);
+                                this.save_mode_bene();
+                            }
+                            
+                            break;
+                       }
+                       case "INTERNET_REM_ADD_CARDS":
+                       {
+                           document.getElementById("txtHiddenBankSeqId").value = command_param[1];
+                                                      
+                           var ds = null;
+                           ds = IRSWorld.Internet.InternetAddBeneficiary.get_bank(command_param[1]).value;
+                            
+                           if (ds != null && ds.Tables[0].Rows.length > 0)
+                           var branch_name = ds.Tables[0].Rows[0].BranchName;
+                           var branch_code = ds.Tables[0].Rows[0].BranchCode;
+                           
+                           if (branch_code == 'OTH')
+                           {
+                                Internet_Remitter_Cards.show_issuing_bank_dataentry(true);
+                           }
+                           else
+                           {
+                                Internet_Remitter_Cards.show_issuing_bank_dataentry(false);
+                           }
+                                                       
+                           if(confirm("Update card bank?"))
+                           {
+                               document.getElementById("txtBankName").value = branch_name;
+                               document.getElementById("txtHiddenCardBankCode").value = branch_code;
+                               document.getElementById("txtOthBankName1").value = "";
+                           }else return;
+                           break;
+                       }
+                       case "INTERNET_REM_ADD_PROD":
+                       {
+                            document.getElementById("txtOthBankName").value    = '';
+                            document.getElementById("txtOthBankAddress").value = '';
+                            
+                            document.getElementById("txtHiddenMT103BankSeqId").value = command_param[1];
+                                            
+                            var ds = null;
+                            ds = IRSWorld.Internet.InternetAddBeneficiary.get_otherbanks_details(command_param[1]).value;
+                            if(ds != null && ds.Tables[0].Rows.length > 0)
+                            {
+                                var bank_name    = ds.Tables[0].Rows[0].BankName;
+                                var bank_address = ds.Tables[0].Rows[0].BankAddress;
+                                
+                                document.getElementById("txtMT103BankName").value = bank_name + ' - ' + bank_address;
+                                document.getElementById("txtOthBankName").disabled    = true;
+                                document.getElementById("txtOthBankAddress").disabled = true;
+                            }
+                            break;
+                       }
+                       case "INTERNET_REM_ADD_ACCT":
+                       {
+                            var ds = null;
+                            ds = IRSWorld.Internet.InternetAddBeneficiary.get_cif_bank(command_param[1]).value;
+                            
+                            Internet_Accounts.BranchSeqID = command_param[1];
+                            
+                            if(ds != null && ds.Tables[0].Rows.length > 0)
+                            {
+                                var bcode = ds.Tables[0].Rows[0].BranchCode;
+                                var bname = ds.Tables[0].Rows[0].BranchName;
+                                
+                                var display_branch = bcode + ' - ' + bname;
+                                if(searchBankFlag == 'search_acctpnbbranch')
+                                {
+                                    Internet_Accounts.AccountBranchCode  = bcode;
+                                    Internet_Accounts.AccountBranchName  = bname;
+                                    document.getElementById('txtRemPNBBranch').value = display_branch
+                                }
+                                else if (searchBankFlag == 'search_acctothbank')
+                                {
+                                    Internet_Accounts.DomBankCode        = bcode;
+                                    Internet_Accounts.AccountBranchName  = bname;
+                                    document.getElementById('txtRemOthBank').value = display_branch
+                                }
+                            }
+                            
+                            break;
+                       }
+                       case "INTERNET_REM_ADD_VAN":
+                       {
+                           
+                            document.getElementById('txtHiddenVanProductSeqID').value = "";
+                            document.getElementById('txtHiddenVanBeneCIFID').value = "";
+                            
+                            var ds = IRSWorld.Internet.InternetAddBeneficiary.get_van_product(command_param[1]).value;
+                            
+                            if (ds != null && ds.Tables[0].Rows.length > 0)
+                            {
+                                document.getElementById('txtHiddenVanProductSeqID').value = command_param[1];
+                                document.getElementById('txtHiddenVanBeneCIFID').value = ds.Tables[0].Rows[0].CIFID;
+                                document.getElementById('txtRemVanProduct').value = ds.Tables[0].Rows[0].Description;
+                            }
+                            
+                            break;
+                       }
+                       default: break;
+                   }
+                                      
+               }
+           }
+           this.ajax_grid.process_ajax(parameter); return;
+       }
+   }
+   
+   this.do_ajaxgridview = function(parameter)
+   {
+       if (parameter != null && parameter != "undefined")
+       {
+           var command_param = parameter.split("$");           
+                       
+           if (command_param.length > 0)
+           {
+               if(this.active_panel  == "INTERNET_REM_ADD_CARDS")
+               {
+                   if (command_param[0] == "ajx_selected")
+                   {
+                       document.getElementById("txtHiddenCardSeqId").value = command_param[1];
+                       Internet_Remitter_Cards.load_record();
+                   }                   
+                   else
+                   {
+                       if(document.getElementById("txtHiddenUserRole").value == '10')
+                       {
+                            Internet_Remitter_Cards.process_grid_viewer(parameter);
+                       }
+                       else
+                       {
+                            Internet_Remitter_Cards.process_grid_cardcif(parameter);
+                       }
+                   }                   
+               }
+               else if(this.active_panel  == "INTERNET_REM_APPROVE_CARDS")
+               {
+                   if (command_param[0] == "ajx_selected")
+                   {
+                       document.getElementById("txtHiddenCardSeqId").value = command_param[1];
+                       Internet_Remitter.approve_bene_card();
+                       
+                       return;
+                   }
+                   Internet_Remitter_Cards.process_grid_viewer_approve(parameter);
+               }
+               else if (this.active_panel  == "INTERNET_REM_ADD_PROD")
+               {
+                    if (command_param[0] == "ajx_selected")
+                   {
+                       document.getElementById("txtHiddenBeneProdSeqId").value = command_param[1];
+                       
+                       var ds = null;
+                       ds = IRSWorld.Internet.InternetAddBeneficiary.get_bene_cifid_seqid(command_param[1]).value;
+                       if(ds != null && ds.Tables[0].Rows.length > 0)
+                       {
+                            var cust_cifid = ds.Tables[0].Rows[0].CIFID;
+                            var cust_seqid = ds.Tables[0].Rows[0].SEQ_ID;
+                            
+                            document.getElementById("txtHiddenSelectedBeneCIFID").value = cust_cifid;                                
+                       }
+                            
+                       Internet_Remitter_Products.load_record();
+                       return;
+                   }
+                   Internet_Remitter_Products.process_grid_viewer(parameter);
+               }
+               else if (this.active_panel  == "INTERNET_REM_ADD_BENE")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        if(this.active_grid == 'bene_forapp')
+                        {
+                          
+                            document.getElementById("txtHiddenBeneSeqId").value = command_param[1];
+                            Internet_Beneficiary.load_record();
+                            Internet_Beneficiary.edit_bene_2();
+                        }
+                        if(this.active_grid == 'bene_cif')
+                        {
+                            var ds = null;
+                            ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid(command_param[1]).value;
+                            if(ds != null && ds.Tables[0].Rows.length > 0)
+                            {
+                                 var cust_cifid = ds.Tables[0].Rows[0].CIFID;
+                                 document.getElementById("txtHiddenSelectedBeneCIFID").value = cust_cifid;                                
+                            }
+                            
+                            document.getElementById("txtHiddenBeneMasterSeqId").value = command_param[1];
+                            ciftype_b = this.get_cif_type2(document.getElementById("txtHiddenBeneMasterSeqId").value);
+                            this.show_panel_bene_ind_or_business(ciftype_b);
+                            Internet_Beneficiary.load_benecif_record(2);
+                        }
+//                        if(this.active_grid == "bene_forapp")
+//                        {
+//                            document.getElementById("tblBeneInfo").style.visibility = "visible";
+//	                        document.getElementById("tblBeneInfo").style.display = "block";
+//                           // Internet_Beneficiary.edit_bene_2();
+//                        }
+                    }
+                    else
+                    {
+                        if(this.active_grid == 'bene_forapp')    Internet_Beneficiary.process_grid_viewer(parameter);
+                        else Internet_Beneficiary.process_grid_viewer_cifbene(parameter);
+                    }
+                    
+               } 
+               else if (this.active_panel == "INTERNET_REM_ADD_ACCT")
+               {
+                    Internet_Accounts.VALIDFC = true;
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        Internet_Accounts.AccountSeqId = command_param[1];
+                        Internet_Accounts.load_record();
+                        return;
+                    }
+                    Internet_Accounts.process_grid_acctcif(parameter);
+               }
+               else if (this.active_panel  == "INTERNET_REM_APP_BENE")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                       Internet_Beneficiary.BENETOAPPSEQID = command_param[1];
+                       Internet_Beneficiary.show_panel_app_bene();                       
+                       return;
+                    }
+                    Internet_Beneficiary.process_grid_appbene(parameter);
+               }          
+               else if (this.active_panel  == "INTERNET_REM_APP_REM")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                       Internet_Remitter.REMTOAPPSEQID = command_param[1];
+                       Internet_Remitter.show_panel_app_rem();                       
+                       return;
+                    }
+                    Internet_Remitter.process_grid_apprem(parameter);
+               }                    
+               else if (this.active_panel  == "INTERNET_REM_APP_CARD")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                       Internet_Remitter_Cards.CARDTOAPPSEQID = command_param[1];
+                       Internet_Remitter_Cards.show_panel_app_card();                       
+                       return;
+                    }
+                    Internet_Remitter_Cards.process_grid_appcard(parameter);
+               }
+               else if (this.active_panel == "INTERNET_REM_REJ_BENE")
+               {
+                    if(command_param[0] != "ajx_selected")
+                    {
+                        Internet_Beneficiary.process_grid_rejbene(parameter);
+                    }
+               }
+               else if (this.active_panel == "INTERNET_REM_REJ_REM")
+               {
+                    if(command_param[0] != "ajx_selected")
+                    {
+                        Internet_Remitter.process_grid_rejrem(parameter);
+                    }
+               }               
+               else if (this.active_panel == "INTERNET_REM_REJ_CARD")
+               {
+                    if(command_param[0] != "ajx_selected")
+                    {
+                        Internet_Remitter_Cards.process_grid_rejcard(parameter);
+                    }
+               }         
+               else if (this.active_panel == "INTERNET_REM_ADD_IDS")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        Internet_Remitter_Ids.SEQ_ID = command_param[1];
+                        Internet_Remitter_Ids.load_record();
+                        return;
+                    }
+                    
+                    Internet_Remitter_Ids.process_grid_viewer(parameter);
+               }
+               else if (this.active_panel == "INTERNET_REM_ADD_VAN")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        Internet_Remitter_Van.SEQ_ID = command_param[1];
+                        Internet_Remitter_Van.load_record();
+                        return;
+                    }
+                    Internet_Remitter_Van.process_grid_viewer(parameter);
+               }
+               else if (this.active_panel == "INTERNET_REM_ADD_NOTES")
+               {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        Internet_Remitter_Notes.SEQ_ID = command_param[1];
+                        Internet_Remitter_Notes.load_record();
+                        return;
+                    }
+                    Internet_Remitter_Notes.process_grid_viewer(parameter);
+               }  
+               else if (this.active_panel  == "INTERNET_REM_HITLIST")
+               {
+                   hitlist.do_ajaxgridview(command_param[0]);
+               }                                   
+           }
+           command_param = null;
+       }
+   }  
+    
+   this.show_acctno_field = function()
+   {
+        if (document.getElementById("ddBProductType").value == '10')
+        {
+            document.getElementById("trAcctNo").style.display      = 'block';
+            document.getElementById("trTarCurrency").style.display = 'none';
+            document.getElementById("trGFCNo").style.display = 'none';
+            document.getElementById("trNoteAcctValidation").style.display = 'block';
+            document.getElementById("trOtherBankName").style.display = 'none';
+            document.getElementById("trIsRuralBank").style.display = 'none';
+            document.getElementById("trOtherBankNameRural").style.display = 'none';  
+        }
+        else if(document.getElementById("ddBProductType").value == '22')
+        {
+            document.getElementById("trAcctNo").style.display      = 'none';
+            document.getElementById("trTarCurrency").style.display = 'none';
+            document.getElementById("trGFCNo").style.display = 'block';
+            document.getElementById("trNoteAcctValidation").style.display = 'block'; 
+            document.getElementById("trOtherBankName").style.display = 'none';
+            document.getElementById("trIsRuralBank").style.display = 'none';
+            document.getElementById("trOtherBankNameRural").style.display = 'none';     
+        }
+        else if(document.getElementById("ddBProductType").value == '12' || document.getElementById("ddBProductType").value == '13')
+        {
+            document.getElementById("trAcctNo").style.display      = 'block';
+            document.getElementById("trTarCurrency").style.display = 'block';
+            document.getElementById("trGFCNo").style.display = 'none';
+            document.getElementById("trNoteAcctValidation").style.display = 'none';
+            document.getElementById("trOtherBankName").style.display = 'block';
+            document.getElementById("trIsRuralBank").style.display = 'block';
+            document.getElementById("trOtherBankNameRural").style.display = 'none'; 
+            
+            Internet_Beneficiary.IsRuralBank_OnClick();
+        }        
+        else
+        {
+            document.getElementById("trAcctNo").style.display      = 'none';
+            document.getElementById("trTarCurrency").style.display = 'block';
+            document.getElementById("trGFCNo").style.display = 'none';
+            document.getElementById("trNoteAcctValidation").style.display = 'none';         
+            document.getElementById("trOtherBankName").style.display = 'none';
+            document.getElementById("trIsRuralBank").style.display = 'none';
+            document.getElementById("trOtherBankNameRural").style.display = 'none';   
+        }
+   }
+   
+   this.dropdown_bene_target_currency = function()
+   {
+       IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_filteredcurrency('8', document.getElementById("txtHiddenUserRole").value,  this.dropdown_bene_target_currency_callback);
+   }
+   
+   this.dropdown_bene_target_currency_callback = function(result)
+   {
+        if(result != null && result != "undefined")
+        {
+            this.commons = new common_method();         
+            this.commons.to_load_dropdownlist("ddBTargetCurr", result.value, "CurrCode", "CurrName");
+            this.commons = null; 
+        }   
+   }   
+         
+   this.check_pnb = function()
+   {
+        var ddbank = document.getElementById("ddBankName").value;
+        
+        if(ddbank == '008') document.getElementById("ddBranchName").disabled = false; //enabled ung pnb branch 
+        else document.getElementById("ddBranchName").disabled = true; //disabled pnb branch
+   }
+    
+   this.check_search_reqt = function()
+   {
+       var searchby = document.getElementById("ddSearchBy").value;  
+       
+       if(searchby == '' || searchby == 'null')
+       {
+            alert('Please select search filter.'); 
+            document.getElementById("ddSearchBy").focus();
+            return false;
+       }
+       return true;
+   }
+   
+    this.check_gfc_user = function(cifid)
+    {
+        var hiduloc  = document.getElementById("txtHiddenUserLoc").value;
+        var hidurol  = document.getElementById("txtHiddenUserRole").value;
+        var clbranch = null;
+        
+        /* GFC User can only update records of his branch */
+        if(hidurol == 22) 
+        {
+            clbranch = IRSWorld.Internet.InternetAddBeneficiary.get_master_branch(cifid).value;
+            
+            if(hiduloc != clbranch)
+            {
+                alert("Sorry, you can not update records of other branch.");
+                return false;
+            }
+            return true;            
+        }
+        return true;
+   }
+    
+   this.search_pnb_branch = function()
+   {
+        searchBankFlag = 'search_acctpnbbranch';
+        
+        document.getElementById("txtRemOthBank").value = '';
+        document.getElementById("ddOtherBankType").selectedIndex = 0;
+        Internet_Accounts.DomBankCode = '';
+        
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_cif_search_acctpnbbranch~";
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+   }
+   
+   this.search_oth_bank = function()
+   {
+        if(document.getElementById("ddOtherBankType").selectedIndex == 0)
+        {
+            alert('Please select other bank type.'); return;
+        }
+        
+        searchBankFlag = 'search_acctothbank';
+            
+        document.getElementById("txtRemPNBBranch").value = '';
+        Internet_Accounts.AccountBranchCode = '';
+        
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_cif_search_acctdombank~" + document.getElementById("ddOtherBankType").value;
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+   }
+	 
+   this.search_rem_cif = function()
+   {
+       this.check_session(); 
+       if(this.check_search_reqt())
+       {
+           this.ajax_grid = new grid_selector();
+           this.grid_ajax_query = "sp_internet_search_main~" + // sp_internet_search_rem sp_internet_search_main
+                                   document.getElementById("ddSearchBy").value     + "~" + 
+                                   document.getElementById("txtSearchLName").value + "~" + 
+                                   document.getElementById("txtSearchFName").value + "~" + 
+                                   document.getElementById("txtSearchMName").value + "~" + 
+                                   document.getElementById("txtSearchBDate").value + "~" + 
+                                   document.getElementById("txtHiddenUserID").value + "~"+      
+                                   (document.getElementById("chkExactMatch").checked ? "true" : "false") + "~";  
+           this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+       }
+   }
+    
+   this.internet_rem_search = function()
+   {
+       this.ajax_grid = new grid_selector();
+       this.grid_ajax_query = "sp_internet_search~" + 
+                               document.getElementById("ddSearchBy").value     + "~" + 
+                               document.getElementById("txtSearchLName").value + "~" + 
+                               document.getElementById("txtSearchFName").value + "~" + 
+                               document.getElementById("txtSearchMName").value + "~" + 
+                               document.getElementById("txtHiddenUserLoc").value;            
+                                
+       this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+   }
+     
+   this.check_search_input = function()
+   {
+       var lastname_length = (document.getElementById("txtSearchLName").value).length;
+       var firstname_length = (document.getElementById("txtSearchFName").value).length;
+       var middlename_length = (document.getElementById("txtSearchMName").value).length;
+        
+       var total_length = lastname_length + firstname_length + middlename_length;
+       
+       if (total_length == 0)
+       {
+            alert("Invalid search value!");
+            return false;   
+       }
+       return true;
+   }
+      
+   this.search_card_bank = function()
+   {
+       this.ajax_grid = new grid_selector();
+       this.grid_ajax_query = "sp_internet_search_bank~";                
+            
+       this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID); 
+   } 
+   
+   this.panel_search_zipcode_ove = function()
+   {   
+        this.active_popup = 'search_zip';
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_int_search_zipcode_filtered~2~";                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID); 
+   }
+   
+   this.panel_search_zipcode_dom = function(addressType)
+   {
+        if (addressType == 2) { this.active_popup = 'search_zip'; }
+        else if (addressType == 1) { this.active_popup = 'search_zip_com'; }
+        else if (addressType == 3) { this.active_popup = 'search_zip_mail'; }
+        
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_int_search_zipcode_filtered~1~";                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID); 
+   }   
+   
+   this.panel_search_van_products = function()
+   {   
+        this.active_popup = 'search_van_products';
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_int_search_van_products~" + document.getElementById("txtHiddenRemCIFID").value + "~" + document.getElementById("txtHiddenUserRole").value + "~";                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID); 
+   }  
+   
+   this.change_searchbybene_label = function()
+   {
+        var SearchBeneByCIFType = document.getElementById("ddSearchBeneByCIFType").value;
+        
+        if(SearchBeneByCIFType == 1)
+        {
+            setText("spnSearchBeneLN", 'Last Name:');
+            setText("spnSearchBeneFN", 'First Name:');
+            setText("spnSearchBeneMN", 'Middle Name:');
+        }
+        else if(SearchBeneByCIFType == 2)
+        {
+            setText("spnSearchBeneLN", 'Business Name:');
+            setText("spnSearchBeneFN", 'Short Name:');
+            setText("spnSearchBeneMN", 'Business Type:');
+        }
+   }
+   
+   this.search_bene = function()
+   {
+        showPanel('divSearchBeneficiary');
+        document.getElementById("ddSearchBeneByCIFType").value = 1;
+        document.getElementById("txtSearchBeneByLN").value = '';
+        document.getElementById("txtSearchBeneByFN").value = '';
+        document.getElementById("txtSearchBeneByMN").value = '';
+   }
+   
+   this.search_bene2 = function()
+   {
+        this.check_session();
+        var SearchBeneByCIFType = document.getElementById("ddSearchBeneByCIFType").value;
+        
+        if(SearchBeneByCIFType == 'null')
+        {
+            alert('Please select search filter.'); return;
+        }
+        
+        this.active_popup = 'search_bene';
+        var rem_cifid = document.getElementById("txtHiddenRemCIFID").value;
+        var src_cifid = document.getElementById("txtHiddenSearchCIFID").value;
+        var rcifid = '';
+        
+        if (rem_cifid = '') rcifid = rem_cifid;
+        else rcifid = src_cifid;
+        
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_internet_search_bene~" + 
+            document.getElementById("txtHiddenUserID").value + "~" + rcifid + "~" + 
+            document.getElementById("ddSearchBeneByCIFType").value + "~" + 
+            document.getElementById("txtSearchBeneByLN").value + "~" + 
+            document.getElementById("txtSearchBeneByFN").value + "~" + 
+            document.getElementById("txtSearchBeneByMN").value;                                      
+            
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID);
+   }
+     
+   this.panel_search_other_banks = function()
+   {
+        document.getElementById("txtOthBankName").value    = '';
+        document.getElementById("txtOthBankAddress").value = '';
+        document.getElementById("txtOthBankName").disabled    = false;
+        document.getElementById("txtOthBankAddress").disabled = false;
+        
+        this.ajax_grid = new grid_selector();
+        this.grid_ajax_query = "sp_cif_search_otherbanks~";                
+        
+        this.ajax_grid.open_selection_grid(this.grid_ajax_page, this.grid_ajax_query, 0, this.SEQ_ID); 
+   }
+      
+   this.get_prodcode_desc = function()
+   {
+        if (document.getElementById("ddProductCode").value == 'null')
+        {   
+            alert('Please select Product code!');
+            return;
+        }
+        
+        showPanel('divProdCodeDesc');
+        
+        var prodcode = document.getElementById("ddProductCode")[document.getElementById("ddProductCode").selectedIndex].text;
+        setText("lblProdCode", prodcode);
+   }
+   
+   this.save_mode_bene = function()
+   {
+        document.getElementById("btnAddBene1").disabled    = true;
+        document.getElementById("btnAddBene2").disabled    = true;
+        document.getElementById("btnEditBene1").disabled   = true;
+        document.getElementById("btnSenReq").disabled      = false;
+        document.getElementById("btnCancelBene2").disabled = false;
+        document.getElementById("btnSaveBene1").disabled   = false;
+        document.getElementById("btnCancelBene1").disabled = false;
+   }
+      
+   this.add_mode_bene = function()
+   {
+        document.getElementById("btnAddBene1").disabled    = false;
+        document.getElementById("btnAddBene2").disabled    = false;
+        document.getElementById("btnEditBene1").disabled   = true;
+        document.getElementById("btnSenReq").disabled      = true;
+        document.getElementById("btnCancelBene2").disabled = true;
+        document.getElementById("btnSaveBene1").disabled   = true;
+        document.getElementById("btnCancelBene1").disabled = true;
+   }
+   
+   this.save_mode_card = function()
+   {
+        document.getElementById("btnAddCard2").disabled    = true;
+        document.getElementById("btnSaveCard2").disabled   = false;
+        document.getElementById("btnCancelCard2").disabled = false;
+        
+        document.getElementById("btnAddCard1").disabled    = true;
+        document.getElementById("btnEditCard1").disabled   = true;
+        document.getElementById("btnSaveCard1").disabled   = false;
+        document.getElementById("btnCancelCard1").disabled = false;
+   }
+      
+   this.add_mode_card = function()
+   {
+        document.getElementById("btnAddCard2").disabled    = false;
+        document.getElementById("btnSaveCard2").disabled   = true;
+        document.getElementById("btnCancelCard2").disabled = true;
+        
+        document.getElementById("btnAddCard1").disabled    = false;
+        document.getElementById("btnEditCard1").disabled   = true;
+        document.getElementById("btnSaveCard1").disabled   = true;
+        document.getElementById("btnCancelCard1").disabled = true;
+   }
+   
+    this.save_mode_rem = function()
+    {
+        document.getElementById("btnAddRem").disabled    = true;
+        document.getElementById("btnEditRem").disabled   = true;
+        document.getElementById("btnSaveRem").disabled   = false;
+        document.getElementById("btnCancelRem").disabled = false;
+    }
+      
+    this.add_mode_rem = function()
+    {
+        document.getElementById("btnAddRem").disabled    = false;
+        document.getElementById("btnEditRem").disabled   = false;
+        document.getElementById("btnSaveRem").disabled   = true;
+        document.getElementById("btnCancelRem").disabled = true;
+    }
+    
+    this.save_mode_prod = function()
+    {
+        document.getElementById("btnAddProd1").disabled    = true;
+        document.getElementById("btnEditProd1").disabled   = true;
+        document.getElementById("btnSaveProd1").disabled   = false;
+        document.getElementById("btnCancelProd1").disabled = false;
+    }
+      
+    this.add_mode_prod = function()
+    {
+        document.getElementById("btnAddProd1").disabled    = false;
+        document.getElementById("btnEditProd1").disabled   = true; 
+        document.getElementById("btnSaveProd1").disabled   = true;
+        document.getElementById("btnCancelProd1").disabled = true;
+    }
+    
+    this.save_mode_acct = function()
+    {
+        document.getElementById("btnAddAcct").disabled    = true;
+        document.getElementById("btnEditAcct").disabled   = true;
+        document.getElementById("btnSaveAcct").disabled   = false;
+        document.getElementById("btnCancelAcct").disabled = false;
+    }
+      
+    this.add_mode_acct = function()
+    {
+        document.getElementById("btnAddAcct").disabled    = false;
+        document.getElementById("btnEditAcct").disabled   = true; 
+        document.getElementById("btnSaveAcct").disabled   = true;
+        document.getElementById("btnCancelAcct").disabled = true;
+    }
+    // do hajz
+    this.save_mode_ids = function()
+    {
+        document.getElementById("btnAddIds").disabled    = true;
+        document.getElementById("btnEditIds").disabled   = true;
+        document.getElementById("btnSaveIds").disabled   = false;
+        document.getElementById("btnCancelIds").disabled = false;
+    }
+      
+    this.add_mode_ids = function()
+    {
+        document.getElementById("btnAddIds").disabled    = false;
+        document.getElementById("btnEditIds").disabled   = true; 
+        document.getElementById("btnSaveIds").disabled   = true;
+        document.getElementById("btnCancelIds").disabled = true;
+    }    
+    
+    this.save_mode_van = function()
+    {
+        document.getElementById("btnAddVan").disabled    = true;
+        document.getElementById("btnEditVan").disabled   = true;
+        document.getElementById("btnSaveVan").disabled   = false;
+        document.getElementById("btnCancelVan").disabled = false;
+    }
+      
+    this.add_mode_van = function()
+    {
+        document.getElementById("btnAddVan").disabled    = false;
+        document.getElementById("btnEditVan").disabled   = true; 
+        document.getElementById("btnSaveVan").disabled   = true;
+        document.getElementById("btnCancelVan").disabled = true;
+    }  
+    
+    this.save_mode_notes = function()
+    {
+        document.getElementById("btnAddNotes").disabled    = true;
+        document.getElementById("btnSaveNotes").disabled   = false;
+        document.getElementById("btnCancelNotes").disabled = false;
+    }
+      
+    this.add_mode_notes = function()
+    {
+        document.getElementById("btnAddNotes").disabled    = false;
+        document.getElementById("btnSaveNotes").disabled   = true;
+        document.getElementById("btnCancelNotes").disabled = true;
+    }      
+    
+    this.show_panel_rem_ind_or_business = function(cif_type)
+    {
+        ciftype_r = cif_type;
+        
+        if (ciftype_r == 2)
+        {
+            active_div = 'rem_bus';
+            this.show_asterisks(1, 2);
+            document.getElementById("DIV_BUS_REM").style.display = 'block';
+            document.getElementById("DIV_IND_REM").style.display = 'none';
+            document.getElementById("trSameAsRem2").style.display = (ins_rem_flag == true) ? 'block' : 'none';
+        }
+        else
+        {
+            active_div = 'rem_ind';
+            this.show_asterisks(1, 1);
+            document.getElementById("DIV_IND_REM").style.display = 'block';
+            document.getElementById("DIV_BUS_REM").style.display = 'none';
+        }
+        Internet_Remitter.color_asterisks();
+    }
+    
+    this.show_panel_bene_ind_or_business = function(cif_type)
+    {
+        ciftype_b = cif_type;
+        
+        if (ciftype_b == 2)
+        {
+            active_div = 'ben_bus';
+            this.show_asterisks(2, 2);
+            document.getElementById("DIV_BUS_BEN").style.display = 'block';
+            document.getElementById("DIV_IND_BEN").style.display = 'none';
+        }
+        else
+        {
+            active_div = 'ben_ind';
+            this.show_asterisks(2, 1);
+            document.getElementById("DIV_IND_BEN").style.display = 'block';
+            document.getElementById("DIV_BUS_BEN").style.display = 'none';
+        }
+        Internet_Beneficiary.color_asterisks();
+    }
+    
+   this.btn_add_remitter = function()
+   {    
+        this.check_session();
+        ins_rem_flag = true;
+        this.active_panel = "INTERNET_REM_ADD_REM";
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_REM");
+        
+        if(fxn_isRemit == 'obp')
+        {
+            this.show_elements("divInternetRemitterMenu~divInternetRemitter~divRemInfo~trHeaderRem~DIV_IND_REM~trRemBtns1", true);
+        }
+        else
+        {
+            this.show_elements("divInternetRemitterMenu~divInternetRemitter~divRemInfo~trSameAsRem~trHeaderRem~DIV_IND_REM~trRemBtns1", true);
+        }
+        
+        document.getElementById("txtHiddenRemCIFID").value = '';
+        document.getElementById("txtHiddenSearchCIFID").value = '';
+        
+        this.disable_cif_type(false);
+        Internet_Remitter.add_remitter();
+        active_div = 'rem_ind';
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+   }
+    
+   this.is_remitter = function(seq_id)
+   {
+        get_rem = IRSWorld.Internet.InternetAddBeneficiary.get_cifclass_count(seq_id, 1).value;
+        if(get_rem > 0) return true;
+        return false;
+   }
+    
+   this.show_panel_add_rem = function()
+   {
+        Internet_Remitter.showRemOtherID(IRSWorld.Internet.InternetAddBeneficiary.hasOtherID().value);
+   
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            return;
+        }
+        
+        this.active_panel = "INTERNET_REM_ADD_REM";
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_REM");
+        
+        Internet_Remitter.load_client_record();
+        
+        if(document.getElementById("txtHiddenUserRole").value == '10') 
+        {      
+            this.show_elements("trRemRiskRating~tdRemVIPTypeC~tdRemVIPType~trChargeType~trFCRemCustID1~tdRemBVIPTypeC~tdRemBVIPType~trRemBRiskRating~trChargeType2~trFCRemCustID2~trGarnish~trRemBGarnish~trRemOthers~trRemBOthers~trRemRemitterTypes~trRemBRemitterTypes", false);
+            this.show_elements("divInternetRemitterMenu~divInternetRemitter~divRemInfo~trHeaderRemClient~trRemBtns2", true);
+        }
+        else
+        {
+            this.show_elements("divInternetRemitterMenu~divInternetRemitter~divRemInfo~trHeaderRem~trRemBtns1", true);
+        }
+        
+        this.show_panel_rem_ind_or_business(ciftype_r);
+        this.disable_cif_type(true);
+        this.set_cif_type(ciftype_r);
+   }
+   
+   this.do_add_bene = function()
+   {
+        this.show_panel_add_bene();
+        /*
+        this.commons = new common_method();
+        this.commons.to_read_only("tblBeneInfo1", true);
+        this.commons.to_read_only("tblBeneInfo2", true);
+        this.commons.to_read_only("tblBeneProduct", true); 
+        this.commons = null;
+        */
+        set_read_only("tblBeneInfo1", true);
+        set_read_only("tblBeneInfo2", true);
+        set_read_only("tblBeneProduct", true); 
+                    document.getElementById('tblBeneInfo').style.display = "none";
+            document.getElementById('tblBeneInfo').style.visibility = "hidden";
+    }
+    
+   this.show_panel_add_bene = function(isAdd)
+   {
+        if (document.getElementById('ddCIFType2').value != null 
+            && document.getElementById('ddCIFType2').value != "" 
+            && document.getElementById('ddCIFType2').value != "null")
+        {
+            ciftype_b = document.getElementById('ddCIFType2').value;
+        }
+               document.getElementById('tblBeneInfo').style.display = "none";
+            document.getElementById('tblBeneInfo').style.visibility = "hidden";
+        this.check_session();
+
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' 
+            && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) 
+            && this.active_panel == "INTERNET_REM_ADD_REM" 
+            && document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }
+
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' 
+            && document.getElementById("txtHiddenRemCIFID").value == '')
+            && document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        this.active_panel = "INTERNET_REM_ADD_BENE";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_BENE");
+        this.get_fullname();
+        
+        document.getElementById("txtHiddenBeneSeqId").value = '';
+        document.getElementById("txtSearchBeneByLN").value = '';
+        document.getElementById("txtSearchBeneByFN").value = '';
+        document.getElementById("txtSearchBeneByMN").value = '';
+        
+        /*
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVGRIDBENE~DIVGRIDBENECIF");
+        
+         //this.commons.to_read_only("tblBeneInfo1", true);
+        this.commons.to_clear_screen("tblBeneInfo1");  
+        //this.commons.to_read_only("tblBeneInfo2", true);
+        this.commons.to_clear_screen("tblBeneInfo2");
+        this.commons.to_clear_screen("tblBeneProduct");
+        this.commons.to_clear_screen("tblBeneAccountNo");
+        this.commons.to_clear_screen("tblProduct");
+        this.commons = null;
+       
+        */
+        show_loading_message("DIVGRIDBENE~DIVGRIDBENECIF");
+        clear_fields("tblBeneInfo1");  
+        clear_fields("tblBeneInfo2");
+        clear_fields("tblBeneProduct");
+        clear_fields("tblBeneAccountNo");
+        clear_fields("tblProduct");        
+        
+        this.add_mode_bene();
+        if (isAdd != null && isAdd == true) { Internet_Beneficiary.btn_add_bene_req() };
+        
+        if(document.getElementById("txtHiddenUserRole").value == '10')
+        {   
+            Internet_Beneficiary.load_grid_viewer();
+            this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divBeneInfo~divBeneGrid~trHeaderBeneClient~trBeneBtns2~trProduct~trModeOfRemittance", true);   
+        }
+        else
+        {
+            if (document.getElementById("txtHiddenRemCIFID").value != '' || document.getElementById("txtHiddenSearchCIFID").value != '')
+            {   
+                if(view_bene == false)
+                {
+                    Internet_Beneficiary.load_grid_viewer_cifbene();
+                    this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divBeneInfo~divBeneSearch~trHeaderBene~divBeneGridCIF~trBeneBtns1", true);
+                }
+                else
+                {
+                    Internet_Beneficiary.load_benecif_record(2);
+                    if (otc_client_update != true)
+                    {
+                        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divBeneInfo~divBeneSearch~trHeaderBene~trBeneBtns1", true);
+                    }
+                    else
+                    {
+                        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divBeneInfo~trHeaderBene~trBeneBtns1", true);
+                    }                        
+                }                
+            }
+            else
+            {   
+                alert("Please add remitter first.");
+            }
+        }    
+        this.show_panel_bene_ind_or_business(ciftype_b);
+        this.disable_cif_type2(false);
+        if(view_bene == true) this.disable_cif_type2(true);
+        if(ciftype_b != null) this.set_cif_type2(ciftype_b);
+        else this.set_cif_type2(1);
+        this.show_visa_type(-1, true);
+        
+        Internet_Beneficiary.show_bene_comments();
+        
+        if (isAdd != null && isAdd == true) 
+        { 
+            document.getElementById("txtBeneLName").focus(); 
+        } 
+   }
+   this.show_panel_add_prod = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        this.active_panel = "INTERNET_REM_ADD_PROD";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_PROD");
+        this.get_fullname();
+        
+        /*
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVPRODUCTSGRID");
+        this.commons.to_read_only("tblProductInfo", true);
+        this.commons.to_clear_screen("tblProductInfo");  
+        this.commons = null;
+        */
+        show_loading_message("DIVPRODUCTSGRID");
+        set_read_only("tblProductInfo", true);
+        clear_fields("tblProductInfo");  
+        
+        this.add_mode_prod();
+        
+        if (document.getElementById("txtHiddenRemCIFID").value != '' || document.getElementById("txtHiddenSearchCIFID").value != '')
+        {
+            Internet_Remitter_Products.load_grid_viewer();
+            this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divProductInfo~divInternetRemitterProductsGrid", true);
+            
+            this.load_dd_bene_name();
+        }
+        else
+        {   
+            alert("Please add remitter first.");
+        }
+        
+        document.getElementById("txtHiddenBeneProdSeqId").value = '';
+        
+        if (document.getElementById("txtHiddenUserRole").value == '10')
+        {
+            Internet_Remitter_Products.btn_add_prod();
+            document.getElementById('tdProductType').innerHTML = 'Mode of Remittance:&nbsp;';
+            document.getElementById('tdCapBenProducts').innerHTML = "List of Beneficiary's Mode of Remittance";
+            document.getElementById('tdCapAddProducts').innerHTML = 'Add Mode of Remittance';
+        }
+   }
+   
+   this.show_panel_add_acct = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        active_div = 'rem_acc';        
+        this.active_panel = "INTERNET_REM_ADD_ACCT";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_ACCT");
+        this.get_fullname();
+        
+        /*
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVGRIDACCTCIF");
+        this.commons.to_read_only("tblAccountInfo", true);
+        this.commons.to_clear_screen("tblAccountInfo");  
+        this.commons = null;
+        */
+        
+        show_loading_message("DIVGRIDACCTCIF");
+        set_read_only("tblAccountInfo", true);
+        clear_fields("tblAccountInfo");  
+        
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+        this.color_asterisk('tblAccountInfo');
+        this.add_mode_acct();
+        
+        Internet_Accounts.load_grid_viewer_acctcif();
+        Internet_Accounts.AccountSeqId = null;
+        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divAccountInfo~divAcctGridCIF", true);
+        
+        if (document.getElementById("txtHiddenUserRole").value == '10')
+        {
+            Internet_Accounts.get_web_remittance_defaults();
+            Internet_Accounts.btn_add();
+        }
+   }
+   
+   this.show_panel_add_van = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        active_div = 'rem_van';        
+        this.active_panel = "INTERNET_REM_ADD_VAN";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_VAN");
+        this.get_fullname();
+        
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVVANGRID");
+        this.commons.to_read_only("tblVanInfo", true);
+        this.commons.to_clear_screen("tblVanInfo");  
+        this.commons = null;
+        
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+        this.color_asterisk('tblVanInfo');
+        this.add_mode_van();
+        
+        Internet_Remitter_Van.load_grid_viewer();
+        Internet_Remitter_Van.SEQ_ID = null;
+        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divVanInfo~divInternetRemitterVanGrid", true);
+   }
+   
+   this.show_panel_add_notes = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        active_div = 'rem_notes';        
+        this.active_panel = "INTERNET_REM_ADD_NOTES";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_NOTES");
+        this.get_fullname();
+        
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVNOTESGRID");
+        this.commons.to_read_only("tblNotesInfo", true);
+        this.commons.to_clear_screen("tblNotesInfo");  
+        this.commons = null;
+        
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+        this.color_asterisk('tblNotesInfo');
+        this.add_mode_notes();
+        
+        Internet_Remitter_Notes.load_grid_viewer();
+        Internet_Remitter_Notes.SEQ_ID = null;
+        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divNotesInfo~divInternetRemitterNotesGrid", true);
+   }
+   
+   this.show_panel_add_ids = function()
+   {
+        this.check_session();
+        //if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        //if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10')
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        active_div = 'rem_ids';        
+        this.active_panel = "INTERNET_REM_ADD_IDS";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_IDS");
+        this.get_fullname();
+        
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVIDSGRID");
+        this.commons.to_read_only("tblIds", true);
+        this.commons.to_clear_screen("tblIds");  
+        this.commons = null;
+        
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+        this.color_asterisk('tblIds');
+        this.add_mode_ids();
+        
+        Internet_Remitter_Ids.load_grid_viewer();
+        Internet_Remitter_Ids.AccountSeqId = null;
+        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divIdsInfo~divInternetRemitterIdsGrid", true);
+   }   
+   
+   this.load_dd_bene_name = function()
+   {
+       /*
+       var cifid  = '';
+       var bcifid = '';
+       var ds     = null;
+       ds = IRSWorld.Internet.InternetAddBeneficiary.get_cifid(document.getElementById("txtHiddenBeneMasterSeqId").value).value;
+       if(ds != null && ds.Tables[0].Rows.length > 0)
+       {
+           document.getElementById("txtHiddenSelectedBeneCIFID").value = ds.Tables[0].Rows[0].CIFID;
+           bcifid = ds.Tables[0].Rows[0].CIFID;
+       }
+       
+       if (document.getElementById("txtHiddenSearchCIFID").value != '') cifid = document.getElementById("txtHiddenSearchCIFID").value;
+       if (document.getElementById("txtHiddenRemCIFID").value != '')    cifid = document.getElementById("txtHiddenRemCIFID").value;
+       
+       if(view_bene == false)
+       {
+            IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_benename(cifid, '-1', this.load_dd_bene_name_callback); 
+       } 
+       else
+       {
+            IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_benename(cifid, bcifid, this.load_dd_bene_name_callback); 
+       }
+       */
+       
+       IRSWorld.Internet.InternetAddBeneficiary.get_cifid(document.getElementById("txtHiddenBeneMasterSeqId").value, this.load_dd_bene_name_callback);
+    }
+
+	this.load_dd_bene_name_callback = function(result)
+	{
+	/*
+       if (result.error != null)
+       {
+            alert('@load_dd_bene_name: ' + result.error.Message);
+            return;
+       }
+    */       
+       var cifid  = '';
+       var bcifid = '';
+       var ds = result.value;
+       if(ds != null && ds.Tables[0].Rows.length > 0)
+       {
+           document.getElementById("txtHiddenSelectedBeneCIFID").value = ds.Tables[0].Rows[0].CIFID;
+           bcifid = ds.Tables[0].Rows[0].CIFID;
+       }
+       
+       if (document.getElementById("txtHiddenSearchCIFID").value != '') cifid = document.getElementById("txtHiddenSearchCIFID").value;
+       if (document.getElementById("txtHiddenRemCIFID").value != '')    cifid = document.getElementById("txtHiddenRemCIFID").value;
+       
+       var args = (view_bene == false) ? '-1' : bcifid;
+       
+       IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_benename(cifid, args, 
+            function (result)
+            {
+                if(result != null && result != "undefined")
+                {
+		            load_ddl("ddBeneficiaryName", result.value, "CIFID", "BeneName", 0, 'i', null, '');
+                }
+            
+            }); 
+   }
+   
+   /*
+	this.load_dd_bene_name_callback = function(result)
+	{
+	    if(result != null && result != "undefined")
+	    {
+	        this.commons = new common_method();         
+			this.commons.to_load_dropdownlist("ddBeneficiaryName", result.value, "CIFID", "BeneName");
+			this.commons = null; 
+	    }
+	}
+    */
+    
+   this.get_fullname = function()
+   {
+        var mseqid = null;
+        var arg_type = 'CIFID';
+        if(document.getElementById("txtHiddenSearchSeqId").value == '')
+        {
+            //var cifid = null;
+            if(document.getElementById("txtHiddenUserRole").value == '10')
+            {
+                mseqid = document.getElementById("txtHiddenUserCIFID").value
+            }
+            else
+            {
+                mseqid = document.getElementById("txtHiddenRemCIFID").value
+            }
+            /* what for, use the cifid instead 
+            var ds = IRSWorld.Internet.InternetAddBeneficiary.get_master_seqid(cifid).value;
+	            
+            if (ds != null && ds.Tables[0].Rows.length > 0)
+            {
+                mseqid = ds.Tables[0].Rows[0].SEQ_ID;
+            }
+            */
+        }
+        else
+        {
+            mseqid = document.getElementById("txtHiddenSearchSeqId").value;
+            arg_type = 'SEQ_ID';
+        }
+        
+        if (mseqid == "undefined" || mseqid == undefined || mseqid == null || mseqid == 'null') {mseqid = '';}
+
+        IRSWorld.Internet.InternetAddBeneficiary.get_profile_header(mseqid, arg_type, this.get_profile_header_callback);
+   }
+   
+   this.get_profile_header_callback = function(res)
+   {
+        if (res.error != null)
+        {
+            alert ("@get_profile_header: " + rs.error.Message);
+            return;        
+        }
+
+        var ds = res.value;
+        setText("lblHeaderRemName", '');
+        if (ds != null && ds.Tables[0].Rows.length > 0)
+        {
+            var fname = ds.Tables[0].Rows[0].FirstName;
+            var mname = ds.Tables[0].Rows[0].MiddleName;
+            var lname = ds.Tables[0].Rows[0].LastName;
+            
+            if(fname == null) fname = '';
+            if(mname == null) mname = '';
+            if(lname == null) lname = '';
+            
+            setText("lblHeaderRemName", fname +  ' ' + mname +  ' ' + lname);
+        } 
+   }
+   
+   this.show_panel_approve_cards = function()
+   {
+        if(document.getElementById("txtHiddenSearchSeqId").value == '')
+        {
+            alert("Please select record to search!");
+            return;
+        }
+        
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("APPINTCARDSGRID");
+        this.commons = null;
+        
+        this.get_fullname();
+        
+        Internet_Remitter_Cards.load_grid_viewer_approve();        
+        this.active_panel = "INTERNET_REM_APPROVE_CARDS"; 
+        
+        this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divApproveCards", true);
+   }
+   
+   this.show_panel_add_cards = function()
+   {
+        this.check_session();
+        if((document.getElementById("txtHiddenSearchSeqId").value != '' && this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false) && this.active_panel == "INTERNET_REM_ADD_REM" && document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert('Please save record first to make this client as remitter also.'); return;
+        }        
+        if((document.getElementById("txtHiddenSearchSeqId").value == '' && document.getElementById("txtHiddenRemCIFID").value == '')&& document.getElementById("txtHiddenUserRole").value != '10' && isAgentClient == false)
+        {
+            alert("Please add remitter first."); return;
+        }
+        
+        active_div = 'rem_car';
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("INTCARDSGRID~DIVGRIDCARDCIF");
+        this.commons.to_read_only("tblAddCards", true);
+        this.commons.to_clear_screen("tblAddCards");
+        this.commons = null;
+        
+        this.show_asterisks(1, document.getElementById("ddCIFType").selectedIndex);
+        this.color_asterisk('tblAddCards');
+        this.add_mode_card();
+        this.get_fullname();
+        document.getElementById("txtHiddenCardSeqId").value = '';
+        
+        Internet_Remitter_Cards.load_grid_viewer(); 
+        Internet_Remitter_Cards.load_grid_viewer_cardcif();        
+        this.active_panel = "INTERNET_REM_ADD_CARDS";        
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name("INTERNET_REM_ADD_CARDS");
+        
+        if(document.getElementById("txtHiddenUserRole").value == '10' || isAgentClient == true)
+        {
+            this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divInternetRemitterAddCards~divInternetRemitterCardsGrid~trRemCardBtns2", true);
+        }
+        else
+        {
+            this.show_elements("divProfileHeader~divInternetRemitterMenu~divInternetRemitter~divInternetRemitterAddCards~divCardGridCIF~trRemCardBtns1", true);
+        }        
+   }
+   
+   this.show_panel_app_bene = function()
+   {
+        this.check_session();
+        
+        this.active_panel = "INTERNET_REM_APP_BENE";
+        this.show_elements("divInternetBeneApproval~divAppMenu~divIntBeneForApp", true);
+        
+        Internet_Remitter_Main.construct_side_bar('divAppMenu');
+        
+        this.commons = new common_method();
+        this.commons.to_show_loading_message("DIVBENEFORAPP~DIVCARDFORAPP");
+        
+        Internet_Beneficiary.load_grid_viewer_appbene();
+   }
+   
+   this.show_panel_app_card = function()
+   {
+        this.active_panel = "INTERNET_REM_APP_CARD";
+        this.show_elements("divInternetBeneApproval~divAppMenu~divIntCardForApp", true);
+        
+        Internet_Remitter_Cards.load_grid_viewer_appcard();
+   }
+   
+   this.clear_all_fields = function()
+   {
+        var fields =  "txtHiddenRemCIFID~txtHiddenSearchCIFID~txtHiddenZipSeqId~txtHiddenZip~txtHiddenChargeType~";
+            fields += "txtHiddenBeneMasterSeqId~txtHiddenSelectedBeneCIFID~txtHiddenBankSeqId~txtHiddenCardSeqId~";
+            fields += "txtHiddenBeneProdSeqId~txtHiddenBeneSeqId~txtHiddenMT103BankSeqId~";
+            fields += "txtHiddenVanProductSeqID~txtHiddenVanBeneCIFID";
+        var field = fields.split("~");        
+        for(var x=0; x<field.length; x++)
+        {
+            if (document.getElementById(field[x]))
+            {
+                document.getElementById(field[x]).value = '';
+            }
+        }  
+   }
+   
+   this.show_panel_search = function()
+   {
+        set_focus();
+   
+        if(document.getElementById("txtHiddenSearchSeqId").value != '')
+        {
+            if(this.is_remitter(document.getElementById("txtHiddenSearchSeqId").value) == false && this.active_panel == "INTERNET_REM_ADD_REM")
+            {
+                if(!confirm('Client is not yet a remitter. Continue exit?')) return;
+            }
+        }        
+        this.clear_all_fields();
+        this.active_panel = "INTERNET_REM_SEARCH";
+        document.getElementById("txtHiddenSearchSeqId").value = '';
+        this.show_elements("divInternetRemitterSearch", true);
+        clear_fields('tbsearch');
+   }
+   
+   this.hide_all = function()
+   {
+        var elements = "divRemInfo~divBeneInfo~divProfileHeader~divInternetRemitterCardsGrid~divInternetRemitterAddCards~";
+        elements    += "divBeneGrid~divInternetRemitterSearch~divBeneficiary~trRemBtns1~trRemBtns2~trBeneBtns1~trBeneBtns2~";
+        elements    += "trSameAsRem~trSameAsRem2~trRemCardBtns1~trRemCardBtns2~divBeneGridCIF~divProductInfo~divInternetRemitterProductsGrid~";
+        elements    += "divTarCurr~divAccountNo~divOthBankName~divBranchCode~divAccountType~divAccountCurr~divAccountInfo~divIsRuralBank~divOthBankNamePDDTS~";
+        elements    += "divInternetRemitterMenu~divInternetRemitter~divAppMenu~divInternetBeneApproval~divIntBeneForApp~divIntCardForApp~";
+        elements    += "divSearchOtherBank1~divOtherBank1~divOtherBank2~divCommentOthers~divValidateAcct~trProduct~trModeOfRemittance~divCardGridCIF~divAcctGridCIF~";
+        elements    += "trHeaderRemClient~trHeaderRem~DIV_IND_REM~DIV_BUS_REM~trHeaderBene~trHeaderBeneClient~DIV_IND_BEN~DIV_BUS_BEN~";
+        elements    += "divBeneSearch~divIdsInfo~divInternetRemitterIdsGrid~divAccountStatus~divVanInfo~divInternetRemitterVanGrid~divNotesInfo~divInternetRemitterNotesGrid";
+        
+        var elems = elements.split("~");
+        
+        for(var y = 0; y < elems.length; y++)
+        {
+            if (elems[y] != null || elems[y] != "")
+            { 
+                if (document.getElementById(elems[y]))
+                {
+                    document.getElementById(elems[y]).style.display = "none";
+                }
+            } 
+        }
+   }
+   
+   this.show_elements = function(elements, isVisible)
+   {
+       var elems = elements.split("~");
+       this.hide_all();
+                
+       for(var y = 0; y < elems.length; y++)
+       {
+           if (elems[y] != null || elems[y] != "")
+           { 
+                document.getElementById(elems[y]).style.display = (isVisible) ? "block" : "none";     
+           } 
+       }
+   }
+    
+   this.construct_side_bar = function(div_container)
+   {
+        this.InternetRem_Sidebar_class = new InternetRem_Sidebar(); 
+		document.getElementById(div_container).innerHTML = this.InternetRem_Sidebar_class.get_side_bar();	
+   }
+	  
+   this.set_side_bar_visibility = function(division_id, anchor_id)
+   {
+        this.InternetRem_Sidebar_class.get_side_bar_visibility(division_id, anchor_id);
+   } 
+   
+    this.check_session = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.get_userid(
+            function (rs)
+            {
+                if (rs.error != null)
+                {
+                    spawn_errpage('Check Session. ' + rs.error.Message);
+                    return;
+                }
+                
+                if (rs.value == null || rs.value == '')
+                {
+                    spawn_errpage('Session Expired');
+                    return;
+                }
+                
+                document.getElementById("txtHiddenUserID").value = rs.value;
+            }
+        );
+    }
+       
+    /* gets empty fields per table (fields are delemited by '~') */
+    this.detect_null = function(tabid)
+    {
+        var tblrows = document.getElementById(tabid).rows;
+        var empty_fields = '';
+                              
+        if (tblrows == null || tblrows == "undefined")
+        { 
+            return;
+        }
+        
+        for (var i = 0; i < tblrows.length; i++)
+        {                            
+            var sells = tblrows[i].cells;
+            
+            for (var j = 0; j < sells.length; j++)
+            {
+                if (sells.item(j).hasChildNodes())
+                {
+                    var childs = sells.item(j).childNodes;
+
+                    for (var k=0; k < childs.length; k++)
+                    { 
+                        if (childs[k].nodeName == 'INPUT')
+	                    {
+		                    if (childs[k].type == 'text' && childs[k].value == '') 
+		                    {
+			                    empty_fields += childs[k].id + '~';
+		                    }
+		                    else if (childs[k].type == 'checkbox' && childs[k].checked == false) 
+		                    {   
+		                        empty_fields += childs[k].id + '~';  
+		                    }
+	                    }
+	                    else if (childs[k].nodeName == 'SELECT' && childs[k].selectedIndex <= 0)
+	                    {
+	                        empty_fields += childs[k].id + '~';
+	                    }            
+	                    else if (childs[k].nodeName == 'SPAN' && childs[k].innerHTML == '')
+	                    {
+	                        empty_fields += childs[k].id + '~';
+	                    }            
+	                    else if (childs[k].nodeName == 'LABEL') 
+	                    {
+		                    if ((childs[k].id != null || childs[k].id != '') && (childs[k].id).substring(0,3) != 'ast' && childs[k].innerHTML == '')
+		                    {
+			                    empty_fields += childs[k].id + '~';
+		                    }
+	                    }
+                    }                    
+                }                
+            }            
+        }        
+        return empty_fields;
+    }
+    
+    this.clear_asterisks = function()
+    {
+        var astobj = document.getElementsByTagName('label');
+
+        for (var i = 0; i < astobj.length; i++)
+        {
+            if (astobj[i].id.substr(0, 3) == 'ast') 
+            {
+                setText(astobj[i], '');
+            }
+        }
+    }
+    
+    this.get_branchcode = function(cifclass)
+    {
+        var bcode  = null;
+        var rcifid = document.getElementById("txtHiddenSearchCIFID").value;
+        var bcifid = document.getElementById("txtHiddenSelectedBeneCIFID").value;
+        var uloc   = document.getElementById("txtHiddenUserLoc").value;
+        
+        if(cifclass == 1)
+        {
+            if(rcifid == '') bcode = uloc;
+            else bcode = IRSWorld.Internet.InternetAddBeneficiary.get_master_branch(rcifid).value;
+        }
+        else
+        {
+            if(bcifid == '') bcode = uloc;
+            else bcode = IRSWorld.Internet.InternetAddBeneficiary.get_master_branch(bcifid).value;
+        }
+        
+        return bcode;
+    }
+    
+    this.got_manda_flds = function(rs)
+    {
+        if (rs.error != null)
+        {
+            alert("@get_all_mandatory_flds: " + rs.error.Message);
+            return;
+        }
+        var cifclass = rs.value[0];
+        var bcode = rs.value[1];
+        var ciftype = rs.value[2];
+        var manda_flds = rs.value[3];
+        if(manda_flds != null && manda_flds.Tables[0].Rows.length > 0)
+        {
+            var c = 0;
+            for(c=0; c<manda_flds.Tables[0].Rows.length; c++)
+            {
+                IRSWorld.Internet.InternetAddBeneficiary.get_int_mandatory_flds(manda_flds.Tables[0].Rows[c].CIFFieldID, cifclass, ciftype, function(rs)
+                {
+                    if (rs.error != null)
+                    {
+                        return;
+                    }
+                    
+                    var int_manda_flds = rs.value;
+                    if(int_manda_flds != null && int_manda_flds.Tables[0].Rows.length > 0)
+                    {
+                        var t = 0;
+                        for(t=0; t<int_manda_flds.Tables[0].Rows.length; t++)
+                        {
+                            if(int_manda_flds.Tables[0].Rows[t].intfieldid != null)
+                            {
+                                if(int_manda_flds.Tables[0].Rows[t].intasteriskid != null)
+                                {
+                                    setText(int_manda_flds.Tables[0].Rows[t].intasteriskid, '*');
+                                }                            
+                            }
+                        }
+                    }                    
+                });
+            }
+        }        
+    }
+    
+    this.show_asterisks = function(cifclass, ciftype)
+    {
+        this.clear_asterisks();
+        var bcode = document.getElementById("txtHiddenUserLoc").value;
+        var xciftype = parseInt(ciftype);
+        if (isNaN(xciftype) | (ciftype == null || ciftype.length == 0)) xciftype = 1;
+        IRSWorld.Internet.InternetAddBeneficiary.get_all_mandatory_flds(cifclass, bcode, xciftype, this.got_manda_flds)
+   }
+   
+   /* gets mandatory fields, prompts user the mandatory fields that are not filled */
+    this.check_mandatory_fields = function()
+    {
+        var cif_tbl = '';
+        var cifcls = '';
+        var bcode = '';
+        var i = 0;
+        var count = 0;
+        var fld_lbl_tmp  = '';
+        var fld_lbl      = '';
+        
+        switch(active_div)
+        {
+            case "rem_ind" : cif_tbl = "tblRemInfo1";    break;
+            case "rem_bus" : cif_tbl = "tblRemInfo2";    break;
+            case "ben_ind" : cif_tbl = "tblBeneInfo1";   break;
+            case "ben_bus" : cif_tbl = "tblBeneInfo2";   break;
+            case "rem_car" : cif_tbl = "tblAddCards";    break;
+            case "rem_acc" : cif_tbl = "tblAccountInfo"; break;
+            case "rem_ids" : cif_tbl = "tblIds"; break;
+            case "rem_van" : cif_tbl = "tblVanInfo"; break;            
+            case "rem_notes" : cif_tbl = "tblNotesInfo"; break;            
+            default: break;
+        }
+        switch(active_div)
+        {
+            case "rem_ind" : cifcls = 1; break;
+            case "rem_bus" : cifcls = 1; break;
+            case "ben_ind" : cifcls = 2; break;
+            case "ben_bus" : cifcls = 2; break;
+            case "rem_car" : cifcls = 1; break;
+            case "rem_acc" : cifcls = 1; break;
+            case "rem_ids" : cifcls = 1; break;
+            case "rem_van" : cifcls = 1; break;
+            case "rem_notes" : cifcls = 1; break;
+            default: break;
+        }
+        bcode = document.getElementById("txtHiddenUserLoc").value;
+        if(cif_tbl != '')
+        {
+            empty_flds = this.detect_null(cif_tbl);
+//=========================================================================
+//          Was moved in server side to avoid unnecessary server call            
+//=========================================================================
+//            empty_fld  = empty_flds.split('~');
+            reqd_flds = '';
+//                        
+//            for(i=0; i<empty_fld.length; i++)
+//            {
+//                /* checks if field is mandatory, when count > 0 then mandatory */
+//                count = IRSWorld.Internet.InternetAddBeneficiary.get_mandatory_flds_count(empty_fld[i], cifcls, bcode).value;
+//                if(count > 0) 
+//                {
+//                    if(reqd_flds.indexOf(empty_fld[i]) < 0) /* do not append empty_fld[i] when it is already included in reqd_flds */
+//                    {
+//                        reqd_flds += empty_fld[i] + '~';
+//                    }
+//                }            
+//            }
+//            
+//            reqd_fld = reqd_flds.split('~') /* mandatory fields per table (note: table = active table)*/
+//            
+//            /* gets the label of the field given ciffieldid - ex: txtAccountNo -> Account No */
+//            for(i=0; i<reqd_fld.length; i++)
+//            {
+//                ds = IRSWorld.Internet.InternetAddBeneficiary.get_mandatory_flds_label(reqd_fld[i]).value;
+//                
+//                fld_lbl = '';
+//                if (ds!= null && ds.Tables[0].Rows.length > 0)
+//                {   
+//                    fld_lbl = ds.Tables[0].Rows[0].CIFLabel;
+//                }
+//                if(fld_lbl != '')
+//                {
+//                    fld_lbl = String(fld_lbl);
+//                    if(fld_lbl_tmp.indexOf(fld_lbl) < 0) 
+//                    {
+//                        fld_lbl_tmp += (fld_lbl + '~');
+//                    }
+//                }
+//            }
+//            
+//            fld_lbl_tmp  = fld_lbl_tmp.substring(0, fld_lbl_tmp.length - 1)
+            fld_lbl_tmp = IRSWorld.Internet.InternetAddBeneficiary.get_mandatory_flds(empty_flds, cifcls, bcode).value;
+            fld_lbl_tmp = fld_lbl_tmp.substring(0, fld_lbl_tmp.length - 1);
+            reqd_fld_lbl = fld_lbl_tmp.split('~');
+
+            
+            if((reqd_fld_lbl).length > 0 && (reqd_fld_lbl[0]).length > 0)
+            {
+                alert("MANDATORY FIELD(S): " + reqd_fld_lbl);
+                return false;
+            }
+            return true;
+        }
+    }
+   
+   this.color_asterisk = function(tabid)
+   {
+        var tblrows = document.getElementById(tabid).rows;
+        
+        if (tblrows == null || tblrows == "undefined")
+        { 
+            return;
+        }
+        
+        for (var i = 0; i < tblrows.length; i++)
+        {
+            var sells = tblrows[i].cells;
+            
+            for (var j = 0; j < sells.length; j++)
+            {
+                if (sells.item(j).hasChildNodes())
+                {
+                    var childs = sells.item(j).childNodes;
+                    
+                    for (var k = 0; k < childs.length; k++)
+                    {
+                       if (childs[k].nodeName == 'LABEL' && childs[k].innerHTML == '*')
+                       {
+                            childs[k].disabled = false;
+                       }
+                    }
+                }
+            }
+        }
+   } 
+   
+   this.show_vtype_from_edit = function()
+   {
+        var rciftype      = document.getElementById("ddCIFType");
+        var RemVisaType   = document.getElementById("ddRemVisaType");  /*id(1) - individual*/
+        var RemVisaType1   = document.getElementById("ddRemVisaType1");  /*id(1) - individual*/
+        var RemBVisaType  = document.getElementById("ddRemBVisaType"); /*id(1) - business*/
+        var RemVisaType2  = document.getElementById("ddRemVisaType2"); /*id(2) - individual*/
+        var RemBVisaType2 = document.getElementById("ddRemBVisaType2");/*id(2) - business*/
+        
+        if (rciftype.selectedIndex == 2)
+        {
+            if(RemBVisaType.selectedIndex == 4) {RemBVisaType.disabled = false;}
+            else {RemBVisaType.disabled = true;}
+            
+            if(RemBVisaType2.selectedIndex == 4) {RemBVisaType2.disabled = false;}
+            else {RemBVisaType2.disabled = true;}
+        }
+        else
+        {
+            if(RemVisaType.selectedIndex == 4){RemVisaType.disabled = false;}
+            else {RemVisaType.disabled = true;}
+                    
+            if(RemVisaType1.selectedIndex == 4){RemVisaType1.disabled = false;}
+            else {RemVisaType1.disabled = true;}
+            
+            if(RemVisaType2.selectedIndex == 4){RemVisaType2.disabled = false;}
+            else {RemVisaType2.disabled = true;}
+        }
+   }
+   
+   this.show_visa_type = function(idtype, isDisabled)
+   {
+        var vtype   = document.getElementById("ddRemVisaType");  
+        
+        if (idtype == 4 && isDisabled == false)
+        {
+            vtype.disabled = false;
+        }
+        else
+        {
+            vtype.disabled = false;
+            vtype.selectedIndex = -1; 
+        }
+   }
+      
+   this.show_visa_type1 = function(idtype, isDisabled)
+   {
+        var rvtype  = document.getElementById("ddRemVisaType1");
+        var rbvtype = document.getElementById("ddRemBVisaType");
+        
+        if (idtype == 4 && isDisabled == false)
+        {
+            rvtype.disabled  = false;
+            rbvtype.disabled = false;
+        }
+        else
+        {
+            rvtype.disabled       = true;
+            rbvtype.disabled      = true; 
+            rvtype.selectedIndex  = -1;
+            rbvtype.selectedIndex = -1; 
+        }
+   }
+   
+   this.show_visa_type2 = function(idtype, isDisabled)
+   {
+        var rvtype  = document.getElementById("ddRemVisaType2");
+        var rbvtype = document.getElementById("ddRemBVisaType2");
+        
+        if (idtype == 4 && isDisabled == false)
+        {
+            rvtype.disabled  = false;
+            rbvtype.disabled = false;
+        }
+        else
+        {
+            rvtype.disabled       = true;
+            rbvtype.disabled      = true; 
+            rvtype.selectedIndex  = -1;
+            rbvtype.selectedIndex = -1; 
+        }
+   }
+   
+	this.dropdown_other_banktype = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.get_other_bank_type(
+            function(result)
+            {
+                if (result.value != null && result.value.Rows.length > 0)
+                {
+                    load_ddl("ddOtherBankType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }
+            }
+        );
+    }
+    
+	this.dropdown_id_classification = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("IDClassification", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemIDClassification",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemIDClassification1",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemIDClassification2",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBIDClassification",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBIDClassification2",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   	        
+	        }
+	    );
+	}
+    
+	this.dropdown_source_of_funds = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("SourceOfFunds", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemSourceOfFunds",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+        	}
+	    );
+	}
+    
+	this.dropdown_risk_rating = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("RiskRating", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemRiskRating",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBRiskRating", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                } 	        	        
+	        }
+	    );
+	}
+    
+	this.dropdown_visa_type = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("VisaType", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemVisaType",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemVisaType1",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemVisaType2", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBVisaType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBVisaType2", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   	        
+	        }
+	    );
+	}
+ 
+    this.dropdown_relationship = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("Relationship", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddBeneRel",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBeneBRel", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+	        }
+	    );
+	}
+    
+    this.dropdown_notif_mode = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("NotificationMode", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddBeneNotMode",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBeneBNotMode", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }           
+            }
+        );
+    }
+    
+	this.dropdown_worker_type = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("WorkerType", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemWorkerType",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBeneWorkerType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+	        }
+	    );
+	}
+    
+	this.dropdown_account_status = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("AccountStatusFC", 
+	        function (result)
+	        {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemAcctStat", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddAccountStatus", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   	        
+	        }
+	    );
+	}
+    
+	this.dropdown_address_type = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("AddressType", 
+            function (result)
+            {
+                if (result != null && result != undefined)
+                {
+                    load_ddl("ddRemAddressType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBeneAddressType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBAddressType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBeneBAddressType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+            }
+        );
+    }
+    
+    this.dropdown_pref_contact_type = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("ContactType", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemPrefContact", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBenePrefContact", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBusRemPrefContact", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddBusBenePrefContact", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+            }
+        );
+    }
+    
+    this.dropdown_country = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("Country", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemCountry", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBCountry", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemCountry_Com", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemCountry_Mail", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBCountry_Com", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBCountry_Mail", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }               
+            }
+        );
+    }
+    
+    this.dropdown_van_type = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("VanType", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddRemVanType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+            }
+        );
+    }
+    
+	this.dropdown_cif_type = function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("CIFType", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddCIFType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddCIFType2", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddSearchBeneByCIFType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }
+            }
+        );
+    }
+    
+	this.dropdown_search_by = function()
+	{
+		IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_cifclass(
+		    function (result)
+		    {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddSearchBy", result.value, "FldValue", "FldCode");
+                }
+		    }
+		);
+	}
+	
+	this.occupations = function()
+	{
+		IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("Occupation", 
+		    function (result)
+		    {
+                if (result != null && result != "undefined")
+                {
+			        load_ddl("ddRemOccupation", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddBeneOccupation", result.value, "FldValue", "FldDescription", 0, 'i', null, '');		 
+			    }   
+		    }
+		);
+	}
+	
+	this.id_type = function()
+	{
+		IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("IDTYPE", 
+		    function (result)
+		    {
+                if (result != null && result != "undefined")
+                {
+			        load_ddl("ddRemIDType",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddRemIDType1",  result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddRemIDType2", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddRemBIDType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddRemBIDType2", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			    }
+		    }
+		);
+	}
+	
+	this.dropdown_account_type= function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("AccountType", 
+            function(result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddAccountType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemAcctType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }
+            }
+        );
+    }
+    
+	this.dropdown_cardtype= function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("CardType", 
+            function (result)
+            {
+               if (result != null && result != "undefined")
+               {
+                   load_ddl("ddCardType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+               }
+            }
+        );
+    }
+        
+    this.dropdown_cardclass= function()
+    {
+        IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("CardClass", 
+            function (result)
+            {
+                if (result != null && result != "undefined")
+                {
+                    load_ddl("ddCardClass", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                }   
+            }
+        );
+    }
+	
+	this.dropdown_product_code = function()
+	{
+		IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_products(document.getElementById("txtHiddenUserRole").value, document.getElementById("txtHiddenUserLoc").value, 
+		    function (result)
+		    {
+		        if (result != null && result != "undefined")
+		        {
+			        load_ddl("ddProductType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+			        load_ddl("ddBProductType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+		        }		    
+		    }
+		);
+	}
+	
+	this.dropdown_target_currency = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_target_curr(
+	        function (result)
+	        {
+	            if (result != null && result != "undefined")
+		        {
+			        load_ddl("ddTargetCurrency", result.value, "FldValue", "FldCode", 0, 'i', null, '');
+			        //load_ddl("ddBTargetCurr",    result.value, "FldValue", "FldCode", 0, 'i', null, '');
+			        load_ddl("ddRemAcctCurr",    result.value, "FldValue", "FldCode", 0, 'i', null, '');
+		        }
+	        }
+	    );
+	}
+
+	this.dropdown_account_currency = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("Currency", 
+	        function (result)
+	        {
+		        if (result != null && result != "undefined")
+		        {
+			        load_ddl("ddAccountCurrency", result.value, "FldValue", "FldCode", 0, 'i', null, '');
+			        load_ddl("ddCardsCurrency", result.value, "FldValue", "FldCode", 0, 'i', null, '');
+			        load_ddl("ddRemSalCurr", result.value, "FldValue", "FldCode", 0, 'i', null, '');
+			        load_ddl("ddBeneSalCurr", result.value, "FldValue", "FldCode", 0, 'i', null, '');
+		        }	        
+	        }
+	    );
+	}
+	
+	this.dropdown_vip_type = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_title("VIPTYPE", 
+	        function (result)
+	        {
+		        if (result != null && result != "undefined")
+		        {
+			        load_ddl("ddRemVIPType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+                    load_ddl("ddRemBVIPType", result.value, "FldValue", "FldDescription", 0, 'i', null, '');
+		        }
+	        }
+	    );
+	}
+	
+	this.dropdown_branch = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_pnbbranchcode(
+	        function (result)
+	        {
+	            if (result.error != null)
+	            {
+	                alert(rs.error.Message);
+	                return;
+	            }
+		        load_ddl("ddBranchCode", result.value, "BranchCode", "BranchName", 0, 'i', null, '');        
+	        }
+	    );
+	}
+
+	this.dropdown_bank = function()
+	{
+	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_bank(
+	        function(result)
+	        {
+	            if(result != null && result != "undefined")
+	            {
+			        load_ddl("ddOtherBankName", result.value, "BranchCode", "BranchName", 0, 'i', null, '');
+			        load_ddl("ddBOtherBankName", result.value, "BranchCode", "BranchName", 0, 'i', null, '');
+			        load_ddl("ddOtherBankNamePDDTS", result.value, "BranchCode", "BranchName", 0, 'i', null, '');			
+	            }	        
+	        }
+	    );
+	}
+	
+//	this.dropdown_bank_pddts = function()
+//	{
+//	    IRSWorld.Internet.InternetAddBeneficiary.getdropdown_source_bank_pddts(this.dropdown_bank_pddts_callback);
+//	}
+//	
+//	this.dropdown_bank_pddts_callback = function(result)
+//	{
+//	    if(result != null && result != "undefined")
+//	    {
+//	        this.commons = new common_method();         
+//			this.commons.to_load_dropdownlist("ddOtherBankNamePDDTS", result.value, "BranchCode", "BranchName");			
+//			this.commons = null; 
+//	    }
+//	}
+	
+    this.load_dropdowns = function()
+    {
+        this.dropdown_account_currency();
+	    this.dropdown_product_code();
+	    this.dropdown_search_by();
+	    this.occupations();
+	    this.id_type();
+	    this.dropdown_bank();
+	    this.dropdown_branch();
+	    this.dropdown_cardtype();
+	    this.dropdown_cardclass();
+	    this.dropdown_account_type();
+	    this.dropdown_target_currency();
+	    this.dropdown_cif_type();
+	    this.dropdown_address_type();
+	    this.dropdown_account_status();
+	    this.dropdown_worker_type();
+	    this.dropdown_relationship();
+	    this.dropdown_notif_mode();
+	    this.dropdown_visa_type();
+	    this.dropdown_risk_rating();
+	    this.dropdown_source_of_funds();
+	    this.dropdown_id_classification();
+	    this.dropdown_other_banktype();
+	    this.dropdown_pref_contact_type();
+	    this.dropdown_country();
+	    this.dropdown_van_type();
+	    this.dropdown_vip_type();
+	    //this.dropdown_bank_pddts();
+	    this.dropdown_bene_target_currency();
+    }	
+	
+    this.got_client_data = function(rs)
+    {
+        if (rs.error != null)
+        {
+            spawn_errpage(rs.error.Message);
+            return;
+        }
+        
+        try
+        {
+            document.getElementById("txtHiddenUserCIFID").value = rs.value[0];
+            document.getElementById("txtHiddenUserID").value = rs.value[1];
+            document.getElementById("txtHiddenUserRole").value = rs.value[2]; 
+            document.getElementById("txtHiddenUserLoc").value = rs.value[3]; 
+            isAgentClient = rs.value[4];
+        }
+        catch (e)
+        {}
+    }
+    
+    this.load_panel = function()
+    {
+        var urole = document.getElementById("txtHiddenUserRole").value;
+        if(urole != '10' && isAgentClient == false)
+        {
+            this.show_panel_search();
+        }
+        else
+        {
+            this.show_panel_add_rem();
+        }
+        IRSWorld.Internet.InternetAddBeneficiary.set_module_name(this.active_panel);
+    } 
+    
+    this.get_clientdata = function()
+    {
+        var rs = IRSWorld.Internet.InternetAddBeneficiary.get_client_data();
+        this.got_client_data(rs);
+    }
+      	
+	this.init_main = function()
+	{
+	    divInetRemitResize();
+        this.get_clientdata();
+        this.load_dropdowns();
+        this.clear_asterisks();
+        this.load_panel();
+        load_main();
+        this.construct_side_bar('divtdInternetRemitterMenu');	
+    }	
+}
+
+function validate_currency_per_product()
+{
+    var prod = document.getElementById('ddProductType').value;
+    var curr = document.getElementById('ddTargetCurrency').value;
+    
+    if(prod == '13' & curr != '1' & curr != '2' ) //NON-PDDTS/EPCS - PHP ONLY
+    {
+        alert('Target currency for Non-PDDTS/EPCS product should be PHP only');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;
+    }
+//    else if(prod == '12' & curr != '2') //PDDTS - USD ONLY
+//    {
+//        alert('Target currency for PDDTS product should be USD only');
+//        document.getElementById('ddTargetCurrency').value = 0;
+//        return;
+//    }
+    else if(prod == '257' & curr == '1') //OTHER BANK ICBC SHOULD NOT HAVE PHP VALUE
+    {
+        alert('Target currency for Other Bank - ICBC product should not have PHP');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;
+    }
+    else if(prod == '256' & curr == '1')
+    {
+        alert('Target currency for Other Bank - BOC product should not have PHP');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;
+    }
+    else if ((prod == '8' | prod == '9') && curr == '5') // DOOR TO DOOR SHOULD NOT HAVE EUR VALUE
+    {
+        alert('Target currency for Door to Door product should not have EUR');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;        
+    }
+    else if (prod == '16' & curr != '1') // DOOR TO BANK - PHP ONLY
+    {
+        alert('Target currency for Door to Bank product should be PHP only');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;        
+    }
+    else if (prod == '24' & curr != '2') // PAW - USD ONLY
+    {
+        alert('Target currency for PAW product should be USD only');
+        document.getElementById('ddTargetCurrency').value = 0;
+        return;        
+    }
+}

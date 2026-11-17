@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRemPattern" targetNamespace="http://tempuri.org/dsRemPattern.xsd" xmlns:mstns="http://tempuri.org/dsRemPattern.xsd" xmlns="http://tempuri.org/dsRemPattern.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRemPattern" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsRemPattern" msprop:Generator_DataSetName="dsRemPattern">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RemPattern" msprop:Generator_UserTableName="RemPattern" msprop:Generator_RowDeletedName="RemPatternRowDeleted" msprop:Generator_TableClassName="RemPatternDataTable" msprop:Generator_RowChangedName="RemPatternRowChanged" msprop:Generator_RowClassName="RemPatternRow" msprop:Generator_RowChangingName="RemPatternRowChanging" msprop:Generator_RowEvArgName="RemPatternRowChangeEvent" msprop:Generator_RowEvHandlerName="RemPatternRowChangeEventHandler" msprop:Generator_TablePropName="RemPattern" msprop:Generator_TableVarName="tableRemPattern" msprop:Generator_RowDeletingName="RemPatternRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PRODUCT_x0020_TYPE" msprop:Generator_UserColumnName="PRODUCT TYPE" msprop:Generator_ColumnPropNameInRow="PRODUCT_TYPE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_TYPE" msprop:Generator_ColumnPropNameInTable="PRODUCT_TYPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Always_x0020__x0028_2x_x002F_mo_x0020_or_x0020_more_x0029_" msprop:Generator_UserColumnName="Always (2x/mo or more)" msprop:Generator_ColumnPropNameInRow="_Always__2x_mo_or_more_" msprop:Generator_ColumnVarNameInTable="_columnAlways__2x_mo_or_more_" msprop:Generator_ColumnPropNameInTable="_Always__2x_mo_or_more_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Seldom_x0020__x0028_1x_x002F_mo_x0029_" msprop:Generator_UserColumnName="Seldom (1x/mo)" msprop:Generator_ColumnPropNameInRow="_Seldom__1x_mo_" msprop:Generator_ColumnVarNameInTable="_columnSeldom__1x_mo_" msprop:Generator_ColumnPropNameInTable="_Seldom__1x_mo_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="No_x0020_Usage_x0020__x0028_0_x0020_in_x0020_last_x0020_6_x0020_mos_x0029_" msprop:Generator_UserColumnName="No Usage (0 in last 6 mos)" msprop:Generator_ColumnPropNameInRow="_No_Usage__0_in_last_6_mos_" msprop:Generator_ColumnVarNameInTable="_columnNo_Usage__0_in_last_6_mos_" msprop:Generator_ColumnPropNameInTable="_No_Usage__0_in_last_6_mos_Column" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

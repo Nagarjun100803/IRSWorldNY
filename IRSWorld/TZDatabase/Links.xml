@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created on 2010-01-14 15:33:25Z-->
+<TimeZoneLinks>
+	<Link linkto="Antarctica/McMurdo" linkfrom="Antarctica/South_Pole" />
+	<Link linkto="Asia/Nicosia" linkfrom="Europe/Nicosia" />
+	<Link linkto="Africa/Asmara" linkfrom="Africa/Asmera" />
+	<Link linkto="Africa/Bamako" linkfrom="Africa/Timbuktu" />
+	<Link linkto="America/Argentina/Catamarca" linkfrom="America/Argentina/ComodRivadavia" />
+	<Link linkto="America/Adak" linkfrom="America/Atka" />
+	<Link linkto="America/Argentina/Buenos_Aires" linkfrom="America/Buenos_Aires" />
+	<Link linkto="America/Argentina/Catamarca" linkfrom="America/Catamarca" />
+	<Link linkto="America/Atikokan" linkfrom="America/Coral_Harbour" />
+	<Link linkto="America/Argentina/Cordoba" linkfrom="America/Cordoba" />
+	<Link linkto="America/Tijuana" linkfrom="America/Ensenada" />
+	<Link linkto="America/Indiana/Indianapolis" linkfrom="America/Fort_Wayne" />
+	<Link linkto="America/Indiana/Indianapolis" linkfrom="America/Indianapolis" />
+	<Link linkto="America/Argentina/Jujuy" linkfrom="America/Jujuy" />
+	<Link linkto="America/Indiana/Knox" linkfrom="America/Knox_IN" />
+	<Link linkto="America/Kentucky/Louisville" linkfrom="America/Louisville" />
+	<Link linkto="America/Argentina/Mendoza" linkfrom="America/Mendoza" />
+	<Link linkto="America/Rio_Branco" linkfrom="America/Porto_Acre" />
+	<Link linkto="America/Argentina/Cordoba" linkfrom="America/Rosario" />
+	<Link linkto="America/St_Thomas" linkfrom="America/Virgin" />
+	<Link linkto="Asia/Ashgabat" linkfrom="Asia/Ashkhabad" />
+	<Link linkto="Asia/Chongqing" linkfrom="Asia/Chungking" />
+	<Link linkto="Asia/Dhaka" linkfrom="Asia/Dacca" />
+	<Link linkto="Asia/Kathmandu" linkfrom="Asia/Katmandu" />
+	<Link linkto="Asia/Kolkata" linkfrom="Asia/Calcutta" />
+	<Link linkto="Asia/Macau" linkfrom="Asia/Macao" />
+	<Link linkto="Asia/Jerusalem" linkfrom="Asia/Tel_Aviv" />
+	<Link linkto="Asia/Ho_Chi_Minh" linkfrom="Asia/Saigon" />
+	<Link linkto="Asia/Thimphu" linkfrom="Asia/Thimbu" />
+	<Link linkto="Asia/Makassar" linkfrom="Asia/Ujung_Pandang" />
+	<Link linkto="Asia/Ulaanbaatar" linkfrom="Asia/Ulan_Bator" />
+	<Link linkto="Atlantic/Faroe" linkfrom="Atlantic/Faeroe" />
+	<Link linkto="Europe/Oslo" linkfrom="Atlantic/Jan_Mayen" />
+	<Link linkto="Australia/Sydney" linkfrom="Australia/ACT" />
+	<Link linkto="Australia/Sydney" linkfrom="Australia/Canberra" />
+	<Link linkto="Australia/Lord_Howe" linkfrom="Australia/LHI" />
+	<Link linkto="Australia/Sydney" linkfrom="Australia/NSW" />
+	<Link linkto="Australia/Darwin" linkfrom="Australia/North" />
+	<Link linkto="Australia/Brisbane" linkfrom="Australia/Queensland" />
+	<Link linkto="Australia/Adelaide" linkfrom="Australia/South" />
+	<Link linkto="Australia/Hobart" linkfrom="Australia/Tasmania" />
+	<Link linkto="Australia/Melbourne" linkfrom="Australia/Victoria" />
+	<Link linkto="Australia/Perth" linkfrom="Australia/West" />
+	<Link linkto="Australia/Broken_Hill" linkfrom="Australia/Yancowinna" />
+	<Link linkto="America/Rio_Branco" linkfrom="Brazil/Acre" />
+	<Link linkto="America/Noronha" linkfrom="Brazil/DeNoronha" />
+	<Link linkto="America/Sao_Paulo" linkfrom="Brazil/East" />
+	<Link linkto="America/Manaus" linkfrom="Brazil/West" />
+	<Link linkto="America/Halifax" linkfrom="Canada/Atlantic" />
+	<Link linkto="America/Winnipeg" linkfrom="Canada/Central" />
+	<Link linkto="America/Regina" linkfrom="Canada/East-Saskatchewan" />
+	<Link linkto="America/Toronto" linkfrom="Canada/Eastern" />
+	<Link linkto="America/Edmonton" linkfrom="Canada/Mountain" />
+	<Link linkto="America/St_Johns" linkfrom="Canada/Newfoundland" />
+	<Link linkto="America/Vancouver" linkfrom="Canada/Pacific" />
+	<Link linkto="America/Regina" linkfrom="Canada/Saskatchewan" />
+	<Link linkto="America/Whitehorse" linkfrom="Canada/Yukon" />
+	<Link linkto="America/Santiago" linkfrom="Chile/Continental" />
+	<Link linkto="Pacific/Easter" linkfrom="Chile/EasterIsland" />
+	<Link linkto="America/Havana" linkfrom="Cuba" />
+	<Link linkto="Africa/Cairo" linkfrom="Egypt" />
+	<Link linkto="Europe/Dublin" linkfrom="Eire" />
+	<Link linkto="Europe/London" linkfrom="Europe/Belfast" />
+	<Link linkto="Europe/Chisinau" linkfrom="Europe/Tiraspol" />
+	<Link linkto="Europe/London" linkfrom="GB" />
+	<Link linkto="Europe/London" linkfrom="GB-Eire" />
+	<Link linkto="Etc/GMT" linkfrom="GMT+0" />
+	<Link linkto="Etc/GMT" linkfrom="GMT-0" />
+	<Link linkto="Etc/GMT" linkfrom="GMT0" />
+	<Link linkto="Etc/GMT" linkfrom="Greenwich" />
+	<Link linkto="Asia/Hong_Kong" linkfrom="Hongkong" />
+	<Link linkto="Atlantic/Reykjavik" linkfrom="Iceland" />
+	<Link linkto="Asia/Tehran" linkfrom="Iran" />
+	<Link linkto="Asia/Jerusalem" linkfrom="Israel" />
+	<Link linkto="America/Jamaica" linkfrom="Jamaica" />
+	<Link linkto="Asia/Tokyo" linkfrom="Japan" />
+	<Link linkto="Pacific/Kwajalein" linkfrom="Kwajalein" />
+	<Link linkto="Africa/Tripoli" linkfrom="Libya" />
+	<Link linkto="America/Tijuana" linkfrom="Mexico/BajaNorte" />
+	<Link linkto="America/Mazatlan" linkfrom="Mexico/BajaSur" />
+	<Link linkto="America/Mexico_City" linkfrom="Mexico/General" />
+	<Link linkto="Pacific/Auckland" linkfrom="NZ" />
+	<Link linkto="Pacific/Chatham" linkfrom="NZ-CHAT" />
+	<Link linkto="America/Denver" linkfrom="Navajo" />
+	<Link linkto="Asia/Shanghai" linkfrom="PRC" />
+	<Link linkto="Pacific/Pago_Pago" linkfrom="Pacific/Samoa" />
+	<Link linkto="Pacific/Truk" linkfrom="Pacific/Yap" />
+	<Link linkto="Europe/Warsaw" linkfrom="Poland" />
+	<Link linkto="Europe/Lisbon" linkfrom="Portugal" />
+	<Link linkto="Asia/Taipei" linkfrom="ROC" />
+	<Link linkto="Asia/Seoul" linkfrom="ROK" />
+	<Link linkto="Asia/Singapore" linkfrom="Singapore" />
+	<Link linkto="Europe/Istanbul" linkfrom="Turkey" />
+	<Link linkto="Etc/UCT" linkfrom="UCT" />
+	<Link linkto="America/Anchorage" linkfrom="US/Alaska" />
+	<Link linkto="America/Adak" linkfrom="US/Aleutian" />
+	<Link linkto="America/Phoenix" linkfrom="US/Arizona" />
+	<Link linkto="America/Chicago" linkfrom="US/Central" />
+	<Link linkto="America/Indiana/Indianapolis" linkfrom="US/East-Indiana" />
+	<Link linkto="America/New_York" linkfrom="US/Eastern" />
+	<Link linkto="Pacific/Honolulu" linkfrom="US/Hawaii" />
+	<Link linkto="America/Indiana/Knox" linkfrom="US/Indiana-Starke" />
+	<Link linkto="America/Detroit" linkfrom="US/Michigan" />
+	<Link linkto="America/Denver" linkfrom="US/Mountain" />
+	<Link linkto="America/Los_Angeles" linkfrom="US/Pacific" />
+	<Link linkto="Pacific/Pago_Pago" linkfrom="US/Samoa" />
+	<Link linkto="Etc/UTC" linkfrom="UTC" />
+	<Link linkto="Etc/UTC" linkfrom="Universal" />
+	<Link linkto="Europe/Moscow" linkfrom="W-SU" />
+	<Link linkto="Etc/UTC" linkfrom="Zulu" />
+	<Link linkto="Etc/GMT" linkfrom="GMT" />
+	<Link linkto="Etc/UTC" linkfrom="Etc/Universal" />
+	<Link linkto="Etc/UTC" linkfrom="Etc/Zulu" />
+	<Link linkto="Etc/GMT" linkfrom="Etc/Greenwich" />
+	<Link linkto="Etc/GMT" linkfrom="Etc/GMT-0" />
+	<Link linkto="Etc/GMT" linkfrom="Etc/GMT+0" />
+	<Link linkto="Etc/GMT" linkfrom="Etc/GMT0" />
+	<Link linkto="Europe/London" linkfrom="Europe/Jersey" />
+	<Link linkto="Europe/London" linkfrom="Europe/Guernsey" />
+	<Link linkto="Europe/London" linkfrom="Europe/Isle_of_Man" />
+	<Link linkto="Europe/Helsinki" linkfrom="Europe/Mariehamn" />
+	<Link linkto="Europe/Rome" linkfrom="Europe/Vatican" />
+	<Link linkto="Europe/Rome" linkfrom="Europe/San_Marino" />
+	<Link linkto="Europe/Oslo" linkfrom="Arctic/Longyearbyen" />
+	<Link linkto="Europe/Belgrade" linkfrom="Europe/Ljubljana">
+		<Comment>Slovenia</Comment>
+	</Link>
+	<Link linkto="Europe/Belgrade" linkfrom="Europe/Podgorica">
+		<Comment>Montenegro</Comment>
+	</Link>
+	<Link linkto="Europe/Belgrade" linkfrom="Europe/Sarajevo">
+		<Comment>Bosnia</Comment>
+	</Link>
+	<Link linkto="Europe/Belgrade" linkfrom="Europe/Skopje">
+		<Comment>Macedonia</Comment>
+	</Link>
+	<Link linkto="Europe/Belgrade" linkfrom="Europe/Zagreb">
+		<Comment>Croatia</Comment>
+	</Link>
+	<Link linkto="Europe/Prague" linkfrom="Europe/Bratislava" />
+	<Link linkto="Europe/Istanbul" linkfrom="Asia/Istanbul">
+		<Comment>Istanbul</Comment>
+	</Link>
+	<Link linkto="America/Denver" linkfrom="America/Shiprock" />
+	<Link linkto="America/Guadeloupe" linkfrom="America/St_Barthelemy" />
+	<Link linkto="America/Guadeloupe" linkfrom="America/Marigot" />
+	<Link linkto="America/Los_Angeles" linkfrom="US/Pacific-New" />
+	<Link linkto="Asia/Riyadh87" linkfrom="Mideast/Riyadh87" />
+	<Link linkto="Asia/Riyadh88" linkfrom="Mideast/Riyadh88" />
+	<Link linkto="Asia/Riyadh89" linkfrom="Mideast/Riyadh89" />
+</TimeZoneLinks>

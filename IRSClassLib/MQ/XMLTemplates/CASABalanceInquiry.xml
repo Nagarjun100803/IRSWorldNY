@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	Operation="inquireAccountBalance( SessionContext, String)"
+	Service="CoreDemandDepositManagerService"
+	targetNamespace="http://savings.deposit.app.fcr.iflex.com">
+	<SessionContext BankCode="8" Channel="" ExternalBatchNumber=""
+		ExternalSystemAuditTrailNumber=""
+		LocalDateTimeText="" OriginalReferenceNo="" OverridenWarnings=""
+		PostingDateText="" ServiceCode="" SessionTicket=""
+		TransactionBranch="" UserId=""
+		ValueDateText="" UserReferenceNumber="" ExternalReferenceNo="">
+		<Reason Comment="" ReasonCode="" ></Reason>
+		<SupervisorContext PrimaryPassword="" UserId="" />
+	</SessionContext>
+	<AccountId></AccountId>
+</input>

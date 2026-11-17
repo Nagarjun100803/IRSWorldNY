@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGRR025_DailyExceptionReport" targetNamespace="http://tempuri.org/dsGRR025_DailyExceptionReport.xsd" xmlns:mstns="http://tempuri.org/dsGRR025_DailyExceptionReport.xsd" xmlns="http://tempuri.org/dsGRR025_DailyExceptionReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGRR025_DailyExceptionReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGRR025_DailyExceptionReport" msprop:Generator_DataSetName="dsGRR025_DailyExceptionReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtGRR025_DailyExceptionReport" msprop:Generator_UserTableName="dtGRR025_DailyExceptionReport" msprop:Generator_RowDeletedName="dtGRR025_DailyExceptionReportRowDeleted" msprop:Generator_TableClassName="dtGRR025_DailyExceptionReportDataTable" msprop:Generator_RowChangedName="dtGRR025_DailyExceptionReportRowChanged" msprop:Generator_RowClassName="dtGRR025_DailyExceptionReportRow" msprop:Generator_RowChangingName="dtGRR025_DailyExceptionReportRowChanging" msprop:Generator_RowEvArgName="dtGRR025_DailyExceptionReportRowChangeEvent" msprop:Generator_RowEvHandlerName="dtGRR025_DailyExceptionReportRowChangeEventHandler" msprop:Generator_TablePropName="dtGRR025_DailyExceptionReport" msprop:Generator_TableVarName="tabledtGRR025_DailyExceptionReport" msprop:Generator_RowDeletingName="dtGRR025_DailyExceptionReportRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE" msprop:Generator_UserColumnName="DATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TRANSACTION_x0020_SOURCE" msprop:Generator_UserColumnName="TRANSACTION SOURCE" msprop:Generator_ColumnPropNameInRow="TRANSACTION_SOURCE" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_SOURCE" msprop:Generator_ColumnPropNameInTable="TRANSACTION_SOURCEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REFNO_x0020_THEIRS" msprop:Generator_UserColumnName="REFNO THEIRS" msprop:Generator_ColumnPropNameInRow="REFNO_THEIRS" msprop:Generator_ColumnVarNameInTable="columnREFNO_THEIRS" msprop:Generator_ColumnPropNameInTable="REFNO_THEIRSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REFNO_x0020_OURS" msprop:Generator_UserColumnName="REFNO OURS" msprop:Generator_ColumnPropNameInRow="REFNO_OURS" msprop:Generator_ColumnVarNameInTable="columnREFNO_OURS" msprop:Generator_ColumnPropNameInTable="REFNO_OURSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_BANK_x0020_NAME" msprop:Generator_UserColumnName="REMITTING BANK NAME" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK_NAME" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK_NAME" msprop:Generator_ColumnPropNameInTable="REMITTING_BANK_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER_x0020_NAME" msprop:Generator_UserColumnName="REMITTER NAME" msprop:Generator_ColumnPropNameInRow="REMITTER_NAME" msprop:Generator_ColumnVarNameInTable="columnREMITTER_NAME" msprop:Generator_ColumnPropNameInTable="REMITTER_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEFICIARY_x0020_NAME" msprop:Generator_UserColumnName="BENEFICIARY NAME" msprop:Generator_ColumnPropNameInRow="BENEFICIARY_NAME" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARY_NAME" msprop:Generator_ColumnPropNameInTable="BENEFICIARY_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTING_x0020_CURRENCY" msprop:Generator_UserColumnName="REMITTING CURRENCY" msprop:Generator_ColumnPropNameInRow="REMITTING_CURRENCY" msprop:Generator_ColumnVarNameInTable="columnREMITTING_CURRENCY" msprop:Generator_ColumnPropNameInTable="REMITTING_CURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="AMOUNT_x0020_REMITTED" msprop:Generator_UserColumnName="AMOUNT REMITTED" msprop:Generator_ColumnPropNameInRow="AMOUNT_REMITTED" msprop:Generator_ColumnVarNameInTable="columnAMOUNT_REMITTED" msprop:Generator_ColumnPropNameInTable="AMOUNT_REMITTEDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ACCOUNTNO" msprop:Generator_UserColumnName="ACCOUNTNO" msprop:Generator_ColumnPropNameInRow="ACCOUNTNO" msprop:Generator_ColumnVarNameInTable="columnACCOUNTNO" msprop:Generator_ColumnPropNameInTable="ACCOUNTNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCOUNT_x0020_CURRENCY" msprop:Generator_UserColumnName="ACCOUNT CURRENCY" msprop:Generator_ColumnPropNameInRow="ACCOUNT_CURRENCY" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_CURRENCY" msprop:Generator_ColumnPropNameInTable="ACCOUNT_CURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NET_x0020_TO_x0020_BENEFICIARY_x0020_AMOUNT" msprop:Generator_UserColumnName="NET TO BENEFICIARY AMOUNT" msprop:Generator_ColumnPropNameInRow="NET_TO_BENEFICIARY_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnNET_TO_BENEFICIARY_AMOUNT" msprop:Generator_ColumnPropNameInTable="NET_TO_BENEFICIARY_AMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="API_x0020_MESSAGE" msprop:Generator_UserColumnName="API MESSAGE" msprop:Generator_ColumnPropNameInRow="API_MESSAGE" msprop:Generator_ColumnVarNameInTable="columnAPI_MESSAGE" msprop:Generator_ColumnPropNameInTable="API_MESSAGEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSACTION_x0020_STATUS" msprop:Generator_UserColumnName="TRANSACTION STATUS" msprop:Generator_ColumnPropNameInRow="TRANSACTION_STATUS" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_STATUS" msprop:Generator_ColumnPropNameInTable="TRANSACTION_STATUSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

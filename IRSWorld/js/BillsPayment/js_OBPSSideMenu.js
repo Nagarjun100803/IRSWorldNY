@@ -1,0 +1,356 @@
+var sidebar = new SideBar();
+var tranx_history_panel='Show';
+function execute_ajx_command(param)
+{
+    if (sidebar != null)
+    {
+        sidebar.do_gridfind(param);
+    }
+}
+
+
+function SideBar()
+{
+    this.grd_search_keyword = '';
+    this.grd_search = null;
+    
+    
+    this.construct_side_bar = function()
+    {
+        document.getElementById("divtdBillsPayOBPSTransactionsMenu").innerHTML = this.get_side_bar();          
+    }
+    
+    this.get_side_bar_visibility = function(division_id, anchor_id)
+    {
+        var div  = document.getElementById(division_id);
+        var cset = div.style.display;
+                
+        div.style.display = (cset == "block") ? "none" : "block";
+        setText(document.getElementById(anchor_id), ((cset == "block") ? "Show " + String.fromCharCode(187) : String.fromCharCode(171) + " Hide" ));
+        document.getElementById('tdBillsPayOBPSTransactions').style.width = (cset == "block") ? "6%" : "18%";
+        this.construct_side_bar();
+    }
+    
+    this.get_side_bar = function()
+    {
+        var side_array  = this.get_side_bar_list();
+        var side_winder = new js_sidebar('sidemenu', side_array);
+        
+        return side_winder.toString();
+    }
+    
+    this.get_side_bar_list = function()
+    {
+        var sidebar;        
+                
+        if (new common_method().is_numeric(this.remittance_txn_id) == true)
+        {        
+            sidebar = new Array
+            (
+                new Array(99,0,'Back&nbsp;To&nbsp;Search','javascript:back_to_search();')                
+            );         
+            return sidebar;
+        }        
+        
+        if(uRole == '10')
+        {
+            sidebar = new Array
+            (                
+                new Array(1,0, 'Remittance',     'window.open("../Internet/InternetPage.aspx", "_self");'),
+                new Array(2,0, 'Show&nbsp;Transaction&nbsp;History',   'javascript:remteller.ShowHistory();'),
+                new Array(3,0, '',   ''),
+                new Array(4,0, 'Enroll&nbsp;Merchant',   'javascript:sidebar.enroll_merchant();'),                
+                new Array(99,0, 'Logout',     'window.open("../ErrorPage.aspx?ErrorMessage=Thank you for using PNB online remittance system.", "_top");') 
+            );
+        }
+        else
+        {
+            sidebar = new Array
+            (
+                new Array(1,0, 'New&nbsp;Remitter',   'javascript:sidebar.new_remitter();'),
+                new Array(2,0, 'Enroll&nbsp;Merchant',   'javascript:sidebar.enroll_merchant();'),
+                new Array(3,0, 'Show&nbsp;Transaction&nbsp;History',   'javascript:remteller.ShowHistory();'), 
+                new Array(99,0, 'Back&nbsp;To&nbsp;Search',     'javascript:bills.ShowSearch();')            
+            );
+        }        
+        return sidebar;        
+    }
+    
+    this.show_transaction_details = function()
+    {
+        var lnk = js_sidebar_element('sidemenu', 2, 0);
+        
+        setText(document.getElementById(lnk.id), ((getText(lnk) == 'Show Transaction Details') ? 'Hide Transaction Details' : 'Show Transaction Details'));
+        
+        if(getText(document.getElementById(lnk.id)) == 'Show Transaction Details')
+        {
+            remteller.HideTransaction();
+        }
+        else
+        {
+            remteller.ShowTransaction();
+        }
+    }
+    
+    
+    
+    this.get_remittance_lookup_data = function(field_group)
+    {           
+        if (getText('lbl_rem_id') != '')
+        {
+            hidePanelOB('divTransactionDetails');
+            this.grd_search_keyword = field_group;    
+            if(field_group == 'SourceOfFunds')
+            {
+                remteller.LookUpMode = 'SourceOfFunds';
+            }
+            else if(field_group == 'TranxPurpose')
+            {
+                remteller.LookUpMode = 'TranxPurpose';
+            }
+            else if(field_group == 'TranxSource')
+            {
+                remteller.LookUpMode = 'TranxSource';
+            }
+            else if(field_group == 'PayMode')
+            {
+                remteller.LookUpMode = 'PayMode';
+            }
+            else if(field_group == 'ReceiptMode')
+            {
+                remteller.LookUpMode = 'ReceiptMode';
+            }
+            else if (field_group == 'ChargeType')
+            {
+                remteller.LookUpMode = 'ChargeType';
+            }
+            else
+            {
+                remteller.LookUpMode = '';
+            }            
+            var isAgent = false;
+            if (uRole == '10')// || uRole == '25' || uRole == '7' || uRole == '27')
+            {
+                isAgent = true;
+            }
+            var grd_container  = null;
+            var grd_source     = "sp_GetOBPLookup~" + field_group + "~" + remteller.BranchCode + "~" + document.getElementById('ddlSourceCurrency')[document.getElementById('ddlSourceCurrency').selectedIndex].value + "~" + document.getElementById("lblChargeType").value + "~" + document.getElementById("lblPayMode").value + "~" + isAgent + "~" + uRole;
+                    
+            this.grd_search = new grid_selector();
+            this.grd_search.open_selection_grid("../AjxPage/ajaxgrid.aspx", grd_source, 0 , grd_container);
+            document.getElementById("btn_close").onclick = Function('this.parentNode.Code.close_modal_window(); showPanelOB(\'divTransactionDetails\');');
+        }
+        else
+        {
+            alert('Search a remitter first.');
+        }        
+    }    
+    
+    this.do_gridfind = function(parameter)
+    {
+        if (parameter != null && parameter != "undefined")
+        {   
+            if (sidebar != null)
+            {
+                var command_param = parameter.split("$");
+                
+                if (command_param.length > 0)
+                {
+                    if (command_param[0] == "ajx_selected")
+                    {
+                        switch(sidebar.grd_search_keyword.toUpperCase())
+                        {
+                            case "TRANXPURPOSE"       : this.set_column('TRANSACTIONPURPOSE', command_param[1]); break;
+                            case "TRANXSOURCE"        : this.set_column('TRANSACTIONSOURCE',  command_param[1]); break;
+                            case "SOURCEOFFUNDS"      : this.set_column('SOURCEOFFUNDS',      command_param[1]); break;
+                            case "PAYMODE"            : this.set_column('PAYMODE',      command_param[1]); break;
+                            case "RECEIPTMODE"        : this.set_column('RECEIPTMODE',      command_param[1]); break;
+                            case "CHARGETYPE"         : this.set_column('CHARGETYPE', command_param[1]); break;
+                        }                        
+                    }
+                    //this.grd_search.request_database_source = "sp_GetOBPLookup~" + remteller.LookUpMode + "~" + remteller.BranchCode + "~" + document.getElementById('ddlSourceCurrency')[document.getElementById('ddlSourceCurrency').selectedIndex].value + "~" + document.getElementById("lblChargeType").value + "~" + document.getElementById("lblPayMode").value + "~" + isAgent;
+                    this.grd_search.process_ajax(parameter);
+                }
+            }
+        }
+    }
+    
+    this.set_column = function(fld_group, fld_value)
+    {        
+        if(fld_group == 'TRANSACTIONPURPOSE')
+        {
+            setText(document.getElementById("lnkTranxPurpose"), this.lookup_desc("TranxPurpose",fld_value));
+            document.getElementById("lblTranxPurpose").value              = fld_value;
+            
+            if (getText(document.getElementById('lnkTranxPurpose')) == 'OTHERS')
+            {
+                document.getElementById('lblOthers').style.display = 'block';
+                document.getElementById('tdOthers').style.display = 'block';
+                document.getElementById('lblOthers').className= 'cell_caption';
+            }
+            else
+            {
+                document.getElementById('lblOthers').style.display = 'none';
+                document.getElementById('tdOthers').style.display = 'none';
+                document.getElementById('lblOthers').className= 'cell_desc';
+            }
+         
+        }
+        else if(fld_group == 'TRANSACTIONSOURCE')
+        {
+            setText(document.getElementById("lnkTranxSource"), this.lookup_desc("TranxSource",fld_value));
+            document.getElementById("lblTranxSource").value   =     fld_value;            
+        }
+        else if(fld_group == 'SOURCEOFFUNDS')
+        {
+            setText(document.getElementById("btnSourceOfFunds"), this.lookup_desc("SourceOfFunds", fld_value));
+            document.getElementById("lblSourceOfFunds").value      = fld_value;
+        }
+        else if(fld_group == 'PAYMODE')
+        {            
+            setText(document.getElementById("lnkPaymode"), this.lookup_desc("PayMode", fld_value));
+            document.getElementById("lblPayMode").value      = fld_value;
+            if(document.getElementById('lblPayMode').value == '2')
+            {
+                remteller.the_mode = 6;
+            }
+            else if(document.getElementById('lblPayMode').value == '4')
+            {
+                var hCards = IRSWorld.TranClass.rem_card_screen.has_cards(remteller.RemitterID).value;
+                if(hCards != true)
+                {
+                    if(uRole != '10')
+                    {
+                        alert("There is no cards maintained for this remitter.")
+                    }
+                    else
+                    {
+                        alert("There is no cards maintained for this remitter. Please go to the nearest PNB branch.")
+                    }
+                }
+                else
+                {
+                    remteller.iscard_mode = 1;
+                }
+            }
+            else if(document.getElementById('lblPayMode').value == '6')
+            {
+                var hDAccount = IRSWorld.TranClass.rem_debit_account_screen.has_debit_accounts(remteller.RemitterID).value;
+                if(hDAccount != true)
+                {
+                    if(uRole != '10')
+                    {
+                        alert("There is no account maintained for this remitter.")
+                    }
+                    else
+                    {
+                        alert("There is no account maintained for this remitter. Please go to the nearest PNB branch.")
+                    }
+                }
+            }
+            else
+            {
+                document.getElementById('tdCheckNo').style.display = 'none';
+                document.getElementById('tdtxtCheckNo').style.display = 'none';
+                document.getElementById('tdClearanceDate').style.display = 'none';
+                document.getElementById('tdtxtClearanceDate').style.display = 'none';
+                document.getElementById('tdCheckNo').className= 'cell_desc';
+                document.getElementById('tdClearanceDate').className= 'cell_desc';
+                remteller.the_mode = 0;
+            }
+            remteller.setremittingccy();
+        }
+        else if(fld_group == 'RECEIPTMODE')
+        {            
+            setText(document.getElementById("lnkReceiptMode"), this.lookup_desc("ReceiptMode", fld_value));
+            document.getElementById("lblReceiptMode").value      = fld_value;
+        }
+        else if(fld_group == 'CHARGETYPE')
+        {            
+            setText(document.getElementById("lnkChargeType"), this.lookup_desc("ChargeType", fld_value));
+            document.getElementById("lblChargeType").value = fld_value;
+            remteller.RemitterChargeType = fld_value;
+            remteller.setremittingccy();
+        }
+        showPanelOB('divTransactionDetails');
+    }    
+    
+    this.lookup_desc = function(key_group, key_valcode)
+    {
+        if (key_valcode == null)
+        {
+            return "";
+        }
+    
+        var idesc = IRSWorld.BillsPayment.OBPSTransactions.get_tbl_lookup_description(key_group, key_valcode).value;
+        
+        if (idesc != null)
+        {
+            return idesc;
+        }
+        
+        return "";
+    }
+    
+    
+    this.get_array_sub_lookup = function(sidebar, sidebar_child_index , fld_group, fld_column)
+    {
+        var ds = IRSWorld.BillsPayment.OBPSTransactions.getLookUp(fld_group).value;
+
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.length > 0)
+            {
+                for(var i = 0; i < ds.Tables[0].Rows.length; i++)
+                {
+                    var jsmethod;
+
+                    jsmethod = 'javascript:set_side_bar_selected_value(' + '\"' + fld_column + '\"';
+                    jsmethod += "," + ds.Tables[0].Rows[i].FldValue + ");"
+
+                    sidebar[sidebar.length] = new Array(sidebar.length + 1, sidebar_child_index , ds.Tables[0].Rows[i].FldDescription, jsmethod);
+                }
+            }
+        }
+    } 
+    
+    this.set_database_column_value = function(fld_group, fld_value)
+    {
+        remteller.display_values(fld_group, fld_value);
+    }
+    
+    this.enroll_merchant = function()
+    {
+       var RemID = getText(document.getElementById('lbl_rem_id')); 
+       if(RemID != '')
+       {
+           if(confirm('Do you want to enroll merchant for this remitter?'))
+           {
+                window.location = '../CIF/cifmain.aspx?function=add_merchant&cifid='+ RemID +'';
+           }
+       }
+       else
+       {
+           alert('Search a remitter first.');
+       }
+    }
+    
+    this.new_remitter = function()
+    {
+        show_frame_dialog('../Internet/InternetRemitter.aspx?isRemit=obp', 'cifclose', '100%', '100%', '0');
+    }
+    
+    this.new_tranx = function()
+    {
+        if(confirm('Do you want to make a new payment?'))
+        {
+            window.open('../BillsPayment/OBPSTransactions.aspx','_self');
+        }
+    }
+}
+
+function set_side_bar_selected_value(fld_group, fld_value)
+{
+    sidebar.set_database_column_value(fld_group, fld_value);
+}
+

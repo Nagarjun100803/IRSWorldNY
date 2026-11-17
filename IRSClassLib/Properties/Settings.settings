@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IRSClassLib.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IRSClassLib_WSCorebanking_IRSFlexcubeTeller" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ibsdb3:8089/axis2/services/IRSFlexcubeTeller</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_localhost_wsSqlCommons" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2453/wsSqlCommons.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_ACHWorks_Iverservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://securesoap.achworks.com/exec/ver.tss/soap/Iver</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_OBPS_BayadCenter_OBPS_BayadCenter" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/OBPSBayadCenterAPI/OBPS_BayadCenter.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_wsIBFT_wsIBFT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58401/wsIBFT.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_PNBABCAccountValidation_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ws_%20PNBABCAccountValidationExt/ws_PNBABCAccountValidationExt.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_FCWS_FC_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.20.117/FC_API_Webservice_Setup/FC_Service.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_GFC_SI_WSDL_GFC_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pnbatm16.pnbcorpsit.ph/GFC_WS/GFC_WS.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_GFC_SI_WSDL_PROXY_GFC_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://pnbatm16.pnbcorpsit.ph/GFC_WS_Proxy/GFC_WS.asmx</Value>
+    </Setting>
+    <Setting Name="IRSClassLib_wsSMS_wsSMS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.103.10/wsSMSSetup/wsSMS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

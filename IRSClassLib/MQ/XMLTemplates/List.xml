@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	Operation="inquireListOfTransaction(SessionContext,String,StatementPeriodType,String,String,PageInformation)"
+	Service="PNBDemandDepositStatementManagerService"
+	targetNamespace="http://savings.deposit.app.fcr.iflex.com"
+	xsi:noNamespaceSchemaLocation="">
+	<SessionContext BankCode="8" Channel="" ExternalBatchNumber=""
+		ExternalReferenceNo="" ExternalSystemAuditTrailNumber=""
+		LocalDateTimeText="" OriginalReferenceNo="" OverridenWarnings=""
+		PostingDateText="" ServiceCode="" SessionTicket=""
+		TransactionBranch="" UserId="" UserReferenceNumber=""
+		ValueDateText="">
+		<Reason Comment="" ReasonCode="" ></Reason>
+		<SupervisorContext PrimaryPassword="" UserId="" />
+	</SessionContext>
+	<AccountId></AccountId>
+	<PeriodType></PeriodType>
+	<StartDateStr></StartDateStr>
+	<EndDateStr></EndDateStr>
+	<PageInformation>
+		<PageNumber></PageNumber>
+		<PageSize></PageSize>
+	</PageInformation>
+</input>

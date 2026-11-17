@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMTD_Summary_RCI" targetNamespace="http://tempuri.org/dsMTD_Summary_RCI.xsd" xmlns:mstns="http://tempuri.org/dsMTD_Summary_RCI.xsd" xmlns="http://tempuri.org/dsMTD_Summary_RCI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMTD_Summary_RCI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMTD_Summary_RCI" msprop:Generator_DataSetName="dsMTD_Summary_RCI">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtMTD_Summary_RCI" msprop:Generator_UserTableName="dtMTD_Summary_RCI" msprop:Generator_RowDeletedName="dtMTD_Summary_RCIRowDeleted" msprop:Generator_TableClassName="dtMTD_Summary_RCIDataTable" msprop:Generator_RowChangedName="dtMTD_Summary_RCIRowChanged" msprop:Generator_RowClassName="dtMTD_Summary_RCIRow" msprop:Generator_RowChangingName="dtMTD_Summary_RCIRowChanging" msprop:Generator_RowEvArgName="dtMTD_Summary_RCIRowChangeEvent" msprop:Generator_RowEvHandlerName="dtMTD_Summary_RCIRowChangeEventHandler" msprop:Generator_TablePropName="dtMTD_Summary_RCI" msprop:Generator_TableVarName="tabledtMTD_Summary_RCI" msprop:Generator_RowDeletingName="dtMTD_Summary_RCIRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemBankCode" msprop:Generator_UserColumnName="RemBankCode" msprop:Generator_ColumnPropNameInRow="RemBankCode" msprop:Generator_ColumnVarNameInTable="columnRemBankCode" msprop:Generator_ColumnPropNameInTable="RemBankCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Items" msprop:Generator_UserColumnName="Items" msprop:Generator_ColumnPropNameInRow="Items" msprop:Generator_ColumnVarNameInTable="columnItems" msprop:Generator_ColumnPropNameInTable="ItemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittedAmt" msprop:Generator_UserColumnName="RemittedAmt" msprop:Generator_ColumnPropNameInRow="RemittedAmt" msprop:Generator_ColumnVarNameInTable="columnRemittedAmt" msprop:Generator_ColumnPropNameInTable="RemittedAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Commission" msprop:Generator_UserColumnName="Commission" msprop:Generator_ColumnPropNameInRow="Commission" msprop:Generator_ColumnVarNameInTable="columnCommission" msprop:Generator_ColumnPropNameInTable="CommissionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmt" msprop:Generator_UserColumnName="NetAmt" msprop:Generator_ColumnPropNameInRow="NetAmt" msprop:Generator_ColumnVarNameInTable="columnNetAmt" msprop:Generator_ColumnPropNameInTable="NetAmtColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

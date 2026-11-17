@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_DistributionOfNumberOfItemsByPROD" targetNamespace="http://tempuri.org/ds_DistributionOfNumberOfItemsByPROD.xsd" xmlns:mstns="http://tempuri.org/ds_DistributionOfNumberOfItemsByPROD.xsd" xmlns="http://tempuri.org/ds_DistributionOfNumberOfItemsByPROD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_DistributionOfNumberOfItemsByPROD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_DistributionOfNumberOfItemsByPROD" msprop:Generator_DataSetName="ds_DistributionOfNumberOfItemsByPROD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TablePropName="DataTable1" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" msprop:Generator_UserColumnName="Branch" msprop:Generator_ColumnPropNameInRow="Branch" msprop:Generator_ColumnVarNameInTable="columnBranch" msprop:Generator_ColumnPropNameInTable="BranchColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Rapid_x0020_Remit" msprop:Generator_UserColumnName="Rapid Remit" msprop:Generator_ColumnPropNameInRow="Rapid_Remit" msprop:Generator_ColumnVarNameInTable="columnRapid_Remit" msprop:Generator_ColumnPropNameInTable="Rapid_RemitColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="APAS" msprop:Generator_UserColumnName="APAS" msprop:Generator_ColumnPropNameInRow="APAS" msprop:Generator_ColumnVarNameInTable="columnAPAS" msprop:Generator_ColumnPropNameInTable="APASColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="GFMC" msprop:Generator_UserColumnName="GFMC" msprop:Generator_ColumnPropNameInRow="GFMC" msprop:Generator_ColumnVarNameInTable="columnGFMC" msprop:Generator_ColumnPropNameInTable="GFMCColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BPO" msprop:Generator_UserColumnName="BPO" msprop:Generator_ColumnPropNameInRow="BPO" msprop:Generator_ColumnVarNameInTable="columnBPO" msprop:Generator_ColumnPropNameInTable="BPOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Other_x0020_banks" msprop:Generator_UserColumnName="Other banks" msprop:Generator_ColumnPropNameInRow="Other_banks" msprop:Generator_ColumnVarNameInTable="columnOther_banks" msprop:Generator_ColumnPropNameInTable="Other_banksColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Other_x0020_Banks_x0020_-_x0020_PDDTS" msprop:Generator_UserColumnName="Other Banks - PDDTS" msprop:Generator_ColumnPropNameInRow="_Other_Banks___PDDTS" msprop:Generator_ColumnVarNameInTable="_columnOther_Banks___PDDTS" msprop:Generator_ColumnPropNameInTable="_Other_Banks___PDDTSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Door_x0020_to_x0020_Door" msprop:Generator_UserColumnName="Door to Door" msprop:Generator_ColumnPropNameInRow="Door_to_Door" msprop:Generator_ColumnVarNameInTable="columnDoor_to_Door" msprop:Generator_ColumnPropNameInTable="Door_to_DoorColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Door_x0020_to_x0020_Bank" msprop:Generator_UserColumnName="Door to Bank" msprop:Generator_ColumnPropNameInRow="Door_to_Bank" msprop:Generator_ColumnVarNameInTable="columnDoor_to_Bank" msprop:Generator_ColumnPropNameInTable="Door_to_BankColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OTHER" msprop:Generator_UserColumnName="OTHER" msprop:Generator_ColumnPropNameInRow="OTHER" msprop:Generator_ColumnVarNameInTable="columnOTHER" msprop:Generator_ColumnPropNameInTable="OTHERColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SMONTH" msprop:Generator_UserColumnName="SMONTH" msprop:Generator_ColumnPropNameInRow="SMONTH" msprop:Generator_ColumnVarNameInTable="columnSMONTH" msprop:Generator_ColumnPropNameInTable="SMONTHColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SYEAR" msprop:Generator_UserColumnName="SYEAR" msprop:Generator_ColumnPropNameInRow="SYEAR" msprop:Generator_ColumnVarNameInTable="columnSYEAR" msprop:Generator_ColumnPropNameInTable="SYEARColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

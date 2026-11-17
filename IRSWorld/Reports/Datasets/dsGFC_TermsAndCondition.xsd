@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGFC_TermsAndCondition" targetNamespace="http://tempuri.org/dsGFC_TermsAndCondition.xsd" xmlns:mstns="http://tempuri.org/dsGFC_TermsAndCondition.xsd" xmlns="http://tempuri.org/dsGFC_TermsAndCondition.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGFC_TermsAndCondition" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGFC_TermsAndCondition" msprop:Generator_DataSetName="dsGFC_TermsAndCondition">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_TermsAndCondition" msprop:Generator_UserTableName="dt_TermsAndCondition" msprop:Generator_RowDeletedName="dt_TermsAndConditionRowDeleted" msprop:Generator_TableClassName="dt_TermsAndConditionDataTable" msprop:Generator_RowChangedName="dt_TermsAndConditionRowChanged" msprop:Generator_RowClassName="dt_TermsAndConditionRow" msprop:Generator_RowChangingName="dt_TermsAndConditionRowChanging" msprop:Generator_RowEvArgName="dt_TermsAndConditionRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_TermsAndConditionRowChangeEventHandler" msprop:Generator_TablePropName="dt_TermsAndCondition" msprop:Generator_TableVarName="tabledt_TermsAndCondition" msprop:Generator_RowDeletingName="dt_TermsAndConditionRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

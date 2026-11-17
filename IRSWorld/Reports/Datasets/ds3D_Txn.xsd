@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds3D_Txn" targetNamespace="http://tempuri.org/ds3D_Txn.xsd" xmlns:mstns="http://tempuri.org/ds3D_Txn.xsd" xmlns="http://tempuri.org/ds3D_Txn.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds3D_Txn" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds3D_Txn" msprop:Generator_DataSetName="ds3D_Txn">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt3D_Txn" msprop:Generator_UserTableName="dt3D_Txn" msprop:Generator_RowDeletedName="dt3D_TxnRowDeleted" msprop:Generator_TableClassName="dt3D_TxnDataTable" msprop:Generator_RowChangedName="dt3D_TxnRowChanged" msprop:Generator_RowClassName="dt3D_TxnRow" msprop:Generator_RowChangingName="dt3D_TxnRowChanging" msprop:Generator_RowEvArgName="dt3D_TxnRowChangeEvent" msprop:Generator_RowEvHandlerName="dt3D_TxnRowChangeEventHandler" msprop:Generator_TablePropName="dt3D_Txn" msprop:Generator_TableVarName="tabledt3D_Txn" msprop:Generator_RowDeletingName="dt3D_TxnRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterID" msprop:Generator_UserColumnName="RemitterID" msprop:Generator_ColumnPropNameInRow="RemitterID" msprop:Generator_ColumnVarNameInTable="columnRemitterID" msprop:Generator_ColumnPropNameInTable="RemitterIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferenceNo" msprop:Generator_UserColumnName="ReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittedAmt" msprop:Generator_UserColumnName="RemittedAmt" msprop:Generator_ColumnPropNameInRow="RemittedAmt" msprop:Generator_ColumnVarNameInTable="columnRemittedAmt" msprop:Generator_ColumnPropNameInTable="RemittedAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Commission" msprop:Generator_UserColumnName="Commission" msprop:Generator_ColumnPropNameInRow="Commission" msprop:Generator_ColumnVarNameInTable="columnCommission" msprop:Generator_ColumnPropNameInTable="CommissionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmt" msprop:Generator_UserColumnName="NetAmt" msprop:Generator_ColumnPropNameInRow="NetAmt" msprop:Generator_ColumnVarNameInTable="columnNetAmt" msprop:Generator_ColumnPropNameInTable="NetAmtColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

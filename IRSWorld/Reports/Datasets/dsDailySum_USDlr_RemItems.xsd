@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDailySum_USDlr_RemItems" targetNamespace="http://tempuri.org/dsDailySum_USDlr_RemItems.xsd" xmlns:mstns="http://tempuri.org/dsDailySum_USDlr_RemItems.xsd" xmlns="http://tempuri.org/dsDailySum_USDlr_RemItems.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDailySum_USDlr_RemItems" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDailySum_USDlr_RemItems" msprop:Generator_DataSetName="dsDailySum_USDlr_RemItems">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDailySum_UsDlr_RemItems" msprop:Generator_UserTableName="dtDailySum_UsDlr_RemItems" msprop:Generator_RowDeletedName="dtDailySum_UsDlr_RemItemsRowDeleted" msprop:Generator_TableClassName="dtDailySum_UsDlr_RemItemsDataTable" msprop:Generator_RowChangedName="dtDailySum_UsDlr_RemItemsRowChanged" msprop:Generator_RowClassName="dtDailySum_UsDlr_RemItemsRow" msprop:Generator_RowChangingName="dtDailySum_UsDlr_RemItemsRowChanging" msprop:Generator_RowEvArgName="dtDailySum_UsDlr_RemItemsRowChangeEvent" msprop:Generator_RowEvHandlerName="dtDailySum_UsDlr_RemItemsRowChangeEventHandler" msprop:Generator_TablePropName="dtDailySum_UsDlr_RemItems" msprop:Generator_TableVarName="tabledtDailySum_UsDlr_RemItems" msprop:Generator_RowDeletingName="dtDailySum_UsDlr_RemItemsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="state" msprop:Generator_UserColumnName="state" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_ColumnPropNameInTable="stateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="locationcode" msprop:Generator_UserColumnName="locationcode" msprop:Generator_ColumnPropNameInRow="locationcode" msprop:Generator_ColumnVarNameInTable="columnlocationcode" msprop:Generator_ColumnPropNameInTable="locationcodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BPO" msprop:Generator_UserColumnName="BPO" msprop:Generator_ColumnPropNameInRow="BPO" msprop:Generator_ColumnVarNameInTable="columnBPO" msprop:Generator_ColumnPropNameInTable="BPOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0033_D" msprop:Generator_UserColumnName="3D" msprop:Generator_ColumnPropNameInRow="_3D" msprop:Generator_ColumnVarNameInTable="column3D" msprop:Generator_ColumnPropNameInTable="_3DColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="APAS" msprop:Generator_UserColumnName="APAS" msprop:Generator_ColumnPropNameInRow="APAS" msprop:Generator_ColumnVarNameInTable="columnAPAS" msprop:Generator_ColumnPropNameInTable="APASColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DTB" msprop:Generator_UserColumnName="DTB" msprop:Generator_ColumnPropNameInRow="DTB" msprop:Generator_ColumnVarNameInTable="columnDTB" msprop:Generator_ColumnPropNameInTable="DTBColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Online" msprop:Generator_UserColumnName="Online" msprop:Generator_ColumnPropNameInRow="Online" msprop:Generator_ColumnVarNameInTable="columnOnline" msprop:Generator_ColumnPropNameInTable="OnlineColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sp_DailyTransmissionReportCalifornia_IRSW" targetNamespace="http://tempuri.org/sp_DailyTransmissionReportCalifornia_IRSW.xsd" xmlns:mstns="http://tempuri.org/sp_DailyTransmissionReportCalifornia_IRSW.xsd" xmlns="http://tempuri.org/sp_DailyTransmissionReportCalifornia_IRSW.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="sp_DailyTransmissionReportCalifornia_IRSW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="sp_DailyTransmissionReportCalifornia_IRSW" msprop:Generator_DataSetName="sp_DailyTransmissionReportCalifornia_IRSW">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sp_dailytranxcalifornia_irsw" msprop:Generator_UserTableName="sp_dailytranxcalifornia_irsw" msprop:Generator_RowDeletedName="sp_dailytranxcalifornia_irswRowDeleted" msprop:Generator_RowChangedName="sp_dailytranxcalifornia_irswRowChanged" msprop:Generator_RowClassName="sp_dailytranxcalifornia_irswRow" msprop:Generator_RowChangingName="sp_dailytranxcalifornia_irswRowChanging" msprop:Generator_RowEvArgName="sp_dailytranxcalifornia_irswRowChangeEvent" msprop:Generator_RowEvHandlerName="sp_dailytranxcalifornia_irswRowChangeEventHandler" msprop:Generator_TableClassName="sp_dailytranxcalifornia_irswDataTable" msprop:Generator_TableVarName="tablesp_dailytranxcalifornia_irsw" msprop:Generator_RowDeletingName="sp_dailytranxcalifornia_irswRowDeleting" msprop:Generator_TablePropName="sp_dailytranxcalifornia_irsw">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInTable="MonthColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANDATE" msprop:Generator_UserColumnName="TRANDATE" msprop:Generator_ColumnPropNameInRow="TRANDATE" msprop:Generator_ColumnVarNameInTable="columnTRANDATE" msprop:Generator_ColumnPropNameInTable="TRANDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_x0020_ITEMS_x0020_TRANSMITTED" msprop:Generator_UserColumnName="TOTAL ITEMS TRANSMITTED" msprop:Generator_ColumnPropNameInRow="TOTAL_ITEMS_TRANSMITTED" msprop:Generator_ColumnVarNameInTable="columnTOTAL_ITEMS_TRANSMITTED" msprop:Generator_ColumnPropNameInTable="TOTAL_ITEMS_TRANSMITTEDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL_x0020_AMOUNT_x0020_TRANSMITTED" msprop:Generator_UserColumnName="TOTAL AMOUNT TRANSMITTED" msprop:Generator_ColumnPropNameInRow="TOTAL_AMOUNT_TRANSMITTED" msprop:Generator_ColumnVarNameInTable="columnTOTAL_AMOUNT_TRANSMITTED" msprop:Generator_ColumnPropNameInTable="TOTAL_AMOUNT_TRANSMITTEDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ONLINE_x0020_ITEMS" msprop:Generator_UserColumnName="ONLINE ITEMS" msprop:Generator_ColumnPropNameInRow="ONLINE_ITEMS" msprop:Generator_ColumnVarNameInTable="columnONLINE_ITEMS" msprop:Generator_ColumnPropNameInTable="ONLINE_ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ONLINE_x0020_AMOUNT" msprop:Generator_UserColumnName="ONLINE AMOUNT" msprop:Generator_ColumnPropNameInRow="ONLINE_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnONLINE_AMOUNT" msprop:Generator_ColumnPropNameInTable="ONLINE_AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="_x0033_D_x0020_ITEMS" msprop:Generator_UserColumnName="3D ITEMS" msprop:Generator_ColumnPropNameInRow="_3D_ITEMS" msprop:Generator_ColumnVarNameInTable="column3D_ITEMS" msprop:Generator_ColumnPropNameInTable="_3D_ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0033_D_x0020_AMOUNT" msprop:Generator_UserColumnName="3D AMOUNT" msprop:Generator_ColumnPropNameInRow="_3D_AMOUNT" msprop:Generator_ColumnVarNameInTable="column3D_AMOUNT" msprop:Generator_ColumnPropNameInTable="_3D_AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BPO_x0020_ITEMS" msprop:Generator_UserColumnName="BPO ITEMS" msprop:Generator_ColumnPropNameInRow="BPO_ITEMS" msprop:Generator_ColumnVarNameInTable="columnBPO_ITEMS" msprop:Generator_ColumnPropNameInTable="BPO_ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BPO_x0020_AMOUNT" msprop:Generator_UserColumnName="BPO AMOUNT" msprop:Generator_ColumnPropNameInRow="BPO_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnBPO_AMOUNT" msprop:Generator_ColumnPropNameInTable="BPO_AMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Acctcurr" msprop:Generator_UserColumnName="Acctcurr" msprop:Generator_ColumnPropNameInRow="Acctcurr" msprop:Generator_ColumnVarNameInTable="columnAcctcurr" msprop:Generator_ColumnPropNameInTable="AcctcurrColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

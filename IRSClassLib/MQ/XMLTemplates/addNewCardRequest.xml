@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Service="CardMaintenanceManagerService" Operation="addNewCard(SessionContext,String,long,String,int,String,int)">
+	<SessionContext ExternalBatchNumber="" ServiceCode="" BankCode="8" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<Reason ReasonCode="" Comment=""/>
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</SessionContext>
+	<CardNumber/>
+	<CustomerId/>
+	<AccountId/>
+	<CardProductCode/>
+	<CardCollectMail/>
+	<CardIssuingBranch/>
+</input>

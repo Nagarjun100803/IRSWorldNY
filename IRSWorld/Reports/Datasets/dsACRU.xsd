@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsACRU" targetNamespace="http://tempuri.org/dsACRU.xsd" xmlns:mstns="http://tempuri.org/dsACRU.xsd" xmlns="http://tempuri.org/dsACRU.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsACRU" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsACRU" msprop:Generator_DataSetName="dsACRU">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_UserTableName="dtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_RowDeletedName="dtACRUCorplanPNBBranchesFromCorrBanksRowDeleted" msprop:Generator_RowChangedName="dtACRUCorplanPNBBranchesFromCorrBanksRowChanged" msprop:Generator_RowClassName="dtACRUCorplanPNBBranchesFromCorrBanksRow" msprop:Generator_RowChangingName="dtACRUCorplanPNBBranchesFromCorrBanksRowChanging" msprop:Generator_RowEvArgName="dtACRUCorplanPNBBranchesFromCorrBanksRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUCorplanPNBBranchesFromCorrBanksRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUCorplanPNBBranchesFromCorrBanksDataTable" msprop:Generator_TableVarName="tabledtACRUCorplanPNBBranchesFromCorrBanks" msprop:Generator_RowDeletingName="dtACRUCorplanPNBBranchesFromCorrBanksRowDeleting" msprop:Generator_TablePropName="dtACRUCorplanPNBBranchesFromCorrBanks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PESO_x0020_EQUIV" msprop:Generator_UserColumnName="PESO EQUIV" msprop:Generator_ColumnPropNameInRow="PESO_EQUIV" msprop:Generator_ColumnVarNameInTable="columnPESO_EQUIV" msprop:Generator_ColumnPropNameInTable="PESO_EQUIVColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PNB_x0020_BRANCH_x0020_NAME" msprop:Generator_UserColumnName="PNB BRANCH NAME" msprop:Generator_ColumnVarNameInTable="columnPNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInRow="PNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInTable="PNB_BRANCH_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtACRUCorplanCashieringDiv" msprop:Generator_UserTableName="dtACRUCorplanCashieringDiv" msprop:Generator_RowDeletedName="dtACRUCorplanCashieringDivRowDeleted" msprop:Generator_RowChangedName="dtACRUCorplanCashieringDivRowChanged" msprop:Generator_RowClassName="dtACRUCorplanCashieringDivRow" msprop:Generator_RowChangingName="dtACRUCorplanCashieringDivRowChanging" msprop:Generator_RowEvArgName="dtACRUCorplanCashieringDivRowChangeEvent" msprop:Generator_RowEvHandlerName="dtACRUCorplanCashieringDivRowChangeEventHandler" msprop:Generator_TableClassName="dtACRUCorplanCashieringDivDataTable" msprop:Generator_TableVarName="tabledtACRUCorplanCashieringDiv" msprop:Generator_RowDeletingName="dtACRUCorplanCashieringDivRowDeleting" msprop:Generator_TablePropName="dtACRUCorplanCashieringDiv">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PESO_x0020_EQUIV" msprop:Generator_UserColumnName="PESO EQUIV" msprop:Generator_ColumnVarNameInTable="columnPESO_EQUIV" msprop:Generator_ColumnPropNameInRow="PESO_EQUIV" msprop:Generator_ColumnPropNameInTable="PESO_EQUIVColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PNB_x0020_BRANCH_x0020_NAME" msprop:Generator_UserColumnName="PNB BRANCH NAME" msprop:Generator_ColumnVarNameInTable="columnPNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInRow="PNB_BRANCH_NAME" msprop:Generator_ColumnPropNameInTable="PNB_BRANCH_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtTest" msprop:Generator_UserTableName="dtTest" msprop:Generator_RowDeletedName="dtTestRowDeleted" msprop:Generator_TableClassName="dtTestDataTable" msprop:Generator_RowChangedName="dtTestRowChanged" msprop:Generator_RowClassName="dtTestRow" msprop:Generator_RowChangingName="dtTestRowChanging" msprop:Generator_RowEvArgName="dtTestRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTestRowChangeEventHandler" msprop:Generator_TablePropName="dtTest" msprop:Generator_TableVarName="tabledtTest" msprop:Generator_RowDeletingName="dtTestRowDeleting">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

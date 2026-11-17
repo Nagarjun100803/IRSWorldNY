@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFEDACH_Watchlist" targetNamespace="http://tempuri.org/dsFEDACH_Watchlist.xsd" xmlns:mstns="http://tempuri.org/dsFEDACH_Watchlist.xsd" xmlns="http://tempuri.org/dsFEDACH_Watchlist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFEDACH_Watchlist" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsFEDACH_Watchlist" msprop:Generator_DataSetName="dsFEDACH_Watchlist">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFEDACH_Watchlist" msprop:Generator_UserTableName="dtFEDACH_Watchlist" msprop:Generator_RowDeletedName="dtFEDACH_WatchlistRowDeleted" msprop:Generator_RowChangedName="dtFEDACH_WatchlistRowChanged" msprop:Generator_RowClassName="dtFEDACH_WatchlistRow" msprop:Generator_RowChangingName="dtFEDACH_WatchlistRowChanging" msprop:Generator_RowEvArgName="dtFEDACH_WatchlistRowChangeEvent" msprop:Generator_RowEvHandlerName="dtFEDACH_WatchlistRowChangeEventHandler" msprop:Generator_TableClassName="dtFEDACH_WatchlistDataTable" msprop:Generator_TableVarName="tabledtFEDACH_Watchlist" msprop:Generator_RowDeletingName="dtFEDACH_WatchlistRowDeleting" msprop:Generator_TablePropName="dtFEDACH_Watchlist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FEDACH_FILENAME" msprop:Generator_UserColumnName="FEDACH_FILENAME" msprop:Generator_ColumnVarNameInTable="columnFEDACH_FILENAME" msprop:Generator_ColumnPropNameInRow="FEDACH_FILENAME" msprop:Generator_ColumnPropNameInTable="FEDACH_FILENAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FED_REFNO" msprop:Generator_UserColumnName="FED_REFNO" msprop:Generator_ColumnVarNameInTable="columnFED_REFNO" msprop:Generator_ColumnPropNameInRow="FED_REFNO" msprop:Generator_ColumnPropNameInTable="FED_REFNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FEDACH_DATE" msprop:Generator_UserColumnName="FEDACH_DATE" msprop:Generator_ColumnVarNameInTable="columnFEDACH_DATE" msprop:Generator_ColumnPropNameInRow="FEDACH_DATE" msprop:Generator_ColumnPropNameInTable="FEDACH_DATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTERID" msprop:Generator_UserColumnName="REMITTERID" msprop:Generator_ColumnVarNameInTable="columnREMITTERID" msprop:Generator_ColumnPropNameInRow="REMITTERID" msprop:Generator_ColumnPropNameInTable="REMITTERIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REMITTER_NAME" msprop:Generator_UserColumnName="REMITTER_NAME" msprop:Generator_ColumnVarNameInTable="columnREMITTER_NAME" msprop:Generator_ColumnPropNameInRow="REMITTER_NAME" msprop:Generator_ColumnPropNameInTable="REMITTER_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEFICIARYID" msprop:Generator_UserColumnName="BENEFICIARYID" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARYID" msprop:Generator_ColumnPropNameInRow="BENEFICIARYID" msprop:Generator_ColumnPropNameInTable="BENEFICIARYIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEFICIARY_NAME" msprop:Generator_UserColumnName="BENEFICIARY_NAME" msprop:Generator_ColumnVarNameInTable="columnBENEFICIARY_NAME" msprop:Generator_ColumnPropNameInRow="BENEFICIARY_NAME" msprop:Generator_ColumnPropNameInTable="BENEFICIARY_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BENEF_ACCOUNTNO" msprop:Generator_UserColumnName="BENEF_ACCOUNTNO" msprop:Generator_ColumnVarNameInTable="columnBENEF_ACCOUNTNO" msprop:Generator_ColumnPropNameInRow="BENEF_ACCOUNTNO" msprop:Generator_ColumnPropNameInTable="BENEF_ACCOUNTNOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE_CURRENCY" msprop:Generator_UserColumnName="SOURCE_CURRENCY" msprop:Generator_ColumnVarNameInTable="columnSOURCE_CURRENCY" msprop:Generator_ColumnPropNameInRow="SOURCE_CURRENCY" msprop:Generator_ColumnPropNameInTable="SOURCE_CURRENCYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE_AMOUNT" msprop:Generator_UserColumnName="SOURCE_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnSOURCE_AMOUNT" msprop:Generator_ColumnPropNameInRow="SOURCE_AMOUNT" msprop:Generator_ColumnPropNameInTable="SOURCE_AMOUNTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FEDACH_MATCHED_DATA" msprop:Generator_UserColumnName="FEDACH_MATCHED_DATA" msprop:Generator_ColumnVarNameInTable="columnFEDACH_MATCHED_DATA" msprop:Generator_ColumnPropNameInRow="FEDACH_MATCHED_DATA" msprop:Generator_ColumnPropNameInTable="FEDACH_MATCHED_DATAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SDN_FINCEN_DATA" msprop:Generator_UserColumnName="SDN_FINCEN_DATA" msprop:Generator_ColumnVarNameInTable="columnSDN_FINCEN_DATA" msprop:Generator_ColumnPropNameInRow="SDN_FINCEN_DATA" msprop:Generator_ColumnPropNameInTable="SDN_FINCEN_DATAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SDN_FINCEN_REFNO" msprop:Generator_UserColumnName="SDN_FINCEN_REFNO" msprop:Generator_ColumnVarNameInTable="columnSDN_FINCEN_REFNO" msprop:Generator_ColumnPropNameInRow="SDN_FINCEN_REFNO" msprop:Generator_ColumnPropNameInTable="SDN_FINCEN_REFNOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SDN_FINCEN_NAME" msprop:Generator_UserColumnName="SDN_FINCEN_NAME" msprop:Generator_ColumnVarNameInTable="columnSDN_FINCEN_NAME" msprop:Generator_ColumnPropNameInRow="SDN_FINCEN_NAME" msprop:Generator_ColumnPropNameInTable="SDN_FINCEN_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_FROM" msprop:Generator_UserColumnName="DATE_FROM" msprop:Generator_ColumnVarNameInTable="columnDATE_FROM" msprop:Generator_ColumnPropNameInRow="DATE_FROM" msprop:Generator_ColumnPropNameInTable="DATE_FROMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_TO" msprop:Generator_UserColumnName="DATE_TO" msprop:Generator_ColumnVarNameInTable="columnDATE_TO" msprop:Generator_ColumnPropNameInRow="DATE_TO" msprop:Generator_ColumnPropNameInTable="DATE_TOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCHCODE" msprop:Generator_UserColumnName="BRANCHCODE" msprop:Generator_ColumnVarNameInTable="columnBRANCHCODE" msprop:Generator_ColumnPropNameInRow="BRANCHCODE" msprop:Generator_ColumnPropNameInTable="BRANCHCODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FILEFORMAT" msprop:Generator_UserColumnName="FILEFORMAT" msprop:Generator_ColumnPropNameInRow="FILEFORMAT" msprop:Generator_ColumnVarNameInTable="columnFILEFORMAT" msprop:Generator_ColumnPropNameInTable="FILEFORMATColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsOnlineTranx" targetNamespace="http://tempuri.org/dsOnlineTranx.xsd" xmlns:mstns="http://tempuri.org/dsOnlineTranx.xsd" xmlns="http://tempuri.org/dsOnlineTranx.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsOnlineTranx" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsOnlineTranx" msprop:Generator_DataSetName="dsOnlineTranx">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsOnlineTranx" msprop:Generator_UserTableName="dsOnlineTranx" msprop:Generator_RowDeletedName="dsOnlineTranxRowDeleted" msprop:Generator_RowChangedName="dsOnlineTranxRowChanged" msprop:Generator_RowClassName="dsOnlineTranxRow" msprop:Generator_RowChangingName="dsOnlineTranxRowChanging" msprop:Generator_RowEvArgName="dsOnlineTranxRowChangeEvent" msprop:Generator_RowEvHandlerName="dsOnlineTranxRowChangeEventHandler" msprop:Generator_TableClassName="dsOnlineTranxDataTable" msprop:Generator_TableVarName="tabledsOnlineTranx" msprop:Generator_RowDeletingName="dsOnlineTranxRowDeleting" msprop:Generator_TablePropName="_dsOnlineTranx">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RemitterID" msprop:Generator_UserColumnName="RemitterID" msprop:Generator_ColumnVarNameInTable="columnRemitterID" msprop:Generator_ColumnPropNameInRow="RemitterID" msprop:Generator_ColumnPropNameInTable="RemitterIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferenceNo" msprop:Generator_UserColumnName="ReferenceNo" msprop:Generator_ColumnVarNameInTable="columnReferenceNo" msprop:Generator_ColumnPropNameInRow="ReferenceNo" msprop:Generator_ColumnPropNameInTable="ReferenceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CASANo" msprop:Generator_UserColumnName="CASANo" msprop:Generator_ColumnVarNameInTable="columnCASANo" msprop:Generator_ColumnPropNameInRow="CASANo" msprop:Generator_ColumnPropNameInTable="CASANoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemittedAmt" msprop:Generator_UserColumnName="RemittedAmt" msprop:Generator_ColumnVarNameInTable="columnRemittedAmt" msprop:Generator_ColumnPropNameInRow="RemittedAmt" msprop:Generator_ColumnPropNameInTable="RemittedAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Commission" msprop:Generator_UserColumnName="Commission" msprop:Generator_ColumnVarNameInTable="columnCommission" msprop:Generator_ColumnPropNameInRow="Commission" msprop:Generator_ColumnPropNameInTable="CommissionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetAmt" msprop:Generator_UserColumnName="NetAmt" msprop:Generator_ColumnVarNameInTable="columnNetAmt" msprop:Generator_ColumnPropNameInRow="NetAmt" msprop:Generator_ColumnPropNameInTable="NetAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_UserColumnName="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

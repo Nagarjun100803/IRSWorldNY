@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_FreqRemOrderByRegionReceivedRpt" targetNamespace="http://tempuri.org/ds_FreqRemOrderByRegionReceivedRpt.xsd" xmlns:mstns="http://tempuri.org/ds_FreqRemOrderByRegionReceivedRpt.xsd" xmlns="http://tempuri.org/ds_FreqRemOrderByRegionReceivedRpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_FreqRemOrderByRegionReceivedRpt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_FreqRemOrderByRegionReceivedRpt" msprop:Generator_DataSetName="ds_FreqRemOrderByRegionReceivedRpt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsFreqRemOrderByRegionReceivedRpt" msprop:Generator_UserTableName="dsFreqRemOrderByRegionReceivedRpt" msprop:Generator_RowDeletedName="dsFreqRemOrderByRegionReceivedRptRowDeleted" msprop:Generator_TableClassName="dsFreqRemOrderByRegionReceivedRptDataTable" msprop:Generator_RowChangedName="dsFreqRemOrderByRegionReceivedRptRowChanged" msprop:Generator_RowClassName="dsFreqRemOrderByRegionReceivedRptRow" msprop:Generator_RowChangingName="dsFreqRemOrderByRegionReceivedRptRowChanging" msprop:Generator_RowEvArgName="dsFreqRemOrderByRegionReceivedRptRowChangeEvent" msprop:Generator_RowEvHandlerName="dsFreqRemOrderByRegionReceivedRptRowChangeEventHandler" msprop:Generator_TablePropName="dsFreqRemOrderByRegionReceivedRpt" msprop:Generator_TableVarName="tabledsFreqRemOrderByRegionReceivedRpt" msprop:Generator_RowDeletingName="dsFreqRemOrderByRegionReceivedRptRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SDATE" msprop:Generator_UserColumnName="SDATE" msprop:Generator_ColumnPropNameInRow="SDATE" msprop:Generator_ColumnVarNameInTable="columnSDATE" msprop:Generator_ColumnPropNameInTable="SDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EDATE" msprop:Generator_UserColumnName="EDATE" msprop:Generator_ColumnPropNameInRow="EDATE" msprop:Generator_ColumnVarNameInTable="columnEDATE" msprop:Generator_ColumnPropNameInTable="EDATEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Index" msprop:Generator_UserColumnName="Index" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInTable="IndexColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Range" msprop:Generator_UserColumnName="Range" msprop:Generator_ColumnPropNameInRow="Range" msprop:Generator_ColumnVarNameInTable="columnRange" msprop:Generator_ColumnPropNameInTable="RangeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Region" msprop:Generator_UserColumnName="Region" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInTable="RegionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumberOfItems" msprop:Generator_UserColumnName="NumberOfItems" msprop:Generator_ColumnPropNameInRow="NumberOfItems" msprop:Generator_ColumnVarNameInTable="columnNumberOfItems" msprop:Generator_ColumnPropNameInTable="NumberOfItemsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AveragePerItems" msprop:Generator_UserColumnName="AveragePerItems" msprop:Generator_ColumnPropNameInRow="AveragePerItems" msprop:Generator_ColumnVarNameInTable="columnAveragePerItems" msprop:Generator_ColumnPropNameInTable="AveragePerItemsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fees" msprop:Generator_UserColumnName="Fees" msprop:Generator_ColumnPropNameInRow="Fees" msprop:Generator_ColumnVarNameInTable="columnFees" msprop:Generator_ColumnPropNameInTable="FeesColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

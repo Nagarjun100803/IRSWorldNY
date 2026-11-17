@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFEDACH_Txn_Summary" targetNamespace="http://tempuri.org/dsFEDACH_Txn_Summary.xsd" xmlns:mstns="http://tempuri.org/dsFEDACH_Txn_Summary.xsd" xmlns="http://tempuri.org/dsFEDACH_Txn_Summary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFEDACH_Txn_Summary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsFEDACH_Txn_Summary" msprop:Generator_DataSetName="dsFEDACH_Txn_Summary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFEDACH_Txn_Summary" msprop:Generator_UserTableName="dtFEDACH_Txn_Summary" msprop:Generator_RowDeletedName="dtFEDACH_Txn_SummaryRowDeleted" msprop:Generator_RowChangedName="dtFEDACH_Txn_SummaryRowChanged" msprop:Generator_RowClassName="dtFEDACH_Txn_SummaryRow" msprop:Generator_RowChangingName="dtFEDACH_Txn_SummaryRowChanging" msprop:Generator_RowEvArgName="dtFEDACH_Txn_SummaryRowChangeEvent" msprop:Generator_RowEvHandlerName="dtFEDACH_Txn_SummaryRowChangeEventHandler" msprop:Generator_TableClassName="dtFEDACH_Txn_SummaryDataTable" msprop:Generator_TableVarName="tabledtFEDACH_Txn_Summary" msprop:Generator_RowDeletingName="dtFEDACH_Txn_SummaryRowDeleting" msprop:Generator_TablePropName="dtFEDACH_Txn_Summary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reference_FileName" msprop:Generator_UserColumnName="Reference_FileName" msprop:Generator_ColumnPropNameInRow="Reference_FileName" msprop:Generator_ColumnVarNameInTable="columnReference_FileName" msprop:Generator_ColumnPropNameInTable="Reference_FileNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Transaction_Status" msprop:Generator_UserColumnName="Transaction_Status" msprop:Generator_ColumnPropNameInRow="Transaction_Status" msprop:Generator_ColumnVarNameInTable="columnTransaction_Status" msprop:Generator_ColumnPropNameInTable="Transaction_StatusColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_Items" msprop:Generator_UserColumnName="Total_Items" msprop:Generator_ColumnPropNameInRow="Total_Items" msprop:Generator_ColumnVarNameInTable="columnTotal_Items" msprop:Generator_ColumnPropNameInTable="Total_ItemsColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_Amount" msprop:Generator_UserColumnName="Total_Amount" msprop:Generator_ColumnPropNameInRow="Total_Amount" msprop:Generator_ColumnVarNameInTable="columnTotal_Amount" msprop:Generator_ColumnPropNameInTable="Total_AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Branch_Date" msprop:Generator_UserColumnName="Branch_Date" msprop:Generator_ColumnPropNameInRow="Branch_Date" msprop:Generator_ColumnVarNameInTable="columnBranch_Date" msprop:Generator_ColumnPropNameInTable="Branch_DateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

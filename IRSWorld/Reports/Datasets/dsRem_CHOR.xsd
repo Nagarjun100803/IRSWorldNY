@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRem_CHOR" targetNamespace="http://tempuri.org/dsRem_CHOR.xsd" xmlns:mstns="http://tempuri.org/dsRem_CHOR.xsd" xmlns="http://tempuri.org/dsRem_CHOR.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRem_CHOR" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsRem_CHOR" msprop:Generator_DataSetName="dsRem_CHOR">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtRem_CHOR" msprop:Generator_UserTableName="dtRem_CHOR" msprop:Generator_RowDeletedName="dtRem_CHORRowDeleted" msprop:Generator_TableClassName="dtRem_CHORDataTable" msprop:Generator_RowChangedName="dtRem_CHORRowChanged" msprop:Generator_RowClassName="dtRem_CHORRow" msprop:Generator_RowChangingName="dtRem_CHORRowChanging" msprop:Generator_RowEvArgName="dtRem_CHORRowChangeEvent" msprop:Generator_RowEvHandlerName="dtRem_CHORRowChangeEventHandler" msprop:Generator_TablePropName="dtRem_CHOR" msprop:Generator_TableVarName="tabledtRem_CHOR" msprop:Generator_RowDeletingName="dtRem_CHORRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TxnDate" msprop:Generator_UserColumnName="TxnDate" msprop:Generator_ColumnPropNameInRow="TxnDate" msprop:Generator_ColumnVarNameInTable="columnTxnDate" msprop:Generator_ColumnPropNameInTable="TxnDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RemitterName" msprop:Generator_UserColumnName="RemitterName" msprop:Generator_ColumnPropNameInRow="RemitterName" msprop:Generator_ColumnVarNameInTable="columnRemitterName" msprop:Generator_ColumnPropNameInTable="RemitterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BenefName" msprop:Generator_UserColumnName="BenefName" msprop:Generator_ColumnPropNameInRow="BenefName" msprop:Generator_ColumnVarNameInTable="columnBenefName" msprop:Generator_ColumnPropNameInTable="BenefNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentAmt" msprop:Generator_UserColumnName="PaymentAmt" msprop:Generator_ColumnPropNameInRow="PaymentAmt" msprop:Generator_ColumnVarNameInTable="columnPaymentAmt" msprop:Generator_ColumnPropNameInTable="PaymentAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BankCheckNo" msprop:Generator_UserColumnName="BankCheckNo" msprop:Generator_ColumnPropNameInRow="BankCheckNo" msprop:Generator_ColumnVarNameInTable="columnBankCheckNo" msprop:Generator_ColumnPropNameInTable="BankCheckNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalPaymentAmt" msprop:Generator_UserColumnName="LocalPaymentAmt" msprop:Generator_ColumnPropNameInRow="LocalPaymentAmt" msprop:Generator_ColumnVarNameInTable="columnLocalPaymentAmt" msprop:Generator_ColumnPropNameInTable="LocalPaymentAmtColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalCableCharges" msprop:Generator_UserColumnName="LocalCableCharges" msprop:Generator_ColumnPropNameInRow="LocalCableCharges" msprop:Generator_ColumnVarNameInTable="columnLocalCableCharges" msprop:Generator_ColumnPropNameInTable="LocalCableChargesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalCourierCharges" msprop:Generator_UserColumnName="LocalCourierCharges" msprop:Generator_ColumnPropNameInRow="LocalCourierCharges" msprop:Generator_ColumnVarNameInTable="columnLocalCourierCharges" msprop:Generator_ColumnPropNameInTable="LocalCourierChargesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ClearingDate" msprop:Generator_UserColumnName="ClearingDate" msprop:Generator_ColumnPropNameInRow="ClearingDate" msprop:Generator_ColumnVarNameInTable="columnClearingDate" msprop:Generator_ColumnPropNameInTable="ClearingDateColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RefNo" msprop:Generator_UserColumnName="RefNo" msprop:Generator_ColumnPropNameInRow="RefNo" msprop:Generator_ColumnVarNameInTable="columnRefNo" msprop:Generator_ColumnPropNameInTable="RefNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TxnStatus" msprop:Generator_UserColumnName="TxnStatus" msprop:Generator_ColumnPropNameInRow="TxnStatus" msprop:Generator_ColumnVarNameInTable="columnTxnStatus" msprop:Generator_ColumnPropNameInTable="TxnStatusColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="UserID" msprop:Generator_UserColumnName="UserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

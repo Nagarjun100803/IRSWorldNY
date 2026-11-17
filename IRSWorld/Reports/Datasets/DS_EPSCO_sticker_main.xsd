@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_EPSCO_sticker_main" targetNamespace="http://tempuri.org/DS_EPSCO_sticker_main.xsd" xmlns:mstns="http://tempuri.org/DS_EPSCO_sticker_main.xsd" xmlns="http://tempuri.org/DS_EPSCO_sticker_main.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_EPSCO_sticker_main" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DS_EPSCO_sticker_main" msprop:Generator_DataSetName="DS_EPSCO_sticker_main">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EPSCO_sticker_main" msprop:Generator_UserTableName="EPSCO_sticker_main" msprop:Generator_RowDeletedName="EPSCO_sticker_mainRowDeleted" msprop:Generator_TableClassName="EPSCO_sticker_mainDataTable" msprop:Generator_RowChangedName="EPSCO_sticker_mainRowChanged" msprop:Generator_RowClassName="EPSCO_sticker_mainRow" msprop:Generator_RowChangingName="EPSCO_sticker_mainRowChanging" msprop:Generator_RowEvArgName="EPSCO_sticker_mainRowChangeEvent" msprop:Generator_RowEvHandlerName="EPSCO_sticker_mainRowChangeEventHandler" msprop:Generator_TablePropName="EPSCO_sticker_main" msprop:Generator_TableVarName="tableEPSCO_sticker_main" msprop:Generator_RowDeletingName="EPSCO_sticker_mainRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="_x0031_Product_x0020_Card_x0020_No." msprop:Generator_UserColumnName="1Product Card No." msprop:Generator_ColumnPropNameInRow="_1Product_Card_No_" msprop:Generator_ColumnVarNameInTable="_column1Product_Card_No_" msprop:Generator_ColumnPropNameInTable="_1Product_Card_No_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Remitter_x0020_Name" msprop:Generator_UserColumnName="1Remitter Name" msprop:Generator_ColumnPropNameInRow="_1Remitter_Name" msprop:Generator_ColumnVarNameInTable="column1Remitter_Name" msprop:Generator_ColumnPropNameInTable="_1Remitter_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Address_x0020_1" msprop:Generator_UserColumnName="1Address 1" msprop:Generator_ColumnPropNameInRow="_1Address_1" msprop:Generator_ColumnVarNameInTable="column1Address_1" msprop:Generator_ColumnPropNameInTable="_1Address_1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Address_x0020_2" msprop:Generator_UserColumnName="1Address 2" msprop:Generator_ColumnPropNameInRow="_1Address_2" msprop:Generator_ColumnVarNameInTable="column1Address_2" msprop:Generator_ColumnPropNameInTable="_1Address_2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Address_x0020_3" msprop:Generator_UserColumnName="1Address 3" msprop:Generator_ColumnPropNameInRow="_1Address_3" msprop:Generator_ColumnVarNameInTable="column1Address_3" msprop:Generator_ColumnPropNameInTable="_1Address_3Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Address_x0020_4" msprop:Generator_UserColumnName="1Address 4" msprop:Generator_ColumnPropNameInRow="_1Address_4" msprop:Generator_ColumnVarNameInTable="column1Address_4" msprop:Generator_ColumnPropNameInTable="_1Address_4Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Address_x0020_5" msprop:Generator_UserColumnName="1Address 5" msprop:Generator_ColumnPropNameInRow="_1Address_5" msprop:Generator_ColumnVarNameInTable="column1Address_5" msprop:Generator_ColumnPropNameInTable="_1Address_5Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0031_Mobile_x0020_No." msprop:Generator_UserColumnName="1Mobile No." msprop:Generator_ColumnPropNameInRow="_1Mobile_No_" msprop:Generator_ColumnVarNameInTable="_column1Mobile_No_" msprop:Generator_ColumnPropNameInTable="_1Mobile_No_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Product_x0020_Card_x0020_No." msprop:Generator_UserColumnName="2Product Card No." msprop:Generator_ColumnPropNameInRow="_2Product_Card_No_" msprop:Generator_ColumnVarNameInTable="_column2Product_Card_No_" msprop:Generator_ColumnPropNameInTable="_2Product_Card_No_Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Remitter_x0020_Name" msprop:Generator_UserColumnName="2Remitter Name" msprop:Generator_ColumnPropNameInRow="_2Remitter_Name" msprop:Generator_ColumnVarNameInTable="column2Remitter_Name" msprop:Generator_ColumnPropNameInTable="_2Remitter_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Address_x0020_1" msprop:Generator_UserColumnName="2Address 1" msprop:Generator_ColumnPropNameInRow="_2Address_1" msprop:Generator_ColumnVarNameInTable="column2Address_1" msprop:Generator_ColumnPropNameInTable="_2Address_1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Address_x0020_2" msprop:Generator_UserColumnName="2Address 2" msprop:Generator_ColumnPropNameInRow="_2Address_2" msprop:Generator_ColumnVarNameInTable="column2Address_2" msprop:Generator_ColumnPropNameInTable="_2Address_2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Address_x0020_3" msprop:Generator_UserColumnName="2Address 3" msprop:Generator_ColumnPropNameInRow="_2Address_3" msprop:Generator_ColumnVarNameInTable="column2Address_3" msprop:Generator_ColumnPropNameInTable="_2Address_3Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Address_x0020_4" msprop:Generator_UserColumnName="2Address 4" msprop:Generator_ColumnPropNameInRow="_2Address_4" msprop:Generator_ColumnVarNameInTable="column2Address_4" msprop:Generator_ColumnPropNameInTable="_2Address_4Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Address_x0020_5" msprop:Generator_UserColumnName="2Address 5" msprop:Generator_ColumnPropNameInRow="_2Address_5" msprop:Generator_ColumnVarNameInTable="column2Address_5" msprop:Generator_ColumnPropNameInTable="_2Address_5Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0032_Mobile_x0020_No." msprop:Generator_UserColumnName="2Mobile No." msprop:Generator_ColumnPropNameInRow="_2Mobile_No_" msprop:Generator_ColumnVarNameInTable="_column2Mobile_No_" msprop:Generator_ColumnPropNameInTable="_2Mobile_No_Column" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIbatch_ProofSheet" targetNamespace="http://tempuri.org/dsIbatch_ProofSheet.xsd" xmlns:mstns="http://tempuri.org/dsIbatch_ProofSheet.xsd" xmlns="http://tempuri.org/dsIbatch_ProofSheet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIbatch_ProofSheet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIbatch_ProofSheet" msprop:Generator_DataSetName="dsIbatch_ProofSheet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_IBatch_ProofSheet" msprop:Generator_UserTableName="dt_IBatch_ProofSheet" msprop:Generator_RowDeletedName="dt_IBatch_ProofSheetRowDeleted" msprop:Generator_TableClassName="dt_IBatch_ProofSheetDataTable" msprop:Generator_RowChangedName="dt_IBatch_ProofSheetRowChanged" msprop:Generator_RowClassName="dt_IBatch_ProofSheetRow" msprop:Generator_RowChangingName="dt_IBatch_ProofSheetRowChanging" msprop:Generator_RowEvArgName="dt_IBatch_ProofSheetRowChangeEvent" msprop:Generator_RowEvHandlerName="dt_IBatch_ProofSheetRowChangeEventHandler" msprop:Generator_TablePropName="dt_IBatch_ProofSheet" msprop:Generator_TableVarName="tabledt_IBatch_ProofSheet" msprop:Generator_RowDeletingName="dt_IBatch_ProofSheetRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" msprop:Generator_UserColumnName="BranchCode" msprop:Generator_ColumnPropNameInRow="BranchCode" msprop:Generator_ColumnVarNameInTable="columnBranchCode" msprop:Generator_ColumnPropNameInTable="BranchCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_UserColumnName="BranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dccount" msprop:Generator_UserColumnName="dccount" msprop:Generator_ColumnPropNameInRow="dccount" msprop:Generator_ColumnVarNameInTable="columndccount" msprop:Generator_ColumnPropNameInTable="dccountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dcpeso" msprop:Generator_UserColumnName="dcpeso" msprop:Generator_ColumnPropNameInRow="dcpeso" msprop:Generator_ColumnVarNameInTable="columndcpeso" msprop:Generator_ColumnPropNameInTable="dcpesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dcdollarcount" msprop:Generator_UserColumnName="dcdollarcount" msprop:Generator_ColumnPropNameInRow="dcdollarcount" msprop:Generator_ColumnVarNameInTable="columndcdollarcount" msprop:Generator_ColumnPropNameInTable="dcdollarcountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dcdollar" msprop:Generator_UserColumnName="dcdollar" msprop:Generator_ColumnPropNameInRow="dcdollar" msprop:Generator_ColumnVarNameInTable="columndcdollar" msprop:Generator_ColumnPropNameInTable="dcdollarColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dcpesoequivUSD" msprop:Generator_UserColumnName="dcpesoequivUSD" msprop:Generator_ColumnPropNameInRow="dcpesoequivUSD" msprop:Generator_ColumnVarNameInTable="columndcpesoequivUSD" msprop:Generator_ColumnPropNameInTable="dcpesoequivUSDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dceurocount" msprop:Generator_UserColumnName="dceurocount" msprop:Generator_ColumnPropNameInRow="dceurocount" msprop:Generator_ColumnVarNameInTable="columndceurocount" msprop:Generator_ColumnPropNameInTable="dceurocountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dceuro" msprop:Generator_UserColumnName="dceuro" msprop:Generator_ColumnPropNameInRow="dceuro" msprop:Generator_ColumnVarNameInTable="columndceuro" msprop:Generator_ColumnPropNameInTable="dceuroColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dcpesoequivEUR" msprop:Generator_UserColumnName="dcpesoequivEUR" msprop:Generator_ColumnPropNameInRow="dcpesoequivEUR" msprop:Generator_ColumnVarNameInTable="columndcpesoequivEUR" msprop:Generator_ColumnPropNameInTable="dcpesoequivEURColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpoount" msprop:Generator_UserColumnName="bpoount" msprop:Generator_ColumnPropNameInRow="bpoount" msprop:Generator_ColumnVarNameInTable="columnbpoount" msprop:Generator_ColumnPropNameInTable="bpoountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpopeso" msprop:Generator_UserColumnName="bpopeso" msprop:Generator_ColumnPropNameInRow="bpopeso" msprop:Generator_ColumnVarNameInTable="columnbpopeso" msprop:Generator_ColumnPropNameInTable="bpopesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpodollarcount" msprop:Generator_UserColumnName="bpodollarcount" msprop:Generator_ColumnPropNameInRow="bpodollarcount" msprop:Generator_ColumnVarNameInTable="columnbpodollarcount" msprop:Generator_ColumnPropNameInTable="bpodollarcountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpodollar" msprop:Generator_UserColumnName="bpodollar" msprop:Generator_ColumnPropNameInRow="bpodollar" msprop:Generator_ColumnVarNameInTable="columnbpodollar" msprop:Generator_ColumnPropNameInTable="bpodollarColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpopesoequivUSD" msprop:Generator_UserColumnName="bpopesoequivUSD" msprop:Generator_ColumnPropNameInRow="bpopesoequivUSD" msprop:Generator_ColumnVarNameInTable="columnbpopesoequivUSD" msprop:Generator_ColumnPropNameInTable="bpopesoequivUSDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpoeurocount" msprop:Generator_UserColumnName="bpoeurocount" msprop:Generator_ColumnPropNameInRow="bpoeurocount" msprop:Generator_ColumnVarNameInTable="columnbpoeurocount" msprop:Generator_ColumnPropNameInTable="bpoeurocountColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpoeuro" msprop:Generator_UserColumnName="bpoeuro" msprop:Generator_ColumnPropNameInRow="bpoeuro" msprop:Generator_ColumnVarNameInTable="columnbpoeuro" msprop:Generator_ColumnPropNameInTable="bpoeuroColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bpopesoequivEUR" msprop:Generator_UserColumnName="bpopesoequivEUR" msprop:Generator_ColumnPropNameInRow="bpopesoequivEUR" msprop:Generator_ColumnVarNameInTable="columnbpopesoequivEUR" msprop:Generator_ColumnPropNameInTable="bpopesoequivEURColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

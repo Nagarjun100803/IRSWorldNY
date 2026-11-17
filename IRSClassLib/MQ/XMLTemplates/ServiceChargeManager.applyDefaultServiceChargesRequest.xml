@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input Service="ServiceChargeManagerService" Operation="applyDefaultServiceCharges( SessionContext, String, double, String, float, int, BankInstrumentDetailsDTO, int, TransactionStatus)" targetNamespace="http://charge.app.fcr.iflex.com">
+	<Context ExternalBatchNumber="" ServiceCode="" BankCode="8" ExternalSystemAuditTrailNumber="" UserReferenceNumber="" OverridenWarnings="" ExternalReferenceNo="" UserId="" Channel="" TransactionBranch="" ValueDateText="" PostingDateText="" SessionTicket="" LocalDateTimeText="" OriginalReferenceNo="">
+		<SupervisorContext UserId="" PrimaryPassword=""/>
+	</Context>
+	<AccountId/>
+	<TransactionAmount/>
+	<TransactionCurrency></TransactionCurrency>
+	<TransactionCurrencyRate></TransactionCurrencyRate>
+	<TransactionMnemonic>5004</TransactionMnemonic>
+	<InstrumentDetails IssuerCode="" DraweeBank="" IssuerSectorCode="" InstrumentStatus="" PayeeBank="" InstrumentType="" IsComissionCharged="" IssuerBranchCode="" SerialNumber="" LiquidationDate="" Narration="" LateClearing="" IndemnityText="" DrawerAccountNumber="" StaleStatus="" BeneficiaryName="" DraweeBankName="" PayeeBranchCode="" InstrumentCurrency="PHP" InstrumentNumber="" ChequeLiteral="" RoutingNumber="" LiquidationType="" BankName="" CustomerNationality="" InstrumentAmount="" ChequeDate="" IssueMode="" ClearingType="">
+		<BeneficiaryAddress Line1="" City="" Country="" Line3="" State="" Line2="" Zip=""/>
+	</InstrumentDetails>
+	<TransactionType/>
+	<Status ReplyText="" IsServiceChargeApplied="" ExternalReferenceNo="" SpReturnValue="" IsOverriden="" ErrorCode="" Memo="" ReplyCode="">
+		<ExtendedReply>
+			<MessagesArray>
+				<Messages Message="" Code=""/>
+			</MessagesArray>
+		</ExtendedReply>
+	</Status>
+</input>

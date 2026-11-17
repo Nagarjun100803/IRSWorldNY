@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGREMPhilimareReportOnPayrollCredit" targetNamespace="http://tempuri.org/dsGREMPhilimareReportOnPayrollCredit.xsd" xmlns:mstns="http://tempuri.org/dsGREMPhilimareReportOnPayrollCredit.xsd" xmlns="http://tempuri.org/dsGREMPhilimareReportOnPayrollCredit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGREMPhilimareReportOnPayrollCredit" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGREMPhilimareReportOnPayrollCredit" msprop:Generator_DataSetName="dsGREMPhilimareReportOnPayrollCredit">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GREMPhilimareReportOnPayrollCredit" msprop:Generator_UserTableName="GREMPhilimareReportOnPayrollCredit" msprop:Generator_RowDeletedName="GREMPhilimareReportOnPayrollCreditRowDeleted" msprop:Generator_RowChangedName="GREMPhilimareReportOnPayrollCreditRowChanged" msprop:Generator_RowClassName="GREMPhilimareReportOnPayrollCreditRow" msprop:Generator_RowChangingName="GREMPhilimareReportOnPayrollCreditRowChanging" msprop:Generator_RowEvArgName="GREMPhilimareReportOnPayrollCreditRowChangeEvent" msprop:Generator_RowEvHandlerName="GREMPhilimareReportOnPayrollCreditRowChangeEventHandler" msprop:Generator_TableClassName="GREMPhilimareReportOnPayrollCreditDataTable" msprop:Generator_TableVarName="tableGREMPhilimareReportOnPayrollCredit" msprop:Generator_RowDeletingName="GREMPhilimareReportOnPayrollCreditRowDeleting" msprop:Generator_TablePropName="GREMPhilimareReportOnPayrollCredit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REMITTING_x0020_BANK" msprop:Generator_UserColumnName="REMITTING BANK" msprop:Generator_ColumnPropNameInRow="REMITTING_BANK" msprop:Generator_ColumnVarNameInTable="columnREMITTING_BANK" msprop:Generator_ColumnPropNameInTable="REMITTING_BANKColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMS" msprop:Generator_UserColumnName="ITEMS" msprop:Generator_ColumnPropNameInRow="ITEMS" msprop:Generator_ColumnVarNameInTable="columnITEMS" msprop:Generator_ColumnPropNameInTable="ITEMSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="US_x0024__x0020_ACCT._x0020__x0028_IN_x0020_US_x0024__x0029_" msprop:Generator_UserColumnName="US$ ACCT. (IN US$)" msprop:Generator_ColumnPropNameInRow="_US__ACCT___IN_US__" msprop:Generator_ColumnVarNameInTable="_columnUS__ACCT___IN_US__" msprop:Generator_ColumnPropNameInTable="_US__ACCT___IN_US__Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PESO_x0020_ACCT._x0020__x0028_IN_x0020_PHP_x0029_" msprop:Generator_UserColumnName="PESO ACCT. (IN PHP)" msprop:Generator_ColumnPropNameInRow="_PESO_ACCT___IN_PHP_" msprop:Generator_ColumnVarNameInTable="_columnPESO_ACCT___IN_PHP_" msprop:Generator_ColumnPropNameInTable="_PESO_ACCT___IN_PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="S._x0020_F._x0020__x0028_PHP_x0029_" msprop:Generator_UserColumnName="S. F. (PHP)" msprop:Generator_ColumnPropNameInRow="_S__F___PHP_" msprop:Generator_ColumnVarNameInTable="_columnS__F___PHP_" msprop:Generator_ColumnPropNameInTable="_S__F___PHP_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="S._x0020_F._x0020__x0028_USD_x0029_" msprop:Generator_UserColumnName="S. F. (USD)" msprop:Generator_ColumnPropNameInRow="_S__F___USD_" msprop:Generator_ColumnVarNameInTable="_columnS__F___USD_" msprop:Generator_ColumnPropNameInTable="_S__F___USD_Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MONTH" msprop:Generator_UserColumnName="MONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

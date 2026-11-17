@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	Operation="transferFunds( SessionContext, double, String, String, String, int)"
+	Service="DemandDepositManagerService"
+	targetNamespace="http://savings.deposit.app.fcr.iflex.com">
+	<SessionContext BankCode="8" Channel="" ExternalBatchNumber=""
+		ExternalReferenceNumber="" ExternalSystemAuditTrailNumber=""
+		LocalDateTimeText="" OriginalReferenceNo="" OverridenWarnings=""
+		PostingDateText="" ServiceCode="1006" SessionTicket=""
+		TransactionBranch="" UserId="" UserReferenceNumber=""
+		ValueDateText="">
+		<Reason Comment="" ReasonCode="" ></Reason>
+		<SupervisorContext PrimaryPassword="" UserId="" />
+	</SessionContext>
+	<FromAccountId></FromAccountId>
+	<ToAccountId></ToAccountId>
+	<TransactionAmount></TransactionAmount>
+	<Narrative >Funds Transfer</Narrative>
+	<TransactionType />
+</input>

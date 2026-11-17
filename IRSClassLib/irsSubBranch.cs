@@ -1,0 +1,264 @@
+using System;
+using System.Collections;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace IRSClassLib
+{
+    public class irsSubBranch : sqlHelperWs
+    {
+        #region PRIVATE VARIABLE
+
+        private DataSet data_set = null;
+        private string error_message = null;
+        private string _seq_id = null;
+        private string _opn_seq_id = null;
+        private string _Operation_SEQ_ID = null; 
+        private string _sub_branch = null;
+        private string _address = null;
+        private string _tel_no = null;
+
+        #endregion
+
+        #region PROPERTY GET & SET
+
+        public string messages
+        {
+            get { return this.error_message; }
+        }
+
+        public string seq_id
+        {
+            get { return this._seq_id; }
+            set { _seq_id = value; }
+        }
+
+        public string opn_seq_id
+        {
+            get { return this._opn_seq_id; }
+            set { _opn_seq_id = value; }
+        }
+
+        public string Operation_SEQ_ID
+        {
+            get { return this._Operation_SEQ_ID; }
+            set { _Operation_SEQ_ID = value; }
+        }
+
+        public string sub_branch
+        {
+            get { return this._sub_branch; }
+            set { _sub_branch = value; }
+        }
+        
+        public string address
+        {
+            get { return this._address; }
+            set { _address = value; }
+        }
+        
+        public string tel_no
+        {
+            get { return this._tel_no; }
+            set { _tel_no = value; }
+        }
+
+        #endregion
+
+        #region PUBLIC METHOD
+
+        public DataSet getdataRecord()
+        {
+            if (this.dataset != null)
+            {
+                return this.data_set;
+            }
+
+            return null;
+        }
+
+        public string getRecord(object obj)
+        {
+            if (obj != null)
+            {
+                string s = Convert.ToString(obj);
+
+                if (s != null && s.Trim() == string.Empty)
+                {
+                    return null;
+                }
+                return s.Replace("'","''");
+            }
+            
+            return null;
+        }
+
+
+
+
+        public bool get_record(string SEQ_ID)
+        {
+            base.IdentityValue = SEQ_ID; return get_record();                
+        }
+
+        public bool get_record()
+		{           
+            this.getUpdateDS(Convert.ToInt32(base.IdentityValue));            
+
+            if (dataset != null && dataset.Tables[0].Rows.Count > 0)
+            {
+                base.selectedRow = 0;
+
+                _seq_id         = this.getRecord(base.getColumn("SEQ_ID"));
+                _opn_seq_id     = this.getRecord(base.getColumn("Operation_SEQ_ID"));
+                _address        = this.getRecord(base.getColumn("Address"));
+                _tel_no         = this.getRecord(base.getColumn("TelNo"));
+
+
+                this.data_set = dataset; return true; 
+            }
+            return false;
+		}
+
+		public bool set_record(string[] column_values)
+		{
+			ArrayList error_list = new ArrayList();
+
+			for (int i = 0; i < column_values.Length; i++)
+			{
+				string[] s = column_values[i].Split('~');
+
+                if (s[1] == null || s[1].Trim().Length == 0 || s[1].ToString().Trim().ToUpper() == "NULL" || s[1].ToString().Trim() == string.Empty)
+                {
+                    s[1] = null;
+                }
+
+				if (s != null && s.Length > 0)
+				{					
+					if (!base.setColumn(s[0].Trim(), s[1]))
+					{
+						error_list.Add(s[0] + ":" + this.Message);
+					}					
+				}
+			}
+
+			if (error_list.Count > 0)
+			{
+				StringBuilder sb = new StringBuilder();
+
+				foreach (Object errors in error_list)
+				{
+					sb.Append((String)errors + "\n");
+				}
+
+				this.error_message = string.Empty;
+				this.error_message = sb.ToString();
+
+				return false;
+			}
+
+			return true;
+		}
+
+        public irsSubBranch()
+		{
+            this.TableName = "TBL_BRANCH_OPERATION_SUB_BRANCH";
+			this.IdentityColumn = "SEQ_ID";
+            this.error_message = null;
+		}
+         
+		public override void getUpdateDS(int id)
+		{
+            SqlCommand command = getSqlCommand("SELECT * FROM TBL_BRANCH_OPERATION_SUB_BRANCH WHERE SEQ_ID = " + id, false);
+            getUpdateDataSet(command);
+		}
+
+		public bool insert_record()
+		{
+            if (base.newRow() == true)
+            {
+                return true;
+            }
+            this.get_error_dbase(); return false;			
+		}
+
+		public bool update_record()
+		{
+            base.IdentityValue = this.seq_id;
+
+            if (base.edit(Convert.ToInt32(base.IdentityValue)) == true)
+            {
+                return true;
+            }
+            this.get_error_dbase(); return false;
+		}
+
+        public bool commit_record()
+        {
+            if (base.save() == true)
+            {
+                this.seq_id = base.IdentityValue.ToString(); return true;
+            }
+			this.get_error_dbase(); return false;
+        }
+
+        public bool commit_record_tmp(string paramValues, string userID, string actionType)
+        {
+            string Op_SEQ_ID = paramValues.Split('^')[0].Split('~')[1];
+            string Op_sub_branch = paramValues.Split('^')[1].Split('~')[1];
+            string Op_address = paramValues.Split('^')[2].Split('~')[1];
+            string Op_tel_no = paramValues.Split('^')[3].Split('~')[1];
+
+            this.TableName = "TBL_BRANCH_OPERATION_SUB_BRANCH_TMP";
+            this.IdentityColumn = "SEQ_ID";
+            string sqlstmt = "SELECT * FROM TBL_BRANCH_OPERATION_SUB_BRANCH_TMP WHERE 1=0";
+            base.getUpdateDS(sqlstmt);
+            if (isUpdatable)
+            {
+                if (base.newRow(sqlHelperWs.RETAIN_DATASET))
+                {
+                    string dateNow = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+                    uprow["Operation_Seq_ID"] = Op_SEQ_ID;
+                    uprow["SubBranch"] = Op_sub_branch;
+                    uprow["Address"] = Op_address;
+                    uprow["TelNo"] = Op_tel_no;
+                    uprow["MAIN_SEQ_ID"] = Convert.ToInt32(opn_seq_id);
+                    uprow["Maker"] = userID;
+                    uprow["DateAdded"] = dateNow;
+                    uprow["CurrStatus"] = "For Approval";
+                    uprow["StatusDate"] = dateNow;
+                    uprow["ActionType"] = actionType;
+                    uprow["Module"] = "Branch Administration >> Branch Operation Sub Branch";
+                    uprow["MenuName"] = "Branch Operation Sub Branch";
+                    table.Rows.Add(uprow);
+                }
+
+                base.addMode = false;
+                return base.save(sqlHelperWs.RETAIN_DATASET);
+            }
+            return true;
+        }
+        public void rollback_record()
+        {
+            base.cancel();
+        }
+
+        #endregion
+
+        #region PRIVATE METHOD
+
+
+        private void get_error_dbase()
+        {
+            this.error_message = string.Empty;
+
+            if (base.Message != null && base.Message.Trim().Length > 0)
+            {
+                this.error_message = base.Message;
+            }
+        }
+
+        #endregion
+    }
+}

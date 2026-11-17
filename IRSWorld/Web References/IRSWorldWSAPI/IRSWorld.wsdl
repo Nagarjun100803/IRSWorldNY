@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IRSWSAPI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IRSWSAPIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IRSWSAPIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IRSWSAPISoapIn">
+    <wsdl:part name="parameters" element="tns:IRSWSAPI" />
+  </wsdl:message>
+  <wsdl:message name="IRSWSAPISoapOut">
+    <wsdl:part name="parameters" element="tns:IRSWSAPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSWSAPIHttpGetIn">
+    <wsdl:part name="instring" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IRSWSAPIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IRSWSAPIHttpPostIn">
+    <wsdl:part name="instring" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IRSWSAPIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="IRSWorldSoap">
+    <wsdl:operation name="IRSWSAPI">
+      <wsdl:input message="tns:IRSWSAPISoapIn" />
+      <wsdl:output message="tns:IRSWSAPISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRSWorldHttpGet">
+    <wsdl:operation name="IRSWSAPI">
+      <wsdl:input message="tns:IRSWSAPIHttpGetIn" />
+      <wsdl:output message="tns:IRSWSAPIHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRSWorldHttpPost">
+    <wsdl:operation name="IRSWSAPI">
+      <wsdl:input message="tns:IRSWSAPIHttpPostIn" />
+      <wsdl:output message="tns:IRSWSAPIHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IRSWorldSoap" type="tns:IRSWorldSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IRSWSAPI">
+      <soap:operation soapAction="http://tempuri.org/IRSWSAPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IRSWorldSoap12" type="tns:IRSWorldSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IRSWSAPI">
+      <soap12:operation soapAction="http://tempuri.org/IRSWSAPI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IRSWorldHttpGet" type="tns:IRSWorldHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="IRSWSAPI">
+      <http:operation location="/IRSWSAPI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IRSWorldHttpPost" type="tns:IRSWorldHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="IRSWSAPI">
+      <http:operation location="/IRSWSAPI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IRSWorld">
+    <wsdl:port name="IRSWorldSoap" binding="tns:IRSWorldSoap">
+      <soap:address location="http://localhost:1272/IRSWorld.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IRSWorldSoap12" binding="tns:IRSWorldSoap12">
+      <soap12:address location="http://localhost:1272/IRSWorld.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IRSWorldHttpGet" binding="tns:IRSWorldHttpGet">
+      <http:address location="http://localhost:1272/IRSWorld.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IRSWorldHttpPost" binding="tns:IRSWorldHttpPost">
+      <http:address location="http://localhost:1272/IRSWorld.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
