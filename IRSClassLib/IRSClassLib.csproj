@@ -65,7 +65,7 @@
   <ItemGroup>
     <Reference Include="ConnObjDecrypt, Version=1.0.4297.28738, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\IRSWorldPhoneticsConversion\bin\Release\ConnObjDecrypt.dll</HintPath>
+      <HintPath>lib\LegacyDependencies\ConnObjDecrypt.dll</HintPath>
     </Reference>
     <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -77,7 +77,7 @@
     </Reference>
     <Reference Include="HDMFcdv, Version=1.0.0.0, Culture=neutral, PublicKeyToken=baebb99dac889e84, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\HDMFcdv.dll</HintPath>
+      <HintPath>lib\LegacyDependencies\HDMFcdv.dll</HintPath>
     </Reference>
     <Reference Include="IdentityGuardAdminServiceV11API, Version=12.0.0.573, Culture=neutral, PublicKeyToken=57ffde27732d460f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -109,7 +109,7 @@
     </Reference>
     <Reference Include="PercentageMatching, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\IRSFileLoader_NY UAT\PercentageLoader\bin\Release\PercentageMatching.dll</HintPath>
+      <HintPath>..\IRSWorld\PercentageMatching\PercentageMatching.dll</HintPath>
     </Reference>
     <Reference Include="PublicDomain, Version=0.2.47.0, Culture=neutral, PublicKeyToken=fd3f43b5776a962b, processorArchitecture=MSIL" />
     <Reference Include="SecureBlackbox, Version=6.0.0.137, Culture=neutral, PublicKeyToken=5a62fa96d0ac431a">
@@ -627,7 +627,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
